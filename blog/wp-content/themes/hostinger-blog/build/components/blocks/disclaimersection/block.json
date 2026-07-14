@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "theme-blocks/disclaimersection",
+  "title": "Disclaimer section",
+  "category": "theme-blocks",
+  "icon": "text",
+  "description": "Disclaimer section",
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "supports": {
+    "color": {
+      "background": false,
+      "text": false
+    },
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

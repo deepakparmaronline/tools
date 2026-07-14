@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SWP Calculator | Systematic Withdrawal Plan for Mutual Funds - Toolboxkart</title>
+  <meta name="description" content="Calculate your monthly income and final corpus with our free SWP Calculator. Plan your Systematic Withdrawal Plan from mutual funds easily.">
+  
+  <style>
+    /* Global Rules */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+    
+    /* Navigation */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+    .nav-brand span { color: #7c6fcd; }
+    
+    /* Layout */
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    
+    /* Hero Section */
+    .hero { text-align: center; padding: 3rem 1rem 1rem; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; line-height: 1.2; }
+    .hero p { color: #888; font-size: 1.1rem; }
+    
+    /* Tool Card */
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem 2rem; }
+    
+    /* Inputs */
+    .input-grid { display: grid; gap: 1.5rem; margin-bottom: 2rem; grid-template-columns: 1fr; }
+    @media (min-width: 600px) { .input-grid { grid-template-columns: 1fr 1fr; } }
+    
+    .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    label { font-weight: 600; color: #e0e0e0; font-size: 0.95rem; }
+    input { background: #0d0d0d; border: 1px solid #272727; color: #fff; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+    input:focus { border-color: #7c6fcd; }
+    .help-text { font-size: 0.8rem; color: #888; }
+    
+    /* Button */
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: opacity 0.2s; }
+    button.btn-primary:hover { opacity: 0.9; }
+    
+    /* Result Box */
+    .result-box { display: none; margin-top: 2rem; padding: 2rem; background: rgba(124, 111, 205, 0.05); border: 1px solid #7c6fcd; border-radius: 12px; }
+    .result-box h3 { margin-bottom: 1.5rem; color: #fff; text-align: center; font-size: 1.4rem; }
+    .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; text-align: center; }
+    .result-item p { color: #888; font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .result-item h4 { font-size: 1.5rem; color: #7c6fcd; }
+    .warning-alert { padding: 1rem; background: rgba(255, 69, 58, 0.1); border: 1px solid #ff453a; color: #ff453a; border-radius: 8px; font-size: 0.95rem; display: none; margin-bottom: 1.5rem; text-align: center; }
+    
+    /* SEO Content Section */
+    .seo-content-block { margin-top: 3rem; color: #b3b3b3; }
+    .seo-content-block h2 { color: #fff; margin: 2.5rem 0 1rem; font-size: 1.8rem; }
+    .seo-content-block p { margin-bottom: 1.2rem; }
+    
+    /* FAQs */
+    .seo-faq-container { margin-top: 2rem; }
+    .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+    .seo-faq-q { cursor: pointer; display: flex; justify-content: space-between; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; }
+    .seo-faq-item.open .seo-faq-q::after { content: '-'; }
+    .seo-faq-a { display: none; padding-top: 1rem; color: #888; font-size: 1rem; }
+    .seo-faq-item.open .seo-faq-a { display: block; }
+    
+    /* Related Tools */
+    .related-tools h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+    #tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .tool-card-link { background: #161616; border: 1px solid #272727; padding: 1.5rem; border-radius: 10px; text-decoration: none; color: #e0e0e0; font-weight: 600; text-align: center; transition: all 0.2s; }
+    .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>SWP Calculator</h1>
+    <p>Calculate your mutual fund Systematic Withdrawal Plan (SWP) to generate a steady monthly income.</p>
+  </div>
+
+  <!-- Tool Container -->
+  <div class="container">
+    <div class="card">
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="total-investment">Total Investment (₹)</label>
+          <input type="number" id="total-investment" placeholder="e.g., 5000000" min="10000">
+          <span class="help-text">Your initial mutual fund corpus.</span>
+        </div>
+        <div class="input-group">
+          <label for="withdrawal-amount">Monthly Withdrawal (₹)</label>
+          <input type="number" id="withdrawal-amount" placeholder="e.g., 25000" min="500">
+          <span class="help-text">Amount you wish to withdraw every month.</span>
+        </div>
+        <div class="input-group">
+          <label for="rate">Expected Return Rate (p.a. %)</label>
+          <input type="number" id="rate" placeholder="e.g., 10" step="0.1" min="1">
+        </div>
+        <div class="input-group">
+          <label for="years">Time Period (Years)</label>
+          <input type="number" id="years" placeholder="e.g., 10" min="1" max="50">
+        </div>
+      </div>
+      
+      <button class="btn-primary" id="calculate-btn">Calculate SWP Details</button>
+
+      <!-- Result Box -->
+      <div class="result-box" id="result-box">
+        <div class="warning-alert" id="fund-empty-alert">
+          Bhai, your withdrawal amount is too high! Your fund will become zero before the tenure ends.
+        </div>
+        <h3>SWP Summary</h3>
+        <div class="result-grid">
+          <div class="result-item">
+            <p>Total Investment</p>
+            <h4 id="res-investment">₹0</h4>
+          </div>
+          <div class="result-item">
+            <p>Total Amount Withdrawn</p>
+            <h4 id="res-withdrawn">₹0</h4>
+          </div>
+          <div class="result-item" style="grid-column: 1 / -1; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #272727;">
+            <p>Final Corpus Value</p>
+            <h4 id="res-balance" style="font-size: 2rem;">₹0</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO Content Block -->
+  <div class="container seo-content-block">
+    <h2>How Does an SWP Calculator Help You Plan Retirement?</h2>
+    <p>A <strong>Systematic Withdrawal Plan (SWP)</strong> allows you to withdraw a fixed amount of money from your mutual fund investments every month. It acts as the perfect vehicle for generating a regular, steady pension-like income during your retirement years. Because your remaining balance stays invested in the market, it continues to earn returns, often beating inflation.</p>
+    <p>Using our <strong>online SWP calculator</strong> helps you visualize the longevity of your corpus. By inputting your total investment and your desired monthly withdrawal, the <strong>SWP formula</strong> accurately calculates if your money will last through your selected tenure or if it will run out. A safe rule of thumb is to keep your annual withdrawal rate lower than your expected annual return rate so your <strong>mutual fund corpus</strong> continues to grow.</p>
+    
+    <!-- FAQs -->
+    <div class="seo-faq-container">
+      <h2>Frequently Asked Questions About Systematic Withdrawal Plans</h2>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">What is the difference between SIP and SWP?</div>
+        <div class="seo-faq-a">SIP (Systematic Investment Plan) is a method to build wealth by investing a fixed amount every month. SWP (Systematic Withdrawal Plan) is the exact opposite; it is a method to consume wealth by withdrawing a fixed amount every month from a lump sum you have already invested.</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">Is the amount withdrawn via SWP taxable?</div>
+        <div class="seo-faq-a">When you do an SWP, you are redeeming mutual fund units. The principal amount is not taxed, but the capital gains on those redeemed units are subject to tax. For equity funds held for more than a year, Long Term Capital Gains (LTCG) over ₹1.25 Lakh per year are taxed at 12.5% (as per latest budgets).</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">What happens if my withdrawal is higher than the returns?</div>
+        <div class="seo-faq-a">If you withdraw more money than the fund earns in interest/returns, you will start eating into your original principal amount. If this continues, your mutual fund corpus will eventually drop to zero.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Tools -->
+  <div class="container related-tools">
+    <h2>More Finance Tools</h2>
+    <div id="tools-grid"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // 1. Calculation Logic
+    document.getElementById('calculate-btn').addEventListener('click', function() {
+      const P = parseFloat(document.getElementById('total-investment').value);
+      const W = parseFloat(document.getElementById('withdrawal-amount').value);
+      const rate = parseFloat(document.getElementById('rate').value);
+      const years = parseFloat(document.getElementById('years').value);
+      
+      if(isNaN(P) || isNaN(W) || isNaN(rate) || isNaN(years) || P <= 0 || W <= 0 || rate <= 0 || years <= 0) {
+        alert("Bhai, please enter valid numbers in all fields.");
+        return;
+      }
+
+      const months = years * 12;
+      const monthlyRate = rate / 12 / 100;
+      
+      let currentBalance = P;
+      let totalWithdrawn = 0;
+      let fundDepleted = false;
+
+      // Iterative SWP Calculation
+      for(let i = 0; i < months; i++) {
+        // Add interest for the month
+        let interest = currentBalance * monthlyRate;
+        currentBalance += interest;
+        
+        // Process Withdrawal
+        if(currentBalance >= W) {
+          currentBalance -= W;
+          totalWithdrawn += W;
+        } else {
+          // Fund runs out
+          totalWithdrawn += currentBalance;
+          currentBalance = 0;
+          fundDepleted = true;
+          break;
+        }
+      }
+
+      // Currency Formatting (Indian Format)
+      const formatter = new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0
+      });
+
+      // Update DOM
+      document.getElementById('res-investment').textContent = formatter.format(P);
+      document.getElementById('res-withdrawn').textContent = formatter.format(totalWithdrawn);
+      document.getElementById('res-balance').textContent = formatter.format(currentBalance);
+
+      // Warning Alert
+      const alertBox = document.getElementById('fund-empty-alert');
+      if(fundDepleted) {
+        alertBox.style.display = 'block';
+        document.getElementById('res-balance').style.color = "#ff453a";
+      } else {
+        alertBox.style.display = 'none';
+        document.getElementById('res-balance').style.color = "#7c6fcd";
+      }
+
+      // Show Result Box
+      document.getElementById('result-box').style.display = 'block';
+    });
+
+    // 2. FAQ Accordion Logic
+    document.querySelectorAll('.seo-faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const parent = q.closest('.seo-faq-item');
+        document.querySelectorAll('.seo-faq-item').forEach(item => {
+          if (item !== parent) item.classList.remove('open');
+        });
+        parent.classList.toggle('open');
+      });
+    });
+
+    // 3. Related Tools Logic (Now includes CAGR Calculator)
+    const relatedTools = [
+      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
+      { name: "Budget Planner", url: "/finance/budget-planner" },
+      { name: "CAGR Calculator", url: "/finance/cagr-calculator" },
+      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
+      { name: "EMI Calculator", url: "/finance/emi-calculator" },
+      { name: "EPF Calculator", url: "/finance/epf-calculator" },
+      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
+      { name: "FD Calculator", url: "/finance/fd-calculator" },
+      { name: "Gratuity Calculator", url: "/finance/gratuity-calculator" },
+      { name: "GST Calculator", url: "/finance/gst-calculator" },
+      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
+      { name: "NPS Calculator", url: "/finance/nps-calculator" },
+      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
+      { name: "RD Calculator", url: "/finance/rd-calculator" },
+      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
+      { name: "ROI Calculator", url: "/finance/roi-calculator" },
+      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
+      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
+    ];
+    
+    function loadRelatedTools() {
+      const container = document.getElementById('tools-grid');
+      relatedTools.forEach(tool => {
+        const link = document.createElement('a'); 
+        link.href = tool.url; 
+        link.className = 'tool-card-link'; 
+        link.textContent = tool.name; 
+        container.appendChild(link);
+      });
+    }
+    loadRelatedTools();
+  </script>
+
+</body>
+</html>

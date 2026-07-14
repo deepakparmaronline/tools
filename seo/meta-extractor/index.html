@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Website Title & Meta Description Extractor Tool | Toolboxkart</title>
+  <meta name="description" content="Instantly extract and check the SEO title and meta description of any website URL. Analyze competitor meta tags with our free meta extractor tool." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+    
+    /* ── NAV & HERO ── */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-brand span { color: #7c6fcd; }
+    .hero { text-align: center; padding: 3rem 1rem 1.5rem; }
+    .hero h1 { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+    .hero p { color: #888; max-width: 600px; margin: 0 auto; }
+    
+    /* ── TOOL LAYOUT ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 4rem; }
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2rem; margin-bottom: 2rem; }
+    
+    .input-group { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+    input[type="url"] { flex: 1; background: #222; color: #fff; border: 1px solid #333; border-radius: 8px; padding: 1rem; font-size: 1rem; outline: none; }
+    input[type="url"]:focus { border-color: #7c6fcd; }
+    button { background: #7c6fcd; color: #fff; border: none; padding: 0 2rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s; font-size: 1rem; }
+    button:hover { background: #6a5eb8; }
+    button:disabled { background: #444; cursor: not-allowed; }
+
+    /* ── RESULTS AREA ── */
+    #results-area { display: none; margin-top: 2rem; }
+    .result-box { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem; }
+    .result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+    .result-label { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+    .char-count { font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px; background: #222; }
+    .char-count.good { color: #4ade80; }
+    .char-count.warn { color: #facc15; }
+    .char-count.bad { color: #f87171; }
+    .result-text { font-size: 1.1rem; color: #fff; word-break: break-word; }
+    
+    .error-msg { color: #f87171; background: #3f1616; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; display: none; }
+
+    /* ── SERP PREVIEW ── */
+    .serp-preview { background: #fff; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; font-family: Arial, sans-serif; }
+    .serp-url { color: #202124; font-size: 14px; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+    .serp-title { color: #1a0dab; font-size: 20px; text-decoration: none; margin-bottom: 4px; display: block; line-height: 1.3; }
+    .serp-title:hover { text-decoration: underline; cursor: pointer; }
+    .serp-desc { color: #4d5156; font-size: 14px; line-height: 1.58; word-wrap: break-word; }
+
+    /* ── SEO CONTENT BLOCK ── */
+    .seo-content-block h2 { font-size: 1.3rem; color: #fff; margin-bottom: 1rem; margin-top: 2rem; }
+    .seo-content-block p { color: #888; line-height: 1.6; margin-bottom: 1rem; }
+    .seo-content-block strong { color: #ccc; }
+    .seo-faq-item { border-bottom: 1px solid #1e1e1e; padding: 1rem 0; }
+    .seo-faq-q { font-weight: 600; color: #ccc; cursor: pointer; display: flex; justify-content: space-between; }
+    .seo-faq-a { font-size: .9rem; color: #777; line-height: 1.7; max-height: 0; overflow: hidden; transition: .3s; }
+    .seo-faq-item.open .seo-faq-a { max-height: 500px; padding-top: .8rem; }
+    
+    /* ── RELATED TOOLS ── */
+    .related-tools-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #272727; }
+    .tools-grid { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .tool-card-link { background: #161616; border: 1px solid #333; padding: 1rem; border-radius: 8px; color: #fff; text-decoration: none; font-size: .9rem; transition: 0.2s; }
+    .tool-card-link:hover { border-color: #7c6fcd; background: #1a1a1a;}
+  </style>
+</head>
+<body>
+
+<nav><a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a></nav>
+
+<div class="hero">
+  <h1>Free Website Title & Meta Description Extractor Tool</h1>
+  <p>Instantly scrape, check, and analyze the SEO metadata of any webpage. Preview how your URL appears in Google search results.</p>
+</div>
+
+<div class="container">
+  <div class="card">
+    <form id="extractor-form" class="input-group">
+      <input type="url" id="url-input" placeholder="https://example.com/page-to-check" required />
+      <button type="submit" id="extract-btn">Extract Tags</button>
+    </form>
+    
+    <div id="error-box" class="error-msg"></div>
+
+    <div id="results-area">
+      <!-- Title Box -->
+      <div class="result-box">
+        <div class="result-header">
+          <span class="result-label">SEO Meta Title</span>
+          <span id="title-count" class="char-count">0 chars</span>
+        </div>
+        <div id="out-title" class="result-text"></div>
+      </div>
+
+      <!-- Description Box -->
+      <div class="result-box">
+        <div class="result-header">
+          <span class="result-label">SEO Meta Description</span>
+          <span id="desc-count" class="char-count">0 chars</span>
+        </div>
+        <div id="out-desc" class="result-text"></div>
+      </div>
+
+      <!-- SERP Preview -->
+      <h3 style="margin: 2rem 0 1rem; font-size: 1.1rem; color: #fff;">Google SERP Preview Simulation</h3>
+      <div class="serp-preview">
+        <div class="serp-url">
+          <span style="background:#f1f3f4; border-radius:50%; width:26px; height:26px; display:inline-block;"></span>
+          <span id="serp-url-text">example.com</span>
+        </div>
+        <a class="serp-title" id="serp-title-text">Your SEO Title Will Appear Here</a>
+        <div class="serp-desc" id="serp-desc-text">This is how your meta description will look to users when they find your page in search engines. Make it compelling to improve click-through rates.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seo-content-block">
+    <h2>Why Use a Website Meta Tag Extractor?</h2>
+    <p>Every successful SEO strategy begins with understanding how search engines and users view your pages. A <strong>Website Title and Meta Description Checker</strong> allows you to instantly extract the exact HTML metadata from any live URL. Whether you are conducting a competitor analysis to see what keywords they are targeting, or doing an SEO audit on your own site, this tool reveals the critical on-page SEO factors that drive organic traffic.</p>
+
+    <h2>How to Analyze Competitor Meta Tags</h2>
+    <p>Extracting data is only the first step. When you use our <strong>URL Meta Scraper</strong> on a top-ranking competitor's page, look for their primary keyword placement. Usually, the highest-ranking pages place their most valuable keywords at the very beginning of the title tag. Use this insight to rewrite and optimize your own content to capture higher click-through rates (CTR).</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">What is the optimal length for an SEO Meta Title?</div>
+      <div class="seo-faq-a">For the best results in Google search, keep your meta title between <strong>50 and 60 characters</strong>. If your title is longer, Google will truncate it with an ellipsis (...), which can harm your click-through rate.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">How long should a Meta Description be?</div>
+      <div class="seo-faq-a">A well-optimized meta description should be between <strong>150 and 160 characters</strong> for desktop searches, and around 120 characters for mobile. Our meta description checker automatically color-codes your character count to help you stay within these safe limits.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Can this tool extract data from any website?</div>
+      <div class="seo-faq-a">This tool can extract the title and meta description from most publicly accessible websites. However, if a website has strict bot-blocking security (like aggressive Cloudflare settings) or blocks public scraping, the tool may not be able to fetch the HTML data.</div>
+    </div>
+  </div>
+
+  <section id="related-tools" class="related-tools-section">
+    <h3>Explore More SEO Tools</h3>
+    <div id="tools-grid" class="tools-grid"></div>
+  </section>
+</div>
+
+<script>
+  document.getElementById('extractor-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const url = document.getElementById('url-input').value;
+    const btn = document.getElementById('extract-btn');
+    const errorBox = document.getElementById('error-box');
+    const resultsArea = document.getElementById('results-area');
+    
+    // UI Reset
+    btn.textContent = 'Extracting...';
+    btn.disabled = true;
+    errorBox.style.display = 'none';
+    resultsArea.style.display = 'none';
+
+    try {
+      // Using AllOrigins free proxy to bypass CORS for client-side fetching
+      const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`);
+      if (!response.ok) throw new Error('Network response was not ok');
+      
+      const data = await response.json();
+      const htmlString = data.contents;
+      
+      if (!htmlString) throw new Error('Could not retrieve HTML content from this URL. The site may block scrapers.');
+
+      // Parse HTML
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlString, 'text/html');
+      
+      // Extract Data
+      const title = doc.querySelector('title')?.innerText || 'No Title Tag Found';
+      const metaDesc = doc.querySelector('meta[name="description"]')?.getAttribute('content') || 'No Meta Description Found';
+      
+      // Update UI
+      updateUI('title', title, 60, document.getElementById('out-title'), document.getElementById('title-count'));
+      updateUI('desc', metaDesc, 160, document.getElementById('out-desc'), document.getElementById('desc-count'));
+      
+      // Update SERP Preview
+      document.getElementById('serp-url-text').textContent = new URL(url).hostname;
+      document.getElementById('serp-title-text').textContent = title.length > 65 ? title.substring(0, 65) + '...' : title;
+      document.getElementById('serp-desc-text').textContent = metaDesc.length > 160 ? metaDesc.substring(0, 160) + '...' : metaDesc;
+
+      resultsArea.style.display = 'block';
+    } catch (err) {
+      errorBox.textContent = 'Error: ' + err.message;
+      errorBox.style.display = 'block';
+    } finally {
+      btn.textContent = 'Extract Tags';
+      btn.disabled = false;
+    }
+  });
+
+  function updateUI(type, text, maxLimit, textElement, countElement) {
+    textElement.textContent = text;
+    const count = text === 'No Title Tag Found' || text === 'No Meta Description Found' ? 0 : text.length;
+    countElement.textContent = `${count} chars`;
+    
+    countElement.className = 'char-count';
+    if (count === 0) {
+      countElement.classList.add('bad');
+    } else if (count <= maxLimit) {
+      countElement.classList.add('good');
+    } else {
+      countElement.classList.add(type === 'title' && count > 65 ? 'bad' : 'warn');
+    }
+  }
+
+// Related Tools Logic
+  const allTools = [
+    { name: "301 Redirect Generator", url: "https://toolboxkart.tech/seo/301-redirect-generator/" },
+    { name: "Duplicate Content Finder", url: "https://toolboxkart.tech/seo/duplicate-content-finder/" },
+    { name: "Free Keyword Idea Generator", url: "https://toolboxkart.tech/seo/free-keyword-idea-generator/" },
+    { name: "Hreflang Tag Assistant", url: "https://toolboxkart.tech/seo/hreflang-tag-assistant-for-seo/" },
+    { name: "Keyword Density Checker", url: "https://toolboxkart.tech/seo/keyword-density-checker/" },
+    { name: "llm.txt Generator", url: "https://toolboxkart.tech/seo/llm-txt-generator-for-ai-seo/" },
+    { name: "Meta Tag Extractor", url: "https://toolboxkart.tech/seo/meta-extractor/" },
+    { name: "Readability Score Checker", url: "https://toolboxkart.tech/seo/readability-score-checker/" },
+    { name: "Robots.txt Generator", url: "https://toolboxkart.tech/seo/robots-txt-generator/" },
+    { name: "Schema Generator", url: "https://toolboxkart.tech/seo/schema-generator-free/" },
+    { name: "Search Console Regex Generator", url: "https://toolboxkart.tech/seo/search-console-regex-generator/" }
+  ];
+
+  function loadRelatedTools() {
+    const container = document.getElementById('tools-grid');
+    allTools.forEach(tool => {
+      const link = document.createElement('a');
+      link.href = tool.url;
+      link.className = 'tool-card-link';
+      link.textContent = tool.name;
+      container.appendChild(link);
+    });
+  }
+
+  document.querySelectorAll('.seo-faq-q').forEach(q => q.addEventListener('click', () => q.closest('.seo-faq-item').classList.toggle('open')));
+  loadRelatedTools();
+</script>
+</body>
+</html>

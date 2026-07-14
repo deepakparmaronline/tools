@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Rent vs Buy Calculator | Toolboxkart</title>
+    <meta name="description" content="Use our free rent vs buy calculator to compare the total costs of renting a home versus buying a house. Make a smart financial decision today.">
+    <style>
+        /* Global Reset & Base Styles */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+        
+        /* Navigation */
+        nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+        .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+        .nav-brand span { color: #7c6fcd; }
+        
+        /* Layout & Container */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+        
+        /* Hero Section */
+        .hero { text-align: center; padding: 4rem 1rem 3rem; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .hero p { color: #888; font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.5; }
+        
+        /* Tool Card & Inputs */
+        .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem; margin-bottom: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .section-title { font-size: 1.2rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid #272727; padding-bottom: 0.5rem; grid-column: 1 / -1; }
+        
+        .input-area { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+        @media (max-width: 600px) { .input-area { grid-template-columns: 1fr; } }
+        
+        .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .input-group label { font-size: 0.95rem; color: #ccc; font-weight: 500; }
+        .input-group input { background: #0d0d0d; border: 1px solid #272727; color: #fff; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; transition: all 0.2s ease; }
+        .input-group input:focus { border-color: #7c6fcd; }
+        
+        button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: background 0.2s ease; }
+        button.btn-primary:hover { background: #6b5eb8; }
+        
+        /* Result Box */
+        #result-box { display: none; margin-top: 2rem; background: #0d0d0d; padding: 2rem; border-radius: 8px; border: 1px solid #272727; text-align: center; }
+        .result-winner { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 1.5rem; }
+        .result-winner span { color: #7c6fcd; }
+        
+        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .comp-card { background: #161616; padding: 1.5rem; border-radius: 8px; border: 1px solid #272727; }
+        .comp-card h4 { color: #888; font-size: 1rem; margin-bottom: 0.5rem; }
+        .comp-card .amount { font-size: 1.4rem; font-weight: 700; color: #e0e0e0; }
+        
+        /* SEO Content Block */
+        .seo-content-block { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem; margin-bottom: 3rem; }
+        .seo-content-block h2 { color: #fff; margin-bottom: 1.5rem; font-size: 1.8rem; }
+        .seo-content-block p { color: #888; line-height: 1.7; margin-bottom: 1.5rem; }
+        .seo-content-block strong { color: #ccc; font-weight: 600; }
+        
+        /* FAQ Accordion */
+        .faq-section { margin-top: 3rem; }
+        .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+        .seo-faq-item:last-child { border-bottom: none; }
+        .seo-faq-q { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; user-select: none; }
+        .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; transition: transform 0.3s ease; }
+        .seo-faq-item.open .seo-faq-q::after { transform: rotate(45deg); }
+        .seo-faq-a { display: none; margin-top: 1rem; color: #888; line-height: 1.6; }
+        .seo-faq-item.open .seo-faq-a { display: block; }
+        
+        /* Related Tools */
+        .related-tools-section { padding-bottom: 4rem; }
+        .related-tools-section h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+        #tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+        .tool-card-link { background: #161616; border: 1px solid #272727; color: #e0e0e0; text-decoration: none; padding: 1.5rem; border-radius: 10px; font-weight: 500; transition: all 0.2s ease; display: block; text-align: center; }
+        .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+    </nav>
+
+    <div class="hero">
+        <h1>Rent vs Buy Calculator</h1>
+        <p>Compare the total cost of renting versus buying a house over time. Find out which option makes the best financial sense for you.</p>
+    </div>
+
+    <div class="container">
+        
+        <div class="card">
+            <div class="input-area">
+                <div class="section-title">Buying Parameters</div>
+                <div class="input-group">
+                    <label for="home-price">Home Price (₹)</label>
+                    <input type="number" id="home-price" placeholder="e.g. 5000000">
+                </div>
+                <div class="input-group">
+                    <label for="down-payment">Down Payment (₹)</label>
+                    <input type="number" id="down-payment" placeholder="e.g. 1000000">
+                </div>
+                <div class="input-group">
+                    <label for="interest-rate">Home Loan Interest Rate (%)</label>
+                    <input type="number" id="interest-rate" placeholder="e.g. 8.5" step="0.1">
+                </div>
+                <div class="input-group">
+                    <label for="loan-term">Loan Term (Years)</label>
+                    <input type="number" id="loan-term" placeholder="e.g. 20">
+                </div>
+
+                <div class="section-title" style="margin-top: 1rem;">Renting Parameters</div>
+                <div class="input-group">
+                    <label for="monthly-rent">Current Monthly Rent (₹)</label>
+                    <input type="number" id="monthly-rent" placeholder="e.g. 25000">
+                </div>
+                <div class="input-group">
+                    <label for="rent-increase">Annual Rent Increase (%)</label>
+                    <input type="number" id="rent-increase" placeholder="e.g. 5" step="0.1">
+                </div>
+
+                <div class="section-title" style="margin-top: 1rem;">Comparison Timeline</div>
+                <div class="input-group" style="grid-column: 1 / -1;">
+                    <label for="years-staying">How many years do you plan to stay?</label>
+                    <input type="number" id="years-staying" placeholder="e.g. 10">
+                </div>
+            </div>
+            
+            <button class="btn-primary" onclick="calculateRentVsBuy()">Calculate Comparison</button>
+
+            <div id="result-box">
+                <div class="result-winner" id="res-winner">Over 10 years, <span>Buying</span> is cheaper!</div>
+                
+                <div class="comparison-grid">
+                    <div class="comp-card">
+                        <h4>Total Cost of Buying</h4>
+                        <div class="amount" id="cost-buy">₹0</div>
+                        <p style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">(Down Payment + EMI Paid)</p>
+                    </div>
+                    <div class="comp-card">
+                        <h4>Total Cost of Renting</h4>
+                        <div class="amount" id="cost-rent">₹0</div>
+                        <p style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">(Total Rent Paid over timeline)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="seo-content-block">
+            <h2>Should I Rent or Buy a House?</h2>
+            <p>Using a <strong>rent vs buy calculator</strong> is the best way to cut through the confusion of real estate planning. Many people assume buying is always better, but calculating your <strong>home affordability</strong> and long-term costs is crucial. When you buy a home, you pay a down payment and monthly EMIs. When you rent, your cash is tied to a lease that usually increases yearly due to inflation.</p>
+            <p>To make the right choice between <strong>renting vs buying</strong>, you need to look at how many years you plan to stay in one place. If you are staying less than 5 years, the total cost of renting is often cheaper than the upfront costs and interest associated with buying.</p>
+
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">How does a rent vs buy calculator work?</div>
+                    <div class="seo-faq-a">Our <strong>rent vs buy home calculator</strong> compares the total out-of-pocket costs of both options over a specific number of years. It factors in your upfront down payment and total EMIs for buying, and compares it against your cumulative rent payments factoring in annual rent hikes.</div>
+                </div>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">What is the 5% rule in real estate?</div>
+                    <div class="seo-faq-a">The 5% rule is a quick math trick used by investors. It suggests that if your annual rent is less than 5% of the total price of a similar home, renting might make more financial sense than buying. However, running your exact numbers through a <strong>buying vs renting calculator</strong> gives a much more accurate picture.</div>
+                </div>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">Is it a waste of money to rent?</div>
+                    <div class="seo-faq-a">Not necessarily. Renting provides flexibility and saves you from property taxes, maintenance costs, and large down payments. If you invest the money you save by not paying a heavy home loan EMI, renting can actually build significant wealth over time.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="related-tools-section" id="related-tools-wrapper">
+            <h2>Explore More Finance Tools</h2>
+            <div id="tools-grid">
+                </div>
+        </div>
+
+    </div>
+
+    <script>
+        // 1. Calculation Logic
+        function calculateRentVsBuy() {
+            // Get inputs
+            const homePrice = parseFloat(document.getElementById('home-price').value);
+            const downPayment = parseFloat(document.getElementById('down-payment').value);
+            const annualRate = parseFloat(document.getElementById('interest-rate').value);
+            const loanTerm = parseInt(document.getElementById('loan-term').value);
+            
+            const startingRent = parseFloat(document.getElementById('monthly-rent').value);
+            const rentIncrease = parseFloat(document.getElementById('rent-increase').value) / 100;
+            
+            const yearsStaying = parseInt(document.getElementById('years-staying').value);
+
+            if (isNaN(homePrice) || isNaN(downPayment) || isNaN(annualRate) || isNaN(loanTerm) || 
+                isNaN(startingRent) || isNaN(rentIncrease) || isNaN(yearsStaying)) {
+                alert("Please fill out all fields with valid numbers.");
+                return;
+            }
+
+            // BUY CALCULATION
+            const principal = homePrice - downPayment;
+            const monthlyRate = (annualRate / 12) / 100;
+            const totalMonths = loanTerm * 12;
+            
+            let emi = 0;
+            if (monthlyRate > 0) {
+                emi = principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+            } else {
+                emi = principal / totalMonths;
+            }
+
+            // Months actually staying
+            const monthsStaying = yearsStaying * 12;
+            // Total EMI paid during the stay (capped at loan term)
+            const emiMonthsPaid = Math.min(monthsStaying, totalMonths);
+            const totalEmiPaid = emi * emiMonthsPaid;
+            const totalBuyCost = downPayment + totalEmiPaid;
+
+            // RENT CALCULATION
+            let totalRentPaid = 0;
+            let currentRent = startingRent;
+            
+            for (let year = 1; year <= yearsStaying; year++) {
+                totalRentPaid += (currentRent * 12);
+                currentRent += (currentRent * rentIncrease); // Increase rent for next year
+            }
+
+            // Update UI
+            const formatCurrency = (num) => '₹' + num.toLocaleString('en-IN', { maximumFractionDigits: 0 });
+            
+            document.getElementById('cost-buy').textContent = formatCurrency(totalBuyCost);
+            document.getElementById('cost-rent').textContent = formatCurrency(totalRentPaid);
+
+            const winnerText = document.getElementById('res-winner');
+            if (totalBuyCost < totalRentPaid) {
+                winnerText.innerHTML = `Over ${yearsStaying} years, <span>Buying</span> is cheaper!`;
+            } else if (totalRentPaid < totalBuyCost) {
+                winnerText.innerHTML = `Over ${yearsStaying} years, <span>Renting</span> is cheaper!`;
+            } else {
+                winnerText.innerHTML = `Over ${yearsStaying} years, the costs are exactly the same!`;
+            }
+
+            document.getElementById('result-box').style.display = 'block';
+        }
+
+        // 2. FAQ Accordion Logic
+        document.querySelectorAll('.seo-faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.closest('.seo-faq-item');
+                document.querySelectorAll('.seo-faq-item').forEach(other => {
+                    if (other !== item) other.classList.remove('open');
+                });
+                item.classList.toggle('open');
+            });
+        });
+
+        // 3. Related Tools Logic (Tools 22, 23, 24)
+        const relatedTools = [
+            { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
+            { name: "ROI Calculator", url: "/finance/roi-calculator" },
+            { name: "Amortization Calculator", url: "/finance/amortization-calculator" }
+        ];
+
+        function loadRelatedTools() {
+            const container = document.getElementById('tools-grid');
+            const wrapper = document.getElementById('related-tools-wrapper');
+
+            if (relatedTools.length === 0) {
+                wrapper.style.display = 'none';
+                return;
+            }
+
+            relatedTools.forEach(tool => {
+                const link = document.createElement('a'); 
+                link.href = tool.url; 
+                link.className = 'tool-card-link'; 
+                link.textContent = tool.name; 
+                container.appendChild(link);
+            });
+        }
+        
+        loadRelatedTools();
+    </script>
+</body>
+</html>

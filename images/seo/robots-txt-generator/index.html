@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robots.txt Generator | Create Custom Robots.txt for SEO Free</title>
+    <meta name="description" content="Free online robots.txt generator. Easily create a custom robots.txt file to control search engine crawling for your WordPress, Shopify, or custom website.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style> 
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { font-weight: 500; color: #4b5563; transition: color 0.2s; cursor: pointer; }
+        .nav-link:hover { color: #4f46e5; }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen">
+
+<nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+            <a href="/" class="flex items-center gap-2">
+                <div class="bg-indigo-600 text-white p-1 rounded font-bold text-xl uppercase tracking-tighter">TBK</div>
+                <span class="font-bold text-xl text-gray-900 tracking-tight">Tool Box Kart</span>
+            </a>
+
+            <div class="hidden md:flex space-x-8">
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-1 py-6 font-medium text-gray-600 hover:text-indigo-600">
+                        Content Tools ▾
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white border border-gray-100 shadow-xl rounded-xl py-2 w-64 mt-0 transition-all">
+                        <a href="/seo/meta-extractor/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Meta Extractor</a>
+                        <a href="/seo/free-keyword-idea-generator/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Keyword Idea Generator</a>
+                        <a href="/seo/keyword-density-checker/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Keyword Density Checker</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-1 py-6 font-medium text-gray-600 hover:text-indigo-600">
+                        Technical SEO ▾
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white border border-gray-100 shadow-xl rounded-xl py-2 w-64 mt-0 transition-all">
+                        <a href="/seo/schema-generator-free/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Schema Generator</a>
+                        <a href="/seo/hreflang-tag-assistant-for-seo/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Hreflang Assistant</a>
+                        <a href="/seo/301-redirect-generator/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">301 Redirect Gen</a>
+                        <a href="/seo/robots-txt-generator/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Robots.txt Generator</a>
+                        <a href="/seo/sitemap-url-extractor/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Sitemap Extractor</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-1 py-6 font-medium text-gray-600 hover:text-indigo-600">
+                        Analysis ▾
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white border border-gray-100 shadow-xl rounded-xl py-2 w-64 mt-0 transition-all">
+                        <a href="/seo/search-console-regex-generator/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 font-bold">GSC Regex Generator</a>
+                    </div>
+                </div>
+
+                <a href="/blog/" class="nav-link py-6 font-medium text-gray-600 hover:text-indigo-600">Blog</a>
+            </div>
+
+            <div class="md:hidden text-gray-600">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 w-full flex-grow">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">Technical Robots.txt Generator</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Generate a perfectly optimized robots.txt file for your website in seconds to guide search engine crawlers correctly.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8 mb-20">
+            <div class="bg-white rounded-3xl border border-gray-200 shadow-xl p-6 md:p-8">
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Default Crawler (User-Agent: *)</label>
+                        <select id="default-action" class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-xl focus:border-indigo-500 outline-none">
+                            <option value="allow">Allow All (Recommended)</option>
+                            <option value="disallow">Disallow All</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide text-indigo-600">Add Sitemap Link</label>
+                        <input id="sitemap-link" type="url" class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-xl focus:border-indigo-500 outline-none" placeholder="https://example.com/sitemap.xml">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Directories to Disallow (One per line)</label>
+                        <textarea id="disallowed-dirs" rows="4" class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-xl focus:border-indigo-500 outline-none font-mono text-sm" placeholder="/wp-admin/&#10;/cgi-bin/&#10;/temp/"></textarea>
+                    </div>
+
+                    <button id="generate-btn" class="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">
+                        Generate Robots.txt
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 rounded-3xl shadow-xl overflow-hidden flex flex-col">
+                <div class="bg-slate-800 px-6 py-4 flex justify-between items-center">
+                    <span class="text-slate-400 text-xs font-bold uppercase tracking-widest">Output Preview</span>
+                    <button id="copy-btn" class="text-xs bg-slate-700 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg transition-colors">Copy Code</button>
+                </div>
+                <pre id="output-code" class="p-8 text-indigo-400 font-mono text-sm flex-grow"># Click generate to create your file...</pre>
+                <div class="p-6 bg-slate-800">
+                    <button id="download-btn" class="w-full bg-emerald-500 text-white py-3 rounded-xl font-bold hover:bg-emerald-600 transition-all">Download .txt File</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="max-w-4xl mx-auto space-y-16">
+            <div class="grid gap-6 md:grid-cols-2">
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <h3 class="font-bold text-gray-900 mb-3 text-lg underline decoration-indigo-500">What is a Robots.txt File?</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">A robots.txt file tells search engine crawlers which pages or sections of your site should not be processed or indexed. It is a critical part of <b>technical SEO</b>.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <h3 class="font-bold text-gray-900 mb-3 text-lg underline decoration-indigo-500">Why Use This Generator?</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Writing code manually can lead to errors that might de-index your whole site. Our <b>free robots.txt creator</b> ensures the syntax is 100% correct for Google and Bing.</p>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center uppercase tracking-tight">Robots.txt FAQs</h2>
+                <div class="grid gap-8 md:grid-cols-2">
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Where do I upload the robots.txt file?</h4>
+                            <p class="text-gray-600 text-sm">You must upload the file to the <b>root directory</b> of your website (e.g., public_html) so it can be accessed at yourdomain.com/robots.txt.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Should I disallow /wp-admin/?</h4>
+                            <p class="text-gray-600 text-sm">Yes, most WordPress users disallow the admin directory to prevent bots from crawling private login pages.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Can robots.txt hide my site from everyone?</h4>
+                            <p class="text-gray-600 text-sm">Yes, setting User-agent: * and Disallow: / will tell all bots not to crawl your site. Use this carefully!</p>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Does Google always follow robots.txt?</h4>
+                            <p class="text-gray-600 text-sm">Google generally respects robots.txt, but it is a directive, not a mandatory law. For total privacy, use password protection.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">How do I add my sitemap to robots.txt?</h4>
+                            <p class="text-gray-600 text-sm">Our generator includes a sitemap field. Just paste your URL, and it will automatically add the <code>Sitemap:</code> directive to the bottom of the file.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-gray-100 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="bg-indigo-600 text-white w-10 h-10 rounded font-bold text-xl flex items-center justify-center mx-auto mb-4">TBK</div>
+            <p class="text-gray-500 text-sm">© 2026 Tool Box Kart. Smart SEO Tools for Modern Webmasters.</p>
+        </div>
+    </footer>
+
+    <script>
+        const generateBtn = document.getElementById('generate-btn');
+        const output = document.getElementById('output-code');
+        const copyBtn = document.getElementById('copy-btn');
+        const downloadBtn = document.getElementById('download-btn');
+
+        generateBtn.addEventListener('click', () => {
+            const defaultAction = document.getElementById('default-action').value;
+            const sitemap = document.getElementById('sitemap-link').value.trim();
+            const disallowed = document.getElementById('disallowed-dirs').value.trim();
+
+            let robotsText = "User-agent: *\n";
+            
+            if (defaultAction === "allow") {
+                robotsText += "Allow: /\n";
+            } else {
+                robotsText += "Disallow: /\n";
+            }
+
+            if (disallowed) {
+                const dirs = disallowed.split('\n');
+                dirs.forEach(dir => {
+                    if (dir.trim()) {
+                        robotsText += `Disallow: ${dir.trim().startsWith('/') ? '' : '/'}${dir.trim()}\n`;
+                    }
+                });
+            }
+
+            if (sitemap) {
+                robotsText += `\nSitemap: ${sitemap}\n`;
+            }
+
+            output.innerText = robotsText;
+            output.classList.add('fade-in');
+        });
+
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(output.innerText);
+            copyBtn.innerText = "Copied!";
+            setTimeout(() => copyBtn.innerText = "Copy Code", 2000);
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            const blob = new Blob([output.innerText], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'robots.txt';
+            a.click();
+        });
+    </script>
+</body>
+</html>

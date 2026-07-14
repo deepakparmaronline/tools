@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Loan Prepayment Calculator | EMI & Tenure Reduction - Toolboxkart</title>
+  <meta name="description" content="Calculate your massive interest savings and tenure reduction with our free Home Loan Prepayment Calculator. Find out how part-payments help you become debt-free faster.">
+  
+  <style>
+    /* Global Rules */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+    
+    /* Navigation */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+    .nav-brand span { color: #7c6fcd; }
+    
+    /* Layout */
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    
+    /* Hero Section */
+    .hero { text-align: center; padding: 3rem 1rem 1rem; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; line-height: 1.2; }
+    .hero p { color: #888; font-size: 1.1rem; }
+    
+    /* Tool Card */
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem 2rem; }
+    
+    /* Inputs */
+    .input-grid { display: grid; gap: 1.5rem; margin-bottom: 2rem; grid-template-columns: 1fr; }
+    @media (min-width: 600px) { .input-grid { grid-template-columns: 1fr 1fr; } }
+    
+    .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    label { font-weight: 600; color: #e0e0e0; font-size: 0.95rem; }
+    input, select { background: #0d0d0d; border: 1px solid #272727; color: #fff; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+    input:focus, select:focus { border-color: #7c6fcd; }
+    .help-text { font-size: 0.8rem; color: #888; }
+    
+    /* Button */
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: opacity 0.2s; }
+    button.btn-primary:hover { opacity: 0.9; }
+    
+    /* Result Box */
+    .result-box { display: none; margin-top: 2rem; padding: 2rem; background: rgba(124, 111, 205, 0.05); border: 1px solid #7c6fcd; border-radius: 12px; }
+    .result-box h3 { margin-bottom: 1.5rem; color: #fff; text-align: center; font-size: 1.4rem; }
+    
+    /* Comparison Grid */
+    .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: center; margin-bottom: 1.5rem; }
+    .regime-card { background: #0d0d0d; border: 1px solid #272727; padding: 1.5rem; border-radius: 10px; }
+    .regime-card h4 { font-size: 1rem; color: #e0e0e0; margin-bottom: 0.5rem; }
+    .regime-card .metric-val { font-size: 1.4rem; color: #fff; font-weight: 700; margin-bottom: 0.2rem; }
+    .regime-card .metric-label { font-size: 0.85rem; color: #888; margin-bottom: 1rem; }
+    
+    .winner-box { grid-column: 1 / -1; margin-top: 1rem; padding: 1.5rem; border-top: 1px solid #272727; background: rgba(50, 215, 75, 0.05); border: 1px solid #32d74b; border-radius: 10px; text-align: center; }
+    .winner-box p { color: #888; font-size: 1rem; margin-bottom: 0.5rem; }
+    .winner-box h4 { font-size: 2.2rem; color: #32d74b; }
+    .winner-box .tenure-saved { font-size: 1.2rem; color: #fff; margin-top: 0.5rem; font-weight: 600; }
+    
+    @media (max-width: 600px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+    
+    /* SEO Content Section */
+    .seo-content-block { margin-top: 3rem; color: #b3b3b3; }
+    .seo-content-block h2 { color: #fff; margin: 2.5rem 0 1rem; font-size: 1.8rem; }
+    .seo-content-block p { margin-bottom: 1.2rem; }
+    
+    /* FAQs */
+    .seo-faq-container { margin-top: 2rem; }
+    .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+    .seo-faq-q { cursor: pointer; display: flex; justify-content: space-between; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; }
+    .seo-faq-item.open .seo-faq-q::after { content: '-'; }
+    .seo-faq-a { display: none; padding-top: 1rem; color: #888; font-size: 1rem; }
+    .seo-faq-item.open .seo-faq-a { display: block; }
+    
+    /* Related Tools */
+    .related-tools h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+    #tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .tool-card-link { background: #161616; border: 1px solid #272727; padding: 1.5rem; border-radius: 10px; text-decoration: none; color: #e0e0e0; font-weight: 600; text-align: center; transition: all 0.2s; }
+    .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Home Loan Prepayment Calculator</h1>
+    <p>Calculate your massive interest savings and exact tenure reduction by making a part-payment on your home loan.</p>
+  </div>
+
+  <!-- Tool Container -->
+  <div class="container">
+    <div class="card">
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="outstanding-principal">Outstanding Loan Amount (₹)</label>
+          <input type="number" id="outstanding-principal" placeholder="e.g., 3000000" min="10000">
+          <span class="help-text">Your current remaining principal balance.</span>
+        </div>
+        <div class="input-group">
+          <label for="interest-rate">Current Interest Rate (p.a. %)</label>
+          <input type="number" id="interest-rate" placeholder="e.g., 8.5" step="0.1" min="1">
+        </div>
+        <div class="input-group">
+          <label for="remaining-years">Remaining Loan Tenure (Years)</label>
+          <input type="number" id="remaining-years" placeholder="e.g., 15" min="1" max="30">
+        </div>
+        <div class="input-group">
+          <label for="prepayment-amount">Prepayment / Part-Payment Amount (₹)</label>
+          <input type="number" id="prepayment-amount" placeholder="e.g., 200000" min="1000">
+          <span class="help-text">The lump sum amount you wish to pay today.</span>
+        </div>
+      </div>
+      
+      <button class="btn-primary" id="calculate-btn">Calculate Your Savings</button>
+
+      <!-- Result Box -->
+      <div class="result-box" id="result-box">
+        <h3>Prepayment Impact Analysis</h3>
+        <p style="text-align: center; color: #888; margin-bottom: 1.5rem;">Assuming you keep your EMI the same to maximize interest savings.</p>
+        
+        <div class="comparison-grid">
+          <div class="regime-card">
+            <h4>Without Prepayment</h4>
+            <div class="metric-val" id="res-old-interest">₹0</div>
+            <div class="metric-label">Total Future Interest</div>
+            <div class="metric-val" id="res-old-tenure">0 Months</div>
+            <div class="metric-label">Remaining Tenure</div>
+          </div>
+          
+          <div class="regime-card" style="border-color: #7c6fcd; background: rgba(124, 111, 205, 0.05);">
+            <h4>With Prepayment</h4>
+            <div class="metric-val" id="res-new-interest">₹0</div>
+            <div class="metric-label">Total Future Interest</div>
+            <div class="metric-val" id="res-new-tenure">0 Months</div>
+            <div class="metric-label">Remaining Tenure</div>
+          </div>
+        </div>
+        
+        <div class="winner-box">
+          <p>Total Interest Saved</p>
+          <h4 id="res-saved-interest">₹0</h4>
+          <div class="tenure-saved">Your loan will finish <span id="res-saved-months" style="color: #32d74b;">0</span> months earlier!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO Content Block -->
+  <div class="container seo-content-block">
+    <h2>Why Should You Use a Home Loan Prepayment Calculator?</h2>
+    <p>A home loan is usually the biggest financial liability a person carries. Because home loans have very long tenures (often 20 to 30 years), the total interest you end up paying to the bank can sometimes exceed the actual principal amount you borrowed! This is why smart borrowers use a <strong>Home Loan Prepayment Calculator</strong>. By making a <strong>part payment</strong> towards your principal using your yearly bonus, tax refunds, or surplus savings, you can drastically reduce your debt.</p>
+    <p>When you prepay, the lump sum is directly deducted from your outstanding principal. Since home loans work on a reducing balance method, your future interest is calculated on a much smaller base amount. Our <strong>home loan foreclosure calculator</strong> assumes that you keep your monthly EMI exactly the same after making the part-payment. By doing this, your loan tenure shrinks rapidly, saving you massive amounts in future interest payouts and helping you become completely debt-free years ahead of schedule.</p>
+    
+    <!-- FAQs -->
+    <div class="seo-faq-container">
+      <h2>Frequently Asked Questions About Home Loan Prepayment</h2>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">Should I reduce my EMI or reduce my loan tenure after prepayment?</div>
+        <div class="seo-faq-a">To maximize your financial savings, you should always choose to reduce your loan tenure while keeping your EMI the same. Reducing the tenure significantly slashes the total interest you will pay to the bank. Reducing your EMI only gives you short-term monthly cash flow relief, but drastically lowers your overall interest savings.</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">Are there any penalty charges for prepaying a home loan in India?</div>
+        <div class="seo-faq-a">For individual borrowers on a Floating Interest Rate, the RBI has strictly mandated that banks and NBFCs cannot charge any prepayment or foreclosure penalties. However, if your home loan is on a Fixed Interest Rate, or if the borrower is a corporate entity, the bank may charge a penalty of 2% to 4% on the prepaid amount.</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">When is the best time to make a home loan part-payment?</div>
+        <div class="seo-faq-a">The best time to make a prepayment is during the early years of your loan. In a standard home loan amortization schedule, the majority of your EMI goes towards paying interest in the first few years. By making part-payments early on, you aggressively chop down the principal balance before the heavy interest compounds.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Tools -->
+  <div class="container related-tools">
+    <h2>More Finance Tools</h2>
+    <div id="tools-grid"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // 1. Calculation Logic
+    document.getElementById('calculate-btn').addEventListener('click', function() {
+      const P = parseFloat(document.getElementById('outstanding-principal').value);
+      const annualRate = parseFloat(document.getElementById('interest-rate').value);
+      const years = parseFloat(document.getElementById('remaining-years').value);
+      const prepayment = parseFloat(document.getElementById('prepayment-amount').value);
+      
+      if(isNaN(P) || isNaN(annualRate) || isNaN(years) || isNaN(prepayment) || P <= 0 || annualRate <= 0 || years <= 0 || prepayment <= 0) {
+        alert("Bhai, please enter valid numbers in all fields.");
+        return;
+      }
+
+      if(prepayment >= P) {
+        alert("Bhai, your prepayment is higher than your outstanding loan! That's a full foreclosure.");
+        return;
+      }
+
+      // Base Variables
+      const r = (annualRate / 100) / 12; // Monthly interest rate
+      const n = years * 12; // Remaining months
+
+      // Calculate Current EMI
+      // EMI = [P x r x (1+r)^n] / [(1+r)^n - 1]
+      const currentEMI = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      
+      // Calculate Total Interest Without Prepayment
+      const totalInterestOld = (currentEMI * n) - P;
+
+      // Make Prepayment
+      const newP = P - prepayment;
+
+      // Calculate New Tenure keeping EMI same
+      // Formula to find n: n = -log(1 - (P * r) / EMI) / log(1 + r)
+      let newN = 0;
+      const logNumerator = 1 - ((newP * r) / currentEMI);
+      
+      if(logNumerator <= 0) {
+        // Edge case: Extremely high EMI or extremely low principal pays off instantly
+        newN = 1;
+      } else {
+        newN = -Math.log(logNumerator) / Math.log(1 + r);
+      }
+      
+      const newMonths = Math.ceil(newN); // Round up to next full month
+
+      // Calculate New Total Interest
+      const totalInterestNew = (currentEMI * newMonths) - newP;
+
+      // Savings
+      const interestSaved = totalInterestOld - totalInterestNew;
+      const monthsSaved = n - newMonths;
+
+      // Currency Formatting (Indian Format)
+      const formatter = new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0
+      });
+
+      // Update DOM
+      document.getElementById('res-old-interest').textContent = formatter.format(totalInterestOld);
+      document.getElementById('res-old-tenure').textContent = n + " Months";
+      
+      document.getElementById('res-new-interest').textContent = formatter.format(totalInterestNew);
+      document.getElementById('res-new-tenure').textContent = newMonths + " Months";
+      
+      document.getElementById('res-saved-interest').textContent = formatter.format(interestSaved);
+      document.getElementById('res-saved-months').textContent = monthsSaved;
+
+      // Show Result Box
+      document.getElementById('result-box').style.display = 'block';
+    });
+
+    // 2. FAQ Accordion Logic
+    document.querySelectorAll('.seo-faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const parent = q.closest('.seo-faq-item');
+        document.querySelectorAll('.seo-faq-item').forEach(item => {
+          if (item !== parent) item.classList.remove('open');
+        });
+        parent.classList.toggle('open');
+      });
+    });
+
+    // 3. Related Tools Logic (Completely comprehensive including NSC Calculator)
+    const relatedTools = [
+      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
+      { name: "Budget Planner", url: "/finance/budget-planner" },
+      { name: "CAGR Calculator", url: "/finance/cagr-calculator" },
+      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
+      { name: "EMI Calculator", url: "/finance/emi-calculator" },
+      { name: "EPF Calculator", url: "/finance/epf-calculator" },
+      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
+      { name: "FD Calculator", url: "/finance/fd-calculator" },
+      { name: "Gratuity Calculator", url: "/finance/gratuity-calculator" },
+      { name: "GST Calculator", url: "/finance/gst-calculator" },
+      { name: "HRA Calculator", url: "/finance/hra-calculator" },
+      { name: "Income Tax Calculator", url: "/finance/income-tax-calculator" },
+      { name: "Inflation Calculator", url: "/finance/inflation-calculator" },
+      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
+      { name: "Mutual Fund Tax Calculator", url: "/finance/mutual-fund-tax-calculator" },
+      { name: "NPS Calculator", url: "/finance/nps-calculator" },
+      { name: "NSC Calculator", url: "/finance/nsc-calculator" },
+      { name: "Post Office MIS Calculator", url: "/finance/pomis-calculator" },
+      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
+      { name: "RD Calculator", url: "/finance/rd-calculator" },
+      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
+      { name: "ROI Calculator", url: "/finance/roi-calculator" },
+      { name: "SCSS Calculator", url: "/finance/scss-calculator" },
+      { name: "Simple Interest Calculator", url: "/finance/simple-interest-calculator" },
+      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
+      { name: "SSY Calculator", url: "/finance/ssy-calculator" },
+      { name: "Step-Up SIP Calculator", url: "/finance/step-up-sip-calculator" },
+      { name: "SWP Calculator", url: "/finance/swp-calculator" },
+      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
+    ];
+    
+    function loadRelatedTools() {
+      const container = document.getElementById('tools-grid');
+      relatedTools.forEach(tool => {
+        const link = document.createElement('a'); 
+        link.href = tool.url; 
+        link.className = 'tool-card-link'; 
+        link.textContent = tool.name; 
+        container.appendChild(link);
+      });
+    }
+    loadRelatedTools();
+  </script>
+
+</body>
+</html>

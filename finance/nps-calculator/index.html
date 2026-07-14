@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NPS Calculator | National Pension Scheme Pension & Corpus - Toolboxkart</title>
+  <meta name="description" content="Use our free NPS Calculator to estimate your National Pension System retirement corpus, monthly pension amount, and tax-free lumpsum. Plan your retirement now.">
+  
+  <style>
+    /* Global Rules */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+    
+    /* Navigation */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+    .nav-brand span { color: #7c6fcd; }
+    
+    /* Layout */
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    
+    /* Hero Section */
+    .hero { text-align: center; padding: 3rem 1rem 1rem; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; line-height: 1.2; }
+    .hero p { color: #888; font-size: 1.1rem; }
+    
+    /* Tool Card */
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem 2rem; }
+    
+    /* Inputs */
+    .input-grid { display: grid; gap: 1.5rem; margin-bottom: 2rem; grid-template-columns: 1fr; }
+    @media (min-width: 600px) { .input-grid { grid-template-columns: 1fr 1fr; } }
+    
+    .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    label { font-weight: 600; color: #e0e0e0; font-size: 0.95rem; }
+    input { background: #0d0d0d; border: 1px solid #272727; color: #fff; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+    input:focus { border-color: #7c6fcd; }
+    
+    /* Button */
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: opacity 0.2s; }
+    button.btn-primary:hover { opacity: 0.9; }
+    
+    /* Result Box */
+    .result-box { display: none; margin-top: 2rem; padding: 2rem; background: rgba(124, 111, 205, 0.05); border: 1px solid #7c6fcd; border-radius: 12px; }
+    .result-box h3 { margin-bottom: 1.5rem; color: #fff; text-align: center; font-size: 1.4rem; }
+    .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: center; }
+    .result-item p { color: #888; font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .result-item h4 { font-size: 1.5rem; color: #7c6fcd; }
+    
+    /* SEO Content Section */
+    .seo-content-block { margin-top: 3rem; color: #b3b3b3; }
+    .seo-content-block h2 { color: #fff; margin: 2.5rem 0 1rem; font-size: 1.8rem; }
+    .seo-content-block p { margin-bottom: 1.2rem; }
+    
+    /* FAQs */
+    .seo-faq-container { margin-top: 2rem; }
+    .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+    .seo-faq-q { cursor: pointer; display: flex; justify-content: space-between; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; }
+    .seo-faq-item.open .seo-faq-q::after { content: '-'; }
+    .seo-faq-a { display: none; padding-top: 1rem; color: #888; font-size: 1rem; }
+    .seo-faq-item.open .seo-faq-a { display: block; }
+    
+    /* Related Tools */
+    .related-tools h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+    #tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .tool-card-link { background: #161616; border: 1px solid #272727; padding: 1.5rem; border-radius: 10px; text-decoration: none; color: #e0e0e0; font-weight: 600; text-align: center; transition: all 0.2s; }
+    .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+  </nav>
+
+  <div class="hero">
+    <h1>NPS Calculator</h1>
+    <p>Estimate your National Pension System retirement corpus and monthly pension amount.</p>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="current-age">Your Current Age</label>
+          <input type="number" id="current-age" placeholder="e.g., 30" min="18" max="65">
+        </div>
+        <div class="input-group">
+          <label for="monthly-investment">Monthly Investment (₹)</label>
+          <input type="number" id="monthly-investment" placeholder="e.g., 5000" min="500">
+        </div>
+        <div class="input-group">
+          <label for="return-rate">Expected Return (p.a. %)</label>
+          <input type="number" id="return-rate" value="10" step="0.1" min="1">
+        </div>
+        <div class="input-group">
+          <label for="annuity-percent">Annuity Purchase (%)</label>
+          <input type="number" id="annuity-percent" value="40" min="40" max="100" title="Minimum 40% is mandatory">
+        </div>
+      </div>
+      
+      <button class="btn-primary" id="calculate-btn">Calculate NPS Pension</button>
+
+      <div class="result-box" id="result-box">
+        <h3>Retirement Summary (at age 60)</h3>
+        <div class="result-grid">
+          <div class="result-item">
+            <p>Total Corpus Generated</p>
+            <h4 id="res-corpus">₹0</h4>
+          </div>
+          <div class="result-item">
+            <p>Lumpsum Amount Withdrawn</p>
+            <h4 id="res-lumpsum">₹0</h4>
+          </div>
+          <div class="result-item">
+            <p>Expected Monthly Pension</p>
+            <h4 id="res-pension">₹0</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container seo-content-block">
+    <h2>Why Use an NPS Calculator Online?</h2>
+    <p>The <strong>National Pension Scheme (NPS)</strong> is a government-sponsored retirement planning vehicle designed to provide financial security post-retirement. By investing regularly during your working years, you build a massive <strong>retirement corpus</strong> thanks to market-linked returns and the power of compounding.</p>
+    <p>Our online <strong>NPS Calculator</strong> helps you project your total wealth at age 60. By adjusting your monthly contribution, you can see how much tax-free lumpsum you can withdraw and estimate your <strong>monthly pension amount</strong>. Plus, NPS investments offer exclusive tax benefits under Section 80CCD(1B) up to ₹50,000, over and above the standard 80C limit!</p>
+    
+    <div class="seo-faq-container">
+      <h2>Frequently Asked Questions about National Pension System</h2>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">What is the mandatory annuity percentage in NPS?</div>
+        <div class="seo-faq-a">When you reach retirement age (usually 60), it is mandatory to use at least 40% of your total NPS corpus to purchase an annuity, which provides your regular monthly pension. The remaining 60% can be withdrawn as a tax-free lumpsum.</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">How does the NPS calculator estimate my monthly pension?</div>
+        <div class="seo-faq-a">First, it calculates your total corpus using the compound interest formula for SIPs. Then, it takes the annuity percentage (e.g., 40%) of that corpus and applies an expected annuity return rate (typically around 6% to 8% p.a.) to estimate your monthly payouts.</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">Are NPS maturity amounts tax-free?</div>
+        <div class="seo-faq-a">Yes! The up to 60% lumpsum withdrawal you make at age 60 is completely exempt from income tax. However, the regular monthly pension you receive from the annuity portion is taxed according to your applicable income tax slab.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container related-tools">
+    <h2>More Finance Tools</h2>
+    <div id="tools-grid"></div>
+  </div>
+
+  <script>
+    // 1. Calculation Logic
+    document.getElementById('calculate-btn').addEventListener('click', function() {
+      const age = parseInt(document.getElementById('current-age').value);
+      const P = parseFloat(document.getElementById('monthly-investment').value);
+      const rate = parseFloat(document.getElementById('return-rate').value);
+      const annuityPercent = parseFloat(document.getElementById('annuity-percent').value);
+      const retirementAge = 60; // Standard NPS retirement age
+      
+      if(isNaN(age) || isNaN(P) || isNaN(rate) || isNaN(annuityPercent) || age >= retirementAge || age < 18 || P <= 0) {
+        alert("Bhai, please enter valid details. Age should be between 18 and 59.");
+        return;
+      }
+
+      if(annuityPercent < 40 || annuityPercent > 100) {
+        alert("The annuity purchase must be between 40% and 100%.");
+        return;
+      }
+
+      const years = retirementAge - age;
+      const n = years * 12; // Total months
+      const i = (rate / 100) / 12; // Monthly return rate
+
+      // Calculate Total Corpus (SIP Formula)
+      const totalCorpus = P * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
+      
+      // Calculate Annuity and Lumpsum
+      const annuityAmount = totalCorpus * (annuityPercent / 100);
+      const lumpsumAmount = totalCorpus - annuityAmount;
+
+      // Estimate Pension (Assuming a standard 6% p.a. annuity rate for realistic projection)
+      const expectedAnnuityRate = 6; 
+      const monthlyPension = (annuityAmount * (expectedAnnuityRate / 100)) / 12;
+
+      // Currency Formatting
+      const formatter = new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0
+      });
+
+      // Update DOM
+      document.getElementById('res-corpus').textContent = formatter.format(totalCorpus);
+      document.getElementById('res-lumpsum').textContent = formatter.format(lumpsumAmount);
+      document.getElementById('res-pension').textContent = formatter.format(monthlyPension);
+
+      // Show Result Box
+      document.getElementById('result-box').style.display = 'block';
+    });
+
+    // 2. FAQ Accordion Logic
+    document.querySelectorAll('.seo-faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const parent = q.closest('.seo-faq-item');
+        document.querySelectorAll('.seo-faq-item').forEach(item => {
+          if (item !== parent) item.classList.remove('open');
+        });
+        parent.classList.toggle('open');
+      });
+    });
+
+    // 3. Related Tools Logic (Synced EXACTLY with the folders in your screenshot)
+    const relatedTools = [
+      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
+      { name: "Budget Planner", url: "/finance/budget-planner" },
+      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
+      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
+      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
+      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
+      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
+      { name: "ROI Calculator", url: "/finance/roi-calculator" },
+      { name: "Savings Goal Calculator", url: "/finance/savings-goal-calculator" },
+      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
+      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
+    ];
+    
+    function loadRelatedTools() {
+      const container = document.getElementById('tools-grid');
+      relatedTools.forEach(tool => {
+        const link = document.createElement('a'); 
+        link.href = tool.url; 
+        link.className = 'tool-card-link'; 
+        link.textContent = tool.name; 
+        container.appendChild(link);
+      });
+    }
+    loadRelatedTools();
+  </script>
+
+</body>
+</html>

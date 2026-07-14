@@ -1,0 +1,15 @@
+# Tools Box Kart Robots.txt
+User-agent: *
+Allow: /
+
+# Allow all SEO tools for indexing
+Allow: /seo/
+Allow: /image-tools/
+Allow: /blog/
+
+# Sitemap location to help Google find your tools
+Sitemap: https://toolboxkart.tech/sitemap.xml
+
+# Disallow sensitive system folders (optional but good practice)
+Disallow: /cgi-bin/
+Disallow: /private/

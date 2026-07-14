@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POMIS Calculator | Post Office Monthly Income Scheme - Toolboxkart</title>
+  <meta name="description" content="Calculate your monthly passive income with our free Post Office Monthly Income Scheme (POMIS) Calculator. Check latest interest rates and maturity amounts.">
+  
+  <style>
+    /* Global Rules */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+    
+    /* Navigation */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+    .nav-brand span { color: #7c6fcd; }
+    
+    /* Layout */
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    
+    /* Hero Section */
+    .hero { text-align: center; padding: 3rem 1rem 1rem; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; line-height: 1.2; }
+    .hero p { color: #888; font-size: 1.1rem; }
+    
+    /* Tool Card */
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem 2rem; }
+    
+    /* Inputs */
+    .input-grid { display: grid; gap: 1.5rem; margin-bottom: 2rem; grid-template-columns: 1fr; }
+    @media (min-width: 600px) { .input-grid { grid-template-columns: 1fr 1fr; } }
+    
+    .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    label { font-weight: 600; color: #e0e0e0; font-size: 0.95rem; }
+    input, select { background: #0d0d0d; border: 1px solid #272727; color: #fff; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+    input:focus, select:focus { border-color: #7c6fcd; }
+    .help-text { font-size: 0.8rem; color: #888; }
+    
+    /* Button */
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: opacity 0.2s; }
+    button.btn-primary:hover { opacity: 0.9; }
+    
+    /* Result Box */
+    .result-box { display: none; margin-top: 2rem; padding: 2rem; background: rgba(124, 111, 205, 0.05); border: 1px solid #7c6fcd; border-radius: 12px; }
+    .result-box h3 { margin-bottom: 1.5rem; color: #fff; text-align: center; font-size: 1.4rem; }
+    .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; text-align: center; }
+    .result-item p { color: #888; font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .result-item h4 { font-size: 1.8rem; color: #7c6fcd; }
+    .highlight-box { grid-column: 1 / -1; margin-top: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid #272727; }
+    .highlight-box h4 { font-size: 2.8rem; color: #fff; }
+    .limit-alert { padding: 1rem; background: rgba(255, 69, 58, 0.1); border: 1px solid #ff453a; color: #ff453a; border-radius: 8px; font-size: 0.9rem; display: none; margin-bottom: 1.5rem; text-align: center; }
+    
+    /* SEO Content Section */
+    .seo-content-block { margin-top: 3rem; color: #b3b3b3; }
+    .seo-content-block h2 { color: #fff; margin: 2.5rem 0 1rem; font-size: 1.8rem; }
+    .seo-content-block p { margin-bottom: 1.2rem; }
+    
+    /* FAQs */
+    .seo-faq-container { margin-top: 2rem; }
+    .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+    .seo-faq-q { cursor: pointer; display: flex; justify-content: space-between; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; }
+    .seo-faq-item.open .seo-faq-q::after { content: '-'; }
+    .seo-faq-a { display: none; padding-top: 1rem; color: #888; font-size: 1rem; }
+    .seo-faq-item.open .seo-faq-a { display: block; }
+    
+    /* Related Tools */
+    .related-tools h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+    #tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .tool-card-link { background: #161616; border: 1px solid #272727; padding: 1.5rem; border-radius: 10px; text-decoration: none; color: #e0e0e0; font-weight: 600; text-align: center; transition: all 0.2s; }
+    .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>POMIS Calculator</h1>
+    <p>Calculate your guaranteed monthly income from the Post Office Monthly Income Scheme.</p>
+  </div>
+
+  <!-- Tool Container -->
+  <div class="container">
+    <div class="card">
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="account-type">Account Type</label>
+          <select id="account-type">
+            <option value="single">Single Account (Max ₹9 Lakh)</option>
+            <option value="joint">Joint Account (Max ₹15 Lakh)</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="investment">Total Investment Amount (₹)</label>
+          <input type="number" id="investment" placeholder="e.g., 900000" min="1000">
+          <span class="help-text">Minimum investment is ₹1,000.</span>
+        </div>
+        <div class="input-group" style="grid-column: 1 / -1;">
+          <label for="rate">Current POMIS Interest Rate (p.a. %)</label>
+          <input type="number" id="rate" value="7.4" step="0.1" min="1">
+          <span class="help-text">The current standard interest rate is around 7.4% p.a. (subject to Govt revisions).</span>
+        </div>
+      </div>
+      
+      <button class="btn-primary" id="calculate-btn">Calculate Monthly Income</button>
+
+      <!-- Result Box -->
+      <div class="result-box" id="result-box">
+        <div class="limit-alert" id="limit-alert">
+          Bhai, you've exceeded the maximum limit! Single accounts max out at ₹9 Lakh, and Joint accounts at ₹15 Lakh.
+        </div>
+        <h3>Post Office MIS Returns</h3>
+        <div class="result-grid">
+          <div class="result-item highlight-box">
+            <p>Guaranteed Monthly Income</p>
+            <h4 id="res-monthly">₹0</h4>
+          </div>
+          <div class="result-item">
+            <p>Total Interest in 5 Years</p>
+            <h4 id="res-interest">₹0</h4>
+          </div>
+          <div class="result-item">
+            <p>Maturity Amount (Returned Principal)</p>
+            <h4 id="res-principal">₹0</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO Content Block -->
+  <div class="container seo-content-block">
+    <h2>Why Should You Use a Post Office Monthly Income Scheme Calculator?</h2>
+    <p>The <strong>Post Office Monthly Income Scheme (POMIS)</strong> is one of the highest-rated guaranteed income schemes backed by the Government of India. It is primarily designed for conservative investors and senior citizens who want to deposit a lump sum amount and earn a fixed, reliable monthly pension-like payout.</p>
+    <p>Because the interest rate is applied annually but paid out monthly, calculating exact returns can be slightly tedious. Our online <strong>POMIS calculator</strong> automatically applies the exact <strong>MIS calculation formula</strong>. By simply entering your deposit amount—up to ₹9 Lakhs for a single account and ₹15 Lakhs for a joint account—you can instantly find out your <strong>monthly interest payout</strong> and the total wealth you'll accumulate over the mandatory 5-year lock-in period.</p>
+    
+    <!-- FAQs -->
+    <div class="seo-faq-container">
+      <h2>Frequently Asked Questions About Post Office MIS</h2>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">What is the investment limit for POMIS?</div>
+        <div class="seo-faq-a">As per the recent government budget updates, an individual can invest a maximum of ₹9 Lakh in a Single Account. If you open a Joint Account (with up to 3 adults), the maximum investment limit is increased to ₹15 Lakh. The minimum investment to start is just ₹1,000.</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">How does the POMIS calculator figure out monthly interest?</div>
+        <div class="seo-faq-a">The calculator uses a straightforward simple interest formula adapted for monthly payouts. The formula is: Monthly Income = (Investment Amount × Annual Interest Rate / 100) / 12. At the end of the 5-year term, your original principal amount is returned to you safely.</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">Is the monthly income from POMIS tax-free?</div>
+        <div class="seo-faq-a">No, the interest you earn every month from the Post Office Monthly Income Scheme is completely taxable according to your applicable income tax slab. However, there is no TDS (Tax Deducted at Source) deducted by the post office on these monthly payouts.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Tools -->
+  <div class="container related-tools">
+    <h2>More Finance Tools</h2>
+    <div id="tools-grid"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // 1. Calculation Logic
+    document.getElementById('calculate-btn').addEventListener('click', function() {
+      const type = document.getElementById('account-type').value;
+      const principal = parseFloat(document.getElementById('investment').value);
+      const rate = parseFloat(document.getElementById('rate').value);
+      
+      if(isNaN(principal) || isNaN(rate) || principal <= 0 || rate <= 0) {
+        alert("Bhai, please enter valid investment and interest rate amounts.");
+        return;
+      }
+
+      const alertBox = document.getElementById('limit-alert');
+      let isOverLimit = false;
+
+      // Checking POMIS limits based on account type
+      if(type === 'single' && principal > 900000) {
+        isOverLimit = true;
+      } else if(type === 'joint' && principal > 1500000) {
+        isOverLimit = true;
+      }
+
+      if(isOverLimit) {
+        alertBox.style.display = 'block';
+        document.getElementById('result-box').style.display = 'none';
+        return;
+      } else {
+        alertBox.style.display = 'none';
+      }
+
+      // POMIS Formula: (Principal * Rate / 100) / 12 for monthly income
+      const annualInterest = principal * (rate / 100);
+      const monthlyIncome = annualInterest / 12;
+      
+      // POMIS lock-in period is strictly 5 years (60 months)
+      const totalInterestEarned = monthlyIncome * 60;
+
+      // Currency Formatting (Indian Format)
+      const formatter = new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0
+      });
+
+      // Update DOM
+      document.getElementById('res-monthly').textContent = formatter.format(monthlyIncome);
+      document.getElementById('res-interest').textContent = formatter.format(totalInterestEarned);
+      document.getElementById('res-principal').textContent = formatter.format(principal);
+
+      // Show Result Box
+      document.getElementById('result-box').style.display = 'block';
+    });
+
+    // 2. FAQ Accordion Logic
+    document.querySelectorAll('.seo-faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const parent = q.closest('.seo-faq-item');
+        document.querySelectorAll('.seo-faq-item').forEach(item => {
+          if (item !== parent) item.classList.remove('open');
+        });
+        parent.classList.toggle('open');
+      });
+    });
+
+    // 3. Related Tools Logic (Now includes the HRA Calculator)
+    const relatedTools = [
+      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
+      { name: "Budget Planner", url: "/finance/budget-planner" },
+      { name: "CAGR Calculator", url: "/finance/cagr-calculator" },
+      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
+      { name: "EMI Calculator", url: "/finance/emi-calculator" },
+      { name: "EPF Calculator", url: "/finance/epf-calculator" },
+      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
+      { name: "FD Calculator", url: "/finance/fd-calculator" },
+      { name: "Gratuity Calculator", url: "/finance/gratuity-calculator" },
+      { name: "GST Calculator", url: "/finance/gst-calculator" },
+      { name: "HRA Calculator", url: "/finance/hra-calculator" },
+      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
+      { name: "NPS Calculator", url: "/finance/nps-calculator" },
+      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
+      { name: "RD Calculator", url: "/finance/rd-calculator" },
+      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
+      { name: "ROI Calculator", url: "/finance/roi-calculator" },
+      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
+      { name: "SSY Calculator", url: "/finance/ssy-calculator" },
+      { name: "Step-Up SIP Calculator", url: "/finance/step-up-sip-calculator" },
+      { name: "SWP Calculator", url: "/finance/swp-calculator" },
+      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
+    ];
+    
+    function loadRelatedTools() {
+      const container = document.getElementById('tools-grid');
+      relatedTools.forEach(tool => {
+        const link = document.createElement('a'); 
+        link.href = tool.url; 
+        link.className = 'tool-card-link'; 
+        link.textContent = tool.name; 
+        container.appendChild(link);
+      });
+    }
+    loadRelatedTools();
+  </script>
+
+</body>
+</html>

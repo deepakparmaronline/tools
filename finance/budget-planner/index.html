@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Monthly Budget Planner & Calculator | Toolboxkart</title>
+    <meta name="description" content="Manage your money with our free monthly budget planner. Track your income, expenses, and savings easily with this personal budget calculator.">
+    <style>
+        /* Global Reset & Base Styles */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+        
+        /* Navigation */
+        nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+        .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+        .nav-brand span { color: #7c6fcd; }
+        
+        /* Layout & Container */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+        
+        /* Hero Section */
+        .hero { text-align: center; padding: 4rem 1rem 3rem; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .hero p { color: #888; font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.5; }
+        
+        /* Tool Card & Inputs */
+        .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem; margin-bottom: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .section-title { font-size: 1.2rem; color: #fff; margin-bottom: 1.5rem; border-bottom: 1px solid #272727; padding-bottom: 0.5rem; grid-column: 1 / -1; }
+        
+        .input-area { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+        @media (max-width: 600px) { .input-area { grid-template-columns: 1fr; } }
+        
+        .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .input-group label { font-size: 0.95rem; color: #ccc; font-weight: 500; }
+        .input-group input { background: #0d0d0d; border: 1px solid #272727; color: #fff; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; transition: all 0.2s ease; }
+        .input-group input:focus { border-color: #7c6fcd; }
+        
+        button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: background 0.2s ease; }
+        button.btn-primary:hover { background: #6b5eb8; }
+        
+        /* Result Box */
+        #result-box { display: none; margin-top: 2rem; background: #0d0d0d; padding: 2rem; border-radius: 8px; border: 1px solid #272727; text-align: center; }
+        .status-message { font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; }
+        .status-good { color: #4ade80; }
+        .status-bad { color: #ff6b6b; }
+        
+        .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: left; }
+        @media (max-width: 600px) { .summary-grid { grid-template-columns: 1fr; } }
+        .summary-card { background: #161616; padding: 1.2rem; border-radius: 8px; border: 1px solid #272727; }
+        .summary-card h4 { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .summary-card .amount { font-size: 1.4rem; font-weight: 600; color: #e0e0e0; }
+        .summary-card .amount.income { color: #4ade80; }
+        .summary-card .amount.expense { color: #ff6b6b; }
+        .summary-card .amount.balance { color: #7c6fcd; }
+        
+        /* SEO Content Block */
+        .seo-content-block { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem; margin-bottom: 3rem; }
+        .seo-content-block h2 { color: #fff; margin-bottom: 1.5rem; font-size: 1.8rem; }
+        .seo-content-block p { color: #888; line-height: 1.7; margin-bottom: 1.5rem; }
+        .seo-content-block strong { color: #ccc; font-weight: 600; }
+        
+        /* FAQ Accordion */
+        .faq-section { margin-top: 3rem; }
+        .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+        .seo-faq-item:last-child { border-bottom: none; }
+        .seo-faq-q { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; user-select: none; }
+        .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; transition: transform 0.3s ease; }
+        .seo-faq-item.open .seo-faq-q::after { transform: rotate(45deg); }
+        .seo-faq-a { display: none; margin-top: 1rem; color: #888; line-height: 1.6; }
+        .seo-faq-item.open .seo-faq-a { display: block; }
+        
+        /* Related Tools */
+        .related-tools-section { padding-bottom: 4rem; }
+        .related-tools-section h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+        #tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+        .tool-card-link { background: #161616; border: 1px solid #272727; color: #e0e0e0; text-decoration: none; padding: 1.5rem; border-radius: 10px; font-weight: 500; transition: all 0.2s ease; display: block; text-align: center; }
+        .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Monthly Budget Planner</h1>
+        <p>Take control of your finances. Track your monthly income against your expenses and find out exactly how much you can save.</p>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Tool Card -->
+        <div class="card">
+            <div class="input-area">
+                <div class="section-title">Your Income</div>
+                <div class="input-group" style="grid-column: 1 / -1;">
+                    <label for="income-main">Total Monthly Income (After Tax) (₹)</label>
+                    <input type="number" id="income-main" placeholder="e.g. 50000" min="0">
+                </div>
+                
+                <div class="section-title" style="margin-top: 1rem;">Your Expenses</div>
+                <div class="input-group">
+                    <label for="exp-housing">Housing (Rent/EMI) (₹)</label>
+                    <input type="number" id="exp-housing" class="expense-input" placeholder="e.g. 15000" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="exp-food">Food & Groceries (₹)</label>
+                    <input type="number" id="exp-food" class="expense-input" placeholder="e.g. 8000" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="exp-transport">Transportation (Fuel/Transit) (₹)</label>
+                    <input type="number" id="exp-transport" class="expense-input" placeholder="e.g. 3000" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="exp-utilities">Utilities (Bills, Internet) (₹)</label>
+                    <input type="number" id="exp-utilities" class="expense-input" placeholder="e.g. 2500" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="exp-entertainment">Entertainment & Dining (₹)</label>
+                    <input type="number" id="exp-entertainment" class="expense-input" placeholder="e.g. 4000" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="exp-other">Other Expenses (₹)</label>
+                    <input type="number" id="exp-other" class="expense-input" placeholder="e.g. 2000" min="0">
+                </div>
+            </div>
+            
+            <button class="btn-primary" onclick="calculateBudget()">Calculate Budget</button>
+
+            <!-- Result Box -->
+            <div id="result-box">
+                <div id="status-msg" class="status-message"></div>
+                
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <h4>Total Income</h4>
+                        <div class="amount income" id="res-income">₹0</div>
+                    </div>
+                    <div class="summary-card">
+                        <h4>Total Expenses</h4>
+                        <div class="amount expense" id="res-expenses">₹0</div>
+                    </div>
+                    <div class="summary-card">
+                        <h4>Remaining Balance</h4>
+                        <div class="amount balance" id="res-balance">₹0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content Block -->
+        <div class="seo-content-block">
+            <h2>Why Use a Monthly Budget Planner?</h2>
+            <p>Managing money doesn't have to be complicated. Our free <strong>monthly budget planner</strong> helps you organize your finances in seconds. Whether you are trying to save for a big purchase, pay off debt, or just understand where your money goes every month, using a <strong>personal budget calculator</strong> is the first step to financial freedom.</p>
+            <p>By listing your net income and subtracting daily living costs through an <strong>expense tracker</strong>, you get a clear picture of your cash flow. Smart budgeting helps you avoid living paycheck to paycheck and ensures you have enough funds for emergencies and investments.</p>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">What is the 50/30/20 budget rule?</div>
+                    <div class="seo-faq-a">The 50/30/20 rule is a popular budgeting method. It suggests spending 50% of your after-tax income on <strong>needs</strong> (rent, groceries, bills), 30% on <strong>wants</strong> (entertainment, dining out), and dedicating 20% to <strong>savings and paying off debt</strong>. Our <strong>budget calculator</strong> can help you see if you align with this rule.</div>
+                </div>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">How do I create a personal budget?</div>
+                    <div class="seo-faq-a">To create a personal budget, first calculate your total monthly take-home pay. Then, list all your fixed and variable expenses. Subtract your total expenses from your income using a <strong>monthly budget calculator</strong>. If you have a positive balance, direct it towards savings. If it's negative, you need to cut down on non-essential spending.</div>
+                </div>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">Should I track every single expense?</div>
+                    <div class="seo-faq-a">When you are just starting out, tracking every expense is highly recommended. It reveals hidden spending habits. Once you have a steady routine and a reliable <strong>expense planner</strong>, tracking major categories monthly is usually enough to keep you on track.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Tools Section -->
+        <div class="related-tools-section" id="related-tools-wrapper">
+            <h2>Explore More Finance Tools</h2>
+            <div id="tools-grid">
+                <!-- Javascript will populate this -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // 1. Calculation Logic
+        function calculateBudget() {
+            const incomeInput = parseFloat(document.getElementById('income-main').value) || 0;
+            
+            // Get all expense inputs and sum them up
+            let totalExpenses = 0;
+            const expenseInputs = document.querySelectorAll('.expense-input');
+            expenseInputs.forEach(input => {
+                const val = parseFloat(input.value) || 0;
+                totalExpenses += val;
+            });
+
+            if (incomeInput <= 0) {
+                alert("Please enter a valid monthly income.");
+                return;
+            }
+
+            const balance = incomeInput - totalExpenses;
+
+            // Format Currency
+            const formatCurrency = (num) => '₹' + Math.abs(num).toLocaleString('en-IN', { maximumFractionDigits: 0 });
+
+            document.getElementById('res-income').textContent = formatCurrency(incomeInput);
+            document.getElementById('res-expenses').textContent = formatCurrency(totalExpenses);
+            document.getElementById('res-balance').textContent = (balance < 0 ? '-' : '') + formatCurrency(balance);
+
+            const statusMsg = document.getElementById('status-msg');
+            const balanceElement = document.getElementById('res-balance');
+
+            // Logic for status message and colors
+            if (balance > 0) {
+                statusMsg.textContent = "Great job! You are saving money this month.";
+                statusMsg.className = "status-message status-good";
+                balanceElement.style.color = "#4ade80"; // Green
+            } else if (balance === 0) {
+                statusMsg.textContent = "You are breaking even. Try to reduce expenses to save!";
+                statusMsg.className = "status-message";
+                balanceElement.style.color = "#7c6fcd"; // Purple
+            } else {
+                statusMsg.textContent = "Warning! Your expenses exceed your income.";
+                statusMsg.className = "status-message status-bad";
+                balanceElement.style.color = "#ff6b6b"; // Red
+            }
+
+            document.getElementById('result-box').style.display = 'block';
+        }
+
+        // 2. FAQ Accordion Logic
+        document.querySelectorAll('.seo-faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.closest('.seo-faq-item');
+                document.querySelectorAll('.seo-faq-item').forEach(other => {
+                    if (other !== item) other.classList.remove('open');
+                });
+                item.classList.toggle('open');
+            });
+        });
+
+        // 3. Related Tools Logic (Tools 24, 25, 26)
+        const relatedTools = [
+            { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
+            { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
+            { name: "Take-Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
+        ];
+
+        function loadRelatedTools() {
+            const container = document.getElementById('tools-grid');
+            const wrapper = document.getElementById('related-tools-wrapper');
+
+            if (relatedTools.length === 0) {
+                wrapper.style.display = 'none';
+                return;
+            }
+
+            relatedTools.forEach(tool => {
+                const link = document.createElement('a'); 
+                link.href = tool.url; 
+                link.className = 'tool-card-link'; 
+                link.textContent = tool.name; 
+                container.appendChild(link);
+            });
+        }
+        
+        loadRelatedTools();
+    </script>
+</body>
+</html>

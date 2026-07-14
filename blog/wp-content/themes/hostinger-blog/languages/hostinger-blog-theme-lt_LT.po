@@ -1,0 +1,580 @@
+# Copyright (C) 2020 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
+"Last-Translator: \n"
+"Language-Team: Lithuanian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-04-17T21:03:15+00:00\n"
+"PO-Revision-Date: 2025-07-22 15:45+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: _s\n"
+"Language: lt_LT\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 "
+"&&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"X-Loco-Version: 2.7.2; wp-6.8.1"
+
+#: build/components/blocks/aboutsection/render.php:4
+msgid ""
+"<p>As a designer, creator, and lifelong learner, I am driven by a passion "
+"for bringing ideas to life through creative problem-solving and "
+"collaboration. With a background in visual design, I have expanded my "
+"skillset to encompass a variety of creative and technical disciplines, "
+"including media production and web development. I approach each project with "
+"a dedication to quality and a commitment to delivering results that exceed "
+"expectations.</p>"
+msgstr ""
+"<p>Esu dizaineris, kūrėjas ir visą gyvenimą besimokantis specialistas, todėl "
+"mane įkvepia noras įgyvendinti idėjas kūrybiškai sprendžiant problemas ir "
+"bendradarbiaujant. Esu įgijęs vizualinio dizaino išsilavinimą, tačiau savo "
+"įgūdžius tobulinau ir įgijau patirties įvairiose kūrybinese ir techninėse "
+"disciplinose, įskaitant medijų ir svetainių kūrimą. Į kiekvieną projektą "
+"žiūriu atsidavęs kokybei ir siekiu, kad rezultatai viršytų lūkesčius.</p>"
+
+#: build/components/blocks/disclaimersection/render.php:3
+msgid ""
+"<p>The information contained in this website is for general information "
+"purposes only. The information is provided by [website name] and while we "
+"endeavor to keep the information up to date and correct, we make no "
+"representations or warranties of any kind, express or implied, about the "
+"completeness, accuracy, reliability, suitability or availability with "
+"respect to the website or the information, products, services, or related "
+"graphics contained on the website for any purpose. Any reliance you place on "
+"such information is therefore strictly at your own risk.</p>"
+msgstr ""
+"<p>Šioje svetainėje pateikiama informacija yra tik bendro pobūdžio "
+"informacija. Informaciją teikia [website name], ir nors mes stengiamės, kad "
+"informacija būtų atnaujinta ir teisinga, neteikiame jokių aiškių ar numanomų "
+"pareiškimų ar garantijų dėl svetainės išsamumo, tikslumo, patikimumo, "
+"tinkamumo ar prieinamumo, susijusių su svetainėje esančia informacija, "
+"produktais, paslaugomis ar susijusiais grafiniais elementais bet kokiam "
+"tikslui. Todėl bet kokia informacija naudokitės atsargiai.</p>"
+
+#: build/components/blocks/aboutsection/render.php:2
+msgid "A bit about me ✌️"
+msgstr "Šiek tiek apie mane ✌️"
+
+#: build/components/blocks/aboutsection/render.php:3
+msgid ""
+"A designer, creator, and lifelong learner with a passion for bringing ideas "
+"to life through creative problem-solving and collaboration."
+msgstr ""
+"Dizaineris, kūrėjas ir visą gyvenimą besimokantis žmogus, kuriam patinka "
+"įgyvendinti idėjas kūrybiškai sprendžiant problemas ir bendradarbiaujant."
+
+#: inc/theme-settings.php:20
+msgid "Additional Settings"
+msgstr "Papildomi nustatymai"
+
+#: build/components/blocks/contactform/render.php:68
+msgid "Address"
+msgstr "Adresas"
+
+#: index.php:34
+msgid "All blog posts"
+msgstr "Visi tinklaraščio įrašai"
+
+#: inc/template-functions.php:275
+msgid "Attention:"
+msgstr "Dėmesio:"
+
+#: build/components/blocks/aboutsection/block.json:1
+msgctxt "block description"
+msgid "About section"
+msgstr "Apie mane"
+
+#: build/components/blocks/contactform/block.json:1
+msgctxt "block description"
+msgid "Contact form"
+msgstr "Kontaktų forma"
+
+#: build/components/blocks/disclaimersection/block.json:1
+msgctxt "block description"
+msgid "Disclaimer section"
+msgstr "Perspėjimų skyrius"
+
+#: build/components/blocks/featuredpost/block.json:1
+msgctxt "block description"
+msgid "Featured post"
+msgstr "Siūlomas įrašas"
+
+#: build/components/blocks/herosection/block.json:1
+msgctxt "block description"
+msgid "Hero block"
+msgstr "Pagrindinis puslapis"
+
+#: build/components/blocks/latestposts/block.json:1
+msgctxt "block description"
+msgid "Latest posts"
+msgstr "Naujausi įrašai"
+
+#: build/components/blocks/newsletter/block.json:1
+msgctxt "block description"
+msgid "Newsletter form"
+msgstr "Naujienlaiškio forma"
+
+#: build/components/blocks/aboutsection/block.json:1
+msgctxt "block title"
+msgid "About section"
+msgstr "Apie mane"
+
+#: build/components/blocks/contactform/block.json:1
+msgctxt "block title"
+msgid "Contact form"
+msgstr "Kontaktų forma"
+
+#: build/components/blocks/disclaimersection/block.json:1
+msgctxt "block title"
+msgid "Disclaimer section"
+msgstr "Perspėjimų skyrius"
+
+#: build/components/blocks/featuredpost/block.json:1
+msgctxt "block title"
+msgid "Featured Post"
+msgstr "Siūlomas įrašas"
+
+#: build/components/blocks/herosection/block.json:1
+msgctxt "block title"
+msgid "Hero Section"
+msgstr "Pagrindinis puslapis"
+
+#: build/components/blocks/latestposts/block.json:1
+msgctxt "block title"
+msgid "Latest Posts"
+msgstr "Naujausi įrašai"
+
+#: build/components/blocks/newsletter/block.json:1
+msgctxt "block title"
+msgid "Newsletter form"
+msgstr "Naujienlaiškio forma"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Grey / Light"
+msgstr "Pilka / šviesi"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Grey / Lighter"
+msgstr "Pilka / šviesesnė"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Dark"
+msgstr "Pagrindinis / Tamsus"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Grey"
+msgstr "Pagrindinis / Pilka"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Light"
+msgstr "Pagrindinis / Šviesos"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Primary"
+msgstr "Pagrindinis / pirminis"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Primary Dark"
+msgstr "Pagrindinis / pirminis tamsus"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Transparent"
+msgstr "Skaidrus"
+
+#: inc/template-functions.php:281
+msgid "Color scheme"
+msgstr "Spalvų paletė"
+
+#: inc/template-functions.php:283
+msgid "Contact information"
+msgstr "Kontaktinė informacija"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Custom template name"
+msgid "No title"
+msgstr "Nėra pavadinimo"
+
+#: build/components/blocks/disclaimersection/render.php:2
+msgid "Disclaimer"
+msgstr "Perspėjimas"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Duotone name"
+msgid "Primary and Contrast"
+msgstr "Pirminis ir kontrastinis"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Duotone name"
+msgid "Secondary and primary"
+msgstr "Antrinis ir pirminis"
+
+#: inc/theme-settings.php:44
+msgid "Edit theme settings below."
+msgstr "Temos nustatymus gali redaguoti apačioje."
+
+#: archive.php:81 build/components/blocks/newsletter/render.php:16
+#: build/components/blocks/contactform/render.php:25
+#: build/components/blocks/contactform/render.php:46
+msgid "Email"
+msgstr "El. paštas"
+
+#: inc/theme-settings.php:61
+msgid "Enter contacts below"
+msgstr "Įvesk kontaktinę informaciją"
+
+#: inc/theme-settings.php:70
+msgid "Enter footer content below"
+msgstr "Įvesk poraštės turinį"
+
+#: inc/theme-settings.php:52
+msgid "Enter the URLs for your social media profiles below."
+msgstr "Įvesk savo socialinių tinklų profilių URL adresus."
+
+#: index.php:37
+msgid ""
+"Explore the world of design and learn how to create visually stunning\n"
+"\t\t\t\t\tartwork."
+msgstr ""
+"Pažink dizaino pasaulį ir sužinok, kaip kurti vizualiai stulbinančius\n"
+"\t\t\t\t\tmeno kūrinius."
+
+#: build/components/blocks/contactform/render.php:3
+msgid "Feel free to reach out to me through any of the following ways."
+msgstr "Drąsiai kreipkis į mane bet kuriuo iš toliau nurodytų būdų."
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Extra small"
+msgstr "Ypač mažas"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Large"
+msgstr "Didelis"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Medium"
+msgstr "Vidutinis"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Mažas"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "XL"
+msgstr "XL"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "XXL"
+msgstr "XXL"
+
+#: build/components/blocks/herosection/render.php:4
+msgid ""
+"From visual design to media production, my passion for creating has led me "
+"on a journey of exploration and innovation."
+msgstr ""
+"Mano aistra kurti – nuo vizualinio dizaino iki reklamų kūrimo – paskatino "
+"mane leistis į ieškojimų ir naujovių kelionę."
+
+#: 404.php:22
+#, php-format
+msgid "Go back to the %s"
+msgstr "Grįžti į %s"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Gradient name"
+msgid "Horizontal white to Primary color"
+msgstr "Horizontali balta spalva į pagrindinę spalvą"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Gradient name"
+msgid "Primary color to white"
+msgstr "Pagrindinė spalva į baltą"
+
+#: 404.php:27
+msgid "Home"
+msgstr "Pradinis puslapis"
+
+#. Author of the theme
+msgid "Hostinger"
+msgstr "Hostinger"
+
+#. Name of the theme
+msgid "Hostinger blog theme"
+msgstr "Hostinger tinklaraščio šablonas"
+
+#. Description of the theme
+msgid ""
+"Hostinger Blog Theme is the perfect choice for bloggers seeking a powerful "
+"yet lightweight solution. Built with SEO and mobile responsiveness in mind, "
+"this theme ensures optimal performance and a better online presence. It "
+"includes pre-made home, about us, contact us, and blog pages, giving your "
+"blog a seamless and quick start. Regardless of your niche, take your blog to "
+"the next level with this lightweight and professional-looking theme."
+msgstr ""
+"Hostinger tinklaraščio šablonas yra puikus pasirinkimas tinklaraštininkams, "
+"ieškantiems galingo, bet lengvo sprendimo. Sukurtas atsižvelgiant į SEO ir "
+"mobiliesiems įrenginiams pritaikytas funkcijas. Jame yra iš anksto parengti "
+"pradinis, apie mus, kontaktų ir tinklaraščio puslapiai, todėl tavo svetainės "
+"pradžia bus sklandi ir greita. Nepriklausomai nuo tavo idėjos, "
+"profesionaliai atrodantis šablonas padės ją perkelti į kitą lygį."
+
+#. Author URI of the theme
+msgid "https://hostinger.com"
+msgstr "https://www.hostinger.lt/"
+
+#. URI of the theme
+msgid "https://www.hostinger.com/blog/hostinger-blog-theme"
+msgstr "https://www.hostinger.com/blog/hostinger-blog-theme"
+
+#: archive.php:92 build/components/blocks/newsletter/render.php:4
+msgid ""
+"I consent to use of my email address for the purpose of receiving "
+"newsletters as described in"
+msgstr ""
+"Sutinku, kad mano el. pašto adresas būtų naudojamas naujienlaiškiams gauti, "
+"kaip aprašyta"
+
+#: build/components/blocks/contactform/render.php:4
+msgid ""
+"I consent to use of provided personal data for the purpose of responding to "
+"the request as described in"
+msgstr ""
+"Sutinku, kad pateikti asmens duomenys būtų naudojami atsakant į prašymą, "
+"kaip aprašyta"
+
+#: build/components/blocks/herosection/render.php:3
+msgid "I’m Shawn — a designer and creator 👋"
+msgstr "Esu Shawn – dizaineris ir kūrėjas 👋"
+
+#: inc/template-functions.php:279
+msgid "Key areas that require attention include:"
+msgstr "Pagrindinės sritys, į kurias reikia atkreipti dėmesį:"
+
+#: build/components/blocks/latestposts/render.php:4
+msgid "Latest Posts"
+msgstr "Naujausi įrašai"
+
+#: build/components/blocks/herosection/render.php:6
+msgid "Learn About Me"
+msgstr "Sužinoti apie mane"
+
+#: build/components/blocks/contactform/render.php:2
+msgid "Let’s get in touch"
+msgstr "Susisiekti"
+
+#: build/components/blocks/herosection/render.php:8
+msgid "Let’s stay connected"
+msgstr "Susisiek"
+
+#: build/components/blocks/contactform/render.php:29
+msgid "Message"
+msgstr "Žinutė"
+
+#: build/components/blocks/contactform/render.php:21
+msgid "Name"
+msgstr "Vardas"
+
+#: inc/form-submissions.php:72
+msgid "New Newsletter Subscription"
+msgstr "Naujienlaiškio prenumerata"
+
+#: archive.php:75 build/components/blocks/newsletter/render.php:2
+msgid "Newsletter"
+msgstr "Naujienlaiškis"
+
+#: index.php:55 archive.php:48
+msgid "No categories found."
+msgstr "Nerasta jokių kategorijų."
+
+#: inc/form-submissions.php:40 inc/form-submissions.php:95
+msgid "Not valid recipient email."
+msgstr "Netinkamas gavėjo el. pašto adresas."
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Nieko nerasta"
+
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups! Šio puslapio neradome."
+
+#: template-parts/content-page.php:22
+msgid "Pages:"
+msgstr "Puslapiai:"
+
+#: build/components/blocks/contactform/render.php:57
+msgid "Phone"
+msgstr "Telefono numeris"
+
+#: inc/template-functions.php:275
+msgid ""
+"Please adjust your <a href=\"?page=hostinger-additional-settings\">theme "
+"settings</a> to personalize your website."
+msgstr ""
+"Pakeisk <a href=\"?page=hostinger-additional-settings\">šablono "
+"nustatymus</a>, kad pritaikytum savo svetainei."
+
+#: inc/form-submissions.php:13 inc/form-submissions.php:64
+msgid "Please agree with privacy policy."
+msgstr "Sutik su privatumo politika."
+
+#: inc/form-submissions.php:17 inc/form-submissions.php:68
+msgid "Please enter a valid email address."
+msgstr "Įvesk teisingą el. pašto adresą."
+
+#: functions.php:81
+msgid "Primary"
+msgstr "Pirminis"
+
+#: build/components/blocks/newsletter/render.php:4
+#: build/components/blocks/contactform/render.php:4
+msgid "Privacy Policy"
+msgstr "Privatumo politika"
+
+#: footer.php:50 functions.php:87
+msgid "Quick links"
+msgstr "Greitosios nuorodos"
+
+#: single.php:89
+msgid "RELATED POSTS"
+msgstr "SUSIJĘ ĮRAŠAI"
+
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Paieškos rezultatai: %s"
+
+#: build/components/blocks/contactform/render.php:41
+msgid "Send Message"
+msgstr "Siųsti žinutę"
+
+#: inc/template-functions.php:282
+msgid "Social media links"
+msgstr "Socialinių tinklų nuorodos"
+
+#: search.php:37 index.php:74 archive.php:67
+msgid "Sorry, no posts matched your criteria."
+msgstr "Atsiprašome, nė vienas įrašas neatitiko tavo kriterijų."
+
+#: archive.php:95 build/components/blocks/newsletter/render.php:30
+msgid "Subscribe"
+msgstr "Prenumeruoti"
+
+#: archive.php:76 build/components/blocks/newsletter/render.php:3
+msgid ""
+"Subscribe to stay up-to-date with my latest creative projects, insights, and "
+"tips."
+msgstr ""
+"Užsisakyk prenumeratą, kad gautum naujausią informaciją apie mano naujausius "
+"kūrybinius projektus, įžvalgas ir patarimus."
+
+#: inc/form-submissions.php:99
+msgid "Successfully submitted!"
+msgstr "Sėkmingai pateikta!"
+
+#: inc/form-submissions.php:45
+msgid "Successfully subscribed!"
+msgstr "Sėkmingai užprenumeruota!"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Template part name"
+msgid "Footer"
+msgstr "Kojinė"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Template part name"
+msgid "Header"
+msgstr "Antraštė"
+
+#: functions.php:93
+msgid "Terms & policy"
+msgstr "Sąlygos ir politika"
+
+#: footer.php:65
+msgid "Terms &amp; policy"
+msgstr "Sąlygos ir politika"
+
+#: inc/theme-blocks.php:16
+msgid "Theme Blocks"
+msgstr "Temos blokai"
+
+#: inc/theme-settings.php:5 inc/theme-settings.php:6
+msgid "Theme Settings"
+msgstr "Temos nustatymai"
+
+#: inc/template-functions.php:278
+msgid ""
+"To enhance your site's functionality and user experience, ensure that you "
+"fill in the theme settings with accurate information."
+msgstr ""
+"Kad pagerintum svetainės funkcionalumą ir naudotojo patirtį, įsitikink, kad "
+"šablono nustatymuose pateikei tikslią informaciją."
+
+#: archive.php:85 build/components/blocks/newsletter/render.php:20
+#: build/components/blocks/contactform/render.php:28
+msgid "What’s your email?"
+msgstr "Koks tavo el. paštas?"
+
+#: build/components/blocks/contactform/render.php:24
+msgid "What’s your name?"
+msgstr "Koks tavo vardas?"
+
+#: build/components/blocks/newsletter/render.php:4
+#: build/components/blocks/contactform/render.php:4
+msgid "which I have read. I may withdraw my consent at any time."
+msgstr "kurį perskaičiau. Savo sutikimą galiu bet kada atšaukti."
+
+#: build/components/blocks/contactform/render.php:31
+msgid "Write your message..."
+msgstr "Parašyk žinutę..."
+
+#: inc/template-functions.php:277
+msgid ""
+"Your website currently lacks essential information such as social links and "
+"contact details."
+msgstr ""
+"Tavo svetainėje trūksta svarbios informacijos, tokių, kaip nuorodos į "
+"socialinius tinklus ir kontaktinė informacija."

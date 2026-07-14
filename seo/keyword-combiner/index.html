@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Keyword Combiner & Multiplier Tool | SEO Keyword Generator - Toolboxkart</title>
+  <meta name="description" content="Generate hundreds of localized keyword variations instantly. Use our free Keyword Combiner to multiply lists of services, locations, and modifiers for your SEO strategy." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+    
+    /* ── NAV & HERO ── */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-brand span { color: #7c6fcd; }
+    .hero { text-align: center; padding: 3rem 1rem 1.5rem; }
+    .hero h1 { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+    .hero p { color: #888; max-width: 700px; margin: 0 auto; line-height: 1.5; }
+    
+    /* ── TOOL LAYOUT ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 4rem; }
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2rem; margin-bottom: 2rem; }
+    
+    .grid-inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 0; }
+    label { display: block; font-size: 0.9rem; font-weight: 600; color: #ccc; margin-bottom: 0.5rem; }
+    textarea { width: 100%; height: 150px; background: #222; color: #fff; border: 1px solid #333; border-radius: 8px; padding: 1rem; font-size: 0.9rem; outline: none; resize: vertical; }
+    textarea:focus { border-color: #7c6fcd; }
+    
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem 2rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s; font-size: 1.1rem; width: 100%; margin-top: 1rem; }
+    button.btn-primary:hover { background: #6a5eb8; }
+
+    /* ── RESULTS AREA ── */
+    .result-box { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; margin-top: 2rem; display: none; }
+    .result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .code-output { font-family: monospace; font-size: 0.9rem; color: #4ade80; background: #111; padding: 1.2rem; border-radius: 6px; word-break: break-all; border: 1px solid #272727; height: 300px; overflow-y: auto; white-space: pre-wrap; }
+    
+    .copy-btn { background: #333; color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+    .copy-btn:hover { background: #444; }
+    .copy-btn.copied { background: #4ade80; color: #111; }
+
+    /* ── SEO CONTENT BLOCK ── */
+    .seo-content-block h2 { font-size: 1.4rem; color: #fff; margin-bottom: 1rem; margin-top: 2rem; }
+    .seo-content-block p { color: #888; line-height: 1.6; margin-bottom: 1rem; }
+    .seo-faq-item { border-bottom: 1px solid #1e1e1e; padding: 1rem 0; }
+    .seo-faq-q { font-weight: 600; color: #ccc; cursor: pointer; display: flex; justify-content: space-between; }
+    .seo-faq-a { font-size: .95rem; color: #777; line-height: 1.7; max-height: 0; overflow: hidden; transition: .3s; }
+    .seo-faq-item.open .seo-faq-a { max-height: 500px; padding-top: .8rem; }
+    
+    .related-tools-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #272727; }
+    .tools-grid { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .tool-card-link { background: #161616; border: 1px solid #333; padding: 1rem; border-radius: 8px; color: #fff; text-decoration: none; font-size: .9rem; transition: 0.2s; }
+    .tool-card-link:hover { border-color: #7c6fcd; background: #1a1a1a; }
+  </style>
+</head>
+<body>
+
+<nav><a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a></nav>
+
+<div class="hero">
+  <h1>Free Keyword Combiner & Multiplier</h1>
+  <p>Multiply your service, location, and modifier lists to create hundreds of long-tail keyword variations in seconds. Perfect for local SEO and content clustering.</p>
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="grid-inputs">
+      <div class="form-group">
+        <label for="list1">List 1 (Modifiers)</label>
+        <textarea id="list1" placeholder="Best&#10;Top&#10;Cheap"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="list2">List 2 (Services)</label>
+        <textarea id="list2" placeholder="Plumber&#10;Electrician&#10;Carpenter"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="list3">List 3 (Locations)</label>
+        <textarea id="list3" placeholder="Chicago&#10;New York&#10;Texas"></textarea>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="combineKeywords()">Combine Keywords</button>
+
+    <div id="result-box" class="result-box">
+      <div class="result-header">
+        <span style="color:#888; font-size: 0.9rem;">Generated Keywords</span>
+        <button id="copy-btn" class="copy-btn" onclick="copyCode()">Copy All</button>
+      </div>
+      <div id="code-output" class="code-output"></div>
+    </div>
+  </div>
+
+  <div class="seo-content-block">
+    <h2>Why Use a Keyword Combiner?</h2>
+    <p>Content is king, but the right keywords are the throne. A <strong>Keyword Combiner</strong> helps you rapidly scale your SEO research. Instead of manually brainstorming hundreds of variations, our <strong>keyword multiplier</strong> takes your base terms and automates the permutation process. This is especially useful for building local landing pages, PPC campaign variations, and comprehensive content clusters that capture specific user intent.</p>
+
+    <h2>Scaling Local SEO with Keyword Permutations</h2>
+    <p>If you are optimizing for local search, you likely deal with hundreds of combinations like "[service] in [location]" or "[modifier] [service] near me." Using our tool, you can generate a massive list of these combinations in seconds, allowing you to identify gaps in your current <strong>SEO keyword strategy</strong> and create highly relevant content for every permutation of your target audience's search queries.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">What is a keyword multiplier tool?</div>
+      <div class="seo-faq-a">A keyword multiplier takes multiple lists of words and combines them into every possible permutation. It’s a fast way to find long-tail keyword ideas for local SEO and PPC.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">How does this help my SEO content?</div>
+      <div class="seo-faq-a">By generating a massive list of specific keyword phrases, you can map out your content architecture more effectively, ensuring you have dedicated pages or sections for high-intent search terms.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Can I use this for PPC campaigns?</div>
+      <div class="seo-faq-a">Absolutely. This tool is perfect for creating broad match or phrase match lists for Google Ads, helping you cover more search variations quickly.</div>
+    </div>
+  </div>
+
+  <section id="related-tools" class="related-tools-section">
+    <h3>Explore More SEO Tools</h3>
+    <div id="tools-grid" class="tools-grid"></div>
+  </section>
+</div>
+
+<script>
+  function combineKeywords() {
+    const list1 = document.getElementById('list1').value.split('\n').filter(i => i.trim() !== '');
+    const list2 = document.getElementById('list2').value.split('\n').filter(i => i.trim() !== '');
+    const list3 = document.getElementById('list3').value.split('\n').filter(i => i.trim() !== '');
+
+    if (list1.length === 0 || list2.length === 0 || list3.length === 0) {
+      alert("Please fill in all three lists to combine keywords.");
+      return;
+    }
+
+    let results = [];
+    list1.forEach(l1 => {
+      list2.forEach(l2 => {
+        list3.forEach(l3 => {
+          results.push(`${l1.trim()} ${l2.trim()} ${l3.trim()}`);
+        });
+      });
+    });
+
+    const output = document.getElementById('code-output');
+    output.textContent = results.join('\n');
+    document.getElementById('result-box').style.display = 'block';
+  }
+
+  function copyCode() {
+    const text = document.getElementById('code-output').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy All'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  const allTools = [
+    { name: "301 Redirect Generator", url: "https://toolboxkart.tech/seo/301-redirect-generator/" },
+    { name: "Canonical Tag Generator", url: "https://toolboxkart.tech/seo/canonical-tag-generator/" },
+    { name: "Duplicate Content Finder", url: "https://toolboxkart.tech/seo/duplicate-content-finder/" },
+    { name: "Free Keyword Idea Generator", url: "https://toolboxkart.tech/seo/free-keyword-idea-generator/" },
+    { name: "Hreflang Tag Assistant", url: "https://toolboxkart.tech/seo/hreflang-tag-assistant-for-seo/" },
+    { name: "Keyword Combiner", url: "https://toolboxkart.tech/seo/keyword-combiner/" },
+    { name: "Keyword Density Checker", url: "https://toolboxkart.tech/seo/keyword-density-checker/" },
+    { name: "llm.txt Generator", url: "https://toolboxkart.tech/seo/llm-txt-generator-for-ai-seo/" },
+    { name: "Meta Tag Extractor", url: "https://toolboxkart.tech/seo/meta-extractor/" },
+    { name: "Readability Score Checker", url: "https://toolboxkart.tech/seo/readability-score-checker/" },
+    { name: "Robots.txt Generator", url: "https://toolboxkart.tech/seo/robots-txt-generator/" },
+    { name: "Schema Generator", url: "https://toolboxkart.tech/seo/schema-generator-free/" },
+    { name: "Search Console Regex Generator", url: "https://toolboxkart.tech/seo/search-console-regex-generator/" },
+    { name: "URL Slug Generator", url: "https://toolboxkart.tech/seo/url-slug-generator/" },
+    { name: "UTM Link Builder", url: "https://toolboxkart.tech/seo/utm-link-builder/" },
+    { name: "XML Sitemap Builder", url: "https://toolboxkart.tech/seo/xml-sitemap-builder/" }
+  ];
+
+  function loadRelatedTools() {
+    const container = document.getElementById('tools-grid');
+    if (!container) return;
+    const currentHref = window.location.href;
+    const filteredTools = allTools.filter(tool => !currentHref.includes(tool.url));
+    filteredTools.forEach(tool => {
+      const link = document.createElement('a');
+      link.href = tool.url;
+      link.className = 'tool-card-link';
+      link.textContent = tool.name;
+      container.appendChild(link);
+    });
+  }
+
+  document.querySelectorAll('.seo-faq-q').forEach(q => {
+    q.addEventListener('click', () => q.closest('.seo-faq-item').classList.toggle('open'));
+  });
+
+  loadRelatedTools();
+</script>
+</body>
+</html>

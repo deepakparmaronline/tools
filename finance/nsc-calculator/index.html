@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NSC Calculator | National Savings Certificate Maturity - Toolboxkart</title>
+  <meta name="description" content="Calculate your National Savings Certificate (NSC) maturity amount and interest earned. Plan your Section 80C tax savings with our free online NSC Calculator.">
+  
+  <style>
+    /* Global Rules */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+    
+    /* Navigation */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+    .nav-brand span { color: #7c6fcd; }
+    
+    /* Layout */
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    
+    /* Hero Section */
+    .hero { text-align: center; padding: 3rem 1rem 1rem; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; line-height: 1.2; }
+    .hero p { color: #888; font-size: 1.1rem; }
+    
+    /* Tool Card */
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem 2rem; }
+    
+    /* Inputs */
+    .input-grid { display: grid; gap: 1.5rem; margin-bottom: 2rem; grid-template-columns: 1fr; }
+    @media (min-width: 600px) { .input-grid { grid-template-columns: 1fr 1fr; } }
+    
+    .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    label { font-weight: 600; color: #e0e0e0; font-size: 0.95rem; }
+    input, select { background: #0d0d0d; border: 1px solid #272727; color: #fff; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+    input:focus, select:focus { border-color: #7c6fcd; }
+    .help-text { font-size: 0.8rem; color: #888; }
+    
+    /* Button */
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: opacity 0.2s; }
+    button.btn-primary:hover { opacity: 0.9; }
+    
+    /* Result Box */
+    .result-box { display: none; margin-top: 2rem; padding: 2rem; background: rgba(124, 111, 205, 0.05); border: 1px solid #7c6fcd; border-radius: 12px; }
+    .result-box h3 { margin-bottom: 1.5rem; color: #fff; text-align: center; font-size: 1.4rem; }
+    .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; text-align: center; }
+    .result-item p { color: #888; font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .result-item h4 { font-size: 1.6rem; color: #7c6fcd; }
+    .highlight-box { grid-column: 1 / -1; margin-top: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid #272727; }
+    .highlight-box h4 { font-size: 2.8rem; color: #fff; }
+    
+    /* SEO Content Section */
+    .seo-content-block { margin-top: 3rem; color: #b3b3b3; }
+    .seo-content-block h2 { color: #fff; margin: 2.5rem 0 1rem; font-size: 1.8rem; }
+    .seo-content-block p { margin-bottom: 1.2rem; }
+    
+    /* FAQs */
+    .seo-faq-container { margin-top: 2rem; }
+    .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+    .seo-faq-q { cursor: pointer; display: flex; justify-content: space-between; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; }
+    .seo-faq-item.open .seo-faq-q::after { content: '-'; }
+    .seo-faq-a { display: none; padding-top: 1rem; color: #888; font-size: 1rem; }
+    .seo-faq-item.open .seo-faq-a { display: block; }
+    
+    /* Related Tools */
+    .related-tools h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+    #tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .tool-card-link { background: #161616; border: 1px solid #272727; padding: 1.5rem; border-radius: 10px; text-decoration: none; color: #e0e0e0; font-weight: 600; text-align: center; transition: all 0.2s; }
+    .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>NSC Calculator</h1>
+    <p>Calculate your guaranteed maturity amount and interest earned from the National Savings Certificate.</p>
+  </div>
+
+  <!-- Tool Container -->
+  <div class="container">
+    <div class="card">
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="investment">Total Investment Amount (₹)</label>
+          <input type="number" id="investment" placeholder="e.g., 150000" min="1000" step="100">
+          <span class="help-text">Minimum ₹1,000. No maximum limit, but 80C benefits cap at ₹1.5 Lakh.</span>
+        </div>
+        <div class="input-group">
+          <label for="rate">NSC Interest Rate (p.a. %)</label>
+          <input type="number" id="rate" value="7.7" step="0.1" min="1">
+          <span class="help-text">Current Govt. rate is approx 7.7% p.a. (compounded annually).</span>
+        </div>
+        <div class="input-group" style="grid-column: 1 / -1;">
+          <label for="duration">Investment Tenure</label>
+          <select id="duration" disabled>
+            <option value="5" selected>5 Years (NSC VIII Issue)</option>
+          </select>
+          <span class="help-text">The National Savings Certificate comes with a mandatory 5-year lock-in period.</span>
+        </div>
+      </div>
+      
+      <button class="btn-primary" id="calculate-btn">Calculate NSC Maturity</button>
+
+      <!-- Result Box -->
+      <div class="result-box" id="result-box">
+        <h3>NSC Investment Summary</h3>
+        <div class="result-grid">
+          <div class="result-item">
+            <p>Total Amount Invested</p>
+            <h4 id="res-principal">₹0</h4>
+          </div>
+          <div class="result-item">
+            <p>Total Interest Earned</p>
+            <h4 id="res-interest">₹0</h4>
+          </div>
+          <div class="result-item highlight-box">
+            <p>Maturity Amount (Principal + Interest)</p>
+            <h4 id="res-maturity">₹0</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO Content Block -->
+  <div class="container seo-content-block">
+    <h2>Why Should You Use a National Savings Certificate (NSC) Calculator?</h2>
+    <p>The <strong>National Savings Certificate (NSC)</strong> is a highly popular, government-backed fixed-income investment scheme available at Indian Post Offices. Designed primarily for small to mid-income investors, it offers guaranteed returns and acts as an excellent tool for tax-saving. The <strong>NSC interest rate</strong> is revised quarterly by the Ministry of Finance, making it crucial to know exactly how much your investment will grow.</p>
+    <p>Our online <strong>NSC Calculator</strong> helps you accurately forecast your wealth. Because NSC interest is compounded annually but paid out only at the end of the 5-year lock-in period, manual math can be tricky. By inputting your deposit amount into our <strong>NSC maturity calculator</strong>, you can instantly see the power of <strong>compounding interest</strong> and plan your financial goals with complete confidence.</p>
+    
+    <!-- FAQs -->
+    <div class="seo-faq-container">
+      <h2>Frequently Asked Questions About Post Office NSC Calculation</h2>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">What are the tax benefits of investing in NSC?</div>
+        <div class="seo-faq-a">Your initial investment in NSC qualifies for a tax deduction of up to ₹1.5 Lakh under Section 80C. Additionally, the interest earned in the first 4 years is deemed to be "reinvested" and also qualifies for Section 80C deductions, making it highly tax-efficient. Only the final year's interest is taxed as per your slab rate.</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">Can I withdraw my NSC money before 5 years?</div>
+        <div class="seo-faq-a">No, premature withdrawal of NSC is generally not allowed before the 5-year lock-in period. It is only permitted under exceptional circumstances, such as the death of the certificate holder or by the order of a court of law.</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">Is there a maximum limit for NSC investments?</div>
+        <div class="seo-faq-a">There is no maximum limit on the amount you can invest in National Savings Certificates. However, the tax benefit under Section 80C of the Income Tax Act is capped at a maximum of ₹1.5 Lakh per financial year.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Tools -->
+  <div class="container related-tools">
+    <h2>More Finance Tools</h2>
+    <div id="tools-grid"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // 1. Calculation Logic
+    document.getElementById('calculate-btn').addEventListener('click', function() {
+      const p = parseFloat(document.getElementById('investment').value);
+      const r = parseFloat(document.getElementById('rate').value);
+      const t = 5; // NSC is fixed for 5 years
+      
+      if(isNaN(p) || isNaN(r) || p < 1000 || r <= 0) {
+        alert("Bhai, please enter valid numbers. Minimum NSC investment is ₹1,000.");
+        return;
+      }
+
+      // NSC Interest Formula: Compounded Annually
+      // A = P * (1 + R/100)^T
+      const maturityAmount = p * Math.pow((1 + r / 100), t);
+      const totalInterest = maturityAmount - p;
+
+      // Currency Formatting (Indian Format)
+      const formatter = new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0
+      });
+
+      // Update DOM
+      document.getElementById('res-principal').textContent = formatter.format(p);
+      document.getElementById('res-interest').textContent = formatter.format(totalInterest);
+      document.getElementById('res-maturity').textContent = formatter.format(maturityAmount);
+
+      // Show Result Box
+      document.getElementById('result-box').style.display = 'block';
+    });
+
+    // 2. FAQ Accordion Logic
+    document.querySelectorAll('.seo-faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const parent = q.closest('.seo-faq-item');
+        document.querySelectorAll('.seo-faq-item').forEach(item => {
+          if (item !== parent) item.classList.remove('open');
+        });
+        parent.classList.toggle('open');
+      });
+    });
+
+    // 3. Related Tools Logic (Dynamically loading all completed tools, including SCSS)
+    const relatedTools = [
+      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
+      { name: "Budget Planner", url: "/finance/budget-planner" },
+      { name: "CAGR Calculator", url: "/finance/cagr-calculator" },
+      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
+      { name: "EMI Calculator", url: "/finance/emi-calculator" },
+      { name: "EPF Calculator", url: "/finance/epf-calculator" },
+      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
+      { name: "FD Calculator", url: "/finance/fd-calculator" },
+      { name: "Gratuity Calculator", url: "/finance/gratuity-calculator" },
+      { name: "GST Calculator", url: "/finance/gst-calculator" },
+      { name: "HRA Calculator", url: "/finance/hra-calculator" },
+      { name: "Income Tax Calculator", url: "/finance/income-tax-calculator" },
+      { name: "Inflation Calculator", url: "/finance/inflation-calculator" },
+      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
+      { name: "Mutual Fund Tax Calculator", url: "/finance/mutual-fund-tax-calculator" },
+      { name: "NPS Calculator", url: "/finance/nps-calculator" },
+      { name: "Post Office MIS Calculator", url: "/finance/pomis-calculator" },
+      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
+      { name: "RD Calculator", url: "/finance/rd-calculator" },
+      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
+      { name: "ROI Calculator", url: "/finance/roi-calculator" },
+      { name: "SCSS Calculator", url: "/finance/scss-calculator" },
+      { name: "Simple Interest Calculator", url: "/finance/simple-interest-calculator" },
+      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
+      { name: "SSY Calculator", url: "/finance/ssy-calculator" },
+      { name: "Step-Up SIP Calculator", url: "/finance/step-up-sip-calculator" },
+      { name: "SWP Calculator", url: "/finance/swp-calculator" },
+      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
+    ];
+    
+    function loadRelatedTools() {
+      const container = document.getElementById('tools-grid');
+      relatedTools.forEach(tool => {
+        const link = document.createElement('a'); 
+        link.href = tool.url; 
+        link.className = 'tool-card-link'; 
+        link.textContent = tool.name; 
+        container.appendChild(link);
+      });
+    }
+    loadRelatedTools();
+  </script>
+
+</body>
+</html>

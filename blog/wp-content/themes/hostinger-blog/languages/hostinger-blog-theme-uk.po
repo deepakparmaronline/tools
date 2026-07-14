@@ -1,0 +1,576 @@
+# Copyright (C) 2020 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
+"Last-Translator: \n"
+"Language-Team: Ukrainian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-04-17T21:03:15+00:00\n"
+"PO-Revision-Date: 2025-07-22 15:48+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: _s\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"X-Loco-Version: 2.6.4; wp-6.3.1"
+
+#: build/components/blocks/aboutsection/render.php:4
+msgid ""
+"<p>As a designer, creator, and lifelong learner, I am driven by a passion "
+"for bringing ideas to life through creative problem-solving and "
+"collaboration. With a background in visual design, I have expanded my "
+"skillset to encompass a variety of creative and technical disciplines, "
+"including media production and web development. I approach each project with "
+"a dedication to quality and a commitment to delivering results that exceed "
+"expectations.</p>"
+msgstr ""
+"<p>Як дизайнер, творець і вічний студент, я реалізую ідеї за допомогою "
+"творчих та спільних рішень. Маючи досвід у візуальному дизайні, я розвиваюся "
+"також в інших творчих та технічних сферах, зокрема у медіа та розробці "
+"сайтів. Я відповідально підходжу до кожного проєкту, щоб досягти найкращих "
+"результатів.</p>\n"
+"\n"
+
+#: build/components/blocks/disclaimersection/render.php:3
+msgid ""
+"<p>The information contained in this website is for general information "
+"purposes only. The information is provided by [website name] and while we "
+"endeavor to keep the information up to date and correct, we make no "
+"representations or warranties of any kind, express or implied, about the "
+"completeness, accuracy, reliability, suitability or availability with "
+"respect to the website or the information, products, services, or related "
+"graphics contained on the website for any purpose. Any reliance you place on "
+"such information is therefore strictly at your own risk.</p>"
+msgstr ""
+"<p>На цьому сайті відображається лише загальна інформація. Інформація "
+"надається [website name], і хоча ми слідкуємо, щоб вона завжди була "
+"актуальною та правильною, ми не робимо жодних заяв і не даємо гарантій щодо "
+"повноти, точності, надійності, актуальності чи доступності сайту або "
+"інформації, продуктів, послуг чи зображень, які розміщені на сайті, для будь-"
+"яких цілей. Ви покладаєтесь на таку інформацію лише на свій ризик.</p>"
+
+#: build/components/blocks/aboutsection/render.php:2
+msgid "A bit about me ✌️"
+msgstr "Трохи про мене ✌️"
+
+#: build/components/blocks/aboutsection/render.php:3
+msgid ""
+"A designer, creator, and lifelong learner with a passion for bringing ideas "
+"to life through creative problem-solving and collaboration."
+msgstr ""
+"Дизайнер, творець і вічний студент, який реалізовує ідеї за допомогою "
+"творчих та спільних рішень."
+
+#: inc/theme-settings.php:20
+msgid "Additional Settings"
+msgstr "Додаткові налаштування"
+
+#: build/components/blocks/contactform/render.php:68
+msgid "Address"
+msgstr "Адреса"
+
+#: index.php:34
+msgid "All blog posts"
+msgstr "Усі публікації блогу"
+
+#: inc/template-functions.php:275
+msgid "Attention:"
+msgstr "Важливо:"
+
+#: build/components/blocks/aboutsection/block.json:1
+msgctxt "block description"
+msgid "About section"
+msgstr "Про розділ"
+
+#: build/components/blocks/contactform/block.json:1
+msgctxt "block description"
+msgid "Contact form"
+msgstr "Контактна форма"
+
+#: build/components/blocks/disclaimersection/block.json:1
+msgctxt "block description"
+msgid "Disclaimer section"
+msgstr "Розділ попереджень"
+
+#: build/components/blocks/featuredpost/block.json:1
+msgctxt "block description"
+msgid "Featured post"
+msgstr "Рекомендована публікація"
+
+#: build/components/blocks/herosection/block.json:1
+msgctxt "block description"
+msgid "Hero block"
+msgstr "Головна сторінка"
+
+#: build/components/blocks/latestposts/block.json:1
+msgctxt "block description"
+msgid "Latest posts"
+msgstr "Останні публікації"
+
+#: build/components/blocks/newsletter/block.json:1
+msgctxt "block description"
+msgid "Newsletter form"
+msgstr "Форма розсилки"
+
+#: build/components/blocks/aboutsection/block.json:1
+msgctxt "block title"
+msgid "About section"
+msgstr "Про розділ"
+
+#: build/components/blocks/contactform/block.json:1
+msgctxt "block title"
+msgid "Contact form"
+msgstr "Контактна форма"
+
+#: build/components/blocks/disclaimersection/block.json:1
+msgctxt "block title"
+msgid "Disclaimer section"
+msgstr "Розділ попереджень"
+
+#: build/components/blocks/featuredpost/block.json:1
+msgctxt "block title"
+msgid "Featured Post"
+msgstr "Рекомендована публікація"
+
+#: build/components/blocks/herosection/block.json:1
+msgctxt "block title"
+msgid "Hero Section"
+msgstr "Головна сторінка"
+
+#: build/components/blocks/latestposts/block.json:1
+msgctxt "block title"
+msgid "Latest Posts"
+msgstr "Останні публікації"
+
+#: build/components/blocks/newsletter/block.json:1
+msgctxt "block title"
+msgid "Newsletter form"
+msgstr "Форма розсилки"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Grey / Light"
+msgstr "Сірий / Світлий"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Grey / Lighter"
+msgstr "Сірий / світліший"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Dark"
+msgstr "Головна / Темнота"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Grey"
+msgstr "Головна / Сірий"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Light"
+msgstr "Головна / Світло"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Primary"
+msgstr "Головна / Основна"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Primary Dark"
+msgstr "Головна / Первинна темрява"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Transparent"
+msgstr "Прозорий"
+
+#: inc/template-functions.php:281
+msgid "Color scheme"
+msgstr "Колірна гама"
+
+#: inc/template-functions.php:283
+msgid "Contact information"
+msgstr "Контактна інформація"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Custom template name"
+msgid "No title"
+msgstr "Без назви"
+
+#: build/components/blocks/disclaimersection/render.php:2
+msgid "Disclaimer"
+msgstr "Попередження"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Duotone name"
+msgid "Primary and Contrast"
+msgstr "Основний і контрастний"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Duotone name"
+msgid "Secondary and primary"
+msgstr "Вторинні та первинні"
+
+#: inc/theme-settings.php:44
+msgid "Edit theme settings below."
+msgstr "Відредагуйте налаштування теми нижче."
+
+#: archive.php:81 build/components/blocks/newsletter/render.php:16
+#: build/components/blocks/contactform/render.php:25
+#: build/components/blocks/contactform/render.php:46
+msgid "Email"
+msgstr "Пошта"
+
+#: inc/theme-settings.php:61
+msgid "Enter contacts below"
+msgstr "Введіть контакти нижче"
+
+#: inc/theme-settings.php:70
+msgid "Enter footer content below"
+msgstr "Введіть контакти нижче"
+
+#: inc/theme-settings.php:52
+msgid "Enter the URLs for your social media profiles below."
+msgstr "Введіть нижче URL-адреси ваших профілів у соцмережах."
+
+#: index.php:37
+msgid ""
+"Explore the world of design and learn how to create visually stunning\n"
+"\t\t\t\t\tartwork."
+msgstr ""
+"Досліджуйте світ дизайну та навчіться створювати приголомшливі проєкти."
+
+#: build/components/blocks/contactform/render.php:3
+msgid "Feel free to reach out to me through any of the following ways."
+msgstr "Не соромтеся зв’язатися зі мною одним із наведених нижче способів."
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Інтер"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Extra small"
+msgstr "Надзвичайно малий"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Large"
+msgstr "Великий"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Medium"
+msgstr "Середній"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Малий"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "XL"
+msgstr "XL"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "XXL"
+msgstr "XXL"
+
+#: build/components/blocks/herosection/render.php:4
+msgid ""
+"From visual design to media production, my passion for creating has led me "
+"on a journey of exploration and innovation."
+msgstr ""
+"Моя пристрасть до творчості, від візуального дизайну до реклами, привела "
+"мене на шлях відкриттів та інновацій."
+
+#: 404.php:22
+#, php-format
+msgid "Go back to the %s"
+msgstr "Повернутися до %s"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Gradient name"
+msgid "Horizontal white to Primary color"
+msgstr "Горизонтальний білий до основного кольору"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Gradient name"
+msgid "Primary color to white"
+msgstr "Основний колір до білого"
+
+#: 404.php:27
+msgid "Home"
+msgstr "Додому"
+
+#. Author of the theme
+msgid "Hostinger"
+msgstr "Hostinger"
+
+#. Name of the theme
+msgid "Hostinger blog theme"
+msgstr "Тема блогу Hostinger"
+
+#. Description of the theme
+msgid ""
+"Hostinger Blog Theme is the perfect choice for bloggers seeking a powerful "
+"yet lightweight solution. Built with SEO and mobile responsiveness in mind, "
+"this theme ensures optimal performance and a better online presence. It "
+"includes pre-made home, about us, contact us, and blog pages, giving your "
+"blog a seamless and quick start. Regardless of your niche, take your blog to "
+"the next level with this lightweight and professional-looking theme."
+msgstr ""
+"Тема блогу Hostinger – ідеальний вибір для блогерів, які шукають потужне, "
+"але легке рішення. Ця тема підходить для SEO-оптимізації та зручна для "
+"мобільних пристроїв, а також забезпечує максимальну продуктивність і "
+"відвідуваність. Вона включає готову домашню сторінку, сторінки про нас, "
+"контакти та сторінку блогу, що забезпечує легкий і швидкий старт вашого "
+"сайту. Ви зможете вивести свій блог на новий рівень, незалежно від вашої "
+"сфери."
+
+#. Author URI of the theme
+msgid "https://hostinger.com"
+msgstr "https://hostinger.com"
+
+#. URI of the theme
+msgid "https://www.hostinger.com/blog/hostinger-blog-theme"
+msgstr "https://www.hostinger.com/blog/hostinger-blog-theme"
+
+#: archive.php:92 build/components/blocks/newsletter/render.php:4
+msgid ""
+"I consent to use of my email address for the purpose of receiving "
+"newsletters as described in"
+msgstr ""
+"Я даю згоду на використання моєї електронної адреси для отримання розсилки, "
+"як вказано в"
+
+#: build/components/blocks/contactform/render.php:4
+msgid ""
+"I consent to use of provided personal data for the purpose of responding to "
+"the request as described in"
+msgstr ""
+"Я даю згоду на використання наданих персональних даних, щоб отримати "
+"відповідь на запит, як вказано в"
+
+#: build/components/blocks/herosection/render.php:3
+msgid "I’m Shawn — a designer and creator 👋"
+msgstr "Мене звати Шон – дизайнер і творець 👋"
+
+#: inc/template-functions.php:279
+msgid "Key areas that require attention include:"
+msgstr "Основні сфери, які потребують уваги, включають:"
+
+#: build/components/blocks/latestposts/render.php:4
+msgid "Latest Posts"
+msgstr "Останні публікації"
+
+#: build/components/blocks/herosection/render.php:6
+msgid "Learn About Me"
+msgstr "Більше про мене"
+
+#: build/components/blocks/contactform/render.php:2
+msgid "Let’s get in touch"
+msgstr "Зв'яжіться зі мною"
+
+#: build/components/blocks/herosection/render.php:8
+msgid "Let’s stay connected"
+msgstr "Давайте залишатися на зв'язку"
+
+#: build/components/blocks/contactform/render.php:29
+msgid "Message"
+msgstr "Повідомлення"
+
+#: build/components/blocks/contactform/render.php:21
+msgid "Name"
+msgstr "Ім'я"
+
+#: inc/form-submissions.php:72
+msgid "New Newsletter Subscription"
+msgstr "Нова підписка на розсилку"
+
+#: archive.php:75 build/components/blocks/newsletter/render.php:2
+msgid "Newsletter"
+msgstr "Розсилка"
+
+#: index.php:55 archive.php:48
+msgid "No categories found."
+msgstr "Категорії не знайдено."
+
+#: inc/form-submissions.php:40 inc/form-submissions.php:95
+msgid "Not valid recipient email."
+msgstr "Електронна адреса одержувача недійсна."
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Нічого не знайдено"
+
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Цю сторінку неможливо знайти."
+
+#: template-parts/content-page.php:22
+msgid "Pages:"
+msgstr "Сторінки:"
+
+#: build/components/blocks/contactform/render.php:57
+msgid "Phone"
+msgstr "Телефон"
+
+#: inc/template-functions.php:275
+msgid ""
+"Please adjust your <a href=\"?page=hostinger-additional-settings\">theme "
+"settings</a> to personalize your website."
+msgstr "Змініть налаштування теми, щоб налаштувати сайт під свій сайт."
+
+#: inc/form-submissions.php:13 inc/form-submissions.php:64
+msgid "Please agree with privacy policy."
+msgstr "Погодьтеся з політикою конфіденційності."
+
+#: inc/form-submissions.php:17 inc/form-submissions.php:68
+msgid "Please enter a valid email address."
+msgstr "Введіть дійсну адресу електронної пошти."
+
+#: functions.php:81
+msgid "Primary"
+msgstr "Основний"
+
+#: build/components/blocks/newsletter/render.php:4
+#: build/components/blocks/contactform/render.php:4
+msgid "Privacy Policy"
+msgstr "Політика конфіденційності"
+
+#: footer.php:50 functions.php:87
+msgid "Quick links"
+msgstr "Швидкі посилання"
+
+#: single.php:89
+msgid "RELATED POSTS"
+msgstr "ПОДІБНІ ПУБЛІКАЦІЇ"
+
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Результати пошуку для: %s"
+
+#: build/components/blocks/contactform/render.php:41
+msgid "Send Message"
+msgstr "Відправити повідомлення"
+
+#: inc/template-functions.php:282
+msgid "Social media links"
+msgstr "Посилання на соцмережі"
+
+#: search.php:37 index.php:74 archive.php:67
+msgid "Sorry, no posts matched your criteria."
+msgstr "Жодна публікація не відповідає вашому запиту."
+
+#: archive.php:95 build/components/blocks/newsletter/render.php:30
+msgid "Subscribe"
+msgstr "Підпишіться"
+
+#: archive.php:76 build/components/blocks/newsletter/render.php:3
+msgid ""
+"Subscribe to stay up-to-date with my latest creative projects, insights, and "
+"tips."
+msgstr ""
+"Підпишіться, щоб слідкувати за моїми творчими проєктами, думками та порадами."
+
+#: inc/form-submissions.php:99
+msgid "Successfully submitted!"
+msgstr "Успішно надіслано!"
+
+#: inc/form-submissions.php:45
+msgid "Successfully subscribed!"
+msgstr "Ви успішно підписалися!"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Template part name"
+msgid "Footer"
+msgstr "Нижній колонтитул"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Template part name"
+msgid "Header"
+msgstr "Заголовок"
+
+#: functions.php:93
+msgid "Terms & policy"
+msgstr "Умови та політика"
+
+#: footer.php:65
+msgid "Terms &amp; policy"
+msgstr "Умови та політика"
+
+#: inc/theme-blocks.php:16
+msgid "Theme Blocks"
+msgstr "Розділи тем"
+
+#: inc/theme-settings.php:5 inc/theme-settings.php:6
+msgid "Theme Settings"
+msgstr "Налаштування теми"
+
+#: inc/template-functions.php:278
+msgid ""
+"To enhance your site's functionality and user experience, ensure that you "
+"fill in the theme settings with accurate information."
+msgstr ""
+"Щоб покращити функціональність вашого сайту та взаємодію з користувачем, "
+"переконайтеся, що ви ввели правильну інформацію в налаштуваннях теми."
+
+#: archive.php:85 build/components/blocks/newsletter/render.php:20
+#: build/components/blocks/contactform/render.php:28
+msgid "What’s your email?"
+msgstr "Яка ваша електронна адреса?"
+
+#: build/components/blocks/contactform/render.php:24
+msgid "What’s your name?"
+msgstr "Як вас звати?"
+
+#: build/components/blocks/newsletter/render.php:4
+#: build/components/blocks/contactform/render.php:4
+msgid "which I have read. I may withdraw my consent at any time."
+msgstr "які я прочитав (-ла). Я можу відкликати свою згоду в будь-який час."
+
+#: build/components/blocks/contactform/render.php:31
+msgid "Write your message..."
+msgstr "Напишіть повідомлення..."
+
+#: inc/template-functions.php:277
+msgid ""
+"Your website currently lacks essential information such as social links and "
+"contact details."
+msgstr ""
+"Зараз на вашому сайті відсутня така важлива інформація, як посилання на "
+"соцмережі та контактні дані."

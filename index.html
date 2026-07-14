@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tool Box Kart | Free Online Tools for Every Workflow</title>
+  <meta name="description" content="Free, fast, and private online tools for image editing, trending tech, and more. No signup, no ads, no data stored. New tools added regularly.">
+  <style>
+    /* ── PURE CSS CLEAN WHITE & GREY THEME ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body { 
+      background-color: #f8fafc; /* Very light grey background */
+      color: #334155; /* Slate grey text */
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+      min-height: 100vh; 
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav { 
+      background: #ffffff; 
+      border-bottom: 1px solid #e2e8f0; 
+      padding: 0 2rem; 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
+      height: 64px; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100; 
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+    .nav-brand { font-weight: 800; font-size: 1.25rem; color: #0f172a; text-decoration: none; letter-spacing: 0.5px; display: flex; align-items: center; }
+    .nav-brand span { color: #ffffff; background: #6366f1; padding: 0.2rem 0.6rem; border-radius: 6px; margin-right: 8px; font-size: 1.1rem; }
+    
+    /* ── HERO SECTION ── */
+    .hero { 
+      text-align: center; 
+      padding: 6rem 1rem 5rem; 
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0; 
+    }
+    .hero h1 { font-size: 3rem; font-weight: 800; color: #0f172a; margin-bottom: 1.2rem; line-height: 1.1; letter-spacing: -1px; }
+    .hero h1 span { color: #6366f1; }
+    .hero p { color: #475569; font-size: 1.15rem; max-width: 700px; margin: 0 auto 2.5rem; }
+    .btn-primary { 
+      display: inline-block; 
+      background: #6366f1; 
+      color: #fff; 
+      padding: 0.85rem 2.2rem; 
+      font-size: 1.1rem; 
+      font-weight: 600; 
+      border-radius: 8px; 
+      text-decoration: none; 
+      transition: all 0.2s ease; 
+      box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.2);
+    }
+    .btn-primary:hover { background: #4f46e5; transform: translateY(-2px); box-shadow: 0 6px 10px -1px rgba(99, 102, 241, 0.3); }
+
+    /* ── MAIN CONTENT & DYNAMIC GRID ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 5rem 1rem; }
+    .section-title { text-align: center; margin-bottom: 3.5rem; }
+    .section-title h2 { font-size: 2.2rem; color: #0f172a; margin-bottom: 0.5rem; font-weight: 700; }
+    .section-title p { color: #64748b; font-size: 1.05rem; }
+
+    #dynamic-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    
+    /* ── NICHE CARDS ── */
+    .niche-section { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); }
+    .niche-header { display: flex; align-items: center; gap: 0.85rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1.2rem; margin-bottom: 1.2rem; }
+    .niche-icon { background: #eef2ff; color: #6366f1; font-weight: 800; padding: 0.4rem 0.8rem; border-radius: 8px; font-size: 1.2rem; }
+    .niche-header h2 { font-size: 1.35rem; color: #0f172a; font-weight: 700; }
+    
+    /* ── TOOL LINKS ── */
+    .tools-grid { display: flex; flex-direction: column; gap: 0.75rem; }
+    .tool-card { 
+      background: #f8fafc; 
+      border: 1px solid #e2e8f0; 
+      padding: 1rem 1.2rem; 
+      border-radius: 10px; 
+      text-decoration: none; 
+      color: #475569; 
+      font-weight: 600; 
+      transition: all 0.2s ease; 
+      display: flex; 
+      align-items: center; 
+      gap: 0.75rem; 
+    }
+    .tool-card:hover { border-color: #6366f1; color: #0f172a; background: #ffffff; transform: translateX(4px); box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+    .tool-card span { color: #6366f1; font-size: 1.1rem; }
+
+    /* ── FAQ ── */
+    .faq-wrapper { max-width: 800px; margin: 6rem auto 0; }
+    .faq-item { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; margin-bottom: 1rem; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
+    .faq-q { padding: 1.25rem 1.5rem; font-size: 1.1rem; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
+    .faq-q:hover { background: #f8fafc; }
+    .faq-q::after { content: '+'; color: #6366f1; font-size: 1.5rem; transition: transform 0.3s ease; font-weight: normal; }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { padding: 0 1.5rem; color: #475569; max-height: 0; overflow: hidden; transition: all 0.3s ease; }
+    .faq-item.open .faq-a { padding: 0 1.5rem 1.5rem; max-height: 300px; }
+    .faq-item.open .faq-q { border-bottom: 1px solid transparent; }
+
+    /* ── FOOTER ── */
+    footer { text-align: center; padding: 2.5rem 2rem; border-top: 1px solid #e2e8f0; color: #64748b; margin-top: 4rem; background: #ffffff; font-size: 0.95rem; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.3rem; }
+      .container { padding: 3rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-brand" href="/"><span>TBK</span> Tool Box Kart</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Free Online Tools for <span>Every Workflow</span></h1>
+    <p>We build extremely fast, privacy-first web utilities. Whether you're optimizing images, checking SEO, or doing technical tasks, these tools run instantly right in your browser.</p>
+    <a href="#categories" class="btn-primary">Explore All Tools</a>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container" id="categories">
+    <div class="section-title">
+      <h2>Tools By Category</h2>
+      <p>Select a category below to view our expanding toolkit. Zero signups, zero limits.</p>
+    </div>
+
+    <!-- Filled automatically by site.js -->
+    <div id="dynamic-categories"></div>
+
+    <!-- FAQ -->
+    <div class="faq-wrapper">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-q">Are these tools completely free?</div>
+        <div class="faq-a">Yes. Every single tool on Tool Box Kart is 100% free to use. There are no paywalls, hidden fees, or daily usage limits.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-q">Do you save my images or personal data?</div>
+        <div class="faq-a">Absolutely not. Privacy is our top priority. Our image and tech tools utilize your browser's local processing capabilities. Your files never leave your device.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-q">How fast are new tools added?</div>
+        <div class="faq-a">We push updates weekly! The moment we publish a new tool to our platform, our dynamic scripts automatically display it in the category grid above.</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Tool Box Kart. Built for privacy, efficiency, and speed.</p>
+  </footer>
+
+  <script src="/assets/site.js" defer></script>
+  <script>
+    // Lightweight FAQ Accordion
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

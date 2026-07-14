@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FD Calculator | Fixed Deposit Interest & Maturity Amount - Toolboxkart</title>
+  <meta name="description" content="Use our free online FD Calculator to calculate your Fixed Deposit interest earnings and final maturity amount. Supports monthly, quarterly, and yearly compounding.">
+  
+  <style>
+    /* Global Rules */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+    
+    /* Navigation */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+    .nav-brand span { color: #7c6fcd; }
+    
+    /* Layout */
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    
+    /* Hero Section */
+    .hero { text-align: center; padding: 3rem 1rem 1rem; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; line-height: 1.2; }
+    .hero p { color: #888; font-size: 1.1rem; }
+    
+    /* Tool Card */
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem 2rem; }
+    
+    /* Inputs */
+    .input-grid { display: grid; gap: 1.5rem; margin-bottom: 2rem; grid-template-columns: 1fr; }
+    @media (min-width: 600px) { .input-grid { grid-template-columns: 1fr 1fr; } }
+    
+    .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    label { font-weight: 600; color: #e0e0e0; font-size: 0.95rem; }
+    input, select { background: #0d0d0d; border: 1px solid #272727; color: #fff; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+    input:focus, select:focus { border-color: #7c6fcd; }
+    
+    /* Button */
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: opacity 0.2s; }
+    button.btn-primary:hover { opacity: 0.9; }
+    
+    /* Result Box */
+    .result-box { display: none; margin-top: 2rem; padding: 2rem; background: rgba(124, 111, 205, 0.05); border: 1px solid #7c6fcd; border-radius: 12px; }
+    .result-box h3 { margin-bottom: 1.5rem; color: #fff; text-align: center; font-size: 1.4rem; }
+    .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; text-align: center; }
+    .result-item p { color: #888; font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .result-item h4 { font-size: 1.5rem; color: #7c6fcd; }
+    
+    /* SEO Content Section */
+    .seo-content-block { margin-top: 3rem; color: #b3b3b3; }
+    .seo-content-block h2 { color: #fff; margin: 2.5rem 0 1rem; font-size: 1.8rem; }
+    .seo-content-block p { margin-bottom: 1.2rem; }
+    
+    /* FAQs */
+    .seo-faq-container { margin-top: 2rem; }
+    .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+    .seo-faq-q { cursor: pointer; display: flex; justify-content: space-between; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; }
+    .seo-faq-item.open .seo-faq-q::after { content: '-'; }
+    .seo-faq-a { display: none; padding-top: 1rem; color: #888; font-size: 1rem; }
+    .seo-faq-item.open .seo-faq-a { display: block; }
+    
+    /* Related Tools */
+    .related-tools h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+    #tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .tool-card-link { background: #161616; border: 1px solid #272727; padding: 1.5rem; border-radius: 10px; text-decoration: none; color: #e0e0e0; font-weight: 600; text-align: center; transition: all 0.2s; }
+    .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>FD Calculator</h1>
+    <p>Calculate your Fixed Deposit interest earnings and final maturity amount instantly.</p>
+  </div>
+
+  <!-- Tool Container -->
+  <div class="container">
+    <div class="card">
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="principal">Total Investment Amount (₹)</label>
+          <input type="number" id="principal" placeholder="e.g., 100000" min="1000">
+        </div>
+        <div class="input-group">
+          <label for="rate">Rate of Interest (p.a. %)</label>
+          <input type="number" id="rate" placeholder="e.g., 7.5" step="0.01" min="1">
+        </div>
+        <div class="input-grid-inner" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; grid-column: span 1;">
+          <div class="input-group">
+            <label for="years">Years</label>
+            <input type="number" id="years" value="1" min="0" max="25">
+          </div>
+          <div class="input-group">
+            <label for="months">Months</label>
+            <input type="number" id="months" value="0" min="0" max="11">
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="compounding">Compounding Frequency</label>
+          <select id="compounding">
+            <option value="4" selected>Quarterly (Standard)</option>
+            <option value="12">Monthly</option>
+            <option value="2">Half-Yearly</option>
+            <option value="1">Yearly</option>
+          </select>
+        </div>
+      </div>
+      
+      <button class="btn-primary" id="calculate-btn">Calculate FD Returns</button>
+
+      <!-- Result Box -->
+      <div class="result-box" id="result-box">
+        <h3>Fixed Deposit Breakdown</h3>
+        <div class="result-grid">
+          <div class="result-item">
+            <p>Invested Amount</p>
+            <h4 id="res-principal">₹0</h4>
+          </div>
+          <div class="result-item">
+            <p>Total Interest Earned</p>
+            <h4 id="res-returns">₹0</h4>
+          </div>
+          <div class="result-item">
+            <p>Maturity Amount</p>
+            <h4 id="res-total">₹0</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO Content Block -->
+  <div class="container seo-content-block">
+    <h2>Why Should You Use an Online Fixed Deposit Calculator?</h2>
+    <p>A <strong>fixed deposit calculator</strong> is a vital financial tool that tells you exactly how much money your savings will generate over time. Since banks compound interest at regular intervals—most commonly on a quarterly basis—doing manual calculations can become confusing. By evaluating the **FD interest rate** ahead of time, you can optimize your investment portfolio with zero guesswork.</p>
+    <p>Using our **online FD calculator** ensures you get clear visibility into your growth. Fixed deposits remain one of the most reliable wealth preservation assets because they offer secure, guaranteed returns completely unaffected by stock market fluctuations. It is highly recommended to compare different tenures to lock in the absolute best yields available.</p>
+    
+    <!-- FAQs -->
+    <div class="seo-faq-container">
+      <h2>Frequently Asked Questions About Fixed Deposits</h2>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">How does the compounding frequency affect my FD maturity amount?</div>
+        <div class="seo-faq-a">The more frequently interest is compounded, the higher your ultimate returns will be. For example, monthly compounding will generate slightly more interest than quarterly or yearly compounding for the exact same principal and time frame.</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">Is the interest earned on Fixed Deposits taxable?</div>
+        <div class="seo-faq-a">Yes, the interest income earned from a fixed deposit is fully taxable according to your progressive income tax slab. Additionally, if your annual interest income exceeds ₹40,000 (₹50,000 for senior citizens), banks will deduct TDS (Tax Deducted at Source).</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">What is a tax-saving Fixed Deposit?</div>
+        <div class="seo-faq-a">A tax-saving FD is a special financial instrument that comes with a mandatory 5-year lock-in period. It allows you to claim tax deductions up to ₹1,50,000 under Section 80C of the Income Tax Act. However, premature withdrawals are strictly prohibited on these accounts.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Tools -->
+  <div class="container related-tools">
+    <h2>More Finance Tools</h2>
+    <div id="tools-grid"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // 1. Calculation Logic
+    document.getElementById('calculate-btn').addEventListener('click', function() {
+      const principal = parseFloat(document.getElementById('principal').value);
+      const rate = parseFloat(document.getElementById('rate').value);
+      const years = parseFloat(document.getElementById('years').value) || 0;
+      const months = parseFloat(document.getElementById('months').value) || 0;
+      const n = parseFloat(document.getElementById('compounding').value);
+      
+      if(isNaN(principal) || isNaN(rate) || principal <= 0 || rate <= 0) {
+        alert("Bhai, please enter a valid investment amount and interest rate.");
+        return;
+      }
+
+      const totalYears = years + (months / 12);
+      if(totalYears <= 0) {
+        alert("Bhai, time period must be greater than zero.");
+        return;
+      }
+
+      // Compound Interest Formula: A = P * (1 + r / (n * 100)) ^ (n * t)
+      const maturityAmount = principal * Math.pow((1 + (rate / (n * 100))), (n * totalYears));
+      const totalInterest = maturityAmount - principal;
+
+      // Currency Formatting (Indian Format)
+      const formatter = new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0
+      });
+
+      // Update DOM
+      document.getElementById('res-principal').textContent = formatter.format(principal);
+      document.getElementById('res-returns').textContent = formatter.format(totalInterest);
+      document.getElementById('res-total').textContent = formatter.format(maturityAmount);
+
+      // Show Result Box
+      document.getElementById('result-box').style.display = 'block';
+    });
+
+    // 2. FAQ Accordion Logic
+    document.querySelectorAll('.seo-faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const parent = q.closest('.seo-faq-item');
+        document.querySelectorAll('.seo-faq-item').forEach(item => {
+          if (item !== parent) item.classList.remove('open');
+        });
+        parent.classList.toggle('open');
+      });
+    });
+
+    // 3. Related Tools Logic (Completely unified including the NPS Calculator we just built)
+    const relatedTools = [
+      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
+      { name: "Budget Planner", url: "/finance/budget-planner" },
+      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
+      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
+      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
+      { name: "NPS Calculator", url: "/finance/nps-calculator" },
+      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
+      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
+      { name: "ROI Calculator", url: "/finance/roi-calculator" },
+      { name: "Savings Goal Calculator", url: "/finance/savings-goal-calculator" },
+      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
+      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
+    ];
+    
+    function loadRelatedTools() {
+      const container = document.getElementById('tools-grid');
+      relatedTools.forEach(tool => {
+        const link = document.createElement('a'); 
+        link.href = tool.url; 
+        link.className = 'tool-card-link'; 
+        link.textContent = tool.name; 
+        container.appendChild(link);
+      });
+    }
+    loadRelatedTools();
+  </script>
+
+</body>
+</html>

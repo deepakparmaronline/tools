@@ -1,0 +1,557 @@
+# Copyright (C) 2023 Hostinger
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Hostinger blog theme 1.3.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/hostinger-blog-"
+"theme\n"
+"Last-Translator: \n"
+"Language-Team: Korean\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-08-23T11:22:24+00:00\n"
+"PO-Revision-Date: 2025-07-22 15:45+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: hostinger-blog-theme\n"
+"Language: ko_KR\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Loco-Version: 2.7.1; wp-6.7.1"
+
+#: build/components/blocks/aboutsection/render.php:4
+msgid ""
+"<p>As a designer, creator, and lifelong learner, I am driven by a passion "
+"for bringing ideas to life through creative problem-solving and "
+"collaboration. With a background in visual design, I have expanded my "
+"skillset to encompass a variety of creative and technical disciplines, "
+"including media production and web development. I approach each project with "
+"a dedication to quality and a commitment to delivering results that exceed "
+"expectations.</p>"
+msgstr ""
+"<p>디자이너, 창작자, 그리고 평생 학습을 추구하는 사람으로서 저는 창의적 사고와 협업으로 아이디어를 실현하는 것에 깊은 애정을 가지고 "
+"있습니다. 비주얼 디자인을 바탕으로 미디어 프로덕션과 웹 개발 등 다양한 창작 및 기술 분야로 역량을 넓혀왔습니다. 모든 프로젝트에서 "
+"최고의 품질을 지향하며 기대를 뛰어넘는 결과물을 만들기 위해 전념하고 있습니다.</p>"
+
+#: build/components/blocks/disclaimersection/render.php:3
+msgid ""
+"<p>The information contained in this website is for general information "
+"purposes only. The information is provided by [website name] and while we "
+"endeavor to keep the information up to date and correct, we make no "
+"representations or warranties of any kind, express or implied, about the "
+"completeness, accuracy, reliability, suitability or availability with "
+"respect to the website or the information, products, services, or related "
+"graphics contained on the website for any purpose. Any reliance you place on "
+"such information is therefore strictly at your own risk.</p>"
+msgstr ""
+"<p>이 웹사이트에 포함된 정보는 일반적인 정보 제공 목적으로만 사용됩니다. 이 정보는 [웹사이트 이름]에서 제공하며, 당사는 정보를 "
+"최신 상태로 정확하게 유지하기 위해 노력하지만, 웹사이트나 여기에 포함된 정보, 제품, 서비스, 관련 그래픽의 완전성, 정확성, 신뢰성, "
+"적합성, 이용 가능성에 관해 어떠한 형태로든 명시적이거나 암묵적인 보증을 하지 않습니다. 따라서 이러한 정보의 사용에 대한 책임은 "
+"전적으로 사용자에게 있습니다.</p>"
+
+#: build/components/blocks/aboutsection/render.php:2
+msgid "A bit about me ✌️"
+msgstr "제 소개를 할게요 ✌️"
+
+#: build/components/blocks/aboutsection/render.php:3
+msgid ""
+"A designer, creator, and lifelong learner with a passion for bringing ideas "
+"to life through creative problem-solving and collaboration."
+msgstr ""
+"디자이너, 크리에이터, 그리고 평생 학습자로서 창의적 문제 해결과 협업으로 아이디어를 현실로 만드는 일에 열정을 가지고 있습니다."
+
+#: inc/theme-settings.php:20
+msgid "Additional Settings"
+msgstr "추가 설정"
+
+#: build/components/blocks/contactform/render.php:68
+msgid "Address"
+msgstr "주소"
+
+#: index.php:34
+msgid "All blog posts"
+msgstr "모든 블로그 게시물"
+
+#: inc/template-functions.php:275
+msgid "Attention:"
+msgstr "주의:"
+
+#: build/components/blocks/aboutsection/block.json:1
+msgctxt "block description"
+msgid "About section"
+msgstr "About 섹션"
+
+#: build/components/blocks/contactform/block.json:1
+msgctxt "block description"
+msgid "Contact form"
+msgstr "문의 양식"
+
+#: build/components/blocks/disclaimersection/block.json:1
+msgctxt "block description"
+msgid "Disclaimer section"
+msgstr "고지 사항 섹션"
+
+#: build/components/blocks/featuredpost/block.json:1
+msgctxt "block description"
+msgid "Featured post"
+msgstr "추천 게시물"
+
+#: build/components/blocks/herosection/block.json:1
+msgctxt "block description"
+msgid "Hero block"
+msgstr "Hero 블록"
+
+#: build/components/blocks/latestposts/block.json:1
+msgctxt "block description"
+msgid "Latest posts"
+msgstr "최신 게시물"
+
+#: build/components/blocks/newsletter/block.json:1
+msgctxt "block description"
+msgid "Newsletter form"
+msgstr "뉴스레터 양식"
+
+#: build/components/blocks/aboutsection/block.json:1
+msgctxt "block title"
+msgid "About section"
+msgstr "About 섹션"
+
+#: build/components/blocks/contactform/block.json:1
+msgctxt "block title"
+msgid "Contact form"
+msgstr "문의 양식"
+
+#: build/components/blocks/disclaimersection/block.json:1
+msgctxt "block title"
+msgid "Disclaimer section"
+msgstr "고지 사항 섹션"
+
+#: build/components/blocks/featuredpost/block.json:1
+msgctxt "block title"
+msgid "Featured Post"
+msgstr "추천 게시물"
+
+#: build/components/blocks/herosection/block.json:1
+msgctxt "block title"
+msgid "Hero Section"
+msgstr "Hero 섹션"
+
+#: build/components/blocks/latestposts/block.json:1
+msgctxt "block title"
+msgid "Latest Posts"
+msgstr "최신 게시물"
+
+#: build/components/blocks/newsletter/block.json:1
+msgctxt "block title"
+msgid "Newsletter form"
+msgstr "뉴스레터 양식"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Grey / Light"
+msgstr "회색/밝음"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Grey / Lighter"
+msgstr "회색/밝음"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Dark"
+msgstr "메인 / 다크"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Grey"
+msgstr "메인 / 그레이"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Light"
+msgstr "메인 / 라이트"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Primary"
+msgstr "메인 / 기본"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Primary Dark"
+msgstr "메인 / 기본 다크"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Transparent"
+msgstr "투명"
+
+#: inc/template-functions.php:281
+msgid "Color scheme"
+msgstr "색상 구성표"
+
+#: inc/template-functions.php:283
+msgid "Contact information"
+msgstr "연락처 정보"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Custom template name"
+msgid "No title"
+msgstr "제목 없음"
+
+#: build/components/blocks/disclaimersection/render.php:2
+msgid "Disclaimer"
+msgstr "고지 사항"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Duotone name"
+msgid "Primary and Contrast"
+msgstr "기본 및 대비"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Duotone name"
+msgid "Secondary and primary"
+msgstr "보조 및 기본"
+
+#: inc/theme-settings.php:44
+msgid "Edit theme settings below."
+msgstr "아래에서 테마 설정을 편집합니다."
+
+#: archive.php:81 build/components/blocks/newsletter/render.php:16
+#: build/components/blocks/contactform/render.php:25
+#: build/components/blocks/contactform/render.php:46
+msgid "Email"
+msgstr "이메일"
+
+#: inc/theme-settings.php:61
+msgid "Enter contacts below"
+msgstr "아래에 연락처를 입력하세요"
+
+#: inc/theme-settings.php:70
+msgid "Enter footer content below"
+msgstr "아래에 푸터 콘텐츠를 입력합니다"
+
+#: inc/theme-settings.php:52
+msgid "Enter the URLs for your social media profiles below."
+msgstr "아래에 소셜 미디어 프로필의 URL을 입력하세요."
+
+#: index.php:37
+msgid ""
+"Explore the world of design and learn how to create visually stunning\n"
+"\t\t\t\t\tartwork."
+msgstr "디자인의 세계를 탐험하고 시각적으로 멋진 작품을 만드는 방법을 배워보세요."
+
+#: build/components/blocks/contactform/render.php:3
+msgid "Feel free to reach out to me through any of the following ways."
+msgstr "다음 방법 중 하나를 통해 언제든지 문의해 주세요."
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Extra small"
+msgstr "엑스트라 스몰"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Large"
+msgstr "대형"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Medium"
+msgstr "Medium"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Small"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "XL"
+msgstr "XL"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "XXL"
+msgstr "XXL"
+
+#: build/components/blocks/herosection/render.php:4
+msgid ""
+"From visual design to media production, my passion for creating has led me "
+"on a journey of exploration and innovation."
+msgstr "시각 디자인부터 미디어 제작에 이르기까지, 창작에 대한 저의 열정은 탐구와 혁신의 여정으로 이어졌습니다."
+
+#: 404.php:22
+#, php-format
+msgid "Go back to the %s"
+msgstr "%s로 돌아가기"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Gradient name"
+msgid "Horizontal white to Primary color"
+msgstr "가로 흰색에서 기본 색상으로"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Gradient name"
+msgid "Primary color to white"
+msgstr "기본 색상에서 흰색으로"
+
+#: 404.php:27
+msgid "Home"
+msgstr "홈"
+
+#. Author of the theme
+msgid "Hostinger"
+msgstr "호스팅어"
+
+#. Name of the theme
+msgid "Hostinger blog theme"
+msgstr "호스팅어 블로그 테마"
+
+#. Description of the theme
+msgid ""
+"Hostinger Blog Theme is the perfect choice for bloggers seeking a powerful "
+"yet lightweight solution. Built with SEO and mobile responsiveness in mind, "
+"this theme ensures optimal performance and a better online presence. It "
+"includes pre-made home, about us, contact us, and blog pages, giving your "
+"blog a seamless and quick start. Regardless of your niche, take your blog to "
+"the next level with this lightweight and professional-looking theme."
+msgstr ""
+"호스팅어 블로그 테마는 강력하면서도 가벼운 솔루션을 찾는 블로거들에게 완벽한 선택지입니다. SEO와 모바일 반응성을 고려한 설계로 최적의 "
+"성능과 온라인 존재감을 높여줍니다. 홈, 회사 소개, 연락처, 블로그 페이지가 사전 제작되어 있어 블로그를 원활하고 신속하게 시작할 수 "
+"있습니다. 어떤 분야든 상관없이, 이 가벼우면서도 전문적인 디자인의 테마로 여러분의 블로그를 한 단계 더 발전시켜 보세요."
+
+#. Author URI of the theme
+msgid "https://hostinger.com"
+msgstr "https://hostinger.com"
+
+#. URI of the theme
+msgid "https://www.hostinger.com/blog/hostinger-blog-theme"
+msgstr "https://www.hostinger.com/blog/hostinger-blog-theme"
+
+#: archive.php:92 build/components/blocks/newsletter/render.php:4
+msgid ""
+"I consent to use of my email address for the purpose of receiving "
+"newsletters as described in"
+msgstr "본인은 뉴스레터 수신을 목적으로 나의 이메일 주소가 사용되는 것에 동의합니다. 자세한 보기:"
+
+#: build/components/blocks/contactform/render.php:4
+msgid ""
+"I consent to use of provided personal data for the purpose of responding to "
+"the request as described in"
+msgstr "본인은 요청에 대한 응답을 위해 제공된 개인정보가 사용되는 것에 동의합니다. 자세히 보기:"
+
+#: build/components/blocks/herosection/render.php:3
+msgid "I’m Shawn — a designer and creator 👋"
+msgstr "저는 디자이너이자 크리에이터인 숀입니다 👋"
+
+#: inc/template-functions.php:279
+msgid "Key areas that require attention include:"
+msgstr "주의가 필요한 주요 영역은 다음과 같습니다:"
+
+#: build/components/blocks/latestposts/render.php:4
+msgid "Latest Posts"
+msgstr "최신 게시물"
+
+#: build/components/blocks/herosection/render.php:6
+msgid "Learn About Me"
+msgstr "About Me 알아보기"
+
+#: build/components/blocks/contactform/render.php:2
+msgid "Let’s get in touch"
+msgstr "연락하기"
+
+#: build/components/blocks/herosection/render.php:8
+msgid "Let’s stay connected"
+msgstr "연결 상태를 유지하세요"
+
+#: build/components/blocks/contactform/render.php:29
+msgid "Message"
+msgstr "메시지"
+
+#: build/components/blocks/contactform/render.php:21
+msgid "Name"
+msgstr "이름"
+
+#: inc/form-submissions.php:72
+msgid "New Newsletter Subscription"
+msgstr "새 뉴스레터 구독"
+
+#: archive.php:75 build/components/blocks/newsletter/render.php:2
+msgid "Newsletter"
+msgstr "뉴스레터"
+
+#: index.php:55 archive.php:48
+msgid "No categories found."
+msgstr "카테고리를 찾을 수 없습니다."
+
+#: inc/form-submissions.php:40 inc/form-submissions.php:95
+msgid "Not valid recipient email."
+msgstr "수신자 이메일이 유효하지 않습니다."
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "찾을 수 없습니다"
+
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "죄송합니다! 해당 페이지를 찾을 수 없습니다."
+
+#: template-parts/content-page.php:22
+msgid "Pages:"
+msgstr "페이지:"
+
+#: build/components/blocks/contactform/render.php:57
+msgid "Phone"
+msgstr "전화번호"
+
+#: inc/template-functions.php:275
+msgid ""
+"Please adjust your <a href=\"?page=hostinger-additional-settings\">theme "
+"settings</a> to personalize your website."
+msgstr ""
+"웹사이트를 맞춤 설정하려면 <a href=\"?page=hostinger-additional-settings\">테마 설정</a>을 "
+"변경하세요."
+
+#: inc/form-submissions.php:13 inc/form-submissions.php:64
+msgid "Please agree with privacy policy."
+msgstr "개인정보 취급방침에 동의해 주세요."
+
+#: inc/form-submissions.php:17 inc/form-submissions.php:68
+msgid "Please enter a valid email address."
+msgstr "유효한 이메일 주소를 입력하세요."
+
+#: functions.php:81
+msgid "Primary"
+msgstr "기본"
+
+#: build/components/blocks/newsletter/render.php:4
+#: build/components/blocks/contactform/render.php:4
+msgid "Privacy Policy"
+msgstr "개인정보 보호정책"
+
+#: footer.php:50 functions.php:87
+msgid "Quick links"
+msgstr "빠른 링크"
+
+#: single.php:89
+msgid "RELATED POSTS"
+msgstr "관련 게시물"
+
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr "검색 결과 %s"
+
+#: build/components/blocks/contactform/render.php:41
+msgid "Send Message"
+msgstr "메시지 보내기"
+
+#: inc/template-functions.php:282
+msgid "Social media links"
+msgstr "소셜 미디어 링크"
+
+#: search.php:37 index.php:74 archive.php:67
+msgid "Sorry, no posts matched your criteria."
+msgstr "죄송합니다. 기준에 맞는 게시물이 없습니다."
+
+#: archive.php:95 build/components/blocks/newsletter/render.php:30
+msgid "Subscribe"
+msgstr "구독"
+
+#: archive.php:76 build/components/blocks/newsletter/render.php:3
+msgid ""
+"Subscribe to stay up-to-date with my latest creative projects, insights, and "
+"tips."
+msgstr "최신 창작 프로젝트, 인사이트, 팁을 계속 받아보시려면 구독하세요."
+
+#: inc/form-submissions.php:99
+msgid "Successfully submitted!"
+msgstr "성공적으로 제출되었습니다!"
+
+#: inc/form-submissions.php:45
+msgid "Successfully subscribed!"
+msgstr "구독을 완료했습니다!"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Template part name"
+msgid "Footer"
+msgstr "푸터"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Template part name"
+msgid "Header"
+msgstr "헤더"
+
+#: functions.php:93
+msgid "Terms & policy"
+msgstr "약관 및 정책"
+
+#: footer.php:65
+msgid "Terms &amp; policy"
+msgstr "약관 및 정책"
+
+#: inc/theme-blocks.php:16
+msgid "Theme Blocks"
+msgstr "테마 블록"
+
+#: inc/theme-settings.php:5 inc/theme-settings.php:6
+msgid "Theme Settings"
+msgstr "테마 설정"
+
+#: inc/template-functions.php:278
+msgid ""
+"To enhance your site's functionality and user experience, ensure that you "
+"fill in the theme settings with accurate information."
+msgstr "사이트의 기능과 사용자 경험을 향상시키기 위해, 테마 설정에 정확한 정보를 입력하시기 바랍니다."
+
+#: archive.php:85 build/components/blocks/newsletter/render.php:20
+#: build/components/blocks/contactform/render.php:28
+msgid "What’s your email?"
+msgstr "이메일이 무엇인가요?"
+
+#: build/components/blocks/contactform/render.php:24
+msgid "What’s your name?"
+msgstr "이름이 무엇인가요?"
+
+# A review of the actual live page is essential for understanding the order and context of Korean words.
+#: build/components/blocks/newsletter/render.php:4
+#: build/components/blocks/contactform/render.php:4
+msgid "which I have read. I may withdraw my consent at any time."
+msgstr "읽었습니다. 본인은 언제든지 동의를 철회할 수 있습니다."
+
+#: build/components/blocks/contactform/render.php:31
+msgid "Write your message..."
+msgstr "메시지 작성하기..."
+
+#: inc/template-functions.php:277
+msgid ""
+"Your website currently lacks essential information such as social links and "
+"contact details."
+msgstr "현재 웹사이트에 소셜 미디어 링크와 연락처 등의 핵심 정보가 누락되어 있습니다."

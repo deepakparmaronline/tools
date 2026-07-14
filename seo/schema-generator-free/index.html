@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Schema Markup Generator | JSON-LD SEO Tool - Toolboxkart</title>
+  <meta name="description" content="Generate valid JSON-LD structured data for your website instantly. Create FAQ, Article, and Local Business schema markup to improve your SEO and rich snippets." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; min-height: 100vh; }
+    
+    /* ── NAV ── */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; gap: 2rem; height: 56px; position: sticky; top: 0; z-index: 100; }
+    .nav-brand { font-weight: 700; font-size: 1.1rem; color: #fff; text-decoration: none; letter-spacing: .5px; }
+    .nav-brand span { color: #7c6fcd; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: #aaa; text-decoration: none; font-size: .9rem; transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
+    
+    /* ── HERO ── */
+    .hero { text-align: center; padding: 3rem 1rem 1.5rem; }
+    .hero h1 { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+    .hero p { color: #888; font-size: 1rem; max-width: 600px; margin: 0 auto; line-height: 1.5; }
+    
+    /* ── MAIN LAYOUT ── */
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 1rem 4rem; }
+    .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2rem; }
+    
+    /* ── FORMS ── */
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; color: #bbb; font-size: .9rem; font-weight: 600; margin-bottom: .4rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: .75rem; background: #222; color: #fff; border: 1px solid #333; 
+      border-radius: 6px; font-size: .95rem; outline: none; font-family: inherit; transition: border-color .2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #7c6fcd; }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    
+    /* ── DYNAMIC FAQ ITEMS ── */
+    .faq-item-box { background: #1a1a1a; border: 1px solid #333; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; position: relative; }
+    .remove-btn { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: #f44336; cursor: pointer; font-size: 1.2rem; line-height: 1; }
+    .add-btn { background: rgba(124,111,205,.15); color: #7c6fcd; border: 1px dashed #7c6fcd; padding: .6rem 1rem; border-radius: 6px; font-weight: 600; cursor: pointer; width: 100%; font-size: .9rem; transition: background .2s; }
+    .add-btn:hover { background: rgba(124,111,205,.25); }
+
+    /* ── OUTPUT SECTION ── */
+    .output-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .output-header h2 { font-size: 1.1rem; color: #fff; }
+    .test-link { color: #7c6fcd; text-decoration: none; font-size: .85rem; font-weight: 600; }
+    .test-link:hover { text-decoration: underline; }
+    
+    .code-box { background: #000; border: 1px solid #333; border-radius: 8px; padding: 1rem; position: relative; overflow-x: auto; }
+    .code-box pre { font-family: 'Consolas', 'Monaco', monospace; font-size: .85rem; color: #a5d6ff; line-height: 1.5; margin: 0; white-space: pre-wrap; word-break: break-all; }
+    
+    .action-btn { display: flex; align-items: center; justify-content: center; gap: .5rem; width: 100%; margin-top: 1rem; padding: .85rem; background: #7c6fcd; color: #fff; font-size: 1rem; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; transition: background .2s; }
+    .action-btn:hover { background: #6a5db5; }
+    
+    /* ── FAQ ── */
+    .faq-section { margin-top: 3.5rem; }
+    .faq-section h2 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 1.2rem; }
+    .seo-faq-item { border-bottom: 1px solid #1e1e1e; padding: 1rem 0; }
+    .seo-faq-item:last-child { border-bottom: none; }
+    .seo-faq-q { font-size: .95rem; font-weight: 600; color: #ccc; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .seo-faq-q::after { content: '+'; color: #7c6fcd; font-size: 1.2rem; flex-shrink: 0; }
+    .seo-faq-item.open .seo-faq-q::after { content: '−'; }
+    .seo-faq-a { font-size: .9rem; color: #777; line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s; }
+    .seo-faq-item.open .seo-faq-a { max-height: 500px; padding-top: .8rem; }
+    
+    @media (max-width: 850px) {
+      .tool-grid { grid-template-columns: 1fr; }
+      nav { gap: 1rem; padding: 0 1rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+  <ul class="nav-links" id="dynamic-nav-list"></ul>
+</nav>
+
+<div class="hero">
+  <h1>Schema Markup Generator</h1>
+  <p>Create perfectly structured JSON-LD data for your website. Improve your search engine visibility and win rich snippets in Google search results.</p>
+</div>
+
+<div class="container">
+  <div class="tool-grid">
+    
+    <div class="card">
+      <div class="form-group">
+        <label for="schema-type">Select Schema Type</label>
+        <select id="schema-type">
+          <option value="faq">FAQ Page</option>
+          <option value="article">Article / Blog Post</option>
+          <option value="local">Local Business</option>
+        </select>
+      </div>
+
+      <div id="form-container">
+        </div>
+    </div>
+
+    <div class="card">
+      <div class="output-header">
+        <h2>JSON-LD Output</h2>
+        <a href="https://search.google.com/test/rich-results" target="_blank" rel="nofollow noopener" class="test-link">↗ Test in Google</a>
+      </div>
+      
+      <div class="code-box">
+        <pre><code id="json-output"></code></pre>
+      </div>
+      
+      <button class="action-btn" id="copy-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        Copy Schema Code
+      </button>
+    </div>
+
+  </div>
+
+  <div class="faq-section">
+    <h2>Understanding Schema & JSON-LD</h2>
+    
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">What is JSON-LD and why does Google prefer it?</div>
+      <div class="seo-faq-a">JSON-LD (JavaScript Object Notation for Linked Data) is a lightweight data-interchange format. Google explicitly recommends JSON-LD for structured data because it is easier to add and update compared to inline markup like Microdata. It lives cleanly inside a single script block rather than cluttering your HTML body elements.</div>
+    </div>
+    
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Where should I place the generated code on my website?</div>
+      <div class="seo-faq-a">You should copy the generated script and paste it into the <code>&lt;head&gt;</code> section of your HTML document for the specific page it relates to. Alternatively, placing it right before the closing <code>&lt;/body&gt;</code> tag is also acceptable to search engines.</div>
+    </div>
+
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Will this guarantee rich snippets in Google Search?</div>
+      <div class="seo-faq-a">No. While correctly implemented schema markup makes your site eligible for rich results (like FAQ accordions or review stars in search engine results pages), Google's algorithms ultimately decide whether to display them based on the query, your site's authority, and overall content quality.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // DOM Elements
+  const schemaTypeSelect = document.getElementById('schema-type');
+  const formContainer    = document.getElementById('form-container');
+  const jsonOutput       = document.getElementById('json-output');
+  const copyBtn          = document.getElementById('copy-btn');
+
+  // State
+  let faqData = [ { q: '', a: '' } ];
+
+  // Render correct form based on selection
+  function renderForm() {
+    const type = schemaTypeSelect.value;
+    formContainer.innerHTML = '';
+
+    if (type === 'faq') {
+      const faqWrapper = document.createElement('div');
+      faqWrapper.id = 'faq-wrapper';
+      formContainer.appendChild(faqWrapper);
+      
+      const addBtn = document.createElement('button');
+      addBtn.className = 'add-btn';
+      addBtn.textContent = '+ Add Another Question';
+      addBtn.onclick = () => { faqData.push({ q: '', a: '' }); renderFaqFields(); generateJSON(); };
+      formContainer.appendChild(addBtn);
+      
+      renderFaqFields();
+    } 
+    else if (type === 'article') {
+      formContainer.innerHTML = `
+        <div class="form-group"><label>Headline</label><input type="text" id="art-headline" placeholder="E.g. 10 Best SEO Tools" oninput="generateJSON()"></div>
+        <div class="form-group"><label>Article URL</label><input type="url" id="art-url" placeholder="https://example.com/article" oninput="generateJSON()"></div>
+        <div class="form-group"><label>Image URL</label><input type="url" id="art-image" placeholder="https://example.com/image.jpg" oninput="generateJSON()"></div>
+        <div class="form-group"><label>Author Name</label><input type="text" id="art-author" placeholder="John Doe" oninput="generateJSON()"></div>
+        <div class="form-group"><label>Publisher Organization</label><input type="text" id="art-publisher" placeholder="Toolboxkart" oninput="generateJSON()"></div>
+        <div class="form-group"><label>Date Published</label><input type="date" id="art-date" oninput="generateJSON()"></div>
+      `;
+    }
+    else if (type === 'local') {
+      formContainer.innerHTML = `
+        <div class="form-group"><label>Business Name</label><input type="text" id="loc-name" placeholder="Toolboxkart Agency" oninput="generateJSON()"></div>
+        <div class="form-group"><label>Website URL</label><input type="url" id="loc-url" placeholder="https://example.com" oninput="generateJSON()"></div>
+        <div class="form-group"><label>Phone Number</label><input type="text" id="loc-phone" placeholder="+1-555-555-5555" oninput="generateJSON()"></div>
+        <div class="form-group"><label>Street Address</label><input type="text" id="loc-street" placeholder="123 Main St" oninput="generateJSON()"></div>
+        <div class="form-group"><label>City</label><input type="text" id="loc-city" placeholder="New York" oninput="generateJSON()"></div>
+        <div class="form-group"><label>Zip/Postal Code</label><input type="text" id="loc-zip" placeholder="10001" oninput="generateJSON()"></div>
+        <div class="form-group"><label>Country</label><input type="text" id="loc-country" placeholder="US" oninput="generateJSON()"></div>
+      `;
+    }
+    generateJSON();
+  }
+
+  // Render specific FAQ input fields
+  function renderFaqFields() {
+    const wrapper = document.getElementById('faq-wrapper');
+    if(!wrapper) return;
+    wrapper.innerHTML = '';
+    
+    faqData.forEach((item, index) => {
+      const box = document.createElement('div');
+      box.className = 'faq-item-box';
+      
+      const title = document.createElement('div');
+      title.style.cssText = "color:#7c6fcd; font-size:0.8rem; font-weight:bold; margin-bottom:0.5rem; text-transform:uppercase;";
+      title.textContent = `Question ${index + 1}`;
+      box.appendChild(title);
+
+      if (faqData.length > 1) {
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'remove-btn';
+        removeBtn.innerHTML = '&times;';
+        removeBtn.onclick = () => { faqData.splice(index, 1); renderFaqFields(); generateJSON(); };
+        box.appendChild(removeBtn);
+      }
+
+      const qGroup = document.createElement('div');
+      qGroup.className = 'form-group';
+      qGroup.innerHTML = `<label>Question</label><input type="text" value="${item.q}" placeholder="E.g. What is SEO?" oninput="updateFaq(${index}, 'q', this.value)">`;
+      
+      const aGroup = document.createElement('div');
+      aGroup.className = 'form-group';
+      aGroup.style.marginBottom = '0';
+      aGroup.innerHTML = `<label>Answer</label><textarea placeholder="Your answer here..." oninput="updateFaq(${index}, 'a', this.value)">${item.a}</textarea>`;
+
+      box.appendChild(qGroup);
+      box.appendChild(aGroup);
+      wrapper.appendChild(box);
+    });
+  }
+
+  function updateFaq(index, key, value) {
+    faqData[index][key] = value;
+    generateJSON();
+  }
+
+  // Core JSON Generator logic
+  function generateJSON() {
+    const type = schemaTypeSelect.value;
+    let schema = { "@context": "https://schema.org" };
+
+    if (type === 'faq') {
+      schema["@type"] = "FAQPage";
+      schema["mainEntity"] = faqData.map(item => ({
+        "@type": "Question",
+        "name": item.q || "Your Question Here",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a || "Your Answer Here"
+        }
+      }));
+    } 
+    else if (type === 'article') {
+      schema["@type"] = "Article";
+      schema["headline"] = document.getElementById('art-headline')?.value || "Article Headline";
+      schema["url"] = document.getElementById('art-url')?.value || "";
+      schema["image"] = [ document.getElementById('art-image')?.value || "" ];
+      schema["datePublished"] = document.getElementById('art-date')?.value || "";
+      schema["author"] = [{
+        "@type": "Person",
+        "name": document.getElementById('art-author')?.value || "Author Name"
+      }];
+      schema["publisher"] = {
+        "@type": "Organization",
+        "name": document.getElementById('art-publisher')?.value || "Publisher Name"
+      };
+    }
+    else if (type === 'local') {
+      schema["@type"] = "LocalBusiness";
+      schema["name"] = document.getElementById('loc-name')?.value || "Business Name";
+      schema["url"] = document.getElementById('loc-url')?.value || "";
+      schema["telephone"] = document.getElementById('loc-phone')?.value || "";
+      schema["address"] = {
+        "@type": "PostalAddress",
+        "streetAddress": document.getElementById('loc-street')?.value || "",
+        "addressLocality": document.getElementById('loc-city')?.value || "",
+        "postalCode": document.getElementById('loc-zip')?.value || "",
+        "addressCountry": document.getElementById('loc-country')?.value || ""
+      };
+    }
+
+    const scriptTag = `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n<\/script>`;
+    jsonOutput.textContent = scriptTag;
+  }
+
+  // Event Listeners
+  schemaTypeSelect.addEventListener('change', renderForm);
+  
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(jsonOutput.textContent).then(() => {
+      const originalText = copyBtn.innerHTML;
+      copyBtn.innerHTML = '✓ Copied to Clipboard!';
+      copyBtn.style.background = '#4caf50';
+      setTimeout(() => {
+        copyBtn.innerHTML = originalText;
+        copyBtn.style.background = '#7c6fcd';
+      }, 2000);
+    });
+  });
+  
+  // Accordion Logic for SEO FAQs
+  document.querySelectorAll('.seo-faq-q').forEach(q => {
+    q.addEventListener('click', () => q.closest('.seo-faq-item').classList.toggle('open'));
+  });
+
+  // Initialize
+  renderForm();
+</script>
+
+<div class="container">
+  <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
+</div>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

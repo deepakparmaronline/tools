@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Savings Goal Calculator | Hit Your Target | Toolboxkart</title>
+    <meta name="description" content="Use our free savings goal calculator to find out exactly how much you need to save every month to reach your financial target. Start planning today.">
+    <style>
+        /* Global Reset & Base Styles */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+        
+        /* Navigation */
+        nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+        .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+        .nav-brand span { color: #7c6fcd; }
+        
+        /* Layout & Container */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+        
+        /* Hero Section */
+        .hero { text-align: center; padding: 4rem 1rem 3rem; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .hero p { color: #888; font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.5; }
+        
+        /* Tool Card & Inputs */
+        .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem; margin-bottom: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .section-title { font-size: 1.2rem; color: #fff; margin-bottom: 1.5rem; border-bottom: 1px solid #272727; padding-bottom: 0.5rem; grid-column: 1 / -1; }
+        
+        .input-area { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+        @media (max-width: 600px) { .input-area { grid-template-columns: 1fr; } }
+        
+        .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .input-group label { font-size: 0.95rem; color: #ccc; font-weight: 500; }
+        .input-group input { background: #0d0d0d; border: 1px solid #272727; color: #fff; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; transition: all 0.2s ease; }
+        .input-group input:focus { border-color: #7c6fcd; }
+        
+        button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: background 0.2s ease; }
+        button.btn-primary:hover { background: #6b5eb8; }
+        
+        /* Result Box */
+        #result-box { display: none; margin-top: 2rem; background: #0d0d0d; padding: 2rem; border-radius: 8px; border: 1px solid #272727; text-align: center; }
+        .highlight-text { font-size: 1.1rem; color: #888; margin-bottom: 0.5rem; }
+        .highlight-amount { font-size: 2.5rem; font-weight: 700; color: #4ade80; margin-bottom: 2rem; }
+        
+        .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: left; }
+        @media (max-width: 600px) { .summary-grid { grid-template-columns: 1fr; } }
+        .summary-card { background: #161616; padding: 1.2rem; border-radius: 8px; border: 1px solid #272727; }
+        .summary-card h4 { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .summary-card .amount { font-size: 1.3rem; font-weight: 600; color: #e0e0e0; }
+        
+        /* SEO Content Block */
+        .seo-content-block { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem; margin-bottom: 3rem; }
+        .seo-content-block h2 { color: #fff; margin-bottom: 1.5rem; font-size: 1.8rem; }
+        .seo-content-block p { color: #888; line-height: 1.7; margin-bottom: 1.5rem; }
+        .seo-content-block strong { color: #ccc; font-weight: 600; }
+        
+        /* FAQ Accordion */
+        .faq-section { margin-top: 3rem; }
+        .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+        .seo-faq-item:last-child { border-bottom: none; }
+        .seo-faq-q { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; user-select: none; }
+        .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; transition: transform 0.3s ease; }
+        .seo-faq-item.open .seo-faq-q::after { transform: rotate(45deg); }
+        .seo-faq-a { display: none; margin-top: 1rem; color: #888; line-height: 1.6; }
+        .seo-faq-item.open .seo-faq-a { display: block; }
+        
+        /* Related Tools */
+        .related-tools-section { padding-bottom: 4rem; }
+        .related-tools-section h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+        #tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+        .tool-card-link { background: #161616; border: 1px solid #272727; color: #e0e0e0; text-decoration: none; padding: 1.5rem; border-radius: 10px; font-weight: 500; transition: all 0.2s ease; display: block; text-align: center; }
+        .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Savings Goal Calculator</h1>
+        <p>Planning for a car, vacation, or down payment? Calculate exactly how much you need to save each month to hit your target on time.</p>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Tool Card -->
+        <div class="card">
+            <div class="input-area">
+                <div class="section-title">Your Goal Details</div>
+                <div class="input-group">
+                    <label for="goal-amount">Savings Goal Amount (₹)</label>
+                    <input type="number" id="goal-amount" placeholder="e.g. 500000" min="1">
+                </div>
+                <div class="input-group">
+                    <label for="current-savings">Current Savings (₹)</label>
+                    <input type="number" id="current-savings" placeholder="e.g. 50000" min="0" value="0">
+                </div>
+                
+                <div class="section-title" style="margin-top: 1rem;">Timeline & Interest</div>
+                <div class="input-group">
+                    <label for="months-to-goal">Time to Reach Goal (Months)</label>
+                    <input type="number" id="months-to-goal" placeholder="e.g. 24" min="1">
+                </div>
+                <div class="input-group">
+                    <label for="interest-rate">Expected Annual Return / Interest (%)</label>
+                    <input type="number" id="interest-rate" placeholder="e.g. 6" min="0" step="0.1" value="0">
+                </div>
+            </div>
+            
+            <button class="btn-primary" onclick="calculateSavings()">Calculate Monthly Savings</button>
+
+            <!-- Result Box -->
+            <div id="result-box">
+                <div class="highlight-text">You Need to Save Monthly</div>
+                <div class="highlight-amount" id="res-monthly">₹0</div>
+                
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <h4>Total Principal Saved</h4>
+                        <div class="amount" id="res-principal">₹0</div>
+                    </div>
+                    <div class="summary-card">
+                        <h4>Interest Earned</h4>
+                        <div class="amount" id="res-interest" style="color: #4ade80;">₹0</div>
+                    </div>
+                    <div class="summary-card">
+                        <h4>Final Goal Reached</h4>
+                        <div class="amount" id="res-total-goal" style="color: #7c6fcd;">₹0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content Block -->
+        <div class="seo-content-block">
+            <h2>Reach Your Financial Targets Quickly</h2>
+            <p>Setting a financial target is easy, but figuring out how to get there can be tough. Whether you want to buy a house, plan a wedding, or build an emergency fund, our <strong>savings goal calculator</strong> shows you exactly what it takes. It breaks down large goals into small, manageable monthly chunks.</p>
+            <p>Using a <strong>goal savings calculator</strong> takes the guesswork out of your budget. If you are keeping your money in a savings account or mutual fund, you can even input an expected interest rate. This <strong>savings target calculator</strong> will factor in the power of compound interest, lowering the actual cash you need to set aside from your pocket every month.</p>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">How does a savings goal calculator work?</div>
+                    <div class="seo-faq-a">A <strong>savings goal calculator</strong> takes your final target amount and subtracts what you have already saved. It then divides the remaining amount by your timeline. If you add an interest rate, it uses a financial formula to calculate how much the interest will help you, thereby reducing your required monthly deposit.</div>
+                </div>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">Can I use this as a sinking fund calculator?</div>
+                    <div class="seo-faq-a">Yes! A sinking fund is just a way to save up for a specific expense over time (like car repairs or a holiday). This <strong>money saving calculator</strong> works perfectly for tracking sinking funds. Just enter the amount you need and the months left until you need it.</div>
+                </div>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">What if I can't afford the monthly savings amount?</div>
+                    <div class="seo-faq-a">If the monthly amount suggested by the <strong>savings target calculator</strong> is too high for your budget, you have two options. First, you can extend your timeline by increasing the number of months. Second, you can look for ways to cut back on expenses to free up more cash to save.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Tools Section -->
+        <div class="related-tools-section" id="related-tools-wrapper">
+            <h2>Explore More Finance Tools</h2>
+            <div id="tools-grid">
+                <!-- Javascript will populate this -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // 1. Calculation Logic
+        function calculateSavings() {
+            const goal = parseFloat(document.getElementById('goal-amount').value);
+            const initial = parseFloat(document.getElementById('current-savings').value) || 0;
+            const months = parseInt(document.getElementById('months-to-goal').value);
+            const annualRate = parseFloat(document.getElementById('interest-rate').value) || 0;
+
+            if (isNaN(goal) || goal <= 0) {
+                alert("Please enter a valid Savings Goal Amount.");
+                return;
+            }
+            if (isNaN(months) || months <= 0) {
+                alert("Please enter a valid timeline in months.");
+                return;
+            }
+            if (initial >= goal) {
+                alert("Your current savings are already equal to or greater than your goal!");
+                return;
+            }
+
+            let monthlyDeposit = 0;
+            let totalInterest = 0;
+            let totalPrincipal = initial;
+
+            if (annualRate > 0) {
+                // Monthly interest rate
+                const r = (annualRate / 100) / 12;
+                
+                // Future value of the initial amount
+                const fvInitial = initial * Math.pow(1 + r, months);
+                
+                // Remaining amount needed to hit goal
+                const remainingGoal = goal - fvInitial;
+                
+                if (remainingGoal > 0) {
+                    // Formula for future value of a series (Annuity): FV = PMT * (((1 + r)^n - 1) / r)
+                    // We need PMT: PMT = FV / (((1 + r)^n - 1) / r)
+                    monthlyDeposit = remainingGoal / ((Math.pow(1 + r, months) - 1) / r);
+                } else {
+                    monthlyDeposit = 0; // Initial amount + interest will cover it
+                }
+                
+                totalPrincipal += (monthlyDeposit * months);
+                totalInterest = goal - totalPrincipal;
+            } else {
+                // Simple calculation without interest
+                monthlyDeposit = (goal - initial) / months;
+                totalPrincipal = goal;
+                totalInterest = 0;
+            }
+
+            // Format Currency
+            const formatCurrency = (num) => '₹' + num.toLocaleString('en-IN', { maximumFractionDigits: 0 });
+
+            document.getElementById('res-monthly').textContent = formatCurrency(monthlyDeposit);
+            document.getElementById('res-principal').textContent = formatCurrency(totalPrincipal);
+            document.getElementById('res-interest').textContent = formatCurrency(totalInterest > 0 ? totalInterest : 0);
+            document.getElementById('res-total-goal').textContent = formatCurrency(goal);
+
+            document.getElementById('result-box').style.display = 'block';
+        }
+
+        // 2. FAQ Accordion Logic
+        document.querySelectorAll('.seo-faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.closest('.seo-faq-item');
+                document.querySelectorAll('.seo-faq-item').forEach(other => {
+                    if (other !== item) other.classList.remove('open');
+                });
+                item.classList.toggle('open');
+            });
+        });
+
+        // 3. Related Tools Logic (Tools 26, 27, 28)
+        const relatedTools = [
+            { name: "Take-Home Pay Calculator", url: "/finance/take-home-pay-calculator" },
+            { name: "Budget Planner", url: "/finance/budget-planner" },
+            { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" }
+        ];
+
+        function loadRelatedTools() {
+            const container = document.getElementById('tools-grid');
+            const wrapper = document.getElementById('related-tools-wrapper');
+
+            if (relatedTools.length === 0) {
+                wrapper.style.display = 'none';
+                return;
+            }
+
+            relatedTools.forEach(tool => {
+                const link = document.createElement('a'); 
+                link.href = tool.url; 
+                link.className = 'tool-card-link'; 
+                link.textContent = tool.name; 
+                container.appendChild(link);
+            });
+        }
+        
+        loadRelatedTools();
+    </script>
+</body>
+</html>

@@ -1,0 +1,553 @@
+# Copyright (C) 2023 Hostinger
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Hostinger blog theme 1.3.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/hostinger-blog-"
+"theme\n"
+"Last-Translator: \n"
+"Language-Team: Hindi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-08-23T11:22:24+00:00\n"
+"PO-Revision-Date: 2025-07-22 15:44+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: hostinger-blog-theme\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.6.7; wp-6.4.4"
+
+#: build/components/blocks/aboutsection/render.php:4
+msgid ""
+"<p>As a designer, creator, and lifelong learner, I am driven by a passion "
+"for bringing ideas to life through creative problem-solving and "
+"collaboration. With a background in visual design, I have expanded my "
+"skillset to encompass a variety of creative and technical disciplines, "
+"including media production and web development. I approach each project with "
+"a dedication to quality and a commitment to delivering results that exceed "
+"expectations.</p>"
+msgstr ""
+"<p>डिज़ाइनर, क्रिएटर और सदैव कुछ नया सीखने के लिए उत्सुक - मैं कल्पनाओं को "
+"साकार करने और रचनात्मक तरीके से समस्याएं सुलझाने को महत्व देता हूं। विज़ुअल "
+"डिज़ाइन के बैकग्राउंड के साथ मैंने मीडिया प्रोडक्शन और वेब डेवलपमेंट सहित "
+"विभिन्न रचनात्मक और तकनीकी विषयों में महारत हासिल कर अपने कौशल का विस्तार "
+"किया है। प्रत्येक प्रोजेक्ट में गुणवत्ता को प्राथमिकता दी जाती है ताकि "
+"अपेक्षाओं से अधिक परिणाम दिए जा सकें।</p>"
+
+#: build/components/blocks/disclaimersection/render.php:3
+msgid ""
+"<p>The information contained in this website is for general information "
+"purposes only. The information is provided by [website name] and while we "
+"endeavor to keep the information up to date and correct, we make no "
+"representations or warranties of any kind, express or implied, about the "
+"completeness, accuracy, reliability, suitability or availability with "
+"respect to the website or the information, products, services, or related "
+"graphics contained on the website for any purpose. Any reliance you place on "
+"such information is therefore strictly at your own risk.</p>"
+msgstr ""
+"<p>इस वेबसाइट पर मौजूद जानकारी का उद्देश्य केवल सामान्य सूचना है। ये जानकारी "
+"[website name] द्वारा प्रस्तुत की गई है। हालांकि हम कोशिश करते हैं कि सारी "
+"जानकारी नवीनतम और सही हो, हम वेबसाइट या किसी भी उद्देश्य के लिए वेबसाइट पर "
+"मौजूद जानकारी, उत्पादों, सेवाओं या संबंधित ग्राफिक्स के संबंध में पूर्णता, "
+"सटीकता, विश्वसनीयता, उपयुक्तता या उपलब्धता के बारे में किसी भी प्रकार का "
+"व्यक्त या निहित कोई प्रतिनिधित्व या वारंटी नहीं देते हैं। इसलिए ऐसी जानकारी "
+"पर आपके द्वारा की गई कोई भी निर्भरता पूरी तरह से आपके अपने जोखिम पर है।</p>"
+
+#: build/components/blocks/aboutsection/render.php:2
+msgid "A bit about me ✌️"
+msgstr "मेरे बारे में ✌️"
+
+#: build/components/blocks/aboutsection/render.php:3
+msgid ""
+"A designer, creator, and lifelong learner with a passion for bringing ideas "
+"to life through creative problem-solving and collaboration."
+msgstr ""
+"डिज़ाइनर, क्रिएटर और सदैव कुछ नया सीखने के लिए उत्सुक - मैं कल्पनाओं को साकार "
+"करने और रचनात्मक तरीके से समस्याएं सुलझाने को महत्व देता हूं।"
+
+#: inc/theme-settings.php:20
+msgid "Additional Settings"
+msgstr "अतिरिक्त सेटिंग्स"
+
+#: build/components/blocks/contactform/render.php:68
+msgid "Address"
+msgstr "पता"
+
+#: index.php:34
+msgid "All blog posts"
+msgstr "सभी ब्लॉग पोस्ट"
+
+#: inc/template-functions.php:275
+msgid "Attention:"
+msgstr "ध्यान रहे:"
+
+#: build/components/blocks/aboutsection/block.json:1
+msgctxt "block description"
+msgid "About section"
+msgstr "हमारे बारे में"
+
+#: build/components/blocks/contactform/block.json:1
+msgctxt "block description"
+msgid "Contact form"
+msgstr "कॉन्टैक्ट फॉर्म"
+
+#: build/components/blocks/disclaimersection/block.json:1
+msgctxt "block description"
+msgid "Disclaimer section"
+msgstr "डिस्क्लेमर सेक्शन"
+
+#: build/components/blocks/featuredpost/block.json:1
+msgctxt "block description"
+msgid "Featured post"
+msgstr "फीचर्ड पोस्ट"
+
+#: build/components/blocks/herosection/block.json:1
+msgctxt "block description"
+msgid "Hero block"
+msgstr "हीरो ब्लॉक"
+
+#: build/components/blocks/latestposts/block.json:1
+msgctxt "block description"
+msgid "Latest posts"
+msgstr "नवीनतम पोस्ट"
+
+#: build/components/blocks/newsletter/block.json:1
+msgctxt "block description"
+msgid "Newsletter form"
+msgstr "न्यूज़लेटर फॉर्म"
+
+#: build/components/blocks/aboutsection/block.json:1
+msgctxt "block title"
+msgid "About section"
+msgstr "हमारे बारे में"
+
+#: build/components/blocks/contactform/block.json:1
+msgctxt "block title"
+msgid "Contact form"
+msgstr "कॉन्टैक्ट फॉर्म"
+
+#: build/components/blocks/disclaimersection/block.json:1
+msgctxt "block title"
+msgid "Disclaimer section"
+msgstr "डिस्क्लेमर सेक्शन"
+
+#: build/components/blocks/featuredpost/block.json:1
+msgctxt "block title"
+msgid "Featured Post"
+msgstr "फीचर्ड पोस्ट"
+
+#: build/components/blocks/herosection/block.json:1
+msgctxt "block title"
+msgid "Hero Section"
+msgstr "हीरो सेक्शन"
+
+#: build/components/blocks/latestposts/block.json:1
+msgctxt "block title"
+msgid "Latest Posts"
+msgstr "नवीनतम पोस्ट"
+
+#: build/components/blocks/newsletter/block.json:1
+msgctxt "block title"
+msgid "Newsletter form"
+msgstr "न्यूज़लेटर फॉर्म"
+
+#: theme.json:1
+msgctxt "Color name"
+msgid "Grey / Light"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Color name"
+msgid "Grey / Lighter"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Color name"
+msgid "Main / Dark"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Color name"
+msgid "Main / Grey"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Color name"
+msgid "Main / Light"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Color name"
+msgid "Main / Primary"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Color name"
+msgid "Main / Primary Dark"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Color name"
+msgid "Transparent"
+msgstr ""
+
+#: inc/template-functions.php:281
+msgid "Color scheme"
+msgstr "कलर स्कीम"
+
+#: inc/template-functions.php:283
+msgid "Contact information"
+msgstr "संपर्क जानकारी"
+
+#: theme.json:1
+msgctxt "Custom template name"
+msgid "No title"
+msgstr ""
+
+#: build/components/blocks/disclaimersection/render.php:2
+msgid "Disclaimer"
+msgstr "डिस्क्लेमर"
+
+#: theme.json:1
+msgctxt "Duotone name"
+msgid "Primary and Contrast"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Duotone name"
+msgid "Secondary and primary"
+msgstr ""
+
+#: inc/theme-settings.php:44
+msgid "Edit theme settings below."
+msgstr "नीचे दी गई थीम सेटिंग्स एडिट करें"
+
+#: archive.php:81 build/components/blocks/newsletter/render.php:16
+#: build/components/blocks/contactform/render.php:25
+#: build/components/blocks/contactform/render.php:46
+msgid "Email"
+msgstr "ईमेल"
+
+#: inc/theme-settings.php:61
+msgid "Enter contacts below"
+msgstr "कॉन्टैक्ट्स नीचे दर्ज करें"
+
+#: inc/theme-settings.php:70
+msgid "Enter footer content below"
+msgstr "फुटर कॉन्टेंट नीचे दर्ज करें"
+
+#: inc/theme-settings.php:52
+msgid "Enter the URLs for your social media profiles below."
+msgstr "नीचे अपने सोशल मीडिया प्रोफाइल के URL दर्ज करें।"
+
+#: index.php:37
+msgid ""
+"Explore the world of design and learn how to create visually stunning\n"
+"\t\t\t\t\tartwork."
+msgstr ""
+"डिज़ाइन की दुनिया एक्स्प्लोर करें और जानें कि सुंदर और मोहक कलाकृति कैसे "
+"बनाएं।"
+
+#: build/components/blocks/contactform/render.php:3
+msgid "Feel free to reach out to me through any of the following ways."
+msgstr "नीचे बताए गए किसी भी तरीके के माध्यम से बेझिझक मुझसे संपर्क करें।"
+
+#: theme.json:1
+msgctxt "Font family name"
+msgid "Inter"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "Extra small"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "XL"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "XXL"
+msgstr ""
+
+#: build/components/blocks/herosection/render.php:4
+msgid ""
+"From visual design to media production, my passion for creating has led me "
+"on a journey of exploration and innovation."
+msgstr ""
+"विज़ुअल डिज़ाइन से लेकर मीडिया प्रोडक्शन तक, सृजन के प्रति मेरी रुचि ने मुझे "
+"नए पहलू एक्स्प्लोर करने और नवाचार के लिए प्रेरित किया है।"
+
+#: 404.php:22
+#, php-format
+msgid "Go back to the %s"
+msgstr "%s पर वापस जाएं"
+
+#: theme.json:1
+msgctxt "Gradient name"
+msgid "Horizontal white to Primary color"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Gradient name"
+msgid "Primary color to white"
+msgstr ""
+
+#: 404.php:27
+msgid "Home"
+msgstr "होम"
+
+#. Author of the theme
+msgid "Hostinger"
+msgstr "Hostinger"
+
+#. Name of the theme
+msgid "Hostinger blog theme"
+msgstr "Hostinger ब्लॉग थीम"
+
+#. Description of the theme
+msgid ""
+"Hostinger Blog Theme is the perfect choice for bloggers seeking a powerful "
+"yet lightweight solution. Built with SEO and mobile responsiveness in mind, "
+"this theme ensures optimal performance and a better online presence. It "
+"includes pre-made home, about us, contact us, and blog pages, giving your "
+"blog a seamless and quick start. Regardless of your niche, take your blog to "
+"the next level with this lightweight and professional-looking theme."
+msgstr "Hostinger ब्लॉग थीम "
+
+#. Author URI of the theme
+msgid "https://hostinger.com"
+msgstr "https://hostinger.com"
+
+#. URI of the theme
+msgid "https://www.hostinger.com/blog/hostinger-blog-theme"
+msgstr "https://www.hostinger.com/blog/hostinger-blog-theme"
+
+#: archive.php:92 build/components/blocks/newsletter/render.php:4
+msgid ""
+"I consent to use of my email address for the purpose of receiving "
+"newsletters as described in"
+msgstr ""
+"जैसा कि इसमें बताया गया है, मैं न्यूज़लेटर पाने के उद्देश्य से अपने ईमेल "
+"एड्रेस का उपयोग करने की सहमति देता/देती हूं"
+
+#: build/components/blocks/contactform/render.php:4
+msgid ""
+"I consent to use of provided personal data for the purpose of responding to "
+"the request as described in"
+msgstr ""
+"जैसा कि वर्णित है, मैं अनुरोध का जवाब देने के उद्देश्य से प्रदान किए गए "
+"व्यक्तिगत डेटा का उपयोग करने के लिए सहमति देता/देती हूं"
+
+#: build/components/blocks/herosection/render.php:3
+msgid "I’m Shawn — a designer and creator 👋"
+msgstr "मेरा नाम Shawn है - मैं डिज़ाइनर और क्रिएटर हूं 👋"
+
+#: inc/template-functions.php:279
+msgid "Key areas that require attention include:"
+msgstr "इन प्रमुख क्षेत्रों पर ध्यान देने की आवश्यकता है:"
+
+#: build/components/blocks/latestposts/render.php:4
+msgid "Latest Posts"
+msgstr "नवीनतम पोस्ट"
+
+#: build/components/blocks/herosection/render.php:6
+msgid "Learn About Me"
+msgstr "मेरे बारे में जानें"
+
+#: build/components/blocks/contactform/render.php:2
+msgid "Let’s get in touch"
+msgstr "हमसे संपर्क करे"
+
+#: build/components/blocks/herosection/render.php:8
+msgid "Let’s stay connected"
+msgstr "हमारे साथ बने रहें"
+
+#: build/components/blocks/contactform/render.php:29
+msgid "Message"
+msgstr "मैसेज"
+
+#: build/components/blocks/contactform/render.php:21
+msgid "Name"
+msgstr "नाम"
+
+#: inc/form-submissions.php:72
+msgid "New Newsletter Subscription"
+msgstr "नया न्यूज़लेटर सब्सक्रिप्शन"
+
+#: archive.php:75 build/components/blocks/newsletter/render.php:2
+msgid "Newsletter"
+msgstr "न्यूज़लेटर"
+
+#: index.php:55 archive.php:48
+msgid "No categories found."
+msgstr "कोई श्रेणियां नहीं मिलीं।"
+
+#: inc/form-submissions.php:40 inc/form-submissions.php:95
+msgid "Not valid recipient email."
+msgstr "ईमेल वैध नहीं है"
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "कुछ नहीं मिल पाया"
+
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "यह पेज नहीं मिल पाया।"
+
+#: template-parts/content-page.php:22
+msgid "Pages:"
+msgstr "पेज:"
+
+#: build/components/blocks/contactform/render.php:57
+msgid "Phone"
+msgstr "फोन"
+
+#: inc/template-functions.php:275
+msgid ""
+"Please adjust your <a href=\"?page=hostinger-additional-settings\">theme "
+"settings</a> to personalize your website."
+msgstr ""
+"अपनी वेबसाइट पर्सनलाइज़ करने के लिए अपनी <a href=\"?page=hostinger-additional-"
+"settings\">थीम सेटिंग्स</a> एडजस्ट करें।"
+
+#: inc/form-submissions.php:13 inc/form-submissions.php:64
+msgid "Please agree with privacy policy."
+msgstr "कृपया हमारी गोपनीयता नीति स्वीकार करें"
+
+#: inc/form-submissions.php:17 inc/form-submissions.php:68
+msgid "Please enter a valid email address."
+msgstr "कृपया वैध ईमेल एड्रेस दर्ज करें"
+
+#: functions.php:81
+msgid "Primary"
+msgstr "प्राथमिक"
+
+#: build/components/blocks/newsletter/render.php:4
+#: build/components/blocks/contactform/render.php:4
+msgid "Privacy Policy"
+msgstr "गोपनीयता नीति"
+
+#: footer.php:50 functions.php:87
+msgid "Quick links"
+msgstr "क्विक लिंक्स"
+
+#: single.php:89
+msgid "RELATED POSTS"
+msgstr "संबंधित पोस्ट"
+
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr "%s के लिए सर्च परिणाम"
+
+#: build/components/blocks/contactform/render.php:41
+msgid "Send Message"
+msgstr "मैसेज भेजें"
+
+#: inc/template-functions.php:282
+msgid "Social media links"
+msgstr "सोशल मीडिया लिंक्स"
+
+#: search.php:37 index.php:74 archive.php:67
+msgid "Sorry, no posts matched your criteria."
+msgstr "क्षमा करें, आपके मापदंड से मेल खाने वाला कोई पोस्ट नहीं मिला।"
+
+#: archive.php:95 build/components/blocks/newsletter/render.php:30
+msgid "Subscribe"
+msgstr "सब्सक्राइब करें"
+
+#: archive.php:76 build/components/blocks/newsletter/render.php:3
+msgid ""
+"Subscribe to stay up-to-date with my latest creative projects, insights, and "
+"tips."
+msgstr ""
+"मेरे नए क्रिएटिव प्रोजेक्ट्स, इनसाइट्स और टिप्स जानने के लिए सब्सक्राइब करें "
+"और मेरे साथ बने रहें।"
+
+#: inc/form-submissions.php:99
+msgid "Successfully submitted!"
+msgstr "सफलतापूर्वक सबमिट किया जा चुका है।"
+
+#: inc/form-submissions.php:45
+msgid "Successfully subscribed!"
+msgstr "सफलतापूर्वक सब्सक्राइब किया जा चुका है।"
+
+#: theme.json:1
+msgctxt "Template part name"
+msgid "Footer"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Template part name"
+msgid "Header"
+msgstr ""
+
+#: functions.php:93
+msgid "Terms & policy"
+msgstr "शर्तें और नीति"
+
+#: footer.php:65
+msgid "Terms &amp; policy"
+msgstr "शर्तें और नीति"
+
+#: inc/theme-blocks.php:16
+msgid "Theme Blocks"
+msgstr "थीम ब्लॉक्स"
+
+#: inc/theme-settings.php:5 inc/theme-settings.php:6
+msgid "Theme Settings"
+msgstr "थीम सेटिंग्स"
+
+#: inc/template-functions.php:278
+msgid ""
+"To enhance your site's functionality and user experience, ensure that you "
+"fill in the theme settings with accurate information."
+msgstr ""
+"अपनी साइट की कार्यक्षमता बढ़ाने और उपयोगकर्ता अनुभव बेहतर बनाने के लिए थीम "
+"सेटिंग्स में सटीक जानकारी दर्ज करें।"
+
+#: archive.php:85 build/components/blocks/newsletter/render.php:20
+#: build/components/blocks/contactform/render.php:28
+msgid "What’s your email?"
+msgstr "आपका ईमेल एड्रेस क्या है?"
+
+#: build/components/blocks/contactform/render.php:24
+msgid "What’s your name?"
+msgstr "आपका नाम क्या है?"
+
+# English sentence is incomplete
+#: build/components/blocks/newsletter/render.php:4
+#: build/components/blocks/contactform/render.php:4
+msgid "which I have read. I may withdraw my consent at any time."
+msgstr "मैं किसी भी समय अपनी सहमति वापस ले सकता/सकती हूं।"
+
+#: build/components/blocks/contactform/render.php:31
+msgid "Write your message..."
+msgstr "अपना मैसेज लिखें"
+
+#: inc/template-functions.php:277
+msgid ""
+"Your website currently lacks essential information such as social links and "
+"contact details."
+msgstr ""
+"इस समय आपकी वेबसाइट पर सोशल लिंक्स और संपर्क जानकारी जैसी आवश्यक जानकारी "
+"मौजूद नहीं है।"

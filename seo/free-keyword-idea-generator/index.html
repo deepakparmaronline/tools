@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Keyword Idea Generator & SEO Research Tool | Toolboxkart</title>
+  <meta name="description" content="Generate hundreds of untapped long-tail keywords and content ideas instantly. Our free keyword research tool helps you find high-intent SEO topics." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+    
+    /* ── NAV & HERO ── */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-brand span { color: #7c6fcd; }
+    .hero { text-align: center; padding: 3rem 1rem 1.5rem; }
+    .hero h1 { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+    .hero p { color: #888; max-width: 700px; margin: 0 auto; line-height: 1.5; }
+    
+    /* ── TOOL LAYOUT ── */
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 1rem 4rem; }
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2rem; margin-bottom: 2rem; }
+    
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; font-size: 0.9rem; font-weight: 600; color: #ccc; margin-bottom: 0.5rem; }
+    input[type="text"] { width: 100%; background: #222; color: #fff; border: 1px solid #333; border-radius: 8px; padding: 1.2rem; font-size: 1.1rem; outline: none; transition: 0.2s; }
+    input[type="text"]:focus { border-color: #7c6fcd; }
+    
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem 2rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s; font-size: 1.1rem; width: 100%; }
+    button.btn-primary:hover { background: #6a5eb8; }
+
+    /* ── RESULTS AREA ── */
+    .results-wrapper { display: none; margin-top: 2rem; }
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    
+    .keyword-category { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; }
+    .category-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid #272727; padding-bottom: 0.5rem; }
+    .category-title { font-weight: 600; color: #fff; font-size: 1.1rem; }
+    
+    .copy-btn { background: #333; color: #fff; border: none; padding: 0.4rem 0.8rem; border-radius: 4px; cursor: pointer; font-size: 0.8rem; transition: 0.2s; }
+    .copy-btn:hover { background: #444; }
+    .copy-btn.copied { background: #4ade80; color: #111; }
+
+    .keyword-list { list-style: none; max-height: 300px; overflow-y: auto; padding-right: 0.5rem; }
+    .keyword-list::-webkit-scrollbar { width: 6px; }
+    .keyword-list::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
+    .keyword-list li { background: #111; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 6px; font-size: 0.95rem; color: #ccc; border: 1px solid #222; }
+
+    /* ── SEO CONTENT BLOCK ── */
+    .seo-content-block h2 { font-size: 1.4rem; color: #fff; margin-bottom: 1rem; margin-top: 2rem; }
+    .seo-content-block h3 { font-size: 1.2rem; color: #ddd; margin-bottom: 0.8rem; margin-top: 1.5rem; }
+    .seo-content-block p { color: #888; line-height: 1.6; margin-bottom: 1rem; }
+    .seo-content-block strong { color: #ccc; }
+    .seo-faq-item { border-bottom: 1px solid #1e1e1e; padding: 1rem 0; }
+    .seo-faq-q { font-weight: 600; color: #ccc; cursor: pointer; display: flex; justify-content: space-between; }
+    .seo-faq-a { font-size: .95rem; color: #777; line-height: 1.7; max-height: 0; overflow: hidden; transition: .3s; }
+    .seo-faq-item.open .seo-faq-a { max-height: 600px; padding-top: .8rem; }
+    
+    /* ── RELATED TOOLS ── */
+    .related-tools-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #272727; }
+    .tools-grid { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .tool-card-link { background: #161616; border: 1px solid #333; padding: 1rem; border-radius: 8px; color: #fff; text-decoration: none; font-size: .9rem; transition: 0.2s; }
+    .tool-card-link:hover { border-color: #7c6fcd; background: #1a1a1a; }
+  </style>
+</head>
+<body>
+
+<nav><a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a></nav>
+
+<div class="hero">
+  <h1>Free Keyword Idea Generator & SEO Finder</h1>
+  <p>Enter a seed keyword to instantly generate hundreds of long-tail phrases, informational questions, and buyer-intent keywords for your SEO content strategy.</p>
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="form-group">
+      <label for="seed-keyword">Enter Your Main Topic or Seed Keyword</label>
+      <input type="text" id="seed-keyword" placeholder="e.g., SEO tools, organic farming, custom keyboards" onkeypress="handleEnter(event)" />
+    </div>
+
+    <button class="btn-primary" onclick="generateIdeas()">Generate Keyword Ideas</button>
+
+    <div id="results-wrapper" class="results-wrapper">
+      <div class="results-grid">
+        <!-- Questions -->
+        <div class="keyword-category">
+          <div class="category-header">
+            <span class="category-title">Informational (Questions)</span>
+            <button class="copy-btn" onclick="copyList('list-questions', this)">Copy All</button>
+          </div>
+          <ul class="keyword-list" id="list-questions"></ul>
+        </div>
+
+        <!-- Buyer Intent -->
+        <div class="keyword-category">
+          <div class="category-header">
+            <span class="category-title">Buyer Intent (Transactional)</span>
+            <button class="copy-btn" onclick="copyList('list-buyer', this)">Copy All</button>
+          </div>
+          <ul class="keyword-list" id="list-buyer"></ul>
+        </div>
+
+        <!-- Comparisons -->
+        <div class="keyword-category">
+          <div class="category-header">
+            <span class="category-title">Comparisons & Reviews</span>
+            <button class="copy-btn" onclick="copyList('list-compare', this)">Copy All</button>
+          </div>
+          <ul class="keyword-list" id="list-compare"></ul>
+        </div>
+
+        <!-- Long Tail -->
+        <div class="keyword-category">
+          <div class="category-header">
+            <span class="category-title">Long-Tail Modifiers</span>
+            <button class="copy-btn" onclick="copyList('list-longtail', this)">Copy All</button>
+          </div>
+          <ul class="keyword-list" id="list-longtail"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seo-content-block">
+    <h2>Why Use a Free Keyword Idea Generator?</h2>
+    <p>Finding the right topics to write about is the hardest part of SEO. A standard <strong>free keyword research tool</strong> often just gives you highly competitive, head terms that are impossible to rank for. Our <strong>Keyword Idea Generator</strong> works differently. It takes your core topic and automatically builds a massive list of semantic variations, categorizing them by search intent.</p>
+
+    <h3>Unlock the Power of the Long Tail Keyword Generator</h3>
+    <p>Long-tail keywords make up over 70% of all search traffic. By using our tool as a <strong>Long Tail Keyword Generator</strong>, you can discover hyper-specific phrases that your target audience is actively searching for. These longer phrases have lower competition and much higher conversion rates because the searcher's intent is perfectly clear.</p>
+
+    <h3>The Ultimate SEO Keyword Finder</h3>
+    <p>Whether you need topics for your next blog post or commercial keywords for a product page, our <strong>SEO Keyword Finder</strong> maps out the exact phrases people type into Google. It categorizes output into Questions (perfect for Featured Snippets and FAQs), Buyer Intent (for product pages), and Comparisons (for affiliate and review content).</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">What is the best free keyword research tool?</div>
+      <div class="seo-faq-a">While major platforms like Ahrefs or SEMrush offer limited free trials, a dedicated <strong>Free Keyword Idea Generator</strong> like Toolboxkart is often best for immediate content ideation. It doesn't restrict your searches or hide long-tail variations behind a paywall, giving you pure semantic ideas instantly.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">How do I generate long-tail keywords?</div>
+      <div class="seo-faq-a">Simply type a broad, 1-2 word phrase (like "shoes" or "software") into our <strong>Long Tail Keyword Generator</strong>. The tool will automatically append modifiers like "best," "for beginners," "how to," and "alternatives" to create a list of easy-to-rank, highly targeted phrases.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">What are buyer intent keywords?</div>
+      <div class="seo-faq-a">Buyer intent (or transactional) keywords are terms people search when they are ready to spend money. Examples include words like "buy," "cheap," "discount," "best," and "review." Our <strong>SEO Keyword Finder</strong> automatically filters and builds these specific variations for you.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">How many keyword ideas can I generate?</div>
+      <div class="seo-faq-a">You can run unlimited searches. The tool combines your seed keyword with over 50 proven SEO modifiers, generating dozens of highly relevant content ideas every time you click generate.</div>
+    </div>
+  </div>
+
+  <section id="related-tools" class="related-tools-section">
+    <h3>Explore More SEO Tools</h3>
+    <div id="tools-grid" class="tools-grid"></div>
+  </section>
+</div>
+
+<script>
+  function handleEnter(e) {
+    if (e.key === 'Enter') generateIdeas();
+  }
+
+  function generateIdeas() {
+    let seed = document.getElementById('seed-keyword').value.trim().toLowerCase();
+    if (!seed) {
+      alert("Please enter a seed keyword.");
+      return;
+    }
+
+    const currentYear = new Date().getFullYear();
+
+    // Modifiers Arrays
+    const questions = [
+      `how to use ${seed}`, `what is ${seed}`, `why is ${seed} important`,
+      `where to find ${seed}`, `can ${seed} help me`, `how much is ${seed}`,
+      `when to use ${seed}`, `is ${seed} worth it`, `how does ${seed} work`,
+      `what are the benefits of ${seed}`, `how to build ${seed}`
+    ];
+
+    const buyer = [
+      `buy ${seed}`, `best ${seed}`, `cheap ${seed}`,
+      `${seed} for sale`, `top rated ${seed}`, `affordable ${seed}`,
+      `best ${seed} ${currentYear}`, `discount ${seed}`, `premium ${seed}`,
+      `where to buy ${seed}`, `order ${seed} online`
+    ];
+
+    const compare = [
+      `${seed} vs`, `${seed} reviews`, `alternatives to ${seed}`,
+      `${seed} or`, `${seed} competitor`, `${seed} comparison`,
+      `is ${seed} better than`, `pros and cons of ${seed}`,
+      `${seed} review ${currentYear}`
+    ];
+
+    const longtail = [
+      `${seed} for beginners`, `advanced ${seed} strategies`,
+      `${seed} tutorial step by step`, `ultimate guide to ${seed}`,
+      `${seed} software`, `${seed} examples`, `${seed} best practices`,
+      `free ${seed}`, `how to optimize ${seed}`, `${seed} tips and tricks`
+    ];
+
+    // Populate Lists
+    populateList('list-questions', questions);
+    populateList('list-buyer', buyer);
+    populateList('list-compare', compare);
+    populateList('list-longtail', longtail);
+
+    // Show wrapper
+    document.getElementById('results-wrapper').style.display = 'block';
+    
+    // Reset all copy buttons
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.textContent = 'Copy All';
+      btn.classList.remove('copied');
+    });
+  }
+
+  function populateList(elementId, items) {
+    const list = document.getElementById(elementId);
+    list.innerHTML = '';
+    items.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      list.appendChild(li);
+    });
+  }
+
+  function copyList(elementId, btnElement) {
+    const listItems = document.querySelectorAll(`#${elementId} li`);
+    const textToCopy = Array.from(listItems).map(li => li.textContent).join('\n');
+    
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      btnElement.textContent = 'Copied!';
+      btnElement.classList.add('copied');
+      setTimeout(() => {
+        btnElement.textContent = 'Copy All';
+        btnElement.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  // Related Tools Logic
+  const allTools = [
+    { name: "301 Redirect Generator", url: "https://toolboxkart.tech/seo/301-redirect-generator/" },
+    { name: "Duplicate Content Finder", url: "https://toolboxkart.tech/seo/duplicate-content-finder/" },
+    { name: "Free Keyword Idea Generator", url: "https://toolboxkart.tech/seo/free-keyword-idea-generator/" },
+    { name: "Hreflang Tag Assistant", url: "https://toolboxkart.tech/seo/hreflang-tag-assistant-for-seo/" },
+    { name: "Keyword Density Checker", url: "https://toolboxkart.tech/seo/keyword-density-checker/" },
+    { name: "llm.txt Generator", url: "https://toolboxkart.tech/seo/llm-txt-generator-for-ai-seo/" },
+    { name: "Meta Tag Extractor", url: "https://toolboxkart.tech/seo/meta-extractor/" },
+    { name: "Readability Score Checker", url: "https://toolboxkart.tech/seo/readability-score-checker/" },
+    { name: "Robots.txt Generator", url: "https://toolboxkart.tech/seo/robots-txt-generator/" },
+    { name: "Schema Generator", url: "https://toolboxkart.tech/seo/schema-generator-free/" },
+    { name: "Search Console Regex Generator", url: "https://toolboxkart.tech/seo/search-console-regex-generator/" }
+  ];
+
+  function loadRelatedTools() {
+    const container = document.getElementById('tools-grid');
+    if (!container) return;
+    const currentHref = window.location.href;
+    const filteredTools = allTools.filter(tool => !currentHref.includes(tool.url));
+    filteredTools.forEach(tool => {
+      const link = document.createElement('a');
+      link.href = tool.url;
+      link.className = 'tool-card-link';
+      link.textContent = tool.name;
+      container.appendChild(link);
+    });
+  }
+
+  document.querySelectorAll('.seo-faq-q').forEach(q => {
+    q.addEventListener('click', () => q.closest('.seo-faq-item').classList.toggle('open'));
+  });
+
+  loadRelatedTools();
+</script>
+</body>
+</html>

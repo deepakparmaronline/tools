@@ -1,0 +1,583 @@
+# Copyright (C) 2020 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese (Portugal)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-04-17T21:03:15+00:00\n"
+"PO-Revision-Date: 2025-07-22 15:47+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: _s\n"
+"Language: pt_PT\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.6.4; wp-6.3.1"
+
+#: build/components/blocks/aboutsection/render.php:4
+msgid ""
+"<p>As a designer, creator, and lifelong learner, I am driven by a passion "
+"for bringing ideas to life through creative problem-solving and "
+"collaboration. With a background in visual design, I have expanded my "
+"skillset to encompass a variety of creative and technical disciplines, "
+"including media production and web development. I approach each project with "
+"a dedication to quality and a commitment to delivering results that exceed "
+"expectations.</p>"
+msgstr ""
+"<p>Como designer, criador e aprendiz ao longo da vida, sou movido por uma "
+"paixão por dar vida a ideias através da resolução criativa de problemas e da "
+"colaboração. Com formação em design visual, expandi as minhas competências "
+"para abranger uma variedade de disciplinas criativas e técnicas, incluindo "
+"produção de média e desenvolvimento web. Abordo cada projeto com uma "
+"dedicação à qualidade e um compromisso de entregar resultados que excedem as "
+"expetativas.</p>"
+
+#: build/components/blocks/disclaimersection/render.php:3
+msgid ""
+"<p>The information contained in this website is for general information "
+"purposes only. The information is provided by [website name] and while we "
+"endeavor to keep the information up to date and correct, we make no "
+"representations or warranties of any kind, express or implied, about the "
+"completeness, accuracy, reliability, suitability or availability with "
+"respect to the website or the information, products, services, or related "
+"graphics contained on the website for any purpose. Any reliance you place on "
+"such information is therefore strictly at your own risk.</p>"
+msgstr ""
+"<p>As informações contidas neste site são apenas para fins de informação "
+"geral. As informações são fornecidas por [nome do site] e, embora nos "
+"esforcemos por manter as informações atualizadas e corretas, não fazemos "
+"representações ou garantias de qualquer tipo, expressas ou implícitas, sobre "
+"a integridade, precisão, fiabilidade, adequação ou disponibilidade em "
+"relação ao site ou às informações, produtos, serviços ou gráficos "
+"relacionados contidos no site para qualquer finalidade. Qualquer confiança "
+"depositada em tais informações é, por conseguinte, estritamente por sua "
+"conta e risco.</p>"
+
+#: build/components/blocks/aboutsection/render.php:2
+msgid "A bit about me ✌️"
+msgstr "Um pouco sobre mim ✌️"
+
+#: build/components/blocks/aboutsection/render.php:3
+msgid ""
+"A designer, creator, and lifelong learner with a passion for bringing ideas "
+"to life through creative problem-solving and collaboration."
+msgstr ""
+"Um designer, criador e aprendiz ao longo da vida com uma paixão por dar vida "
+"a ideias através da resolução criativa de problemas e  colaboração."
+
+#: inc/theme-settings.php:20
+msgid "Additional Settings"
+msgstr "Configurações adicionais"
+
+#: build/components/blocks/contactform/render.php:68
+msgid "Address"
+msgstr "Endereço"
+
+#: index.php:34
+msgid "All blog posts"
+msgstr "Todas as publicações do blog"
+
+#: inc/template-functions.php:275
+msgid "Attention:"
+msgstr "Atenção:"
+
+#: build/components/blocks/aboutsection/block.json:1
+msgctxt "block description"
+msgid "About section"
+msgstr "Secção sobre"
+
+#: build/components/blocks/contactform/block.json:1
+msgctxt "block description"
+msgid "Contact form"
+msgstr "Formulário de contacto"
+
+#: build/components/blocks/disclaimersection/block.json:1
+msgctxt "block description"
+msgid "Disclaimer section"
+msgstr "Secção de isenção de responsabilidade"
+
+#: build/components/blocks/featuredpost/block.json:1
+msgctxt "block description"
+msgid "Featured post"
+msgstr "Publicação em destaque"
+
+#: build/components/blocks/herosection/block.json:1
+msgctxt "block description"
+msgid "Hero block"
+msgstr "Bloco Herói"
+
+#: build/components/blocks/latestposts/block.json:1
+msgctxt "block description"
+msgid "Latest posts"
+msgstr "Últimas publicações"
+
+#: build/components/blocks/newsletter/block.json:1
+msgctxt "block description"
+msgid "Newsletter form"
+msgstr "Formulário da newsletter"
+
+#: build/components/blocks/aboutsection/block.json:1
+msgctxt "block title"
+msgid "About section"
+msgstr "Secção sobre"
+
+#: build/components/blocks/contactform/block.json:1
+msgctxt "block title"
+msgid "Contact form"
+msgstr "Formulário de contacto"
+
+#: build/components/blocks/disclaimersection/block.json:1
+msgctxt "block title"
+msgid "Disclaimer section"
+msgstr "Secção de isenção de responsabilidade"
+
+#: build/components/blocks/featuredpost/block.json:1
+msgctxt "block title"
+msgid "Featured Post"
+msgstr "Publicação em destaque"
+
+#: build/components/blocks/herosection/block.json:1
+msgctxt "block title"
+msgid "Hero Section"
+msgstr "Secção Herói"
+
+#: build/components/blocks/latestposts/block.json:1
+msgctxt "block title"
+msgid "Latest Posts"
+msgstr "Últimas publicações"
+
+#: build/components/blocks/newsletter/block.json:1
+msgctxt "block title"
+msgid "Newsletter form"
+msgstr "Formulário da newsletter"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Grey / Light"
+msgstr "Cinzento / Claro"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Grey / Lighter"
+msgstr "Cinzento / Mais claro"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Dark"
+msgstr "Principal / Escuro"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Grey"
+msgstr "Principal / Cinzento"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Light"
+msgstr "Principal / Luz"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Primary"
+msgstr "Principal / Primário"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Primary Dark"
+msgstr "Principal / Primário Escuro"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Transparent"
+msgstr "Transparente"
+
+#: inc/template-functions.php:281
+msgid "Color scheme"
+msgstr "Esquema de cores"
+
+#: inc/template-functions.php:283
+msgid "Contact information"
+msgstr "Informações de contacto"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Custom template name"
+msgid "No title"
+msgstr "Sem título"
+
+#: build/components/blocks/disclaimersection/render.php:2
+msgid "Disclaimer"
+msgstr "Isenção de responsabilidade"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Duotone name"
+msgid "Primary and Contrast"
+msgstr "Primário e Contraste"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Duotone name"
+msgid "Secondary and primary"
+msgstr "Secundário e primário"
+
+#: inc/theme-settings.php:44
+msgid "Edit theme settings below."
+msgstr "Edite as configurações do tema abaixo."
+
+#: archive.php:81 build/components/blocks/newsletter/render.php:16
+#: build/components/blocks/contactform/render.php:25
+#: build/components/blocks/contactform/render.php:46
+msgid "Email"
+msgstr "Email"
+
+#: inc/theme-settings.php:61
+msgid "Enter contacts below"
+msgstr "Introduza os contactos abaixo"
+
+#: inc/theme-settings.php:70
+msgid "Enter footer content below"
+msgstr "Introduza o conteúdo do rodapé abaixo"
+
+#: inc/theme-settings.php:52
+msgid "Enter the URLs for your social media profiles below."
+msgstr "Introduza os URL dos seus perfis das redes sociais abaixo."
+
+#: index.php:37
+msgid ""
+"Explore the world of design and learn how to create visually stunning\n"
+"\t\t\t\t\tartwork."
+msgstr ""
+"Explore o mundo do design e aprenda a criar arte fantástica.\n"
+
+#: build/components/blocks/contactform/render.php:3
+msgid "Feel free to reach out to me through any of the following ways."
+msgstr "Não hesite em contactar-me através de qualquer um dos seguintes meios."
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Extra small"
+msgstr "Extra pequeno"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Large"
+msgstr "Grande"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Medium"
+msgstr "Médio"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Pequeno"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "XL"
+msgstr "XL"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "XXL"
+msgstr "XXL"
+
+#: build/components/blocks/herosection/render.php:4
+msgid ""
+"From visual design to media production, my passion for creating has led me "
+"on a journey of exploration and innovation."
+msgstr ""
+"Do design visual à produção multimédia, a minha paixão pela criação levou-me "
+"a uma viagem de exploração e inovação."
+
+#: 404.php:22
+#, php-format
+msgid "Go back to the %s"
+msgstr "Voltar a %s"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Gradient name"
+msgid "Horizontal white to Primary color"
+msgstr "Branco horizontal para cor primária"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Gradient name"
+msgid "Primary color to white"
+msgstr "Cor primária para branco"
+
+#: 404.php:27
+msgid "Home"
+msgstr "Início"
+
+#. Author of the theme
+msgid "Hostinger"
+msgstr "Hostinger"
+
+#. Name of the theme
+msgid "Hostinger blog theme"
+msgstr "Tema de blog Hostinger"
+
+#. Description of the theme
+msgid ""
+"Hostinger Blog Theme is the perfect choice for bloggers seeking a powerful "
+"yet lightweight solution. Built with SEO and mobile responsiveness in mind, "
+"this theme ensures optimal performance and a better online presence. It "
+"includes pre-made home, about us, contact us, and blog pages, giving your "
+"blog a seamless and quick start. Regardless of your niche, take your blog to "
+"the next level with this lightweight and professional-looking theme."
+msgstr ""
+"O Tema de Blog Hostinger é a escolha perfeita para bloggers que procuram uma "
+"solução poderosa, mas leve. Construído com SEO e capacidade de resposta "
+"móvel em mente, este tema garante um desempenho ótimo e uma melhor presença "
+"online. Inclui páginas pré-fabricadas de início, sobre nós, contacte-nos e "
+"blog, dando ao seu blog um início rápido e sem falhas. Independentemente do "
+"seu nicho, leve o seu blog para o nível seguinte com este tema leve e de "
+"aspeto profissional."
+
+#. Author URI of the theme
+msgid "https://hostinger.com"
+msgstr "https://hostinger.pt"
+
+#. URI of the theme
+msgid "https://www.hostinger.com/blog/hostinger-blog-theme"
+msgstr "https://www.hostinger.com/blog/hostinger-blog-theme"
+
+#: archive.php:92 build/components/blocks/newsletter/render.php:4
+msgid ""
+"I consent to use of my email address for the purpose of receiving "
+"newsletters as described in"
+msgstr ""
+"Autorizo a utilização do meu endereço de email para efeitos de receção de "
+"boletins informativos, tal como descrito em"
+
+#: build/components/blocks/contactform/render.php:4
+msgid ""
+"I consent to use of provided personal data for the purpose of responding to "
+"the request as described in"
+msgstr ""
+"Autorizo a utilização dos dados pessoais fornecidos para efeitos de resposta "
+"ao pedido, tal como descrito em"
+
+#: build/components/blocks/herosection/render.php:3
+msgid "I’m Shawn — a designer and creator 👋"
+msgstr "Sou o Shawn - um designer e criador 👋"
+
+#: inc/template-functions.php:279
+msgid "Key areas that require attention include:"
+msgstr "As principais áreas que requerem atenção incluem:"
+
+#: build/components/blocks/latestposts/render.php:4
+msgid "Latest Posts"
+msgstr "Últimas publicações"
+
+#: build/components/blocks/herosection/render.php:6
+msgid "Learn About Me"
+msgstr "Saiba mais sobre mim"
+
+#: build/components/blocks/contactform/render.php:2
+msgid "Let’s get in touch"
+msgstr "Entre em contacto"
+
+#: build/components/blocks/herosection/render.php:8
+msgid "Let’s stay connected"
+msgstr "Vamos manter-nos em contacto"
+
+#: build/components/blocks/contactform/render.php:29
+msgid "Message"
+msgstr "Mensagem"
+
+#: build/components/blocks/contactform/render.php:21
+msgid "Name"
+msgstr "Nome"
+
+#: inc/form-submissions.php:72
+msgid "New Newsletter Subscription"
+msgstr "Nova subscrição da newsletter"
+
+#: archive.php:75 build/components/blocks/newsletter/render.php:2
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: index.php:55 archive.php:48
+msgid "No categories found."
+msgstr "Nenhuma categoria encontrada."
+
+#: inc/form-submissions.php:40 inc/form-submissions.php:95
+msgid "Not valid recipient email."
+msgstr "O email do destinatário é inválido."
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Nada encontrado"
+
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups! Esta página não pode ser encontrada."
+
+#: template-parts/content-page.php:22
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: build/components/blocks/contactform/render.php:57
+msgid "Phone"
+msgstr "Telefone"
+
+#: inc/template-functions.php:275
+msgid ""
+"Please adjust your <a href=\"?page=hostinger-additional-settings\">theme "
+"settings</a> to personalize your website."
+msgstr ""
+"Ajuste as suas <a href=\"?page=hostinger-additional-settings\">configurações "
+"do tema</a> para personalizar o seu site."
+
+#: inc/form-submissions.php:13 inc/form-submissions.php:64
+msgid "Please agree with privacy policy."
+msgstr "Por favor, aceite a política de privacidade."
+
+#: inc/form-submissions.php:17 inc/form-submissions.php:68
+msgid "Please enter a valid email address."
+msgstr "Por favor, introduza um endereço de email válido."
+
+#: functions.php:81
+msgid "Primary"
+msgstr "Primário"
+
+#: build/components/blocks/newsletter/render.php:4
+#: build/components/blocks/contactform/render.php:4
+msgid "Privacy Policy"
+msgstr "Política de privacidade"
+
+#: footer.php:50 functions.php:87
+msgid "Quick links"
+msgstr "Links rápidos"
+
+#: single.php:89
+msgid "RELATED POSTS"
+msgstr "PUBLICAÇÕES RELACIONADAS"
+
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Resultados da pesquisa para: %s"
+
+#: build/components/blocks/contactform/render.php:41
+msgid "Send Message"
+msgstr "Enviar mensagem"
+
+#: inc/template-functions.php:282
+msgid "Social media links"
+msgstr "Links para redes sociais"
+
+#: search.php:37 index.php:74 archive.php:67
+msgid "Sorry, no posts matched your criteria."
+msgstr "Lamentamos, mas nenhuma mensagem corresponde aos seus critérios."
+
+#: archive.php:95 build/components/blocks/newsletter/render.php:30
+msgid "Subscribe"
+msgstr "Subscrever"
+
+#: archive.php:76 build/components/blocks/newsletter/render.php:3
+msgid ""
+"Subscribe to stay up-to-date with my latest creative projects, insights, and "
+"tips."
+msgstr ""
+"Subscreva para se manter atualizado com os meus últimos projetos criativos, "
+"ideias e dicas."
+
+#: inc/form-submissions.php:99
+msgid "Successfully submitted!"
+msgstr "Enviado com sucesso!"
+
+#: inc/form-submissions.php:45
+msgid "Successfully subscribed!"
+msgstr "Subscrição efetuada com sucesso!"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Template part name"
+msgid "Footer"
+msgstr "Rodapé"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Template part name"
+msgid "Header"
+msgstr "Cabeçalho"
+
+#: functions.php:93
+msgid "Terms & policy"
+msgstr "Termos e política"
+
+#: footer.php:65
+msgid "Terms &amp; policy"
+msgstr "Termos e política"
+
+#: inc/theme-blocks.php:16
+msgid "Theme Blocks"
+msgstr "Blocos de temas"
+
+#: inc/theme-settings.php:5 inc/theme-settings.php:6
+msgid "Theme Settings"
+msgstr "Configurações do tema"
+
+#: inc/template-functions.php:278
+msgid ""
+"To enhance your site's functionality and user experience, ensure that you "
+"fill in the theme settings with accurate information."
+msgstr ""
+"Para melhorar a funcionalidade do seu site e a experiência do utilizador, "
+"certifique-se de que preenche as configurações do tema com informações "
+"corretas."
+
+#: archive.php:85 build/components/blocks/newsletter/render.php:20
+#: build/components/blocks/contactform/render.php:28
+msgid "What’s your email?"
+msgstr "Qual é o seu email?"
+
+#: build/components/blocks/contactform/render.php:24
+msgid "What’s your name?"
+msgstr "Qual é o seu nome?"
+
+#: build/components/blocks/newsletter/render.php:4
+#: build/components/blocks/contactform/render.php:4
+msgid "which I have read. I may withdraw my consent at any time."
+msgstr "que li. Posso retirar o meu consentimento em qualquer altura."
+
+#: build/components/blocks/contactform/render.php:31
+msgid "Write your message..."
+msgstr "Escreva a sua mensagem..."
+
+#: inc/template-functions.php:277
+msgid ""
+"Your website currently lacks essential information such as social links and "
+"contact details."
+msgstr ""
+"O seu site não possui atualmente informações essenciais, tais como links "
+"para as redes sociais e detalhes de contacto."

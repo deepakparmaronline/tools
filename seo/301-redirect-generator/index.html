@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free 301 Redirect Generator | .htaccess Code Builder - Toolboxkart</title>
+  <meta name="description" content="Easily create permanent URL redirects with our free 301 Redirect Generator. Build clean .htaccess code for single pages, directories, or entire domains." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+    
+    /* ── NAV & HERO ── */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-brand span { color: #7c6fcd; }
+    .hero { text-align: center; padding: 3rem 1rem 1.5rem; }
+    .hero h1 { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+    .hero p { color: #888; max-width: 700px; margin: 0 auto; line-height: 1.5; }
+    
+    /* ── TOOL LAYOUT ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 4rem; }
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2rem; margin-bottom: 2rem; }
+    
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; font-size: 0.9rem; font-weight: 600; color: #ccc; margin-bottom: 0.5rem; }
+    input[type="text"], select { width: 100%; background: #222; color: #fff; border: 1px solid #333; border-radius: 8px; padding: 1rem; font-size: 1rem; outline: none; transition: 0.2s; }
+    input[type="text"]:focus, select:focus { border-color: #7c6fcd; }
+    
+    .helper-text { font-size: 0.85rem; color: #777; margin-top: 0.5rem; }
+    
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem 2rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s; font-size: 1.1rem; width: 100%; margin-top: 0.5rem; }
+    button.btn-primary:hover { background: #6a5eb8; }
+
+    /* ── RESULTS AREA ── */
+    .result-box { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; margin-top: 2rem; display: none; }
+    .result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .result-label { font-size: 0.9rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+    .code-output { font-family: monospace; font-size: 1rem; color: #4ade80; background: #111; padding: 1.2rem; border-radius: 6px; white-space: pre-wrap; word-break: break-all; border: 1px solid #272727; line-height: 1.5; }
+    
+    .copy-btn { background: #333; color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.85rem; transition: 0.2s; }
+    .copy-btn:hover { background: #444; }
+    .copy-btn.copied { background: #4ade80; color: #111; }
+    
+    .server-instruction { background: #2a2015; border-left: 4px solid #facc15; padding: 1rem; margin-top: 1rem; font-size: 0.9rem; color: #ddd; border-radius: 0 8px 8px 0; }
+
+    /* ── SEO CONTENT BLOCK ── */
+    .seo-content-block h2 { font-size: 1.4rem; color: #fff; margin-bottom: 1rem; margin-top: 2rem; }
+    .seo-content-block p { color: #888; line-height: 1.6; margin-bottom: 1rem; }
+    .seo-content-block strong { color: #ccc; }
+    .seo-faq-item { border-bottom: 1px solid #1e1e1e; padding: 1rem 0; }
+    .seo-faq-q { font-weight: 600; color: #ccc; cursor: pointer; display: flex; justify-content: space-between; }
+    .seo-faq-a { font-size: .95rem; color: #777; line-height: 1.7; max-height: 0; overflow: hidden; transition: .3s; }
+    .seo-faq-item.open .seo-faq-a { max-height: 600px; padding-top: .8rem; }
+    
+    /* ── RELATED TOOLS ── */
+    .related-tools-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #272727; }
+    .tools-grid { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .tool-card-link { background: #161616; border: 1px solid #333; padding: 1rem; border-radius: 8px; color: #fff; text-decoration: none; font-size: .9rem; transition: 0.2s; }
+    .tool-card-link:hover { border-color: #7c6fcd; background: #1a1a1a; }
+  </style>
+</head>
+<body>
+
+<nav><a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a></nav>
+
+<div class="hero">
+  <h1>Free 301 Redirect Generator & URL Builder</h1>
+  <p>Generate flawless .htaccess permanent redirect code in seconds. Safely pass link equity and prevent 404 errors when moving pages, directories, or entire domains.</p>
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="form-group">
+      <label for="redirect-type">What do you want to redirect?</label>
+      <select id="redirect-type" onchange="toggleInputs()">
+        <option value="single">Single Page to Another Page</option>
+        <option value="directory">Entire Directory/Folder to a New One</option>
+        <option value="domain">Entire Old Domain to a New Domain</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label id="old-label" for="old-url">Old URL Path</label>
+      <input type="text" id="old-url" placeholder="e.g., /old-blog-post/" />
+      <div id="old-helper" class="helper-text">Enter the relative path of the old page (starting with a forward slash).</div>
+    </div>
+
+    <div class="form-group">
+      <label id="new-label" for="new-url">New Destination URL</label>
+      <input type="text" id="new-url" placeholder="e.g., https://www.yourdomain.com/new-blog-post/" />
+      <div id="new-helper" class="helper-text">Enter the absolute, full URL of the new destination (including https://).</div>
+    </div>
+
+    <button class="btn-primary" onclick="generateRedirect()">Generate Redirect Code</button>
+
+    <div id="result-box" class="result-box">
+      <div class="result-header">
+        <span class="result-label">Generated .htaccess Code</span>
+        <button id="copy-btn" class="copy-btn" onclick="copyCode()">Copy Code</button>
+      </div>
+      <div id="code-output" class="code-output"></div>
+      
+      <div class="server-instruction">
+        <strong>How to install:</strong> Access your website's root folder via FTP or cPanel File Manager. Open the <code>.htaccess</code> file (make sure hidden files are visible) and paste this code at the top.
+      </div>
+    </div>
+  </div>
+
+  <div class="seo-content-block">
+    <h2>Why Use a 301 Redirect Generator?</h2>
+    <p>When you redesign a website, change URL structures, or delete outdated content, search engines and users will hit a "404 Not Found" error if they click an old link. A <strong>301 Redirect Generator</strong> solves this by writing the exact server-level code needed to automatically forward traffic from the old URL to the new one. The "301" status code specifically tells Google that the move is permanent, ensuring that all your hard-earned SEO ranking power (link equity) is passed to the new page.</p>
+
+    <h2>The Best .htaccess Redirect Code Builder</h2>
+    <p>Writing Apache server rules manually can be highly error-prone. A single typo in an <code>.htaccess</code> file can take your entire website offline with a 500 Internal Server Error. Our <strong>URL Redirect Generator</strong> eliminates this risk by instantly building perfectly formatted regex and rewrite rules. Whether you need a simple single-page redirect, a wildcard directory match, or a full domain migration, our tool writes the secure code for you.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">What is a 301 Redirect?</div>
+      <div class="seo-faq-a">A 301 redirect is an HTTP status code indicating that a URL has permanently moved to a new location. It is the most SEO-friendly way to forward users, as it tells search engines to transfer the indexing properties and ranking power from the old URL to the new one.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Should I use a 301 or 302 redirect for SEO?</div>
+      <div class="seo-faq-a">You should almost always use a <strong>301 (Permanent)</strong> redirect. A 302 redirect indicates a temporary move and does not pass SEO link equity. Only use a 302 if you plan on bringing the old URL back in the near future (e.g., during temporary site maintenance).</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">How do I redirect an entire domain?</div>
+      <div class="seo-faq-a">Select "Entire Old Domain to a New Domain" in our tool. Enter your old domain name and the new domain URL. The generator will create a <code>RewriteRule</code> that captures all traffic hitting any page on the old site and forwards it to the exact same URL path on the new site.</div>
+    </div>
+  </div>
+
+  <section id="related-tools" class="related-tools-section">
+    <h3>Explore More SEO Tools</h3>
+    <div id="tools-grid" class="tools-grid"></div>
+  </section>
+</div>
+
+<script>
+  function toggleInputs() {
+    const type = document.getElementById('redirect-type').value;
+    const oldLabel = document.getElementById('old-label');
+    const oldInput = document.getElementById('old-url');
+    const oldHelper = document.getElementById('old-helper');
+    
+    const newLabel = document.getElementById('new-label');
+    const newInput = document.getElementById('new-url');
+    const newHelper = document.getElementById('new-helper');
+
+    oldInput.value = '';
+    newInput.value = '';
+
+    if (type === 'single') {
+      oldLabel.textContent = 'Old URL Path';
+      oldInput.placeholder = 'e.g., /old-page.html';
+      oldHelper.textContent = 'Enter the relative path (must start with /).';
+      
+      newLabel.textContent = 'New Destination URL';
+      newInput.placeholder = 'e.g., https://www.domain.com/new-page/';
+      newHelper.textContent = 'Enter the absolute, full URL (including https://).';
+    } 
+    else if (type === 'directory') {
+      oldLabel.textContent = 'Old Directory Path';
+      oldInput.placeholder = 'e.g., /old-category/';
+      oldHelper.textContent = 'Enter the folder path (must start and end with /).';
+      
+      newLabel.textContent = 'New Directory URL';
+      newInput.placeholder = 'e.g., https://www.domain.com/new-category/';
+      newHelper.textContent = 'Enter the new folder URL (including https://).';
+    } 
+    else if (type === 'domain') {
+      oldLabel.textContent = 'Old Domain Name';
+      oldInput.placeholder = 'e.g., olddomain.com';
+      oldHelper.textContent = 'Enter the root domain ONLY (no http or www).';
+      
+      newLabel.textContent = 'New Domain URL';
+      newInput.placeholder = 'e.g., https://www.newdomain.com';
+      newHelper.textContent = 'Enter the new root URL. All paths will append automatically.';
+    }
+  }
+
+  function generateRedirect() {
+    const type = document.getElementById('redirect-type').value;
+    let oldUrl = document.getElementById('old-url').value.trim();
+    let newUrl = document.getElementById('new-url').value.trim();
+    const output = document.getElementById('code-output');
+    const resultBox = document.getElementById('result-box');
+
+    if (!oldUrl || !newUrl) {
+      alert("Please fill in both fields to generate the redirect code.");
+      return;
+    }
+
+    let code = '';
+
+    if (type === 'single') {
+      // Ensure oldUrl starts with /
+      if (!oldUrl.startsWith('/')) oldUrl = '/' + oldUrl;
+      code = `Redirect 301 ${oldUrl} ${newUrl}`;
+    } 
+    else if (type === 'directory') {
+      if (!oldUrl.startsWith('/')) oldUrl = '/' + oldUrl;
+      // Regex redirect for folder contents
+      code = `RedirectMatch 301 ^${oldUrl}(.*)$ ${newUrl}$1`;
+    } 
+    else if (type === 'domain') {
+      // Strip http/www from old domain for clean regex
+      oldUrl = oldUrl.replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/$/, '');
+      // Ensure new URL has trailing slash
+      if (!newUrl.endsWith('/')) newUrl = newUrl + '/';
+      
+      code = `<IfModule mod_rewrite.c>\nRewriteEngine On\nRewriteCond %{HTTP_HOST} ^${oldUrl} [NC,OR]\nRewriteCond %{HTTP_HOST} ^www.${oldUrl} [NC]\nRewriteRule ^(.*)$ ${newUrl}$1 [L,R=301,NC]\n</IfModule>`;
+    }
+
+    output.textContent = code;
+    resultBox.style.display = 'block';
+
+    // Reset copy button
+    const copyBtn = document.getElementById('copy-btn');
+    copyBtn.textContent = 'Copy Code';
+    copyBtn.classList.remove('copied');
+  }
+
+  function copyCode() {
+    const outputText = document.getElementById('code-output').textContent;
+    navigator.clipboard.writeText(outputText).then(() => {
+      const copyBtn = document.getElementById('copy-btn');
+      copyBtn.textContent = 'Copied!';
+      copyBtn.classList.add('copied');
+      setTimeout(() => {
+        copyBtn.textContent = 'Copy Code';
+        copyBtn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  // Related Tools Logic
+  const allTools = [
+    { name: "301 Redirect Generator", url: "https://toolboxkart.tech/seo/301-redirect-generator/" },
+    { name: "Duplicate Content Finder", url: "https://toolboxkart.tech/seo/duplicate-content-finder/" },
+    { name: "Free Keyword Idea Generator", url: "https://toolboxkart.tech/seo/free-keyword-idea-generator/" },
+    { name: "Hreflang Tag Assistant", url: "https://toolboxkart.tech/seo/hreflang-tag-assistant-for-seo/" },
+    { name: "Keyword Density Checker", url: "https://toolboxkart.tech/seo/keyword-density-checker/" },
+    { name: "llm.txt Generator", url: "https://toolboxkart.tech/seo/llm-txt-generator-for-ai-seo/" },
+    { name: "Meta Tag Extractor", url: "https://toolboxkart.tech/seo/meta-extractor/" },
+    { name: "Readability Score Checker", url: "https://toolboxkart.tech/seo/readability-score-checker/" },
+    { name: "Robots.txt Generator", url: "https://toolboxkart.tech/seo/robots-txt-generator/" },
+    { name: "Schema Generator", url: "https://toolboxkart.tech/seo/schema-generator-free/" },
+    { name: "Search Console Regex Generator", url: "https://toolboxkart.tech/seo/search-console-regex-generator/" }
+  ];
+
+  function loadRelatedTools() {
+    const container = document.getElementById('tools-grid');
+    if (!container) return;
+    const currentHref = window.location.href;
+    const filteredTools = allTools.filter(tool => !currentHref.includes(tool.url));
+    filteredTools.forEach(tool => {
+      const link = document.createElement('a');
+      link.href = tool.url;
+      link.className = 'tool-card-link';
+      link.textContent = tool.name;
+      container.appendChild(link);
+    });
+  }
+
+  // FAQ Toggle
+  document.querySelectorAll('.seo-faq-q').forEach(q => {
+    q.addEventListener('click', () => q.closest('.seo-faq-item').classList.toggle('open'));
+  });
+
+  loadRelatedTools();
+</script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Expense Split Calculator | Split Bill Easily | Toolboxkart</title>
+    <meta name="description" content="Use our free expense split calculator to easily divide bills, taxes, and tips among friends. The best split bill calculator for roommates and groups.">
+    <style>
+        /* Global Reset & Base Styles */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+        
+        /* Navigation */
+        nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+        .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+        .nav-brand span { color: #7c6fcd; }
+        
+        /* Layout & Container */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+        
+        /* Hero Section */
+        .hero { text-align: center; padding: 4rem 1rem 3rem; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .hero p { color: #888; font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.5; }
+        
+        /* Tool Card & Inputs */
+        .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem; margin-bottom: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .section-title { font-size: 1.2rem; color: #fff; margin-bottom: 1.5rem; border-bottom: 1px solid #272727; padding-bottom: 0.5rem; grid-column: 1 / -1; }
+        
+        .input-area { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+        @media (max-width: 600px) { .input-area { grid-template-columns: 1fr; } }
+        
+        .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .input-group label { font-size: 0.95rem; color: #ccc; font-weight: 500; }
+        .input-group input { background: #0d0d0d; border: 1px solid #272727; color: #fff; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; transition: all 0.2s ease; }
+        .input-group input:focus { border-color: #7c6fcd; }
+        
+        button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: background 0.2s ease; }
+        button.btn-primary:hover { background: #6b5eb8; }
+        
+        /* Result Box */
+        #result-box { display: none; margin-top: 2rem; background: #0d0d0d; padding: 2rem; border-radius: 8px; border: 1px solid #272727; text-align: center; }
+        .highlight-text { font-size: 1.1rem; color: #888; margin-bottom: 0.5rem; }
+        .highlight-amount { font-size: 3rem; font-weight: 700; color: #4ade80; margin-bottom: 2rem; }
+        
+        .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: left; }
+        @media (max-width: 600px) { .summary-grid { grid-template-columns: 1fr; } }
+        .summary-card { background: #161616; padding: 1.2rem; border-radius: 8px; border: 1px solid #272727; }
+        .summary-card h4 { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .summary-card .amount { font-size: 1.3rem; font-weight: 600; color: #e0e0e0; }
+        
+        /* SEO Content Block */
+        .seo-content-block { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem; margin-bottom: 3rem; }
+        .seo-content-block h2 { color: #fff; margin-bottom: 1.5rem; font-size: 1.8rem; }
+        .seo-content-block p { color: #888; line-height: 1.7; margin-bottom: 1.5rem; }
+        .seo-content-block strong { color: #ccc; font-weight: 600; }
+        
+        /* FAQ Accordion */
+        .faq-section { margin-top: 3rem; }
+        .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+        .seo-faq-item:last-child { border-bottom: none; }
+        .seo-faq-q { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; user-select: none; }
+        .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; transition: transform 0.3s ease; }
+        .seo-faq-item.open .seo-faq-q::after { transform: rotate(45deg); }
+        .seo-faq-a { display: none; margin-top: 1rem; color: #888; line-height: 1.6; }
+        .seo-faq-item.open .seo-faq-a { display: block; }
+        
+        /* Related Tools */
+        .related-tools-section { padding-bottom: 4rem; }
+        .related-tools-section h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+        #tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+        .tool-card-link { background: #161616; border: 1px solid #272727; color: #e0e0e0; text-decoration: none; padding: 1.5rem; border-radius: 10px; font-weight: 500; transition: all 0.2s ease; display: block; text-align: center; }
+        .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Expense Split Calculator</h1>
+        <p>Easily divide dinner bills, rent, or group trip expenses. Calculate tips, add taxes, and find out exactly how much everyone needs to pay.</p>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Tool Card -->
+        <div class="card">
+            <div class="input-area">
+                <div class="section-title">Bill Details</div>
+                <div class="input-group">
+                    <label for="total-amount">Total Bill Amount (₹)</label>
+                    <input type="number" id="total-amount" placeholder="e.g. 5000" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="num-people">Number of People</label>
+                    <input type="number" id="num-people" placeholder="e.g. 4" min="1" value="2">
+                </div>
+                
+                <div class="section-title" style="margin-top: 1rem;">Extras (Optional)</div>
+                <div class="input-group">
+                    <label for="tax-percent">Tax Percentage (%)</label>
+                    <input type="number" id="tax-percent" placeholder="e.g. 5" min="0" step="0.1">
+                </div>
+                <div class="input-group">
+                    <label for="tip-percent">Tip Percentage (%)</label>
+                    <input type="number" id="tip-percent" placeholder="e.g. 10" min="0" step="0.1">
+                </div>
+            </div>
+            
+            <button class="btn-primary" onclick="calculateSplit()">Split The Bill</button>
+
+            <!-- Result Box -->
+            <div id="result-box">
+                <div class="highlight-text">Amount Per Person</div>
+                <div class="highlight-amount" id="res-per-person">₹0</div>
+                
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <h4>Tax Added</h4>
+                        <div class="amount" id="res-tax">₹0</div>
+                    </div>
+                    <div class="summary-card">
+                        <h4>Tip Added</h4>
+                        <div class="amount" id="res-tip">₹0</div>
+                    </div>
+                    <div class="summary-card">
+                        <h4>Grand Total</h4>
+                        <div class="amount" id="res-grand-total" style="color: #7c6fcd;">₹0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content Block -->
+        <div class="seo-content-block">
+            <h2>The Best Way to Split Bills with Friends</h2>
+            <p>Going out for dinner or planning a group trip is fun, but doing the math afterward is not. Our free <strong>expense split calculator</strong> removes the awkwardness and confusion from group payments. Just enter your total amount, add any tax or tip, and let this <strong>split bill calculator</strong> do the rest.</p>
+            <p>Whether you are splitting rent with roommates or figuring out who owes what after a party, a reliable <strong>bill splitter tool</strong> ensures fairness. No more guessing or complicated mental math—just quick, accurate results so everyone pays their exact share.</p>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">How does a split bill calculator work?</div>
+                    <div class="seo-faq-a">An <strong>expense split calculator</strong> takes the base bill amount, adds any optional percentages like taxes or tips to get a grand total, and then divides that final number equally by the number of people in your group.</div>
+                </div>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">Can I use this tool to split rent and utilities?</div>
+                    <div class="seo-faq-a">Yes! While it is popular for restaurant bills, you can use this <strong>split the bill</strong> tool to divide monthly rent, groceries, or internet bills evenly among your flatmates. Simply leave the tax and tip fields blank if they don't apply.</div>
+                </div>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">Does the tip calculate before or after tax?</div>
+                    <div class="seo-faq-a">In this <strong>group expense tracker</strong>, both the tip and the tax are calculated based on the original base bill amount entered. This is the standard and most transparent way to calculate extras without paying a "tip on a tax."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Tools Section -->
+        <div class="related-tools-section" id="related-tools-wrapper">
+            <h2>Explore More Finance Tools</h2>
+            <div id="tools-grid">
+                <!-- Javascript will populate this -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // 1. Calculation Logic
+        function calculateSplit() {
+            const billAmount = parseFloat(document.getElementById('total-amount').value);
+            const numPeople = parseInt(document.getElementById('num-people').value);
+            
+            const taxPercent = parseFloat(document.getElementById('tax-percent').value) || 0;
+            const tipPercent = parseFloat(document.getElementById('tip-percent').value) || 0;
+
+            if (isNaN(billAmount) || billAmount <= 0) {
+                alert("Please enter a valid bill amount.");
+                return;
+            }
+
+            if (isNaN(numPeople) || numPeople < 1) {
+                alert("Number of people must be at least 1.");
+                return;
+            }
+
+            // Calculate Tax and Tip based on base amount
+            const totalTax = (billAmount * taxPercent) / 100;
+            const totalTip = (billAmount * tipPercent) / 100;
+            
+            const grandTotal = billAmount + totalTax + totalTip;
+            const perPerson = grandTotal / numPeople;
+
+            // Format Currency
+            const formatCurrency = (num) => '₹' + num.toLocaleString('en-IN', { maximumFractionDigits: 2 });
+
+            document.getElementById('res-per-person').textContent = formatCurrency(perPerson);
+            document.getElementById('res-tax').textContent = formatCurrency(totalTax);
+            document.getElementById('res-tip').textContent = formatCurrency(totalTip);
+            document.getElementById('res-grand-total').textContent = formatCurrency(grandTotal);
+
+            document.getElementById('result-box').style.display = 'block';
+        }
+
+        // 2. FAQ Accordion Logic
+        document.querySelectorAll('.seo-faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.closest('.seo-faq-item');
+                document.querySelectorAll('.seo-faq-item').forEach(other => {
+                    if (other !== item) other.classList.remove('open');
+                });
+                item.classList.toggle('open');
+            });
+        });
+
+        // 3. Related Tools Logic (Tools 25, 26, 27)
+        const relatedTools = [
+            { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
+            { name: "Take-Home Pay Calculator", url: "/finance/take-home-pay-calculator" },
+            { name: "Budget Planner", url: "/finance/budget-planner" }
+        ];
+
+        function loadRelatedTools() {
+            const container = document.getElementById('tools-grid');
+            const wrapper = document.getElementById('related-tools-wrapper');
+
+            if (relatedTools.length === 0) {
+                wrapper.style.display = 'none';
+                return;
+            }
+
+            relatedTools.forEach(tool => {
+                const link = document.createElement('a'); 
+                link.href = tool.url; 
+                link.className = 'tool-card-link'; 
+                link.textContent = tool.name; 
+                container.appendChild(link);
+            });
+        }
+        
+        loadRelatedTools();
+    </script>
+</body>
+</html>

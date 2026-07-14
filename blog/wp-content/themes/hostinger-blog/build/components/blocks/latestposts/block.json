@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "theme-blocks/latestposts",
+  "title": "Latest Posts",
+  "category": "theme-blocks",
+  "icon": "admin-post",
+  "description": "Latest posts",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Latest posts"
+    },
+    "numberOfPosts": {
+      "type": "number",
+      "default": 6
+    }
+  },
+  "supports": {
+    "color": {
+      "background": false,
+      "text": false
+    },
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

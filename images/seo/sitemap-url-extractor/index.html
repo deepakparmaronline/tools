@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap URL Extractor | Convert XML Sitemap to CSV & Excel Online</title>
+    <meta name="description" content="Free tool to extract all URLs from any XML sitemap or sitemap index. Fetch sitemap links and export them to CSV or Excel for SEO audits instantly.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style> 
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { font-weight: 500; color: #4b5563; transition: color 0.2s; cursor: pointer; }
+        .nav-link:hover { color: #4f46e5; }
+        .spinner {
+            width: 40px; height: 40px; border: 4px solid #e2e8f0;
+            border-left-color: #4f46e5; border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen">
+
+<nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+            <a href="/" class="flex items-center gap-2">
+                <div class="bg-indigo-600 text-white p-1 rounded font-bold text-xl uppercase tracking-tighter">TBK</div>
+                <span class="font-bold text-xl text-gray-900 tracking-tight">Tool Box Kart</span>
+            </a>
+
+            <div class="hidden md:flex space-x-8">
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-1 py-6 font-medium text-gray-600 hover:text-indigo-600">
+                        Content Tools ▾
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white border border-gray-100 shadow-xl rounded-xl py-2 w-64 mt-0 transition-all">
+                        <a href="/seo/meta-extractor/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Meta Extractor</a>
+                        <a href="/seo/free-keyword-idea-generator/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Keyword Idea Generator</a>
+                        <a href="/seo/keyword-density-checker/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Keyword Density Checker</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-1 py-6 font-medium text-gray-600 hover:text-indigo-600">
+                        Technical SEO ▾
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white border border-gray-100 shadow-xl rounded-xl py-2 w-64 mt-0 transition-all">
+                        <a href="/seo/schema-generator-free/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Schema Generator</a>
+                        <a href="/seo/hreflang-tag-assistant-for-seo/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Hreflang Assistant</a>
+                        <a href="/seo/301-redirect-generator/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">301 Redirect Gen</a>
+                        <a href="/seo/robots-txt-generator/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Robots.txt Generator</a>
+                        <a href="/seo/sitemap-url-extractor/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Sitemap Extractor</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-1 py-6 font-medium text-gray-600 hover:text-indigo-600">
+                        Analysis ▾
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white border border-gray-100 shadow-xl rounded-xl py-2 w-64 mt-0 transition-all">
+                        <a href="/seo/search-console-regex-generator/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 font-bold">GSC Regex Generator</a>
+                    </div>
+                </div>
+
+                <a href="/blog/" class="nav-link py-6 font-medium text-gray-600 hover:text-indigo-600">Blog</a>
+            </div>
+
+            <div class="md:hidden text-gray-600">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 w-full flex-grow">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">Bulk Sitemap URL Extractor</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto italic">The easiest way to fetch, list, and download all URLs from any XML sitemap file.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl border border-gray-200 shadow-2xl overflow-hidden mb-20">
+            <div class="p-6 md:p-10">
+                <div class="mb-6">
+                    <label class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide text-center sm:text-left">Paste Sitemap XML URL</label>
+                    <input id="sitemap-url" type="url" class="w-full p-5 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all text-gray-700 text-lg font-mono" placeholder="https://example.com/sitemap.xml">
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button id="extract-btn" class="flex-1 bg-indigo-600 text-white py-5 rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all flex justify-center items-center gap-3 shadow-xl shadow-indigo-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        <span>Fetch Sitemap URLs</span>
+                    </button>
+                    
+                    <button id="download-csv-btn" class="hidden bg-emerald-600 text-white py-5 px-8 rounded-2xl font-bold text-lg hover:bg-emerald-700 transition-all flex justify-center items-center gap-3 shadow-xl shadow-emerald-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                        <span>Download as CSV</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="results-container" class="hidden border-t border-gray-100 bg-white">
+                <div id="loading-state" class="p-20 flex flex-col items-center">
+                    <div class="spinner mb-6"></div>
+                    <p id="loading-text" class="text-gray-500 font-medium animate-pulse">Reading sitemap content...</p>
+                </div>
+
+                <div id="table-state" class="hidden p-4 md:p-8">
+                    <div class="flex justify-between items-center mb-6 px-2">
+                        <span id="url-count" class="text-sm font-bold text-indigo-600 bg-indigo-50 px-4 py-2 rounded-full border border-indigo-100">0 URLs Extracted</span>
+                    </div>
+                    <div class="overflow-x-auto rounded-xl border border-gray-100">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="text-xs uppercase tracking-wider text-gray-400 bg-slate-50 border-b border-gray-100">
+                                    <th class="px-6 py-4 font-bold"># Index</th>
+                                    <th class="px-6 py-4 font-bold">URL Path</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body" class="text-sm divide-y divide-gray-50"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="max-w-4xl mx-auto space-y-16">
+            <div class="grid gap-6 md:grid-cols-2">
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <h3 class="font-bold text-gray-900 mb-3 text-lg">Extract URLs from Sitemap</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Whether you have a standard Yoast sitemap, RankMath sitemap, or a custom XML file, our tool can <b>fetch sitemap URLs</b> and provide a clean list in seconds.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <h3 class="font-bold text-gray-900 mb-3 text-lg">Convert Sitemap to CSV</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Stop manually copying links. Use this free online tool to <b>convert sitemap to CSV</b> or Excel, making it easy to start your content audit or site migration.</p>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center uppercase tracking-tight">Frequently Asked Questions</h2>
+                <div class="grid gap-8 md:grid-cols-2">
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-800">How can I extract all URLs from a sitemap?</h4>
+                            <p class="text-gray-600 text-sm">Simply copy your sitemap.xml link, paste it into the search box above, and click "Fetch Sitemap URLs". Our tool will scan the file and list every page link.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Is it possible to download sitemap links to Excel?</h4>
+                            <p class="text-gray-600 text-sm">Yes! Once the URLs are extracted, you can click the <b>"Download as CSV"</b> button. This file can be opened directly in Microsoft Excel or Google Sheets.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Can this tool fetch sitemap URLs from Yoast or RankMath?</h4>
+                            <p class="text-gray-600 text-sm">Absolutely. It works with all major WordPress SEO plugins and custom-built XML sitemaps.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Does it support sitemap index files?</h4>
+                            <p class="text-gray-600 text-sm">Yes, it identifies <code>&lt;loc&gt;</code> tags which are used in both single sitemaps and sitemap index files.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Why should I use a sitemap URL extractor?</h4>
+                            <p class="text-gray-600 text-sm">It's a huge time-saver for SEO professionals who need to audit page lists, check indexation, or perform competitor research.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Can I extract URLs from a sitemap of any website?</h4>
+                            <p class="text-gray-600 text-sm">Yes, as long as the sitemap is public and not protected by a firewall or password, you can <b>extract links from sitemap</b> files easily.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">How many URLs can this tool fetch?</h4>
+                            <p class="text-gray-600 text-sm">The tool is designed to handle thousands of URLs. For massive sitemaps, please allow a few extra seconds for the table to render.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Is the Sitemap URL Fetcher free?</h4>
+                            <p class="text-gray-600 text-sm">Yes, it is 100% free and requires no signup or login.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">What is the difference between a sitemap and a list of URLs?</h4>
+                            <p class="text-gray-600 text-sm">A sitemap is a machine-readable XML file for search engines. This tool converts that XML into a human-readable list of URLs.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Is my data safe when using this tool?</h4>
+                            <p class="text-gray-600 text-sm">We don't save any sitemap data or URLs you fetch. All processing happens in your browser and is completely private.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-gray-100 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="bg-indigo-600 text-white w-10 h-10 rounded font-bold text-xl flex items-center justify-center mx-auto mb-4">TBK</div>
+            <p class="text-gray-500 text-sm">© 2026 Tool Box Kart. Built for SEOs by SEOs.</p>
+        </div>
+    </footer>
+
+    <script>
+        let extractedUrls = [];
+
+        document.getElementById('extract-btn').addEventListener('click', async () => {
+            const sitemapUrl = document.getElementById('sitemap-url').value.trim();
+            const container = document.getElementById('results-container');
+            const loading = document.getElementById('loading-state');
+            const tableWrap = document.getElementById('table-state');
+            const tbody = document.getElementById('table-body');
+            const btn = document.getElementById('extract-btn');
+            const csvBtn = document.getElementById('download-csv-btn');
+            const countSpan = document.getElementById('url-count');
+
+            if (!sitemapUrl) return;
+
+            btn.disabled = true;
+            btn.classList.add('opacity-50');
+            container.classList.remove('hidden');
+            loading.classList.remove('hidden');
+            tableWrap.classList.add('hidden');
+            csvBtn.classList.add('hidden');
+            tbody.innerHTML = '';
+            extractedUrls = [];
+
+            try {
+                const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(sitemapUrl)}&_=${Date.now()}`);
+                const data = await response.json();
+                
+                if (!data.contents) throw new Error("Fetch failed");
+
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data.contents, "text/xml");
+                const locs = xmlDoc.getElementsByTagName("loc");
+
+                if (locs.length === 0) {
+                    alert("No valid <loc> tags found in this XML.");
+                    container.classList.add('hidden');
+                } else {
+                    for (let i = 0; i < locs.length; i++) {
+                        const url = locs[i].textContent.trim();
+                        extractedUrls.push(url);
+                        
+                        tbody.innerHTML += `
+                            <tr class="hover:bg-slate-50 transition-colors fade-in">
+                                <td class="px-6 py-4 text-gray-400 font-mono text-xs">${i + 1}</td>
+                                <td class="px-6 py-4 text-indigo-600 break-all font-medium select-all">${url}</td>
+                            </tr>
+                        `;
+                    }
+                    countSpan.innerText = `${extractedUrls.length} URLs Found`;
+                    loading.classList.add('hidden');
+                    tableWrap.classList.remove('hidden');
+                    csvBtn.classList.remove('hidden');
+                }
+
+            } catch (error) {
+                alert("Could not load sitemap. Please check the URL.");
+                container.classList.add('hidden');
+            } finally {
+                btn.disabled = false;
+                btn.classList.remove('opacity-50');
+            }
+        });
+
+        document.getElementById('download-csv-btn').addEventListener('click', () => {
+            if (extractedUrls.length === 0) return;
+            let csvContent = "data:text/csv;charset=utf-8,URL\n" + extractedUrls.join("\n");
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "sitemap_urls_toolboxkart.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mutual Fund Tax Calculator | LTCG & STCG on Mutual Funds - Toolboxkart</title>
+  <meta name="description" content="Calculate your Short-Term (STCG) and Long-Term Capital Gains (LTCG) tax on equity and debt mutual funds instantly. Updated with the latest 2026 tax rules.">
+  
+  <style>
+    /* Global Rules */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+    
+    /* Navigation */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+    .nav-brand span { color: #7c6fcd; }
+    
+    /* Layout */
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    
+    /* Hero Section */
+    .hero { text-align: center; padding: 3rem 1rem 1rem; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; line-height: 1.2; }
+    .hero p { color: #888; font-size: 1.1rem; }
+    
+    /* Tool Card */
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem 2rem; }
+    
+    /* Inputs */
+    .input-grid { display: grid; gap: 1.5rem; margin-bottom: 2rem; grid-template-columns: 1fr; }
+    @media (min-width: 600px) { .input-grid { grid-template-columns: 1fr 1fr; } }
+    
+    .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    label { font-weight: 600; color: #e0e0e0; font-size: 0.95rem; }
+    input, select { background: #0d0d0d; border: 1px solid #272727; color: #fff; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+    input:focus, select:focus { border-color: #7c6fcd; }
+    .help-text { font-size: 0.8rem; color: #888; }
+    
+    /* Button */
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: opacity 0.2s; }
+    button.btn-primary:hover { opacity: 0.9; }
+    
+    /* Result Box */
+    .result-box { display: none; margin-top: 2rem; padding: 2rem; background: rgba(124, 111, 205, 0.05); border: 1px solid #7c6fcd; border-radius: 12px; }
+    .result-box h3 { margin-bottom: 1.5rem; color: #fff; text-align: center; font-size: 1.4rem; }
+    .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; text-align: center; }
+    .result-item p { color: #888; font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .result-item h4 { font-size: 1.6rem; color: #7c6fcd; }
+    
+    .tax-breakdown { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #272727; text-align: center; }
+    .tax-breakdown p { color: #b3b3b3; font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .tax-breakdown h4 { font-size: 2.2rem; color: #ff453a; }
+    
+    .post-tax-box { margin-top: 1.5rem; background: rgba(50, 215, 75, 0.1); padding: 1rem; border-radius: 8px; border: 1px solid #32d74b; text-align: center; }
+    .post-tax-box p { color: #888; font-size: 0.95rem; }
+    .post-tax-box h4 { font-size: 1.8rem; color: #32d74b; margin-top: 0.2rem; }
+    
+    /* SEO Content Section */
+    .seo-content-block { margin-top: 3rem; color: #b3b3b3; }
+    .seo-content-block h2 { color: #fff; margin: 2.5rem 0 1rem; font-size: 1.8rem; }
+    .seo-content-block p { margin-bottom: 1.2rem; }
+    
+    /* FAQs */
+    .seo-faq-container { margin-top: 2rem; }
+    .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+    .seo-faq-q { cursor: pointer; display: flex; justify-content: space-between; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; }
+    .seo-faq-item.open .seo-faq-q::after { content: '-'; }
+    .seo-faq-a { display: none; padding-top: 1rem; color: #888; font-size: 1rem; }
+    .seo-faq-item.open .seo-faq-a { display: block; }
+    
+    /* Related Tools */
+    .related-tools h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+    #tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .tool-card-link { background: #161616; border: 1px solid #272727; padding: 1.5rem; border-radius: 10px; text-decoration: none; color: #e0e0e0; font-weight: 600; text-align: center; transition: all 0.2s; }
+    .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Mutual Fund Tax Calculator</h1>
+    <p>Calculate your Short-Term and Long-Term Capital Gains tax on your mutual fund redemptions.</p>
+  </div>
+
+  <!-- Tool Container -->
+  <div class="container">
+    <div class="card">
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="fund-type">Mutual Fund Category</label>
+          <select id="fund-type">
+            <option value="equity">Equity Mutual Fund (>65% Equity)</option>
+            <option value="debt">Debt Mutual Fund (Bought post April 2023)</option>
+          </select>
+        </div>
+        <div class="input-group" id="slab-group" style="display: none;">
+          <label for="income-slab">Your Income Tax Slab</label>
+          <select id="income-slab">
+            <option value="5">5%</option>
+            <option value="10">10%</option>
+            <option value="15">15%</option>
+            <option value="20">20%</option>
+            <option value="30" selected>30%</option>
+          </select>
+          <span class="help-text">Debt funds are taxed at your slab rate.</span>
+        </div>
+        
+        <div class="input-group">
+          <label for="invested-amount">Total Invested Amount (₹)</label>
+          <input type="number" id="invested-amount" placeholder="e.g., 500000" min="100">
+        </div>
+        <div class="input-group">
+          <label for="redemption-value">Final Redemption Value (₹)</label>
+          <input type="number" id="redemption-value" placeholder="e.g., 750000" min="100">
+        </div>
+        
+        <div class="input-group" style="grid-column: 1 / -1;">
+          <label>Holding Period (Time Invested)</label>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <input type="number" id="years" value="1" min="0" max="50" placeholder="Years">
+            <input type="number" id="months" value="0" min="0" max="11" placeholder="Months">
+          </div>
+          <span class="help-text" id="holding-help">For equity: &lt;12 months is STCG, &gt;12 months is LTCG.</span>
+        </div>
+      </div>
+      
+      <button class="btn-primary" id="calculate-btn">Calculate Capital Gains Tax</button>
+
+      <!-- Result Box -->
+      <div class="result-box" id="result-box">
+        <h3>Capital Gains Summary</h3>
+        <div class="result-grid">
+          <div class="result-item">
+            <p>Gross Profit (Before Tax)</p>
+            <h4 id="res-profit">₹0</h4>
+          </div>
+          <div class="result-item">
+            <p>Applicable Tax Rule</p>
+            <h4 id="res-tax-type" style="font-size: 1.1rem; color: #e0e0e0; margin-top: 0.5rem;">-</h4>
+          </div>
+        </div>
+        
+        <div class="tax-breakdown">
+          <p>Total Estimated Tax Payable (Including 4% Cess)</p>
+          <h4 id="res-tax-amount">₹0</h4>
+          <p id="exemption-note" style="display: none; color: #32d74b; font-size: 0.85rem; margin-top: 0.5rem;">* ₹1.25 Lakh exemption applied to LTCG profit.</p>
+        </div>
+        
+        <div class="post-tax-box">
+          <p>Net Profit in Your Hands (Post-Tax)</p>
+          <h4 id="res-post-tax">₹0</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO Content Block -->
+  <div class="container seo-content-block">
+    <h2>Mutual Fund Taxation: How are LTCG and STCG Calculated?</h2>
+    <p>Understanding <strong>capital gains tax on mutual funds</strong> is essential before you hit that redeem button. Your tax liability depends entirely on two factors: the category of the mutual fund (Equity vs. Debt) and your holding period (how long you stayed invested).</p>
+    <p>Using our <strong>Mutual Fund Tax Calculator</strong>, you can instantly determine your exact tax obligation. For Equity Funds, if you redeem within 12 months, it triggers <strong>Short-Term Capital Gains (STCG)</strong> taxed at a flat 20%. If you hold for more than 12 months, it triggers <strong>Long-Term Capital Gains (LTCG)</strong>, which is taxed at a highly favorable 12.5%, and the first ₹1.25 Lakh of profit every financial year is entirely tax-free! For Debt Funds purchased after April 1, 2023, the rules are simpler but stricter: all gains are added to your income and taxed purely at your prevailing income tax slab rate.</p>
+    
+    <!-- FAQs -->
+    <div class="seo-faq-container">
+      <h2>Frequently Asked Questions About Mutual Fund Taxes</h2>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">What is the ₹1.25 Lakh LTCG exemption?</div>
+        <div class="seo-faq-a">For equity mutual funds and stocks, the government allows the first ₹1.25 Lakh of your long-term capital gains in a financial year to be completely tax-exempt. You only pay the 12.5% tax on the profit amount that exceeds this limit.</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">How are Debt Mutual Funds taxed?</div>
+        <div class="seo-faq-a">For any debt mutual fund units purchased on or after April 1, 2023, the indexation benefit has been removed. All profits, regardless of how long you hold the fund, are added to your total income and taxed according to your income tax slab rate.</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">Do I need to pay tax if I don't redeem or sell my units?</div>
+        <div class="seo-faq-a">No. Capital gains tax is only triggered when a "taxable event" occurs—meaning you actually sell or redeem your units and realize the profit. As long as your money stays invested in the fund, its growth is tax-deferred.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Tools -->
+  <div class="container related-tools">
+    <h2>More Finance Tools</h2>
+    <div id="tools-grid"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle Slab Input based on Fund Type
+    const fundTypeSelect = document.getElementById('fund-type');
+    const slabGroup = document.getElementById('slab-group');
+    const holdingHelp = document.getElementById('holding-help');
+    
+    fundTypeSelect.addEventListener('change', function() {
+      if(this.value === 'debt') {
+        slabGroup.style.display = 'flex';
+        holdingHelp.textContent = 'Debt funds (post Apr-23) are always taxed at slab rates, regardless of time.';
+      } else {
+        slabGroup.style.display = 'none';
+        holdingHelp.textContent = 'For equity: <12 months is STCG, >12 months is LTCG.';
+      }
+    });
+
+    // 1. Calculation Logic
+    document.getElementById('calculate-btn').addEventListener('click', function() {
+      const invested = parseFloat(document.getElementById('invested-amount').value);
+      const finalValue = parseFloat(document.getElementById('redemption-value').value);
+      const fundType = document.getElementById('fund-type').value;
+      const years = parseInt(document.getElementById('years').value) || 0;
+      const months = parseInt(document.getElementById('months').value) || 0;
+      const slab = parseFloat(document.getElementById('income-slab').value);
+      
+      if(isNaN(invested) || isNaN(finalValue) || invested <= 0) {
+        alert("Bhai, please enter valid invested and redemption amounts.");
+        return;
+      }
+
+      const totalMonths = (years * 12) + months;
+      
+      if(totalMonths <= 0) {
+        alert("Bhai, the holding period must be at least 1 month.");
+        return;
+      }
+
+      const profit = finalValue - invested;
+      let baseTax = 0;
+      let taxTypeLabel = "";
+      const exemptionNote = document.getElementById('exemption-note');
+      exemptionNote.style.display = 'none'; // Hide by default
+
+      if(profit <= 0) {
+        taxTypeLabel = "Capital Loss (No Tax)";
+        baseTax = 0;
+      } else {
+        if(fundType === 'equity') {
+          if(totalMonths <= 12) {
+            taxTypeLabel = "Short-Term Capital Gains (STCG) @ 20%";
+            baseTax = profit * 0.20;
+          } else {
+            taxTypeLabel = "Long-Term Capital Gains (LTCG) @ 12.5%";
+            let taxableProfit = profit - 125000;
+            if(taxableProfit > 0) {
+              baseTax = taxableProfit * 0.125;
+              exemptionNote.style.display = 'block';
+            } else {
+              baseTax = 0; // Fully exempt
+              exemptionNote.style.display = 'block';
+            }
+          }
+        } else if(fundType === 'debt') {
+          taxTypeLabel = `Taxed as per Income Slab (${slab}%)`;
+          baseTax = profit * (slab / 100);
+        }
+      }
+
+      // Add 4% Health & Education Cess
+      const cess = baseTax * 0.04;
+      const totalTax = baseTax + cess;
+      
+      // Post-Tax Profit
+      const postTaxProfit = profit > 0 ? (profit - totalTax) : profit;
+
+      // Currency Formatting (Indian Format)
+      const formatter = new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0
+      });
+
+      // Update DOM
+      document.getElementById('res-profit').textContent = formatter.format(profit);
+      document.getElementById('res-tax-type').textContent = taxTypeLabel;
+      document.getElementById('res-tax-amount').textContent = formatter.format(totalTax);
+      document.getElementById('res-post-tax').textContent = formatter.format(postTaxProfit);
+
+      // Handle color for loss
+      if(profit < 0) {
+        document.getElementById('res-profit').style.color = "#ff453a";
+        document.getElementById('res-post-tax').style.color = "#ff453a";
+      } else {
+        document.getElementById('res-profit').style.color = "#7c6fcd";
+        document.getElementById('res-post-tax').style.color = "#32d74b";
+      }
+
+      // Show Result Box
+      document.getElementById('result-box').style.display = 'block';
+    });
+
+    // 2. FAQ Accordion Logic
+    document.querySelectorAll('.seo-faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const parent = q.closest('.seo-faq-item');
+        document.querySelectorAll('.seo-faq-item').forEach(item => {
+          if (item !== parent) item.classList.remove('open');
+        });
+        parent.classList.toggle('open');
+      });
+    });
+
+    // 3. Related Tools Logic (Dynamically loading all completed tools, including Inflation)
+    const relatedTools = [
+      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
+      { name: "Budget Planner", url: "/finance/budget-planner" },
+      { name: "CAGR Calculator", url: "/finance/cagr-calculator" },
+      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
+      { name: "EMI Calculator", url: "/finance/emi-calculator" },
+      { name: "EPF Calculator", url: "/finance/epf-calculator" },
+      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
+      { name: "FD Calculator", url: "/finance/fd-calculator" },
+      { name: "Gratuity Calculator", url: "/finance/gratuity-calculator" },
+      { name: "GST Calculator", url: "/finance/gst-calculator" },
+      { name: "HRA Calculator", url: "/finance/hra-calculator" },
+      { name: "Inflation Calculator", url: "/finance/inflation-calculator" },
+      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
+      { name: "NPS Calculator", url: "/finance/nps-calculator" },
+      { name: "Post Office MIS Calculator", url: "/finance/pomis-calculator" },
+      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
+      { name: "RD Calculator", url: "/finance/rd-calculator" },
+      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
+      { name: "ROI Calculator", url: "/finance/roi-calculator" },
+      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
+      { name: "SSY Calculator", url: "/finance/ssy-calculator" },
+      { name: "Step-Up SIP Calculator", url: "/finance/step-up-sip-calculator" },
+      { name: "SWP Calculator", url: "/finance/swp-calculator" },
+      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
+    ];
+    
+    function loadRelatedTools() {
+      const container = document.getElementById('tools-grid');
+      relatedTools.forEach(tool => {
+        const link = document.createElement('a'); 
+        link.href = tool.url; 
+        link.className = 'tool-card-link'; 
+        link.textContent = tool.name; 
+        container.appendChild(link);
+      });
+    }
+    loadRelatedTools();
+  </script>
+
+</body>
+</html>

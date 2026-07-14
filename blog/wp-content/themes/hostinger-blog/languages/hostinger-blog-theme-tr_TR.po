@@ -1,0 +1,580 @@
+# Copyright (C) 2020 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
+"Last-Translator: \n"
+"Language-Team: Turkish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-04-17T21:03:15+00:00\n"
+"PO-Revision-Date: 2025-07-22 15:48+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: _s\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.6.4; wp-6.3.1"
+
+#: build/components/blocks/aboutsection/render.php:4
+msgid ""
+"<p>As a designer, creator, and lifelong learner, I am driven by a passion "
+"for bringing ideas to life through creative problem-solving and "
+"collaboration. With a background in visual design, I have expanded my "
+"skillset to encompass a variety of creative and technical disciplines, "
+"including media production and web development. I approach each project with "
+"a dedication to quality and a commitment to delivering results that exceed "
+"expectations.</p>"
+msgstr ""
+"<p>Bir tasarımcı, sanatçı ve ömrünü öğrenmeye adamış biri olarak, yaratıcı "
+"problem çözerek ve işbirliğiyle fikirleri hayata geçirmek tutkumdur. Görsel "
+"tasarım geçmişim sayesinde becerilerimi görsel medya üretimi ve web "
+"geliştirme dahil olmak üzere çeşitli yaratıcı ve teknik disiplinleri "
+"kapsayacak şekilde genişlettim. Her projeye, kaliteye olan bağlılığımla ve "
+"beklentileri aşan sonuçlar sunma kararlılığıyla yaklaşıyorum.</p>"
+
+#: build/components/blocks/disclaimersection/render.php:3
+msgid ""
+"<p>The information contained in this website is for general information "
+"purposes only. The information is provided by [website name] and while we "
+"endeavor to keep the information up to date and correct, we make no "
+"representations or warranties of any kind, express or implied, about the "
+"completeness, accuracy, reliability, suitability or availability with "
+"respect to the website or the information, products, services, or related "
+"graphics contained on the website for any purpose. Any reliance you place on "
+"such information is therefore strictly at your own risk.</p>"
+msgstr ""
+"<p>Bu web sitesindeki bilgiler yalnızca genel bilgilendirme içindir. "
+"Bilgiler [web sitesi adı] tarafından sağlanmaktadır. Bu bilgileri güncel ve "
+"doğru tutmaya çalışsak da, ne web sitesinde ne de web sitesine herhangi bir "
+"amaçla konulmuş bilgilerin, ürünlerin, hizmetlerin veya ilgili grafiklerin "
+"tam, doğru, güvenilir, uygun veya kullanılabilir olduğuna dair hiçbir beyan "
+"veya taahhüt vermemekteyiz. Bu nedenle, bu bilgilere güvenip güvenmemek "
+"kesinlikle sizin sorumluluğunuzdadır.</p>"
+
+#: build/components/blocks/aboutsection/render.php:2
+msgid "A bit about me ✌️"
+msgstr "Beni tanımaya ne dersiniz? ✌️"
+
+#: build/components/blocks/aboutsection/render.php:3
+msgid ""
+"A designer, creator, and lifelong learner with a passion for bringing ideas "
+"to life through creative problem-solving and collaboration."
+msgstr ""
+"Yaratıcı problem çözme becerileri ve işbirliğiyle fikirleri hayata geçiren "
+"bir tasarımcı, sanatçı ve ömrünü öğrenmeye adamış birisi."
+
+#: inc/theme-settings.php:20
+msgid "Additional Settings"
+msgstr "Ek Ayarlar"
+
+#: build/components/blocks/contactform/render.php:68
+msgid "Address"
+msgstr "Adres"
+
+#: index.php:34
+msgid "All blog posts"
+msgstr "Bütün blog yazıları"
+
+#: inc/template-functions.php:275
+msgid "Attention:"
+msgstr "Dikkat!"
+
+#: build/components/blocks/aboutsection/block.json:1
+msgctxt "block description"
+msgid "About section"
+msgstr "Hakkımda kısmı"
+
+#: build/components/blocks/contactform/block.json:1
+msgctxt "block description"
+msgid "Contact form"
+msgstr "İletişim formu"
+
+#: build/components/blocks/disclaimersection/block.json:1
+msgctxt "block description"
+msgid "Disclaimer section"
+msgstr "Sorumluluk reddi kısmı"
+
+#: build/components/blocks/featuredpost/block.json:1
+msgctxt "block description"
+msgid "Featured post"
+msgstr "Öne Çıkan Yazı"
+
+#: build/components/blocks/herosection/block.json:1
+msgctxt "block description"
+msgid "Hero block"
+msgstr "Büyük Afiş blogu"
+
+#: build/components/blocks/latestposts/block.json:1
+msgctxt "block description"
+msgid "Latest posts"
+msgstr "Son yazılar"
+
+#: build/components/blocks/newsletter/block.json:1
+msgctxt "block description"
+msgid "Newsletter form"
+msgstr "Haber Bülteni formu"
+
+#: build/components/blocks/aboutsection/block.json:1
+msgctxt "block title"
+msgid "About section"
+msgstr "Hakkımda kısmı"
+
+#: build/components/blocks/contactform/block.json:1
+msgctxt "block title"
+msgid "Contact form"
+msgstr "İletişim Formu"
+
+#: build/components/blocks/disclaimersection/block.json:1
+msgctxt "block title"
+msgid "Disclaimer section"
+msgstr "Sorumluluk reddi kısmı"
+
+#: build/components/blocks/featuredpost/block.json:1
+msgctxt "block title"
+msgid "Featured Post"
+msgstr "Öne Çıkan Yazı"
+
+#: build/components/blocks/herosection/block.json:1
+msgctxt "block title"
+msgid "Hero Section"
+msgstr "Büyük Afiş Kısmı"
+
+#: build/components/blocks/latestposts/block.json:1
+msgctxt "block title"
+msgid "Latest Posts"
+msgstr "Son Yazılar"
+
+#: build/components/blocks/newsletter/block.json:1
+msgctxt "block title"
+msgid "Newsletter form"
+msgstr "Haber Bülteni formu"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Grey / Light"
+msgstr "Gri / Açık"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Grey / Lighter"
+msgstr "Gri / Çakmak"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Dark"
+msgstr "Ana / Koyu"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Grey"
+msgstr "Ana / Gri"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Light"
+msgstr "Ana / Işık"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Primary"
+msgstr "Ana / Birincil"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Primary Dark"
+msgstr "Ana / Birincil Koyu"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Transparent"
+msgstr "Şeffaf"
+
+#: inc/template-functions.php:281
+msgid "Color scheme"
+msgstr "Renk düzeni"
+
+#: inc/template-functions.php:283
+msgid "Contact information"
+msgstr "İletişim bilgileri"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Custom template name"
+msgid "No title"
+msgstr "Başlık yok"
+
+#: build/components/blocks/disclaimersection/render.php:2
+msgid "Disclaimer"
+msgstr "Sorumluluk reddi"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Duotone name"
+msgid "Primary and Contrast"
+msgstr "Birincil ve Kontrast"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Duotone name"
+msgid "Secondary and primary"
+msgstr "İkincil ve birincil"
+
+#: inc/theme-settings.php:44
+msgid "Edit theme settings below."
+msgstr "Aşağıdan tema ayarlarını düzenleyebilirsiniz."
+
+#: archive.php:81 build/components/blocks/newsletter/render.php:16
+#: build/components/blocks/contactform/render.php:25
+#: build/components/blocks/contactform/render.php:46
+msgid "Email"
+msgstr "E-posta"
+
+#: inc/theme-settings.php:61
+msgid "Enter contacts below"
+msgstr "İrtibatları aşağıya giriniz"
+
+#: inc/theme-settings.php:70
+msgid "Enter footer content below"
+msgstr "Alt bilgi içeriğini aşağıya yazınız"
+
+#: inc/theme-settings.php:52
+msgid "Enter the URLs for your social media profiles below."
+msgstr "Bağlantı ve sosyal medya profillerinizi aşağıya giriniz."
+
+#: index.php:37
+msgid ""
+"Explore the world of design and learn how to create visually stunning\n"
+"\t\t\t\t\tartwork."
+msgstr ""
+"Tasarım dünyasını keşfedin ve hafızalara kazınacak büyüleyici sanat "
+"eserlerinin nasıl yaratılacağını öğrenin."
+
+#: build/components/blocks/contactform/render.php:3
+msgid "Feel free to reach out to me through any of the following ways."
+msgstr ""
+"Aşağıdaki seçeneklerden istediğiniz biriyle benimle iletişim kurabilirsiniz."
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Extra small"
+msgstr "Ekstra küçük"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Large"
+msgstr "Büyük"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Medium"
+msgstr "Orta"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Küçük"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "XL"
+msgstr "XL"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "XXL"
+msgstr "XXL"
+
+#: build/components/blocks/herosection/render.php:4
+msgid ""
+"From visual design to media production, my passion for creating has led me "
+"on a journey of exploration and innovation."
+msgstr ""
+"Görsel tasarımdan medya prodüksiyonuna uzanan yaratma tutkum beni bir keşif "
+"ve yenilik yolculuğuna çıkardı."
+
+#: 404.php:22
+#, php-format
+msgid "Go back to the %s"
+msgstr "%s sonuçlarına dön"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Gradient name"
+msgid "Horizontal white to Primary color"
+msgstr "Yatay beyazdan Ana renge"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Gradient name"
+msgid "Primary color to white"
+msgstr "Ana renkten beyaza"
+
+#: 404.php:27
+msgid "Home"
+msgstr "Anasayfa"
+
+#. Author of the theme
+msgid "Hostinger"
+msgstr "Hostinger"
+
+#. Name of the theme
+msgid "Hostinger blog theme"
+msgstr "Hostinger blog teması"
+
+#. Description of the theme
+msgid ""
+"Hostinger Blog Theme is the perfect choice for bloggers seeking a powerful "
+"yet lightweight solution. Built with SEO and mobile responsiveness in mind, "
+"this theme ensures optimal performance and a better online presence. It "
+"includes pre-made home, about us, contact us, and blog pages, giving your "
+"blog a seamless and quick start. Regardless of your niche, take your blog to "
+"the next level with this lightweight and professional-looking theme."
+msgstr ""
+"Hostinger Blog Teması, güçlü ama hafif bir çözüm arayan blogcular için "
+"mükemmel bir seçimdir. SEO ve mobil duyarlılık göz önünde bulundurularak "
+"oluşturulan bu tema, optimum performans ve daha iyi bir çevrimiçi varlık "
+"sağlar. Önceden hazırlanmış anasayfa, hakkımızda, iletişim ve blog "
+"sayfalarını içerir; blogunuza kusursuz ve hızlı bir başlangıç sağlar. "
+"Nişiniz ne olursa olsun, bu hafif ve profesyonel görünümlü temayla blogunuzu "
+"bir sonraki seviyeye taşıyın."
+
+#. Author URI of the theme
+msgid "https://hostinger.com"
+msgstr "https://hostinger.com"
+
+#. URI of the theme
+msgid "https://www.hostinger.com/blog/hostinger-blog-theme"
+msgstr "https://www.hostinger.com/blog/hostinger-blog-theme"
+
+#: archive.php:92 build/components/blocks/newsletter/render.php:4
+msgid ""
+"I consent to use of my email address for the purpose of receiving "
+"newsletters as described in"
+msgstr ""
+"E-posta adresimin, aşağıda açıklandığı şekilde haber bülteni göndermek "
+"amacıyla kullanılmasına izin veriyorum."
+
+#: build/components/blocks/contactform/render.php:4
+msgid ""
+"I consent to use of provided personal data for the purpose of responding to "
+"the request as described in"
+msgstr ""
+"Sağlanan kişisel verilerin, açıklandığı şekilde talebe yanıt vermek amacıyla "
+"kullanılmasına izin veriyorum:"
+
+#: build/components/blocks/herosection/render.php:3
+msgid "I’m Shawn — a designer and creator 👋"
+msgstr "Ben Shawn — bir tasarımcı ve yaratıcıyım 👋"
+
+#: inc/template-functions.php:279
+msgid "Key areas that require attention include:"
+msgstr "Dikkat etmeniz gereken önemli alanlar:"
+
+#: build/components/blocks/latestposts/render.php:4
+msgid "Latest Posts"
+msgstr "Son Yazılar"
+
+#: build/components/blocks/herosection/render.php:6
+msgid "Learn About Me"
+msgstr "Ben Kimim?"
+
+#: build/components/blocks/contactform/render.php:2
+msgid "Let’s get in touch"
+msgstr "Hadi iletişime geçelim"
+
+#: build/components/blocks/herosection/render.php:8
+msgid "Let’s stay connected"
+msgstr "Hadi iletişimde kalalım"
+
+#: build/components/blocks/contactform/render.php:29
+msgid "Message"
+msgstr "Mesaj"
+
+#: build/components/blocks/contactform/render.php:21
+msgid "Name"
+msgstr "Ad"
+
+#: inc/form-submissions.php:72
+msgid "New Newsletter Subscription"
+msgstr "Yeni Haber Bülteni Aboneliği"
+
+#: archive.php:75 build/components/blocks/newsletter/render.php:2
+msgid "Newsletter"
+msgstr "Haber Bülteni"
+
+#: index.php:55 archive.php:48
+msgid "No categories found."
+msgstr "Kategori bulunamadı."
+
+#: inc/form-submissions.php:40 inc/form-submissions.php:95
+msgid "Not valid recipient email."
+msgstr "Geçerli alıcı e-postası bulunamadı."
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Yok"
+
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Tüh, bu sayfa bulunamadı."
+
+#: template-parts/content-page.php:22
+msgid "Pages:"
+msgstr "Sayfalar:"
+
+#: build/components/blocks/contactform/render.php:57
+msgid "Phone"
+msgstr "Telefon"
+
+#: inc/template-functions.php:275
+msgid ""
+"Please adjust your <a href=\"?page=hostinger-additional-settings\">theme "
+"settings</a> to personalize your website."
+msgstr ""
+"Lütfen web sitenizi kişiselleştirmek için tema ayarlarınızı düzenleyin."
+
+#: inc/form-submissions.php:13 inc/form-submissions.php:64
+msgid "Please agree with privacy policy."
+msgstr "Lütfen gizlilik politikasını kabul edin."
+
+#: inc/form-submissions.php:17 inc/form-submissions.php:68
+msgid "Please enter a valid email address."
+msgstr "Lütfen geçerli bir e-posta adresi girin."
+
+#: functions.php:81
+msgid "Primary"
+msgstr "Birincil"
+
+#: build/components/blocks/newsletter/render.php:4
+#: build/components/blocks/contactform/render.php:4
+msgid "Privacy Policy"
+msgstr "Gizlilik Politikası"
+
+#: footer.php:50 functions.php:87
+msgid "Quick links"
+msgstr "Hızlı bağlantılar"
+
+#: single.php:89
+msgid "RELATED POSTS"
+msgstr "BENZER YAZILAR"
+
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Arama Sonuçları: %s"
+
+#: build/components/blocks/contactform/render.php:41
+msgid "Send Message"
+msgstr "Mesaj Gönder"
+
+#: inc/template-functions.php:282
+msgid "Social media links"
+msgstr "Sosyal medya bağlantıları"
+
+#: search.php:37 index.php:74 archive.php:67
+msgid "Sorry, no posts matched your criteria."
+msgstr "Üzgünüz, kritere uygun bir yazı bulamadık."
+
+#: archive.php:95 build/components/blocks/newsletter/render.php:30
+msgid "Subscribe"
+msgstr "Abone Ol"
+
+#: archive.php:76 build/components/blocks/newsletter/render.php:3
+msgid ""
+"Subscribe to stay up-to-date with my latest creative projects, insights, and "
+"tips."
+msgstr ""
+"En yeni projelerim, ipuçlarım ve rehberlerimden haberdar olmak için abone "
+"olun."
+
+#: inc/form-submissions.php:99
+msgid "Successfully submitted!"
+msgstr "Başarıyla gönderildi!"
+
+#: inc/form-submissions.php:45
+msgid "Successfully subscribed!"
+msgstr "Başarıyla abone olundu!"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Template part name"
+msgid "Footer"
+msgstr "Altbilgi"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Template part name"
+msgid "Header"
+msgstr "Başlık"
+
+#: functions.php:93
+msgid "Terms & policy"
+msgstr "Şartlar & koşullar"
+
+#: footer.php:65
+msgid "Terms &amp; policy"
+msgstr "Şartlar & koşullar"
+
+#: inc/theme-blocks.php:16
+msgid "Theme Blocks"
+msgstr "Tema Blokları"
+
+#: inc/theme-settings.php:5 inc/theme-settings.php:6
+msgid "Theme Settings"
+msgstr "Tema Ayarları"
+
+#: inc/template-functions.php:278
+msgid ""
+"To enhance your site's functionality and user experience, ensure that you "
+"fill in the theme settings with accurate information."
+msgstr ""
+"Sitenizin işlevselliğini ve kullanıcı deneyimini geliştirmek için tema "
+"ayarlarını doğru bilgilerle doldurdunuz."
+
+#: archive.php:85 build/components/blocks/newsletter/render.php:20
+#: build/components/blocks/contactform/render.php:28
+msgid "What’s your email?"
+msgstr "E-posta adresiniz nedir?"
+
+#: build/components/blocks/contactform/render.php:24
+msgid "What’s your name?"
+msgstr "Adınız nedir"
+
+#: build/components/blocks/newsletter/render.php:4
+#: build/components/blocks/contactform/render.php:4
+msgid "which I have read. I may withdraw my consent at any time."
+msgstr "Okudum. Onayımı istediğim zaman geri alabilirim."
+
+#: build/components/blocks/contactform/render.php:31
+msgid "Write your message..."
+msgstr "Mesajınızı yazın..."
+
+#: inc/template-functions.php:277
+msgid ""
+"Your website currently lacks essential information such as social links and "
+"contact details."
+msgstr ""
+"Web sitenizde şu anda sosyal bağlantılar ve iletişim bilgileri gibi temel "
+"bilgiler bulunmuyor."

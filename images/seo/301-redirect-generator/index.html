@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>301 Redirect Code Generator | .htaccess & NGINX Redirect Tool</title>
+    <meta name="description" content="Generate 301 redirect code for .htaccess or NGINX instantly. Free tool to create SEO-friendly permanent redirects from old URLs to new URLs.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style> 
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { font-weight: 500; color: #4b5563; transition: color 0.2s; cursor: pointer; }
+        .nav-link:hover { color: #4f46e5; }
+        .code-box { background: #1e293b; color: #cbd5e1; font-family: 'Courier New', monospace; }
+        .tab-btn.active { border-bottom: 3px solid #4f46e5; color: #4f46e5; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen">
+
+<nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+            <a href="/" class="flex items-center gap-2">
+                <div class="bg-indigo-600 text-white p-1 rounded font-bold text-xl uppercase tracking-tighter">TBK</div>
+                <span class="font-bold text-xl text-gray-900 tracking-tight">Tool Box Kart</span>
+            </a>
+
+            <div class="hidden md:flex space-x-8">
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-1 py-6 font-medium text-gray-600 hover:text-indigo-600">
+                        Content Tools ▾
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white border border-gray-100 shadow-xl rounded-xl py-2 w-64 mt-0 transition-all">
+                        <a href="/seo/meta-extractor/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Meta Extractor</a>
+                        <a href="/seo/free-keyword-idea-generator/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Keyword Idea Generator</a>
+                        <a href="/seo/keyword-density-checker/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Keyword Density Checker</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-1 py-6 font-medium text-gray-600 hover:text-indigo-600">
+                        Technical SEO ▾
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white border border-gray-100 shadow-xl rounded-xl py-2 w-64 mt-0 transition-all">
+                        <a href="/seo/schema-generator-free/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Schema Generator</a>
+                        <a href="/seo/hreflang-tag-assistant-for-seo/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Hreflang Assistant</a>
+                        <a href="/seo/301-redirect-generator/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">301 Redirect Gen</a>
+                        <a href="/seo/robots-txt-generator/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Robots.txt Generator</a>
+                        <a href="/seo/sitemap-url-extractor/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600">Sitemap Extractor</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-1 py-6 font-medium text-gray-600 hover:text-indigo-600">
+                        Analysis ▾
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white border border-gray-100 shadow-xl rounded-xl py-2 w-64 mt-0 transition-all">
+                        <a href="/seo/search-console-regex-generator/" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 font-bold">GSC Regex Generator</a>
+                    </div>
+                </div>
+
+                <a href="/blog/" class="nav-link py-6 font-medium text-gray-600 hover:text-indigo-600">Blog</a>
+            </div>
+
+            <div class="md:hidden text-gray-600">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 w-full flex-grow">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">301 Redirect Code Generator</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Generate error-free 301 permanent redirect codes for your .htaccess or NGINX configuration files.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10">
+            <div class="bg-white rounded-3xl border border-gray-200 shadow-xl p-8">
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2 uppercase">Old URL Path (e.g., /old-page)</label>
+                        <input id="old-url" type="text" class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-xl focus:border-indigo-500 outline-none" placeholder="/old-services">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2 uppercase">New Full URL (e.g., https://site.com/new)</label>
+                        <input id="new-url" type="url" class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-xl focus:border-indigo-500 outline-none" placeholder="https://example.com/new-services">
+                    </div>
+                    <button id="generate-btn" class="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg">Generate Code</button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden flex flex-col">
+                <div class="flex border-b border-gray-100">
+                    <button onclick="switchTab('apache')" id="tab-apache" class="tab-btn active flex-1 py-4 font-bold text-sm uppercase tracking-wider">Apache (.htaccess)</button>
+                    <button onclick="switchTab('nginx')" id="tab-nginx" class="tab-btn flex-1 py-4 font-bold text-sm uppercase tracking-wider text-gray-400">NGINX</button>
+                </div>
+                <div class="p-8 flex-grow flex flex-col">
+                    <div id="code-output" class="code-box p-6 rounded-xl text-sm min-h-[120px] whitespace-pre-wrap break-all"># Enter URLs and click generate...</div>
+                    <button id="copy-btn" class="mt-6 w-full border-2 border-indigo-600 text-indigo-600 py-3 rounded-xl font-bold hover:bg-indigo-50 transition-all">Copy Code</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="max-w-4xl mx-auto mt-20 space-y-16">
+            <div class="grid gap-8 md:grid-cols-2">
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <h3 class="font-bold text-gray-900 mb-3 text-lg underline decoration-indigo-500 underline-offset-4">What is a 301 Redirect?</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">A 301 redirect is a permanent redirect that passes full ranking power (link juice) to the redirected page. It is the best method for <b>SEO redirects</b> when a page URL changes.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <h3 class="font-bold text-gray-900 mb-3 text-lg underline decoration-indigo-500 underline-offset-4">Why use our Generator?</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Syntax errors in <code>.htaccess</code> can crash your website. Our <b>free redirect creator</b> provides clean, tested code snippets that you can safely paste into your server files.</p>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center uppercase tracking-tight">Redirect FAQs</h2>
+                <div class="grid gap-8 md:grid-cols-2 text-sm">
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Where do I put the .htaccess code?</h4>
+                            <p class="text-gray-600">The <code>.htaccess</code> file is located in the root folder of your Apache server. Paste the generated code at the top of the file.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">What is the difference between 301 and 302?</h4>
+                            <p class="text-gray-600">301 is <b>Permanent</b> and good for SEO. 302 is <b>Temporary</b> and does not pass SEO value to the new URL.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Does this work for WordPress?</h4>
+                            <p class="text-gray-600">Yes! If your WordPress site runs on Apache, you can use the .htaccess code. For NGINX servers, use the NGINX tab.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Will redirects slow down my site?</h4>
+                            <p class="text-gray-600">A few redirects won't matter, but having thousands of redirects can slightly impact server performance. Always try to keep them clean.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-gray-100 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="bg-indigo-600 text-white w-10 h-10 rounded font-bold text-xl flex items-center justify-center mx-auto mb-4">TBK</div>
+            <p class="text-gray-500 text-sm">© 2026 Tool Box Kart. Powerful SEO Tools at your fingertips.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentTab = 'apache';
+        const oldUrlInput = document.getElementById('old-url');
+        const newUrlInput = document.getElementById('new-url');
+        const output = document.getElementById('code-output');
+
+        function generate() {
+            const oldPath = oldUrlInput.value.trim() || '/old-page';
+            const newFullUrl = newUrlInput.value.trim() || 'https://example.com/new-page';
+            
+            if (currentTab === 'apache') {
+                output.innerText = `Redirect 301 ${oldPath} ${newFullUrl}`;
+            } else {
+                output.innerText = `rewrite ^${oldPath}$ ${newFullUrl} permanent;`;
+            }
+        }
+
+        function switchTab(type) {
+            currentTab = type;
+            document.getElementById('tab-apache').classList.toggle('active', type === 'apache');
+            document.getElementById('tab-apache').classList.toggle('text-gray-400', type !== 'apache');
+            document.getElementById('tab-nginx').classList.toggle('active', type === 'nginx');
+            document.getElementById('tab-nginx').classList.toggle('text-gray-400', type !== 'nginx');
+            generate();
+        }
+
+        document.getElementById('generate-btn').addEventListener('click', generate);
+
+        document.getElementById('copy-btn').addEventListener('click', () => {
+            navigator.clipboard.writeText(output.innerText);
+            const btn = document.getElementById('copy-btn');
+            btn.innerText = "Copied!";
+            btn.classList.replace('text-indigo-600', 'text-emerald-600');
+            setTimeout(() => {
+                btn.innerText = "Copy Code";
+                btn.classList.replace('text-emerald-600', 'text-indigo-600');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

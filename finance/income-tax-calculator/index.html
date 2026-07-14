@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Tax Calculator | Old vs New Tax Regime 2026-27 - Toolboxkart</title>
+  <meta name="description" content="Free online Income Tax Calculator for India (FY 2025-26 / AY 2026-27). Compare Old vs New Tax Regime and find out which saves you more tax instantly.">
+  
+  <style>
+    /* Global Rules */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+    
+    /* Navigation */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+    .nav-brand span { color: #7c6fcd; }
+    
+    /* Layout */
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    
+    /* Hero Section */
+    .hero { text-align: center; padding: 3rem 1rem 1rem; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; line-height: 1.2; }
+    .hero p { color: #888; font-size: 1.1rem; }
+    
+    /* Tool Card */
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem 2rem; }
+    
+    /* Inputs */
+    .input-grid { display: grid; gap: 1.5rem; margin-bottom: 2rem; grid-template-columns: 1fr; }
+    @media (min-width: 600px) { .input-grid { grid-template-columns: 1fr 1fr; } }
+    
+    .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    label { font-weight: 600; color: #e0e0e0; font-size: 0.95rem; }
+    input, select { background: #0d0d0d; border: 1px solid #272727; color: #fff; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+    input:focus, select:focus { border-color: #7c6fcd; }
+    .help-text { font-size: 0.8rem; color: #888; }
+    
+    /* Button */
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: opacity 0.2s; }
+    button.btn-primary:hover { opacity: 0.9; }
+    
+    /* Result Box */
+    .result-box { display: none; margin-top: 2rem; padding: 2rem; background: rgba(124, 111, 205, 0.05); border: 1px solid #7c6fcd; border-radius: 12px; }
+    .result-box h3 { margin-bottom: 1.5rem; color: #fff; text-align: center; font-size: 1.4rem; }
+    
+    /* Comparison Grid */
+    .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: center; margin-bottom: 1.5rem; }
+    .regime-card { background: #0d0d0d; border: 1px solid #272727; padding: 1.5rem; border-radius: 10px; }
+    .regime-card h4 { font-size: 1.1rem; color: #e0e0e0; margin-bottom: 0.5rem; }
+    .regime-card .tax-amount { font-size: 2rem; color: #ff453a; font-weight: 700; margin-bottom: 0.5rem; }
+    .regime-card .taxable-income { font-size: 0.9rem; color: #888; }
+    .regime-card.winner { border-color: #32d74b; background: rgba(50, 215, 75, 0.05); }
+    .regime-card.winner .tax-amount { color: #32d74b; }
+    
+    .recommendation-box { text-align: center; padding: 1rem; background: #161616; border: 1px dashed #7c6fcd; border-radius: 8px; }
+    .recommendation-box p { font-size: 1.1rem; color: #fff; }
+    .recommendation-box strong { color: #7c6fcd; font-size: 1.2rem; }
+    
+    /* SEO Content Section */
+    .seo-content-block { margin-top: 3rem; color: #b3b3b3; }
+    .seo-content-block h2 { color: #fff; margin: 2.5rem 0 1rem; font-size: 1.8rem; }
+    .seo-content-block p { margin-bottom: 1.2rem; }
+    
+    /* FAQs */
+    .seo-faq-container { margin-top: 2rem; }
+    .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+    .seo-faq-q { cursor: pointer; display: flex; justify-content: space-between; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; }
+    .seo-faq-item.open .seo-faq-q::after { content: '-'; }
+    .seo-faq-a { display: none; padding-top: 1rem; color: #888; font-size: 1rem; }
+    .seo-faq-item.open .seo-faq-a { display: block; }
+    
+    /* Related Tools */
+    .related-tools h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+    #tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .tool-card-link { background: #161616; border: 1px solid #272727; padding: 1.5rem; border-radius: 10px; text-decoration: none; color: #e0e0e0; font-weight: 600; text-align: center; transition: all 0.2s; }
+    .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+    
+    @media (max-width: 600px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Income Tax Calculator</h1>
+    <p>Compare the Old vs New Tax Regime (AY 2026-27) and find out how to maximize your tax savings.</p>
+  </div>
+
+  <!-- Tool Container -->
+  <div class="container">
+    <div class="card">
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="gross-income">Gross Annual Income (₹)</label>
+          <input type="number" id="gross-income" placeholder="e.g., 1500000" min="0">
+          <span class="help-text">Your total income before any deductions.</span>
+        </div>
+        <div class="input-group">
+          <label for="employment-type">Employment Type</label>
+          <select id="employment-type">
+            <option value="salaried">Salaried (Eligible for Standard Deduction)</option>
+            <option value="self-employed">Self-Employed / Business / Professional</option>
+          </select>
+        </div>
+        <div class="input-group" style="grid-column: 1 / -1;">
+          <label for="total-deductions">Total Deductions for Old Regime (₹)</label>
+          <input type="number" id="total-deductions" placeholder="e.g., 200000" min="0" value="0">
+          <span class="help-text">Combine all your 80C (EPF, LIC), 80D (Health Insurance), HRA exemption, Home Loan Interest, etc.</span>
+        </div>
+      </div>
+      
+      <button class="btn-primary" id="calculate-btn">Calculate My Tax</button>
+
+      <!-- Result Box -->
+      <div class="result-box" id="result-box">
+        <h3>Tax Comparison (FY 2025-26 / AY 2026-27)</h3>
+        
+        <div class="comparison-grid">
+          <div class="regime-card" id="card-old">
+            <h4>Old Tax Regime</h4>
+            <div class="tax-amount" id="res-tax-old">₹0</div>
+            <div class="taxable-income">Taxable Income: <span id="res-income-old">₹0</span></div>
+          </div>
+          
+          <div class="regime-card" id="card-new">
+            <h4>New Tax Regime</h4>
+            <div class="tax-amount" id="res-tax-new">₹0</div>
+            <div class="taxable-income">Taxable Income: <span id="res-income-new">₹0</span></div>
+          </div>
+        </div>
+        
+        <div class="recommendation-box">
+          <p id="recommendation-text">You should choose the <strong>New Tax Regime</strong> and save ₹0.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO Content Block -->
+  <div class="container seo-content-block">
+    <h2>How to Choose Between the Old vs New Tax Regime?</h2>
+    <p>With the updated budget rules for FY 2025-26 (AY 2026-27), understanding <strong>how to calculate income tax</strong> has become a hot topic. The government has made the New Tax Regime the default setting, offering significantly lower tax slabs. However, to get these lower rates, you have to forfeit almost all your favorite deductions, such as Section 80C (PPF, ELSS), Section 80D (health insurance), and HRA exemptions.</p>
+    <p>Using our online <strong>Income Tax Calculator</strong>, you can perform a side-by-side <strong>Old vs New Tax Regime comparison</strong>. For salaried individuals, the new regime now offers a ₹75,000 standard deduction and makes income up to ₹12 Lakhs completely tax-free via the Section 87A rebate. If you do not have heavy investments or home loans, the new tax slab is generally much more beneficial. If you have massive deductions, the Old Regime might still save you money. Simply enter your gross income and total deductions to find your personalized winner.</p>
+    
+    <!-- FAQs -->
+    <div class="seo-faq-container">
+      <h2>Frequently Asked Questions About Indian Income Tax Slabs</h2>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">What are the latest tax slabs under the New Tax Regime?</div>
+        <div class="seo-faq-a">For AY 2026-27, the slabs are: ₹0-4L is Nil. ₹4L-8L is 5%. ₹8L-12L is 10%. ₹12L-16L is 15%. ₹16L-20L is 20%. ₹20L-24L is 25%. Above ₹24L is 30%.</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">What is the Section 87A Rebate?</div>
+        <div class="seo-faq-a">Section 87A is a tax rebate that reduces your liability to zero if your taxable income falls below a certain threshold. In the Old Regime, it makes income up to ₹5 Lakh tax-free. Under the New Regime, it makes income up to ₹12 Lakh entirely tax-free.</div>
+      </div>
+      
+      <div class="seo-faq-item">
+        <div class="seo-faq-q">Do I get Standard Deduction in the New Regime?</div>
+        <div class="seo-faq-a">Yes! Salaried employees and pensioners are now eligible for a Standard Deduction of ₹75,000 under the New Tax Regime. Under the Old Regime, the Standard Deduction remains at ₹50,000.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Tools -->
+  <div class="container related-tools">
+    <h2>More Finance Tools</h2>
+    <div id="tools-grid"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Tax Calculation Logic Helper Functions
+    function calculateOldTax(income) {
+      let tax = 0;
+      if (income > 1000000) {
+        tax += (income - 1000000) * 0.30;
+        income = 1000000;
+      }
+      if (income > 500000) {
+        tax += (income - 500000) * 0.20;
+        income = 500000;
+      }
+      if (income > 250000) {
+        tax += (income - 250000) * 0.05;
+      }
+      return tax;
+    }
+
+    function calculateNewTax(income) {
+      let tax = 0;
+      if (income > 2400000) {
+        tax += (income - 2400000) * 0.30;
+        income = 2400000;
+      }
+      if (income > 2000000) {
+        tax += (income - 2000000) * 0.25;
+        income = 2000000;
+      }
+      if (income > 1600000) {
+        tax += (income - 1600000) * 0.20;
+        income = 1600000;
+      }
+      if (income > 1200000) {
+        tax += (income - 1200000) * 0.15;
+        income = 1200000;
+      }
+      if (income > 800000) {
+        tax += (income - 800000) * 0.10;
+        income = 800000;
+      }
+      if (income > 400000) {
+        tax += (income - 400000) * 0.05;
+      }
+      return tax;
+    }
+
+    // Main Execution
+    document.getElementById('calculate-btn').addEventListener('click', function() {
+      const grossIncome = parseFloat(document.getElementById('gross-income').value);
+      const isSalaried = document.getElementById('employment-type').value === 'salaried';
+      let userDeductions = parseFloat(document.getElementById('total-deductions').value) || 0;
+
+      if(isNaN(grossIncome) || grossIncome < 0) {
+        alert("Bhai, please enter a valid Gross Annual Income.");
+        return;
+      }
+
+      // 1. Old Regime Calculation
+      const oldStandardDeduction = isSalaried ? 50000 : 0;
+      let taxableOld = grossIncome - oldStandardDeduction - userDeductions;
+      if (taxableOld < 0) taxableOld = 0;
+
+      let taxOld = calculateOldTax(taxableOld);
+      
+      // Rebate 87A for Old Regime (Up to 5 Lakhs)
+      if (taxableOld <= 500000) {
+        taxOld = 0;
+      } else {
+        taxOld = taxOld + (taxOld * 0.04); // Add 4% Cess
+      }
+
+      // 2. New Regime Calculation
+      const newStandardDeduction = isSalaried ? 75000 : 0;
+      let taxableNew = grossIncome - newStandardDeduction;
+      if (taxableNew < 0) taxableNew = 0;
+
+      let taxNew = calculateNewTax(taxableNew);
+
+      // Rebate 87A for New Regime (Up to 12 Lakhs)
+      if (taxableNew <= 1200000) {
+        taxNew = 0;
+      } else {
+        taxNew = taxNew + (taxNew * 0.04); // Add 4% Cess
+      }
+
+      // Currency Formatting (Indian Format)
+      const formatter = new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0
+      });
+
+      // Update DOM
+      document.getElementById('res-income-old').textContent = formatter.format(taxableOld);
+      document.getElementById('res-tax-old').textContent = formatter.format(taxOld);
+
+      document.getElementById('res-income-new').textContent = formatter.format(taxableNew);
+      document.getElementById('res-tax-new').textContent = formatter.format(taxNew);
+
+      // Determine Winner
+      const cardOld = document.getElementById('card-old');
+      const cardNew = document.getElementById('card-new');
+      const recommendationText = document.getElementById('recommendation-text');
+
+      cardOld.classList.remove('winner');
+      cardNew.classList.remove('winner');
+
+      if (taxOld < taxNew) {
+        cardOld.classList.add('winner');
+        let savings = taxNew - taxOld;
+        recommendationText.innerHTML = `You should choose the <strong>Old Tax Regime</strong> to save ${formatter.format(savings)} in taxes.`;
+      } else if (taxNew < taxOld) {
+        cardNew.classList.add('winner');
+        let savings = taxOld - taxNew;
+        recommendationText.innerHTML = `You should stick to the default <strong>New Tax Regime</strong> and save ${formatter.format(savings)} in taxes.`;
+      } else {
+        recommendationText.innerHTML = `Your tax liability is exactly the same in both regimes. The <strong>New Tax Regime</strong> is easier to file as it requires zero deduction proofs.`;
+      }
+
+      // Show Result Box
+      document.getElementById('result-box').style.display = 'block';
+    });
+
+    // FAQ Accordion Logic
+    document.querySelectorAll('.seo-faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const parent = q.closest('.seo-faq-item');
+        document.querySelectorAll('.seo-faq-item').forEach(item => {
+          if (item !== parent) item.classList.remove('open');
+        });
+        parent.classList.toggle('open');
+      });
+    });
+
+    // Related Tools Logic (Dynamically loading all completed tools, including Mutual Fund Tax)
+    const relatedTools = [
+      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
+      { name: "Budget Planner", url: "/finance/budget-planner" },
+      { name: "CAGR Calculator", url: "/finance/cagr-calculator" },
+      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
+      { name: "EMI Calculator", url: "/finance/emi-calculator" },
+      { name: "EPF Calculator", url: "/finance/epf-calculator" },
+      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
+      { name: "FD Calculator", url: "/finance/fd-calculator" },
+      { name: "Gratuity Calculator", url: "/finance/gratuity-calculator" },
+      { name: "GST Calculator", url: "/finance/gst-calculator" },
+      { name: "HRA Calculator", url: "/finance/hra-calculator" },
+      { name: "Inflation Calculator", url: "/finance/inflation-calculator" },
+      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
+      { name: "Mutual Fund Tax Calculator", url: "/finance/mutual-fund-tax-calculator" },
+      { name: "NPS Calculator", url: "/finance/nps-calculator" },
+      { name: "Post Office MIS Calculator", url: "/finance/pomis-calculator" },
+      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
+      { name: "RD Calculator", url: "/finance/rd-calculator" },
+      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
+      { name: "ROI Calculator", url: "/finance/roi-calculator" },
+      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
+      { name: "SSY Calculator", url: "/finance/ssy-calculator" },
+      { name: "Step-Up SIP Calculator", url: "/finance/step-up-sip-calculator" },
+      { name: "SWP Calculator", url: "/finance/swp-calculator" },
+      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
+    ];
+    
+    function loadRelatedTools() {
+      const container = document.getElementById('tools-grid');
+      relatedTools.forEach(tool => {
+        const link = document.createElement('a'); 
+        link.href = tool.url; 
+        link.className = 'tool-card-link'; 
+        link.textContent = tool.name; 
+        container.appendChild(link);
+      });
+    }
+    loadRelatedTools();
+  </script>
+
+</body>
+</html>

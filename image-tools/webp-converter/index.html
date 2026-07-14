@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free WebP Converter | Convert JPG, PNG to WebP Online - Tool Box Kart</title>
+  <meta name="description" content="Convert JPG, PNG, GIF, and BMP images to the next-gen WebP format for free. Reduce file sizes to improve website speed and SEO rankings instantly in your browser." />
+  <style>
+    /* ── PURE CSS CLEAN WHITE & GREY THEME ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body { 
+      background-color: #f8fafc; 
+      color: #334155; 
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+      min-height: 100vh; 
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV (Logo Only) ── */
+    nav { 
+      background: #ffffff; 
+      border-bottom: 1px solid #e2e8f0; 
+      padding: 0 2rem; 
+      display: flex; 
+      align-items: center; 
+      height: 64px; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100; 
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+    .nav-brand { font-weight: 800; font-size: 1.25rem; color: #0f172a; text-decoration: none; letter-spacing: 0.5px; display: flex; align-items: center; }
+    .nav-brand span { color: #ffffff; background: #6366f1; padding: 0.2rem 0.6rem; border-radius: 6px; margin-right: 8px; font-size: 1.1rem; }
+
+    /* ── HERO ── */
+    .hero { text-align: center; padding: 3rem 1rem 1.5rem; }
+    .hero h1 { font-size: 2.2rem; font-weight: 800; color: #0f172a; margin-bottom: .8rem; }
+    .hero p { color: #475569; font-size: 1.05rem; max-width: 650px; margin: 0 auto; }
+
+    /* ── MAIN LAYOUT ── */
+    .container { max-width: 840px; margin: 0 auto; padding: 0 1rem 3rem; }
+    .card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+
+    /* ── DROP ZONE ── */
+    #drop-zone { border: 2px dashed #cbd5e1; background: #f8fafc; border-radius: 10px; padding: 3.5rem 1rem; text-align: center; cursor: pointer; transition: all .25s; position: relative; }
+    #drop-zone.dragover { border-color: #6366f1; background: #eef2ff; }
+    #drop-zone input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+    .drop-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+    .drop-title { color: #0f172a; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .drop-sub { color: #64748b; font-size: .9rem; }
+
+    /* ── SETTINGS ── */
+    .settings-panel { display: flex; align-items: center; gap: 1.5rem; margin-top: 1.5rem; background: #f8fafc; padding: 1.25rem; border-radius: 10px; border: 1px solid #e2e8f0; flex-wrap: wrap; }
+    .setting-group { display: flex; align-items: center; gap: 1rem; flex: 1; min-width: 200px; }
+    .setting-group label { font-size: 0.95rem; font-weight: 600; color: #334155; white-space: nowrap; }
+    .setting-group input[type="range"] { accent-color: #6366f1; flex: 1; }
+    .val-display { color: #0f172a; font-weight: bold; background: #ffffff; padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.9rem; border: 1px solid #e2e8f0; text-align: center; min-width: 48px; }
+
+    /* ── BUTTONS & PROGRESS ── */
+    #convert-btn { display: block; width: 100%; margin-top: 1.5rem; padding: 1rem; background: #6366f1; color: #fff; font-size: 1.1rem; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; transition: background .2s; box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.2); }
+    #convert-btn:hover:not(:disabled) { background: #4f46e5; transform: translateY(-1px); }
+    #convert-btn:disabled { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
+    #progress-bar-wrap { display: none; margin-top: 1.5rem; background: #e2e8f0; border-radius: 6px; overflow: hidden; height: 8px; }
+    #progress-bar { height: 100%; background: linear-gradient(90deg, #6366f1, #818cf8); width: 0%; transition: width .3s ease; }
+
+    /* ── RESULTS ── */
+    #results { display: none; }
+    .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #e2e8f0; }
+    .results-header h2 { font-size: 1.2rem; color: #0f172a; font-weight: 700; }
+    #download-all-btn { background: #f8fafc; border: 1px solid #6366f1; color: #6366f1; padding: .5rem 1.25rem; border-radius: 7px; font-weight: 600; cursor: pointer; transition: all .2s; }
+    #download-all-btn:hover { background: #6366f1; color: #fff; }
+
+    .image-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .thumb-wrap { width: 64px; height: 64px; border-radius: 8px; overflow: hidden; background: #ffffff; border: 1px solid #e2e8f0; flex-shrink: 0; }
+    .thumb-wrap img { width: 100%; height: 100%; object-fit: contain; }
+    .image-info { flex: 1; min-width: 150px; }
+    .image-name { font-size: .95rem; font-weight: 700; color: #0f172a; margin-bottom: .3rem; word-break: break-all; }
+    .image-sizes { font-size: .85rem; color: #475569; }
+    .saving { color: #10b981; font-weight: 600; margin-left: .5rem; }
+    .saving.negative { color: #ef4444; }
+    
+    .status-badge { font-size: .75rem; font-weight: 700; padding: .2rem .6rem; border-radius: 20px; white-space: nowrap; display: inline-block; }
+    .status-badge.processing { background: #eef2ff; color: #6366f1; }
+    .status-badge.error { background: #fef2f2; color: #ef4444; }
+
+    .download-single { background: #6366f1; color: #fff; border: none; border-radius: 6px; padding: .5rem 1rem; font-size: .85rem; font-weight: 600; cursor: pointer; transition: background .2s; }
+    .download-single:hover { background: #4f46e5; }
+
+    /* ── SEO CONTENT ARTICLE ── */
+    .seo-content { margin-top: 2rem; background: #ffffff; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+    .seo-content h2 { font-size: 1.8rem; color: #0f172a; margin-bottom: 1.2rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.5rem; font-weight: 800; }
+    .seo-content h3 { font-size: 1.3rem; color: #1e293b; margin: 1.5rem 0 0.8rem; font-weight: 700; }
+    .seo-content p { margin-bottom: 1rem; color: #475569; }
+    .seo-content ul { margin-left: 1.5rem; margin-bottom: 1.5rem; color: #475569; }
+    .seo-content li { margin-bottom: 0.5rem; }
+
+    /* ── FAQ ── */
+    .faq-section { margin-top: 3rem; }
+    .faq-section h2 { font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 1.5rem; text-align: center; }
+    .faq-item { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 1rem; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
+    .faq-q { padding: 1.25rem; font-size: 1.05rem; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #ffffff; transition: background 0.2s; }
+    .faq-q:hover { background: #f8fafc; }
+    .faq-q::after { content: '+'; color: #6366f1; font-size: 1.5rem; font-weight: normal; transition: transform 0.3s; }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { padding: 0 1.25rem; color: #475569; max-height: 0; overflow: hidden; transition: all .3s ease; }
+    .faq-item.open .faq-a { padding: 1.25rem; max-height: 500px; border-top: 1px solid #e2e8f0; background: #fcfcfc; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.8rem; }
+      .image-item { flex-direction: column; align-items: flex-start; }
+      .download-single { width: 100%; margin-top: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/"><span>TBK</span> Tool Box Kart</a>
+</nav>
+
+<div class="hero">
+  <h1>WebP Image Converter</h1>
+  <p>Convert JPG, PNG, GIF, and BMP files to the next-generation WebP format. Drastically reduce image file sizes to improve your website's SEO and Core Web Vitals.</p>
+</div>
+
+<div class="container">
+  <div class="card">
+    <div id="drop-zone">
+      <input type="file" id="file-input" accept="image/jpeg,image/png,image/gif,image/bmp" multiple />
+      <span class="drop-icon">🚀</span>
+      <div class="drop-title">Drag & Drop images here</div>
+      <div class="drop-sub">Supports JPG, PNG, GIF, BMP (Max 50 files)</div>
+    </div>
+
+    <div class="settings-panel">
+      <div class="setting-group">
+        <label for="quality-slider">WebP Quality Output:</label>
+        <input type="range" id="quality-slider" min="10" max="100" value="80" step="5" />
+        <span class="val-display" id="quality-value">80%</span>
+      </div>
+    </div>
+
+    <div id="progress-bar-wrap"><div id="progress-bar"></div></div>
+    <button id="convert-btn" disabled>Convert to WebP</button>
+  </div>
+
+  <div id="results" class="card">
+    <div class="results-header">
+      <h2>Converted WebP Images</h2>
+      <button id="download-all-btn">📦 Download All (ZIP)</button>
+    </div>
+    <div id="image-list"></div>
+  </div>
+
+  <article class="seo-content">
+    <h2>Why Should You Convert Images to WebP?</h2>
+    <p>WebP is a modern image format developed by Google that provides superior lossless and lossy compression for images on the web. Using WebP, webmasters and developers can create smaller, richer images that make the web faster.</p>
+    
+    <h3>1. Massive File Size Reduction</h3>
+    <p>Compared to traditional formats, WebP offers incredible compression. According to Google's data, WebP lossless images are <strong>26% smaller than PNGs</strong>. WebP lossy images are <strong>25-34% smaller than comparable JPEG images</strong> at an equivalent SSIM quality index.</p>
+    
+    <h3>2. Supercharge Your SEO and Core Web Vitals</h3>
+    <p>Page load speed is a direct ranking factor in Google's algorithm. Large JPG and PNG files slow down your Largest Contentful Paint (LCP). By running your images through our WebP converter, you instantly reduce the payload of your web pages, leading to faster load times, lower bounce rates, and higher rankings on search engines.</p>
+    
+    <h3>3. Retain Transparency (Alpha Channel)</h3>
+    <p>Unlike JPGs which force a solid background, WebP supports an alpha channel (transparency). This means you can convert your transparent PNG files to WebP, retain the transparent background for your graphic designs, and still enjoy file sizes that are up to 3 times smaller.</p>
+  </article>
+
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq-item">
+      <div class="faq-q">Is this WebP converter free to use?</div>
+      <div class="faq-a">Yes, completely free with no limits. You can convert as many JPG, PNG, and BMP images as you like with no account or sign-up required.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-q">Are my images uploaded to a server?</div>
+      <div class="faq-a">No. All conversion happens entirely in your browser using the HTML5 Canvas API. Your images never leave your device, so your sensitive data stays 100% private.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What quality setting should I use?</div>
+      <div class="faq-a">For standard website use (like blog graphics or thumbnails), <strong>75% to 80%</strong> is the sweet spot. It provides massive file size savings while keeping the image looking great. If you are converting a high-end photography portfolio, use 90% to 95%.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What happens if I upload an animated GIF?</div>
+      <div class="faq-a">Because this tool uses client-side canvas processing, uploading an animated GIF will extract and convert only the <strong>first frame</strong> of the animation into a static WebP image.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I convert multiple images at once?</div>
+      <div class="faq-a">Yes. Select or drag multiple files into the drop zone at once. Each image is converted individually and you can download them one by one or click the ZIP button to download them all perfectly packaged.</div>
+    </div>
+  </div>
+
+  <section id="related-tools" style="margin-top:3rem;"></section>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+  const dropZone = document.getElementById('drop-zone');
+  const fileInput = document.getElementById('file-input');
+  const convertBtn = document.getElementById('convert-btn');
+  const qualSlider = document.getElementById('quality-slider');
+  const qualValue = document.getElementById('quality-value');
+  const resultsDiv = document.getElementById('results');
+  const imageList = document.getElementById('image-list');
+  const dlAllBtn = document.getElementById('download-all-btn');
+  const progWrap = document.getElementById('progress-bar-wrap');
+  const progBar = document.getElementById('progress-bar');
+
+  let selectedFiles = [];
+  let convertedBlobs = [];
+
+  // Settings UI
+  qualSlider.addEventListener('input', () => { qualValue.textContent = qualSlider.value + '%'; });
+
+  // Drag & Drop
+  dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault(); dropZone.classList.remove('dragover');
+    handleFiles([...e.dataTransfer.files]);
+  });
+  fileInput.addEventListener('change', () => handleFiles([...fileInput.files]));
+
+  function handleFiles(files) {
+    const valid = files.filter(f => f.type.startsWith('image/'));
+    if (!valid.length) return alert('Please upload valid image files (JPG, PNG, GIF, BMP).');
+    selectedFiles = valid;
+    convertBtn.disabled = false;
+    
+    const names = valid.map(f => f.name).join(', ');
+    dropZone.querySelector('.drop-title').textContent = valid.length === 1 ? valid[0].name : `${valid.length} images selected`;
+    dropZone.querySelector('.drop-sub').textContent = names.length > 50 ? names.slice(0, 47) + '...' : names;
+  }
+
+  function formatBytes(b) {
+    if (b === 0) return '0 B';
+    const k = 1024, sizes = ['B', 'KB', 'MB'];
+    const i = Math.floor(Math.log(b) / Math.log(k));
+    return parseFloat((b / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+  }
+
+  // Conversion Execution
+  convertBtn.addEventListener('click', async () => {
+    if (!selectedFiles.length) return;
+    
+    const quality = parseInt(qualSlider.value) / 100;
+    convertBtn.disabled = true;
+    convertedBlobs = [];
+    imageList.innerHTML = '';
+    resultsDiv.style.display = 'block';
+    progWrap.style.display = 'block';
+    progBar.style.width = '0%';
+
+    for (let i = 0; i < selectedFiles.length; i++) {
+      const file = selectedFiles[i];
+      progBar.style.width = Math.round((i / selectedFiles.length) * 100) + '%';
+
+      // Create placeholder UI item
+      const item = document.createElement('div');
+      item.className = 'image-item';
+      item.innerHTML = `
+        <div class="thumb-wrap"><img src="" alt="" /></div>
+        <div class="image-info">
+          <div class="image-name">${file.name}</div>
+          <div class="image-sizes"><span class="status-badge processing">⏳ Processing...</span></div>
+        </div>
+      `;
+      imageList.appendChild(item);
+
+      try {
+        const { blob, webpSize } = await convertToWebP(file, quality);
+        const newName = file.name.replace(/\.[^.]+$/, '') + '.webp';
+        convertedBlobs.push({ name: newName, blob });
+        
+        // Update UI item on success
+        const url = URL.createObjectURL(blob);
+        item.querySelector('img').src = url;
+        item.querySelector('.image-name').textContent = newName;
+        
+        const saving = file.size - webpSize;
+        const savingPct = ((saving / file.size) * 100).toFixed(1);
+        const isPositive = saving >= 0;
+
+        item.querySelector('.image-sizes').innerHTML = 
+          `Original: ${formatBytes(file.size)} ➔ WebP: ${formatBytes(webpSize)} 
+           <span class="saving ${isPositive ? '' : 'negative'}">
+             ${isPositive ? '▼' : '▲'} ${Math.abs(savingPct)}% ${isPositive ? 'saved' : 'larger'}
+           </span>`;
+
+        const btn = document.createElement('button');
+        btn.className = 'download-single';
+        btn.textContent = '⬇ Download';
+        btn.onclick = () => {
+          const a = document.createElement('a');
+          a.href = url; a.download = newName; a.click();
+        };
+        item.appendChild(btn);
+      } catch(err) {
+        item.querySelector('.image-sizes').innerHTML = `<span class="status-badge error">✗ Conversion Failed</span>`;
+      }
+    }
+
+    progBar.style.width = '100%';
+    setTimeout(() => { progWrap.style.display = 'none'; progBar.style.width = '0%'; }, 500);
+    convertBtn.disabled = false;
+  });
+
+  // Canvas WebP Engine
+  function convertToWebP(file, quality) {
+    return new Promise((resolve, reject) => {
+      const url = URL.createObjectURL(file);
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        
+        canvas.toBlob(blob => {
+          URL.revokeObjectURL(url);
+          if (!blob) return reject(new Error('Failed'));
+          resolve({ blob, webpSize: blob.size });
+        }, 'image/webp', quality);
+      };
+      img.onerror = reject;
+      img.src = url;
+    });
+  }
+
+  // ZIP Engine
+  dlAllBtn.addEventListener('click', async () => {
+    if (!convertedBlobs.length) return;
+    dlAllBtn.textContent = '⏳ Creating ZIP...';
+    dlAllBtn.disabled = true;
+
+    const zip = new JSZip();
+    convertedBlobs.forEach(({ name, blob }) => zip.file(name, blob));
+    const zipBlob = await zip.generateAsync({ type: 'blob' });
+
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(zipBlob);
+    a.download = 'ToolBoxKart-WebP-Images.zip';
+    a.click();
+
+    dlAllBtn.textContent = '📦 Download All (ZIP)';
+    dlAllBtn.disabled = false;
+  });
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

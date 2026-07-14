@@ -1,0 +1,1 @@
+jQuery(document).ready(function(i){i(".hts-theme-settings.notice.notice-error").on("click",".notice-dismiss",function(t){t.preventDefault(),i.ajax({url:ajaxurl,data:{action:"hts_dismiss_admin_notice",notice_dismissed:!0}})})});

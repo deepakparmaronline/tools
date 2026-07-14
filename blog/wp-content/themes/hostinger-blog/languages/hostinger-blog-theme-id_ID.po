@@ -1,0 +1,579 @@
+# Copyright (C) 2020 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
+"Last-Translator: \n"
+"Language-Team: Indonesian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-04-17T21:03:15+00:00\n"
+"PO-Revision-Date: 2025-07-22 15:44+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: _s\n"
+"Language: id_ID\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Loco-Version: 2.7.2; wp-6.8.1"
+
+#: build/components/blocks/aboutsection/render.php:4
+msgid ""
+"<p>As a designer, creator, and lifelong learner, I am driven by a passion "
+"for bringing ideas to life through creative problem-solving and "
+"collaboration. With a background in visual design, I have expanded my "
+"skillset to encompass a variety of creative and technical disciplines, "
+"including media production and web development. I approach each project with "
+"a dedication to quality and a commitment to delivering results that exceed "
+"expectations.</p>"
+msgstr ""
+"<p>Sebagai seorang designer dan creator yang ingin terus belajar, saya ingin "
+"mewujudkan ide-ide menarik dengan solusi kreatif dan kolaboratif. Dengan "
+"latar belakang visual design, saya mencoba melebarkan sayap ke berbagai "
+"bidang teknis maupun kreatif. Kini, saya juga terjun ke bidang media "
+"production dan web development. Setiap proyek saya kerjakan dengan penuh "
+"dedikasi dan komitmen sehingga hasilnya selalu memuaskan.</p>"
+
+#: build/components/blocks/disclaimersection/render.php:3
+msgid ""
+"<p>The information contained in this website is for general information "
+"purposes only. The information is provided by [website name] and while we "
+"endeavor to keep the information up to date and correct, we make no "
+"representations or warranties of any kind, express or implied, about the "
+"completeness, accuracy, reliability, suitability or availability with "
+"respect to the website or the information, products, services, or related "
+"graphics contained on the website for any purpose. Any reliance you place on "
+"such information is therefore strictly at your own risk.</p>"
+msgstr ""
+"<p>Situs ini hanya menampilkan informasi secara umum. Informasi ini dibuat "
+"oleh [website name] dan meskipun kami sudah berupaya untuk terus mengupdate "
+"dan memastikan kebenaran informasi yang tersedia, kami tidak menyatakan atau "
+"menjamin dalam bentuk apa pun tentang kelengkapan, keakuratan, keandalan, "
+"kecocokan, atau ketersediaan dari situs web atau informasi, produk, layanan, "
+"atau grafis terkait yang ada di situs untuk tujuan apa pun. Oleh karena itu, "
+"kepercayaan Anda pada informasi tersebut sepenuhnya merupakan risiko Anda "
+"sendiri.</p>"
+
+#: build/components/blocks/aboutsection/render.php:2
+msgid "A bit about me ✌️"
+msgstr "Sedikit cerita tentang saya✌️"
+
+#: build/components/blocks/aboutsection/render.php:3
+msgid ""
+"A designer, creator, and lifelong learner with a passion for bringing ideas "
+"to life through creative problem-solving and collaboration."
+msgstr ""
+"Saya adalah seorang designer dan creator yang ingin terus belajar dan "
+"mewujudkan ide-ide menarik dengan solusi kreatif dan kolaboratif."
+
+#: inc/theme-settings.php:20
+msgid "Additional Settings"
+msgstr "Pengaturan Tambahan"
+
+#: build/components/blocks/contactform/render.php:68
+msgid "Address"
+msgstr "Alamat"
+
+#: index.php:34
+msgid "All blog posts"
+msgstr "Semua postingan blog"
+
+#: inc/template-functions.php:275
+msgid "Attention:"
+msgstr "Perhatian:"
+
+#: build/components/blocks/aboutsection/block.json:1
+msgctxt "block description"
+msgid "About section"
+msgstr "Bagian Tentang"
+
+#: build/components/blocks/contactform/block.json:1
+msgctxt "block description"
+msgid "Contact form"
+msgstr "Formulir kontak"
+
+#: build/components/blocks/disclaimersection/block.json:1
+msgctxt "block description"
+msgid "Disclaimer section"
+msgstr "Bagian Disclaimer"
+
+#: build/components/blocks/featuredpost/block.json:1
+msgctxt "block description"
+msgid "Featured post"
+msgstr "Featured post"
+
+#: build/components/blocks/herosection/block.json:1
+msgctxt "block description"
+msgid "Hero block"
+msgstr "Blok Hero"
+
+#: build/components/blocks/latestposts/block.json:1
+msgctxt "block description"
+msgid "Latest posts"
+msgstr "Postingan Terbaru"
+
+#: build/components/blocks/newsletter/block.json:1
+msgctxt "block description"
+msgid "Newsletter form"
+msgstr "Formulir Newsletter"
+
+#: build/components/blocks/aboutsection/block.json:1
+msgctxt "block title"
+msgid "About section"
+msgstr "Bagian Tentang"
+
+#: build/components/blocks/contactform/block.json:1
+msgctxt "block title"
+msgid "Contact form"
+msgstr "Formulir kontak"
+
+#: build/components/blocks/disclaimersection/block.json:1
+msgctxt "block title"
+msgid "Disclaimer section"
+msgstr "Bagian Disclaimer"
+
+#: build/components/blocks/featuredpost/block.json:1
+msgctxt "block title"
+msgid "Featured Post"
+msgstr "Featured Post"
+
+#: build/components/blocks/herosection/block.json:1
+msgctxt "block title"
+msgid "Hero Section"
+msgstr "Bagian Hero"
+
+#: build/components/blocks/latestposts/block.json:1
+msgctxt "block title"
+msgid "Latest Posts"
+msgstr "Postingan Terbaru"
+
+#: build/components/blocks/newsletter/block.json:1
+msgctxt "block title"
+msgid "Newsletter form"
+msgstr "Formulir Newsletter"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Grey / Light"
+msgstr "Abu-abu / Terang"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Grey / Lighter"
+msgstr "Abu-abu / Lebih ringan"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Dark"
+msgstr "Utama / Gelap"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Grey"
+msgstr "Utama / Abu-abu"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Light"
+msgstr "Utama / Cahaya"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Primary"
+msgstr "Utama / Primer"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Main / Primary Dark"
+msgstr "Utama / Gelap Primer"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Color name"
+msgid "Transparent"
+msgstr "Transparan"
+
+#: inc/template-functions.php:281
+msgid "Color scheme"
+msgstr "Skema warna"
+
+#: inc/template-functions.php:283
+msgid "Contact information"
+msgstr "Informasi kontak"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Custom template name"
+msgid "No title"
+msgstr "Tidak ada judul"
+
+#: build/components/blocks/disclaimersection/render.php:2
+msgid "Disclaimer"
+msgstr "Disclaimer"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Duotone name"
+msgid "Primary and Contrast"
+msgstr "Primer dan Kontras"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Duotone name"
+msgid "Secondary and primary"
+msgstr "Sekunder dan primer"
+
+#: inc/theme-settings.php:44
+msgid "Edit theme settings below."
+msgstr "Edit pengaturan tema di bawah."
+
+#: archive.php:81 build/components/blocks/newsletter/render.php:16
+#: build/components/blocks/contactform/render.php:25
+#: build/components/blocks/contactform/render.php:46
+msgid "Email"
+msgstr "Email"
+
+#: inc/theme-settings.php:61
+msgid "Enter contacts below"
+msgstr "Masukkan kontak di bawah"
+
+#: inc/theme-settings.php:70
+msgid "Enter footer content below"
+msgstr "Masukkan konten footer di bawah"
+
+#: inc/theme-settings.php:52
+msgid "Enter the URLs for your social media profiles below."
+msgstr "Masukkan URL profil media sosial Anda di bawah."
+
+#: index.php:37
+msgid ""
+"Explore the world of design and learn how to create visually stunning\n"
+"\t\t\t\t\tartwork."
+msgstr "Jelajari dunia design dan cari tahu cara buat karya yang menakjubkan."
+
+#: build/components/blocks/contactform/render.php:3
+msgid "Feel free to reach out to me through any of the following ways."
+msgstr "Hubungi saya via kontak berikut."
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Extra small"
+msgstr "Ekstra kecil"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Large"
+msgstr "Besar"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Medium"
+msgstr "Sedang"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Kecil"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "XL"
+msgstr "XL"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Font size name"
+msgid "XXL"
+msgstr "XXL"
+
+#: build/components/blocks/herosection/render.php:4
+msgid ""
+"From visual design to media production, my passion for creating has led me "
+"on a journey of exploration and innovation."
+msgstr ""
+"Saya ingin terus berkarya, bereksplorasi, dan berinovasi. Dari seorang "
+"visual designer, saya bisa melebarkan sayap ke dunia media production."
+
+#: 404.php:22
+#, php-format
+msgid "Go back to the %s"
+msgstr "Kembali ke %s"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Gradient name"
+msgid "Horizontal white to Primary color"
+msgstr "Putih horizontal ke warna Primer"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Gradient name"
+msgid "Primary color to white"
+msgstr "Warna primer menjadi putih"
+
+#: 404.php:27
+msgid "Home"
+msgstr "Halaman Utama"
+
+#. Author of the theme
+msgid "Hostinger"
+msgstr "Hostinger"
+
+#. Name of the theme
+msgid "Hostinger blog theme"
+msgstr "Tema Blog Hostinger"
+
+#. Description of the theme
+msgid ""
+"Hostinger Blog Theme is the perfect choice for bloggers seeking a powerful "
+"yet lightweight solution. Built with SEO and mobile responsiveness in mind, "
+"this theme ensures optimal performance and a better online presence. It "
+"includes pre-made home, about us, contact us, and blog pages, giving your "
+"blog a seamless and quick start. Regardless of your niche, take your blog to "
+"the next level with this lightweight and professional-looking theme."
+msgstr ""
+"Ingin tema blog yang ringan dan serba ada? Tema Blog Hostinger jawabannya! "
+"Tema ini sangat cocok digunakan oleh blogger yang ingin tema lengkap dan "
+"ringan. Tema Blog Hostinger sudah teroptimasi SEO dan pastinya mobile "
+"friendly. Performa dan kunjungan website dijamin optimal. Sudah termasuk "
+"halaman utama, tentang kami, kontak, dan blog. Anda tidak perlu repot buat "
+"blog dari nol. Bisa wujudkan berbagai ide hebat Anda dengan tampilan yang "
+"menarik dan profesional."
+
+#. Author URI of the theme
+msgid "https://hostinger.com"
+msgstr "https://hostinger.co.id"
+
+#. URI of the theme
+msgid "https://www.hostinger.com/blog/hostinger-blog-theme"
+msgstr "https://www.hostinger.co.id/tutorial/tema-blog"
+
+#: archive.php:92 build/components/blocks/newsletter/render.php:4
+msgid ""
+"I consent to use of my email address for the purpose of receiving "
+"newsletters as described in"
+msgstr ""
+"Saya menyetujui penggunaan alamat email saya untuk menerima newsletter "
+"sebagaimana dijelaskan dalam"
+
+#: build/components/blocks/contactform/render.php:4
+msgid ""
+"I consent to use of provided personal data for the purpose of responding to "
+"the request as described in"
+msgstr ""
+"Saya menyetujui penggunaan data pribadi  yang diberikan untuk memproses "
+"permintaan sebagaimana dijelaskan dalam"
+
+#: build/components/blocks/herosection/render.php:3
+msgid "I’m Shawn — a designer and creator 👋"
+msgstr "Hi, saya Shawn - designer dan creator👋"
+
+#: inc/template-functions.php:279
+msgid "Key areas that require attention include:"
+msgstr "Bagian penting yang perlu diperhatikan:"
+
+#: build/components/blocks/latestposts/render.php:4
+msgid "Latest Posts"
+msgstr "Postingan Terbaru"
+
+#: build/components/blocks/herosection/render.php:6
+msgid "Learn About Me"
+msgstr "Lihat Tentang Saya"
+
+#: build/components/blocks/contactform/render.php:2
+msgid "Let’s get in touch"
+msgstr "Hubungi saya"
+
+#: build/components/blocks/herosection/render.php:8
+msgid "Let’s stay connected"
+msgstr "Jangan lewatkan berita terbaru"
+
+#: build/components/blocks/contactform/render.php:29
+msgid "Message"
+msgstr "Pesan"
+
+#: build/components/blocks/contactform/render.php:21
+msgid "Name"
+msgstr "Nama"
+
+#: inc/form-submissions.php:72
+msgid "New Newsletter Subscription"
+msgstr "Langganan Newsletter Baru"
+
+#: archive.php:75 build/components/blocks/newsletter/render.php:2
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: index.php:55 archive.php:48
+msgid "No categories found."
+msgstr "Kategori tidak ditemukan."
+
+#: inc/form-submissions.php:40 inc/form-submissions.php:95
+msgid "Not valid recipient email."
+msgstr "Penerima email tidak valid."
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Pencarian tidak ditemukan"
+
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oops, halaman tidak ditemukan!"
+
+#: template-parts/content-page.php:22
+msgid "Pages:"
+msgstr "Halaman:"
+
+#: build/components/blocks/contactform/render.php:57
+msgid "Phone"
+msgstr "Telepon"
+
+#: inc/template-functions.php:275
+msgid ""
+"Please adjust your <a href=\"?page=hostinger-additional-settings\">theme "
+"settings</a> to personalize your website."
+msgstr ""
+"Silakan atur <a href=\"?page=hostinger-additional-settings\">pengaturan "
+"tema</a> sesuai kebutuhan website Anda."
+
+#: inc/form-submissions.php:13 inc/form-submissions.php:64
+msgid "Please agree with privacy policy."
+msgstr "Setujui kebijakan privasi."
+
+#: inc/form-submissions.php:17 inc/form-submissions.php:68
+msgid "Please enter a valid email address."
+msgstr "Masukkan alamat email yang valid."
+
+#: functions.php:81
+msgid "Primary"
+msgstr "Penting"
+
+#: build/components/blocks/newsletter/render.php:4
+#: build/components/blocks/contactform/render.php:4
+msgid "Privacy Policy"
+msgstr "Kebijakan Privasi"
+
+#: footer.php:50 functions.php:87
+msgid "Quick links"
+msgstr "Link langsung"
+
+#: single.php:89
+msgid "RELATED POSTS"
+msgstr "POSTINGAN TERKAIT"
+
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Hasil Pencarian untuk: %s"
+
+#: build/components/blocks/contactform/render.php:41
+msgid "Send Message"
+msgstr "Kirim Pesan"
+
+#: inc/template-functions.php:282
+msgid "Social media links"
+msgstr "Link media sosial"
+
+#: search.php:37 index.php:74 archive.php:67
+msgid "Sorry, no posts matched your criteria."
+msgstr "Maaf, postingan yang Anda cari tidak tersedia."
+
+#: archive.php:95 build/components/blocks/newsletter/render.php:30
+msgid "Subscribe"
+msgstr "Berlangganan"
+
+#: archive.php:76 build/components/blocks/newsletter/render.php:3
+msgid ""
+"Subscribe to stay up-to-date with my latest creative projects, insights, and "
+"tips."
+msgstr ""
+"Jangan lupa berlangganan untuk dapat proyek kreatif, info, dan tips terbaru "
+"dari saya."
+
+#: inc/form-submissions.php:99
+msgid "Successfully submitted!"
+msgstr "Berhasil dikirim"
+
+#: inc/form-submissions.php:45
+msgid "Successfully subscribed!"
+msgstr "Berhasil berlangganan"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Template part name"
+msgid "Footer"
+msgstr "Footer"
+
+#: theme.json:1
+#, fuzzy
+msgctxt "Template part name"
+msgid "Header"
+msgstr "Header"
+
+#: functions.php:93
+msgid "Terms & policy"
+msgstr "Syarat & ketentuan"
+
+#: footer.php:65
+msgid "Terms &amp; policy"
+msgstr "Syarat &amp; ketentuan"
+
+#: inc/theme-blocks.php:16
+msgid "Theme Blocks"
+msgstr "Blok Tema"
+
+#: inc/theme-settings.php:5 inc/theme-settings.php:6
+msgid "Theme Settings"
+msgstr "Pengaturan Tema"
+
+#: inc/template-functions.php:278
+msgid ""
+"To enhance your site's functionality and user experience, ensure that you "
+"fill in the theme settings with accurate information."
+msgstr ""
+"Untuk meningkatkan fungsi dan UX situs Anda, pastikan Anda telah mengisi "
+"pengaturan tema dengan informasi yang akurat."
+
+#: archive.php:85 build/components/blocks/newsletter/render.php:20
+#: build/components/blocks/contactform/render.php:28
+msgid "What’s your email?"
+msgstr "Apa alamat email Anda?"
+
+#: build/components/blocks/contactform/render.php:24
+msgid "What’s your name?"
+msgstr "Siapa nama Anda?"
+
+#: build/components/blocks/newsletter/render.php:4
+#: build/components/blocks/contactform/render.php:4
+msgid "which I have read. I may withdraw my consent at any time."
+msgstr "Saya membaca bahwa saya dapat menarik persetujuan saya kapan saja."
+
+#: build/components/blocks/contactform/render.php:31
+msgid "Write your message..."
+msgstr "Tulis pesan Anda..."
+
+#: inc/template-functions.php:277
+msgid ""
+"Your website currently lacks essential information such as social links and "
+"contact details."
+msgstr ""
+"Situs Anda kurang menampilkan informasi penting seperti link media sosial "
+"dan detail kontak."

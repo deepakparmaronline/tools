@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "theme-blocks/herosection",
+  "title": "Hero Section",
+  "category": "theme-blocks",
+  "icon": "smiley",
+  "description": "Hero block",
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "buttonTitle": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "urlNewTab": {
+      "type": "boolean"
+    },
+    "bottomTitle": {
+      "type": "string"
+    },
+    "mediaUrl": {
+      "type": "string"
+    },
+    "mediaId": {
+      "type": "number"
+    }
+  },
+  "supports": {
+    "color": {
+      "background": false,
+      "text": false
+    },
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

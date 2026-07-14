@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Amortization Calculator & Schedule | Toolboxkart</title>
+    <meta name="description" content="Use our free amortization calculator to generate a complete loan amortization schedule. See your EMI breakdown, total interest, and principal payments instantly.">
+    <style>
+        /* Global Reset & Base Styles */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+        
+        /* Navigation */
+        nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+        .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+        .nav-brand span { color: #7c6fcd; }
+        
+        /* Layout & Container */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+        
+        /* Hero Section */
+        .hero { text-align: center; padding: 4rem 1rem 3rem; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .hero p { color: #888; font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.5; }
+        
+        /* Tool Card & Inputs */
+        .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem; margin-bottom: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .input-area { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+        @media (max-width: 600px) { .input-area { grid-template-columns: 1fr; } }
+        
+        .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .input-group label { font-size: 0.95rem; color: #ccc; font-weight: 500; }
+        .input-group input { background: #0d0d0d; border: 1px solid #272727; color: #fff; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; transition: all 0.2s ease; }
+        .input-group input:focus { border-color: #7c6fcd; }
+        
+        button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: background 0.2s ease; }
+        button.btn-primary:hover { background: #6b5eb8; }
+        
+        /* Result Box & Table */
+        #result-box { display: none; margin-top: 2rem; background: #0d0d0d; padding: 1.5rem; border-radius: 8px; border: 1px solid #272727; }
+        .result-summary { margin-bottom: 2rem; }
+        .result-row { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #222; }
+        .result-row:last-child { border-bottom: none; font-size: 1.3rem; font-weight: 700; color: #7c6fcd; }
+        
+        .table-wrapper { max-height: 400px; overflow-y: auto; border: 1px solid #272727; border-radius: 8px; }
+        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
+        th, td { padding: 1rem; border-bottom: 1px solid #222; }
+        th { background: #111; color: #7c6fcd; position: sticky; top: 0; font-weight: 600; }
+        td { color: #ccc; }
+        
+        /* Custom Scrollbar for Table */
+        .table-wrapper::-webkit-scrollbar { width: 8px; }
+        .table-wrapper::-webkit-scrollbar-track { background: #0d0d0d; }
+        .table-wrapper::-webkit-scrollbar-thumb { background: #272727; border-radius: 4px; }
+        
+        /* SEO Content Block */
+        .seo-content-block { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem; margin-bottom: 3rem; }
+        .seo-content-block h2 { color: #fff; margin-bottom: 1.5rem; font-size: 1.8rem; }
+        .seo-content-block p { color: #888; line-height: 1.7; margin-bottom: 1.5rem; }
+        .seo-content-block strong { color: #ccc; font-weight: 600; }
+        
+        /* FAQ Accordion */
+        .faq-section { margin-top: 3rem; }
+        .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+        .seo-faq-item:last-child { border-bottom: none; }
+        .seo-faq-q { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; user-select: none; }
+        .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; transition: transform 0.3s ease; }
+        .seo-faq-item.open .seo-faq-q::after { transform: rotate(45deg); }
+        .seo-faq-a { display: none; margin-top: 1rem; color: #888; line-height: 1.6; }
+        .seo-faq-item.open .seo-faq-a { display: block; }
+        
+        /* Related Tools */
+        .related-tools-section { padding-bottom: 4rem; }
+        .related-tools-section h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+        #tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+        .tool-card-link { background: #161616; border: 1px solid #272727; color: #e0e0e0; text-decoration: none; padding: 1.5rem; border-radius: 10px; font-weight: 500; transition: all 0.2s ease; display: block; text-align: center; }
+        .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+    </nav>
+
+    <div class="hero">
+        <h1>Amortization Calculator</h1>
+        <p>Calculate your loan payments and generate a detailed amortization schedule to see exactly how your principal and interest are paid off.</p>
+    </div>
+
+    <div class="container">
+        
+        <div class="card">
+            <div class="input-area">
+                <div class="input-group">
+                    <label for="loan-amount">Loan Amount (₹)</label>
+                    <input type="number" id="loan-amount" placeholder="e.g. 5000000" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="interest-rate">Annual Interest Rate (%)</label>
+                    <input type="number" id="interest-rate" placeholder="e.g. 8.5" min="0" step="0.1">
+                </div>
+                <div class="input-group" style="grid-column: 1 / -1;">
+                    <label for="loan-term">Loan Term (Years)</label>
+                    <input type="number" id="loan-term" placeholder="e.g. 20" min="1">
+                </div>
+            </div>
+            
+            <button class="btn-primary" onclick="calculateAmortization()">Calculate Amortization</button>
+
+            <div id="result-box">
+                <div class="result-summary">
+                    <div class="result-row">
+                        <span>Monthly Payment (EMI)</span>
+                        <span id="res-emi">₹0.00</span>
+                    </div>
+                    <div class="result-row">
+                        <span>Total Interest Payable</span>
+                        <span id="res-total-interest">₹0.00</span>
+                    </div>
+                    <div class="result-row">
+                        <span>Total Payment (Principal + Interest)</span>
+                        <span id="res-total-payment">₹0.00</span>
+                    </div>
+                </div>
+                
+                <h3 style="color: #fff; margin-bottom: 1rem; font-size: 1.2rem;">Amortization Schedule</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Month</th>
+                                <th>Payment</th>
+                                <th>Principal</th>
+                                <th>Interest</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="schedule-body">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="seo-content-block">
+            <h2>How Does a Loan Amortization Calculator Work?</h2>
+            <p>Our free <strong>loan amortization calculator</strong> helps you break down your monthly installments into clear principal and interest components. Whether you are looking for a <strong>mortgage amortization schedule</strong>, a home loan planner, or an <strong>auto loan calculator</strong>, this tool provides a complete roadmap of your debt payoff journey.</p>
+            <p>In the early years of a loan, a large portion of your monthly payment goes toward interest. Over time, more of your payment goes toward reducing the principal balance. Viewing your full <strong>EMI breakdown</strong> allows you to plan your finances better and see how much interest you will pay over the life of the loan.</p>
+
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">What is an amortization schedule?</div>
+                    <div class="seo-faq-a">An <strong>amortization schedule</strong> is a complete table of periodic loan payments. It shows the amount of principal and the amount of interest that comprise each payment until the loan is paid off at the end of its term.</div>
+                </div>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">How is loan amortization calculated?</div>
+                    <div class="seo-faq-a">The formula uses your total loan amount, the annual interest rate divided by 12 to find the monthly rate, and the total number of monthly payments. This gives you a fixed monthly payment, but the internal ratio of <strong>principal and interest</strong> shifts every single month.</div>
+                </div>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">Does making extra payments reduce amortization?</div>
+                    <div class="seo-faq-a">Yes! Making additional principal payments directly reduces your outstanding balance. This decreases the total interest charged in subsequent months, allowing you to pay off your loan much faster than the original <strong>loan term</strong>.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="related-tools-section" id="related-tools-wrapper">
+            <h2>Explore More Finance Tools</h2>
+            <div id="tools-grid">
+                </div>
+        </div>
+
+    </div>
+
+    <script>
+        // 1. Calculation Logic
+        function calculateAmortization() {
+            const principal = parseFloat(document.getElementById('loan-amount').value);
+            const annualRate = parseFloat(document.getElementById('interest-rate').value);
+            const years = parseInt(document.getElementById('loan-term').value);
+            
+            if (isNaN(principal) || isNaN(annualRate) || isNaN(years) || principal <= 0 || years <= 0) {
+                alert("Please enter valid positive numbers in all fields.");
+                return;
+            }
+
+            const monthlyRate = (annualRate / 12) / 100;
+            const totalMonths = years * 12;
+            
+            // EMI Formula: P x R x (1+R)^N / [(1+R)^N-1]
+            let emi = 0;
+            if (monthlyRate > 0) {
+                emi = principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+            } else {
+                emi = principal / totalMonths; // 0% interest case
+            }
+
+            const totalPayment = emi * totalMonths;
+            const totalInterest = totalPayment - principal;
+
+            // Update Summary UI
+            const formatCurrency = (num) => '₹' + num.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            
+            document.getElementById('res-emi').textContent = formatCurrency(emi);
+            document.getElementById('res-total-interest').textContent = formatCurrency(totalInterest);
+            document.getElementById('res-total-payment').textContent = formatCurrency(totalPayment);
+
+            // Generate Schedule Table
+            const tbody = document.getElementById('schedule-body');
+            tbody.innerHTML = ''; // Clear previous
+            
+            let balance = principal;
+            for (let month = 1; month <= totalMonths; month++) {
+                let interestPayment = balance * monthlyRate;
+                let principalPayment = emi - interestPayment;
+                
+                // Adjust last month rounding issues
+                if (month === totalMonths) {
+                    principalPayment = balance;
+                    emi = principalPayment + interestPayment;
+                    balance = 0;
+                } else {
+                    balance -= principalPayment;
+                }
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${month}</td>
+                    <td>${formatCurrency(emi)}</td>
+                    <td>${formatCurrency(principalPayment)}</td>
+                    <td>${formatCurrency(interestPayment)}</td>
+                    <td>${formatCurrency(Math.abs(balance))}</td>
+                `;
+                tbody.appendChild(row);
+            }
+
+            // Show result
+            document.getElementById('result-box').style.display = 'block';
+        }
+
+        // 2. FAQ Accordion Logic
+        document.querySelectorAll('.seo-faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.closest('.seo-faq-item');
+                document.querySelectorAll('.seo-faq-item').forEach(other => {
+                    if (other !== item) other.classList.remove('open');
+                });
+                item.classList.toggle('open');
+            });
+        });
+
+        // 3. Related Tools Logic (Now includes both Tool 22 and 23)
+        const relatedTools = [
+            { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
+            { name: "ROI Calculator", url: "/finance/roi-calculator" }
+        ];
+
+        function loadRelatedTools() {
+            const container = document.getElementById('tools-grid');
+            const wrapper = document.getElementById('related-tools-wrapper');
+
+            if (relatedTools.length === 0) {
+                wrapper.style.display = 'none';
+                return;
+            }
+
+            relatedTools.forEach(tool => {
+                const link = document.createElement('a'); 
+                link.href = tool.url; 
+                link.className = 'tool-card-link'; 
+                link.textContent = tool.name; 
+                container.appendChild(link);
+            });
+        }
+        
+        loadRelatedTools();
+    </script>
+</body>
+</html>
