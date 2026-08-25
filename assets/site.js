@@ -63,7 +63,7 @@
     `;
     document.head.appendChild(style);
 
-    const navHTML = '<a class="nav-brand" href="/"><span>TBK</span> Tool Box Kart</a><div class="nav-links"><a href="/seo/">SEO Tools</a><a href="/finance/">Finance Tools</a><a href="/image-tools/">Image Tools</a><a href="/seo-guide/">SEO Guides</a></div>';
+    const navHTML = '<a class="nav-brand" href="/"><span>TBK</span> Tool Box Kart</a><div class="nav-links"><a href="/seo/">SEO Tools</a><a href="/finance/">Finance Tools</a><a href="/image-tools/">Image Tools</a><a href="/seo-guide/">SEO Guides</a><a href="/tech/">Tech Guides</a></div>';
     let nav = document.querySelector('nav');
     if (!nav) {
       nav = document.createElement('nav');
@@ -71,6 +71,36 @@
     }
     nav.className = 'tbk-shared-nav';
     nav.innerHTML = navHTML;
+  }
+
+  async function renderGuideIndex() {
+    if (window.location.pathname !== '/seo-guide/' && window.location.pathname !== '/seo-guide/index.html') return;
+    const grid = document.querySelector('.grid');
+    if (!grid) return;
+    try {
+      const response = await fetch('/assets/seo-guide-manifest.php', { cache: 'no-store' });
+      if (!response.ok) throw new Error('Guide manifest request failed: ' + response.status);
+      const guides = await response.json();
+      grid.innerHTML = guides.map(guide => `<article class="card"><p class="meta">SEO Guide · Updated ${guide.modified}</p><a href="${guide.url}">${guide.title}</a><p>${guide.description}</p></article>`).join('');
+    } catch (err) {
+      console.error('Guide manifest load failed.', err);
+    }
+  }
+
+  async function renderTechIndex() {
+    if (window.location.pathname !== '/tech/' && window.location.pathname !== '/tech/index.html') return;
+    const grid = document.querySelector('.grid');
+    if (!grid) return;
+    try {
+      const response = await fetch('/assets/tech-manifest.php', { cache: 'no-store' });
+      if (!response.ok) throw new Error('Tech manifest request failed: ' + response.status);
+      const posts = await response.json();
+      grid.innerHTML = posts.length
+        ? posts.map(post => `<article class="card"><p class="meta">Tech Guide · Updated ${post.modified}</p><a href="${post.url}">${post.title}</a><p>${post.description}</p></article>`).join('')
+        : '<p class="empty">Tech guides will appear here as they are published.</p>';
+    } catch (err) {
+      console.error('Tech manifest load failed.', err);
+    }
   }
 
   function renderHomepageCategories(niches) {
@@ -154,6 +184,7 @@
     const legalLinksHTML = FOOTER_LEGAL_LINKS
       .map(l => `<a href="${l.href}">${l.label}</a>`)
       .concat('<a href="/seo-guide/">SEO Guides</a>')
+      .concat('<a href="/tech/">Tech Guides</a>')
       .join('') + `<button type="button" id="tbk-cookie-prefs">Cookie preferences</button>`;
 
     const html = `
@@ -182,4 +213,6 @@
     }
     renderFooter(niches);
   });
+  renderGuideIndex();
+  renderTechIndex();
 })();
