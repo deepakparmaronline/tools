@@ -2,69 +2,75 @@
 header('Content-Type: application/xml; charset=utf-8');
 
 $root = dirname(__DIR__);
-$allowed_niches = ['finance', 'seo', 'image-tools'];
+$baseUrl = 'https://toolboxkart.tech';
 $urls = [];
 
-function add_url(&$urls, $root, $relativePath, $urlPath, $changefreq, $priority) {
-    $indexFile = $root . '/' . $relativePath . '/index.html';
-    if (!is_file($indexFile)) return;
-
-    $urls[] = [
-        'loc' => 'https://toolboxkart.tech' . $urlPath,
-        'lastmod' => date('c', filemtime($indexFile)),
-        'changefreq' => $changefreq,
-        'priority' => $priority,
-    ];
-}
-
-add_url($urls, $root, '', '/', 'weekly', '1.0');
-add_url($urls, $root, 'seo-guide', '/seo-guide/', 'weekly', '0.9');
-
-foreach ($allowed_niches as $niche) {
-    add_url($urls, $root, $niche, '/' . $niche . '/', 'weekly', '0.9');
-
-    $nichePath = $root . '/' . $niche;
-    if (!is_dir($nichePath)) continue;
-
-    foreach (scandir($nichePath) as $slug) {
-        if ($slug === '.' || $slug === '..' || $slug[0] === '.') continue;
-
-        $toolPath = $nichePath . '/' . $slug;
-        if (!is_dir($toolPath)) continue;
-
-        add_url(
-            $urls,
-            $root,
-            $niche . '/' . $slug,
-            '/' . $niche . '/' . $slug . '/',
-            'monthly',
-            '0.8'
-        );
-    }
-}
-
-$postPath = $root . '/post';
-if (is_dir($postPath)) {
-    foreach (scandir($postPath) as $slug) {
-        if ($slug === '.' || $slug === '..' || $slug[0] === '.') continue;
-
-        $guidePath = $postPath . '/' . $slug;
-        if (!is_dir($guidePath)) continue;
-
-        add_url(
-            $urls,
-            $root,
-            'seo-guide/' . $slug,
-            '/seo-guide/' . $slug . '/',
-            'monthly',
-            '0.6'
-        );
-    }
-}
+// Directories that should never be included in the sitemap.
+$excludedDirs = [
+    '.git',
+    '.github',
+    'blog',
+    'assets',
+    'images',
+];
 
 function xml_escape($value) {
     return htmlspecialchars($value, ENT_XML1 | ENT_QUOTES, 'UTF-8');
 }
+
+function add_page(&$urls, $root, $dir, $baseUrl) {
+    $indexFile = $dir . '/index.html';
+    if (!is_file($indexFile)) {
+        return;
+    }
+
+    $relative = trim(str_replace($root, '', $dir), DIRECTORY_SEPARATOR);
+    $urlPath = $relative === '' ? '/' : '/' . str_replace(DIRECTORY_SEPARATOR, '/', $relative) . '/';
+
+    $urls[$urlPath] = [
+        'loc' => $baseUrl . $urlPath,
+        'lastmod' => date('c', filemtime($indexFile)),
+    ];
+}
+
+// Include the homepage.
+add_page($urls, $root, $root, $baseUrl);
+
+// Recursively find every index.html page while ignoring WordPress /blog
+// and non-page directories. This keeps the sitemap current as new tools
+// and /post/ pages are added.
+$iterator = new RecursiveIteratorIterator(
+    new RecursiveDirectoryIterator($root, FilesystemIterator::SKIP_DOTS),
+    RecursiveIteratorIterator::SELF_FIRST
+);
+
+foreach ($iterator as $item) {
+    if (!$item->isDir()) {
+        continue;
+    }
+
+    $relative = trim(str_replace($root, '', $item->getPathname()), DIRECTORY_SEPARATOR);
+    if ($relative === '') {
+        continue;
+    }
+
+    $parts = explode(DIRECTORY_SEPARATOR, $relative);
+    $skip = false;
+    foreach ($parts as $part) {
+        if (in_array($part, $excludedDirs, true) || str_starts_with($part, '.')) {
+            $skip = true;
+            break;
+        }
+    }
+
+    if ($skip) {
+        continue;
+    }
+
+    add_page($urls, $root, $item->getPathname(), $baseUrl);
+}
+
+ksort($urls, SORT_STRING);
 
 echo '<?xml version="1.0" encoding="UTF-8"?>';
 echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
@@ -73,8 +79,6 @@ foreach ($urls as $url) {
     echo '<url>';
     echo '<loc>' . xml_escape($url['loc']) . '</loc>';
     echo '<lastmod>' . xml_escape($url['lastmod']) . '</lastmod>';
-    echo '<changefreq>' . $url['changefreq'] . '</changefreq>';
-    echo '<priority>' . $url['priority'] . '</priority>';
     echo '</url>';
 }
 
