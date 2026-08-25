@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Image to Base64 Converter | Encode Images to String - Toolboxkart</title>
+  <meta name="description" content="Instantly convert PNG, JPG, WebP, or SVG images into Base64 encoded strings. Generate Data URIs to embed images directly in HTML or CSS. 100% free and local." />
+  <link rel="canonical" href="https://toolboxkart.tech/image-tools/image-to-base64/" />
+  <meta property="og:title" content="Free Image to Base64 Converter - Toolboxkart" />
+  <meta property="og:description" content="Instantly convert PNG, JPG, WebP, or SVG images into Base64 encoded strings. Generate Data URIs to embed images directly in HTML or CSS." />
+  <meta property="og:url" content="https://toolboxkart.tech/image-tools/image-to-base64/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-brand span { color: #7c6fcd; }
+
+    .hero { text-align: center; padding: 3rem 1rem 1.5rem; }
+    .hero h1 { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+    .hero p { color: #888; max-width: 650px; margin: 0 auto; line-height: 1.5; }
+    .last-updated { color: #666; font-size: 0.8rem; margin-top: 0.8rem; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 4rem; }
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2rem; margin-bottom: 2rem; }
+
+    label { display: block; font-size: 0.9rem; font-weight: 600; color: #ccc; margin-bottom: 0.5rem; }
+    input, select, textarea { width: 100%; background: #222; color: #fff; border: 1px solid #333; border-radius: 8px; padding: 1rem; font-size: 1rem; outline: none; transition: 0.2s; font-family: inherit; }
+    input:focus, select:focus, textarea:focus { border-color: #7c6fcd; }
+
+    .upload-area { border: 2px dashed #333; border-radius: 8px; padding: 2.5rem 1rem; text-align: center; margin-bottom: 1.5rem; background: #1a1a1a; transition: 0.2s; position: relative; }
+    .upload-area:hover, .upload-area.dragover { border-color: #7c6fcd; background: #1f1f1f; }
+    .upload-area input[type="file"] { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+    .upload-area p { color: #aaa; font-weight: 500; }
+    .upload-area span { display: block; font-size: 0.85rem; color: #666; margin-top: 0.5rem; }
+    
+    .file-name { margin-top: 1rem; font-size: 0.9rem; color: #7c6fcd; font-weight: 600; display: none; }
+
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: background 0.2s; }
+    button.btn-primary:hover { background: #6a5eb8; }
+    
+    button.btn-secondary { background: #222; color: #fff; border: 1px solid #444; padding: 0.8rem 1.5rem; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.2s; margin-top: 1rem; }
+    button.btn-secondary:hover { background: #333; }
+
+    .result-box { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; margin-top: 2rem; display: none; }
+    .code-snippet { background: #111; padding: 1rem; border-radius: 6px; border: 1px solid #272727; font-family: monospace; font-size: 0.9rem; color: #ccc; word-break: break-all; margin-bottom: 1rem; }
+
+    .seo-content-block h2 { font-size: 1.4rem; color: #fff; margin: 2rem 0 1rem; }
+    .seo-content-block p { color: #888; line-height: 1.7; margin-bottom: 1rem; }
+    .seo-content-block strong { color: #ccc; font-weight: 600; }
+
+    .seo-faq-item { border-bottom: 1px solid #1e1e1e; padding: 1rem 0; }
+    .seo-faq-q { font-weight: 600; color: #ccc; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.2rem; color: #7c6fcd; transition: transform 0.3s; }
+    .seo-faq-item.open .seo-faq-q::after { transform: rotate(45deg); }
+    .seo-faq-a { font-size: .95rem; color: #888; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .seo-faq-item.open .seo-faq-a { max-height: 500px; padding-top: .8rem; }
+
+    .related-tools-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #272727; }
+    .related-tools-section h3 { color: #fff; font-size: 1.3rem; margin-bottom: 1rem; }
+
+    .resources-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #272727; }
+    .resources-section h3 { color: #fff; font-size: 1.3rem; margin-bottom: 1rem; }
+    .resources-list { list-style: none; }
+    .resources-list li { margin-bottom: 0.8rem; }
+    .resources-list a { color: #7c6fcd; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .resources-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav><a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a></nav>
+
+<div class="hero">
+  <h1>Free Image to Base64 Converter</h1>
+  <p>Encode PNG, JPG, WebP, and SVG images into Base64 strings. Generate Data URIs to embed images directly into your HTML or CSS code.</p>
+  <p class="last-updated">Last updated: August 2026</p>
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="upload-area" id="drop-zone">
+      <input type="file" id="image-upload" accept="image/*" />
+      <p>Click or drag an image here to upload</p>
+      <span>Supports PNG, JPG, JPEG, WebP, SVG, and GIF</span>
+      <div id="file-name" class="file-name">No file selected</div>
+    </div>
+    
+    <button class="btn-primary" onclick="convertToBase64()">Convert to Base64</button>
+    
+    <div id="result-box" class="result-box">
+      <label>Base64 Encoded String (Data URI):</label>
+      <textarea id="base64-output" rows="6" readonly></textarea>
+      <button class="btn-secondary" onclick="copyText('base64-output', this)">Copy Base64 String</button>
+      
+      <div style="margin-top: 2rem;">
+        <label>Use in HTML (&lt;img&gt; tag):</label>
+        <div class="code-snippet" id="html-snippet"></div>
+        <button class="btn-secondary" onclick="copyText('html-snippet', this, true)">Copy HTML</button>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <label>Use in CSS (background-image):</label>
+        <div class="code-snippet" id="css-snippet"></div>
+        <button class="btn-secondary" onclick="copyText('css-snippet', this, true)">Copy CSS</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="seo-content-block">
+    <h2>How to Convert an Image to Base64 Data URI</h2>
+    <p>Using our <strong>Base64 image encoder</strong> is incredibly simple. Just drag and drop your image file (PNG, JPG, WebP, or SVG) into the upload area above and click convert. The tool will instantly generate a raw <strong>Base64 encoded string</strong>, along with ready-to-use HTML and CSS code snippets. You can copy the code and paste it directly into your project. Everything happens offline in your browser, ensuring maximum privacy and lightning-fast speed.</p>
+
+    <h2>Why Encode Images to Base64?</h2>
+    <p>When you convert an image to a Base64 string, you translate its binary data into a text format (ASCII characters). This allows you to embed the image directly into your web pages using a <strong>Data URI</strong>. The primary benefit for web developers and SEO professionals is performance optimization. By embedding small images (like icons, logos, or loading spinners) directly into your HTML or CSS, you eliminate the need for the browser to make additional HTTP requests to the server. Fewer server requests can lead to faster initial page load times and improved Core Web Vitals scores.</p>
+    <p>However, it is important to remember that Base64 encoding increases the file size of the image by approximately 33%. Therefore, this technique should only be used for very small images, while larger photographs should remain as standard external image files.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">What is a Base64 image and how does it work?</div>
+      <div class="seo-faq-a">Base64 encoding is a process that transforms binary image data into a string of ASCII characters. When formatted as a Data URI (e.g., data:image/png;base64,...), web browsers can decode this string back into a visual image. This allows developers to embed the image directly into HTML or CSS code without needing to host an external image file.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Does converting an image to Base64 increase its file size?</div>
+      <div class="seo-faq-a">Yes. Encoding a binary image into a Base64 text string typically increases its total file size by around 33%. Because of this size increase, best practices dictate that you should only convert very small graphics (under 10KB), such as UI icons or small repeating background patterns, rather than large photographs.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Is my image uploaded to a server for Base64 conversion?</div>
+      <div class="seo-faq-a">No, absolutely not. Our Image to Base64 converter works 100% locally on your device utilizing the HTML5 FileReader API. Your images never leave your computer and are never uploaded to our servers, ensuring your data remains completely private.</div>
+    </div>
+  </div>
+
+  <div class="related-tools-section">
+    <h3>Explore More Image Tools</h3>
+    <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
+  </div>
+
+  <div class="resources-section">
+    <h3>Guides & Resources</h3>
+    <ul class="resources-list">
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs" target="_blank" rel="nofollow noopener">📄 MDN Web Docs: Data URIs explained</a></li>
+      <li><a href="https://web.dev/articles/optimize-images" target="_blank" rel="nofollow noopener">📄 Google Web.dev: Optimize Images for Web Performance</a></li>
+      <li><a href="https://css-tricks.com/data-uris/" target="_blank" rel="nofollow noopener">📄 CSS-Tricks: Guide to Using Data URIs in CSS</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  // UI Interactions for File Upload
+  const fileInput = document.getElementById('image-upload');
+  const fileNameDisplay = document.getElementById('file-name');
+  const dropZone = document.getElementById('drop-zone');
+
+  fileInput.addEventListener('change', (e) => {
+    if (e.target.files.length > 0) {
+      fileNameDisplay.textContent = "Selected: " + e.target.files[0].name;
+      fileNameDisplay.style.display = 'block';
+    }
+  });
+
+  dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.classList.add('dragover');
+  });
+
+  dropZone.addEventListener('dragleave', () => {
+    dropZone.classList.remove('dragover');
+  });
+
+  dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('dragover');
+    if (e.dataTransfer.files.length > 0) {
+      fileInput.files = e.dataTransfer.files;
+      fileNameDisplay.textContent = "Selected: " + e.dataTransfer.files[0].name;
+      fileNameDisplay.style.display = 'block';
+    }
+  });
+
+  // Core Logic: HTML5 FileReader to Base64
+  function convertToBase64() {
+    const resultBox = document.getElementById('result-box');
+    
+    if (!fileInput.files || fileInput.files.length === 0) {
+      alert("Please upload an image first.");
+      return;
+    }
+    
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = function(e) {
+      const base64String = e.target.result;
+      
+      // Update textareas and snippets
+      document.getElementById('base64-output').value = base64String;
+      document.getElementById('html-snippet').textContent = `<img src="${base64String}" alt="Base64 Image" />`;
+      document.getElementById('css-snippet').textContent = `background-image: url('${base64String}');`;
+      
+      resultBox.style.display = 'block';
+    };
+    
+    reader.onerror = function() {
+      alert("Error reading file. Please try again with a valid image.");
+    };
+    
+    reader.readAsDataURL(file);
+  }
+
+  // Copy to Clipboard Utility
+  function copyText(elementId, buttonElement, isDiv = false) {
+    let textToCopy = "";
+    if (isDiv) {
+      textToCopy = document.getElementById(elementId).textContent;
+    } else {
+      const copyElement = document.getElementById(elementId);
+      copyElement.select();
+      textToCopy = copyElement.value;
+    }
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      const originalText = buttonElement.textContent;
+      buttonElement.textContent = "Copied!";
+      buttonElement.style.background = "#4caf50";
+      buttonElement.style.borderColor = "#4caf50";
+      
+      setTimeout(() => {
+        buttonElement.textContent = originalText;
+        buttonElement.style.background = "";
+        buttonElement.style.borderColor = "";
+      }, 2000);
+    }).catch(err => {
+      alert("Failed to copy text. Please copy manually.");
+    });
+  }
+
+  // FAQ Accordion Logic
+  document.querySelectorAll('.seo-faq-q').forEach(q => {
+    q.addEventListener('click', () => q.closest('.seo-faq-item').classList.toggle('open'));
+  });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Base64 image and how does it work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Base64 encoding is a process that transforms binary image data into a string of ASCII characters. When formatted as a Data URI (e.g., data:image/png;base64,...), web browsers can decode this string back into a visual image. This allows developers to embed the image directly into HTML or CSS code without needing to host an external image file." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does converting an image to Base64 increase its file size?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Encoding a binary image into a Base64 text string typically increases its total file size by around 33%. Because of this size increase, best practices dictate that you should only convert very small graphics (under 10KB), such as UI icons or small repeating background patterns, rather than large photographs." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my image uploaded to a server for Base64 conversion?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, absolutely not. Our Image to Base64 converter works 100% locally on your device utilizing the HTML5 FileReader API. Your images never leave your computer and are never uploaded to our servers, ensuring your data remains completely private." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Image Tools", "item": "https://toolboxkart.tech/image-tools/" },
+    { "@type": "ListItem", "position": 3, "name": "Image to Base64 Converter", "item": "https://toolboxkart.tech/image-tools/image-to-base64/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Image to Base64 Converter",
+  "url": "https://toolboxkart.tech/image-tools/image-to-base64/",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

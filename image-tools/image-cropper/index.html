@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Image Cropper | Crop Photos Online - Toolboxkart</title>
+  <meta name="description" content="Crop and resize your photos online for free. Use custom aspect ratios, crop for social media, and download instantly without losing quality." />
+  <link rel="canonical" href="https://toolboxkart.tech/image-tools/image-cropper/" />
+  <meta property="og:title" content="Free Image Cropper - Toolboxkart" />
+  <meta property="og:description" content="Crop and resize your photos online for free. Use custom aspect ratios, crop for social media, and download instantly without losing quality." />
+  <meta property="og:url" content="https://toolboxkart.tech/image-tools/image-cropper/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-brand span { color: #7c6fcd; }
+
+    .hero { text-align: center; padding: 3rem 1rem 1.5rem; }
+    .hero h1 { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+    .hero p { color: #888; max-width: 650px; margin: 0 auto; line-height: 1.5; }
+    .last-updated { color: #666; font-size: 0.8rem; margin-top: 0.8rem; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 4rem; }
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2rem; margin-bottom: 2rem; }
+
+    label { display: block; font-size: 0.9rem; font-weight: 600; color: #ccc; margin-bottom: 0.5rem; }
+    input, select, textarea { width: 100%; background: #222; color: #fff; border: 1px solid #333; border-radius: 8px; padding: 1rem; font-size: 1rem; outline: none; transition: 0.2s; font-family: inherit; }
+    input:focus, select:focus, textarea:focus { border-color: #7c6fcd; }
+
+    .upload-area { border: 2px dashed #333; border-radius: 8px; padding: 2.5rem 1rem; text-align: center; margin-bottom: 1.5rem; background: #1a1a1a; transition: 0.2s; position: relative; }
+    .upload-area:hover, .upload-area.dragover { border-color: #7c6fcd; background: #1f1f1f; }
+    .upload-area input[type="file"] { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+    .upload-area p { color: #aaa; font-weight: 500; }
+    .upload-area span { display: block; font-size: 0.85rem; color: #666; margin-top: 0.5rem; }
+    
+    .file-name { margin-top: 1rem; font-size: 0.9rem; color: #7c6fcd; font-weight: 600; display: none; }
+
+    .control-group { margin-bottom: 1.5rem; }
+    
+    .canvas-container { margin: 1.5rem 0; text-align: center; overflow: auto; max-height: 400px; display: none; }
+    .canvas-container canvas { max-width: 100%; height: auto; border: 1px solid #333; border-radius: 6px; }
+
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: background 0.2s; }
+    button.btn-primary:hover { background: #6a5eb8; }
+
+    .result-box { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; margin-top: 2rem; display: none; text-align: center; }
+    .download-btn { display: inline-block; background: #222; border: 1px solid #444; color: #fff; text-decoration: none; padding: 0.8rem 2rem; border-radius: 6px; font-weight: 600; transition: 0.2s; margin-top: 1rem; }
+    .download-btn:hover { background: #fff; color: #000; }
+
+    .social-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+    .social-table th, .social-table td { border: 1px solid #272727; padding: 0.8rem; text-align: left; }
+    .social-table th { background: #1a1a1a; color: #fff; }
+    .social-table td { color: #888; }
+
+    .seo-content-block h2 { font-size: 1.4rem; color: #fff; margin: 2rem 0 1rem; }
+    .seo-content-block p { color: #888; line-height: 1.7; margin-bottom: 1rem; }
+    .seo-content-block strong { color: #ccc; font-weight: 600; }
+
+    .seo-faq-item { border-bottom: 1px solid #1e1e1e; padding: 1rem 0; }
+    .seo-faq-q { font-weight: 600; color: #ccc; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.2rem; color: #7c6fcd; transition: transform 0.3s; }
+    .seo-faq-item.open .seo-faq-q::after { transform: rotate(45deg); }
+    .seo-faq-a { font-size: .95rem; color: #888; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .seo-faq-item.open .seo-faq-a { max-height: 500px; padding-top: .8rem; }
+
+    .related-tools-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #272727; }
+    .related-tools-section h3 { color: #fff; font-size: 1.3rem; margin-bottom: 1rem; }
+
+    .resources-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #272727; }
+    .resources-section h3 { color: #fff; font-size: 1.3rem; margin-bottom: 1rem; }
+    .resources-list { list-style: none; }
+    .resources-list li { margin-bottom: 0.8rem; }
+    .resources-list a { color: #7c6fcd; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .resources-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav><a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a></nav>
+
+<div class="hero">
+  <h1>Free Online Image Cropper</h1>
+  <p>Crop and frame your photos instantly in your browser with zero quality loss.</p>
+  <p class="last-updated">Last updated: August 2026</p>
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="upload-area" id="drop-zone">
+      <input type="file" id="image-upload" accept="image/*" />
+      <p>Click or drag an image here to upload</p>
+      <span>Supports PNG, JPG, and WebP formats</span>
+      <div id="file-name" class="file-name">No file selected</div>
+    </div>
+
+    <div class="control-group">
+      <label for="aspect-ratio">Select Aspect Ratio / Preset:</label>
+      <select id="aspect-ratio">
+        <option value="free">Freeform (Custom)</option>
+        <option value="1">Square (1:1)</option>
+        <option value="1.7778">Widescreen / YouTube (16:9)</option>
+        <option value="1.3333">Standard / Facebook (4:3)</option>
+        <option value="0.8">Portrait / Instagram (4:5)</option>
+      </select>
+    </div>
+
+    <div id="canvas-wrap" class="canvas-container">
+      <canvas id="image-canvas"></canvas>
+    </div>
+
+    <button class="btn-primary" onclick="cropImage()">Crop & Download Image</button>
+    
+    <div id="result-box" class="result-box">
+      <h3 style="color: #fff; margin-bottom: 0.5rem;">Crop Successful!</h3>
+      <p style="color: #888; font-size: 0.9rem;">Your cropped image has been generated.</p>
+      <a href="#" id="download-btn" class="download-btn" download="cropped-image.png">Download Cropped Image</a>
+    </div>
+  </div>
+
+  <div class="seo-content-block">
+    <h2>Why Use Our Online Photo Cropper?</h2>
+    <p>Finding a reliable <strong>picture cropper</strong> shouldn't require installing heavy software or registering accounts. Our free online image cropper lets you frame your pictures perfectly right inside your web browser. Whether you need to resize a picture for social media, cut out background distractions, or adjust standard proportions, this tool handles it instantly with absolute privacy.</p>
+
+    <h2>Optimized Dimensions for Social Media</h2>
+    <p>Using correct aspect ratios ensures your posts look professional across different platforms without awkward cropping by site algorithms:</p>
+    
+    <table class="social-table">
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Recommended Ratio</th>
+          <th>Best Used For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Instagram</strong></td>
+          <td>1:1 or 4:5</td>
+          <td>Feed posts and profile pictures</td>
+        </tr>
+        <tr>
+          <td><strong>YouTube</strong></td>
+          <td>16:9</td>
+          <td>Video thumbnails and channel banners</td>
+        </tr>
+        <tr>
+          <td><strong>Facebook</strong></td>
+          <td>4:3 or 1.91:1</td>
+          <td>Shared link images and cover photos</td>
+        </tr>
+        <tr>
+          <td><strong>Twitter / X</strong></td>
+          <td>16:9</td>
+          <td>In-stream media cards</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Is this picture cropper really free?</div>
+      <div class="seo-faq-a">Yes. Our image cropping tool is completely free with no usage limits, subscription walls, or watermarks applied to your final downloads.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Will cropping my photo ruin the quality?</div>
+      <div class="seo-faq-a">No. Our tool processes your image using browser-based HTML5 canvas technology, preserving the original resolution and sharpness of the selected area.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Are my uploaded photos saved to your servers?</div>
+      <div class="seo-faq-a">No. All file processing happens locally inside your browser session. Your personal photos are never uploaded or stored on any external servers.</div>
+    </div>
+  </div>
+
+  <div class="related-tools-section">
+    <h3>Explore More Image Tools</h3>
+    <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
+  </div>
+
+  <div class="resources-section">
+    <h3>Guides & Resources</h3>
+    <ul class="resources-list">
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank" rel="nofollow noopener">📄 MDN Web Docs: Canvas API Guide</a></li>
+      <li><a href="https://web.dev/articles/optimize-images" target="_blank" rel="nofollow noopener">📄 Google Web.dev: Image Optimization Best Practices</a></li>
+      <li><a href="https://www.w3.org/TR/html52/semantics-embedded-content.html#the-canvas-element" target="_blank" rel="nofollow noopener">📄 W3C: HTML5 Canvas Element Specifications</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const fileInput = document.getElementById('image-upload');
+  const fileNameDisplay = document.getElementById('file-name');
+  const dropZone = document.getElementById('drop-zone');
+  const canvasWrap = document.getElementById('canvas-wrap');
+  const canvas = document.getElementById('image-canvas');
+  const ctx = canvas.getContext('2d');
+  let loadedImage = new Image();
+
+  fileInput.addEventListener('change', (e) => {
+    if (e.target.files.length > 0) {
+      loadFile(e.target.files[0]);
+    }
+  });
+
+  dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.classList.add('dragover');
+  });
+
+  dropZone.addEventListener('dragleave', () => {
+    dropZone.classList.remove('dragover');
+  });
+
+  dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('dragover');
+    if (e.dataTransfer.files.length > 0) {
+      loadFile(e.dataTransfer.files[0]);
+    }
+  });
+
+  function loadFile(file) {
+    fileNameDisplay.textContent = "Selected: " + file.name;
+    fileNameDisplay.style.display = 'block';
+    
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      loadedImage.onload = function() {
+        canvas.width = loadedImage.width;
+        canvas.height = loadedImage.height;
+        ctx.drawImage(loadedImage, 0, 0);
+        canvasWrap.style.display = 'block';
+      };
+      loadedImage.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function cropImage() {
+    const resultBox = document.getElementById('result-box');
+    const downloadBtn = document.getElementById('download-btn');
+    const ratioSelect = document.getElementById('aspect-ratio').value;
+
+    if (!loadedImage.src) {
+      alert("Please upload an image first.");
+      return;
+    }
+
+    let cropWidth = loadedImage.width;
+    let cropHeight = loadedImage.height;
+    let startX = 0;
+    let startY = 0;
+
+    if (ratioSelect !== 'free') {
+      const targetRatio = parseFloat(ratioSelect);
+      const currentRatio = cropWidth / cropHeight;
+
+      if (currentRatio > targetRatio) {
+        // Image is wider than target ratio
+        cropWidth = cropHeight * targetRatio;
+        startX = (loadedImage.width - cropWidth) / 2;
+      } else {
+        // Image is taller than target ratio
+        cropHeight = cropWidth / targetRatio;
+        startY = (loadedImage.height - cropHeight) / 2;
+      }
+    }
+
+    // Create a temporary canvas for cropped output
+    const cropCanvas = document.createElement('canvas');
+    cropCanvas.width = cropWidth;
+    cropCanvas.height = cropHeight;
+    const cropCtx = cropCanvas.getContext('2d');
+
+    cropCtx.drawImage(loadedImage, startX, startY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+
+    const dataUrl = cropCanvas.toDataURL('image/png');
+    downloadBtn.href = dataUrl;
+    resultBox.style.display = 'block';
+    resultBox.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  document.querySelectorAll('.seo-faq-q').forEach(q => {
+    q.addEventListener('click', () => q.closest('.seo-faq-item').classList.toggle('open'));
+  });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this picture cropper really free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our image cropping tool is completely free with no usage limits, subscription walls, or watermarks applied to your final downloads." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will cropping my photo ruin the quality?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Our tool processes your image using browser-based HTML5 canvas technology, preserving the original resolution and sharpness of the selected area." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my uploaded photos saved to your servers?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. All file processing happens locally inside your browser session. Your personal photos are never uploaded or stored on any external servers." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Image Tools", "item": "https://toolboxkart.tech/image-tools/" },
+    { "@type": "ListItem", "position": 3, "name": "Image Cropper Tool", "item": "https://toolboxkart.tech/image-tools/image-cropper/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Online Image Cropper",
+  "url": "https://toolboxkart.tech/image-tools/image-cropper/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

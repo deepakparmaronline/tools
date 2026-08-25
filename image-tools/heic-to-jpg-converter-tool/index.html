@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free HEIC to JPG Converter | Toolboxkart</title>
+    <meta name="description" content="Convert iPhone HEIC photos to JPG format instantly. Our free HEIC to JPG converter is fast, private, and works right in your browser.">
+    
+    <link rel="canonical" href="https://toolboxkart.tech/image-tools/heic-to-jpg-converter-tool/">
+    
+  <meta property="og:title" content="Free HEIC to JPG Converter - Toolboxkart" />
+  <meta property="og:description" content="Convert iPhone HEIC photos to JPG format instantly. Our free HEIC to JPG converter is fast, private, and works right in your browser." />
+  <meta property="og:url" content="https://toolboxkart.tech/image-tools/heic-to-jpg-converter-tool/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+    <style>
+        /* Global Reset & Base Styles */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+        
+        /* Navigation */
+        nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+        .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+        .nav-brand span { color: #7c6fcd; }
+        
+        /* Layout & Container */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+        
+        /* Hero Section */
+        .hero { text-align: center; padding: 4rem 1rem 3rem; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .hero p { color: #888; font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.5; }
+        
+        /* Tool Card & Inputs */
+        .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem; margin-bottom: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; }
+        
+        .upload-area { border: 2px dashed #333; padding: 3rem 2rem; border-radius: 10px; cursor: pointer; transition: all 0.3s ease; margin-bottom: 1.5rem; background: #111; display: block; }
+        .upload-area:hover { border-color: #7c6fcd; background: #1a1a24; }
+        .upload-area input[type="file"] { display: none; }
+        .upload-icon { font-size: 3rem; margin-bottom: 1rem; color: #7c6fcd; }
+        .upload-text { font-size: 1.2rem; color: #ccc; margin-bottom: 0.5rem; font-weight: 500; }
+        .upload-subtext { font-size: 0.9rem; color: #666; }
+
+        button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem 2rem; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1.1rem; transition: background 0.2s ease; display: inline-block; text-decoration: none; width: 100%; max-width: 300px; }
+        button.btn-primary:hover { background: #6b5eb8; }
+        button.btn-primary:disabled { background: #444; cursor: not-allowed; color: #888; }
+        
+        /* Result Box */
+        #result-box { display: none; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #272727; }
+        .success-text { font-size: 1.2rem; color: #4ade80; margin-bottom: 1.5rem; font-weight: 600; }
+        
+        /* SEO Content Block */
+        .seo-content-block { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem; margin-bottom: 3rem; }
+        .seo-content-block h2 { color: #fff; margin-bottom: 1.5rem; font-size: 1.8rem; }
+        .seo-content-block p { color: #888; line-height: 1.7; margin-bottom: 1.5rem; }
+        .seo-content-block strong { color: #ccc; font-weight: 600; }
+        
+        /* FAQ Accordion */
+        .faq-section { margin-top: 3rem; }
+        .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+        .seo-faq-item:last-child { border-bottom: none; }
+        .seo-faq-q { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; user-select: none; }
+        .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; transition: transform 0.3s ease; }
+        .seo-faq-item.open .seo-faq-q::after { transform: rotate(45deg); }
+        .seo-faq-a { display: none; margin-top: 1rem; color: #888; line-height: 1.6; }
+        .seo-faq-item.open .seo-faq-a { display: block; }
+        
+        /* Related Tools */
+        .related-tools-section { padding-bottom: 4rem; }
+        .related-tools-section h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+        #tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+        .tool-card-link { background: #161616; border: 1px solid #272727; color: #e0e0e0; text-decoration: none; padding: 1.5rem; border-radius: 10px; font-weight: 500; transition: all 0.2s ease; display: block; text-align: center; }
+        .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+    </style>
+    
+    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+</head>
+<body>
+
+    <nav>
+        <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+    </nav>
+
+    <div class="hero">
+        <h1>HEIC to JPG Converter</h1>
+        <p>Turn your iPhone photos into JPGs quickly. Safe, private, and works right here in your browser.</p>
+  <p class="last-updated">Last updated: August 2026</p>
+    </div>
+
+    <div class="container">
+        
+        <div class="card">
+            <label class="upload-area" for="file-input">
+                <div class="upload-icon">📱</div>
+                <div class="upload-text">Click to Upload your HEIC image</div>
+                <div class="upload-subtext">Supports .heic and .heif files</div>
+                <input type="file" id="file-input" accept=".heic, .heif">
+            </label>
+            
+            <button class="btn-primary" onclick="convertHeic()" id="convert-btn">Convert to JPG</button>
+
+            <div id="result-box">
+                <div class="success-text">Done! Your JPG is ready. 🎉</div>
+                <a id="download-btn" class="btn-primary" href="#" download="converted_image.jpg">Download Image</a>
+            </div>
+        </div>
+
+        <div class="seo-content-block">
+            <h2>Why do you need an HEIC to JPG converter?</h2>
+            <p>If you use an iPhone, you probably know the struggle. Apple saves photos in the HEIC format to save storage space. It is a great feature for your phone. But when you move those photos to a Windows PC, an Android phone, or try to upload them to a website, they simply refuse to open.</p>
+            <p>That is where our <strong>HEIC to JPG converter</strong> comes in. We built this tool to fix that exact problem. You do not need to download heavy software or pay for a premium app just to view your own photos. Just upload your file here, and we will <strong>convert HEIC to JPG</strong> in seconds.</p>
+            <p>The best part is your privacy. Using an online <strong>HEIC converter</strong> can be risky if they upload your personal photos to their servers. Our tool works entirely inside your browser. Your images stay on your device and are completely safe.</p>
+
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">How do I convert HEIC to JPG?</div>
+                    <div class="seo-faq-a">It is very simple. Click the upload box above and pick your HEIC photo. Click the convert button. Within a few seconds, your new JPG file will be ready to download.</div>
+                </div>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">Is this HEIC converter free to use?</div>
+                    <div class="seo-faq-a">Yes. It is completely free. There are no hidden charges, no watermarks, and no sign-ups required.</div>
+                </div>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">Will converting my photo reduce its quality?</div>
+                    <div class="seo-faq-a">Our tool preserves the high quality of your original iPhone photo. It just changes the file format so you can open it anywhere easily.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="related-tools-section" id="related-tools-wrapper">
+            <h2>Explore More Image Tools</h2>
+            <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
+        </div>
+    </div>
+
+    <script>
+        // File Input Label Update
+        document.getElementById('file-input').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : "Click to Upload your HEIC image";
+            document.querySelector('.upload-text').textContent = fileName;
+            document.getElementById('result-box').style.display = 'none';
+            document.getElementById('convert-btn').textContent = 'Convert to JPG';
+            document.getElementById('convert-btn').disabled = false;
+        });
+
+        // Image Conversion Logic using heic2any
+        function convertHeic() {
+            const fileInput = document.getElementById('file-input');
+            const btn = document.getElementById('convert-btn');
+            
+            if (!fileInput.files || fileInput.files.length === 0) {
+                alert('Bhai, please select an HEIC image first.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const extension = file.name.split('.').pop().toLowerCase();
+            
+            if (extension !== 'heic' && extension !== 'heif') {
+                alert('Please upload a valid HEIC file.');
+                return;
+            }
+
+            // Update button state while converting (it takes a few seconds)
+            btn.textContent = 'Converting... Please wait';
+            btn.disabled = true;
+
+            // Use heic2any library
+            heic2any({
+                blob: file,
+                toType: "image/jpeg",
+                quality: 0.9
+            })
+            .then(function(resultBlob) {
+                // Handle cases where heic2any returns an array of blobs (for image sequences)
+                const singleBlob = Array.isArray(resultBlob) ? resultBlob[0] : resultBlob;
+                
+                // Create object URL for the JPG blob
+                const jpgUrl = URL.createObjectURL(singleBlob);
+                
+                const downloadBtn = document.getElementById('download-btn');
+                downloadBtn.href = jpgUrl;
+                
+                let newFileName = file.name.replace(/\.[^/.]+$/, "") + ".jpg";
+                downloadBtn.download = newFileName;
+                
+                document.getElementById('result-box').style.display = 'block';
+                btn.textContent = 'Convert to JPG';
+                btn.disabled = false;
+            })
+            .catch(function(error) {
+                console.error(error);
+                alert('Oops! Something went wrong during conversion. Make sure it is a valid HEIC file.');
+                btn.textContent = 'Convert to JPG';
+                btn.disabled = false;
+            });
+        }
+
+        // FAQ Accordion Logic
+        document.querySelectorAll('.seo-faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.closest('.seo-faq-item');
+                document.querySelectorAll('.seo-faq-item').forEach(other => {
+                    if (other !== item) other.classList.remove('open');
+                });
+                item.classList.toggle('open');
+            });
+        });
+
+        // Related Tools Logic (All previous tools linked)
+    </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do I convert HEIC to JPG?", "acceptedAnswer": { "@type": "Answer", "text": "It is very simple. Click the upload box above and pick your HEIC photo. Click the convert button. Within a few seconds, your new JPG file will be ready to download." } },
+    { "@type": "Question", "name": "Is this HEIC converter free to use?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It is completely free. There are no hidden charges, no watermarks, and no sign-ups required." } },
+    { "@type": "Question", "name": "Will converting my photo reduce its quality?", "acceptedAnswer": { "@type": "Answer", "text": "Our tool preserves the high quality of your original iPhone photo. It just changes the file format so you can open it anywhere easily." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Image Tools", "item": "https://toolboxkart.tech/image-tools/" },
+    { "@type": "ListItem", "position": 3, "name": "Free HEIC to JPG Converter", "item": "https://toolboxkart.tech/image-tools/heic-to-jpg-converter-tool/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free HEIC to JPG Converter",
+  "url": "https://toolboxkart.tech/image-tools/heic-to-jpg-converter-tool/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

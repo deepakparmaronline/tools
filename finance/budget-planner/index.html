@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Monthly Budget Planner & Calculator | Toolboxkart</title>
     <meta name="description" content="Manage your money with our free monthly budget planner. Track your income, expenses, and savings easily with this personal budget calculator.">
+  <link rel="canonical" href="https://toolboxkart.tech/finance/budget-planner/" />
+  <meta property="og:title" content="Free Monthly Budget Planner &amp; Calculator - Toolboxkart" />
+  <meta property="og:description" content="Manage your money with our free monthly budget planner. Track your income, expenses, and savings easily with this personal budget calculator." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/budget-planner/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
     <style>
         /* Global Reset & Base Styles */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -88,6 +94,7 @@
     <div class="hero">
         <h1>Monthly Budget Planner</h1>
         <p>Take control of your finances. Track your monthly income against your expenses and find out exactly how much you can save.</p>
+  <p class="last-updated">Last updated: August 2026</p>
     </div>
 
     <!-- Main Container -->
@@ -180,11 +187,9 @@
         </div>
 
         <!-- Related Tools Section -->
-        <div class="related-tools-section" id="related-tools-wrapper">
+        <div class="related-tools-section">
             <h2>Explore More Finance Tools</h2>
-            <div id="tools-grid">
-                <!-- Javascript will populate this -->
-            </div>
+            <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
         </div>
 
     </div>
@@ -250,31 +255,40 @@
         });
 
         // 3. Related Tools Logic (Tools 24, 25, 26)
-        const relatedTools = [
-            { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
-            { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
-            { name: "Take-Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
-        ];
-
-        function loadRelatedTools() {
-            const container = document.getElementById('tools-grid');
-            const wrapper = document.getElementById('related-tools-wrapper');
-
-            if (relatedTools.length === 0) {
-                wrapper.style.display = 'none';
-                return;
-            }
-
-            relatedTools.forEach(tool => {
-                const link = document.createElement('a'); 
-                link.href = tool.url; 
-                link.className = 'tool-card-link'; 
-                link.textContent = tool.name; 
-                container.appendChild(link);
-            });
-        }
-        
-        loadRelatedTools();
     </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the 50/30/20 budget rule?", "acceptedAnswer": { "@type": "Answer", "text": "The 50/30/20 rule is a popular budgeting method. It suggests spending 50% of your after-tax income on needs (rent, groceries, bills), 30% on wants (entertainment, dining out), and dedicating 20% to savings and paying off debt. Our budget calculator can help you see if you align with this rule." } },
+    { "@type": "Question", "name": "How do I create a personal budget?", "acceptedAnswer": { "@type": "Answer", "text": "To create a personal budget, first calculate your total monthly take-home pay. Then, list all your fixed and variable expenses. Subtract your total expenses from your income using a monthly budget calculator. If you have a positive balance, direct it towards savings. If it's negative, you need to cut down on non-essential spending." } },
+    { "@type": "Question", "name": "Should I track every single expense?", "acceptedAnswer": { "@type": "Answer", "text": "When you are just starting out, tracking every expense is highly recommended. It reveals hidden spending habits. Once you have a steady routine and a reliable expense planner, tracking major categories monthly is usually enough to keep you on track." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "Free Monthly Budget Planner & Calculator", "item": "https://toolboxkart.tech/finance/budget-planner/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Monthly Budget Planner & Calculator",
+  "url": "https://toolboxkart.tech/finance/budget-planner/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Add Watermark to Image Tool | Protect Your Photos - Toolboxkart</title>
+  <meta name="description" content="Easily add custom text or logo watermarks to your images online. Protect your photos and copyright with our free, secure, browser-based watermark tool." />
+  <link rel="canonical" href="https://toolboxkart.tech/image-tools/add-watermark/" />
+  
+  <meta property="og:title" content="Free Add Watermark to Image Tool - Toolboxkart" />
+  <meta property="og:description" content="Easily add custom text or logo watermarks to your images online. Protect your photos and copyright with our free, secure, browser-based watermark tool." />
+  <meta property="og:url" content="https://toolboxkart.tech/image-tools/add-watermark/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-brand span { color: #7c6fcd; }
+
+    .hero { text-align: center; padding: 3rem 1rem 1.5rem; }
+    .hero h1 { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+    .hero p { color: #888; max-width: 650px; margin: 0 auto; line-height: 1.5; }
+    .last-updated { color: #666; font-size: 0.8rem; margin-top: 0.8rem; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 4rem; }
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2rem; margin-bottom: 2rem; }
+
+    label { display: block; font-size: 0.9rem; font-weight: 600; color: #ccc; margin-bottom: 0.5rem; margin-top: 1.2rem; }
+    label:first-child { margin-top: 0; }
+    input, select, textarea { width: 100%; background: #222; color: #fff; border: 1px solid #333; border-radius: 8px; padding: 1rem; font-size: 1rem; outline: none; transition: 0.2s; font-family: inherit; }
+    input:focus, select:focus, textarea:focus { border-color: #7c6fcd; }
+    input[type="file"] { padding: 0.8rem; cursor: pointer; }
+    input[type="color"] { padding: 0.5rem; height: 50px; cursor: pointer; }
+    input[type="range"] { padding: 0; height: 6px; border-radius: 3px; background: #333; -webkit-appearance: none; cursor: pointer; margin-top: 0.5rem; }
+    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: #7c6fcd; border-radius: 50%; }
+
+    .controls-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 600px) { .controls-grid { grid-template-columns: 1fr; } }
+
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: background 0.2s; margin-top: 1.5rem; }
+    button.btn-primary:hover { background: #6a5eb8; }
+
+    .result-box { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; margin-top: 2rem; display: none; text-align: center; }
+    canvas#previewCanvas { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid #333; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+
+    .seo-content-block h2 { font-size: 1.4rem; color: #fff; margin: 2rem 0 1rem; }
+    .seo-content-block p { color: #888; line-height: 1.7; margin-bottom: 1rem; }
+    .seo-content-block strong { color: #ccc; font-weight: 600; }
+
+    .seo-faq-item { border-bottom: 1px solid #1e1e1e; padding: 1rem 0; }
+    .seo-faq-q { font-weight: 600; color: #ccc; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.2rem; color: #7c6fcd; transition: transform 0.3s; }
+    .seo-faq-item.open .seo-faq-q::after { transform: rotate(45deg); }
+    .seo-faq-a { font-size: .95rem; color: #888; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .seo-faq-item.open .seo-faq-a { max-height: 500px; padding-top: .8rem; }
+
+    .related-tools-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #272727; }
+    .related-tools-section h3 { color: #fff; font-size: 1.3rem; margin-bottom: 1rem; }
+
+    .resources-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #272727; }
+    .resources-section h3 { color: #fff; font-size: 1.3rem; margin-bottom: 1rem; }
+    .resources-list { list-style: none; }
+    .resources-list li { margin-bottom: 0.8rem; }
+    .resources-list a { color: #7c6fcd; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .resources-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav><a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a></nav>
+
+<div class="hero">
+  <h1>Add Watermark to Image</h1>
+  <p>Protect your photos and maintain copyright securely in your browser using custom text or logos.</p>
+  <p class="last-updated">Last updated: August 2026</p>
+</div>
+
+<div class="container">
+  <div class="card">
+    <label for="baseInput">Upload Base Image (JPG, PNG, WebP)</label>
+    <input type="file" id="baseInput" accept="image/*" />
+
+    <div id="controlsArea" style="display: none; margin-top: 1.5rem;">
+      <label for="wmType">Watermark Type</label>
+      <select id="wmType">
+        <option value="text">Text Watermark</option>
+        <option value="image">Image Logo</option>
+      </select>
+
+      <div id="textSettings" class="controls-grid">
+        <div>
+          <label for="wmText">Watermark Text</label>
+          <input type="text" id="wmText" value="© Copyright" />
+        </div>
+        <div>
+          <label for="wmColor">Text Color</label>
+          <input type="color" id="wmColor" value="#ffffff" />
+        </div>
+      </div>
+
+      <div id="imageSettings" style="display: none;">
+        <label for="logoInput">Upload Logo Image (PNG with transparency recommended)</label>
+        <input type="file" id="logoInput" accept="image/png, image/jpeg, image/webp, image/svg+xml" />
+      </div>
+
+      <div class="controls-grid">
+        <div>
+          <label for="wmPosition">Position</label>
+          <select id="wmPosition">
+            <option value="bottom-right">Bottom Right</option>
+            <option value="bottom-left">Bottom Left</option>
+            <option value="top-right">Top Right</option>
+            <option value="top-left">Top Left</option>
+            <option value="center">Center</option>
+            <option value="tile">Tile (Repeat over image)</option>
+          </select>
+        </div>
+        <div>
+          <label for="wmOpacity">Opacity: <span id="opacityVal">50%</span></label>
+          <input type="range" id="wmOpacity" min="5" max="100" value="50" />
+        </div>
+      </div>
+
+      <label for="wmSize">Size / Scale: <span id="sizeVal">10%</span></label>
+      <input type="range" id="wmSize" min="1" max="100" value="10" />
+    </div>
+
+    <div id="result-box" class="result-box">
+      <label>Live Preview</label>
+      <canvas id="previewCanvas"></canvas>
+      <button class="btn-primary" onclick="downloadImage()">Download Watermarked Image</button>
+    </div>
+  </div>
+
+  <div class="seo-content-block">
+    <h2>Why Add a Watermark to Your Images?</h2>
+    <p>Sharing your creative work online always comes with the risk of unauthorized use. Using an <strong>Add Watermark to Image</strong> tool allows you to overlay a visible logo, brand name, or copyright text directly onto your photos. This acts as a powerful deterrent against image theft, ensures proper attribution when your images are shared on social media, and helps build consistent brand awareness across the web.</p>
+
+    <h2>How to Watermark Photos Online</h2>
+    <p>Our browser-based tool makes it simple to protect your assets without downloading heavy software. Simply upload your base image, choose between a text or image watermark, and adjust the settings. You can easily tweak the opacity to create a subtle watermark that doesn't distract from the photo, or use the "Tile" position to repeat the text across the entire image for maximum protection. Best of all, your images are processed entirely on your own device—guaranteeing complete privacy.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Are my photos safe when I upload them?</div>
+      <div class="seo-faq-a">Absolutely. This tool operates 100% locally within your web browser using HTML5 Canvas technology. Your images are never uploaded to a server, stored, or viewed by anyone else. Your privacy is fully guaranteed.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Can I use both text and image logos as watermarks?</div>
+      <div class="seo-faq-a">Yes! You can select either a "Text Watermark" to quickly type your brand name or copyright symbol, or switch to an "Image Logo" to upload your own transparent PNG brand logo.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Will adding a watermark reduce my image quality?</div>
+      <div class="seo-faq-a">No, the tool maintains the original resolution of your base image. When you click download, the canvas generates a high-quality file that matches your original photo's dimensions perfectly.</div>
+    </div>
+  </div>
+
+  <div class="related-tools-section">
+    <h3>Explore More Image Tools</h3>
+    <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
+  </div>
+
+  <div class="resources-section">
+    <h3>Guides & Resources</h3>
+    <ul class="resources-list">
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial" target="_blank" rel="nofollow noopener">📄 MDN Web Docs: HTML5 Canvas API Tutorial</a></li>
+      <li><a href="https://www.w3.org/TR/png/" target="_blank" rel="nofollow noopener">📄 W3C: Portable Network Graphics (PNG) Specification</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const baseInput = document.getElementById('baseInput');
+  const logoInput = document.getElementById('logoInput');
+  const wmType = document.getElementById('wmType');
+  const wmText = document.getElementById('wmText');
+  const wmColor = document.getElementById('wmColor');
+  const wmPosition = document.getElementById('wmPosition');
+  const wmOpacity = document.getElementById('wmOpacity');
+  const wmSize = document.getElementById('wmSize');
+  
+  const textSettings = document.getElementById('textSettings');
+  const imageSettings = document.getElementById('imageSettings');
+  const controlsArea = document.getElementById('controlsArea');
+  const resultBox = document.getElementById('result-box');
+  const previewCanvas = document.getElementById('previewCanvas');
+  const ctx = previewCanvas.getContext('2d');
+
+  let baseImg = new Image();
+  let logoImg = new Image();
+  let baseLoaded = false;
+  let logoLoaded = false;
+  let originalFileName = 'watermarked-image';
+
+  // Base Image Upload
+  baseInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      originalFileName = file.name.replace(/\.[^/.]+$/, "");
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        baseImg.src = event.target.result;
+        baseImg.onload = () => {
+          baseLoaded = true;
+          controlsArea.style.display = 'block';
+          resultBox.style.display = 'block';
+          drawCanvas();
+        };
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Logo Upload
+  logoInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        logoImg.src = event.target.result;
+        logoImg.onload = () => {
+          logoLoaded = true;
+          drawCanvas();
+        };
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Toggle Text/Image settings
+  wmType.addEventListener('change', () => {
+    if (wmType.value === 'text') {
+      textSettings.style.display = 'grid';
+      imageSettings.style.display = 'none';
+    } else {
+      textSettings.style.display = 'none';
+      imageSettings.style.display = 'block';
+    }
+    drawCanvas();
+  });
+
+  // Event Listeners for real-time preview
+  [wmText, wmColor, wmPosition].forEach(el => el.addEventListener('input', drawCanvas));
+  
+  wmOpacity.addEventListener('input', (e) => {
+    document.getElementById('opacityVal').textContent = `${e.target.value}%`;
+    drawCanvas();
+  });
+  
+  wmSize.addEventListener('input', (e) => {
+    document.getElementById('sizeVal').textContent = `${e.target.value}%`;
+    drawCanvas();
+  });
+
+  function drawCanvas() {
+    if (!baseLoaded) return;
+
+    // Set canvas to exact dimensions of original image
+    previewCanvas.width = baseImg.width;
+    previewCanvas.height = baseImg.height;
+
+    // Draw base image
+    ctx.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
+    ctx.drawImage(baseImg, 0, 0);
+
+    // Apply global opacity
+    const opacity = parseInt(wmOpacity.value) / 100;
+    ctx.globalAlpha = opacity;
+
+    const position = wmPosition.value;
+    const padding = Math.max(previewCanvas.width, previewCanvas.height) * 0.03; // 3% padding
+
+    if (wmType.value === 'text') {
+      const text = wmText.value || ' ';
+      const sizeRatio = parseInt(wmSize.value) / 100;
+      // Font size based on image width
+      const fontSize = Math.max(previewCanvas.width * sizeRatio, 12);
+      
+      ctx.font = `bold ${fontSize}px sans-serif`;
+      ctx.fillStyle = wmColor.value;
+      
+      if (position === 'tile') {
+        drawTiledText(text, fontSize);
+      } else {
+        drawSingleText(text, position, padding);
+      }
+    } 
+    else if (wmType.value === 'image' && logoLoaded) {
+      const sizeRatio = parseInt(wmSize.value) / 100;
+      const logoWidth = previewCanvas.width * sizeRatio;
+      const logoHeight = (logoImg.height / logoImg.width) * logoWidth;
+      
+      if (position === 'tile') {
+        drawTiledImage(logoWidth, logoHeight);
+      } else {
+        drawSingleImage(logoWidth, logoHeight, position, padding);
+      }
+    }
+    
+    // Reset alpha
+    ctx.globalAlpha = 1.0;
+  }
+
+  function drawSingleText(text, position, padding) {
+    let x, y;
+    ctx.textBaseline = 'top';
+
+    if (position.includes('left')) {
+      x = padding;
+      ctx.textAlign = 'left';
+    } else if (position.includes('right')) {
+      x = previewCanvas.width - padding;
+      ctx.textAlign = 'right';
+    } else {
+      x = previewCanvas.width / 2;
+      ctx.textAlign = 'center';
+    }
+
+    if (position.includes('top')) {
+      y = padding;
+    } else if (position.includes('bottom')) {
+      y = previewCanvas.height - padding;
+      ctx.textBaseline = 'bottom';
+    } else {
+      y = previewCanvas.height / 2;
+      ctx.textBaseline = 'middle';
+    }
+
+    // Add slight shadow for better readability
+    ctx.shadowColor = "rgba(0,0,0,0.5)";
+    ctx.shadowBlur = 4;
+    ctx.shadowOffsetX = 2;
+    ctx.shadowOffsetY = 2;
+    ctx.fillText(text, x, y);
+    // Reset shadow
+    ctx.shadowColor = "transparent";
+  }
+
+  function drawTiledText(text, fontSize) {
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'top';
+    const metrics = ctx.measureText(text);
+    const textWidth = metrics.width + (previewCanvas.width * 0.1); 
+    const textHeight = fontSize + (previewCanvas.height * 0.1);
+
+    ctx.rotate(-Math.PI / 6); // slight angle
+    
+    // Expand loop bounds to cover rotated canvas
+    for (let x = -previewCanvas.width; x < previewCanvas.width * 2; x += textWidth) {
+      for (let y = -previewCanvas.height; y < previewCanvas.height * 2; y += textHeight) {
+        ctx.fillText(text, x, y);
+      }
+    }
+    ctx.rotate(Math.PI / 6); // reset angle
+  }
+
+  function drawSingleImage(logoWidth, logoHeight, position, padding) {
+    let x, y;
+    
+    if (position.includes('left')) x = padding;
+    else if (position.includes('right')) x = previewCanvas.width - logoWidth - padding;
+    else x = (previewCanvas.width - logoWidth) / 2;
+
+    if (position.includes('top')) y = padding;
+    else if (position.includes('bottom')) y = previewCanvas.height - logoHeight - padding;
+    else y = (previewCanvas.height - logoHeight) / 2;
+
+    ctx.drawImage(logoImg, x, y, logoWidth, logoHeight);
+  }
+
+  function drawTiledImage(logoWidth, logoHeight) {
+    const spacingX = logoWidth + (previewCanvas.width * 0.1);
+    const spacingY = logoHeight + (previewCanvas.height * 0.1);
+    
+    for (let x = 0; x < previewCanvas.width; x += spacingX) {
+      for (let y = 0; y < previewCanvas.height; y += spacingY) {
+        ctx.drawImage(logoImg, x, y, logoWidth, logoHeight);
+      }
+    }
+  }
+
+  function downloadImage() {
+    if (!baseLoaded) return;
+    const link = document.createElement('a');
+    link.download = `${originalFileName}-watermarked.png`;
+    link.href = previewCanvas.toDataURL('image/png', 1.0);
+    link.click();
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.seo-faq-q').forEach(q => {
+    q.addEventListener('click', () => q.closest('.seo-faq-item').classList.toggle('open'));
+  });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are my photos safe when I upload them?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. This tool operates 100% locally within your web browser using HTML5 Canvas technology. Your images are never uploaded to a server, stored, or viewed by anyone else. Your privacy is fully guaranteed." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use both text and image logos as watermarks?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes! You can select either a Text Watermark to quickly type your brand name or copyright symbol, or switch to an Image Logo to upload your own transparent PNG brand logo." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will adding a watermark reduce my image quality?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, the tool maintains the original resolution of your base image. When you click download, the canvas generates a high-quality file that matches your original photo's dimensions perfectly." }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Image Tools", "item": "https://toolboxkart.tech/image-tools/" },
+    { "@type": "ListItem", "position": 3, "name": "Add Watermark to Image", "item": "https://toolboxkart.tech/image-tools/add-watermark/" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Add Watermark to Image",
+  "url": "https://toolboxkart.tech/image-tools/add-watermark/",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

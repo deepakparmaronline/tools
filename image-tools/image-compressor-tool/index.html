@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Image Compressor | Reduce Image Size | Toolboxkart</title>
+    <meta name="description" content="Compress images without losing quality. Our free image compressor tool reduces file size instantly right in your browser. Fast and secure.">
+    
+    <link rel="canonical" href="https://toolboxkart.tech/image-tools/image-compressor-tool/">
+    
+  <meta property="og:title" content="Free Image Compressor - Toolboxkart" />
+  <meta property="og:description" content="Compress images without losing quality. Our free image compressor tool reduces file size instantly right in your browser. Fast and secure." />
+  <meta property="og:url" content="https://toolboxkart.tech/image-tools/image-compressor-tool/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+    <style>
+        /* Global Reset & Base Styles */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+        
+        /* Navigation */
+        nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+        .nav-brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
+        .nav-brand span { color: #7c6fcd; }
+        
+        /* Layout & Container */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+        
+        /* Hero Section */
+        .hero { text-align: center; padding: 4rem 1rem 3rem; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .hero p { color: #888; font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.5; }
+        
+        /* Tool Card & Inputs */
+        .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem; margin-bottom: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; }
+        
+        .upload-area { border: 2px dashed #333; padding: 3rem 2rem; border-radius: 10px; cursor: pointer; transition: all 0.3s ease; margin-bottom: 1.5rem; background: #111; display: block; }
+        .upload-area:hover { border-color: #7c6fcd; background: #1a1a24; }
+        .upload-area input[type="file"] { display: none; }
+        .upload-icon { font-size: 3rem; margin-bottom: 1rem; color: #7c6fcd; }
+        .upload-text { font-size: 1.2rem; color: #ccc; margin-bottom: 0.5rem; font-weight: 500; }
+        .upload-subtext { font-size: 0.9rem; color: #666; }
+
+        .slider-group { margin-bottom: 2rem; text-align: left; }
+        .slider-group label { display: block; color: #ccc; margin-bottom: 0.5rem; font-weight: 500; }
+        .slider-group input[type="range"] { width: 100%; accent-color: #7c6fcd; }
+
+        button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem 2rem; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1.1rem; transition: background 0.2s ease; display: inline-block; text-decoration: none; width: 100%; max-width: 300px; }
+        button.btn-primary:hover { background: #6b5eb8; }
+        
+        /* Result Box */
+        #result-box { display: none; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #272727; }
+        .success-text { font-size: 1.2rem; color: #4ade80; margin-bottom: 1rem; font-weight: 600; }
+        .size-info { color: #888; margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .size-info span { color: #ccc; font-weight: 600; }
+        
+        /* SEO Content Block */
+        .seo-content-block { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2.5rem; margin-bottom: 3rem; }
+        .seo-content-block h2 { color: #fff; margin-bottom: 1.5rem; font-size: 1.8rem; }
+        .seo-content-block p { color: #888; line-height: 1.7; margin-bottom: 1.5rem; }
+        .seo-content-block strong { color: #ccc; font-weight: 600; }
+        
+        /* FAQ Accordion */
+        .faq-section { margin-top: 3rem; }
+        .seo-faq-item { border-bottom: 1px solid #272727; padding: 1.2rem 0; }
+        .seo-faq-item:last-child { border-bottom: none; }
+        .seo-faq-q { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; color: #e0e0e0; font-size: 1.1rem; user-select: none; }
+        .seo-faq-q::after { content: '+'; font-size: 1.5rem; color: #7c6fcd; transition: transform 0.3s ease; }
+        .seo-faq-item.open .seo-faq-q::after { transform: rotate(45deg); }
+        .seo-faq-a { display: none; margin-top: 1rem; color: #888; line-height: 1.6; }
+        .seo-faq-item.open .seo-faq-a { display: block; }
+        
+        /* Related Tools */
+        .related-tools-section { padding-bottom: 4rem; }
+        .related-tools-section h2 { color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; }
+        #tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+        .tool-card-link { background: #161616; border: 1px solid #272727; color: #e0e0e0; text-decoration: none; padding: 1.5rem; border-radius: 10px; font-weight: 500; transition: all 0.2s ease; display: block; text-align: center; }
+        .tool-card-link:hover { border-color: #7c6fcd; color: #7c6fcd; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
+    </nav>
+
+    <div class="hero">
+        <h1>Image Compressor</h1>
+        <p>Reduce image size in KB or MB without losing visual quality. Make your website load faster and save storage space.</p>
+  <p class="last-updated">Last updated: August 2026</p>
+    </div>
+
+    <div class="container">
+        
+        <div class="card">
+            <label class="upload-area" for="file-input">
+                <div class="upload-icon">📉</div>
+                <div class="upload-text">Click to Upload Image</div>
+                <div class="upload-subtext">Supports JPG, PNG, WebP</div>
+                <input type="file" id="file-input" accept="image/jpeg, image/png, image/webp">
+            </label>
+            
+            <div class="slider-group">
+                <label for="quality-slider">Compression Level: <span id="quality-val">70</span>%</label>
+                <input type="range" id="quality-slider" min="10" max="100" value="70">
+            </div>
+
+            <button class="btn-primary" onclick="compressImage()" id="compress-btn">Compress Photo</button>
+
+            <div id="result-box">
+                <div class="success-text">Image Compressed Successfully! 🎉</div>
+                <div class="size-info">
+                    Original Size: <span id="old-size">0 KB</span> | New Size: <span id="new-size">0 KB</span>
+                </div>
+                <a id="download-btn" class="btn-primary" href="#" download="compressed_image.jpg">Download Image</a>
+            </div>
+        </div>
+
+        <div class="seo-content-block">
+            <h2>Why you should reduce image size</h2>
+            <p>Heavy images slow down your website. Nobody likes waiting for a slow page to load, and search engines like Google hate it too. If you want better SEO rankings and a smooth user experience, you need to use an <strong>image compressor</strong>.</p>
+            <p>Our tool makes it simple to <strong>reduce image size</strong>. You don't need any technical skills. Just upload your photo, adjust the compression slider to find the perfect balance between size and quality, and download your optimized image. Whether you need to compress a massive camera photo to a few KBs or just trim down a blog image, this <strong>compress photo</strong> tool handles it instantly.</p>
+            <p>Everything runs straight in your browser. We don't store your images, so your data stays completely private.</p>
+
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">Does compressing an image ruin the quality?</div>
+                    <div class="seo-faq-a">Not if you do it right. Our <strong>image compressor</strong> uses smart algorithms to remove unnecessary data from the file without making the image look blurry. A quality level around 70-80% usually gives you a massive file size drop with zero visible changes.</div>
+                </div>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">What image formats can I compress?</div>
+                    <div class="seo-faq-a">You can compress popular formats like JPG, PNG, and WebP using this tool. The final output is optimized and ready for the web.</div>
+                </div>
+                
+                <div class="seo-faq-item">
+                    <div class="seo-faq-q">Are my photos safe here?</div>
+                    <div class="seo-faq-a">100% safe. This tool works locally on your device. Your images are never uploaded to any cloud servers, keeping your privacy intact.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="related-tools-section" id="related-tools-wrapper">
+            <h2>Explore More Image Tools</h2>
+            <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
+        </div>
+
+    </div>
+
+    <script>
+        let originalFile = null;
+
+        // Slider value update
+        document.getElementById('quality-slider').addEventListener('input', function(e) {
+            document.getElementById('quality-val').textContent = e.target.value;
+        });
+
+        // File Input Update
+        document.getElementById('file-input').addEventListener('change', function(e) {
+            originalFile = e.target.files[0];
+            const fileName = originalFile ? originalFile.name : "Click to Upload Image";
+            document.querySelector('.upload-text').textContent = fileName;
+            document.getElementById('result-box').style.display = 'none';
+        });
+
+        // Format bytes to KB/MB
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        // Image Compression Logic
+        function compressImage() {
+            if (!originalFile) {
+                alert('Bhai, pehle image toh select kar lo.');
+                return;
+            }
+
+            const quality = document.getElementById('quality-slider').value / 100;
+            const reader = new FileReader();
+            
+            reader.onload = function(event) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+                    
+                    // Compress to JPEG format
+                    const compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
+                    
+                    // Calculate new size approximately
+                    const head = 'data:image/jpeg;base64,';
+                    const base64Str = compressedDataUrl.substring(head.length);
+                    const newSizeInBytes = Math.ceil((base64Str.length * 3) / 4);
+
+                    // Update UI
+                    document.getElementById('old-size').textContent = formatBytes(originalFile.size);
+                    document.getElementById('new-size').textContent = formatBytes(newSizeInBytes);
+                    
+                    const downloadBtn = document.getElementById('download-btn');
+                    downloadBtn.href = compressedDataUrl;
+                    
+                    let newFileName = originalFile.name.replace(/\.[^/.]+$/, "") + "-compressed.jpg";
+                    downloadBtn.download = newFileName;
+                    
+                    document.getElementById('result-box').style.display = 'block';
+                }
+                img.src = event.target.result;
+            }
+            reader.readAsDataURL(originalFile);
+        }
+
+        // FAQ Accordion Logic
+        document.querySelectorAll('.seo-faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.closest('.seo-faq-item');
+                document.querySelectorAll('.seo-faq-item').forEach(other => {
+                    if (other !== item) other.classList.remove('open');
+                });
+                item.classList.toggle('open');
+            });
+        });
+
+        // Related Tools Logic (Current + Previous)
+    </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Does compressing an image ruin the quality?", "acceptedAnswer": { "@type": "Answer", "text": "Not if you do it right. Our image compressor uses smart algorithms to remove unnecessary data from the file without making the image look blurry. A quality level around 70-80% usually gives you a massive file size drop with zero visible changes." } },
+    { "@type": "Question", "name": "What image formats can I compress?", "acceptedAnswer": { "@type": "Answer", "text": "You can compress popular formats like JPG, PNG, and WebP using this tool. The final output is optimized and ready for the web." } },
+    { "@type": "Question", "name": "Are my photos safe here?", "acceptedAnswer": { "@type": "Answer", "text": "100% safe. This tool works locally on your device. Your images are never uploaded to any cloud servers, keeping your privacy intact." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Image Tools", "item": "https://toolboxkart.tech/image-tools/" },
+    { "@type": "ListItem", "position": 3, "name": "Free Image Compressor", "item": "https://toolboxkart.tech/image-tools/image-compressor-tool/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Image Compressor",
+  "url": "https://toolboxkart.tech/image-tools/image-compressor-tool/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

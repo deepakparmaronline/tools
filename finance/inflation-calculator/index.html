@@ -6,6 +6,12 @@
   <title>Inflation Calculator | Indian Purchasing Power Calculator - Toolboxkart</title>
   <meta name="description" content="Use our free Inflation Calculator to evaluate the impact of inflation on your money over time. Calculate future costs and historical purchasing power instantly.">
   
+  <link rel="canonical" href="https://toolboxkart.tech/finance/inflation-calculator/" />
+  <meta property="og:title" content="Inflation Calculator - Toolboxkart" />
+  <meta property="og:description" content="Use our free Inflation Calculator to evaluate the impact of inflation on your money over time. Calculate future costs and historical purchasing power instantly." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/inflation-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <style>
     /* Global Rules */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -82,6 +88,7 @@
   <div class="hero">
     <h1>Inflation Calculator</h1>
     <p>Calculate the impact of inflation over time and determine the future value of your money's purchasing power.</p>
+  <p class="last-updated">Last updated: August 2026</p>
   </div>
 
   <!-- Tool Container -->
@@ -158,7 +165,7 @@
   <!-- Related Tools -->
   <div class="container related-tools">
     <h2>More Finance Tools</h2>
-    <div id="tools-grid"></div>
+    <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
   </div>
 
   <!-- JavaScript -->
@@ -211,44 +218,41 @@
     });
 
     // 3. Related Tools Logic (Dynamically loading all completed tools, including POMIS)
-    const relatedTools = [
-      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
-      { name: "Budget Planner", url: "/finance/budget-planner" },
-      { name: "CAGR Calculator", url: "/finance/cagr-calculator" },
-      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
-      { name: "EMI Calculator", url: "/finance/emi-calculator" },
-      { name: "EPF Calculator", url: "/finance/epf-calculator" },
-      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
-      { name: "FD Calculator", url: "/finance/fd-calculator" },
-      { name: "Gratuity Calculator", url: "/finance/gratuity-calculator" },
-      { name: "GST Calculator", url: "/finance/gst-calculator" },
-      { name: "HRA Calculator", url: "/finance/hra-calculator" },
-      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
-      { name: "NPS Calculator", url: "/finance/nps-calculator" },
-      { name: "Post Office MIS Calculator", url: "/finance/pomis-calculator" },
-      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
-      { name: "RD Calculator", url: "/finance/rd-calculator" },
-      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
-      { name: "ROI Calculator", url: "/finance/roi-calculator" },
-      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
-      { name: "SSY Calculator", url: "/finance/ssy-calculator" },
-      { name: "Step-Up SIP Calculator", url: "/finance/step-up-sip-calculator" },
-      { name: "SWP Calculator", url: "/finance/swp-calculator" },
-      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
-    ];
-    
-    function loadRelatedTools() {
-      const container = document.getElementById('tools-grid');
-      relatedTools.forEach(tool => {
-        const link = document.createElement('a'); 
-        link.href = tool.url; 
-        link.className = 'tool-card-link'; 
-        link.textContent = tool.name; 
-        container.appendChild(link);
-      });
-    }
-    loadRelatedTools();
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the formula to calculate the impact of inflation?", "acceptedAnswer": { "@type": "Answer", "text": "Inflation uses the compound interest formula to estimate future cost increases: Future Value = Current Amount × (1 + Inflation Rate / 100) ^ Years. To see how much value today's cash loses, the reverse formula is used: Future Purchasing Power = Current Amount / (1 + Inflation Rate / 100) ^ Years." } },
+    { "@type": "Question", "name": "What is the average inflation rate in India?", "acceptedAnswer": { "@type": "Answer", "text": "Historically, the average consumer price index (CPI) inflation rate in India has generally hovered between 5% and 6% per annum over the past couple of decades. When executing long-term retirement goals, it is recommended to factor in at least a 6% inflation baseline." } },
+    { "@type": "Question", "name": "How do I protect my long-term savings from inflation?", "acceptedAnswer": { "@type": "Answer", "text": "To protect your wealth, you must invest in assets that deliver post-tax returns higher than the prevailing inflation rate. Fixed deposits (FDs) often match or fall slightly below inflation, whereas historical equity investments via SIPs, index funds, and real estate have outpaced inflation over long horizons." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "Inflation Calculator", "item": "https://toolboxkart.tech/finance/inflation-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Inflation Calculator",
+  "url": "https://toolboxkart.tech/finance/inflation-calculator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

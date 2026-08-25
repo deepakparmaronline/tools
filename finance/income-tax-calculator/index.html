@@ -6,6 +6,12 @@
   <title>Income Tax Calculator | Old vs New Tax Regime 2026-27 - Toolboxkart</title>
   <meta name="description" content="Free online Income Tax Calculator for India (FY 2025-26 / AY 2026-27). Compare Old vs New Tax Regime and find out which saves you more tax instantly.">
   
+  <link rel="canonical" href="https://toolboxkart.tech/finance/income-tax-calculator/" />
+  <meta property="og:title" content="Income Tax Calculator - Toolboxkart" />
+  <meta property="og:description" content="Free online Income Tax Calculator for India (FY 2025-26 / AY 2026-27). Compare Old vs New Tax Regime and find out which saves you more tax instantly." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/income-tax-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <style>
     /* Global Rules */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -94,6 +100,7 @@
   <div class="hero">
     <h1>Income Tax Calculator</h1>
     <p>Compare the Old vs New Tax Regime (AY 2026-27) and find out how to maximize your tax savings.</p>
+  <p class="last-updated">Last updated: August 2026</p>
   </div>
 
   <!-- Tool Container -->
@@ -176,7 +183,7 @@
   <!-- Related Tools -->
   <div class="container related-tools">
     <h2>More Finance Tools</h2>
-    <div id="tools-grid"></div>
+    <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
   </div>
 
   <!-- JavaScript -->
@@ -315,46 +322,41 @@
     });
 
     // Related Tools Logic (Dynamically loading all completed tools, including Mutual Fund Tax)
-    const relatedTools = [
-      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
-      { name: "Budget Planner", url: "/finance/budget-planner" },
-      { name: "CAGR Calculator", url: "/finance/cagr-calculator" },
-      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
-      { name: "EMI Calculator", url: "/finance/emi-calculator" },
-      { name: "EPF Calculator", url: "/finance/epf-calculator" },
-      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
-      { name: "FD Calculator", url: "/finance/fd-calculator" },
-      { name: "Gratuity Calculator", url: "/finance/gratuity-calculator" },
-      { name: "GST Calculator", url: "/finance/gst-calculator" },
-      { name: "HRA Calculator", url: "/finance/hra-calculator" },
-      { name: "Inflation Calculator", url: "/finance/inflation-calculator" },
-      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
-      { name: "Mutual Fund Tax Calculator", url: "/finance/mutual-fund-tax-calculator" },
-      { name: "NPS Calculator", url: "/finance/nps-calculator" },
-      { name: "Post Office MIS Calculator", url: "/finance/pomis-calculator" },
-      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
-      { name: "RD Calculator", url: "/finance/rd-calculator" },
-      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
-      { name: "ROI Calculator", url: "/finance/roi-calculator" },
-      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
-      { name: "SSY Calculator", url: "/finance/ssy-calculator" },
-      { name: "Step-Up SIP Calculator", url: "/finance/step-up-sip-calculator" },
-      { name: "SWP Calculator", url: "/finance/swp-calculator" },
-      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
-    ];
-    
-    function loadRelatedTools() {
-      const container = document.getElementById('tools-grid');
-      relatedTools.forEach(tool => {
-        const link = document.createElement('a'); 
-        link.href = tool.url; 
-        link.className = 'tool-card-link'; 
-        link.textContent = tool.name; 
-        container.appendChild(link);
-      });
-    }
-    loadRelatedTools();
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What are the latest tax slabs under the New Tax Regime?", "acceptedAnswer": { "@type": "Answer", "text": "For AY 2026-27, the slabs are: ₹0-4L is Nil. ₹4L-8L is 5%. ₹8L-12L is 10%. ₹12L-16L is 15%. ₹16L-20L is 20%. ₹20L-24L is 25%. Above ₹24L is 30%." } },
+    { "@type": "Question", "name": "What is the Section 87A Rebate?", "acceptedAnswer": { "@type": "Answer", "text": "Section 87A is a tax rebate that reduces your liability to zero if your taxable income falls below a certain threshold. In the Old Regime, it makes income up to ₹5 Lakh tax-free. Under the New Regime, it makes income up to ₹12 Lakh entirely tax-free." } },
+    { "@type": "Question", "name": "Do I get Standard Deduction in the New Regime?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Salaried employees and pensioners are now eligible for a Standard Deduction of ₹75,000 under the New Tax Regime. Under the Old Regime, the Standard Deduction remains at ₹50,000." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "Income Tax Calculator", "item": "https://toolboxkart.tech/finance/income-tax-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Income Tax Calculator",
+  "url": "https://toolboxkart.tech/finance/income-tax-calculator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

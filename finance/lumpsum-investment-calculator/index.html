@@ -6,6 +6,12 @@
   <title>Lumpsum Calculator | Mutual Fund Returns - Toolboxkart</title>
   <meta name="description" content="Calculate your mutual fund lumpsum investment returns effortlessly. Estimate wealth creation and expected return rate with our free lumpsum calculator.">
   
+  <link rel="canonical" href="https://toolboxkart.tech/finance/lumpsum-investment-calculator/" />
+  <meta property="og:title" content="Lumpsum Calculator - Toolboxkart" />
+  <meta property="og:description" content="Calculate your mutual fund lumpsum investment returns effortlessly. Estimate wealth creation and expected return rate with our free lumpsum calculator." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/lumpsum-investment-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <style>
     /* Global Rules */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -79,6 +85,7 @@
   <div class="hero">
     <h1>Lumpsum Investment Calculator</h1>
     <p>Calculate your mutual fund returns and track your wealth creation over time.</p>
+  <p class="last-updated">Last updated: August 2026</p>
   </div>
 
   <!-- Tool Container -->
@@ -152,7 +159,7 @@
   <!-- Related Tools -->
   <div class="container related-tools">
     <h2>More Finance Tools</h2>
-    <div id="tools-grid"></div>
+    <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
   </div>
 
   <!-- JavaScript -->
@@ -201,26 +208,41 @@
     });
 
     // 3. Related Tools Logic
-    const relatedTools = [
-      { name: "SIP Calculator", url: "/finance/sip-calculator" },
-      { name: "EMI Calculator", url: "/finance/emi-calculator" },
-      { name: "Gratuity Calculator", url: "/finance/gratuity-calculator" },
-      { name: "Salary Breakdown Calculator", url: "/finance/salary-breakdown-calculator" },
-      { name: "GST Calculator", url: "/finance/gst-calculator" }
-    ];
-    
-    function loadRelatedTools() {
-      const container = document.getElementById('tools-grid');
-      relatedTools.forEach(tool => {
-        const link = document.createElement('a'); 
-        link.href = tool.url; 
-        link.className = 'tool-card-link'; 
-        link.textContent = tool.name; 
-        container.appendChild(link);
-      });
-    }
-    loadRelatedTools();
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is a lumpsum investment?", "acceptedAnswer": { "@type": "Answer", "text": "A lumpsum investment is a one-time, bulk investment into a mutual fund or fixed-income asset, as opposed to staggered investments like a Systematic Investment Plan (SIP)." } },
+    { "@type": "Question", "name": "How are lumpsum returns calculated?", "acceptedAnswer": { "@type": "Answer", "text": "The calculator uses the compound interest formula: Total Value = P(1 + r/100)^n, where 'P' is your initial investment, 'r' is the annual expected rate of return, and 'n' is the number of years." } },
+    { "@type": "Question", "name": "Is Lumpsum better than SIP?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the market. If the market is down, a lumpsum investment often yields better returns. However, an SIP is better for averaging out market volatility over time." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "Lumpsum Calculator", "item": "https://toolboxkart.tech/finance/lumpsum-investment-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Lumpsum Calculator",
+  "url": "https://toolboxkart.tech/finance/lumpsum-investment-calculator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

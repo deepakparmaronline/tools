@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Image Splitter & Grid Maker | Split Images Online - Toolboxkart</title>
+  <meta name="description" content="Easily split your images into a grid (like 3x3 for Instagram) online for free. Download all split image parts instantly in a ZIP file. No quality loss." />
+  <link rel="canonical" href="https://toolboxkart.tech/image-tools/image-splitter/" />
+  
+  <meta property="og:title" content="Free Image Splitter & Grid Maker - Toolboxkart" />
+  <meta property="og:description" content="Easily split your images into a grid (like 3x3 for Instagram) online for free. Download all split image parts instantly in a ZIP file. No quality loss." />
+  <meta property="og:url" content="https://toolboxkart.tech/image-tools/image-splitter/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- JSZip Library for bundling split images -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-brand span { color: #7c6fcd; }
+
+    .hero { text-align: center; padding: 3rem 1rem 1.5rem; }
+    .hero h1 { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+    .hero p { color: #888; max-width: 650px; margin: 0 auto; line-height: 1.5; }
+    .last-updated { color: #666; font-size: 0.8rem; margin-top: 0.8rem; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 4rem; }
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2rem; margin-bottom: 2rem; }
+
+    label { display: block; font-size: 0.9rem; font-weight: 600; color: #ccc; margin-bottom: 0.5rem; margin-top: 1.2rem; }
+    label:first-child { margin-top: 0; }
+    input, select, textarea { width: 100%; background: #222; color: #fff; border: 1px solid #333; border-radius: 8px; padding: 1rem; font-size: 1rem; outline: none; transition: 0.2s; font-family: inherit; }
+    input:focus, select:focus, textarea:focus { border-color: #7c6fcd; }
+    input[type="file"] { padding: 0.8rem; cursor: pointer; }
+
+    .grid-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+    @media (max-width: 500px) { .grid-controls { grid-template-columns: 1fr; } }
+
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: background 0.2s; margin-top: 1.5rem; }
+    button.btn-primary:hover { background: #6a5eb8; }
+    button.btn-primary:disabled { background: #444; color: #888; cursor: not-allowed; }
+
+    .result-box { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; margin-top: 2rem; display: none; text-align: center; }
+
+    /* Tool Specific Styles */
+    .preview-wrapper { position: relative; max-width: 100%; display: none; margin-top: 2rem; border: 1px solid #333; border-radius: 8px; overflow: hidden; background: #000; }
+    img#previewImg { display: block; width: 100%; height: auto; opacity: 0.8; }
+    .grid-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: grid; pointer-events: none; }
+    .grid-cell { border: 1px dashed #7c6fcd; background: rgba(124, 111, 205, 0.1); box-shadow: inset 0 0 0 1px rgba(0,0,0,0.5); }
+    
+    .status-msg { color: #28a745; font-weight: 600; margin-bottom: 1rem; }
+
+    .seo-content-block h2 { font-size: 1.4rem; color: #fff; margin: 2rem 0 1rem; }
+    .seo-content-block p { color: #888; line-height: 1.7; margin-bottom: 1rem; }
+    .seo-content-block strong { color: #ccc; font-weight: 600; }
+
+    .seo-faq-item { border-bottom: 1px solid #1e1e1e; padding: 1rem 0; }
+    .seo-faq-q { font-weight: 600; color: #ccc; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.2rem; color: #7c6fcd; transition: transform 0.3s; }
+    .seo-faq-item.open .seo-faq-q::after { transform: rotate(45deg); }
+    .seo-faq-a { font-size: .95rem; color: #888; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .seo-faq-item.open .seo-faq-a { max-height: 500px; padding-top: .8rem; }
+
+    .related-tools-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #272727; }
+    .related-tools-section h3 { color: #fff; font-size: 1.3rem; margin-bottom: 1rem; }
+
+    .resources-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #272727; }
+    .resources-section h3 { color: #fff; font-size: 1.3rem; margin-bottom: 1rem; }
+    .resources-list { list-style: none; }
+    .resources-list li { margin-bottom: 0.8rem; }
+    .resources-list a { color: #7c6fcd; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .resources-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav><a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a></nav>
+
+<div class="hero">
+  <h1>Image Splitter & Grid Maker</h1>
+  <p>Instantly split photos into customizable grids (like 3x3 for Instagram) and download them together securely.</p>
+  <p class="last-updated">Last updated: August 2026</p>
+</div>
+
+<div class="container">
+  <div class="card">
+    <label for="imageUpload">Upload Image to Split (JPG, PNG, WebP)</label>
+    <input type="file" id="imageUpload" accept="image/*" />
+
+    <div id="controlsArea" style="display: none;">
+      <div class="grid-controls">
+        <div>
+          <label for="rowsInput">Rows (Vertical Split)</label>
+          <input type="number" id="rowsInput" min="1" max="10" value="3" />
+        </div>
+        <div>
+          <label for="colsInput">Columns (Horizontal Split)</label>
+          <input type="number" id="colsInput" min="1" max="10" value="3" />
+        </div>
+      </div>
+
+      <div class="preview-wrapper" id="previewWrapper">
+        <img id="previewImg" src="" alt="Image grid preview" />
+        <div class="grid-overlay" id="gridOverlay"></div>
+      </div>
+
+      <button id="splitBtn" class="btn-primary" onclick="splitImage()">Split Image & Download ZIP</button>
+    </div>
+
+    <div id="result-box" class="result-box">
+      <div class="status-msg" id="statusMsg">Your grid is ready! Downloading ZIP...</div>
+      <p style="color: #888; font-size: 0.9rem;">Check your downloads folder for the extracted grid images.</p>
+    </div>
+  </div>
+
+  <div class="seo-content-block">
+    <h2>Why Use an Image Splitter or Grid Maker?</h2>
+    <p>A high-quality <strong>Image Splitter</strong> is an essential tool for content creators, marketers, and web designers. The most common use case is creating a 3x3 grid for Instagram, where one large photo is split into 9 seamless squares that take over your entire profile feed. It's also incredibly useful for slicing large web assets for faster loading, breaking panoramas into swipeable carousels, or preparing images for large-scale multi-page printing.</p>
+
+    <h2>How to Split an Image into a Grid Online</h2>
+    <p>Using our <strong>Grid Maker</strong> is fast and happens entirely in your web browser. First, upload your base image. Next, choose how many rows and columns you want to divide the picture into. A visual overlay will instantly show you how your image will be sliced. Once you're satisfied with the layout, click the split button. The tool will process the image at its original, native resolution and bundle all the pieces into a single, organized ZIP file for an easy, one-click download.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">How do I split an image into a 3x3 grid for Instagram?</div>
+      <div class="seo-faq-a">Simply upload your photo, set the Rows to 3 and the Columns to 3. The preview will show a 9-square grid. Click the split button, and you will receive a ZIP file containing the 9 perfectly cut squares, numbered in order for easy posting to your Instagram feed.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Will this tool reduce the quality or resolution of my picture?</div>
+      <div class="seo-faq-a">No, the split images maintain the original quality of your uploaded file. Our tool mathematically divides the original pixel dimensions, ensuring no compression or loss of detail occurs during the slicing process.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Are my photos uploaded to your servers for processing?</div>
+      <div class="seo-faq-a">No! Your privacy is completely protected. This image splitter runs strictly in your web browser using HTML5 Canvas technology. Your files are never uploaded, saved, or viewed by our servers.</div>
+    </div>
+  </div>
+
+  <div class="related-tools-section">
+    <h3>Explore More Image Tools</h3>
+    <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
+  </div>
+
+  <div class="resources-section">
+    <h3>Guides & Resources</h3>
+    <ul class="resources-list">
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Using_images" target="_blank" rel="nofollow noopener">📄 MDN Web Docs: Using Images with Canvas</a></li>
+      <li><a href="https://stuk.github.io/jszip/" target="_blank" rel="nofollow noopener">📄 JSZip Documentation & Specifications</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const imageUpload = document.getElementById('imageUpload');
+  const controlsArea = document.getElementById('controlsArea');
+  const rowsInput = document.getElementById('rowsInput');
+  const colsInput = document.getElementById('colsInput');
+  const previewWrapper = document.getElementById('previewWrapper');
+  const previewImg = document.getElementById('previewImg');
+  const gridOverlay = document.getElementById('gridOverlay');
+  const splitBtn = document.getElementById('splitBtn');
+  const resultBox = document.getElementById('result-box');
+  const statusMsg = document.getElementById('statusMsg');
+
+  let baseImg = new Image();
+  let originalFileName = "grid-image";
+
+  // Handle File Upload
+  imageUpload.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+      originalFileName = file.name.replace(/\.[^/.]+$/, ""); // Strip extension
+      const reader = new FileReader();
+      
+      reader.onload = function(event) {
+        baseImg.src = event.target.result;
+        baseImg.onload = function() {
+          previewImg.src = baseImg.src;
+          controlsArea.style.display = 'block';
+          previewWrapper.style.display = 'block';
+          resultBox.style.display = 'none';
+          drawPreviewGrid();
+        };
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Handle Input Changes for Grid Preview
+  rowsInput.addEventListener('input', drawPreviewGrid);
+  colsInput.addEventListener('input', drawPreviewGrid);
+
+  function drawPreviewGrid() {
+    let rows = parseInt(rowsInput.value) || 1;
+    let cols = parseInt(colsInput.value) || 1;
+    
+    // Cap at 20 to prevent browser crashing on extreme numbers
+    if (rows > 20) { rows = 20; rowsInput.value = 20; }
+    if (cols > 20) { cols = 20; colsInput.value = 20; }
+
+    gridOverlay.innerHTML = '';
+    gridOverlay.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+    gridOverlay.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+
+    const totalCells = rows * cols;
+    for (let i = 0; i < totalCells; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'grid-cell';
+      gridOverlay.appendChild(cell);
+    }
+  }
+
+  // Core Splitting Logic
+  async function splitImage() {
+    const rows = parseInt(rowsInput.value);
+    const cols = parseInt(colsInput.value);
+    
+    if (!baseImg.src || rows < 1 || cols < 1) return;
+
+    // UI Updates
+    splitBtn.disabled = true;
+    splitBtn.innerText = "Processing...";
+    resultBox.style.display = 'none';
+
+    try {
+      const zip = new JSZip();
+      const cellWidth = baseImg.width / cols;
+      const cellHeight = baseImg.height / rows;
+      const promises = [];
+
+      // Temporary canvas for cropping
+      const tempCanvas = document.createElement('canvas');
+      tempCanvas.width = cellWidth;
+      tempCanvas.height = cellHeight;
+      const ctx = tempCanvas.getContext('2d');
+
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          
+          ctx.clearRect(0, 0, cellWidth, cellHeight);
+          
+          // Draw the specific slice to the temp canvas
+          ctx.drawImage(
+            baseImg,
+            c * cellWidth, r * cellHeight, cellWidth, cellHeight, // Source coordinates
+            0, 0, cellWidth, cellHeight // Destination coordinates
+          );
+
+          // Convert canvas slice to blob and add to zip
+          const promise = new Promise((resolve) => {
+            // Determine order number (e.g., 1 to 9 for 3x3)
+            const orderNum = (r * cols) + c + 1;
+            const paddedNum = orderNum.toString().padStart(2, '0');
+            const filename = `${originalFileName}_part_${paddedNum}.png`;
+
+            tempCanvas.toBlob((blob) => {
+              zip.file(filename, blob);
+              resolve();
+            }, 'image/png', 1.0);
+          });
+
+          promises.push(promise);
+        }
+      }
+
+      // Wait for all blobs to be added to JSZip
+      await Promise.all(promises);
+
+      // Generate the zip file
+      const zipContent = await zip.generateAsync({ type: 'blob' });
+      
+      // Trigger Download
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(zipContent);
+      link.download = `${originalFileName}_grid.zip`;
+      link.click();
+      URL.revokeObjectURL(link.href);
+
+      // Success UI
+      resultBox.style.display = 'block';
+
+    } catch (error) {
+      console.error("Error splitting image:", error);
+      alert("An error occurred while splitting the image.");
+    } finally {
+      splitBtn.disabled = false;
+      splitBtn.innerText = "Split Image & Download ZIP";
+    }
+  }
+
+  // FAQ Accordion Logic
+  document.querySelectorAll('.seo-faq-q').forEach(q => {
+    q.addEventListener('click', () => q.closest('.seo-faq-item').classList.toggle('open'));
+  });
+</script>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I split an image into a 3x3 grid for Instagram?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Simply upload your photo, set the Rows to 3 and the Columns to 3. The preview will show a 9-square grid. Click the split button, and you will receive a ZIP file containing the 9 perfectly cut squares, numbered in order for easy posting to your Instagram feed." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this tool reduce the quality or resolution of my picture?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, the split images maintain the original quality of your uploaded file. Our tool mathematically divides the original pixel dimensions, ensuring no compression or loss of detail occurs during the slicing process." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my photos uploaded to your servers for processing?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No! Your privacy is completely protected. This image splitter runs strictly in your web browser using HTML5 Canvas technology. Your files are never uploaded, saved, or viewed by our servers." }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Image Tools", "item": "https://toolboxkart.tech/image-tools/" },
+    { "@type": "ListItem", "position": 3, "name": "Image Splitter & Grid Maker", "item": "https://toolboxkart.tech/image-tools/image-splitter/" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Image Splitter & Grid Maker",
+  "url": "https://toolboxkart.tech/image-tools/image-splitter/",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+  <!-- Auto-fills Footer & Related Tools -->
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

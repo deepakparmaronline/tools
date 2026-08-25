@@ -6,6 +6,12 @@
   <title>FD Calculator | Fixed Deposit Interest & Maturity Amount - Toolboxkart</title>
   <meta name="description" content="Use our free online FD Calculator to calculate your Fixed Deposit interest earnings and final maturity amount. Supports monthly, quarterly, and yearly compounding.">
   
+  <link rel="canonical" href="https://toolboxkart.tech/finance/fd-calculator/" />
+  <meta property="og:title" content="FD Calculator - Toolboxkart" />
+  <meta property="og:description" content="Use our free online FD Calculator to calculate your Fixed Deposit interest earnings and final maturity amount. Supports monthly, quarterly, and yearly compounding." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/fd-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <style>
     /* Global Rules */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -79,6 +85,7 @@
   <div class="hero">
     <h1>FD Calculator</h1>
     <p>Calculate your Fixed Deposit interest earnings and final maturity amount instantly.</p>
+  <p class="last-updated">Last updated: August 2026</p>
   </div>
 
   <!-- Tool Container -->
@@ -167,7 +174,7 @@
   <!-- Related Tools -->
   <div class="container related-tools">
     <h2>More Finance Tools</h2>
-    <div id="tools-grid"></div>
+    <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
   </div>
 
   <!-- JavaScript -->
@@ -223,33 +230,41 @@
     });
 
     // 3. Related Tools Logic (Completely unified including the NPS Calculator we just built)
-    const relatedTools = [
-      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
-      { name: "Budget Planner", url: "/finance/budget-planner" },
-      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
-      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
-      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
-      { name: "NPS Calculator", url: "/finance/nps-calculator" },
-      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
-      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
-      { name: "ROI Calculator", url: "/finance/roi-calculator" },
-      { name: "Savings Goal Calculator", url: "/finance/savings-goal-calculator" },
-      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
-      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
-    ];
-    
-    function loadRelatedTools() {
-      const container = document.getElementById('tools-grid');
-      relatedTools.forEach(tool => {
-        const link = document.createElement('a'); 
-        link.href = tool.url; 
-        link.className = 'tool-card-link'; 
-        link.textContent = tool.name; 
-        container.appendChild(link);
-      });
-    }
-    loadRelatedTools();
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How does the compounding frequency affect my FD maturity amount?", "acceptedAnswer": { "@type": "Answer", "text": "The more frequently interest is compounded, the higher your ultimate returns will be. For example, monthly compounding will generate slightly more interest than quarterly or yearly compounding for the exact same principal and time frame." } },
+    { "@type": "Question", "name": "Is the interest earned on Fixed Deposits taxable?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, the interest income earned from a fixed deposit is fully taxable according to your progressive income tax slab. Additionally, if your annual interest income exceeds ₹40,000 (₹50,000 for senior citizens), banks will deduct TDS (Tax Deducted at Source)." } },
+    { "@type": "Question", "name": "What is a tax-saving Fixed Deposit?", "acceptedAnswer": { "@type": "Answer", "text": "A tax-saving FD is a special financial instrument that comes with a mandatory 5-year lock-in period. It allows you to claim tax deductions up to ₹1,50,000 under Section 80C of the Income Tax Act. However, premature withdrawals are strictly prohibited on these accounts." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "FD Calculator", "item": "https://toolboxkart.tech/finance/fd-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "FD Calculator",
+  "url": "https://toolboxkart.tech/finance/fd-calculator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

@@ -6,6 +6,12 @@
   <title>NSC Calculator | National Savings Certificate Maturity - Toolboxkart</title>
   <meta name="description" content="Calculate your National Savings Certificate (NSC) maturity amount and interest earned. Plan your Section 80C tax savings with our free online NSC Calculator.">
   
+  <link rel="canonical" href="https://toolboxkart.tech/finance/nsc-calculator/" />
+  <meta property="og:title" content="NSC Calculator - Toolboxkart" />
+  <meta property="og:description" content="Calculate your National Savings Certificate (NSC) maturity amount and interest earned. Plan your Section 80C tax savings with our free online NSC Calculator." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/nsc-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <style>
     /* Global Rules */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -82,6 +88,7 @@
   <div class="hero">
     <h1>NSC Calculator</h1>
     <p>Calculate your guaranteed maturity amount and interest earned from the National Savings Certificate.</p>
+  <p class="last-updated">Last updated: August 2026</p>
   </div>
 
   <!-- Tool Container -->
@@ -160,7 +167,7 @@
   <!-- Related Tools -->
   <div class="container related-tools">
     <h2>More Finance Tools</h2>
-    <div id="tools-grid"></div>
+    <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
   </div>
 
   <!-- JavaScript -->
@@ -209,49 +216,41 @@
     });
 
     // 3. Related Tools Logic (Dynamically loading all completed tools, including SCSS)
-    const relatedTools = [
-      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
-      { name: "Budget Planner", url: "/finance/budget-planner" },
-      { name: "CAGR Calculator", url: "/finance/cagr-calculator" },
-      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
-      { name: "EMI Calculator", url: "/finance/emi-calculator" },
-      { name: "EPF Calculator", url: "/finance/epf-calculator" },
-      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
-      { name: "FD Calculator", url: "/finance/fd-calculator" },
-      { name: "Gratuity Calculator", url: "/finance/gratuity-calculator" },
-      { name: "GST Calculator", url: "/finance/gst-calculator" },
-      { name: "HRA Calculator", url: "/finance/hra-calculator" },
-      { name: "Income Tax Calculator", url: "/finance/income-tax-calculator" },
-      { name: "Inflation Calculator", url: "/finance/inflation-calculator" },
-      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
-      { name: "Mutual Fund Tax Calculator", url: "/finance/mutual-fund-tax-calculator" },
-      { name: "NPS Calculator", url: "/finance/nps-calculator" },
-      { name: "Post Office MIS Calculator", url: "/finance/pomis-calculator" },
-      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
-      { name: "RD Calculator", url: "/finance/rd-calculator" },
-      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
-      { name: "ROI Calculator", url: "/finance/roi-calculator" },
-      { name: "SCSS Calculator", url: "/finance/scss-calculator" },
-      { name: "Simple Interest Calculator", url: "/finance/simple-interest-calculator" },
-      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
-      { name: "SSY Calculator", url: "/finance/ssy-calculator" },
-      { name: "Step-Up SIP Calculator", url: "/finance/step-up-sip-calculator" },
-      { name: "SWP Calculator", url: "/finance/swp-calculator" },
-      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
-    ];
-    
-    function loadRelatedTools() {
-      const container = document.getElementById('tools-grid');
-      relatedTools.forEach(tool => {
-        const link = document.createElement('a'); 
-        link.href = tool.url; 
-        link.className = 'tool-card-link'; 
-        link.textContent = tool.name; 
-        container.appendChild(link);
-      });
-    }
-    loadRelatedTools();
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What are the tax benefits of investing in NSC?", "acceptedAnswer": { "@type": "Answer", "text": "Your initial investment in NSC qualifies for a tax deduction of up to ₹1.5 Lakh under Section 80C. Additionally, the interest earned in the first 4 years is deemed to be \"reinvested\" and also qualifies for Section 80C deductions, making it highly tax-efficient. Only the final year's interest is taxed as per your slab rate." } },
+    { "@type": "Question", "name": "Can I withdraw my NSC money before 5 years?", "acceptedAnswer": { "@type": "Answer", "text": "No, premature withdrawal of NSC is generally not allowed before the 5-year lock-in period. It is only permitted under exceptional circumstances, such as the death of the certificate holder or by the order of a court of law." } },
+    { "@type": "Question", "name": "Is there a maximum limit for NSC investments?", "acceptedAnswer": { "@type": "Answer", "text": "There is no maximum limit on the amount you can invest in National Savings Certificates. However, the tax benefit under Section 80C of the Income Tax Act is capped at a maximum of ₹1.5 Lakh per financial year." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "NSC Calculator", "item": "https://toolboxkart.tech/finance/nsc-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "NSC Calculator",
+  "url": "https://toolboxkart.tech/finance/nsc-calculator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

@@ -6,6 +6,12 @@
   <title>Gratuity Calculator | Online Gratuity Calculation Formula - Toolboxkart</title>
   <meta name="description" content="Use our free Gratuity Calculator to instantly calculate your gratuity amount based on the 15/26 formula. Check your gratuity eligibility and tax exemptions.">
   
+  <link rel="canonical" href="https://toolboxkart.tech/finance/gratuity-calculator/" />
+  <meta property="og:title" content="Gratuity Calculator - Toolboxkart" />
+  <meta property="og:description" content="Use our free Gratuity Calculator to instantly calculate your gratuity amount based on the 15/26 formula. Check your gratuity eligibility and tax exemptions." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/gratuity-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <style>
     /* Global Rules */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -81,6 +87,7 @@
   <div class="hero">
     <h1>Gratuity Calculator</h1>
     <p>Instantly calculate your expected gratuity payout based on your last drawn salary and years of service.</p>
+  <p class="last-updated">Last updated: August 2026</p>
   </div>
 
   <!-- Tool Container -->
@@ -147,7 +154,7 @@
   <!-- Related Tools -->
   <div class="container related-tools">
     <h2>More Finance Tools</h2>
-    <div id="tools-grid"></div>
+    <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
   </div>
 
   <!-- JavaScript -->
@@ -199,35 +206,41 @@
     });
 
     // 3. Related Tools Logic (Now includes the EPF Calculator)
-    const relatedTools = [
-      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
-      { name: "Budget Planner", url: "/finance/budget-planner" },
-      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
-      { name: "EPF Calculator", url: "/finance/epf-calculator" },
-      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
-      { name: "FD Calculator", url: "/finance/fd-calculator" },
-      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
-      { name: "NPS Calculator", url: "/finance/nps-calculator" },
-      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
-      { name: "RD Calculator", url: "/finance/rd-calculator" },
-      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
-      { name: "ROI Calculator", url: "/finance/roi-calculator" },
-      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
-      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
-    ];
-    
-    function loadRelatedTools() {
-      const container = document.getElementById('tools-grid');
-      relatedTools.forEach(tool => {
-        const link = document.createElement('a'); 
-        link.href = tool.url; 
-        link.className = 'tool-card-link'; 
-        link.textContent = tool.name; 
-        container.appendChild(link);
-      });
-    }
-    loadRelatedTools();
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the minimum eligibility for gratuity?", "acceptedAnswer": { "@type": "Answer", "text": "To be eligible for a gratuity payout, an employee must complete a minimum of 5 years of continuous service with a single employer. However, in cases of death or disablement, the 5-year rule does not apply." } },
+    { "@type": "Question", "name": "How should I round off my years of service?", "acceptedAnswer": { "@type": "Answer", "text": "If you have worked for more than 6 months in your final year, it is rounded up to the next full year. For example, 5 years and 7 months is considered 6 years for the gratuity calculation. If it is 5 years and 4 months, it is considered 5 years." } },
+    { "@type": "Question", "name": "Is the gratuity amount tax-free?", "acceptedAnswer": { "@type": "Answer", "text": "For government employees, the entire gratuity amount is exempt from income tax. For non-government employees covered under the Gratuity Act, the gratuity amount is tax-exempt up to a maximum limit of ₹20 Lakhs. Any amount received above this limit is taxable as per your income tax slab." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "Gratuity Calculator", "item": "https://toolboxkart.tech/finance/gratuity-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Gratuity Calculator",
+  "url": "https://toolboxkart.tech/finance/gratuity-calculator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

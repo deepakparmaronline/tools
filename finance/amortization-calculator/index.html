@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Amortization Calculator & Schedule | Toolboxkart</title>
     <meta name="description" content="Use our free amortization calculator to generate a complete loan amortization schedule. See your EMI breakdown, total interest, and principal payments instantly.">
+  <link rel="canonical" href="https://toolboxkart.tech/finance/amortization-calculator/" />
+  <meta property="og:title" content="Free Amortization Calculator &amp; Schedule - Toolboxkart" />
+  <meta property="og:description" content="Use our free amortization calculator to generate a complete loan amortization schedule. See your EMI breakdown, total interest, and principal payments instantly." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/amortization-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
     <style>
         /* Global Reset & Base Styles */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -86,6 +92,7 @@
     <div class="hero">
         <h1>Amortization Calculator</h1>
         <p>Calculate your loan payments and generate a detailed amortization schedule to see exactly how your principal and interest are paid off.</p>
+  <p class="last-updated">Last updated: August 2026</p>
     </div>
 
     <div class="container">
@@ -170,8 +177,7 @@
 
         <div class="related-tools-section" id="related-tools-wrapper">
             <h2>Explore More Finance Tools</h2>
-            <div id="tools-grid">
-                </div>
+            <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
         </div>
 
     </div>
@@ -254,30 +260,40 @@
         });
 
         // 3. Related Tools Logic (Now includes both Tool 22 and 23)
-        const relatedTools = [
-            { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
-            { name: "ROI Calculator", url: "/finance/roi-calculator" }
-        ];
-
-        function loadRelatedTools() {
-            const container = document.getElementById('tools-grid');
-            const wrapper = document.getElementById('related-tools-wrapper');
-
-            if (relatedTools.length === 0) {
-                wrapper.style.display = 'none';
-                return;
-            }
-
-            relatedTools.forEach(tool => {
-                const link = document.createElement('a'); 
-                link.href = tool.url; 
-                link.className = 'tool-card-link'; 
-                link.textContent = tool.name; 
-                container.appendChild(link);
-            });
-        }
-        
-        loadRelatedTools();
     </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is an amortization schedule?", "acceptedAnswer": { "@type": "Answer", "text": "An amortization schedule is a complete table of periodic loan payments. It shows the amount of principal and the amount of interest that comprise each payment until the loan is paid off at the end of its term." } },
+    { "@type": "Question", "name": "How is loan amortization calculated?", "acceptedAnswer": { "@type": "Answer", "text": "The formula uses your total loan amount, the annual interest rate divided by 12 to find the monthly rate, and the total number of monthly payments. This gives you a fixed monthly payment, but the internal ratio of principal and interest shifts every single month." } },
+    { "@type": "Question", "name": "Does making extra payments reduce amortization?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Making additional principal payments directly reduces your outstanding balance. This decreases the total interest charged in subsequent months, allowing you to pay off your loan much faster than the original loan term." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "Free Amortization Calculator & Schedule", "item": "https://toolboxkart.tech/finance/amortization-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Amortization Calculator & Schedule",
+  "url": "https://toolboxkart.tech/finance/amortization-calculator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

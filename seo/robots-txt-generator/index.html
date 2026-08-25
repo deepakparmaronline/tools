@@ -3,208 +3,257 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Robots.txt Generator | Online SEO Tool - Toolboxkart</title>
-  <meta name="description" content="Generate a custom, SEO-friendly robots.txt file for your website instantly. Our free robots.txt generator helps control search engine crawling and indexation." />
+  <title>Free Robots.txt Generator | Create Robots txt File Online - Toolboxkart</title>
+  <meta name="description" content="Looking to create robots txt file online? Use our free robots txt generator to create a robots.txt file for WordPress, Google, or any custom website instantly." />
+  <link rel="canonical" href="https://toolboxkart.tech/seo/robots-txt-generator/" />
+  <meta property="og:title" content="Free Robots.txt Generator - Toolboxkart" />
+  <meta property="og:description" content="Looking to create robots txt file online? Use our free robots txt generator to create a robots.txt file for WordPress, Google, or any custom website instantly." />
+  <meta property="og:url" content="https://toolboxkart.tech/seo/robots-txt-generator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; min-height: 100vh; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
     
-    /* ── NAV ── */
-    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; gap: 2rem; height: 56px; position: sticky; top: 0; z-index: 100; }
-    .nav-brand { font-weight: 700; font-size: 1.1rem; color: #fff; text-decoration: none; letter-spacing: .5px; }
+    /* ── NAV & HERO ── */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; }
     .nav-brand span { color: #7c6fcd; }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a { color: #aaa; text-decoration: none; font-size: .9rem; transition: color .2s; }
-    .nav-links a:hover { color: #fff; }
-    
-    /* ── HERO ── */
     .hero { text-align: center; padding: 3rem 1rem 1.5rem; }
-    .hero h1 { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
-    .hero p { color: #888; font-size: 1rem; max-width: 600px; margin: 0 auto; line-height: 1.5; }
+    .hero h1 { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
     
-    /* ── MAIN LAYOUT ── */
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 1rem 4rem; }
-    .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+    /* ── TOOL LAYOUT ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 4rem; }
     .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2rem; }
+    .calc-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+    @media(min-width: 768px) { .calc-grid { grid-template-columns: 1fr 1fr; } }
     
-    /* ── FORMS ── */
-    .form-section-title { color: #fff; font-size: 1.1rem; border-bottom: 1px solid #333; padding-bottom: .5rem; margin-bottom: 1.25rem; font-weight: 600; }
-    .form-group { margin-bottom: 1.25rem; }
-    .form-group label { display: block; color: #bbb; font-size: .9rem; font-weight: 600; margin-bottom: .4rem; }
-    .form-group input, .form-group select { width: 100%; padding: .75rem; background: #222; color: #fff; border: 1px solid #333; border-radius: 6px; font-size: .95rem; outline: none; font-family: inherit; transition: border-color .2s; }
-    .form-group input:focus, .form-group select:focus { border-color: #7c6fcd; }
+    .form-group { margin-bottom: 1rem; }
+    label { display: block; font-size: 0.9rem; font-weight: 600; color: #ccc; margin-bottom: 0.5rem; }
+    input, select { width: 100%; background: #222; color: #fff; border: 1px solid #333; border-radius: 8px; padding: 1rem; font-size: 1rem; outline: none; }
+    input:focus, select:focus { border-color: #7c6fcd; }
     
-    /* ── DYNAMIC RULES ── */
-    .rule-box { background: #1a1a1a; border: 1px solid #333; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; position: relative; }
-    .remove-btn { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: #f44336; cursor: pointer; font-size: 1.2rem; line-height: 1; }
-    .add-btn { background: rgba(124,111,205,.15); color: #7c6fcd; border: 1px dashed #7c6fcd; padding: .6rem 1rem; border-radius: 6px; font-weight: 600; cursor: pointer; width: 100%; font-size: .9rem; transition: background .2s; }
-    .add-btn:hover { background: rgba(124,111,205,.25); }
-    .rule-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; }
-
-    /* ── OUTPUT SECTION ── */
-    .output-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-    .output-header h2 { font-size: 1.1rem; color: #fff; }
-    .code-box { background: #000; border: 1px solid #333; border-radius: 8px; padding: 1rem; position: relative; overflow-x: auto; min-height: 300px; }
-    .code-box pre { font-family: 'Consolas', 'Monaco', monospace; font-size: .9rem; color: #a5d6ff; line-height: 1.5; margin: 0; white-space: pre-wrap; word-break: break-all; }
-    .button-group { display: flex; gap: 1rem; margin-top: 1rem; }
-    .action-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: .5rem; padding: .85rem; font-size: 1rem; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; transition: background .2s; }
-    .btn-primary { background: #7c6fcd; color: #fff; }
-    .btn-primary:hover { background: #6a5db5; }
-    .btn-secondary { background: #333; color: #fff; }
-    .btn-secondary:hover { background: #444; }
+    .full-width { grid-column: 1 / -1; }
     
-    /* ── SEO CONTENT BLOCK ── */
-    .seo-content-block { margin-top: 3.5rem; }
-    .seo-content-block h2 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 1.2rem; }
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: 0.2s; }
+    button.btn-primary:hover { background: #6a5ebf; }
+    
+    .result-box { background: #1a1a1a; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; display: none; border: 1px solid #333; }
+    .result-box h3 { color: #fff; margin-bottom: 1rem; font-size: 1.2rem; }
+    textarea.code-output { width: 100%; height: 150px; background: #000; color: #4ade80; border: 1px solid #272727; border-radius: 8px; padding: 1rem; font-family: monospace; font-size: 1rem; resize: vertical; }
+    
+    /* ── SEO CONTENT ── */
+    .seo-content-block { margin-top: 3rem; }
+    .seo-content-block h2 { font-size: 1.5rem; color: #fff; margin: 2rem 0 1rem; }
+    .seo-content-block p { color: #aaa; margin-bottom: 1rem; }
+    
+    /* ── FAQS ── */
     .seo-faq-item { border-bottom: 1px solid #1e1e1e; padding: 1rem 0; }
-    .seo-faq-item:last-child { border-bottom: none; }
-    .seo-faq-q { font-size: .95rem; font-weight: 600; color: #ccc; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-    .seo-faq-q::after { content: '+'; color: #7c6fcd; font-size: 1.2rem; flex-shrink: 0; }
-    .seo-faq-item.open .seo-faq-q::after { content: '−'; }
-    .seo-faq-a { font-size: .9rem; color: #777; line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s; }
+    .seo-faq-q { font-weight: 600; color: #ccc; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.2rem; color: #7c6fcd; }
+    .seo-faq-item.open .seo-faq-q::after { content: '-'; }
+    .seo-faq-a { font-size: .95rem; color: #888; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
     .seo-faq-item.open .seo-faq-a { max-height: 500px; padding-top: .8rem; }
+
+    /* ── RELATED TOOLS & EEAT ── */
+    .section-title { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #272727; font-size: 1.3rem; color: #fff; margin-bottom: 1rem; }
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+    .tool-card-link { background: #161616; border: 1px solid #333; padding: 1rem; border-radius: 8px; color: #e0e0e0; text-decoration: none; font-size: .9rem; transition: 0.2s; display: block; }
+    .tool-card-link:hover { border-color: #7c6fcd; background: #1a1a1a; }
     
-    @media (max-width: 850px) {
-      .tool-grid { grid-template-columns: 1fr; }
-      nav { gap: 1rem; padding: 0 1rem; }
-      .nav-links { display: none; }
-      .rule-grid { grid-template-columns: 1fr; }
-    }
+    .eeat-list { list-style: none; }
+    .eeat-list li { margin-bottom: 0.8rem; }
+    .eeat-list a { color: #7c6fcd; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .eeat-list a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
-<nav>
-  <a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a>
-  <ul class="nav-links" id="dynamic-nav-list"></ul>
-</nav>
+<nav><a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a></nav>
 
 <div class="hero">
-  <h1>Robots.txt Generator</h1>
-  <p>Instantly create a valid robots.txt file to guide search engine crawlers. Control which pages get indexed and protect your private directories.</p>
+  <h1>Free Robots txt Generator</h1>
+  <p>Instantly create a robots.txt file for your website to control search engine crawlers and improve your SEO.</p>
+  <p class="last-updated">Last updated: August 2026</p>
 </div>
 
 <div class="container">
-  <div class="tool-grid">
-    <div class="card">
-      <h3 class="form-section-title">General Settings</h3>
+  <!-- TOOL SECTION -->
+  <div class="card">
+    <div class="calc-grid">
       <div class="form-group">
-        <label for="default-rule">Default Access (All Robots)</label>
-        <select id="default-rule" oninput="generateRobotsTxt()">
-          <option value="allow">Allow All (Recommended)</option>
-          <option value="disallow">Disallow All</option>
+        <label>Default User-Agent</label>
+        <select id="userAgent">
+          <option value="*">* (All Search Engines)</option>
+          <option value="Googlebot">Googlebot (Google)</option>
+          <option value="Bingbot">Bingbot (Bing)</option>
+          <option value="Slurp">Slurp (Yahoo)</option>
+          <option value="DuckDuckBot">DuckDuckBot</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="sitemap-url">XML Sitemap URL (Optional)</label>
-        <input type="url" id="sitemap-url" placeholder="https://example.com/sitemap.xml" oninput="generateRobotsTxt()">
-      </div>
-      <div class="form-group" style="margin-bottom: 2rem;">
-        <label for="crawl-delay">Crawl-Delay (Seconds, Optional)</label>
-        <select id="crawl-delay" oninput="generateRobotsTxt()">
+        <label>Crawl Delay (Optional)</label>
+        <select id="crawlDelay">
           <option value="">Default (No Delay)</option>
           <option value="5">5 Seconds</option>
           <option value="10">10 Seconds</option>
           <option value="20">20 Seconds</option>
         </select>
       </div>
-      <h3 class="form-section-title">Custom Directory Rules</h3>
-      <div id="rules-wrapper"></div>
-      <button class="add-btn" onclick="addRule()">+ Add Directory Rule</button>
+      <div class="form-group full-width">
+        <label>Disallow Paths (One per line, e.g., /wp-admin/)</label>
+        <input type="text" id="disallow" placeholder="/cgi-bin/ or /wp-admin/" value="/wp-admin/">
+      </div>
+      <div class="form-group full-width">
+        <label>XML Sitemap URL (Optional but recommended)</label>
+        <input type="url" id="sitemap" placeholder="https://www.yourdomain.com/sitemap.xml">
+      </div>
     </div>
+    <button class="btn-primary" onclick="generateRobotsTxt()">Create Robots.txt File</button>
 
-    <div class="card">
-      <div class="output-header">
-        <h2>robots.txt Output</h2>
-      </div>
-      <div class="code-box">
-        <pre><code id="txt-output"></code></pre>
-      </div>
-      <div class="button-group">
-        <button class="action-btn btn-primary" id="copy-btn">Copy Text</button>
-        <button class="action-btn btn-secondary" id="download-btn">Download .txt</button>
-      </div>
+    <div id="result-box" class="result-box">
+      <h3>Your Generated Robots.txt:</h3>
+      <textarea id="output" class="code-output" readonly></textarea>
     </div>
   </div>
 
+  <!-- SEO CONTENT SECTION -->
   <div class="seo-content-block">
-    <h2>Generate a Perfect Robots.txt File for Better SEO</h2>
-    <p style="color: #888; line-height: 1.6; margin-bottom: 1.5rem;">Managing how search engines crawl your website is critical for technical SEO. Our <strong>free robots txt generator</strong> helps you create a customized, error-free robots.txt file in seconds. Whether you need a standard setup or custom rules to block specific directories, this online tool ensures your crawl budget is spent on the pages that actually matter.</p>
-
-    <h3 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem;">Why Use a Custom Robots.txt Maker?</h3>
-    <ul style="color: #777; line-height: 1.7; margin-bottom: 2rem; padding-left: 1.5rem;">
-      <li><strong>Optimize Crawl Budget:</strong> Prevent Googlebot from wasting time on admin dashboards, internal search results, or duplicate tag pages.</li>
-      <li><strong>Instant Formatting:</strong> Avoid manual syntax errors that could accidentally deindex your entire website.</li>
-      <li><strong>Sitemap Integration:</strong> Easily point search engines directly to your XML sitemap to speed up new content discovery.</li>
-    </ul>
+    <h2>Why Use a Robots txt Generator?</h2>
+    <p>If you are wondering <strong>how to create a robots.txt file</strong>, you are in the right place. A robots.txt is fundamentally a <strong>file created to give instructions to search engine bots</strong>. It tells web crawlers like Googlebot which pages or files the crawler can or can't request from your site. Using our tool to <strong>create robots txt file online</strong> ensures you don't make syntax errors that could accidentally de-index your website.</p>
+    
+    <h2>How to Create a Robots txt File for WordPress?</h2>
+    <p>Many webmasters ask <strong>how to create robots txt in wordpress</strong>. While some plugins like Yoast generate a default file, you often need custom rules to block directories like `/wp-admin/`. You can easily <strong>create robots txt file wordpress</strong> compatible using our tool, copy the output, and upload it to your root directory. Whether you want to <strong>create robots txt google</strong> trusts, or simply <strong>create a robots txt file for my site</strong>, proper formatting is critical.</p>
 
     <h2>Frequently Asked Questions</h2>
     <div class="seo-faq-item">
-      <div class="seo-faq-q">What is a robots.txt file and why is it important?</div>
-      <div class="seo-faq-a">A robots.txt file is a simple text document located in the root directory of your website. It acts as a guide for web crawlers, telling them which pages they are allowed to scan and index, and which ones to ignore. Using an <strong>SEO friendly robots.txt</strong> setup protects sensitive areas like login pages and staging environments from appearing in public search results.</div>
+      <div class="seo-faq-q">What is a robots txt file & how to create it?</div>
+      <div class="seo-faq-a">It is a plain text file placed in your website's root directory that dictates crawler access. You can <strong>create robot txt file online</strong> using our generator above by specifying your allowed and disallowed paths.</div>
     </div>
     <div class="seo-faq-item">
-      <div class="seo-faq-q">How do I create a robots.txt file online?</div>
-      <div class="seo-faq-a">Simply use the controls in our tool above. Select your default access rule, paste your XML sitemap URL, and define any specific directories you want to Allow or Disallow. Once configured, simply copy the generated code or download the .txt file directly to your device.</div>
+      <div class="seo-faq-q">How do I create robots txt google webmaster tools?</div>
+      <div class="seo-faq-a">Google Webmaster Tools (now Search Console) reads your live file. You can <strong>create robots.txt for website</strong> here, upload it to your server, and then use Google Search Console to test and validate your rules.</div>
     </div>
     <div class="seo-faq-item">
-      <div class="seo-faq-q">Where should I upload my generated robots.txt file?</div>
-      <div class="seo-faq-a">You must upload the file to the highest-level root directory of your web hosting server. For example, if your website is <code>https://www.toolboxkart.com</code>, the file must be accessible exactly at <code>https://www.toolboxkart.com/robots.txt</code>.</div>
-    </div>
-    <div class="seo-faq-item">
-      <div class="seo-faq-q">Will this tool work for WordPress, Shopify, or custom CMS platforms?</div>
-      <div class="seo-faq-a">Yes. The syntax generated by this tool uses the standard Robots Exclusion Protocol recognized by all major search engines like Google and Bing. It works perfectly as a <strong>robots.txt for WordPress</strong>, Magento, Shopify, or any custom-coded architecture.</div>
+      <div class="seo-faq-q">Can I create a robot txt file for my site easily?</div>
+      <div class="seo-faq-a">Yes! Our <strong>create robots txt generator</strong> is completely free. Just enter your sitemap URL, define which folders to block, and click generate to <strong>creating a robots.txt file</strong> instantly.</div>
     </div>
   </div>
+
+  <!-- DYNAMIC RELATED TOOLS SECTION -->
+  <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
+
+  <!-- EXTERNAL EEAT GUIDELINES -->
+  <h3 class="section-title">Guides & Resources</h3>
+  <ul class="eeat-list" id="eeat-grid"></ul>
 </div>
 
 <script>
-  const defaultRuleSelect = document.getElementById('default-rule');
-  const sitemapInput      = document.getElementById('sitemap-url');
-  const crawlDelaySelect  = document.getElementById('crawl-delay');
-  const rulesWrapper      = document.getElementById('rules-wrapper');
-  const txtOutput         = document.getElementById('txt-output');
-  const copyBtn           = document.getElementById('copy-btn');
-  const downloadBtn       = document.getElementById('download-btn');
+  // Tool Logic
+  function generateRobotsTxt() {
+    const userAgent = document.getElementById('userAgent').value;
+    const crawlDelay = document.getElementById('crawlDelay').value;
+    const disallow = document.getElementById('disallow').value.trim();
+    const sitemap = document.getElementById('sitemap').value.trim();
+    
+    let txt = `User-agent: ${userAgent}\n`;
+    
+    if (crawlDelay) {
+      txt += `Crawl-delay: ${crawlDelay}\n`;
+    }
+    
+    if (disallow) {
+      // Handle multiple disallow paths if user separates by comma or space
+      const paths = disallow.split(/[,\s]+/).filter(Boolean);
+      paths.forEach(p => {
+        txt += `Disallow: ${p}\n`;
+      });
+    } else {
+      txt += `Disallow:\n`;
+    }
+    
+    txt += `Allow: /\n`;
+    
+    if (sitemap) {
+      txt += `\nSitemap: ${sitemap}\n`;
+    }
+    
+    document.getElementById('output').value = txt;
+    document.getElementById('result-box').style.display = 'block';
+  }
 
-  let customRules = [ { access: 'Disallow', path: '/cgi-bin/' }, { access: 'Disallow', path: '/wp-admin/' } ];
+  // FAQ Accordion Logic
+  document.querySelectorAll('.seo-faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const parent = q.closest('.seo-faq-item');
+      // Close others
+      document.querySelectorAll('.seo-faq-item').forEach(item => {
+        if(item !== parent) item.classList.remove('open');
+      });
+      parent.classList.toggle('open');
+    });
+  });
 
-  function renderRules() {
-    rulesWrapper.innerHTML = '';
-    customRules.forEach((rule, index) => {
-      const box = document.createElement('div');
-      box.className = 'rule-box';
-      box.innerHTML = `
-        <button class="remove-btn" onclick="removeRule(${index})">&times;</button>
-        <div class="rule-grid">
-          <div class="form-group"><label>Directive</label><select oninput="updateRule(${index}, 'access', this.value)"><option value="Disallow" ${rule.access === 'Disallow' ? 'selected' : ''}>Disallow</option><option value="Allow" ${rule.access === 'Allow' ? 'selected' : ''}>Allow</option></select></div>
-          <div class="form-group"><label>Path</label><input type="text" value="${rule.path}" oninput="updateRule(${index}, 'path', this.value)"></div>
-        </div>
-      `;
-      rulesWrapper.appendChild(box);
+  // Dynamic Related Tools Injection (Including upcoming Validator/Checker/Tester & from image)
+  
+  
+  // Dynamic EEAT Links Injection
+  const eeatLinks = [
+    { name: "Google Search Central: Introduction to robots.txt", url: "https://developers.google.com/search/docs/crawling-indexing/robots/intro" },
+    { name: "Google Search Console Help: Submit a robots.txt file", url: "https://support.google.com/webmasters/answer/9371661" },
+    { name: "Bing Webmaster Guidelines on Robots.txt", url: "https://www.bing.com/webmasters/help/how-to-create-a-robots-txt-file-cb7c31ec" }
+  ];
+
+  function loadEeatLinks() {
+    const container = document.getElementById('eeat-grid');
+    eeatLinks.forEach(link => {
+      const li = document.createElement('li');
+      const a = document.createElement('a'); 
+      a.href = link.url; 
+      a.target = "_blank";
+      a.rel = "nofollow noopener";
+      a.innerHTML = `📄 ${link.name}`; 
+      li.appendChild(a);
+      container.appendChild(li);
     });
   }
 
-  function addRule() { customRules.push({ access: 'Disallow', path: '' }); renderRules(); generateRobotsTxt(); }
-  function removeRule(i) { customRules.splice(i, 1); renderRules(); generateRobotsTxt(); }
-  function updateRule(i, k, v) { customRules[i][k] = v; generateRobotsTxt(); }
-
-  function generateRobotsTxt() {
-    let output = "User-agent: *\n";
-    if (defaultRuleSelect.value === 'disallow') output += "Disallow: /\n";
-    if (crawlDelaySelect.value) output += `Crawl-delay: ${crawlDelaySelect.value}\n`;
-    customRules.forEach(r => { if (r.path.trim()) output += `${r.access}: ${r.path}\n`; });
-    if (sitemapInput.value.trim()) output += `\nSitemap: ${sitemapInput.value.trim()}\n`;
-    txtOutput.textContent = output;
-  }
-
-  copyBtn.addEventListener('click', () => { navigator.clipboard.writeText(txtOutput.textContent); copyBtn.textContent = '✓ Copied!'; setTimeout(() => copyBtn.textContent = 'Copy Text', 2000); });
-  downloadBtn.addEventListener('click', () => { const a = document.createElement('a'); a.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(txtOutput.textContent); a.download = 'robots.txt'; a.click(); });
-  document.querySelectorAll('.seo-faq-q').forEach(q => q.addEventListener('click', () => q.closest('.seo-faq-item').classList.toggle('open')));
-
-  renderRules();
-  generateRobotsTxt();
+  // Initialize dynamic content
+  loadEeatLinks();
 </script>
-<script src="/assets/site.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is a robots txt file & how to create it?", "acceptedAnswer": { "@type": "Answer", "text": "It is a plain text file placed in your website's root directory that dictates crawler access. You can create robot txt file online using our generator above by specifying your allowed and disallowed paths." } },
+    { "@type": "Question", "name": "How do I create robots txt google webmaster tools?", "acceptedAnswer": { "@type": "Answer", "text": "Google Webmaster Tools (now Search Console) reads your live file. You can create robots.txt for website here, upload it to your server, and then use Google Search Console to test and validate your rules." } },
+    { "@type": "Question", "name": "Can I create a robot txt file for my site easily?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Our create robots txt generator is completely free. Just enter your sitemap URL, define which folders to block, and click generate to creating a robots.txt file instantly." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "SEO Tools", "item": "https://toolboxkart.tech/seo/" },
+    { "@type": "ListItem", "position": 3, "name": "Free Robots.txt Generator", "item": "https://toolboxkart.tech/seo/robots-txt-generator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Robots.txt Generator",
+  "url": "https://toolboxkart.tech/seo/robots-txt-generator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

@@ -6,6 +6,12 @@
   <title>CAGR Calculator | Compound Annual Growth Rate - Toolboxkart</title>
   <meta name="description" content="Free online CAGR Calculator. Calculate the Compound Annual Growth Rate and absolute return of your mutual funds, stocks, and investments instantly.">
   
+  <link rel="canonical" href="https://toolboxkart.tech/finance/cagr-calculator/" />
+  <meta property="og:title" content="CAGR Calculator - Toolboxkart" />
+  <meta property="og:description" content="Free online CAGR Calculator. Calculate the Compound Annual Growth Rate and absolute return of your mutual funds, stocks, and investments instantly." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/cagr-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <style>
     /* Global Rules */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -82,6 +88,7 @@
   <div class="hero">
     <h1>CAGR Calculator</h1>
     <p>Calculate the Compound Annual Growth Rate and absolute returns of your investments over time.</p>
+  <p class="last-updated">Last updated: August 2026</p>
   </div>
 
   <!-- Tool Container -->
@@ -160,7 +167,7 @@
   <!-- Related Tools -->
   <div class="container related-tools">
     <h2>More Finance Tools</h2>
-    <div id="tools-grid"></div>
+    <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
   </div>
 
   <!-- JavaScript -->
@@ -234,38 +241,41 @@
     });
 
     // 3. Related Tools Logic (Now includes the EMI Calculator)
-    const relatedTools = [
-      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
-      { name: "Budget Planner", url: "/finance/budget-planner" },
-      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
-      { name: "EMI Calculator", url: "/finance/emi-calculator" },
-      { name: "EPF Calculator", url: "/finance/epf-calculator" },
-      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
-      { name: "FD Calculator", url: "/finance/fd-calculator" },
-      { name: "Gratuity Calculator", url: "/finance/gratuity-calculator" },
-      { name: "GST Calculator", url: "/finance/gst-calculator" },
-      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
-      { name: "NPS Calculator", url: "/finance/nps-calculator" },
-      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
-      { name: "RD Calculator", url: "/finance/rd-calculator" },
-      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
-      { name: "ROI Calculator", url: "/finance/roi-calculator" },
-      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
-      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
-    ];
-    
-    function loadRelatedTools() {
-      const container = document.getElementById('tools-grid');
-      relatedTools.forEach(tool => {
-        const link = document.createElement('a'); 
-        link.href = tool.url; 
-        link.className = 'tool-card-link'; 
-        link.textContent = tool.name; 
-        container.appendChild(link);
-      });
-    }
-    loadRelatedTools();
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the Compound Annual Growth Rate formula?", "acceptedAnswer": { "@type": "Answer", "text": "The formula used to calculate CAGR is: CAGR = [(Ending Value / Beginning Value) ^ (1 / Number of Years)] - 1. Our tool handles this complex mathematical equation instantly for you." } },
+    { "@type": "Question", "name": "What is the difference between Absolute Return and CAGR?", "acceptedAnswer": { "@type": "Answer", "text": "Absolute return simply measures total growth as a percentage, regardless of how long it took. CAGR measures the average annual growth rate, assuming profits were reinvested at the end of each year. For investments held longer than one year, CAGR is a far better performance indicator." } },
+    { "@type": "Question", "name": "What is considered a good CAGR for Mutual Funds?", "acceptedAnswer": { "@type": "Answer", "text": "A \"good\" CAGR depends entirely on the asset class and market conditions. Generally, for equity mutual funds in India, a long-term CAGR of 12% to 15% is considered very healthy and beats inflation comfortably." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "CAGR Calculator", "item": "https://toolboxkart.tech/finance/cagr-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CAGR Calculator",
+  "url": "https://toolboxkart.tech/finance/cagr-calculator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

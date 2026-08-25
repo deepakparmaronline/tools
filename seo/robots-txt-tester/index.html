@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Robots.txt Tester | Test Googlebot & Search Console Tool - Toolboxkart</title>
+  <meta name="description" content="Use our free robots.txt tester to instantly test robots.txt rules. Ensure your pages are allowed and test Googlebot crawling permissions just like GSC." />
+  <link rel="canonical" href="https://toolboxkart.tech/seo/robots-txt-tester/" />
+  <meta property="og:title" content="Free Robots.txt Tester - Toolboxkart" />
+  <meta property="og:description" content="Use our free robots.txt tester to instantly test robots.txt rules. Ensure your pages are allowed and test Googlebot crawling permissions just like GSC." />
+  <meta property="og:url" content="https://toolboxkart.tech/seo/robots-txt-tester/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+    
+    /* ── NAV & HERO ── */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-brand span { color: #7c6fcd; }
+    .hero { text-align: center; padding: 3rem 1rem 1.5rem; }
+    .hero h1 { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+    
+    /* ── TOOL LAYOUT ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 4rem; }
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2rem; }
+    .calc-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+    @media(min-width: 768px) { .calc-grid { grid-template-columns: 1fr 1fr; } }
+    
+    .form-group { margin-bottom: 1rem; }
+    .full-width { grid-column: 1 / -1; }
+    label { display: block; font-size: 0.95rem; font-weight: 600; color: #ccc; margin-bottom: 0.5rem; }
+    
+    input[type="text"], select, textarea { width: 100%; background: #222; color: #fff; border: 1px solid #333; border-radius: 8px; padding: 1rem; font-size: 1rem; outline: none; transition: 0.2s; }
+    input[type="text"]:focus, select:focus, textarea:focus { border-color: #7c6fcd; }
+    textarea { height: 200px; font-family: monospace; resize: vertical; }
+
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: 0.2s; }
+    button.btn-primary:hover { background: #6a5ebf; }
+
+    /* ── RESULTS AREA ── */
+    .result-box { background: #1a1a1a; padding: 2rem; border-radius: 8px; margin-top: 2rem; display: none; border: 1px solid #333; text-align: center; }
+    .result-status { font-size: 2.5rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .allowed { color: #4ade80; }
+    .blocked { color: #f87171; }
+    .result-details { color: #888; font-size: 1rem; }
+
+    /* ── SEO CONTENT ── */
+    .seo-content-block { margin-top: 3rem; }
+    .seo-content-block h2 { font-size: 1.5rem; color: #fff; margin: 2rem 0 1rem; }
+    .seo-content-block p { color: #aaa; margin-bottom: 1rem; }
+    
+    /* ── FAQS ── */
+    .seo-faq-item { border-bottom: 1px solid #1e1e1e; padding: 1rem 0; }
+    .seo-faq-q { font-weight: 600; color: #ccc; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.2rem; color: #7c6fcd; }
+    .seo-faq-item.open .seo-faq-q::after { content: '-'; }
+    .seo-faq-a { font-size: .95rem; color: #888; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .seo-faq-item.open .seo-faq-a { max-height: 500px; padding-top: .8rem; }
+
+    /* ── RELATED TOOLS & EEAT ── */
+    .section-title { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #272727; font-size: 1.3rem; color: #fff; margin-bottom: 1rem; }
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+    .tool-card-link { background: #161616; border: 1px solid #333; padding: 1rem; border-radius: 8px; color: #e0e0e0; text-decoration: none; font-size: .9rem; transition: 0.2s; display: block; }
+    .tool-card-link:hover { border-color: #7c6fcd; background: #1a1a1a; }
+    
+    .eeat-list { list-style: none; }
+    .eeat-list li { margin-bottom: 0.8rem; }
+    .eeat-list a { color: #7c6fcd; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .eeat-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav><a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a></nav>
+
+<div class="hero">
+  <h1>Robots.txt Tester</h1>
+  <p>Test your robots.txt file to ensure Googlebot and other crawlers can access your important web pages.</p>
+  <p class="last-updated">Last updated: August 2026</p>
+</div>
+
+<div class="container">
+  <!-- TOOL SECTION -->
+  <div class="card">
+    <div class="form-group full-width">
+      <label>Robots.txt Content</label>
+      <textarea id="robotsContent" placeholder="Paste your robots.txt code here...">User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+User-agent: Googlebot
+Disallow: /private/
+</textarea>
+    </div>
+    
+    <div class="calc-grid">
+      <div class="form-group">
+        <label>URL Path to Test</label>
+        <input type="text" id="testPath" placeholder="e.g., /wp-admin/login.php" value="/wp-admin/login.php">
+      </div>
+      <div class="form-group">
+        <label>Select User-Agent</label>
+        <select id="userAgent">
+          <option value="Googlebot">Googlebot (Google)</option>
+          <option value="Bingbot">Bingbot (Bing)</option>
+          <option value="Slurp">Slurp (Yahoo)</option>
+          <option value="DuckDuckBot">DuckDuckBot</option>
+          <option value="*">* (Default)</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-primary" onclick="testRobotsTxt()">Test URL Path</button>
+
+    <div id="result-box" class="result-box">
+      <div id="result-status" class="result-status">--</div>
+      <div id="result-details" class="result-details">--</div>
+    </div>
+  </div>
+
+  <!-- SEO CONTENT SECTION -->
+  <div class="seo-content-block">
+    <h2>Why Use a Robots txt Tester?</h2>
+    <p>Before deploying changes to your live server, it's vital to use a <strong>free robots.txt tester</strong> to verify your rules. A simple typo in your configuration can accidentally block search engines from crawling your entire website. Our <strong>robots txt test tool</strong> simulates how crawlers read your file, acting as an accurate <strong>googlebot tester</strong> to prevent indexing disasters.</p>
+    
+    <h2>How Does the Google Robots txt Tester Work?</h2>
+    <p>Similar to the <strong>google search console robots txt tester</strong>, our tool parses your syntax rule by rule. When you <strong>test robots txt</strong>, the tool checks your URL path against the `Allow` and `Disallow` directives for the specific User-Agent you select. Whether you want to <strong>test robots txt file</strong> paths for Bingbot or conduct a strict <strong>google robots check</strong>, this utility provides instant validation.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">How do I test my robots.txt file?</div>
+      <div class="seo-faq-a">To <strong>test robots.txt</strong>, paste your code into the text area above, enter the URL path you want to verify (e.g., `/blog/post`), select your bot, and click Test. Our <strong>robot txt tester</strong> will instantly tell you if the path is allowed or blocked.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Is this tool an alternative to the Google Search Console robots.txt tester?</div>
+      <div class="seo-faq-a">Yes! Our <strong>google robots txt test</strong> tool is a fantastic, accessible alternative. While the <strong>gsc robots.txt tester</strong> requires domain verification, our <strong>robots tester tool</strong> lets you test snippets of code immediately without logging in.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">What is a web crawler test?</div>
+      <div class="seo-faq-a">A <strong>web crawler test</strong>, or <strong>bot testing</strong>, involves simulating how a search engine bot navigates your site based on your `robots.txt` instructions. It ensures your <strong>testing robots txt</strong> strategy aligns with your SEO goals.</div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC RELATED TOOLS SECTION -->
+  <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
+
+  <!-- EXTERNAL EEAT GUIDELINES -->
+  <h3 class="section-title">External Guides & Resources (EEAT)</h3>
+  <ul class="eeat-list" id="eeat-grid"></ul>
+</div>
+
+<script>
+  // Tool Logic
+  function testRobotsTxt() {
+    const content = document.getElementById('robotsContent').value.trim();
+    const testPath = document.getElementById('testPath').value.trim();
+    const testAgent = document.getElementById('userAgent').value.toLowerCase();
+    
+    if (!content || !testPath) {
+      alert("Bhai, please enter both robots.txt content and a URL path to test.");
+      return;
+    }
+
+    const lines = content.split('\n');
+    let rules = { '*': [] };
+    let currentAgent = '';
+
+    // Parse the robots.txt content
+    lines.forEach(line => {
+      // Remove comments and trim
+      let cleanLine = line.split('#')[0].trim();
+      if (!cleanLine) return;
+
+      let parts = cleanLine.split(':');
+      if (parts.length < 2) return;
+
+      let key = parts[0].trim().toLowerCase();
+      let val = parts.slice(1).join(':').trim();
+
+      if (key === 'user-agent') {
+        currentAgent = val.toLowerCase();
+        if (!rules[currentAgent]) rules[currentAgent] = [];
+      } else if (key === 'allow' || key === 'disallow') {
+        if (currentAgent) {
+          rules[currentAgent].push({ type: key, path: val });
+        }
+      }
+    });
+
+    // Select the correct rules array (Specific Agent overrides Wildcard *)
+    let rulesToTest = [];
+    if (rules[testAgent] && rules[testAgent].length > 0) {
+      rulesToTest = rules[testAgent];
+    } else if (rules['*']) {
+      rulesToTest = rules['*'];
+    }
+
+    let isAllowed = true;
+    let matchedLength = 0;
+    let appliedRule = "Default (No matching rule)";
+
+    // Evaluate rules against path
+    rulesToTest.forEach(rule => {
+      if (!rule.path) return; // empty disallow means allow all
+
+      // Create simple regex from path: replace * with .*
+      let regexStr = '^' + rule.path.replace(/\*/g, '.*');
+      let regex = new RegExp(regexStr, 'i');
+
+      if (regex.test(testPath)) {
+        // Google's rule: Longest matching path wins. 
+        if (rule.path.length >= matchedLength) {
+          matchedLength = rule.path.length;
+          isAllowed = (rule.type === 'allow');
+          appliedRule = `${rule.type === 'allow' ? 'Allow' : 'Disallow'}: ${rule.path}`;
+        }
+      }
+    });
+
+    // Display Results
+    const statusEl = document.getElementById('result-status');
+    const detailsEl = document.getElementById('result-details');
+    
+    if (isAllowed) {
+      statusEl.textContent = "✅ ALLOWED";
+      statusEl.className = "result-status allowed";
+    } else {
+      statusEl.textContent = "❌ BLOCKED";
+      statusEl.className = "result-status blocked";
+    }
+    
+    detailsEl.innerHTML = `<strong>Tested Path:</strong> ${testPath}<br><strong>Bot:</strong> ${document.getElementById('userAgent').options[document.getElementById('userAgent').selectedIndex].text}<br><strong>Matching Rule:</strong> ${appliedRule}`;
+    
+    document.getElementById('result-box').style.display = 'block';
+  }
+
+  // FAQ Accordion Logic
+  document.querySelectorAll('.seo-faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const parent = q.closest('.seo-faq-item');
+      document.querySelectorAll('.seo-faq-item').forEach(item => {
+        if(item !== parent) item.classList.remove('open');
+      });
+      parent.classList.toggle('open');
+    });
+  });
+
+  // Dynamic Related Tools Injection
+  
+  
+  // Dynamic EEAT Links Injection
+  const eeatLinks = [
+    { name: "Google Search Console: Using the robots.txt Tester tool", url: "https://support.google.com/webmasters/answer/6062598" },
+    { name: "Google Search Central: How Google interprets robots.txt specification", url: "https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt" },
+    { name: "Bing Webmaster Tools: Robots.txt Validator", url: "https://www.bing.com/webmasters/help/how-to-create-a-robots-txt-file-cb7c31ec" }
+  ];
+
+  function loadEeatLinks() {
+    const container = document.getElementById('eeat-grid');
+    eeatLinks.forEach(link => {
+      const li = document.createElement('li');
+      const a = document.createElement('a'); 
+      a.href = link.url; 
+      a.target = "_blank";
+      a.rel = "nofollow noopener";
+      a.innerHTML = `📄 ${link.name}`; 
+      li.appendChild(a);
+      container.appendChild(li);
+    });
+  }
+
+  // Initialize
+  loadEeatLinks();
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do I test my robots.txt file?", "acceptedAnswer": { "@type": "Answer", "text": "To test robots.txt, paste your code into the text area above, enter the URL path you want to verify (e.g., `/blog/post`), select your bot, and click Test. Our robot txt tester will instantly tell you if the path is allowed or blocked." } },
+    { "@type": "Question", "name": "Is this tool an alternative to the Google Search Console robots.txt tester?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Our google robots txt test tool is a fantastic, accessible alternative. While the gsc robots.txt tester requires domain verification, our robots tester tool lets you test snippets of code immediately without logging in." } },
+    { "@type": "Question", "name": "What is a web crawler test?", "acceptedAnswer": { "@type": "Answer", "text": "A web crawler test, or bot testing, involves simulating how a search engine bot navigates your site based on your `robots.txt` instructions. It ensures your testing robots txt strategy aligns with your SEO goals." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "SEO Tools", "item": "https://toolboxkart.tech/seo/" },
+    { "@type": "ListItem", "position": 3, "name": "Free Robots.txt Tester", "item": "https://toolboxkart.tech/seo/robots-txt-tester/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Robots.txt Tester",
+  "url": "https://toolboxkart.tech/seo/robots-txt-tester/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

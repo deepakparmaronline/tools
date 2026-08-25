@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robots.txt Checker | Free Online Googlebot & Syntax Validator - Toolboxkart</title>
+  <meta name="description" content="Use our free robots txt checker to check robots.txt online. Validate syntax, find sitemaps, and check if your site is accessible to Googlebot." />
+  <link rel="canonical" href="https://toolboxkart.tech/seo/robots-txt-checker-tool/" />
+  <meta property="og:title" content="Robots.txt Checker - Toolboxkart" />
+  <meta property="og:description" content="Use our free robots txt checker to check robots.txt online. Validate syntax, find sitemaps, and check if your site is accessible to Googlebot." />
+  <meta property="og:url" content="https://toolboxkart.tech/seo/robots-txt-checker-tool/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+    
+    /* ── NAV & HERO ── */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-brand span { color: #7c6fcd; }
+    .hero { text-align: center; padding: 3rem 1rem 1.5rem; }
+    .hero h1 { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+    
+    /* ── TOOL LAYOUT ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 4rem; }
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; font-size: 0.95rem; font-weight: 600; color: #ccc; margin-bottom: 0.5rem; }
+    input[type="url"] { width: 100%; background: #222; color: #fff; border: 1px solid #333; border-radius: 8px; padding: 1rem; font-size: 1rem; outline: none; }
+    input[type="url"]:focus { border-color: #7c6fcd; }
+    
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: 0.2s; }
+    button.btn-primary:hover { background: #6a5ebf; }
+    button:disabled { background: #444; cursor: not-allowed; }
+
+    /* ── RESULTS AREA ── */
+    #loading { display: none; text-align: center; color: #7c6fcd; margin-top: 1rem; font-weight: 600; }
+    .result-box { background: #1a1a1a; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; display: none; border: 1px solid #333; }
+    .status-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .status-card { background: #111; border: 1px solid #272727; padding: 1rem; border-radius: 8px; text-align: center; }
+    .status-title { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+    .status-value { font-size: 1.2rem; font-weight: bold; margin-top: 0.5rem; }
+    .success { color: #4ade80; }
+    .error { color: #f87171; }
+    .warning { color: #fbbf24; }
+    
+    .errors-list { background: #2a1111; border: 1px solid #5a2020; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; display: none; }
+    .errors-list h4 { color: #f87171; margin-bottom: 0.5rem; }
+    .errors-list ul { padding-left: 1.5rem; color: #ffb3b3; font-size: 0.9rem; }
+    
+    textarea.code-output { width: 100%; height: 200px; background: #000; color: #a3a3a3; border: 1px solid #272727; border-radius: 8px; padding: 1rem; font-family: monospace; font-size: 0.95rem; resize: vertical; margin-top: 1rem;}
+
+    /* ── SEO CONTENT ── */
+    .seo-content-block { margin-top: 3rem; }
+    .seo-content-block h2 { font-size: 1.5rem; color: #fff; margin: 2rem 0 1rem; }
+    .seo-content-block p { color: #aaa; margin-bottom: 1rem; }
+    
+    /* ── FAQS ── */
+    .seo-faq-item { border-bottom: 1px solid #1e1e1e; padding: 1rem 0; }
+    .seo-faq-q { font-weight: 600; color: #ccc; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.2rem; color: #7c6fcd; }
+    .seo-faq-item.open .seo-faq-q::after { content: '-'; }
+    .seo-faq-a { font-size: .95rem; color: #888; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .seo-faq-item.open .seo-faq-a { max-height: 500px; padding-top: .8rem; }
+
+    /* ── RELATED TOOLS & EEAT ── */
+    .section-title { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #272727; font-size: 1.3rem; color: #fff; margin-bottom: 1rem; }
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+    .tool-card-link { background: #161616; border: 1px solid #333; padding: 1rem; border-radius: 8px; color: #e0e0e0; text-decoration: none; font-size: .9rem; transition: 0.2s; display: block; }
+    .tool-card-link:hover { border-color: #7c6fcd; background: #1a1a1a; }
+    
+    .eeat-list { list-style: none; }
+    .eeat-list li { margin-bottom: 0.8rem; }
+    .eeat-list a { color: #7c6fcd; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .eeat-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav><a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a></nav>
+
+<div class="hero">
+  <h1>Robots.txt Checker Tool</h1>
+  <p>Instantly fetch, validate, and check robots.txt of a website to ensure it is fully optimized for Googlebot.</p>
+  <p class="last-updated">Last updated: August 2026</p>
+</div>
+
+<div class="container">
+  <!-- TOOL SECTION -->
+  <div class="card">
+    <div class="form-group">
+      <label>Enter Website URL</label>
+      <input type="url" id="urlInput" placeholder="https://www.example.com" required>
+    </div>
+    <button class="btn-primary" id="checkBtn" onclick="runCheck()">Check Robots.txt</button>
+    <div id="loading">Fetching and analyzing robots.txt...</div>
+
+    <div id="result-box" class="result-box">
+      <div class="status-grid">
+        <div class="status-card">
+          <div class="status-title">File Status</div>
+          <div class="status-value" id="res-status">--</div>
+        </div>
+        <div class="status-card">
+          <div class="status-title">XML Sitemap</div>
+          <div class="status-value" id="res-sitemap">--</div>
+        </div>
+        <div class="status-card">
+          <div class="status-title">Syntax Valid</div>
+          <div class="status-value" id="res-syntax">--</div>
+        </div>
+      </div>
+      
+      <div id="error-container" class="errors-list">
+        <h4>Syntax Errors Found:</h4>
+        <ul id="error-list"></ul>
+      </div>
+
+      <label>Raw File Content:</label>
+      <textarea id="raw-output" class="code-output" readonly></textarea>
+    </div>
+  </div>
+
+  <!-- SEO CONTENT SECTION -->
+  <div class="seo-content-block">
+    <h2>Why You Need a Robots txt Checker</h2>
+    <p>Using a reliable <strong>robots txt checker</strong> is crucial for any SEO strategy. If you want to <strong>check robots.txt</strong>, our tool acts as a comprehensive <strong>googlebot checker</strong> and <strong>robots txt syntax checker</strong>. It helps you instantly figure out if your critical pages are being blocked or if your <strong>robots txt file checker</strong> detects formatting errors that could ruin your rankings.</p>
+    
+    <h2>How to Check Robots txt File in Website?</h2>
+    <p>Many webmasters ask <strong>how to check if a website has robots.txt</strong> or <strong>how to check robots txt is working or not</strong>. You can simply use our <strong>site robots txt checker</strong> to fetch the file automatically. Whether you need a <strong>google robot check</strong> or want to <strong>check if url is blocked by robots txt</strong>, simply enter your domain. Our tool will parse the file, verify the directives, and even tell you if an XML Sitemap is missing.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">How to check my robots.txt file?</div>
+      <div class="seo-faq-a">To <strong>check my robots txt</strong>, just paste your homepage URL in the input box above. Our <strong>robot txt checker</strong> will securely pull the file and highlight any syntax warnings or missing sitemaps.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">What does a robots txt syntax checker do?</div>
+      <div class="seo-faq-a">A <strong>robots txt syntax checker</strong> reviews every line of your file. It ensures you are using valid directives like <code>User-agent:</code>, <code>Disallow:</code>, and <code>Allow:</code> correctly, preventing critical crawling issues.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Can this tool check if a page is blocked by robots.txt?</div>
+      <div class="seo-faq-a">While this <strong>google robots txt check</strong> fetches and reads the rules, to completely test a specific URL against the rules, we recommend using our upcoming Robots Txt Tester tool alongside this <strong>bot checker</strong>.</div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC RELATED TOOLS SECTION -->
+  <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
+
+  <!-- EXTERNAL EEAT GUIDELINES -->
+  <h3 class="section-title">External Guides & Resources (EEAT)</h3>
+  <ul class="eeat-list" id="eeat-grid"></ul>
+</div>
+
+<script>
+  // Tool Logic
+  async function runCheck() {
+    const inputField = document.getElementById('urlInput');
+    let rawUrl = inputField.value.trim();
+    
+    if (!rawUrl) {
+      alert("Bhai, please enter a valid website URL.");
+      return;
+    }
+
+    // Clean and format URL
+    if (!/^https?:\/\//i.test(rawUrl)) {
+      rawUrl = 'https://' + rawUrl;
+    }
+    
+    let fetchUrl;
+    try {
+      const urlObj = new URL(rawUrl);
+      fetchUrl = urlObj.origin + '/robots.txt';
+    } catch(e) {
+      alert("Invalid URL format.");
+      return;
+    }
+
+    const checkBtn = document.getElementById('checkBtn');
+    const loading = document.getElementById('loading');
+    const resultBox = document.getElementById('result-box');
+    const errorContainer = document.getElementById('error-container');
+    const errorList = document.getElementById('error-list');
+
+    checkBtn.disabled = true;
+    loading.style.display = 'block';
+    resultBox.style.display = 'none';
+    errorContainer.style.display = 'none';
+    errorList.innerHTML = '';
+
+    // Using AllOrigins as a free CORS proxy to fetch the text
+    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(fetchUrl)}`;
+
+    try {
+      const response = await fetch(proxyUrl);
+      if (!response.ok) throw new Error("Network response was not ok");
+      
+      const data = await response.json();
+      
+      if (data.status && data.status.http_code === 404 || !data.contents) {
+        document.getElementById('res-status').textContent = "Not Found (404)";
+        document.getElementById('res-status').className = "status-value error";
+        document.getElementById('res-sitemap').textContent = "N/A";
+        document.getElementById('res-syntax').textContent = "N/A";
+        document.getElementById('raw-output').value = "No robots.txt file found at " + fetchUrl;
+      } else {
+        const content = data.contents;
+        document.getElementById('res-status').textContent = "Found ✅";
+        document.getElementById('res-status').className = "status-value success";
+        document.getElementById('raw-output').value = content;
+
+        // Sitemap Check
+        const hasSitemap = /Sitemap:\s*https?:\/\//i.test(content);
+        if (hasSitemap) {
+          document.getElementById('res-sitemap').textContent = "Present ✅";
+          document.getElementById('res-sitemap').className = "status-value success";
+        } else {
+          document.getElementById('res-sitemap').textContent = "Missing ❌";
+          document.getElementById('res-sitemap').className = "status-value error";
+        }
+
+        // Syntax Validation Logic
+        const lines = content.split('\n');
+        const syntaxErrors = [];
+        const validDirectives = /^(user-agent|disallow|allow|sitemap|crawl-delay|host|clean-param):/i;
+
+        lines.forEach((line, index) => {
+          const trimmed = line.trim();
+          if (trimmed !== '' && !trimmed.startsWith('#')) {
+            if (!validDirectives.test(trimmed)) {
+              syntaxErrors.push(`Line ${index + 1}: Unrecognized directive -> "${trimmed}"`);
+            }
+          }
+        });
+
+        if (syntaxErrors.length > 0) {
+          document.getElementById('res-syntax').textContent = "Issues Found ⚠️";
+          document.getElementById('res-syntax').className = "status-value warning";
+          
+          syntaxErrors.forEach(err => {
+            const li = document.createElement('li');
+            li.textContent = err;
+            errorList.appendChild(li);
+          });
+          errorContainer.style.display = 'block';
+        } else {
+          document.getElementById('res-syntax').textContent = "Valid ✅";
+          document.getElementById('res-syntax').className = "status-value success";
+        }
+      }
+    } catch (error) {
+      document.getElementById('res-status').textContent = "Fetch Failed";
+      document.getElementById('res-status').className = "status-value error";
+      document.getElementById('raw-output').value = "Error fetching robots.txt. The server might be blocking proxy requests or the domain is invalid.";
+    }
+
+    loading.style.display = 'none';
+    resultBox.style.display = 'block';
+    checkBtn.disabled = false;
+  }
+
+  // FAQ Accordion Logic
+  document.querySelectorAll('.seo-faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const parent = q.closest('.seo-faq-item');
+      document.querySelectorAll('.seo-faq-item').forEach(item => {
+        if(item !== parent) item.classList.remove('open');
+      });
+      parent.classList.toggle('open');
+    });
+  });
+
+  // Dynamic Related Tools Injection
+  
+  
+  // Dynamic EEAT Links Injection
+  const eeatLinks = [
+    { name: "Google Search Central: Test your robots.txt with the robots.txt Tester", url: "https://support.google.com/webmasters/answer/6062598" },
+    { name: "Google: Create and submit a robots.txt file", url: "https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt" },
+    { name: "Bing: How to Create a Robots.txt File", url: "https://www.bing.com/webmasters/help/how-to-create-a-robots-txt-file-cb7c31ec" }
+  ];
+
+  function loadEeatLinks() {
+    const container = document.getElementById('eeat-grid');
+    eeatLinks.forEach(link => {
+      const li = document.createElement('li');
+      const a = document.createElement('a'); 
+      a.href = link.url; 
+      a.target = "_blank";
+      a.rel = "nofollow noopener";
+      a.innerHTML = `📄 ${link.name}`; 
+      li.appendChild(a);
+      container.appendChild(li);
+    });
+  }
+
+  // Initialize
+  loadEeatLinks();
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How to check my robots.txt file?", "acceptedAnswer": { "@type": "Answer", "text": "To check my robots txt, just paste your homepage URL in the input box above. Our robot txt checker will securely pull the file and highlight any syntax warnings or missing sitemaps." } },
+    { "@type": "Question", "name": "What does a robots txt syntax checker do?", "acceptedAnswer": { "@type": "Answer", "text": "A robots txt syntax checker reviews every line of your file. It ensures you are using valid directives like User-agent:, Disallow:, and Allow: correctly, preventing critical crawling issues." } },
+    { "@type": "Question", "name": "Can this tool check if a page is blocked by robots.txt?", "acceptedAnswer": { "@type": "Answer", "text": "While this google robots txt check fetches and reads the rules, to completely test a specific URL against the rules, we recommend using our upcoming Robots Txt Tester tool alongside this bot checker." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "SEO Tools", "item": "https://toolboxkart.tech/seo/" },
+    { "@type": "ListItem", "position": 3, "name": "Robots.txt Checker", "item": "https://toolboxkart.tech/seo/robots-txt-checker-tool/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Robots.txt Checker",
+  "url": "https://toolboxkart.tech/seo/robots-txt-checker-tool/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

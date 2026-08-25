@@ -6,6 +6,12 @@
   <title>RD Calculator | Recurring Deposit Interest & Maturity - Toolboxkart</title>
   <meta name="description" content="Calculate your Recurring Deposit (RD) maturity amount and interest earned. Use our free RD calculator to plan your monthly savings effortlessly.">
   
+  <link rel="canonical" href="https://toolboxkart.tech/finance/rd-calculator/" />
+  <meta property="og:title" content="RD Calculator - Toolboxkart" />
+  <meta property="og:description" content="Calculate your Recurring Deposit (RD) maturity amount and interest earned. Use our free RD calculator to plan your monthly savings effortlessly." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/rd-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <style>
     /* Global Rules */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -79,6 +85,7 @@
   <div class="hero">
     <h1>RD Calculator</h1>
     <p>Calculate your Recurring Deposit interest and plan your monthly savings maturity amount.</p>
+  <p class="last-updated">Last updated: August 2026</p>
   </div>
 
   <!-- Tool Container -->
@@ -158,7 +165,7 @@
   <!-- Related Tools -->
   <div class="container related-tools">
     <h2>More Finance Tools</h2>
-    <div id="tools-grid"></div>
+    <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
   </div>
 
   <!-- JavaScript -->
@@ -227,33 +234,41 @@
     });
 
     // 3. Related Tools Logic (Now includes the FD Calculator)
-    const relatedTools = [
-      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
-      { name: "Budget Planner", url: "/finance/budget-planner" },
-      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
-      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
-      { name: "FD Calculator", url: "/finance/fd-calculator" },
-      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
-      { name: "NPS Calculator", url: "/finance/nps-calculator" },
-      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
-      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
-      { name: "ROI Calculator", url: "/finance/roi-calculator" },
-      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
-      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
-    ];
-    
-    function loadRelatedTools() {
-      const container = document.getElementById('tools-grid');
-      relatedTools.forEach(tool => {
-        const link = document.createElement('a'); 
-        link.href = tool.url; 
-        link.className = 'tool-card-link'; 
-        link.textContent = tool.name; 
-        container.appendChild(link);
-      });
-    }
-    loadRelatedTools();
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How is RD interest calculated in India?", "acceptedAnswer": { "@type": "Answer", "text": "In India, most banks compound Recurring Deposit interest on a quarterly basis. This means the interest is calculated and added to your principal amount every three months, accelerating your wealth growth through the power of compounding." } },
+    { "@type": "Question", "name": "What is the difference between an FD and an RD?", "acceptedAnswer": { "@type": "Answer", "text": "A Fixed Deposit (FD) requires a one-time lump sum investment upfront. A Recurring Deposit (RD), on the other hand, allows you to contribute smaller, fixed amounts every month. Both offer guaranteed returns and similar interest rates." } },
+    { "@type": "Question", "name": "Is the interest earned on an RD taxable?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, the interest earned on an RD is fully taxable under the head \"Income from Other Sources\" according to your income tax slab. Banks will also deduct TDS (Tax Deducted at Source) if the annual interest exceeds ₹40,000 (₹50,000 for senior citizens)." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "RD Calculator", "item": "https://toolboxkart.tech/finance/rd-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "RD Calculator",
+  "url": "https://toolboxkart.tech/finance/rd-calculator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

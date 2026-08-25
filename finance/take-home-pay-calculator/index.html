@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Take-Home Pay & Income Tax Calculator | Toolboxkart</title>
     <meta name="description" content="Use our free take-home pay calculator to estimate your in-hand salary after income tax and deductions. Calculate your net monthly and yearly pay easily.">
+  <link rel="canonical" href="https://toolboxkart.tech/finance/take-home-pay-calculator/" />
+  <meta property="og:title" content="Free Take-Home Pay &amp; Income Tax Calculator - Toolboxkart" />
+  <meta property="og:description" content="Use our free take-home pay calculator to estimate your in-hand salary after income tax and deductions. Calculate your net monthly and yearly pay easily." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/take-home-pay-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
     <style>
         /* Global Reset & Base Styles */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -86,6 +92,7 @@
     <div class="hero">
         <h1>Take-Home Pay & Income Tax Calculator</h1>
         <p>Find out exactly how much money you bring home every month. Calculate your net salary by subtracting income tax and standard deductions from your gross pay.</p>
+  <p class="last-updated">Last updated: August 2026</p>
     </div>
 
     <!-- Main Container -->
@@ -167,11 +174,9 @@
         </div>
 
         <!-- Related Tools Section -->
-        <div class="related-tools-section" id="related-tools-wrapper">
+        <div class="related-tools-section">
             <h2>Explore More Finance Tools</h2>
-            <div id="tools-grid">
-                <!-- Javascript will populate this -->
-            </div>
+            <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
         </div>
 
     </div>
@@ -231,31 +236,40 @@
         });
 
         // 3. Related Tools Logic (Tools 23, 24, 25)
-        const relatedTools = [
-            { name: "ROI Calculator", url: "/finance/roi-calculator" },
-            { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
-            { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" }
-        ];
-
-        function loadRelatedTools() {
-            const container = document.getElementById('tools-grid');
-            const wrapper = document.getElementById('related-tools-wrapper');
-
-            if (relatedTools.length === 0) {
-                wrapper.style.display = 'none';
-                return;
-            }
-
-            relatedTools.forEach(tool => {
-                const link = document.createElement('a'); 
-                link.href = tool.url; 
-                link.className = 'tool-card-link'; 
-                link.textContent = tool.name; 
-                container.appendChild(link);
-            });
-        }
-        
-        loadRelatedTools();
     </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the difference between Gross Pay and Take-Home Pay?", "acceptedAnswer": { "@type": "Answer", "text": "Gross Pay is your total salary before any taxes or deductions are removed. Take-Home Pay (or Net Pay) is the actual amount of money you receive in your bank account after income tax, standard deductions, and insurance premiums are subtracted." } },
+    { "@type": "Question", "name": "How does an income tax calculator work?", "acceptedAnswer": { "@type": "Answer", "text": "Our income tax and salary calculator takes your gross annual income, subtracts any tax-free allowances (like standard deductions), and then applies your estimated tax rate to the remaining taxable income. It also subtracts other annual contributions to give you an accurate monthly in-hand figure." } },
+    { "@type": "Question", "name": "Why is my in-hand salary so much lower than my CTC?", "acceptedAnswer": { "@type": "Answer", "text": "CTC includes everything the company spends on you, including employer PF contributions, gratuity, and health insurance. Once those non-cash components and personal income taxes are deducted, your take-home salary will be noticeably lower than the advertised CTC." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "Free Take-Home Pay & Income Tax Calculator", "item": "https://toolboxkart.tech/finance/take-home-pay-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Take-Home Pay & Income Tax Calculator",
+  "url": "https://toolboxkart.tech/finance/take-home-pay-calculator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

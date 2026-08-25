@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Savings Goal Calculator | Hit Your Target | Toolboxkart</title>
     <meta name="description" content="Use our free savings goal calculator to find out exactly how much you need to save every month to reach your financial target. Start planning today.">
+  <link rel="canonical" href="https://toolboxkart.tech/finance/savings-goal-calculator/" />
+  <meta property="og:title" content="Free Savings Goal Calculator - Toolboxkart" />
+  <meta property="og:description" content="Use our free savings goal calculator to find out exactly how much you need to save every month to reach your financial target. Start planning today." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/savings-goal-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
     <style>
         /* Global Reset & Base Styles */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -84,6 +90,7 @@
     <div class="hero">
         <h1>Savings Goal Calculator</h1>
         <p>Planning for a car, vacation, or down payment? Calculate exactly how much you need to save each month to hit your target on time.</p>
+  <p class="last-updated">Last updated: August 2026</p>
     </div>
 
     <!-- Main Container -->
@@ -165,11 +172,9 @@
         </div>
 
         <!-- Related Tools Section -->
-        <div class="related-tools-section" id="related-tools-wrapper">
+        <div class="related-tools-section">
             <h2>Explore More Finance Tools</h2>
-            <div id="tools-grid">
-                <!-- Javascript will populate this -->
-            </div>
+            <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
         </div>
 
     </div>
@@ -250,31 +255,40 @@
         });
 
         // 3. Related Tools Logic (Tools 26, 27, 28)
-        const relatedTools = [
-            { name: "Take-Home Pay Calculator", url: "/finance/take-home-pay-calculator" },
-            { name: "Budget Planner", url: "/finance/budget-planner" },
-            { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" }
-        ];
-
-        function loadRelatedTools() {
-            const container = document.getElementById('tools-grid');
-            const wrapper = document.getElementById('related-tools-wrapper');
-
-            if (relatedTools.length === 0) {
-                wrapper.style.display = 'none';
-                return;
-            }
-
-            relatedTools.forEach(tool => {
-                const link = document.createElement('a'); 
-                link.href = tool.url; 
-                link.className = 'tool-card-link'; 
-                link.textContent = tool.name; 
-                container.appendChild(link);
-            });
-        }
-        
-        loadRelatedTools();
     </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How does a savings goal calculator work?", "acceptedAnswer": { "@type": "Answer", "text": "A savings goal calculator takes your final target amount and subtracts what you have already saved. It then divides the remaining amount by your timeline. If you add an interest rate, it uses a financial formula to calculate how much the interest will help you, thereby reducing your required monthly deposit." } },
+    { "@type": "Question", "name": "Can I use this as a sinking fund calculator?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! A sinking fund is just a way to save up for a specific expense over time (like car repairs or a holiday). This money saving calculator works perfectly for tracking sinking funds. Just enter the amount you need and the months left until you need it." } },
+    { "@type": "Question", "name": "What if I can't afford the monthly savings amount?", "acceptedAnswer": { "@type": "Answer", "text": "If the monthly amount suggested by the savings target calculator is too high for your budget, you have two options. First, you can extend your timeline by increasing the number of months. Second, you can look for ways to cut back on expenses to free up more cash to save." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "Free Savings Goal Calculator", "item": "https://toolboxkart.tech/finance/savings-goal-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Savings Goal Calculator",
+  "url": "https://toolboxkart.tech/finance/savings-goal-calculator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

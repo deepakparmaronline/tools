@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robots.txt Validator | Check if Robots.txt is Valid Free - Toolboxkart</title>
+  <meta name="description" content="Use our free robots.txt validator to check if your robots txt is valid. Fix syntax errors and resolve WordPress or HTTPS validation issues instantly." />
+  <link rel="canonical" href="https://toolboxkart.tech/seo/robots-txt-validator/" />
+  <meta property="og:title" content="Robots.txt Validator - Toolboxkart" />
+  <meta property="og:description" content="Use our free robots.txt validator to check if your robots txt is valid. Fix syntax errors and resolve WordPress or HTTPS validation issues instantly." />
+  <meta property="og:url" content="https://toolboxkart.tech/seo/robots-txt-validator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+    
+    /* ── NAV & HERO ── */
+    nav { background: #111; border-bottom: 1px solid #222; padding: 0 2rem; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-brand span { color: #7c6fcd; }
+    .hero { text-align: center; padding: 3rem 1rem 1.5rem; }
+    .hero h1 { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+    
+    /* ── TOOL LAYOUT ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 4rem; }
+    .card { background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; font-size: 0.95rem; font-weight: 600; color: #ccc; margin-bottom: 0.5rem; }
+    
+    textarea { width: 100%; background: #222; color: #fff; border: 1px solid #333; border-radius: 8px; padding: 1rem; font-size: 1rem; outline: none; font-family: monospace; resize: vertical; height: 250px; transition: 0.2s; }
+    textarea:focus { border-color: #7c6fcd; }
+
+    button.btn-primary { background: #7c6fcd; color: #fff; border: none; padding: 1.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1.1rem; transition: 0.2s; }
+    button.btn-primary:hover { background: #6a5ebf; }
+
+    /* ── RESULTS AREA ── */
+    .result-box { margin-top: 2rem; display: none; }
+    .status-banner { padding: 1rem; border-radius: 8px; text-align: center; font-size: 1.2rem; font-weight: bold; margin-bottom: 1.5rem; border: 1px solid transparent; }
+    .status-valid { background: #064e3b; color: #34d399; border-color: #047857; }
+    .status-invalid { background: #450a0a; color: #f87171; border-color: #991b1b; }
+    
+    .issues-list { list-style: none; margin-bottom: 1rem; }
+    .issue-item { padding: 1rem; border-radius: 8px; margin-bottom: 0.5rem; font-size: 0.95rem; display: flex; gap: 0.8rem; align-items: flex-start; }
+    .issue-error { background: #2a1111; border: 1px solid #5a2020; color: #ffb3b3; }
+    .issue-warning { background: #422006; border: 1px solid #78350f; color: #fcd34d; }
+    .issue-badge { padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
+    .badge-error { background: #ef4444; color: #fff; }
+    .badge-warning { background: #f59e0b; color: #fff; }
+
+    /* ── SEO CONTENT ── */
+    .seo-content-block { margin-top: 3rem; }
+    .seo-content-block h2 { font-size: 1.5rem; color: #fff; margin: 2rem 0 1rem; }
+    .seo-content-block p { color: #aaa; margin-bottom: 1rem; }
+    
+    /* ── FAQS ── */
+    .seo-faq-item { border-bottom: 1px solid #1e1e1e; padding: 1rem 0; }
+    .seo-faq-q { font-weight: 600; color: #ccc; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .seo-faq-q::after { content: '+'; font-size: 1.2rem; color: #7c6fcd; }
+    .seo-faq-item.open .seo-faq-q::after { content: '-'; }
+    .seo-faq-a { font-size: .95rem; color: #888; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .seo-faq-item.open .seo-faq-a { max-height: 500px; padding-top: .8rem; }
+
+    /* ── RELATED TOOLS & EEAT ── */
+    .section-title { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #272727; font-size: 1.3rem; color: #fff; margin-bottom: 1rem; }
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+    .tool-card-link { background: #161616; border: 1px solid #333; padding: 1rem; border-radius: 8px; color: #e0e0e0; text-decoration: none; font-size: .9rem; transition: 0.2s; display: block; }
+    .tool-card-link:hover { border-color: #7c6fcd; background: #1a1a1a; }
+    
+    .eeat-list { list-style: none; }
+    .eeat-list li { margin-bottom: 0.8rem; }
+    .eeat-list a { color: #7c6fcd; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .eeat-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav><a class="nav-brand" href="/"><span>TBK</span> Toolboxkart</a></nav>
+
+<div class="hero">
+  <h1>Robots.txt Validator</h1>
+  <p>Paste your code to check if robots txt is valid. Identify syntax errors and formatting issues instantly.</p>
+  <p class="last-updated">Last updated: August 2026</p>
+</div>
+
+<div class="container">
+  <!-- TOOL SECTION -->
+  <div class="card">
+    <div class="form-group">
+      <label>Paste your Robots.txt Code</label>
+      <textarea id="robotsInput" placeholder="User-agent: *&#10;Disallow: /wp-admin/&#10;Allow: /wp-admin/admin-ajax.php&#10;Sitemap: https://www.example.com/sitemap_index.xml"></textarea>
+    </div>
+    <button class="btn-primary" onclick="validateRobotsTxt()">Validate Code</button>
+
+    <div id="result-box" class="result-box">
+      <div id="status-banner" class="status-banner">--</div>
+      <ul id="issues-list" class="issues-list"></ul>
+    </div>
+  </div>
+
+  <!-- SEO CONTENT SECTION -->
+  <div class="seo-content-block">
+    <h2>Why Should I Check Valid Robots.txt?</h2>
+    <p>A single typo in your configuration can hide your entire website from Google. It's crucial to <strong>check if robots txt is valid</strong> before pushing it live. A <strong>valid robots txt</strong> ensures crawlers understand exactly which pages they should index and which secure folders they should avoid.</p>
+    
+    <h2>How to Make Valid Robots.txt File Which Quickly Index?</h2>
+    <p>If you are wondering <strong>how to make valid robots.txt file which quickly index</strong> your site, the golden rule is to keep it simple. Allow all bots (`User-agent: *`), avoid overly restrictive `Disallow` rules, and always include an absolute URL to your XML Sitemap at the bottom. Use our tool to <strong>check robots.txt valid</strong> status and ensure maximum crawlability.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Is my robots.txt valid? How do I test it?</div>
+      <div class="seo-faq-a">To find out "<strong>is my robots.txt valid</strong>," simply copy your file's contents and paste them into the text box above. Our tool will parse every line and tell you if there are syntax errors or missing User-agent declarations.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Why is my robots.txt is not valid WordPress?</div>
+      <div class="seo-faq-a">If you see an error saying <strong>robots.txt is not valid wordpress</strong>, it usually means WordPress is generating a virtual robots.txt that conflicts with an actual physical file in your root directory. Make sure you don't have conflicting plugins (like Yoast and RankMath) trying to rewrite the rules simultaneously.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">Why is robot.txt not valid for HTTPS?</div>
+      <div class="seo-faq-a">People often ask <strong>why is robot.txt not valid for https</strong>. This usually happens if your `Sitemap:` directive still points to the `http://` version of your site, or if your SSL certificate isn't properly redirecting bots. Always declare your sitemap with the secure `https://` protocol to ensure you maintain a <strong>valid robots.txt</strong> file.</div>
+    </div>
+    <div class="seo-faq-item">
+      <div class="seo-faq-q">How can I check if robots.txt is valid?</div>
+      <div class="seo-faq-a">You can manually <strong>check if robots.txt is valid</strong> by ensuring every `Allow` or `Disallow` rule comes strictly *after* a `User-agent:` declaration. Or, just hit the validate button on this page to automate the <strong>check valid robots.txt</strong> process.</div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC RELATED TOOLS SECTION -->
+  <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
+
+  <!-- EXTERNAL EEAT GUIDELINES -->
+  <h3 class="section-title">External Documentation (EEAT)</h3>
+  <ul class="eeat-list" id="eeat-grid"></ul>
+</div>
+
+<script>
+  // Tool Logic
+  function validateRobotsTxt() {
+    const content = document.getElementById('robotsInput').value;
+    const resultBox = document.getElementById('result-box');
+    const statusBanner = document.getElementById('status-banner');
+    const issuesList = document.getElementById('issues-list');
+    
+    issuesList.innerHTML = ''; // Reset list
+    resultBox.style.display = 'block';
+
+    if (!content.trim()) {
+      statusBanner.textContent = "❌ Invalid: File is empty.";
+      statusBanner.className = "status-banner status-invalid";
+      return;
+    }
+
+    const lines = content.split('\n');
+    let errors = [];
+    let warnings = [];
+    let hasUserAgent = false;
+    let currentUserAgentIndex = -1;
+    
+    // Official directives allowed by standard crawlers
+    const validDirectives = /^(user-agent|disallow|allow|sitemap|crawl-delay|host|clean-param):/i;
+
+    lines.forEach((line, index) => {
+      const trimmed = line.trim();
+      const lineNum = index + 1;
+
+      // Ignore empty lines and comments
+      if (trimmed === '' || trimmed.startsWith('#')) return;
+
+      const lowerLine = trimmed.toLowerCase();
+
+      // Check for valid syntax format (must have a colon)
+      if (!trimmed.includes(':')) {
+        errors.push(`Line ${lineNum}: Syntax Error. Missing colon (:) in directive -> "${trimmed}"`);
+        return;
+      }
+
+      const parts = trimmed.split(':');
+      const key = parts[0].trim().toLowerCase();
+      const value = parts.slice(1).join(':').trim();
+
+      if (key === 'user-agent') {
+        hasUserAgent = true;
+        currentUserAgentIndex = lineNum;
+        if (value === '') {
+          errors.push(`Line ${lineNum}: User-agent value cannot be empty.`);
+        }
+      } 
+      else if (key === 'allow' || key === 'disallow') {
+        if (!hasUserAgent) {
+          errors.push(`Line ${lineNum}: Directive '${parts[0]}' must be preceded by a User-agent.`);
+        }
+      } 
+      else if (key === 'sitemap') {
+        if (!value.startsWith('http://') && !value.startsWith('https://')) {
+          errors.push(`Line ${lineNum}: Sitemap URL must be an absolute URL starting with http:// or https://.`);
+        } else if (value.startsWith('http://')) {
+          warnings.push(`Line ${lineNum}: Consider updating your Sitemap URL to use secure https://.`);
+        }
+      } 
+      else if (!validDirectives.test(trimmed)) {
+        warnings.push(`Line ${lineNum}: Unrecognized directive "${key}". Crawlers may ignore this line.`);
+      }
+    });
+
+    // Check if there are rules but no user-agent
+    if (!hasUserAgent && lines.some(l => l.trim() !== '' && !l.trim().startsWith('#') && !l.toLowerCase().startsWith('sitemap:'))) {
+      errors.push("Missing 'User-agent:' declaration. Standard rules require at least one User-agent.");
+    }
+
+    // Render results
+    if (errors.length === 0 && warnings.length === 0) {
+      statusBanner.textContent = "✅ Valid Robots.txt! No issues found.";
+      statusBanner.className = "status-banner status-valid";
+    } else if (errors.length > 0) {
+      statusBanner.textContent = `❌ Invalid Robots.txt (${errors.length} Errors Found)`;
+      statusBanner.className = "status-banner status-invalid";
+    } else {
+      statusBanner.textContent = `⚠️ Valid, but has warnings (${warnings.length} Warnings)`;
+      statusBanner.className = "status-banner status-invalid"; // Kept invalid style to grab attention
+      statusBanner.style.background = "#422006";
+      statusBanner.style.color = "#fcd34d";
+      statusBanner.style.borderColor = "#78350f";
+    }
+
+    // Append Errors
+    errors.forEach(err => {
+      const li = document.createElement('li');
+      li.className = "issue-item issue-error";
+      li.innerHTML = `<span class="issue-badge badge-error">Error</span> <span>${err}</span>`;
+      issuesList.appendChild(li);
+    });
+
+    // Append Warnings
+    warnings.forEach(warn => {
+      const li = document.createElement('li');
+      li.className = "issue-item issue-warning";
+      li.innerHTML = `<span class="issue-badge badge-warning">Warning</span> <span>${warn}</span>`;
+      issuesList.appendChild(li);
+    });
+  }
+
+  // FAQ Accordion Logic
+  document.querySelectorAll('.seo-faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const parent = q.closest('.seo-faq-item');
+      document.querySelectorAll('.seo-faq-item').forEach(item => {
+        if(item !== parent) item.classList.remove('open');
+      });
+      parent.classList.toggle('open');
+    });
+  });
+
+  // Dynamic Related Tools Injection
+  
+  
+  // Dynamic EEAT Links Injection
+  const eeatLinks = [
+    { name: "Google Search Central: Introduction to robots.txt", url: "https://developers.google.com/search/docs/crawling-indexing/robots/intro" },
+    { name: "Google Search Central: Robots.txt Specifications", url: "https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt" },
+    { name: "Mozilla Developer Network (MDN): Robots.txt rules", url: "https://developer.mozilla.org/en-US/docs/Glossary/Robots.txt" }
+  ];
+
+  function loadEeatLinks() {
+    const container = document.getElementById('eeat-grid');
+    eeatLinks.forEach(link => {
+      const li = document.createElement('li');
+      const a = document.createElement('a'); 
+      a.href = link.url; 
+      a.target = "_blank";
+      a.rel = "nofollow noopener";
+      a.innerHTML = `📄 ${link.name}`; 
+      li.appendChild(a);
+      container.appendChild(li);
+    });
+  }
+
+  // Initialize
+  loadEeatLinks();
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is my robots.txt valid? How do I test it?", "acceptedAnswer": { "@type": "Answer", "text": "To find out \"is my robots.txt valid,\" simply copy your file's contents and paste them into the text box above. Our tool will parse every line and tell you if there are syntax errors or missing User-agent declarations." } },
+    { "@type": "Question", "name": "Why is my robots.txt is not valid WordPress?", "acceptedAnswer": { "@type": "Answer", "text": "If you see an error saying robots.txt is not valid wordpress, it usually means WordPress is generating a virtual robots.txt that conflicts with an actual physical file in your root directory. Make sure you don't have conflicting plugins (like Yoast and RankMath) trying to rewrite the rules simultaneously." } },
+    { "@type": "Question", "name": "Why is robot.txt not valid for HTTPS?", "acceptedAnswer": { "@type": "Answer", "text": "People often ask why is robot.txt not valid for https. This usually happens if your `Sitemap:` directive still points to the `http://` version of your site, or if your SSL certificate isn't properly redirecting bots. Always declare your sitemap with the secure `https://` protocol to ensure you maintain a valid robots.txt file." } },
+    { "@type": "Question", "name": "How can I check if robots.txt is valid?", "acceptedAnswer": { "@type": "Answer", "text": "You can manually check if robots.txt is valid by ensuring every `Allow` or `Disallow` rule comes strictly *after* a `User-agent:` declaration. Or, just hit the validate button on this page to automate the check valid robots.txt process." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "SEO Tools", "item": "https://toolboxkart.tech/seo/" },
+    { "@type": "ListItem", "position": 3, "name": "Robots.txt Validator", "item": "https://toolboxkart.tech/seo/robots-txt-validator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Robots.txt Validator",
+  "url": "https://toolboxkart.tech/seo/robots-txt-validator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

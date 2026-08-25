@@ -6,6 +6,12 @@
   <title>POMIS Calculator | Post Office Monthly Income Scheme - Toolboxkart</title>
   <meta name="description" content="Calculate your monthly passive income with our free Post Office Monthly Income Scheme (POMIS) Calculator. Check latest interest rates and maturity amounts.">
   
+  <link rel="canonical" href="https://toolboxkart.tech/finance/pomis-calculator/" />
+  <meta property="og:title" content="POMIS Calculator - Toolboxkart" />
+  <meta property="og:description" content="Calculate your monthly passive income with our free Post Office Monthly Income Scheme (POMIS) Calculator. Check latest interest rates and maturity amounts." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/pomis-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <style>
     /* Global Rules */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -83,6 +89,7 @@
   <div class="hero">
     <h1>POMIS Calculator</h1>
     <p>Calculate your guaranteed monthly income from the Post Office Monthly Income Scheme.</p>
+  <p class="last-updated">Last updated: August 2026</p>
   </div>
 
   <!-- Tool Container -->
@@ -164,7 +171,7 @@
   <!-- Related Tools -->
   <div class="container related-tools">
     <h2>More Finance Tools</h2>
-    <div id="tools-grid"></div>
+    <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
   </div>
 
   <!-- JavaScript -->
@@ -233,43 +240,41 @@
     });
 
     // 3. Related Tools Logic (Now includes the HRA Calculator)
-    const relatedTools = [
-      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
-      { name: "Budget Planner", url: "/finance/budget-planner" },
-      { name: "CAGR Calculator", url: "/finance/cagr-calculator" },
-      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
-      { name: "EMI Calculator", url: "/finance/emi-calculator" },
-      { name: "EPF Calculator", url: "/finance/epf-calculator" },
-      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
-      { name: "FD Calculator", url: "/finance/fd-calculator" },
-      { name: "Gratuity Calculator", url: "/finance/gratuity-calculator" },
-      { name: "GST Calculator", url: "/finance/gst-calculator" },
-      { name: "HRA Calculator", url: "/finance/hra-calculator" },
-      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
-      { name: "NPS Calculator", url: "/finance/nps-calculator" },
-      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
-      { name: "RD Calculator", url: "/finance/rd-calculator" },
-      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
-      { name: "ROI Calculator", url: "/finance/roi-calculator" },
-      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
-      { name: "SSY Calculator", url: "/finance/ssy-calculator" },
-      { name: "Step-Up SIP Calculator", url: "/finance/step-up-sip-calculator" },
-      { name: "SWP Calculator", url: "/finance/swp-calculator" },
-      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
-    ];
-    
-    function loadRelatedTools() {
-      const container = document.getElementById('tools-grid');
-      relatedTools.forEach(tool => {
-        const link = document.createElement('a'); 
-        link.href = tool.url; 
-        link.className = 'tool-card-link'; 
-        link.textContent = tool.name; 
-        container.appendChild(link);
-      });
-    }
-    loadRelatedTools();
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the investment limit for POMIS?", "acceptedAnswer": { "@type": "Answer", "text": "As per the recent government budget updates, an individual can invest a maximum of ₹9 Lakh in a Single Account. If you open a Joint Account (with up to 3 adults), the maximum investment limit is increased to ₹15 Lakh. The minimum investment to start is just ₹1,000." } },
+    { "@type": "Question", "name": "How does the POMIS calculator figure out monthly interest?", "acceptedAnswer": { "@type": "Answer", "text": "The calculator uses a straightforward simple interest formula adapted for monthly payouts. The formula is: Monthly Income = (Investment Amount × Annual Interest Rate / 100) / 12. At the end of the 5-year term, your original principal amount is returned to you safely." } },
+    { "@type": "Question", "name": "Is the monthly income from POMIS tax-free?", "acceptedAnswer": { "@type": "Answer", "text": "No, the interest you earn every month from the Post Office Monthly Income Scheme is completely taxable according to your applicable income tax slab. However, there is no TDS (Tax Deducted at Source) deducted by the post office on these monthly payouts." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "POMIS Calculator", "item": "https://toolboxkart.tech/finance/pomis-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "POMIS Calculator",
+  "url": "https://toolboxkart.tech/finance/pomis-calculator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

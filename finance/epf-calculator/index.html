@@ -6,6 +6,12 @@
   <title>EPF Calculator | Employee Provident Fund Maturity & Corpus - Toolboxkart</title>
   <meta name="description" content="Use our free EPF Calculator to estimate your Employee Provident Fund maturity amount, total contributions, and retirement corpus. Plan your PF savings online.">
   
+  <link rel="canonical" href="https://toolboxkart.tech/finance/epf-calculator/" />
+  <meta property="og:title" content="EPF Calculator - Toolboxkart" />
+  <meta property="og:description" content="Use our free EPF Calculator to estimate your Employee Provident Fund maturity amount, total contributions, and retirement corpus. Plan your PF savings online." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/epf-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <style>
     /* Global Rules */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -80,6 +86,7 @@
   <div class="hero">
     <h1>EPF Calculator</h1>
     <p>Calculate your Employee Provident Fund maturity amount and total retirement corpus.</p>
+  <p class="last-updated">Last updated: August 2026</p>
   </div>
 
   <!-- Tool Container -->
@@ -170,7 +177,7 @@
   <!-- Related Tools -->
   <div class="container related-tools">
     <h2>More Finance Tools</h2>
-    <div id="tools-grid"></div>
+    <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
   </div>
 
   <!-- JavaScript -->
@@ -254,34 +261,41 @@
     });
 
     // 3. Related Tools Logic (Includes the newly built RD Calculator)
-    const relatedTools = [
-      { name: "Amortization Calculator", url: "/finance/amortization-calculator" },
-      { name: "Budget Planner", url: "/finance/budget-planner" },
-      { name: "Compound Interest Calculator", url: "/finance/compound-interest-calculator" },
-      { name: "Expense Split Calculator", url: "/finance/expense-split-calculator" },
-      { name: "FD Calculator", url: "/finance/fd-calculator" },
-      { name: "Lumpsum Investment Calculator", url: "/finance/lumpsum-investment-calculator" },
-      { name: "NPS Calculator", url: "/finance/nps-calculator" },
-      { name: "PPF Calculator", url: "/finance/ppf-calculator" },
-      { name: "RD Calculator", url: "/finance/rd-calculator" },
-      { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
-      { name: "ROI Calculator", url: "/finance/roi-calculator" },
-      { name: "SIP Calculator", url: "/finance/systematic-investment-plan-calculator" },
-      { name: "Take Home Pay Calculator", url: "/finance/take-home-pay-calculator" }
-    ];
-    
-    function loadRelatedTools() {
-      const container = document.getElementById('tools-grid');
-      relatedTools.forEach(tool => {
-        const link = document.createElement('a'); 
-        link.href = tool.url; 
-        link.className = 'tool-card-link'; 
-        link.textContent = tool.name; 
-        container.appendChild(link);
-      });
-    }
-    loadRelatedTools();
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How are EPF contributions split?", "acceptedAnswer": { "@type": "Answer", "text": "The employee contributes 12% of their Basic Salary + DA entirely towards the EPF. The employer also matches this 12%, but it is split: 3.67% goes to your EPF account, and 8.33% goes towards the Employee Pension Scheme (EPS)." } },
+    { "@type": "Question", "name": "How is PF interest calculated and credited?", "acceptedAnswer": { "@type": "Answer", "text": "The EPF interest rate is declared annually by the EPFO. Interest is calculated on a monthly basis on your opening balance but is deposited/credited to your EPF account once a year at the end of the financial year." } },
+    { "@type": "Question", "name": "Is the EPF maturity amount completely tax-free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, EPF falls under the EEE (Exempt-Exempt-Exempt) category. Your contributions (up to 1.5 Lakhs under 80C), the interest earned, and the final maturity amount withdrawn after 5 years of continuous service are entirely tax-free. However, if your annual contribution exceeds ₹2.5 Lakhs, the interest on the excess amount is taxable." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "EPF Calculator", "item": "https://toolboxkart.tech/finance/epf-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "EPF Calculator",
+  "url": "https://toolboxkart.tech/finance/epf-calculator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

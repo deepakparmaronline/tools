@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security | Tool Box Kart</title>
+  <meta name="description" content="How Tool Box Kart keeps the site and your files safe, and how to report a security issue.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #14171c; --paper: #f5f3ec; --paper-dim: #eeebe1; --card: #ffffff;
+      --border: #e1ddce; --steel: #5b6472; --yellow: #ffc23a; --yellow-dark: #e5a412;
+      --mono: 'Space Mono', 'Courier New', monospace; --sans: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    nav { background: var(--ink); padding: 0 2rem; display: flex; align-items: center; height: 64px; position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--yellow); }
+    .nav-brand { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; color: #f5f3ec; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .nav-brand span { color: var(--ink); background: var(--yellow); padding: 0.3rem 0.55rem; border-radius: 4px; font-size: 0.95rem; font-weight: 700; }
+
+    .page-hero { text-align: center; padding: 3.5rem 1rem 3rem; background: var(--paper-dim); border-bottom: 1px solid var(--border); }
+    .page-hero h1 { font-family: var(--mono); font-size: 2.2rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .page-hero p { color: var(--steel); font-family: var(--mono); font-size: 0.85rem; }
+
+    main { max-width: 720px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+    main h2 { font-family: var(--mono); font-size: 1.25rem; margin: 2.2rem 0 0.8rem; }
+    main h2:first-child { margin-top: 0; }
+    main p, main li { color: #2d3239; font-size: 1rem; margin-bottom: 0.9rem; }
+    main ul { padding-left: 1.3rem; margin-bottom: 0.9rem; }
+    main a { color: var(--yellow-dark); font-weight: 600; }
+    .back-link { display: inline-block; margin-top: 1.5rem; font-family: var(--mono); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-brand" href="/"><span>TBK</span> Tool Box Kart</a>
+  </nav>
+
+  <header class="page-hero">
+    <h1>Security</h1>
+    <p>Last updated: August 2026</p>
+  </header>
+
+  <main>
+    <h2>Our approach</h2>
+    <p>Tool Box Kart is built to keep as little of your data as possible in the first place. Less data held means less risk if anything ever goes wrong.</p>
+
+    <h2>Your files stay on your device</h2>
+    <p>Most tools on this site, including image and file converters, run entirely in your browser using JavaScript. Your files are processed on your own device and are never uploaded to our server.</p>
+
+    <h2>Encrypted connection</h2>
+    <p>The whole site is served over HTTPS. Any data that does travel between your browser and our server, such as a page request, is encrypted in transit.</p>
+
+    <h2>No accounts, no stored passwords</h2>
+    <p>Tool Box Kart does not use signups or logins. Since there are no user accounts, there are no passwords stored on our end that could be exposed.</p>
+
+    <h2>Third-party services</h2>
+    <p>We load Google Fonts to display text on the site. Loading a font makes a request to Google's servers, which is standard practice on most websites. We do not embed third-party ad scripts or trackers on this site.</p>
+
+    <h2>Reporting a security issue</h2>
+    <p>If you find a security problem on Tool Box Kart, please tell us before sharing it publicly, so we can fix it first. Email details of the issue to <a href="mailto:security@toolboxkart.tech">security@toolboxkart.tech</a>. We will look into every report we receive.</p>
+
+    <a class="back-link" href="/">&larr; Back to home</a>
+  </main>
+
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

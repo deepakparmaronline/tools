@@ -1,6 +1,5 @@
 // Toolbox Kart — shared dynamic nav / homepage grid / related-tools engine.
 (function () {
-  const COLORS = ['indigo', 'amber', 'emerald', 'rose', 'sky', 'violet', 'cyan', 'fuchsia'];
 
   async function loadManifest() {
     try {
@@ -43,25 +42,25 @@
     }
   }
 
+  function niceLabel(label) {
+    // Avoid "Image Tools Tools" when the folder name already says Tools.
+    return /tools$/i.test(label.trim()) ? label : `${label} Tools`;
+  }
+
   function renderHomepageCategories(niches) {
     const el = document.getElementById('dynamic-categories');
     if (!el) return;
-    el.innerHTML = niches.map((niche, i) => {
-      const c = COLORS[i % COLORS.length];
-      return `
-        <section id="${niche.key}" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-          <div class="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
-            <div class="bg-${c}-100 text-${c}-600 p-2 rounded-lg font-bold">#</div>
-            <h2 class="text-xl font-bold text-gray-900">${niche.label} Tools</h2>
-          </div>
-          <div class="flex flex-col gap-3">
-            ${niche.tools.map(t => `
-              <a href="${t.path}" class="group block p-3 rounded-xl hover:bg-${c}-50 transition">
-                <h3 class="font-semibold text-gray-800 group-hover:text-${c}-700 text-sm">➔ ${t.name}</h3>
-              </a>`).join('')}
-          </div>
-        </section>`;
-    }).join('');
+    el.innerHTML = niches.map(niche => `
+      <section id="${niche.key}" class="niche-section">
+        <div class="niche-header">
+          <div class="niche-icon">#</div>
+          <h2>${niceLabel(niche.label)}</h2>
+        </div>
+        <div class="tools-grid">
+          ${niche.tools.map(t => `<a href="${t.path}" class="tool-card"><span>➔</span> ${t.name}</a>`).join('')}
+        </div>
+      </section>`
+    ).join('');
   }
 
   function renderRelatedTools(niches) {
@@ -96,11 +95,63 @@
     }
   }
 
-  loadManifest().then(data => {
-    if(data.niches && data.niches.length > 0) {
-      renderNav(data.niches);
-      renderHomepageCategories(data.niches);
-      renderRelatedTools(data.niches);
+  const FOOTER_LEGAL_LINKS = [
+    { label: 'Transparency', href: '/transparency/' },
+    { label: 'Security', href: '/security/' },
+    { label: 'Privacy Policy', href: '/privacy-policy/' },
+    { label: 'Terms of Service', href: '/terms-of-service/' },
+  ];
+
+  function injectFooterStyles() {
+    if (document.getElementById('tbk-footer-css')) return;
+    const style = document.createElement('style');
+    style.id = 'tbk-footer-css';
+    style.textContent = `
+      .tbk-footer { background: #14171c; border-top: 3px solid #ffc23a; padding: 2.5rem 2rem 2rem; margin-top: 4rem; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+      .tbk-footer-inner { max-width: 1100px; margin: 0 auto; }
+      .tbk-footer-row { display: flex; flex-wrap: wrap; gap: 1.2rem 1.6rem; justify-content: center; margin-bottom: 1.4rem; }
+      .tbk-footer-row a, .tbk-footer-row button { color: #cfcabb; text-decoration: none; font-size: 0.9rem; font-weight: 600; background: none; border: none; cursor: pointer; padding: 0; font-family: inherit; }
+      .tbk-footer-row a:hover, .tbk-footer-row button:hover { color: #ffc23a; }
+      .tbk-footer-tools { border-bottom: 1px solid #272b33; padding-bottom: 1.4rem; }
+      .tbk-footer-copy { text-align: center; color: #7c8291; font-size: 0.85rem; font-family: 'Space Mono', 'Courier New', monospace; }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function renderFooter(niches) {
+    injectFooterStyles();
+
+    const toolLinksHTML = (niches || [])
+      .map(n => `<a href="${n.path}">${niceLabel(n.label)}</a>`)
+      .join('');
+
+    const legalLinksHTML = FOOTER_LEGAL_LINKS
+      .map(l => `<a href="${l.href}">${l.label}</a>`)
+      .join('') + `<button type="button" id="tbk-cookie-prefs">Cookie preferences</button>`;
+
+    const html = `
+      <div class="tbk-footer-inner">
+        <div class="tbk-footer-row tbk-footer-tools">${toolLinksHTML}</div>
+        <div class="tbk-footer-row">${legalLinksHTML}</div>
+        <p class="tbk-footer-copy">&copy; ${new Date().getFullYear()} Tool Box Kart. Built for privacy, efficiency, and speed.</p>
+      </div>`;
+
+    let footerEl = document.querySelector('footer');
+    if (!footerEl) {
+      footerEl = document.createElement('footer');
+      document.body.appendChild(footerEl);
     }
+    footerEl.className = 'tbk-footer';
+    footerEl.innerHTML = html;
+  }
+
+  loadManifest().then(data => {
+    const niches = data.niches || [];
+    if (niches.length > 0) {
+      renderNav(niches);
+      renderHomepageCategories(niches);
+      renderRelatedTools(niches);
+    }
+    renderFooter(niches);
   });
 })();

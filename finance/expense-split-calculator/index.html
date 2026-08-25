@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Expense Split Calculator | Split Bill Easily | Toolboxkart</title>
     <meta name="description" content="Use our free expense split calculator to easily divide bills, taxes, and tips among friends. The best split bill calculator for roommates and groups.">
+  <link rel="canonical" href="https://toolboxkart.tech/finance/expense-split-calculator/" />
+  <meta property="og:title" content="Free Expense Split Calculator - Toolboxkart" />
+  <meta property="og:description" content="Use our free expense split calculator to easily divide bills, taxes, and tips among friends. The best split bill calculator for roommates and groups." />
+  <meta property="og:url" content="https://toolboxkart.tech/finance/expense-split-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
     <style>
         /* Global Reset & Base Styles */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -84,6 +90,7 @@
     <div class="hero">
         <h1>Expense Split Calculator</h1>
         <p>Easily divide dinner bills, rent, or group trip expenses. Calculate tips, add taxes, and find out exactly how much everyone needs to pay.</p>
+  <p class="last-updated">Last updated: August 2026</p>
     </div>
 
     <!-- Main Container -->
@@ -165,11 +172,9 @@
         </div>
 
         <!-- Related Tools Section -->
-        <div class="related-tools-section" id="related-tools-wrapper">
+        <div class="related-tools-section">
             <h2>Explore More Finance Tools</h2>
-            <div id="tools-grid">
-                <!-- Javascript will populate this -->
-            </div>
+            <section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
         </div>
 
     </div>
@@ -224,31 +229,40 @@
         });
 
         // 3. Related Tools Logic (Tools 25, 26, 27)
-        const relatedTools = [
-            { name: "Rent vs Buy Calculator", url: "/finance/rent-vs-buy-calculator" },
-            { name: "Take-Home Pay Calculator", url: "/finance/take-home-pay-calculator" },
-            { name: "Budget Planner", url: "/finance/budget-planner" }
-        ];
-
-        function loadRelatedTools() {
-            const container = document.getElementById('tools-grid');
-            const wrapper = document.getElementById('related-tools-wrapper');
-
-            if (relatedTools.length === 0) {
-                wrapper.style.display = 'none';
-                return;
-            }
-
-            relatedTools.forEach(tool => {
-                const link = document.createElement('a'); 
-                link.href = tool.url; 
-                link.className = 'tool-card-link'; 
-                link.textContent = tool.name; 
-                container.appendChild(link);
-            });
-        }
-        
-        loadRelatedTools();
     </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How does a split bill calculator work?", "acceptedAnswer": { "@type": "Answer", "text": "An expense split calculator takes the base bill amount, adds any optional percentages like taxes or tips to get a grand total, and then divides that final number equally by the number of people in your group." } },
+    { "@type": "Question", "name": "Can I use this tool to split rent and utilities?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! While it is popular for restaurant bills, you can use this split the bill tool to divide monthly rent, groceries, or internet bills evenly among your flatmates. Simply leave the tax and tip fields blank if they don't apply." } },
+    { "@type": "Question", "name": "Does the tip calculate before or after tax?", "acceptedAnswer": { "@type": "Answer", "text": "In this group expense tracker, both the tip and the tax are calculated based on the original base bill amount entered. This is the standard and most transparent way to calculate extras without paying a \"tip on a tax.\"" } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://toolboxkart.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://toolboxkart.tech/finance/" },
+    { "@type": "ListItem", "position": 3, "name": "Free Expense Split Calculator", "item": "https://toolboxkart.tech/finance/expense-split-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Expense Split Calculator",
+  "url": "https://toolboxkart.tech/finance/expense-split-calculator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>
