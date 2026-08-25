@@ -1,346 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://toolboxkart.tech/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://toolboxkart.tech/about-deepak-parmar/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://toolboxkart.tech/image-tools/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://toolboxkart.tech/seo-guide/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
-  <url>
-    <loc>https://toolboxkart.tech/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <!-- Existing finance URLs -->
+  <url><loc>https://toolboxkart.tech/finance/cagr-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/compound-interest-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/emi-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/epf-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/fd-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/amortization-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/expense-split-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/budget-planner/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/roi-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/rent-vs-buy-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/savings-goal-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/take-home-pay-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/gst-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/gratuity-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/hra-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/home-loan-prepayment-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/income-tax-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/inflation-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/kvp-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/lumpsum-investment-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/mutual-fund-tax-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/nps-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/nsc-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/pomis-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/ppf-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/rd-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/scss-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/systematic-investment-plan-calculater/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/ssy-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/swp-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/simple-interest-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/finance/step-up-sip-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <url>
-    <loc>https://toolboxkart.tech/blog/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Existing image tool URLs -->
+  <url><loc>https://toolboxkart.tech/image-tools/bulk-Image-resizer-tool/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/image-tools/image-meta-data-remover/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/image-tools/webp-converter/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <url>
-    <loc>https://toolboxkart.tech/finance/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Existing SEO URLs -->
+  <url><loc>https://toolboxkart.tech/seo/alphabet-soup-keyword-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/301-redirect-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/canonical-tag-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/duplicate-content-finder/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/search-console-regex-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/hreflang-tag-assistant-for-seo/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/keyword-combiner/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/keyword-density-checker/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/free-keyword-idea-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/llm-txt-generator-for-ai-seo/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/readability-score-checker/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/robots-txt-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/schema-generator-free/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/url-slug-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/utm-link-builder/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/meta-extractor/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/xml-sitemap-builder/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/internal-link-suggestion-tool/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <url>
-    <loc>https://toolboxkart.tech/finance/cagr-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Newly discovered SEO tools -->
+  <url><loc>https://toolboxkart.tech/seo/anchor-text-analyzer/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/anchor-text-distribution-checker/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/article-schema-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/author-bio-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/author-schema-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/backlink-anchor-text-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/backlink-roi-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/breadcrumb-schema-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/breadcrumb-serp-preview/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/broken-link-outreach-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/bulk-alt-text-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/canonical-checker/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/seo/canonical-extractor/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <url>
-    <loc>https://toolboxkart.tech/finance/compound-interest-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/emi-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/epf-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/fd-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/amortization-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/expense-split-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/budget-planner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/roi-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/rent-vs-buy-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/savings-goal-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/take-home-pay-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/gst-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/gratuity-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/hra-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/home-loan-prepayment-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/income-tax-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/inflation-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/kvp-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/lumpsum-investment-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/mutual-fund-tax-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/nps-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/nsc-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/pomis-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/ppf-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/rd-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/scss-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/systematic-investment-plan-calculater/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/ssy-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/swp-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/simple-interest-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/finance/step-up-sip-calculator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/image-tools/bulk-Image-resizer-tool/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/image-tools/image-meta-data-remover/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/image-tools/webp-converter/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/alphabet-soup-keyword-generator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/301-redirect-generator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/canonical-tag-generator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/duplicate-content-finder/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/search-console-regex-generator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/hreflang-tag-assistant-for-seo/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/keyword-combiner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/keyword-density-checker/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/free-keyword-idea-generator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/llm-txt-generator-for-ai-seo/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/readability-score-checker/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/robots-txt-generator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/schema-generator-free/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/url-slug-generator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/utm-link-builder/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/meta-extractor/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/xml-sitemap-builder/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://toolboxkart.tech/seo/internal-link-suggestion-tool/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+  <!-- No /blog/ URLs are included. -->
 </urlset>
