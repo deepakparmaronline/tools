@@ -11,4 +11,7 @@ RewriteRule ^ https://toolboxkart.tech%{REQUEST_URI} [R=301,L,NE]
 # Preserve old guide URLs after moving the static section.
 RewriteRule ^post(?:/(.*))?$ /seo-guide/$1 [R=301,L,NE]
 
+# Serve the dynamic XML sitemap at the standard public URL.
+RewriteRule ^sitemap\.xml$ assets/sitemap-generator.php [L]
+
 ErrorDocument 404 /404.html
