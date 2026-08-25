@@ -5,11 +5,13 @@ Allow: /
 # Allow all SEO tools for indexing
 Allow: /seo/
 Allow: /image-tools/
-Allow: /blog/
 
 # Sitemap location to help Google find your tools
-Sitemap: https://toolboxkart.tech/sitemap.xml
+Sitemap: https://toolboxkart.tech/assets/sitemap-generator.php
+Sitemap: https://toolboxkart.tech/blog/sitemap_index.xml
 
 # Disallow sensitive system folders (optional but good practice)
 Disallow: /cgi-bin/
 Disallow: /private/
+Disallow: /blog/wp-admin/
+Disallow: /blog/wp-includes/

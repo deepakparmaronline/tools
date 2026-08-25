@@ -167,5 +167,6 @@ $news = get_cached_news(
         grid.innerHTML = '<p style="color:#94a3b8;grid-column:1/-1;text-align:center;">Could not load tools right now.</p>';
       });
   </script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

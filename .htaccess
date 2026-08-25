@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Force HTTPS first, preserving the requested host and path.
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE]
+
+# Then force the canonical non-www host.
+RewriteCond %{HTTP_HOST} ^www\.toolboxkart\.tech$ [NC]
+RewriteRule ^ https://toolboxkart.tech%{REQUEST_URI} [R=301,L,NE]
+
+# Preserve old guide URLs after moving the static section.
+RewriteRule ^post(?:/(.*))?$ /seo-guide/$1 [R=301,L,NE]
+
+ErrorDocument 404 /404.html

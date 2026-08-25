@@ -47,6 +47,32 @@
     return /tools$/i.test(label.trim()) ? label : `${label} Tools`;
   }
 
+  function renderSharedNav() {
+    if (document.getElementById('tbk-shared-nav-css')) return;
+
+    const style = document.createElement('style');
+    style.id = 'tbk-shared-nav-css';
+    style.textContent = `
+      .tbk-shared-nav { background: #14171c; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; min-height: 64px; position: sticky; top: 0; z-index: 100; border-bottom: 3px solid #ffc23a; }
+      .tbk-shared-nav .nav-brand { color: #f5f3ec !important; display: flex; align-items: center; gap: 10px; font: 700 1.05rem 'Space Mono', 'Courier New', monospace; text-decoration: none; letter-spacing: 0.5px; }
+      .tbk-shared-nav .nav-brand span { color: #14171c; background: #ffc23a; padding: 0.3rem 0.55rem; border-radius: 4px; font: 700 0.95rem 'Space Mono', 'Courier New', monospace; }
+      .tbk-shared-nav .nav-links { display: flex; align-items: center; gap: 1.25rem; }
+      .tbk-shared-nav .nav-links a { color: #f5f3ec !important; font: 700 0.85rem 'Inter', system-ui, sans-serif; text-decoration: none; }
+      .tbk-shared-nav .nav-links a:hover, .tbk-shared-nav .nav-links a:focus-visible { color: #ffc23a !important; }
+      @media (max-width: 600px) { .tbk-shared-nav { padding: 0.75rem 1rem; gap: 0.75rem; } .tbk-shared-nav .nav-links { gap: 0.65rem; flex-wrap: wrap; justify-content: flex-end; } .tbk-shared-nav .nav-links a { font-size: 0.72rem; } }
+    `;
+    document.head.appendChild(style);
+
+    const navHTML = '<a class="nav-brand" href="/"><span>TBK</span> Tool Box Kart</a><div class="nav-links"><a href="/seo/">SEO Tools</a><a href="/finance/">Finance Tools</a><a href="/image-tools/">Image Tools</a><a href="/seo-guide/">SEO Guides</a></div>';
+    let nav = document.querySelector('nav');
+    if (!nav) {
+      nav = document.createElement('nav');
+      document.body.prepend(nav);
+    }
+    nav.className = 'tbk-shared-nav';
+    nav.innerHTML = navHTML;
+  }
+
   function renderHomepageCategories(niches) {
     const el = document.getElementById('dynamic-categories');
     if (!el) return;
@@ -127,6 +153,7 @@
 
     const legalLinksHTML = FOOTER_LEGAL_LINKS
       .map(l => `<a href="${l.href}">${l.label}</a>`)
+      .concat('<a href="/seo-guide/">SEO Guides</a>')
       .join('') + `<button type="button" id="tbk-cookie-prefs">Cookie preferences</button>`;
 
     const html = `
@@ -147,6 +174,7 @@
 
   loadManifest().then(data => {
     const niches = data.niches || [];
+    renderSharedNav();
     if (niches.length > 0) {
       renderNav(niches);
       renderHomepageCategories(niches);

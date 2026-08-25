@@ -1,0 +1,13 @@
+# Tool Box Kart
+> Free browser-based tools for finance, SEO, and image processing.
+
+Tool Box Kart provides free browser-based tools across finance, SEO, and image processing. No signup is required.
+
+## Sections
+- [Finance tools](/finance/)
+- [SEO tools](/seo/)
+- [Image tools](/image-tools/)
+- [SEO guides](/seo-guide/)
+- [About Deepak Parmar](/about-deepak-parmar/)
+
+All tools run client side in the browser and do not store user data.
