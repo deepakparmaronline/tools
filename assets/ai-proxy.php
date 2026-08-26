@@ -2,8 +2,19 @@
 // API ko JSON format mein respond karne ke liye set kiya
 header('Content-Type: application/json');
 
-// Yahan apni Hugging Face API key daalo (Ye server par safe rahegi)
-$apiKey = "YOUR_HF_TOKEN_HERE"; 
+$apiKey = getenv('HF_API_TOKEN') ?: '';
+
+if ($apiKey === '') {
+    http_response_code(503);
+    echo json_encode(['error' => 'AI service is not configured.']);
+    exit;
+}
+
+if (!function_exists('curl_init')) {
+    http_response_code(503);
+    echo json_encode(['error' => 'AI service is unavailable on this server.']);
+    exit;
+}
 
 // Hugging Face ka model URL (Tum isko Llama ya kisi aur model se badal sakte ho)
 $apiUrl = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2";

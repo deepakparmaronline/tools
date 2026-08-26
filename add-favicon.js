@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const roots = ['finance', 'seo', 'image-tools', 'post'];
-const faviconLink = '<link rel="icon" type="image/png" href="/images/favicon.png">';
+const faviconLink = '<link rel="icon" type="image/jpeg" href="/images/deepak-parmar.jpeg">';
 const changed = [];
 
 function scan(directory) {

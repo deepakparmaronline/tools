@@ -6,7 +6,7 @@ $news = get_cached_news(
         'Search Engine Journal' => 'https://www.searchenginejournal.com/feed/',
         'Search Engine Land'    => 'https://searchengineland.com/feed',
     ],
-    $_SERVER['DOCUMENT_ROOT'] . '/assets/cache/seo-news.json',
+    __DIR__ . '/../assets/cache/seo-news.json',
     6,
     6
 );
@@ -17,7 +17,7 @@ $news = get_cached_news(
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free SEO Tools | Tool Box Kart</title>
-  <meta name="description" content="All SEO tools in one place. Schema generator, robots.txt generator, keyword tools, sitemap builder and more. Free, fast, and private. Plus the latest SEO news updated daily.">
+  <meta name="description" content="All SEO tools in one place. Schema generator, robots.txt generator, keyword tools, sitemap builder and more. Free, fast, and private. Plus the SEO news and analysis.">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 

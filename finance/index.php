@@ -7,7 +7,7 @@ $news = get_cached_news(
         'Moneycontrol'   => 'https://www.moneycontrol.com/rss/business.xml',
         'NDTV Profit'    => 'https://feeds.feedburner.com/ndtvprofit-latest',
     ],
-    $_SERVER['DOCUMENT_ROOT'] . '/assets/cache/finance-news.json',
+    __DIR__ . '/../assets/cache/finance-news.json',
     6,
     6
 );
@@ -18,7 +18,7 @@ $news = get_cached_news(
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Finance Calculators | Tool Box Kart</title>
-  <meta name="description" content="All finance calculators in one place. SIP, EMI, PPF, income tax, FD, RD and more. Free, fast, and private. Plus the latest finance news updated daily.">
+  <meta name="description" content="All finance calculators in one place. SIP, EMI, PPF, income tax, FD, RD and more. Free, fast, and private. Plus the finance news and analysis.">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 

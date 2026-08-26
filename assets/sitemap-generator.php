@@ -38,7 +38,7 @@ add_page($urls, $root, $root, $baseUrl);
 
 // Recursively find every index.html page while ignoring WordPress /blog
 // and non-page directories. This keeps the sitemap current as new tools
-// and /post/ pages are added.
+// and new public section pages are added.
 $iterator = new RecursiveIteratorIterator(
     new RecursiveDirectoryIterator($root, FilesystemIterator::SKIP_DOTS),
     RecursiveIteratorIterator::SELF_FIRST

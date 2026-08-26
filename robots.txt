@@ -1,11 +1,12 @@
-# Tools Box Kart Robots.txt
+# Tool Box Kart Robots.txt
 User-agent: *
 Allow: /
 
 # Allow all SEO tools for indexing
 Allow: /seo/
 Allow: /image-tools/
-Allow: /post/
+Allow: /seo-guide/
+Allow: /tech/
 
 # Sitemap location
 Sitemap: https://toolboxkart.tech/sitemap.xml

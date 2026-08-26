@@ -19,10 +19,10 @@
       el.innerHTML = niches.map(niche => `
         <div class="relative group">
           <button class="nav-link flex items-center gap-1 py-6 font-medium text-gray-600 hover:text-indigo-600">
-            ${niche.label} ▾
+            ${escapeHTML(niche.label)} ▾
           </button>
           <div class="absolute hidden group-hover:block bg-white border border-gray-100 shadow-xl rounded-xl py-2 w-72 mt-0 transition-all z-50">
-            ${niche.tools.map(t => `<a href="${t.path}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">${t.name}</a>`).join('')}
+            ${niche.tools.map(t => `<a href="${escapeHTML(t.path)}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">${escapeHTML(t.name)}</a>`).join('')}
           </div>
         </div>
       `).join('') + '<a href="/blog/" class="nav-link py-6 font-medium text-gray-600 hover:text-indigo-600">Blog</a>';
@@ -33,9 +33,9 @@
     if (mobEl) {
       mobEl.innerHTML = niches.map(niche => `
         <div class="py-2">
-          <div class="font-bold text-gray-900 mb-1">${niche.label}</div>
+          <div class="font-bold text-gray-900 mb-1">${escapeHTML(niche.label)}</div>
           <div class="pl-4 border-l-2 border-indigo-100 flex flex-col gap-2 mt-2">
-            ${niche.tools.map(t => `<a href="${t.path}" class="text-sm text-gray-600 hover:text-indigo-600">${t.name}</a>`).join('')}
+            ${niche.tools.map(t => `<a href="${escapeHTML(t.path)}" class="text-sm text-gray-600 hover:text-indigo-600">${escapeHTML(t.name)}</a>`).join('')}
           </div>
         </div>
       `).join('');
@@ -45,6 +45,16 @@
   function niceLabel(label) {
     // Avoid "Image Tools Tools" when the folder name already says Tools.
     return /tools$/i.test(label.trim()) ? label : `${label} Tools`;
+  }
+
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>'"]/g, character => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;'
+    }[character]));
   }
 
   function renderSharedNav() {
@@ -81,7 +91,7 @@
       const response = await fetch('/assets/seo-guide-manifest.php', { cache: 'no-store' });
       if (!response.ok) throw new Error('Guide manifest request failed: ' + response.status);
       const guides = await response.json();
-      grid.innerHTML = guides.map(guide => `<article class="card"><p class="meta">SEO Guide · Updated ${guide.modified}</p><a href="${guide.url}">${guide.title}</a><p>${guide.description}</p></article>`).join('');
+      grid.innerHTML = guides.map(guide => `<article class="card"><p class="meta">SEO Guide · Updated ${escapeHTML(guide.modified)}</p><a href="${escapeHTML(guide.url)}">${escapeHTML(guide.title)}</a><p>${escapeHTML(guide.description)}</p></article>`).join('');
     } catch (err) {
       console.error('Guide manifest load failed.', err);
     }
@@ -96,7 +106,7 @@
       if (!response.ok) throw new Error('Tech manifest request failed: ' + response.status);
       const posts = await response.json();
       grid.innerHTML = posts.length
-        ? posts.map(post => `<article class="card"><p class="meta">Tech Guide · Updated ${post.modified}</p><a href="${post.url}">${post.title}</a><p>${post.description}</p></article>`).join('')
+        ? posts.map(post => `<article class="card"><p class="meta">Tech Guide · Updated ${escapeHTML(post.modified)}</p><a href="${escapeHTML(post.url)}">${escapeHTML(post.title)}</a><p>${escapeHTML(post.description)}</p></article>`).join('')
         : '<p class="empty">Tech guides will appear here as they are published.</p>';
     } catch (err) {
       console.error('Tech manifest load failed.', err);
@@ -113,7 +123,7 @@
           <h2>${niceLabel(niche.label)}</h2>
         </div>
         <div class="tools-grid">
-          ${niche.tools.map(t => `<a href="${t.path}" class="tool-card"><span>➔</span> ${t.name}</a>`).join('')}
+          ${niche.tools.map(t => `<a href="${escapeHTML(t.path)}" class="tool-card"><span>➔</span> ${escapeHTML(t.name)}</a>`).join('')}
         </div>
       </section>`
     ).join('');
@@ -139,11 +149,11 @@
     if (el.dataset.theme === 'dark') {
       el.innerHTML = `
         <div style="background: #161616; border: 1px solid #272727; border-radius: 14px; padding: 2rem; margin-top: 2rem;">
-          <h2 style="color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem;">More ${niche.label} Tools</h2>
+          <h2 style="color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem;">More ${escapeHTML(niche.label)} Tools</h2>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
             ${others.map(t => `
-              <a href="${t.path}" style="display: flex; align-items: center; background: #111; border: 1px solid #222; border-radius: 10px; padding: 1rem; text-decoration: none; color: #ddd; font-weight: 600; font-size: 0.95rem; transition: border-color 0.2s;">
-                <span style="color: #7c6fcd; margin-right: 10px;">➔</span> ${t.name}
+              <a href="${escapeHTML(t.path)}" style="display: flex; align-items: center; background: #111; border: 1px solid #222; border-radius: 10px; padding: 1rem; text-decoration: none; color: #ddd; font-weight: 600; font-size: 0.95rem; transition: border-color 0.2s;">
+                <span style="color: #7c6fcd; margin-right: 10px;">➔</span> ${escapeHTML(t.name)}
               </a>`).join('')}
           </div>
         </div>`;
@@ -178,7 +188,7 @@
     injectFooterStyles();
 
     const toolLinksHTML = (niches || [])
-      .map(n => `<a href="${n.path}">${niceLabel(n.label)}</a>`)
+      .map(n => `<a href="${escapeHTML(n.path)}">${escapeHTML(niceLabel(n.label))}</a>`)
       .join('');
 
     const legalLinksHTML = FOOTER_LEGAL_LINKS
