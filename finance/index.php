@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/news-fetch.php';
+require_once __DIR__ . '/../assets/news-fetch.php';
 
 $news = get_cached_news(
     [

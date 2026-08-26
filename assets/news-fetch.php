@@ -88,6 +88,10 @@ function fetch_rss_items($feedUrl, $count, $sourceName = '') {
 
     if (!$xmlStr) return [];
 
+    if (!function_exists('simplexml_load_string')) {
+        return [];
+    }
+
     libxml_use_internal_errors(true);
     $xml = simplexml_load_string($xmlStr);
     if (!$xml || !isset($xml->channel->item)) return [];
