@@ -1,0 +1,127 @@
+
+<body>
+<main>
+<header class="hero">
+<p class="author-byline">Reviewed by <a href="/about-deepak-parmar/">Deepak Parmar</a>, SEO and AI search specialist</p>
+<h1>Free Sitemap URL Extractor</h1>
+<p>Paste an XML sitemap or sitemap index and extract its URLs into a clean, copy-ready list. Useful for technical SEO audits, URL reviews, migrations and crawl checks.</p>
+<p class="last-updated">Last updated: August 2026</p>
+</header>
+<div class="container">
+<section class="card">
+<div class="field">
+<label for="sitemap-input">Paste XML sitemap or sitemap index</label>
+<textarea id="sitemap-input" placeholder="<?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+<urlset xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;>
+  <url><loc>https://example.com/page/</loc></url>
+</urlset>"></textarea>
+</div>
+<div class="options">
+<label><input type="checkbox" id="dedupe" checked> Remove duplicate URLs</label>
+<label><input type="checkbox" id="strip-query"> Remove query strings</label>
+<label><input type="checkbox" id="strip-fragment" checked> Remove URL fragments</label>
+</div>
+<div class="actions">
+<button class="btn primary" id="extract-btn">Extract URLs</button>
+<button class="btn secondary" id="clear-btn" type="button">Clear</button>
+</div>
+<div id="results" class="results">
+<div class="summary">
+<div class="stat"><small>URLs found</small><strong id="count">0</strong></div>
+<div class="stat"><small>Sitemap type</small><strong id="type">—</strong></div>
+<div class="stat"><small>Unique URLs</small><strong id="unique">0</strong></div>
+</div>
+<div class="output-wrap">
+<div class="output-head"><span>Extracted URLs</span><button class="btn secondary" id="copy-btn" type="button">Copy URLs</button></div>
+<pre class="output" id="output"></pre>
+</div>
+<div class="actions">
+<button class="btn secondary" id="download-btn" type="button">Download TXT</button>
+</div>
+</div>
+<div class="help"><strong>Privacy note:</strong> Everything is processed in your browser. Your sitemap text is not uploaded by this tool.</div>
+</section>
+<section class="content">
+<h2>What is a sitemap URL extractor?</h2>
+<p>A sitemap URL extractor pulls the URL values from an XML sitemap or sitemap index and turns them into a simple list. This is handy when you need to review the URLs in a sitemap without opening each XML entry manually.</p>
+<h2>How to use this sitemap extractor</h2>
+<ul>
+<li>Open your <code>sitemap.xml</code> or sitemap index and copy its XML.</li>
+<li>Paste the XML into the box above.</li>
+<li>Choose whether to remove duplicates, query strings or fragments.</li>
+<li>Click Extract URLs, then copy or download the resulting list.</li>
+</ul>
+<h2>Why SEO teams use sitemap URL extraction</h2>
+<p>A sitemap is one way to tell search engines which URLs you want crawled. Extracting the URLs makes it easier to compare sitemap entries with crawl exports, redirects, canonicals, indexability checks and migration URL maps. Google recommends including the canonical URLs you want to appear in search and says a sitemap can help discovery. citeturn844447search0turn844447search1</p>
+<h2>Sitemap limits worth checking</h2>
+<p>A single sitemap is limited to 50,000 URLs or 50 MB uncompressed. Larger sites should split their URLs across multiple sitemaps and can use a sitemap index. citeturn844447search0</p>
+<h2>Frequently asked questions</h2>
+<div class="faq"><b>Can this tool read a sitemap index?</b><p>Yes. It detects both <code>&lt;urlset&gt;</code> sitemaps and <code>&lt;sitemapindex&gt;</code> files and extracts the URL values it finds.</p></div>
+<div class="faq"><b>Does the extractor crawl the URLs?</b><p>No. It extracts URLs already present in the XML you paste. It does not check HTTP status codes, canonicals, robots directives or page content.</p></div>
+<div class="faq"><b>Does it upload my sitemap?</b><p>No. The extraction runs in your browser, so the pasted XML stays on your device while the tool processes it.</p></div>
+<div class="faq"><b>What should I compare extracted URLs against?</b><p>For an SEO audit, compare the list with your crawl data, canonical URLs, redirect map, indexability data and Search Console coverage to spot mismatches.</p></div>
+</section>
+<section id="related-tools" data-theme="dark" style="margin-top:2rem;"></section>
+</div>
+</main>
+<script>
+(function(){
+const input=document.getElementById('sitemap-input'), results=document.getElementById('results'), output=document.getElementById('output');
+const count=document.getElementById('count'), type=document.getElementById('type'), unique=document.getElementById('unique');
+const dedupe=document.getElementById('dedupe'), stripQuery=document.getElementById('strip-query'), stripFragment=document.getElementById('strip-fragment');
+let current=[];
+function cleanUrl(value){
+ try{
+  const u=new URL(value.trim());
+  if(stripQuery.checked) u.search='';
+  if(stripFragment.checked) u.hash='';
+  return u.href;
+ }catch(e){return null;}
+}
+function extract(){
+ const raw=input.value.trim();
+ if(!raw){alert('Paste an XML sitemap or sitemap index first.');return;}
+ const parser=new DOMParser(), doc=parser.parseFromString(raw,'application/xml');
+ const parserError=doc.querySelector('parsererror');
+ if(parserError){alert('The pasted content is not valid XML. Check the sitemap markup and try again.');return;}
+ const locs=[...doc.getElementsByTagNameNS('*','loc')].map(n=>n.textContent.trim()).filter(Boolean);
+ let urls=locs.map(cleanUrl).filter(Boolean);
+ const found=urls.length;
+ if(dedupe.checked) urls=[...new Set(urls)];
+ current=urls;
+ output.textContent=urls.join('\n');
+ count.textContent=String(found);
+ unique.textContent=String(urls.length);
+ type.textContent=doc.getElementsByTagNameNS('*','sitemapindex').length?'Sitemap index':'URL sitemap';
+ results.style.display='block';
+}
+document.getElementById('extract-btn').addEventListener('click',extract);
+document.getElementById('clear-btn').addEventListener('click',()=>{input.value='';results.style.display='none';current=[];});
+document.getElementById('copy-btn').addEventListener('click',async()=>{if(!current.length)return;navigator.clipboard.writeText(current.join('\n'));document.getElementById('copy-btn').textContent='Copied';setTimeout(()=>document.getElementById('copy-btn').textContent='Copy URLs',1200);});
+document.getElementById('download-btn').addEventListener('click',()=>{if(!current.length)return;const blob=new Blob([current.join('\n')+'\n'],{type:'text/plain'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='sitemap-urls.txt';a.click();URL.revokeObjectURL(a.href);});
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Can this tool read a sitemap index?","acceptedAnswer":{"@type":"Answer","text":"Yes. It detects both urlset sitemaps and sitemapindex files and extracts the URL values it finds."}},
+    {"@type":"Question","name":"Does the extractor crawl the URLs?","acceptedAnswer":{"@type":"Answer","text":"No. It extracts URLs already present in the XML you paste. It does not check HTTP status codes, canonicals, robots directives or page content."}},
+    {"@type":"Question","name":"Does it upload my sitemap?","acceptedAnswer":{"@type":"Answer","text":"No. The extraction runs in your browser, so the pasted XML stays on your device while the tool processes it."}},
+    {"@type":"Question","name":"What should I compare extracted URLs against?","acceptedAnswer":{"@type":"Answer","text":"For an SEO audit, compare the list with your crawl data, canonical URLs, redirect map, indexability data and Search Console coverage to spot mismatches."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://toolboxkart.tech/"},
+{"@type":"ListItem","position":2,"name":"SEO Tools","item":"https://toolboxkart.tech/seo/"},
+{"@type":"ListItem","position":3,"name":"Sitemap URL Extractor","item":"https://toolboxkart.tech/seo/sitemap-url-extractor/"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Sitemap URL Extractor","url":"https://toolboxkart.tech/seo/sitemap-url-extractor/","applicationCategory":"SEOApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script src="/assets/site.js" defer></script>
+</body></html>
