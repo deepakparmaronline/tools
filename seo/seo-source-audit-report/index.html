@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HTML SEO Audit Tool - Free Source Code Checker | Tool Box Kart</title>
+<meta name="description" content="Paste HTML to run a quick on-page SEO source audit for title, meta description, headings, canonical, robots, links, images and schema. Free and browser-based.">
+<link rel="icon" type="image/jpeg" href="/images/deepak-parmar.jpeg">
+<link rel="canonical" href="https://toolboxkart.tech/seo/seo-source-audit-report/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HTML SEO Audit Tool - Free Source Code Checker | Tool Box Kart">
+<meta property="og:description" content="Paste HTML to run a quick on-page SEO source audit for title, meta description, headings, canonical, robots, links, images and schema. Free and browser-based.">
+<meta property="og:url" content="https://toolboxkart.tech/seo/seo-source-audit-report/">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"HTML SEO Audit Tool","url":"https://toolboxkart.tech/seo/seo-source-audit-report/","description":"A browser-based source audit for core on-page SEO and HTML elements.","applicationCategory":"SEOApplication","operatingSystem":"Any (runs in browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this an SEO audit tool or a crawler?","acceptedAnswer":{"@type":"Answer","text":"It is a focused HTML source audit. It analyzes the HTML you paste and does not crawl a whole website."}},{"@type":"Question","name":"Does the SEO source audit need an API?","acceptedAnswer":{"@type":"Answer","text":"No. The core analysis runs in your browser from the supplied HTML."}},{"@type":"Question","name":"What does the HTML SEO audit check?","acceptedAnswer":{"@type":"Answer","text":"It checks title, meta description, canonical, robots meta, heading structure, links, image alt attributes, visible word count and structured data blocks."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolboxkart.tech/"},{"@type":"ListItem","position":2,"name":"SEO Tools","item":"https://toolboxkart.tech/seo/"},{"@type":"ListItem","position":3,"name":"HTML SEO Audit Tool","item":"https://toolboxkart.tech/seo/seo-source-audit-report/"}]}
+</script>
+<style>
+body{margin:0;background:#0d0d0d;color:#ddd;font:16px/1.7 system-ui,sans-serif}
+.hero{text-align:center;padding:42px 15px}.hero p,.content{max-width:920px;margin:auto;color:#999}.hero h1{color:#fff}
+.box{max-width:920px;margin:auto;background:#161616;border:1px solid #272727;border-radius:14px;padding:25px}
+label{display:block;color:#ccc;font-weight:600;margin:10px 0 6px}input,textarea{width:100%;box-sizing:border-box;background:#222;color:#fff;border:1px solid #333;border-radius:8px;padding:12px;font:inherit}textarea{min-height:300px}
+button{margin-top:12px;padding:12px 18px;border:0;border-radius:8px;background:#7c6fcd;color:#fff;font-weight:700;cursor:pointer}.secondary{background:#292929;margin-left:8px}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:18px}.metric{background:#111;border:1px solid #292929;border-radius:10px;padding:14px}.metric strong{display:block;color:#fff;font-size:1.35rem}
+.table{display:grid;grid-template-columns:1fr 2fr;border-top:1px solid #292929}.table div{padding:9px;border-bottom:1px solid #292929}.table b{color:#fff}.issue{color:#f87171}.good{color:#67e8a5}.warn{color:#facc15}.content h2{color:#fff;margin-top:34px}.faq{border-bottom:1px solid #292929;padding:16px 0}.faq b{color:#fff}
+</style>
+</head>
+<body>
+<header class="hero">
+<p class="author-byline" style="margin:1rem 0 0;color:#999;font-size:.875rem;">Reviewed by <a href="/about-deepak-parmar/">Deepak Parmar</a>, SEO and AI search specialist</p>
+<h1>Free HTML SEO Audit Tool</h1>
+<p>Paste page HTML and get a focused source-level SEO audit for metadata, headings, links, images, robots directives and structured data.</p>
+</header>
+<main class="box">
+<label for="base">Base URL (optional)</label>
+<input id="base" placeholder="https://example.com/">
+<label for="html">Page HTML</label>
+<textarea id="html" placeholder="Paste the page source or HTML here"></textarea>
+<button type="button" id="run">Run SEO Source Audit</button><button type="button" id="copy" class="secondary">Copy Report</button>
+<div id="result"></div>
+</main>
+<section class="content">
+<h2>What is an HTML SEO audit?</h2>
+<p>An HTML SEO audit checks the source code of a page for common on-page and technical signals. It is useful when you need a fast review without running a full crawler.</p>
+<h2>What this on-page SEO checker analyzes</h2>
+<p>The report checks title and meta description presence, canonical tags, robots meta directives, heading counts, heading hierarchy, links, image alt attributes, visible word count and JSON-LD blocks.</p>
+<h2>How to use the HTML SEO audit tool</h2>
+<p>Paste the page HTML, add the base URL when you want internal and external links separated, then run the audit. Use the findings as a QA checklist and confirm important changes in your wider SEO workflow.</p>
+<h2>Why source-level SEO checks matter</h2>
+<p>A rendered page can look correct while its HTML still contains duplicate titles, multiple canonicals, missing alt attributes or unexpected crawler directives. Source inspection helps catch these issues early.</p>
+<h2>Frequently asked questions</h2>
+<div class="faq"><b>Is this an SEO audit tool or a crawler?</b><br>It is a focused HTML source audit. It analyzes the HTML you paste and does not crawl a whole website.</div>
+<div class="faq"><b>Does the SEO source audit need an API?</b><br>No. The core analysis runs in your browser from the supplied HTML.</div>
+<div class="faq"><b>What does the HTML SEO audit check?</b><br>It checks title, meta description, canonical, robots meta, heading structure, links, image alt attributes, visible word count and structured data blocks.</div>
+</section>
+<section id="related-tools" data-theme="dark" style="margin-top:1rem;"></section>
+<script>
+const htmlInput=document.getElementById('html'),baseInput=document.getElementById('base'),out=document.getElementById('result');
+const esc=s=>String(s??'').replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
+const table=rows=>'<div class="table">'+rows.map(r=>'<div>'+esc(r[0])+'</div><div><b>'+esc(r[1])+'</b></div>').join('')+'</div>';
+function analyze(){
+ if(!htmlInput.value.trim()){out.innerHTML='<p class="issue">Paste HTML source first.</p>';return;}
+ const d=new DOMParser().parseFromString(htmlInput.value,'text/html');
+ let base; try{base=new URL(baseInput.value.trim()||d.querySelector('link[rel~="canonical" i]')?.href||location.href)}catch{base=null}
+ const title=d.title.trim(), desc=d.querySelector('meta[name="description" i]')?.content?.trim()||'';
+ const canon=[...d.querySelectorAll('link[rel~="canonical" i]')];
+ const robots=d.querySelector('meta[name="robots" i]')?.content||'';
+ const headings=[...d.querySelectorAll('h1,h2,h3,h4,h5,h6')];
+ const links=[...d.querySelectorAll('a[href]')],imgs=[...d.querySelectorAll('img')];
+ const text=(d.body?.textContent||'').replace(/\s+/g,' ').trim(),words=text?text.split(' ').length:0;
+ const internal=base?links.filter(a=>{try{return new URL(a.href,base).hostname===base.hostname}catch{return false}}).length:0;
+ const external=base?links.filter(a=>{try{return new URL(a.href,base).hostname!==base.hostname}catch{return false}}).length:0;
+ const missing=[];
+ if(!title)missing.push('Missing title tag');
+ if(title.length>60)missing.push('Title is longer than 60 characters');
+ if(!desc)missing.push('Missing meta description');
+ if(desc.length>160)missing.push('Meta description is longer than 160 characters');
+ if(canon.length===0)missing.push('Missing canonical tag');
+ if(canon.length>1)missing.push('Multiple canonical tags');
+ if(d.querySelectorAll('h1').length===0)missing.push('No H1 heading');
+ if(d.querySelectorAll('h1').length>1)missing.push('Multiple H1 headings');
+ if(imgs.some(i=>!i.hasAttribute('alt')))missing.push('Images missing alt attributes');
+ if(/\bnoindex\b/i.test(robots))missing.push('Robots meta contains noindex');
+ let previous=0,jumps=0;
+ headings.forEach(h=>{const level=Number(h.tagName.substring(1));if(previous&&level>previous+1)jumps++;previous=level});
+ if(jumps)missing.push('Heading hierarchy has level jumps');
+ if(d.querySelectorAll('script[type="application/ld+json"]').length===0)missing.push('No JSON-LD block found');
+ const status=missing.length===0?'No issues found':missing.length<4?'A few items need review':'Several items need review';
+ const statusClass=missing.length===0?'good':missing.length<4?'warn':'issue';
+ out.innerHTML='<div class="summary"><div class="metric"><span>Status</span><strong class="'+statusClass+'">'+status+'</strong></div><div class="metric"><span>Issues</span><strong>'+missing.length+'</strong></div><div class="metric"><span>Words</span><strong>'+words+'</strong></div><div class="metric"><span>Headings</span><strong>'+headings.length+'</strong></div><div class="metric"><span>Links</span><strong>'+links.length+'</strong></div><div class="metric"><span>Images</span><strong>'+imgs.length+'</strong></div></div>'+
+'<h3>SEO source report</h3>'+table([['Title',title||'Not found'],['Title length',title.length+' characters'],['Meta description',desc||'Not found'],['Meta description length',desc.length+' characters'],['Canonical count',canon.length],['Robots meta',robots||'Not found'],['H1 count',d.querySelectorAll('h1').length],['H2 count',d.querySelectorAll('h2').length],['H3 count',d.querySelectorAll('h3').length],['Internal links',base?internal:'Add a base URL to classify'],['External links',base?external:'Add a base URL to classify'],['Images missing alt',imgs.filter(i=>!i.hasAttribute('alt')).length],['JSON-LD blocks',d.querySelectorAll('script[type="application/ld+json"]').length]])+
+'<h3>Issues to review</h3><p class="'+statusClass+'">'+esc(missing.length?missing.join(' · '):'The supplied HTML passed the focused checks in this tool.')+'</p>';
+}
+document.getElementById('run').addEventListener('click',analyze);
+document.getElementById('copy').addEventListener('click',()=>{const t=out.innerText.trim();if(t)navigator.clipboard.writeText(t);});
+</script>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
