@@ -73,7 +73,7 @@
     `;
     document.head.appendChild(style);
 
-    const navHTML = '<a class="nav-brand" href="/"><span>TBK</span> Tool Box Kart</a><div class="nav-links"><a href="/seo/">SEO Tools</a><a href="/finance/">Finance Tools</a><a href="/image-tools/">Image Tools</a><a href="/seo-guide/">SEO Guides</a><a href="/tech/">Tech Guides</a></div>';
+    const navHTML = '<a class="nav-brand" href="/"><span>TBK</span> Tool Box Kart</a><div class="nav-links"><a href="/seo/">SEO Tools</a><a href="/finance/">Finance Tools</a><a href="/image-tools/">Image Tools</a><a href="/seo-guide/">SEO Guides</a><a href="/tools-guide/">Tool Guides</a><a href="/explainers/">Explainers</a><a href="/tech/">Tech Guides</a></div>';
     let nav = document.querySelector('nav');
     if (!nav) {
       nav = document.createElement('nav');
@@ -194,6 +194,8 @@
     const legalLinksHTML = FOOTER_LEGAL_LINKS
       .map(l => `<a href="${l.href}">${l.label}</a>`)
       .concat('<a href="/seo-guide/">SEO Guides</a>')
+      .concat('<a href="/tools-guide/">Tool Guides</a>')
+      .concat('<a href="/explainers/">Explainers</a>')
       .concat('<a href="/tech/">Tech Guides</a>')
       .join('') + `<button type="button" id="tbk-cookie-prefs">Cookie preferences</button>`;
 
