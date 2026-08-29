@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Perplexity Portable Computer local-first AI agent</title>
+<desc id="desc">Illustration of an AI agent running on local NVIDIA hardware with a controlled cloud escalation path.</desc>
+<rect width="1600" height="900" fill="#0d0d0d"/>
+<rect x="90" y="90" width="1420" height="720" rx="28" fill="#151515" stroke="#2a2a2a" stroke-width="3"/>
+<text x="150" y="175" fill="#ffc23a" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700">TOOL BOX KART · TECH</text>
+<text x="150" y="255" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="68" font-weight="800">Perplexity Portable Computer</text>
+<text x="150" y="310" fill="#a9a9a9" font-family="Arial,Helvetica,sans-serif" font-size="32">What “local-first” actually means for AI agents</text>
+<rect x="150" y="380" width="560" height="260" rx="22" fill="#101010" stroke="#555" stroke-width="3"/>
+<text x="190" y="440" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700">ON DEVICE</text>
+<text x="190" y="495" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="24">Orchestrator</text>
+<text x="190" y="535" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="24">Planner + tool router</text>
+<text x="190" y="575" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="24">Local models</text>
+<text x="190" y="615" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="24">Files + local search</text>
+<path d="M760 510 H1020" stroke="#ffc23a" stroke-width="10" stroke-linecap="round"/>
+<path d="M990 480 L1035 510 L990 540" fill="none" stroke="#ffc23a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="805" y="470" fill="#ffc23a" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700">USER APPROVAL</text>
+<rect x="1080" y="380" width="340" height="260" rx="22" fill="#101010" stroke="#555" stroke-width="3"/>
+<text x="1120" y="440" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700">CLOUD</text>
+<text x="1120" y="495" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="24">Frontier reasoning</text>
+<text x="1120" y="535" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="24">Web-connected work</text>
+<text x="1120" y="575" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="24">Optional escalation</text>
+<text x="150" y="720" fill="#8f8f8f" font-family="Arial,Helvetica,sans-serif" font-size="24">Perplexity launched Portable Computer on August 25, 2026 with NVIDIA.</text>
+</svg>
