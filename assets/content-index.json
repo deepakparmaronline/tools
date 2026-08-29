@@ -122,6 +122,14 @@
         "category": "tech",
         "type": "news",
         "path": "/tech/physical-ai-anthropic-model-hardware-standard/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/tencent-hy4-preview-770b-1m-context/",
+        "title": "Tencent Hy4 Preview Explained: 770B Open Model With 1M Context",
+        "description": "Tencent Hy4 preview is a 770B MoE model with 49B active parameters and a 1M-token context window. Here is what developers need to know.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/tencent-hy4-preview-770b-1m-context/index.html"
       }
     ],
     "tools-guide": [],
@@ -247,6 +255,14 @@
       "category": "tech",
       "type": "news",
       "path": "/tech/physical-ai-anthropic-model-hardware-standard/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/tencent-hy4-preview-770b-1m-context/",
+      "title": "Tencent Hy4 Preview Explained: 770B Open Model With 1M Context",
+      "description": "Tencent Hy4 preview is a 770B MoE model with 49B active parameters and a 1M-token context window. Here is what developers need to know.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/tencent-hy4-preview-770b-1m-context/index.html"
     }
   ]
 }
