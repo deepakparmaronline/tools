@@ -34,10 +34,10 @@ jobs:
           changed = []
 
           for path in Path(".").rglob("index.html"):
-              if any(part in {".git", "node_modules"} for part in path.parts):
+              if any(part in {".git", "node_modules", "vendor", "_site"} for part in path.parts):
                   continue
 
-              text = path.read_text(encoding="utf-8")
+              text = path.read_text(encoding="utf-8", errors="ignore")
               if SCRIPT_TAG not in text:
                   if "</body>" in text:
                       text = text.replace("</body>", f"{SCRIPT_TAG}\n</body>", 1)
