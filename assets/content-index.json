@@ -100,6 +100,14 @@
         "path": "/tech/glm-5-3-flash-ox-alpha-explained/index.html"
       },
       {
+        "url": "https://toolboxkart.tech/tech/openai-cursor-models-wind-down/",
+        "title": "OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know",
+        "description": "OpenAI plans to wind down its model deal with Cursor after SpaceX",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/openai-cursor-models-wind-down/index.html"
+      },
+      {
         "url": "https://toolboxkart.tech/tech/openai-jalapeno-custom-ai-inference-chip-results/",
         "title": "OpenAI Jalapeño Chip: What Its Inference Results Mean",
         "description": "OpenAI shared early results from Jalapeño, its custom AI inference chip. Here is what the chip does and why inference hardware matters.",
@@ -114,14 +122,6 @@
         "category": "tech",
         "type": "news",
         "path": "/tech/physical-ai-anthropic-model-hardware-standard/index.html"
-      },
-      {
-        "url": "https://toolboxkart.tech/tech/openai-cursor-models-wind-down/",
-        "title": "OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know",
-        "description": "OpenAI plans to wind down its model deal with Cursor after SpaceX's acquisition.",
-        "category": "tech",
-        "type": "news",
-        "path": "/tech/openai-cursor-models-wind-down/index.html"
       }
     ],
     "tools-guide": [],
@@ -225,6 +225,14 @@
       "path": "/tech/glm-5-3-flash-ox-alpha-explained/index.html"
     },
     {
+      "url": "https://toolboxkart.tech/tech/openai-cursor-models-wind-down/",
+      "title": "OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know",
+      "description": "OpenAI plans to wind down its model deal with Cursor after SpaceX",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/openai-cursor-models-wind-down/index.html"
+    },
+    {
       "url": "https://toolboxkart.tech/tech/openai-jalapeno-custom-ai-inference-chip-results/",
       "title": "OpenAI Jalapeño Chip: What Its Inference Results Mean",
       "description": "OpenAI shared early results from Jalapeño, its custom AI inference chip. Here is what the chip does and why inference hardware matters.",
@@ -239,14 +247,6 @@
       "category": "tech",
       "type": "news",
       "path": "/tech/physical-ai-anthropic-model-hardware-standard/index.html"
-    },
-    {
-      "url": "https://toolboxkart.tech/tech/openai-cursor-models-wind-down/",
-      "title": "OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know",
-      "description": "OpenAI plans to wind down its model deal with Cursor after SpaceX's acquisition.",
-      "category": "tech",
-      "type": "news",
-      "path": "/tech/openai-cursor-models-wind-down/index.html"
     }
   ]
 }
