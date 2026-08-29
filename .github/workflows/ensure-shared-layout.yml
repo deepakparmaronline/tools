@@ -17,6 +17,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Build centralized content index
+        shell: bash
+        run: python3 scripts/build-content-index.py
+
       - name: Ensure every HTML page loads the shared site script
         shell: python
         run: |
