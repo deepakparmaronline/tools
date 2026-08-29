@@ -114,6 +114,14 @@
         "category": "tech",
         "type": "news",
         "path": "/tech/physical-ai-anthropic-model-hardware-standard/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/openai-cursor-models-wind-down/",
+        "title": "OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know",
+        "description": "OpenAI plans to wind down its model deal with Cursor after SpaceX's acquisition.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/openai-cursor-models-wind-down/index.html"
       }
     ],
     "tools-guide": [],
@@ -231,6 +239,14 @@
       "category": "tech",
       "type": "news",
       "path": "/tech/physical-ai-anthropic-model-hardware-standard/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/openai-cursor-models-wind-down/",
+      "title": "OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know",
+      "description": "OpenAI plans to wind down its model deal with Cursor after SpaceX's acquisition.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/openai-cursor-models-wind-down/index.html"
     }
   ]
 }
