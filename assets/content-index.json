@@ -84,14 +84,6 @@
     ],
     "tech": [
       {
-        "url": "https://toolboxkart.tech/tech/perplexity-portable-computer-local-ai/",
-        "title": "Perplexity Portable Computer: What Local-First AI Really Means",
-        "description": "Perplexity Portable Computer runs its AI agent stack on local NVIDIA hardware. See what stays local, when cloud use happens, and the trade-offs.",
-        "category": "tech",
-        "type": "news",
-        "path": "/tech/perplexity-portable-computer-local-ai/index.html"
-      },
-      {
         "url": "https://toolboxkart.tech/tech/ai-cyberattacks-100-tech-companies-warning/",
         "title": "100+ Tech Firms Warn of AI Cyberattack Surge",
         "description": "OpenAI, Anthropic, Google, Microsoft and 100+ firms warn AI-enabled attacks could grow fast. Here is what the letter means for defenders.",
@@ -154,6 +146,14 @@
         "category": "tech",
         "type": "news",
         "path": "/tech/openai-jalapeno-custom-ai-inference-chip-results/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/perplexity-portable-computer-local-ai/",
+        "title": "Perplexity Portable Computer: What Local-First AI Really Means | Tool Box Kart",
+        "description": "Perplexity Portable Computer runs its AI agent stack on local NVIDIA hardware. See what stays local, when cloud use happens, and the trade-offs.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/perplexity-portable-computer-local-ai/index.html"
       },
       {
         "url": "https://toolboxkart.tech/tech/physical-ai-anthropic-model-hardware-standard/",
@@ -327,6 +327,14 @@
       "category": "tech",
       "type": "news",
       "path": "/tech/openai-jalapeno-custom-ai-inference-chip-results/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/perplexity-portable-computer-local-ai/",
+      "title": "Perplexity Portable Computer: What Local-First AI Really Means | Tool Box Kart",
+      "description": "Perplexity Portable Computer runs its AI agent stack on local NVIDIA hardware. See what stays local, when cloud use happens, and the trade-offs.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/perplexity-portable-computer-local-ai/index.html"
     },
     {
       "url": "https://toolboxkart.tech/tech/physical-ai-anthropic-model-hardware-standard/",
