@@ -21,6 +21,10 @@ jobs:
         shell: bash
         run: python3 scripts/build-content-index.py
 
+      - name: Rebuild category index pages
+        shell: bash
+        run: python3 scripts/build-category-indexes.py
+
       - name: Ensure every HTML page loads the shared site script
         shell: python
         run: |
