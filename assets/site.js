@@ -360,6 +360,5 @@
     renderFooter(niches);
   });
   renderContentCategoryIndex();
-  injectAuthorByline();
   injectArticleBreadcrumb();
 })();
