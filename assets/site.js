@@ -83,33 +83,44 @@
     nav.innerHTML = navHTML;
   }
 
-  async function renderGuideIndex() {
-    if (window.location.pathname !== '/seo-guide/' && window.location.pathname !== '/seo-guide/index.html') return;
-    const grid = document.querySelector('.grid');
-    if (!grid) return;
-    try {
-      const response = await fetch('/assets/seo-guide-manifest.php', { cache: 'no-store' });
-      if (!response.ok) throw new Error('Guide manifest request failed: ' + response.status);
-      const guides = await response.json();
-      grid.innerHTML = guides.map(guide => `<article class="card"><p class="meta">SEO Guide · Updated ${escapeHTML(guide.modified)}</p><a href="${escapeHTML(guide.url)}">${escapeHTML(guide.title)}</a><p>${escapeHTML(guide.description)}</p></article>`).join('');
-    } catch (err) {
-      console.error('Guide manifest load failed.', err);
+  async function renderContentCategoryIndex() {
+    const category = window.location.pathname.split('/').filter(Boolean)[0];
+    const supported = new Set(['seo-guide', 'tech', 'tools-guide', 'explainers']);
+    if (!supported.has(category) || window.location.pathname === '/' + category + '/index.html') {
+      // index.html is also a category page; continue below.
     }
-  }
+    const isCategoryRoot =
+      window.location.pathname === '/' + category + '/' ||
+      window.location.pathname === '/' + category + '/index.html';
+    if (!isCategoryRoot) return;
 
-  async function renderTechIndex() {
-    if (window.location.pathname !== '/tech/' && window.location.pathname !== '/tech/index.html') return;
     const grid = document.querySelector('.grid');
     if (!grid) return;
+
     try {
-      const response = await fetch('/assets/tech-manifest.php', { cache: 'no-store' });
-      if (!response.ok) throw new Error('Tech manifest request failed: ' + response.status);
-      const posts = await response.json();
-      grid.innerHTML = posts.length
-        ? posts.map(post => `<article class="card"><p class="meta">Tech Guide · Updated ${escapeHTML(post.modified)}</p><a href="${escapeHTML(post.url)}">${escapeHTML(post.title)}</a><p>${escapeHTML(post.description)}</p></article>`).join('')
-        : '<p class="empty">Tech guides will appear here as they are published.</p>';
+      const response = await fetch('/assets/content-index.json', { cache: 'no-store' });
+      if (!response.ok) throw new Error('content-index request failed: ' + response.status);
+      const data = await response.json();
+      const posts = (data.categories && data.categories[category]) || [];
+
+      if (!posts.length) {
+        grid.innerHTML = '<p class="empty">New resources will appear here as they are published.</p>';
+        return;
+      }
+
+      const label = category === 'seo-guide' ? 'SEO Guide' :
+        category === 'tech' ? 'Tech Guide' :
+        category === 'tools-guide' ? 'Tool Guide' : 'Explainer';
+
+      grid.innerHTML = posts.map(post => `
+        <article class="card">
+          <p class="meta">${escapeHTML(label)}</p>
+          <a href="${escapeHTML(post.url)}">${escapeHTML(post.title)}</a>
+          <p>${escapeHTML(post.description)}</p>
+        </article>`
+      ).join('');
     } catch (err) {
-      console.error('Tech manifest load failed.', err);
+      console.error('Unified content index load failed.', err);
     }
   }
 
@@ -184,6 +195,83 @@
     document.head.appendChild(style);
   }
 
+  const AUTHOR_PROFILE = {
+    name: 'Deepak Parmar',
+    profile: '/about-deepak-parmar/',
+    bio: 'SEO and AI search specialist focused on practical search strategy, technical SEO, and AI-driven discovery.',
+    linkedin: 'https://www.linkedin.com/in/deepakparmaronline/',
+    youtube: 'https://www.youtube.com/@deepakparmaronline'
+  };
+
+  function currentArticleInfo() {
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const categories = new Set(['seo-guide', 'tech', 'tools-guide', 'explainers']);
+    if (parts.length < 2 || !categories.has(parts[0])) return null;
+
+    const h1 = document.querySelector('h1');
+    if (!h1) return null;
+
+    return {
+      category: parts[0],
+      categoryLabel: parts[0] === 'seo-guide' ? 'SEO Guides' :
+        parts[0] === 'tech' ? 'Tech' :
+        parts[0] === 'tools-guide' ? 'Tool Guides' : 'Explainers',
+      title: h1.textContent.trim(),
+      url: window.location.pathname
+    };
+  }
+
+  function injectArticleBreadcrumb() {
+    const info = currentArticleInfo();
+    if (!info || document.querySelector('.tbk-breadcrumbs')) return;
+
+    const style = document.createElement('style');
+    style.id = 'tbk-article-shared-css';
+    style.textContent = `
+      .tbk-breadcrumbs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.88rem;color:#68707c;margin:0 0 22px}
+      .tbk-breadcrumbs a{color:#365d82;text-decoration:none}.tbk-breadcrumbs a:hover{text-decoration:underline}
+      .tbk-breadcrumbs .sep{color:#9aa1aa}
+      .tbk-author-box{margin:44px 0 28px;padding:22px;background:#fff;border:1px solid #e1ddce;border-radius:12px}
+      .tbk-author-box h2{font-family:'Space Mono','Courier New',monospace;font-size:1.15rem;margin:0 0 8px}
+      .tbk-author-box p{margin:5px 0;color:#4f5864}
+      .tbk-author-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+      .tbk-author-links a{font-weight:700;color:#24537d;text-decoration:none}
+      .tbk-author-links a:hover{text-decoration:underline}
+    `;
+    document.head.appendChild(style);
+
+    const nav = document.createElement('div');
+    nav.className = 'tbk-breadcrumbs';
+    nav.innerHTML = `
+      <a href="/">Home</a><span class="sep">/</span>
+      <a href="/${info.category}/">${escapeHTML(info.categoryLabel)}</a><span class="sep">/</span>
+      <span>${escapeHTML(info.title)}</span>`;
+    const main = document.querySelector('main');
+    if (main) main.insertBefore(nav, main.firstChild);
+
+    document.querySelectorAll('.meta').forEach(el => {
+      if (/By\\s+Deepak\\s+Parmar/i.test(el.textContent)) {
+        el.innerHTML = el.innerHTML.replace(/By\\s+Deepak\\s+Parmar/gi,
+          'By <a href="' + AUTHOR_PROFILE.profile + '">Deepak Parmar</a>');
+      }
+    });
+
+    const sources = document.querySelector('.sources');
+    if (sources && !document.querySelector('.tbk-author-box')) {
+      const box = document.createElement('section');
+      box.className = 'tbk-author-box';
+      box.innerHTML = `
+        <h2>Written by <a href="${AUTHOR_PROFILE.profile}">${AUTHOR_PROFILE.name}</a></h2>
+        <p>${AUTHOR_PROFILE.bio}</p>
+        <p>He writes about SEO, Google Search, AI Search, AI tools, and practical digital workflows.</p>
+        <div class="tbk-author-links">
+          <a href="${AUTHOR_PROFILE.linkedin}" rel="me noopener" target="_blank">LinkedIn profile</a>
+          <a href="${AUTHOR_PROFILE.youtube}" rel="me noopener" target="_blank">YouTube profile</a>
+        </div>`;
+      sources.parentNode.insertBefore(box, sources);
+    }
+  }
+
   function renderFooter(niches) {
     injectFooterStyles();
 
@@ -225,6 +313,6 @@
     }
     renderFooter(niches);
   });
-  renderGuideIndex();
-  renderTechIndex();
+  renderContentCategoryIndex();
+  injectArticleBreadcrumb();
 })();
