@@ -263,10 +263,23 @@
         img.src = AUTHOR_PROFILE.photo;
         img.alt = 'Deepak Parmar';
         meta.prepend(img);
+      } else {
+        const header = document.querySelector('main > header, article > header, .hero');
+        const h1 = header && header.querySelector('h1');
+        if (h1) {
+          const meta = document.createElement('p');
+          meta.className = 'tbk-byline';
+          meta.innerHTML = `By <a href="${AUTHOR_PROFILE.profile}">${AUTHOR_PROFILE.name}</a>`;
+          const img = document.createElement('img');
+          img.src = AUTHOR_PROFILE.photo;
+          img.alt = 'Deepak Parmar';
+          meta.prepend(img);
+          h1.insertAdjacentElement('afterend', meta);
+        }
       }
     }
 
-    const sources = document.querySelector('.sources');
+    const sources = document.querySelector('.sources, #sources, [data-resources], .resources');
     if (sources && !document.querySelector('.tbk-author-box')) {
       const box = document.createElement('section');
       box.className = 'tbk-author-box';
