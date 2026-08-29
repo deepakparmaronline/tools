@@ -116,6 +116,14 @@
         "path": "/tech/openai-cursor-models-wind-down/index.html"
       },
       {
+        "url": "https://toolboxkart.tech/tech/openai-cursor-models-wind-down-what-developers-need-to-know/",
+        "title": "OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know",
+        "description": "OpenAI plans to wind down its Cursor model deal on November 12, 2026. Learn what changes for Cursor users, developers, and AI coding tools.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/openai-cursor-models-wind-down-what-developers-need-to-know/index.html"
+      },
+      {
         "url": "https://toolboxkart.tech/tech/openai-jalapeno-custom-ai-inference-chip-results/",
         "title": "OpenAI Jalapeño Chip: What Its Inference Results Mean",
         "description": "OpenAI shared early results from Jalapeño, its custom AI inference chip. Here is what the chip does and why inference hardware matters.",
@@ -255,6 +263,14 @@
       "category": "tech",
       "type": "news",
       "path": "/tech/openai-cursor-models-wind-down/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/openai-cursor-models-wind-down-what-developers-need-to-know/",
+      "title": "OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know",
+      "description": "OpenAI plans to wind down its Cursor model deal on November 12, 2026. Learn what changes for Cursor users, developers, and AI coding tools.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/openai-cursor-models-wind-down-what-developers-need-to-know/index.html"
     },
     {
       "url": "https://toolboxkart.tech/tech/openai-jalapeno-custom-ai-inference-chip-results/",
