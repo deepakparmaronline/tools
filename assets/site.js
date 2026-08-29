@@ -189,8 +189,7 @@
     if (mobile) host.classList.add('tbk-mobile-tools');
   }
 
-  function addAuthorTop(article) {
-    if (document.querySelector('.tbk-author-top')) return;
+  function createAuthorTop() {
     const top = document.createElement('div');
     top.className = 'tbk-author-top tbk-generated';
     top.innerHTML = `
@@ -202,14 +201,12 @@
           <a href="${AUTHOR.youtube}" rel="me noopener" target="_blank">YouTube</a>
         </span>
       </div>`;
-    article.h1.insertAdjacentElement('afterend', top);
+    return top;
   }
 
   function addAuthorBottom(article) {
-    if (document.querySelector('.tbk-author-bottom')) return;
+    if (article.main.querySelector('.tbk-author-bottom')) return;
     const sources = article.main.querySelector('.sources, #sources, [data-resources], .resources');
-    if (!sources) return;
-    sources.classList.add('tbk-sources');
     const box = document.createElement('section');
     box.className = 'tbk-author-bottom tbk-generated';
     box.innerHTML = `
@@ -223,7 +220,32 @@
           <a href="${AUTHOR.youtube}" rel="me noopener" target="_blank">YouTube</a>
         </div>
       </div>`;
-    sources.parentNode.insertBefore(box, sources);
+    if (sources) {
+      sources.classList.add('tbk-sources');
+      sources.parentNode.insertBefore(box, sources);
+    } else {
+      article.main.appendChild(box);
+    }
+  }
+
+  async function buildRecentPostsPanel(article, host) {
+    try {
+      const response = await fetch('/assets/content-index.json', { cache: 'no-store' });
+      if (!response.ok) throw new Error('content index request failed: ' + response.status);
+      const data = await response.json();
+      const currentUrl = location.origin + location.pathname.replace(/index\\.html$/, '');
+      const posts = (data.posts || []).filter(post => {
+        const url = (post.url || post.path || '').replace(/index\\.html$/, '').replace(/\\/$/, '/');
+        return url !== currentUrl.replace(/\\/$/, '/');
+      }).slice(0, 5);
+      if (!posts.length) return;
+      host.innerHTML = `
+        <h2>Recent Published Articles</h2>
+        <p>Latest Tool Box Kart articles and research.</p>
+        ${posts.map(post => `<a href="${esc(post.path || post.url)}">${esc(post.title)}</a>`).join('')}`;
+    } catch (error) {
+      console.error('Recent posts panel error:', error);
+    }
   }
 
   function addArticleLayout(article, niches) {
@@ -231,7 +253,6 @@
     article.main.dataset.tbkArticleReady = '1';
 
     injectStyles();
-    addAuthorTop(article);
 
     const children = Array.from(article.main.children).filter(el => !el.classList.contains('tbk-generated'));
     const contentNodes = children.filter(el => el !== article.h1);
@@ -244,29 +265,30 @@
     toc.className = 'tbk-toc';
     const center = document.createElement('article');
     center.className = 'tbk-article-main';
-    const tools = document.createElement('aside');
-    tools.className = 'tbk-tools-panel';
+    const recent = document.createElement('aside');
+    recent.className = 'tbk-tools-panel';
 
-    const authorTop = article.main.querySelector('.tbk-author-top');
-    (authorTop || article.h1).insertAdjacentElement('afterend', wrap);
-    center.appendChild(article.h1);
-
-    contentNodes.forEach(node => center.appendChild(node));
+    wrap.appendChild(layout);
     layout.appendChild(toc);
     layout.appendChild(center);
-    layout.appendChild(tools);
-    wrap.appendChild(layout);
+    layout.appendChild(recent);
     article.main.appendChild(wrap);
 
-    buildToc(center, toc);
-    buildToolsPanel(article, niches, tools);
-    addAuthorBottom({ main: center });
-    wrap.querySelector('img') && wrap.querySelector('img').setAttribute('loading','eager');
+    center.appendChild(article.h1);
+    center.appendChild(createAuthorTop());
+    contentNodes.forEach(node => center.appendChild(node));
 
-    const mobileTools = document.createElement('aside');
-    mobileTools.className = 'tbk-mobile-tools tbk-generated';
-    center.appendChild(mobileTools);
-    buildToolsPanel(article, niches, mobileTools);
+    buildToc(center, toc);
+    buildRecentPostsPanel(article, recent);
+    addAuthorBottom({ main: center });
+
+    const heroImage = center.querySelector('.hero img, img');
+    if (heroImage) heroImage.setAttribute('loading', 'eager');
+
+    const mobileRecent = document.createElement('aside');
+    mobileRecent.className = 'tbk-mobile-tools tbk-generated';
+    center.appendChild(mobileRecent);
+    buildRecentPostsPanel(article, mobileRecent);
   }
 
   function renderCategoryIndex() {
