@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="t d">
+<title id="t">Gemini Notebook compute-based usage limits</title>
+<desc id="d">A diagram showing Gemini Notebook moving from daily feature quotas to compute-based limits with five-hour refreshes.</desc>
+<rect width="1600" height="900" fill="#0d0d0d"/>
+<rect x="70" y="65" width="1460" height="770" rx="32" fill="#171717" stroke="#343434" stroke-width="3"/>
+<text x="120" y="145" fill="#ffffff" font-family="system-ui,sans-serif" font-size="50" font-weight="700">GEMINI NOTEBOOK</text>
+<text x="120" y="195" fill="#aaa" font-family="system-ui,sans-serif" font-size="27">New compute-based usage limits · September 2, 2026</text>
+<rect x="120" y="270" width="570" height="400" rx="24" fill="#101010" stroke="#555" stroke-width="3"/>
+<text x="165" y="340" fill="#fff" font-family="system-ui,sans-serif" font-size="29" font-weight="700">OLD SYSTEM</text>
+<text x="165" y="400" fill="#ddd" font-family="system-ui,sans-serif" font-size="28">Fixed daily feature quotas</text>
+<text x="165" y="465" fill="#aaa" font-family="system-ui,sans-serif" font-size="25">Count generations</text>
+<text x="165" y="515" fill="#aaa" font-family="system-ui,sans-serif" font-size="25">Daily reset</text>
+<text x="165" y="585" fill="#777" font-family="system-ui,sans-serif" font-size="22">Simple to count</text>
+<line x1="720" y1="470" x2="880" y2="470" stroke="#ffc23a" stroke-width="6"/>
+<polygon points="880,470 845,450 845,490" fill="#ffc23a"/>
+<rect x="910" y="270" width="570" height="400" rx="24" fill="#101010" stroke="#aaa0f2" stroke-width="3"/>
+<text x="955" y="340" fill="#aaa0f2" font-family="system-ui,sans-serif" font-size="29" font-weight="700">NEW SYSTEM</text>
+<text x="955" y="400" fill="#ddd" font-family="system-ui,sans-serif" font-size="28">Compute-specific limits</text>
+<text x="955" y="455" fill="#aaa" font-family="system-ui,sans-serif" font-size="24">Prompt complexity</text>
+<text x="955" y="500" fill="#aaa" font-family="system-ui,sans-serif" font-size="24">Chat length + sources</text>
+<text x="955" y="545" fill="#aaa" font-family="system-ui,sans-serif" font-size="24">Feature cost</text>
+<text x="955" y="615" fill="#fff" font-family="system-ui,sans-serif" font-size="25" font-weight="700">Refresh: every 5 hours</text>
+<text x="800" y="755" text-anchor="middle" fill="#aaa" font-family="system-ui,sans-serif" font-size="23">More flexible accounting, but less certainty from simple feature counts</text>
+</svg>
