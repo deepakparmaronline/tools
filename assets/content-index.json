@@ -92,6 +92,14 @@
         "path": "/tech/ai-cyberattacks-100-tech-companies-warning/index.html"
       },
       {
+        "url": "https://toolboxkart.tech/tech/china-ai-medical-imaging-ethics-guidelines/",
+        "title": "China AI Medical Imaging Ethics Guidelines: 6 Principles Explained | Tool Box Kart",
+        "description": "China has published six ethics principles for AI medical imaging research. See what the guidelines require for consent, privacy, safety and AI-assisted diagnosis.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/china-ai-medical-imaging-ethics-guidelines/index.html"
+      },
+      {
         "url": "https://toolboxkart.tech/tech/gemini-notebook-compute-limits/",
         "title": "Google Gemini Notebook Changes Usage Limits on September 2 | Tool Box Kart",
         "description": "Google is changing Gemini Notebook limits from daily feature quotas to compute-based limits on September 2. See what changes for AI workflows and usage.",
@@ -271,6 +279,14 @@
       "category": "tech",
       "type": "news",
       "path": "/tech/ai-cyberattacks-100-tech-companies-warning/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/china-ai-medical-imaging-ethics-guidelines/",
+      "title": "China AI Medical Imaging Ethics Guidelines: 6 Principles Explained | Tool Box Kart",
+      "description": "China has published six ethics principles for AI medical imaging research. See what the guidelines require for consent, privacy, safety and AI-assisted diagnosis.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/china-ai-medical-imaging-ethics-guidelines/index.html"
     },
     {
       "url": "https://toolboxkart.tech/tech/glm-5-3-flash-ox-alpha-explained/",
