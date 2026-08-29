@@ -84,20 +84,20 @@
     ],
     "tech": [
       {
-        "url": "https://toolboxkart.tech/tech/gemini-notebook-compute-limits/",
-        "title": "Google Gemini Notebook Changes Usage Limits on September 2",
-        "description": "Google is moving Gemini Notebook to flexible compute-based usage limits that refresh every five hours.",
-        "category": "tech",
-        "type": "news",
-        "path": "/tech/gemini-notebook-compute-limits/index.html"
-      },
-      {
         "url": "https://toolboxkart.tech/tech/ai-cyberattacks-100-tech-companies-warning/",
         "title": "100+ Tech Firms Warn of AI Cyberattack Surge",
         "description": "OpenAI, Anthropic, Google, Microsoft and 100+ firms warn AI-enabled attacks could grow fast. Here is what the letter means for defenders.",
         "category": "tech",
         "type": "news",
         "path": "/tech/ai-cyberattacks-100-tech-companies-warning/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/gemini-notebook-compute-limits/",
+        "title": "Google Gemini Notebook Changes Usage Limits on September 2 | Tool Box Kart",
+        "description": "Google is changing Gemini Notebook limits from daily feature quotas to compute-based limits on September 2. See what changes for AI workflows and usage.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/gemini-notebook-compute-limits/index.html"
       },
       {
         "url": "https://toolboxkart.tech/tech/glm-5-3-flash-ox-alpha-explained/",
@@ -168,14 +168,6 @@
     "explainers": []
   },
   "posts": [
-    {
-      "url": "https://toolboxkart.tech/tech/gemini-notebook-compute-limits/",
-      "title": "Google Gemini Notebook Changes Usage Limits on September 2",
-      "description": "Google is moving Gemini Notebook to flexible compute-based usage limits that refresh every five hours.",
-      "category": "tech",
-      "type": "news",
-      "path": "/tech/gemini-notebook-compute-limits/index.html"
-    },
     {
       "url": "https://toolboxkart.tech/seo-guide/canonical-url-guide/",
       "title": "Canonical URL: What It Is, How It Works and How to Fix Errors | Tool Box Kart",
@@ -279,6 +271,14 @@
       "category": "tech",
       "type": "news",
       "path": "/tech/gnani-artha-evon-v3-3/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/gemini-notebook-compute-limits/",
+      "title": "Google Gemini Notebook Changes Usage Limits on September 2 | Tool Box Kart",
+      "description": "Google is changing Gemini Notebook limits from daily feature quotas to compute-based limits on September 2. See what changes for AI workflows and usage.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/gemini-notebook-compute-limits/index.html"
     },
     {
       "url": "https://toolboxkart.tech/tech/nvidia-hugging-face-12-9b-acquisition-explained/",
