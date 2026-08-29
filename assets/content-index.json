@@ -84,14 +84,6 @@
     ],
     "tech": [
       {
-        "url": "https://toolboxkart.tech/tech/gnani-artha-evon-v3-3/",
-        "title": "Gnani Artha and Evon v3.3: What the Launch Means",
-        "description": "Gnani launched Artha with the Evon v3.3 model and Plexus platform. Here is what changed and what the claims mean in practice.",
-        "category": "tech",
-        "type": "news",
-        "path": "/tech/gnani-artha-evon-v3-3/index.html"
-      },
-      {
         "url": "https://toolboxkart.tech/tech/ai-cyberattacks-100-tech-companies-warning/",
         "title": "100+ Tech Firms Warn of AI Cyberattack Surge",
         "description": "OpenAI, Anthropic, Google, Microsoft and 100+ firms warn AI-enabled attacks could grow fast. Here is what the letter means for defenders.",
@@ -106,6 +98,14 @@
         "category": "tech",
         "type": "news",
         "path": "/tech/glm-5-3-flash-ox-alpha-explained/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/gnani-artha-evon-v3-3/",
+        "title": "Gnani Artha and Evon v3.3: What the Launch Means | Tool Box Kart",
+        "description": "Gnani Artha launched on August 28 with Evon v3.3 and Plexus. See what is verified, what Gnani claims, and why sovereign AI matters.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/gnani-artha-evon-v3-3/index.html"
       },
       {
         "url": "https://toolboxkart.tech/tech/nvidia-hugging-face-12-9b-acquisition-explained/",
@@ -160,14 +160,6 @@
     "explainers": []
   },
   "posts": [
-    {
-      "url": "https://toolboxkart.tech/tech/gnani-artha-evon-v3-3/",
-      "title": "Gnani Artha and Evon v3.3: What the Launch Means",
-      "description": "Gnani launched Artha with the Evon v3.3 model and Plexus platform. Here is what changed and what the claims mean in practice.",
-      "category": "tech",
-      "type": "news",
-      "path": "/tech/gnani-artha-evon-v3-3/index.html"
-    },
     {
       "url": "https://toolboxkart.tech/seo-guide/canonical-url-guide/",
       "title": "Canonical URL: What It Is, How It Works and How to Fix Errors | Tool Box Kart",
@@ -263,6 +255,14 @@
       "category": "tech",
       "type": "news",
       "path": "/tech/glm-5-3-flash-ox-alpha-explained/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/gnani-artha-evon-v3-3/",
+      "title": "Gnani Artha and Evon v3.3: What the Launch Means | Tool Box Kart",
+      "description": "Gnani Artha launched on August 28 with Evon v3.3 and Plexus. See what is verified, what Gnani claims, and why sovereign AI matters.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/gnani-artha-evon-v3-3/index.html"
     },
     {
       "url": "https://toolboxkart.tech/tech/nvidia-hugging-face-12-9b-acquisition-explained/",
