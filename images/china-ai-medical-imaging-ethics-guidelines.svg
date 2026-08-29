@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">China AI medical imaging ethics guidelines</title>
+<desc id="desc">A medical scan interface connected to an AI system and an ethics checklist showing privacy, fairness, safety, transparency and human oversight.</desc>
+<rect width="1600" height="900" fill="#0d0d0d"/>
+<rect x="80" y="80" width="1440" height="740" rx="28" fill="#151515" stroke="#2a2a2a" stroke-width="3"/>
+<text x="140" y="165" fill="#ffc23a" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">TOOL BOX KART · AI POLICY</text>
+<text x="140" y="240" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="60" font-weight="800">AI Medical Imaging Ethics</text>
+<text x="140" y="290" fill="#aaa" font-family="Arial,Helvetica,sans-serif" font-size="30">China publishes six principles for responsible research</text>
+<rect x="140" y="350" width="520" height="350" rx="22" fill="#101010" stroke="#555" stroke-width="3"/>
+<text x="185" y="410" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">AI + MEDICAL IMAGING</text>
+<text x="185" y="470" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="25">CT</text>
+<text x="185" y="515" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="25">MRI</text>
+<text x="185" y="560" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="25">Ultrasound</text>
+<text x="185" y="620" fill="#8f8f8f" font-family="Arial,Helvetica,sans-serif" font-size="22">Sensitive health data</text>
+<text x="185" y="660" fill="#8f8f8f" font-family="Arial,Helvetica,sans-serif" font-size="22">AI assists; doctors decide</text>
+<path d="M720 525 H840" stroke="#ffc23a" stroke-width="10" stroke-linecap="round"/>
+<path d="M815 495 L860 525 L815 555" fill="none" stroke="#ffc23a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="900" y="350" width="500" height="350" rx="22" fill="#101010" stroke="#555" stroke-width="3"/>
+<text x="945" y="410" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">SIX CORE PRINCIPLES</text>
+<text x="945" y="465" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="23">✓ Human welfare</text>
+<text x="945" y="510" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="23">✓ Fairness</text>
+<text x="945" y="555" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="23">✓ Human autonomy</text>
+<text x="945" y="600" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="23">✓ Privacy and data security</text>
+<text x="945" y="645" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="23">✓ Safety and controllability</text>
+<text x="945" y="690" fill="#ddd" font-family="Arial,Helvetica,sans-serif" font-size="23">✓ Transparency</text>
+<text x="140" y="770" fill="#8f8f8f" font-family="Arial,Helvetica,sans-serif" font-size="21">Issued by China's National Science and Technology Ethics Committee medical ethics subcommittee.</text>
+</svg>
