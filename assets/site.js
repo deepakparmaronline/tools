@@ -198,7 +198,9 @@
   const AUTHOR_PROFILE = {
     name: 'Deepak Parmar',
     profile: '/about-deepak-parmar/',
-    bio: 'SEO and AI search specialist focused on practical search strategy, technical SEO, and AI-driven discovery.',
+    photo: '/images/deepak-parmar.jpeg',
+    bio1: 'Deepak Parmar is an SEO and AI-search specialist focused on technical SEO, content strategy, and search visibility.',
+    bio2: 'He writes practical guides on Google Search, AI Search, AI tools, technology, and digital workflows.',
     linkedin: 'https://www.linkedin.com/in/deepakparmaronline/',
     youtube: 'https://www.youtube.com/@deepakparmaronline'
   };
@@ -207,66 +209,77 @@
     const parts = window.location.pathname.split('/').filter(Boolean);
     const categories = new Set(['seo-guide', 'tech', 'tools-guide', 'explainers']);
     if (parts.length < 2 || !categories.has(parts[0])) return null;
-
     const h1 = document.querySelector('h1');
     if (!h1) return null;
-
     return {
       category: parts[0],
       categoryLabel: parts[0] === 'seo-guide' ? 'SEO Guides' :
         parts[0] === 'tech' ? 'Tech' :
         parts[0] === 'tools-guide' ? 'Tool Guides' : 'Explainers',
-      title: h1.textContent.trim(),
-      url: window.location.pathname
+      title: h1.textContent.trim()
     };
+  }
+
+  function ensureAuthorStyles() {
+    if (document.getElementById('tbk-author-css')) return;
+    const style = document.createElement('style');
+    style.id = 'tbk-author-css';
+    style.textContent = `
+      .tbk-byline{display:flex;align-items:center;gap:8px;margin:10px 0 18px;color:#69717d;font:500 .82rem/1.4 Inter,system-ui,sans-serif}
+      .tbk-byline img{width:28px;height:28px;border-radius:50%;object-fit:cover;border:1px solid #d8d3c7}
+      .tbk-byline a{color:#365d82;text-decoration:none;font-weight:650}
+      .tbk-byline a:hover{text-decoration:underline}
+      .tbk-author-box{display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;margin:44px 0 28px;padding:22px;background:#fff;border:1px solid #e1ddce;border-radius:12px}
+      .tbk-author-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;border:1px solid #d8d3c7}
+      .tbk-author-box h2{font:700 1.1rem/1.3 'Space Mono','Courier New',monospace;margin:0 0 8px}
+      .tbk-author-box p{margin:5px 0;color:#4f5864}
+      .tbk-author-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+      .tbk-author-links a{font-weight:700;color:#24537d;text-decoration:none}
+      .tbk-author-links a:hover{text-decoration:underline}
+      @media(max-width:560px){.tbk-author-box{grid-template-columns:1fr}.tbk-author-photo{width:64px;height:64px}}
+    `;
+    document.head.appendChild(style);
   }
 
   function injectArticleBreadcrumb() {
     const info = currentArticleInfo();
     if (!info || document.querySelector('.tbk-breadcrumbs')) return;
+    ensureAuthorStyles();
 
-    const style = document.createElement('style');
-    style.id = 'tbk-article-shared-css';
-    style.textContent = `
-      .tbk-breadcrumbs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.88rem;color:#68707c;margin:0 0 22px}
-      .tbk-breadcrumbs a{color:#365d82;text-decoration:none}.tbk-breadcrumbs a:hover{text-decoration:underline}
-      .tbk-breadcrumbs .sep{color:#9aa1aa}
-      .tbk-author-box{margin:44px 0 28px;padding:22px;background:#fff;border:1px solid #e1ddce;border-radius:12px}
-      .tbk-author-box h2{font-family:'Space Mono','Courier New',monospace;font-size:1.15rem;margin:0 0 8px}
-      .tbk-author-box p{margin:5px 0;color:#4f5864}
-      .tbk-author-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
-      .tbk-author-links a{font-weight:700;color:#24537d;text-decoration:none}
-      .tbk-author-links a:hover{text-decoration:underline}
-    `;
-    document.head.appendChild(style);
-
-    const nav = document.createElement('div');
-    nav.className = 'tbk-breadcrumbs';
-    nav.innerHTML = `
-      <a href="/">Home</a><span class="sep">/</span>
-      <a href="/${info.category}/">${escapeHTML(info.categoryLabel)}</a><span class="sep">/</span>
-      <span>${escapeHTML(info.title)}</span>`;
+    const b = document.createElement('div');
+    b.className = 'tbk-breadcrumbs';
+    b.innerHTML = `<a href="/">Home</a><span class="sep">/</span><a href="/${info.category}/">${escapeHTML(info.categoryLabel)}</a><span class="sep">/</span><span>${escapeHTML(info.title)}</span>`;
     const main = document.querySelector('main');
-    if (main) main.insertBefore(nav, main.firstChild);
+    if (main) main.insertBefore(b, main.firstChild);
 
-    document.querySelectorAll('.meta').forEach(el => {
-      if (/By\\s+Deepak\\s+Parmar/i.test(el.textContent)) {
-        el.innerHTML = el.innerHTML.replace(/By\\s+Deepak\\s+Parmar/gi,
-          'By <a href="' + AUTHOR_PROFILE.profile + '">Deepak Parmar</a>');
+    let byline = document.querySelector('.tbk-byline');
+    if (!byline) {
+      const metaCandidates = Array.from(document.querySelectorAll('.meta, header .meta, header p'));
+      const meta = metaCandidates.find(el => /^By\s+Deepak\s+Parmar/i.test(el.textContent.trim()));
+      if (meta) {
+        meta.innerHTML = `By <a href="${AUTHOR_PROFILE.profile}">${AUTHOR_PROFILE.name}</a>`;
+        meta.classList.add('tbk-byline');
+        const img = document.createElement('img');
+        img.src = AUTHOR_PROFILE.photo;
+        img.alt = 'Deepak Parmar';
+        meta.prepend(img);
       }
-    });
+    }
 
     const sources = document.querySelector('.sources');
     if (sources && !document.querySelector('.tbk-author-box')) {
       const box = document.createElement('section');
       box.className = 'tbk-author-box';
       box.innerHTML = `
-        <h2>Written by <a href="${AUTHOR_PROFILE.profile}">${AUTHOR_PROFILE.name}</a></h2>
-        <p>${AUTHOR_PROFILE.bio}</p>
-        <p>He writes about SEO, Google Search, AI Search, AI tools, and practical digital workflows.</p>
-        <div class="tbk-author-links">
-          <a href="${AUTHOR_PROFILE.linkedin}" rel="me noopener" target="_blank">LinkedIn profile</a>
-          <a href="${AUTHOR_PROFILE.youtube}" rel="me noopener" target="_blank">YouTube profile</a>
+        <img class="tbk-author-photo" src="${AUTHOR_PROFILE.photo}" alt="Deepak Parmar">
+        <div>
+          <h2>Written by <a href="${AUTHOR_PROFILE.profile}">${AUTHOR_PROFILE.name}</a></h2>
+          <p>${AUTHOR_PROFILE.bio1}</p>
+          <p>${AUTHOR_PROFILE.bio2}</p>
+          <div class="tbk-author-links">
+            <a href="${AUTHOR_PROFILE.linkedin}" rel="me noopener" target="_blank">LinkedIn profile</a>
+            <a href="${AUTHOR_PROFILE.youtube}" rel="me noopener" target="_blank">YouTube profile</a>
+          </div>
         </div>`;
       sources.parentNode.insertBefore(box, sources);
     }
