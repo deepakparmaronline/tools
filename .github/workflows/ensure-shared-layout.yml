@@ -1,0 +1,54 @@
+name: Ensure Shared ToolboxKart Layout
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ensure-shared-layout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Ensure every HTML page loads the shared site script
+        shell: python
+        run: |
+          from pathlib import Path
+
+          SCRIPT_TAG = '<script src="/assets/site.js" defer></script>'
+          changed = []
+
+          for path in Path(".").rglob("index.html"):
+              if any(part in {".git", "node_modules"} for part in path.parts):
+                  continue
+
+              text = path.read_text(encoding="utf-8")
+              if SCRIPT_TAG not in text:
+                  if "</body>" in text:
+                      text = text.replace("</body>", f"{SCRIPT_TAG}\n</body>", 1)
+                  else:
+                      text += f"\n{SCRIPT_TAG}\n"
+                  path.write_text(text, encoding="utf-8")
+                  changed.append(str(path))
+
+          print("Updated:", changed if changed else "No HTML pages needed changes.")
+
+      - name: Commit shared-layout fixes
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "ToolboxKart Layout Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add .
+          git commit -m "Ensure shared ToolboxKart layout script on HTML pages"
+          git push
