@@ -1,1 +1,396 @@
-{"categories":{"seo-guide":[{"url":"https://toolboxkart.tech/seo-guide/google-ai-overviews-auto-expand-metrics/","title":"Google AI Overviews Auto-Expand: 7 SEO Metrics to Watch","description":"Google is auto-expanding some AI Overviews. Learn which SEO metrics to watch and how to separate SERP layout changes from ranking changes.","category":"seo-guide","type":"news","path":"/seo-guide/google-ai-overviews-auto-expand-metrics/index.html"},{"url":"https://toolboxkart.tech/seo-guide/canonical-url-guide/","title":"Canonical URL: What It Is, How It Works and How to Fix Errors | Tool Box Kart","description":"Learn what a canonical URL is, when to use a rel canonical tag, common canonical mistakes and how to check canonical URLs on a website.","category":"seo-guide","type":"news","path":"/seo-guide/canonical-url-guide/index.html"},{"url":"https://toolboxkart.tech/seo-guide/google-ai-mode-travel-booking/","title":"Google AI Mode Travel Booking: Flight Tracking & Hotel Booking","description":"Google AI Mode can track flight prices, show points and miles rates, and book hotels. See what changed and what it means for search and SEO.","category":"seo-guide","type":"news","path":"/seo-guide/google-ai-mode-travel-booking/index.html"},{"url":"https://toolboxkart.tech/seo-guide/google-ai-overviews-auto-expand-seo/","title":"Google AI Overviews Auto-Expand: What SEOs Need to Know","description":"Google is testing AI Overviews that automatically expand on some searches. Learn what changed, why it matters for SEO, and what to measure now.","category":"seo-guide","type":"news","path":"/seo-guide/google-ai-overviews-auto-expand-seo/index.html"},{"url":"https://toolboxkart.tech/seo-guide/google-august-2026-spam-update/","title":"Google August 2026 Spam Update: What SEOs Need to Know","description":"Google finished its August 2026 spam update on August 21. Learn what the update targets, what it does not target, and what SEOs should check now.","category":"seo-guide","type":"news","path":"/seo-guide/google-august-2026-spam-update/index.html"},{"url":"https://toolboxkart.tech/seo-guide/google-search-console-guide/","title":"Google Search Console SEO: How to Find Real Opportunities in GSC Data | Tool Box Kart","description":"Learn how to use Google Search Console data to find low CTR pages, striking-distance queries, content decay and keyword cannibalization without connecting an API.","category":"seo-guide","type":"news","path":"/seo-guide/google-search-console-guide/index.html"},{"url":"https://toolboxkart.tech/seo-guide/google-site-reputation-policy-eea/","title":"Google Site Reputation Policy Changes in EEA: What SEOs Need to Know","description":"Google will change site reputation policy enforcement in the EEA from August 30, 2026. Learn what changes, what stays the same, and what SEOs should do.","category":"seo-guide","type":"news","path":"/seo-guide/google-site-reputation-policy-eea/index.html"},{"url":"https://toolboxkart.tech/seo-guide/keyword-clustering-guide/","title":"Keyword Clustering: How to Group Keywords by Search Intent | Tool Box Kart","description":"Learn how keyword clustering works, why grouping keywords by search intent matters, and how to build cleaner SEO keyword groups without relying on search volume alone.","category":"seo-guide","type":"news","path":"/seo-guide/keyword-clustering-guide/index.html"},{"url":"https://toolboxkart.tech/seo-guide/robots-meta-tags-guide/","title":"Robots Meta Tag: noindex, nofollow and Other Directives Explained | Tool Box Kart","description":"Learn how robots meta tags work, what noindex and nofollow mean, when to use them, and how to check robots directives on a page.","category":"seo-guide","type":"news","path":"/seo-guide/robots-meta-tags-guide/index.html"},{"url":"https://toolboxkart.tech/seo-guide/seo-tools-guide/","title":"SEO Tools: A Practical Guide to Choosing the Right Tool | Tool Box Kart","description":"Learn which SEO tools to use for technical SEO, keywords, content, schema, local SEO, AEO and GSC. A practical guide with free tools from Tool Box Kart.","category":"seo-guide","type":"news","path":"/seo-guide/seo-tools-guide/index.html"},{"url":"https://toolboxkart.tech/seo-guide/technical-seo-checklist/","title":"Technical SEO Checklist: 30 Checks for a Healthier Website | Tool Box Kart","description":"Use this practical technical SEO checklist to check crawling, indexing, URLs, canonicals, robots, links, schema, headings and page speed signals.","category":"seo-guide","type":"news","path":"/seo-guide/technical-seo-checklist/index.html"}],"tech":[{"url":"https://toolboxkart.tech/tech/ai-cyberattacks-100-tech-companies-warning/","title":"100+ Tech Firms Warn of AI Cyberattack Surge","description":"OpenAI, Anthropic, Google, Microsoft and 100+ firms warn AI-enabled attacks could grow fast. Here is what the letter means for defenders.","category":"tech","type":"news","path":"/tech/ai-cyberattacks-100-tech-companies-warning/index.html"},{"url":"https://toolboxkart.tech/tech/china-ai-medical-imaging-ethics-guidelines/","title":"China AI Medical Imaging Ethics Guidelines: 6 Principles Explained | Tool Box Kart","description":"China has published six ethics principles for AI medical imaging research. See what the guidelines require for consent, privacy, safety and AI-assisted diagnosis.","category":"tech","type":"news","path":"/tech/china-ai-medical-imaging-ethics-guidelines/index.html"},{"url":"https://toolboxkart.tech/tech/gemini-notebook-compute-limits/","title":"Google Gemini Notebook Changes Usage Limits on September 2 | Tool Box Kart","description":"Google is changing Gemini Notebook limits from daily feature quotas to compute-based limits on September 2. See what changes for AI workflows and usage.","category":"tech","type":"news","path":"/tech/gemini-notebook-compute-limits/index.html"},{"url":"https://toolboxkart.tech/tech/glm-5-3-flash-ox-alpha-explained/","title":"GLM-5.3-Flash: Z.ai Reveals the AI Model Behind Ox Alpha","description":"Z.ai has revealed Ox Alpha as GLM-5.3-Flash. Learn about its 1M-token context, multimodal coding, open weights, architecture, pricing, and why it matters.","category":"tech","type":"news","path":"/tech/glm-5-3-flash-ox-alpha-explained/index.html"},{"url":"https://toolboxkart.tech/tech/gnani-artha-evon-v3-3/","title":"Gnani Artha and Evon v3.3: What the Launch Means | Tool Box Kart","description":"Gnani launched Artha with Evon v3.3 and Plexus on August 28. See what is verified, what Gnani claims, and why sovereign AI matters for enterprise AI.","category":"tech","type":"news","path":"/tech/gnani-artha-evon-v3-3/index.html"},{"url":"https://toolboxkart.tech/tech/nvidia-hugging-face-12-9b-acquisition-explained/","title":"Nvidia Hugging Face $12.9B Deal: What It Means for Open AI","description":"Nvidia is reported to be buying Hugging Face for $12.9B. Here is what the deal could mean for open models, developers, AI infrastructure, and Nvidia.","category":"tech","type":"news","path":"/tech/nvidia-hugging-face-12-9b-acquisition-explained/index.html"},{"url":"https://toolboxkart.tech/tech/openai-cursor-models-wind-down/","title":"OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know","description":"OpenAI plans to wind down its model deal with Cursor after SpaceX","category":"tech","type":"news","path":"/tech/openai-cursor-models-wind-down/index.html"},{"url":"https://toolboxkart.tech/tech/openai-cursor-models-wind-down-what-developers-need-to-know/","title":"OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know","description":"OpenAI plans to wind down its model deal on November 12, 2026. Learn what changes for Cursor users, developers, and AI coding tools.","category":"tech","type":"news","path":"/tech/openai-cursor-models-wind-down-what-developers-need-to-know/index.html"},{"url":"https://toolboxkart.tech/tech/openai-jalapeno-custom-ai-inference-chip-results/","title":"OpenAI Jalapeño Chip: What Its Inference Results Mean","description":"OpenAI shared early results from Jalapeño, its custom AI inference chip. Here is what the chip does and why inference hardware matters.","category":"tech","type":"news","path":"/tech/openai-jalapeno-custom-ai-inference-chip-results/index.html"},{"url":"https://toolboxkart.tech/tech/perplexity-portable-computer-local-ai/","title":"Perplexity Portable Computer: What Local-First AI Really Means | Tool Box Kart","description":"Perplexity Portable Computer runs its AI agent stack on local NVIDIA hardware. See what stays local, when cloud use happens, and the trade-offs.","category":"tech","type":"news","path":"/tech/perplexity-portable-computer-local-ai/index.html"},{"url":"https://toolboxkart.tech/tech/physical-ai-anthropic-model-hardware-standard/","title":"Physical AI Explained: How Anthropic Is Connecting AI Agents to Machines","description":"Physical AI connects AI agents to real machines. Learn how Anthropic","category":"tech","type":"news","path":"/tech/physical-ai-anthropic-model-hardware-standard/index.html"},{"url":"https://toolboxkart.tech/tech/tencent-hy4-preview-770b-1m-context/","title":"Tencent Hy4 Preview Explained: 770B Open Model With 1M Context","description":"Tencent Hy4 preview is a 770B MoE model with 49B active parameters and a 1M-token context window. Here is what developers need to know.","category":"tech","type":"news","path":"/tech/tencent-hy4-preview-770b-1m-context/index.html"},{"url":"https://toolboxkart.tech/tech/zai-glm-5-3-open-weights/","title":"Z.ai Releases GLM-5.3 Weights: What Developers Need to Know | Tool Box Kart","description":"Z.ai released GLM-5.3 weights on August 28. See the verified model specs, license, 756 GB footprint, benchmarks, and self-hosting trade-offs.","category":"tech","type":"news","path":"/tech/zai-glm-5-3-open-weights/index.html"}],"tools-guide":[],"explainers":[]},"posts":[{"url":"https://toolboxkart.tech/seo-guide/google-ai-overviews-auto-expand-metrics/","title":"Google AI Overviews Auto-Expand: 7 SEO Metrics to Watch","description":"Google is auto-expanding some AI Overviews. Learn which SEO metrics to watch and how to separate SERP layout changes from ranking changes.","category":"seo-guide","type":"news","path":"/seo-guide/google-ai-overviews-auto-expand-metrics/index.html"},{"url":"https://toolboxkart.tech/seo-guide/canonical-url-guide/","title":"Canonical URL: What It Is, How It Works and How to Fix Errors | Tool Box Kart","description":"Learn what a canonical URL is, when to use a rel canonical tag, common canonical mistakes and how to check canonical URLs on a website.","category":"seo-guide","type":"news","path":"/seo-guide/canonical-url-guide/index.html"},{"url":"https://toolboxkart.tech/seo-guide/google-ai-mode-travel-booking/","title":"Google AI Mode Travel Booking: Flight Tracking & Hotel Booking","description":"Google AI Mode can track flight prices, show points and miles rates, and book hotels. See what changed and what it means for search and SEO.","category":"seo-guide","type":"news","path":"/seo-guide/google-ai-mode-travel-booking/index.html"},{"url":"https://toolboxkart.tech/seo-guide/google-ai-overviews-auto-expand-seo/","title":"Google AI Overviews Auto-Expand: What SEOs Need to Know","description":"Google is testing AI Overviews that automatically expand on some searches. Learn what changed, why it matters for SEO, and what to measure now.","category":"seo-guide","type":"news","path":"/seo-guide/google-ai-overviews-auto-expand-seo/index.html"},{"url":"https://toolboxkart.tech/seo-guide/google-august-2026-spam-update/","title":"Google August 2026 Spam Update: What SEOs Need to Know","description":"Google finished its August 2026 spam update on August 21. Learn what the update targets, what it does not target, and what SEOs should check now.","category":"seo-guide","type":"news","path":"/seo-guide/google-august-2026-spam-update/index.html"},{"url":"https://toolboxkart.tech/seo-guide/google-search-console-guide/","title":"Google Search Console SEO: How to Find Real Opportunities in GSC Data | Tool Box Kart","description":"Learn how to use Google Search Console data to find low CTR pages, striking-distance queries, content decay and keyword cannibalization without connecting an API.","category":"seo-guide","type":"news","path":"/seo-guide/google-search-console-guide/index.html"},{"url":"https://toolboxkart.tech/seo-guide/google-site-reputation-policy-eea/","title":"Google Site Reputation Policy Changes in EEA: What SEOs Need to Know","description":"Google will change site reputation policy enforcement in the EEA from August 30, 2026. Learn what changes, what stays the same, and what SEOs should do.","category":"seo-guide","type":"news","path":"/seo-guide/google-site-reputation-policy-eea/index.html"},{"url":"https://toolboxkart.tech/seo-guide/keyword-clustering-guide/","title":"Keyword Clustering: How to Group Keywords by Search Intent | Tool Box Kart","description":"Learn how keyword clustering works, why grouping keywords by search intent matters, and how to build cleaner SEO keyword groups without relying on search volume alone.","category":"seo-guide","type":"news","path":"/seo-guide/keyword-clustering-guide/index.html"},{"url":"https://toolboxkart.tech/seo-guide/robots-meta-tags-guide/","title":"Robots Meta Tag: noindex, nofollow and Other Directives Explained | Tool Box Kart","description":"Learn how robots meta tags work, what noindex and nofollow mean, when to use them, and how to check robots directives on a page.","category":"seo-guide","type":"news","path":"/seo-guide/robots-meta-tags-guide/index.html"},{"url":"https://toolboxkart.tech/seo-guide/seo-tools-guide/","title":"SEO Tools: A Practical Guide to Choosing the Right Tool | Tool Box Kart","description":"Learn which SEO tools to use for technical SEO, keywords, content, schema, local SEO, AEO and GSC. A practical guide with free tools from Tool Box Kart.","category":"seo-guide","type":"news","path":"/seo-guide/seo-tools-guide/index.html"},{"url":"https://toolboxkart.tech/seo-guide/technical-seo-checklist/","title":"Technical SEO Checklist: 30 Checks for a Healthier Website | Tool Box Kart","description":"Use this practical technical SEO checklist to check crawling, indexing, URLs, canonicals, robots, links, schema, headings and page speed signals.","category":"seo-guide","type":"news","path":"/seo-guide/technical-seo-checklist/index.html"},{"url":"https://toolboxkart.tech/tech/ai-cyberattacks-100-tech-companies-warning/","title":"100+ Tech Firms Warn of AI Cyberattack Surge","description":"OpenAI, Anthropic, Google, Microsoft and 100+ firms warn AI-enabled attacks could grow fast. Here is what the letter means for defenders.","category":"tech","type":"news","path":"/tech/ai-cyberattacks-100-tech-companies-warning/index.html"},{"url":"https://toolboxkart.tech/tech/china-ai-medical-imaging-ethics-guidelines/","title":"China AI Medical Imaging Ethics Guidelines: 6 Principles Explained | Tool Box Kart","description":"China has published six ethics principles for AI medical imaging research. See what the guidelines require for consent, privacy, safety and AI-assisted diagnosis.","category":"tech","type":"news","path":"/tech/china-ai-medical-imaging-ethics-guidelines/index.html"},{"url":"https://toolboxkart.tech/tech/gemini-notebook-compute-limits/","title":"Google Gemini Notebook Changes Usage Limits on September 2 | Tool Box Kart","description":"Google is changing Gemini Notebook limits from daily feature quotas to compute-based limits on September 2. See what changes for AI workflows and usage.","category":"tech","type":"news","path":"/tech/gemini-notebook-compute-limits/index.html"},{"url":"https://toolboxkart.tech/tech/glm-5-3-flash-ox-alpha-explained/","title":"GLM-5.3-Flash: Z.ai Reveals the AI Model Behind Ox Alpha","description":"Z.ai has revealed Ox Alpha as GLM-5.3-Flash. Learn about its 1M-token context, multimodal coding, open weights, architecture, pricing, and why it matters.","category":"tech","type":"news","path":"/tech/glm-5-3-flash-ox-alpha-explained/index.html"},{"url":"https://toolboxkart.tech/tech/gnani-artha-evon-v3-3/","title":"Gnani Artha and Evon v3.3: What the Launch Means | Tool Box Kart","description":"Gnani launched Artha with Evon v3.3 and Plexus on August 28. See what is verified, what Gnani claims, and why sovereign AI matters for enterprise AI.","category":"tech","type":"news","path":"/tech/gnani-artha-evon-v3-3/index.html"},{"url":"https://toolboxkart.tech/tech/nvidia-hugging-face-12-9b-acquisition-explained/","title":"Nvidia Hugging Face $12.9B Deal: What It Means for Open AI","description":"Nvidia is reported to be buying Hugging Face for $12.9B. Here is what the deal could mean for open models, developers, AI infrastructure, and Nvidia.","category":"tech","type":"news","path":"/tech/nvidia-hugging-face-12-9b-acquisition-explained/index.html"},{"url":"https://toolboxkart.tech/tech/openai-cursor-models-wind-down/","title":"OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know","description":"OpenAI plans to wind down its model deal with Cursor after SpaceX","category":"tech","type":"news","path":"/tech/openai-cursor-models-wind-down/index.html"},{"url":"https://toolboxkart.tech/tech/openai-cursor-models-wind-down-what-developers-need-to-know/","title":"OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know","description":"OpenAI plans to wind down its model deal on November 12, 2026. Learn what changes for Cursor users, developers, and AI coding tools.","category":"tech","type":"news","path":"/tech/openai-cursor-models-wind-down-what-developers-need-to-know/index.html"},{"url":"https://toolboxkart.tech/tech/openai-jalapeno-custom-ai-inference-chip-results/","title":"OpenAI Jalapeño Chip: What Its Inference Results Mean","description":"OpenAI shared early results from Jalapeño, its custom AI inference chip. Here is what the chip does and why inference hardware matters.","category":"tech","type":"news","path":"/tech/openai-jalapeno-custom-ai-inference-chip-results/index.html"},{"url":"https://toolboxkart.tech/tech/perplexity-portable-computer-local-ai/","title":"Perplexity Portable Computer: What Local-First AI Really Means | Tool Box Kart","description":"Perplexity Portable Computer runs its AI agent stack on local NVIDIA hardware. See what stays local, when cloud use happens, and the trade-offs.","category":"tech","type":"news","path":"/tech/perplexity-portable-computer-local-ai/index.html"},{"url":"https://toolboxkart.tech/tech/physical-ai-anthropic-model-hardware-standard/","title":"Physical AI Explained: How Anthropic Is Connecting AI Agents to Machines","description":"Physical AI connects AI agents to real machines. Learn how Anthropic","category":"tech","type":"news","path":"/tech/physical-ai-anthropic-model-hardware-standard/index.html"},{"url":"https://toolboxkart.tech/tech/tencent-hy4-preview-770b-1m-context/","title":"Tencent Hy4 Preview Explained: 770B Open Model With 1M Context","description":"Tencent Hy4 preview is a 770B MoE model with 49B active parameters and a 1M-token context window. Here is what developers need to know.","category":"tech","type":"news","path":"/tech/tencent-hy4-preview-770b-1m-context/index.html"},{"url":"https://toolboxkart.tech/tech/zai-glm-5-3-open-weights/","title":"Z.ai Releases GLM-5.3 Weights: What Developers Need to Know | Tool Box Kart","description":"Z.ai released GLM-5.3 weights on August 28. See the verified model specs, license, 756 GB footprint, benchmarks, and self-hosting trade-offs.","category":"tech","type":"news","path":"/tech/zai-glm-5-3-open-weights/index.html"}]}
+{
+  "categories": {
+    "seo-guide": [
+      {
+        "url": "https://toolboxkart.tech/seo-guide/canonical-url-guide/",
+        "title": "Canonical URL: What It Is, How It Works and How to Fix Errors | Tool Box Kart",
+        "description": "Learn what a canonical URL is, when to use a rel canonical tag, common canonical mistakes and how to check canonical URLs on a website.",
+        "category": "seo-guide",
+        "type": "news",
+        "path": "/seo-guide/canonical-url-guide/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/seo-guide/google-ai-mode-travel-booking/",
+        "title": "Google AI Mode Travel Booking: Flight Tracking & Hotel Booking",
+        "description": "Google AI Mode can track flight prices, show points and miles rates, and book hotels. See what changed and what it means for search and SEO.",
+        "category": "seo-guide",
+        "type": "news",
+        "path": "/seo-guide/google-ai-mode-travel-booking/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/seo-guide/google-ai-overviews-auto-expand-metrics/",
+        "title": "Google AI Overviews Auto-Expand: 7 SEO Metrics to Watch",
+        "description": "Google is auto-expanding some AI Overviews. Learn which SEO metrics to watch and how to separate SERP layout changes from ranking changes.",
+        "category": "seo-guide",
+        "type": "news",
+        "path": "/seo-guide/google-ai-overviews-auto-expand-metrics/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/seo-guide/google-ai-overviews-auto-expand-seo/",
+        "title": "Google AI Overviews Auto-Expand: What SEOs Need to Know",
+        "description": "Google is testing AI Overviews that automatically expand on some searches. Learn what changed, why it matters for SEO, and what to measure now.",
+        "category": "seo-guide",
+        "type": "news",
+        "path": "/seo-guide/google-ai-overviews-auto-expand-seo/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/seo-guide/google-august-2026-spam-update/",
+        "title": "Google August 2026 Spam Update: What SEOs Need to Know",
+        "description": "Google finished its August 2026 spam update on August 21. Learn what the update targets, what it does not target, and what SEOs should check now.",
+        "category": "seo-guide",
+        "type": "news",
+        "path": "/seo-guide/google-august-2026-spam-update/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/seo-guide/google-search-console-guide/",
+        "title": "Google Search Console SEO: How to Find Real Opportunities in GSC Data | Tool Box Kart",
+        "description": "Learn how to use Google Search Console data to find low CTR pages, striking-distance queries, content decay and keyword cannibalization without connecting an API.",
+        "category": "seo-guide",
+        "type": "news",
+        "path": "/seo-guide/google-search-console-guide/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/seo-guide/google-site-reputation-policy-eea/",
+        "title": "Google Site Reputation Policy Changes in EEA: What SEOs Need to Know",
+        "description": "Google will change site reputation policy enforcement in the EEA from August 30, 2026. Learn what changes, what stays the same, and what SEOs should do.",
+        "category": "seo-guide",
+        "type": "news",
+        "path": "/seo-guide/google-site-reputation-policy-eea/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/seo-guide/keyword-clustering-guide/",
+        "title": "Keyword Clustering: How to Group Keywords by Search Intent | Tool Box Kart",
+        "description": "Learn how keyword clustering works, why grouping keywords by search intent matters, and how to build cleaner SEO keyword groups without relying on search volume alone.",
+        "category": "seo-guide",
+        "type": "news",
+        "path": "/seo-guide/keyword-clustering-guide/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/seo-guide/robots-meta-tags-guide/",
+        "title": "Robots Meta Tag: noindex, nofollow and Other Directives Explained | Tool Box Kart",
+        "description": "Learn how robots meta tags work, what noindex and nofollow mean, when to use them, and how to check robots directives on a page.",
+        "category": "seo-guide",
+        "type": "news",
+        "path": "/seo-guide/robots-meta-tags-guide/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/seo-guide/seo-tools-guide/",
+        "title": "SEO Tools: A Practical Guide to Choosing the Right Tool | Tool Box Kart",
+        "description": "Learn which SEO tools to use for technical SEO, keywords, content, schema, local SEO, AEO and GSC. A practical guide with free tools from Tool Box Kart.",
+        "category": "seo-guide",
+        "type": "news",
+        "path": "/seo-guide/seo-tools-guide/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/seo-guide/technical-seo-checklist/",
+        "title": "Technical SEO Checklist: 30 Checks for a Healthier Website | Tool Box Kart",
+        "description": "Use this practical technical SEO checklist to check crawling, indexing, URLs, canonicals, robots, links, schema, headings and page speed signals.",
+        "category": "seo-guide",
+        "type": "news",
+        "path": "/seo-guide/technical-seo-checklist/index.html"
+      }
+    ],
+    "tech": [
+      {
+        "url": "https://toolboxkart.tech/tech/ai-cyberattacks-100-tech-companies-warning/",
+        "title": "100+ Tech Firms Warn of AI Cyberattack Surge",
+        "description": "OpenAI, Anthropic, Google, Microsoft and 100+ firms warn AI-enabled attacks could grow fast. Here is what the letter means for defenders.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/ai-cyberattacks-100-tech-companies-warning/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/china-ai-medical-imaging-ethics-guidelines/",
+        "title": "China AI Medical Imaging Ethics Guidelines: 6 Principles Explained | Tool Box Kart",
+        "description": "China has published six ethics principles for AI medical imaging research. See what the guidelines require for consent, privacy, safety and AI-assisted diagnosis.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/china-ai-medical-imaging-ethics-guidelines/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/gemini-notebook-compute-limits/",
+        "title": "Google Gemini Notebook Changes Usage Limits on September 2 | Tool Box Kart",
+        "description": "Google is changing Gemini Notebook limits from daily feature quotas to compute-based limits on September 2. See what changes for AI workflows and usage.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/gemini-notebook-compute-limits/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/glm-5-3-flash-ox-alpha-explained/",
+        "title": "GLM-5.3-Flash: Z.ai Reveals the AI Model Behind Ox Alpha",
+        "description": "Z.ai has revealed Ox Alpha as GLM-5.3-Flash. Learn about its 1M-token context, multimodal coding, open weights, architecture, pricing, and why it matters.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/glm-5-3-flash-ox-alpha-explained/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/gnani-artha-evon-v3-3/",
+        "title": "Gnani Artha and Evon v3.3: What the Launch Means | Tool Box Kart",
+        "description": "Gnani launched Artha with Evon v3.3 and Plexus on August 28. See what is verified, what Gnani claims, and why sovereign AI matters for enterprise AI.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/gnani-artha-evon-v3-3/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/nvidia-hugging-face-12-9b-acquisition-explained/",
+        "title": "Nvidia Hugging Face $12.9B Deal: What It Means for Open AI",
+        "description": "Nvidia is reported to be buying Hugging Face for $12.9B. Here is what the deal could mean for open models, developers, AI infrastructure, and Nvidia.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/nvidia-hugging-face-12-9b-acquisition-explained/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/openai-cursor-models-wind-down/",
+        "title": "OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know",
+        "description": "OpenAI plans to wind down its model deal with Cursor after SpaceX",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/openai-cursor-models-wind-down/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/openai-cursor-models-wind-down-what-developers-need-to-know/",
+        "title": "OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know",
+        "description": "OpenAI plans to wind down its Cursor model deal on November 12, 2026. Learn what changes for Cursor users, developers, and AI coding tools.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/openai-cursor-models-wind-down-what-developers-need-to-know/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/openai-jalapeno-custom-ai-inference-chip-results/",
+        "title": "OpenAI Jalapeño Chip: What Its Inference Results Mean",
+        "description": "OpenAI shared early results from Jalapeño, its custom AI inference chip. Here is what the chip does and why inference hardware matters.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/openai-jalapeno-custom-ai-inference-chip-results/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/perplexity-portable-computer-local-ai/",
+        "title": "Perplexity Portable Computer: What Local-First AI Really Means | Tool Box Kart",
+        "description": "Perplexity Portable Computer runs its AI agent stack on local NVIDIA hardware. See what stays local, when cloud use happens, and the trade-offs.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/perplexity-portable-computer-local-ai/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/physical-ai-anthropic-model-hardware-standard/",
+        "title": "Physical AI Explained: How Anthropic Is Connecting AI Agents to Machines",
+        "description": "Physical AI connects AI agents to real machines. Learn how Anthropic",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/physical-ai-anthropic-model-hardware-standard/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/tencent-hy4-preview-770b-1m-context/",
+        "title": "Tencent Hy4 Preview Explained: 770B Open Model With 1M Context",
+        "description": "Tencent Hy4 preview is a 770B MoE model with 49B active parameters and a 1M-token context window. Here is what developers need to know.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/tencent-hy4-preview-770b-1m-context/index.html"
+      },
+      {
+        "url": "https://toolboxkart.tech/tech/zai-glm-5-3-open-weights/",
+        "title": "Z.ai Releases GLM-5.3 Weights: What Developers Need to Know | Tool Box Kart",
+        "description": "Z.ai released GLM-5.3 weights on August 28. See the verified model specs, license, 756 GB footprint, benchmarks, and self-hosting trade-offs.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/zai-glm-5-3-open-weights/index.html"
+      }
+    ],
+    "tools-guide": [],
+    "explainers": []
+  },
+  "posts": [
+    {
+      "url": "https://toolboxkart.tech/seo-guide/canonical-url-guide/",
+      "title": "Canonical URL: What It Is, How It Works and How to Fix Errors | Tool Box Kart",
+      "description": "Learn what a canonical URL is, when to use a rel canonical tag, common canonical mistakes and how to check canonical URLs on a website.",
+      "category": "seo-guide",
+      "type": "news",
+      "path": "/seo-guide/canonical-url-guide/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/seo-guide/google-ai-mode-travel-booking/",
+      "title": "Google AI Mode Travel Booking: Flight Tracking & Hotel Booking",
+      "description": "Google AI Mode can track flight prices, show points and miles rates, and book hotels. See what changed and what it means for search and SEO.",
+      "category": "seo-guide",
+      "type": "news",
+      "path": "/seo-guide/google-ai-mode-travel-booking/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/seo-guide/google-ai-overviews-auto-expand-metrics/",
+      "title": "Google AI Overviews Auto-Expand: 7 SEO Metrics to Watch",
+      "description": "Google is auto-expanding some AI Overviews. Learn which SEO metrics to watch and how to separate SERP layout changes from ranking changes.",
+      "category": "seo-guide",
+      "type": "news",
+      "path": "/seo-guide/google-ai-overviews-auto-expand-metrics/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/seo-guide/google-ai-overviews-auto-expand-seo/",
+      "title": "Google AI Overviews Auto-Expand: What SEOs Need to Know",
+      "description": "Google is testing AI Overviews that automatically expand on some searches. Learn what changed, why it matters for SEO, and what to measure now.",
+      "category": "seo-guide",
+      "type": "news",
+      "path": "/seo-guide/google-ai-overviews-auto-expand-seo/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/seo-guide/google-august-2026-spam-update/",
+      "title": "Google August 2026 Spam Update: What SEOs Need to Know",
+      "description": "Google finished its August 2026 spam update on August 21. Learn what the update targets, what it does not target, and what SEOs should check now.",
+      "category": "seo-guide",
+      "type": "news",
+      "path": "/seo-guide/google-august-2026-spam-update/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/seo-guide/google-search-console-guide/",
+      "title": "Google Search Console SEO: How to Find Real Opportunities in GSC Data | Tool Box Kart",
+      "description": "Learn how to use Google Search Console data to find low CTR pages, striking-distance queries, content decay and keyword cannibalization without connecting an API.",
+      "category": "seo-guide",
+      "type": "news",
+      "path": "/seo-guide/google-search-console-guide/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/seo-guide/google-site-reputation-policy-eea/",
+      "title": "Google Site Reputation Policy Changes in EEA: What SEOs Need to Know",
+      "description": "Google will change site reputation policy enforcement in the EEA from August 30, 2026. Learn what changes, what stays the same, and what SEOs should do.",
+      "category": "seo-guide",
+      "type": "news",
+      "path": "/seo-guide/google-site-reputation-policy-eea/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/seo-guide/keyword-clustering-guide/",
+      "title": "Keyword Clustering: How to Group Keywords by Search Intent | Tool Box Kart",
+      "description": "Learn how keyword clustering works, why grouping keywords by search intent matters, and how to build cleaner SEO keyword groups without relying on search volume alone.",
+      "category": "seo-guide",
+      "type": "news",
+      "path": "/seo-guide/keyword-clustering-guide/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/seo-guide/robots-meta-tags-guide/",
+      "title": "Robots Meta Tag: noindex, nofollow and Other Directives Explained | Tool Box Kart",
+      "description": "Learn how robots meta tags work, what noindex and nofollow mean, when to use them, and how to check robots directives on a page.",
+      "category": "seo-guide",
+      "type": "news",
+      "path": "/seo-guide/robots-meta-tags-guide/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/seo-guide/seo-tools-guide/",
+      "title": "SEO Tools: A Practical Guide to Choosing the Right Tool | Tool Box Kart",
+      "description": "Learn which SEO tools to use for technical SEO, keywords, content, schema, local SEO, AEO and GSC. A practical guide with free tools from Tool Box Kart.",
+      "category": "seo-guide",
+      "type": "news",
+      "path": "/seo-guide/seo-tools-guide/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/seo-guide/technical-seo-checklist/",
+      "title": "Technical SEO Checklist: 30 Checks for a Healthier Website | Tool Box Kart",
+      "description": "Use this practical technical SEO checklist to check crawling, indexing, URLs, canonicals, robots, links, schema, headings and page speed signals.",
+      "category": "seo-guide",
+      "type": "news",
+      "path": "/seo-guide/technical-seo-checklist/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/ai-cyberattacks-100-tech-companies-warning/",
+      "title": "100+ Tech Firms Warn of AI Cyberattack Surge",
+      "description": "OpenAI, Anthropic, Google, Microsoft and 100+ firms warn AI-enabled attacks could grow fast. Here is what the letter means for defenders.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/ai-cyberattacks-100-tech-companies-warning/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/china-ai-medical-imaging-ethics-guidelines/",
+      "title": "China AI Medical Imaging Ethics Guidelines: 6 Principles Explained | Tool Box Kart",
+      "description": "China has published six ethics principles for AI medical imaging research. See what the guidelines require for consent, privacy, safety and AI-assisted diagnosis.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/china-ai-medical-imaging-ethics-guidelines/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/glm-5-3-flash-ox-alpha-explained/",
+      "title": "GLM-5.3-Flash: Z.ai Reveals the AI Model Behind Ox Alpha",
+      "description": "Z.ai has revealed Ox Alpha as GLM-5.3-Flash. Learn about its 1M-token context, multimodal coding, open weights, architecture, pricing, and why it matters.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/glm-5-3-flash-ox-alpha-explained/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/gnani-artha-evon-v3-3/",
+      "title": "Gnani Artha and Evon v3.3: What the Launch Means | Tool Box Kart",
+      "description": "Gnani launched Artha with Evon v3.3 and Plexus on August 28. See what is verified, what Gnani claims, and why sovereign AI matters for enterprise AI.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/gnani-artha-evon-v3-3/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/gemini-notebook-compute-limits/",
+      "title": "Google Gemini Notebook Changes Usage Limits on September 2 | Tool Box Kart",
+      "description": "Google is changing Gemini Notebook limits from daily feature quotas to compute-based limits on September 2. See what changes for AI workflows and usage.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/gemini-notebook-compute-limits/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/nvidia-hugging-face-12-9b-acquisition-explained/",
+      "title": "Nvidia Hugging Face $12.9B Deal: What It Means for Open AI",
+      "description": "Nvidia is reported to be buying Hugging Face for $12.9B. Here is what the deal could mean for open models, developers, AI infrastructure, and Nvidia.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/nvidia-hugging-face-12-9b-acquisition-explained/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/openai-cursor-models-wind-down/",
+      "title": "OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know",
+      "description": "OpenAI plans to wind down its model deal with Cursor after SpaceX",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/openai-cursor-models-wind-down/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/openai-cursor-models-wind-down-what-developers-need-to-know/",
+      "title": "OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know",
+      "description": "OpenAI plans to wind down its Cursor model deal on November 12, 2026. Learn what changes for Cursor users, developers, and AI coding tools.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/openai-cursor-models-wind-down-what-developers-need-to-know/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/openai-jalapeno-custom-ai-inference-chip-results/",
+      "title": "OpenAI Jalapeño Chip: What Its Inference Results Mean",
+      "description": "OpenAI shared early results from Jalapeño, its custom AI inference chip. Here is what the chip does and why inference hardware matters.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/openai-jalapeno-custom-ai-inference-chip-results/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/perplexity-portable-computer-local-ai/",
+      "title": "Perplexity Portable Computer: What Local-First AI Really Means | Tool Box Kart",
+      "description": "Perplexity Portable Computer runs its AI agent stack on local NVIDIA hardware. See what stays local, when cloud use happens, and the trade-offs.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/perplexity-portable-computer-local-ai/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/physical-ai-anthropic-model-hardware-standard/",
+      "title": "Physical AI Explained: How Anthropic Is Connecting AI Agents to Machines",
+      "description": "Physical AI connects AI agents to real machines. Learn how Anthropic",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/physical-ai-anthropic-model-hardware-standard/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/tencent-hy4-preview-770b-1m-context/",
+      "title": "Tencent Hy4 Preview Explained: 770B Open Model With 1M Context",
+      "description": "Tencent Hy4 preview is a 770B MoE model with 49B active parameters and a 1M-token context window. Here is what developers need to know.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/tencent-hy4-preview-770b-1m-context/index.html"
+    },
+    {
+      "url": "https://toolboxkart.tech/tech/zai-glm-5-3-open-weights/",
+      "title": "Z.ai Releases GLM-5.3 Weights: What Developers Need to Know | Tool Box Kart",
+      "description": "Z.ai released GLM-5.3 weights on August 28. See the verified model specs, license, 756 GB footprint, benchmarks, and self-hosting trade-offs.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/zai-glm-5-3-open-weights/index.html"
+    }
+  ]
+}
