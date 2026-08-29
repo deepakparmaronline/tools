@@ -92,7 +92,7 @@
         .tbk-shared-nav .tbk-links a{font-size:.76rem}
         .tbk-article-wrap{padding:22px 14px 52px}
         .tbk-article-layout{grid-template-columns:1fr}
-        .tbk-toc{position:static;order:2}
+        .tbk-toc{position:static;order:0}
         .tbk-article-main{order:1}
         .tbk-author-bottom{grid-template-columns:1fr}
         .tbk-tools-panel{display:none}
@@ -247,7 +247,8 @@
     const tools = document.createElement('aside');
     tools.className = 'tbk-tools-panel';
 
-    article.h1.parentNode.insertBefore(wrap, article.h1);
+    const authorTop = article.main.querySelector('.tbk-author-top');
+    (authorTop || article.h1).insertAdjacentElement('afterend', wrap);
     center.appendChild(article.h1);
 
     contentNodes.forEach(node => center.appendChild(node));
