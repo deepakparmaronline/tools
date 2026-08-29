@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Gnani Artha and Evon v3.3</title>
+<desc id="desc">A technical diagram showing Evon v3.3 and Plexus inside the Gnani Artha sovereign AI stack.</desc>
+<rect width="1600" height="900" fill="#0d0d0d"/>
+<rect x="70" y="70" width="1460" height="760" rx="34" fill="#171717" stroke="#343434" stroke-width="3"/>
+<text x="120" y="155" fill="#ffffff" font-family="system-ui, sans-serif" font-size="52" font-weight="700">GNANI ARTHA</text>
+<text x="120" y="205" fill="#aaa" font-family="system-ui, sans-serif" font-size="28">Sovereign AI stack · August 2026</text>
+<rect x="120" y="280" width="520" height="390" rx="24" fill="#0f0f0f" stroke="#aaa0f2" stroke-width="3"/>
+<text x="165" y="350" fill="#aaa0f2" font-family="system-ui, sans-serif" font-size="30" font-weight="700">EVON v3.3</text>
+<text x="165" y="405" fill="#fff" font-family="system-ui, sans-serif" font-size="44" font-weight="700">30B</text>
+<text x="290" y="405" fill="#bbb" font-family="system-ui, sans-serif" font-size="25">parameters</text>
+<text x="165" y="465" fill="#ddd" font-family="system-ui, sans-serif" font-size="27">11 Indian languages</text>
+<text x="165" y="515" fill="#ddd" font-family="system-ui, sans-serif" font-size="27">Open weights</text>
+<text x="165" y="565" fill="#ddd" font-family="system-ui, sans-serif" font-size="27">Apache 2.0</text>
+<text x="165" y="615" fill="#888" font-family="system-ui, sans-serif" font-size="22">Model layer</text>
+<rect x="960" y="280" width="520" height="390" rx="24" fill="#0f0f0f" stroke="#ffc23a" stroke-width="3"/>
+<text x="1005" y="350" fill="#ffc23a" font-family="system-ui, sans-serif" font-size="30" font-weight="700">PLEXUS</text>
+<text x="1005" y="415" fill="#fff" font-family="system-ui, sans-serif" font-size="31" font-weight="700">Agentic platform</text>
+<text x="1005" y="475" fill="#ddd" font-family="system-ui, sans-serif" font-size="26">Workflows</text>
+<text x="1005" y="520" fill="#ddd" font-family="system-ui, sans-serif" font-size="26">Tool calls</text>
+<text x="1005" y="565" fill="#ddd" font-family="system-ui, sans-serif" font-size="26">Human review</text>
+<text x="1005" y="610" fill="#888" font-family="system-ui, sans-serif" font-size="22">Application layer</text>
+<line x1="660" y1="475" x2="950" y2="475" stroke="#555" stroke-width="5"/>
+<polygon points="950,475 920,457 920,493" fill="#555"/>
+<text x="800" y="445" text-anchor="middle" fill="#888" font-family="system-ui, sans-serif" font-size="21">intelligence → workflow</text>
+<rect x="120" y="715" width="1360" height="62" rx="18" fill="#202020"/>
+<text x="800" y="755" text-anchor="middle" fill="#ddd" font-family="system-ui, sans-serif" font-size="24">Deploy inside a customer data centre or VPC, according to Gnani</text>
+</svg>
