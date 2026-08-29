@@ -321,15 +321,20 @@
       </section>`).join('');
   }
 
-  loadManifest().then(data => {
-    const niches = data.niches || [];
+  function bootSite() {
     injectStyles();
     renderHeader();
-    renderFooter(niches);
-    renderHomepage(niches);
+    renderFooter([]);
     const article = getArticleParts();
-    if (article) addArticleLayout(article, niches);
-  });
+    if (article) addArticleLayout(article, []);
+    loadManifest().then(data => {
+      const niches = data.niches || [];
+      renderFooter(niches);
+      renderHomepage(niches);
+    }).catch(error => {
+      console.error('Tool Box Kart manifest enrichment failed:', error);
+    });
+    renderCategoryIndex();
+  }
 
-  renderCategoryIndex();
-})();
+  bootSite();})();
