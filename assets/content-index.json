@@ -84,6 +84,14 @@
     ],
     "tech": [
       {
+        "url": "https://toolboxkart.tech/tech/zai-glm-5-3-open-weights/",
+        "title": "Z.ai Releases GLM-5.3 Weights: What Developers Need to Know",
+        "description": "Z.ai released the full GLM-5.3 weights after its two-week safety hardening period. Here is what developers can verify now.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/zai-glm-5-3-open-weights/index.html"
+      },
+      {
         "url": "https://toolboxkart.tech/tech/ai-cyberattacks-100-tech-companies-warning/",
         "title": "100+ Tech Firms Warn of AI Cyberattack Surge",
         "description": "OpenAI, Anthropic, Google, Microsoft and 100+ firms warn AI-enabled attacks could grow fast. Here is what the letter means for defenders.",
@@ -168,6 +176,14 @@
     "explainers": []
   },
   "posts": [
+    {
+      "url": "https://toolboxkart.tech/tech/zai-glm-5-3-open-weights/",
+      "title": "Z.ai Releases GLM-5.3 Weights: What Developers Need to Know",
+      "description": "Z.ai released the full GLM-5.3 weights after its two-week safety hardening period. Here is what developers can verify now.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/zai-glm-5-3-open-weights/index.html"
+    },
     {
       "url": "https://toolboxkart.tech/seo-guide/canonical-url-guide/",
       "title": "Canonical URL: What It Is, How It Works and How to Fix Errors | Tool Box Kart",
