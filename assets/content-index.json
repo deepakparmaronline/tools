@@ -100,6 +100,14 @@
         "path": "/tech/glm-5-3-flash-ox-alpha-explained/index.html"
       },
       {
+        "url": "https://toolboxkart.tech/tech/nvidia-hugging-face-12-9b-acquisition-explained/",
+        "title": "Nvidia Hugging Face $12.9B Deal: What It Means for Open AI",
+        "description": "Nvidia is reported to be buying Hugging Face for $12.9B. Here is what the deal could mean for open models, developers, AI infrastructure, and Nvidia.",
+        "category": "tech",
+        "type": "news",
+        "path": "/tech/nvidia-hugging-face-12-9b-acquisition-explained/index.html"
+      },
+      {
         "url": "https://toolboxkart.tech/tech/openai-cursor-models-wind-down/",
         "title": "OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know",
         "description": "OpenAI plans to wind down its model deal with Cursor after SpaceX",
@@ -130,14 +138,6 @@
         "category": "tech",
         "type": "news",
         "path": "/tech/tencent-hy4-preview-770b-1m-context/index.html"
-      },
-      {
-        "url": "https://toolboxkart.tech/tech/nvidia-hugging-face-12-9b-acquisition-explained/",
-        "title": "Nvidia Hugging Face $12.9B Deal: What It Means for Open AI",
-        "description": "Nvidia is reported to be buying Hugging Face for $12.9B. Here is what the deal could mean for open models, developers, AI infrastructure, and Nvidia.",
-        "category": "tech",
-        "type": "news",
-        "path": "/tech/nvidia-hugging-face-12-9b-acquisition-explained/index.html"
       }
     ],
     "tools-guide": [],
@@ -241,6 +241,14 @@
       "path": "/tech/glm-5-3-flash-ox-alpha-explained/index.html"
     },
     {
+      "url": "https://toolboxkart.tech/tech/nvidia-hugging-face-12-9b-acquisition-explained/",
+      "title": "Nvidia Hugging Face $12.9B Deal: What It Means for Open AI",
+      "description": "Nvidia is reported to be buying Hugging Face for $12.9B. Here is what the deal could mean for open models, developers, AI infrastructure, and Nvidia.",
+      "category": "tech",
+      "type": "news",
+      "path": "/tech/nvidia-hugging-face-12-9b-acquisition-explained/index.html"
+    },
+    {
       "url": "https://toolboxkart.tech/tech/openai-cursor-models-wind-down/",
       "title": "OpenAI Is Ending Its Cursor Model Deal: What Developers Need to Know",
       "description": "OpenAI plans to wind down its model deal with Cursor after SpaceX",
@@ -271,14 +279,6 @@
       "category": "tech",
       "type": "news",
       "path": "/tech/tencent-hy4-preview-770b-1m-context/index.html"
-    },
-    {
-      "url": "https://toolboxkart.tech/tech/nvidia-hugging-face-12-9b-acquisition-explained/",
-      "title": "Nvidia Hugging Face $12.9B Deal: What It Means for Open AI",
-      "description": "Nvidia is reported to be buying Hugging Face for $12.9B. Here is what the deal could mean for open models, developers, AI infrastructure, and Nvidia.",
-      "category": "tech",
-      "type": "news",
-      "path": "/tech/nvidia-hugging-face-12-9b-acquisition-explained/index.html"
     }
   ]
 }
