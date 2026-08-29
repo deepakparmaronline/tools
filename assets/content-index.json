@@ -6,7 +6,7 @@
         "title": "Canonical URL: What It Is, How It Works and How to Fix Errors | Tool Box Kart",
         "description": "Learn what a canonical URL is, when to use a rel canonical tag, common canonical mistakes and how to check canonical URLs on a website.",
         "category": "seo-guide",
-        "type": "guide",
+        "type": "news",
         "path": "/seo-guide/canonical-url-guide/index.html"
       },
       {
@@ -14,7 +14,7 @@
         "title": "Google AI Mode Travel Booking: Flight Tracking & Hotel Booking",
         "description": "Google AI Mode can track flight prices, show points and miles rates, and book hotels. See what changed and what it means for search and SEO.",
         "category": "seo-guide",
-        "type": "guide",
+        "type": "news",
         "path": "/seo-guide/google-ai-mode-travel-booking/index.html"
       },
       {
@@ -22,7 +22,7 @@
         "title": "Google AI Overviews Auto-Expand: What SEOs Need to Know",
         "description": "Google is testing AI Overviews that automatically expand on some searches. Learn what changed, why it matters for SEO, and what to measure now.",
         "category": "seo-guide",
-        "type": "guide",
+        "type": "news",
         "path": "/seo-guide/google-ai-overviews-auto-expand-seo/index.html"
       },
       {
@@ -30,7 +30,7 @@
         "title": "Google August 2026 Spam Update: What SEOs Need to Know",
         "description": "Google finished its August 2026 spam update on August 21. Learn what the update targets, what it does not target, and what SEOs should check now.",
         "category": "seo-guide",
-        "type": "guide",
+        "type": "news",
         "path": "/seo-guide/google-august-2026-spam-update/index.html"
       },
       {
@@ -38,7 +38,7 @@
         "title": "Google Search Console SEO: How to Find Real Opportunities in GSC Data | Tool Box Kart",
         "description": "Learn how to use Google Search Console data to find low CTR pages, striking-distance queries, content decay and keyword cannibalization without connecting an API.",
         "category": "seo-guide",
-        "type": "guide",
+        "type": "news",
         "path": "/seo-guide/google-search-console-guide/index.html"
       },
       {
@@ -46,7 +46,7 @@
         "title": "Google Site Reputation Policy Changes in EEA: What SEOs Need to Know",
         "description": "Google will change site reputation policy enforcement in the EEA from August 30, 2026. Learn what changes, what stays the same, and what SEOs should do.",
         "category": "seo-guide",
-        "type": "guide",
+        "type": "news",
         "path": "/seo-guide/google-site-reputation-policy-eea/index.html"
       },
       {
@@ -54,7 +54,7 @@
         "title": "Keyword Clustering: How to Group Keywords by Search Intent | Tool Box Kart",
         "description": "Learn how keyword clustering works, why grouping keywords by search intent matters, and how to build cleaner SEO keyword groups without relying on search volume alone.",
         "category": "seo-guide",
-        "type": "guide",
+        "type": "news",
         "path": "/seo-guide/keyword-clustering-guide/index.html"
       },
       {
@@ -62,7 +62,7 @@
         "title": "Robots Meta Tag: noindex, nofollow and Other Directives Explained | Tool Box Kart",
         "description": "Learn how robots meta tags work, what noindex and nofollow mean, when to use them, and how to check robots directives on a page.",
         "category": "seo-guide",
-        "type": "guide",
+        "type": "news",
         "path": "/seo-guide/robots-meta-tags-guide/index.html"
       },
       {
@@ -70,7 +70,7 @@
         "title": "SEO Tools: A Practical Guide to Choosing the Right Tool | Tool Box Kart",
         "description": "Learn which SEO tools to use for technical SEO, keywords, content, schema, local SEO, AEO and GSC. A practical guide with free tools from Tool Box Kart.",
         "category": "seo-guide",
-        "type": "guide",
+        "type": "news",
         "path": "/seo-guide/seo-tools-guide/index.html"
       },
       {
@@ -78,7 +78,7 @@
         "title": "Technical SEO Checklist: 30 Checks for a Healthier Website | Tool Box Kart",
         "description": "Use this practical technical SEO checklist to check crawling, indexing, URLs, canonicals, robots, links, schema, headings and page speed signals.",
         "category": "seo-guide",
-        "type": "guide",
+        "type": "news",
         "path": "/seo-guide/technical-seo-checklist/index.html"
       }
     ],
@@ -125,7 +125,7 @@
       "title": "Canonical URL: What It Is, How It Works and How to Fix Errors | Tool Box Kart",
       "description": "Learn what a canonical URL is, when to use a rel canonical tag, common canonical mistakes and how to check canonical URLs on a website.",
       "category": "seo-guide",
-      "type": "guide",
+      "type": "news",
       "path": "/seo-guide/canonical-url-guide/index.html"
     },
     {
@@ -133,7 +133,7 @@
       "title": "Google AI Mode Travel Booking: Flight Tracking & Hotel Booking",
       "description": "Google AI Mode can track flight prices, show points and miles rates, and book hotels. See what changed and what it means for search and SEO.",
       "category": "seo-guide",
-      "type": "guide",
+      "type": "news",
       "path": "/seo-guide/google-ai-mode-travel-booking/index.html"
     },
     {
@@ -141,7 +141,7 @@
       "title": "Google AI Overviews Auto-Expand: What SEOs Need to Know",
       "description": "Google is testing AI Overviews that automatically expand on some searches. Learn what changed, why it matters for SEO, and what to measure now.",
       "category": "seo-guide",
-      "type": "guide",
+      "type": "news",
       "path": "/seo-guide/google-ai-overviews-auto-expand-seo/index.html"
     },
     {
@@ -149,7 +149,7 @@
       "title": "Google August 2026 Spam Update: What SEOs Need to Know",
       "description": "Google finished its August 2026 spam update on August 21. Learn what the update targets, what it does not target, and what SEOs should check now.",
       "category": "seo-guide",
-      "type": "guide",
+      "type": "news",
       "path": "/seo-guide/google-august-2026-spam-update/index.html"
     },
     {
@@ -157,7 +157,7 @@
       "title": "Google Search Console SEO: How to Find Real Opportunities in GSC Data | Tool Box Kart",
       "description": "Learn how to use Google Search Console data to find low CTR pages, striking-distance queries, content decay and keyword cannibalization without connecting an API.",
       "category": "seo-guide",
-      "type": "guide",
+      "type": "news",
       "path": "/seo-guide/google-search-console-guide/index.html"
     },
     {
@@ -165,7 +165,7 @@
       "title": "Google Site Reputation Policy Changes in EEA: What SEOs Need to Know",
       "description": "Google will change site reputation policy enforcement in the EEA from August 30, 2026. Learn what changes, what stays the same, and what SEOs should do.",
       "category": "seo-guide",
-      "type": "guide",
+      "type": "news",
       "path": "/seo-guide/google-site-reputation-policy-eea/index.html"
     },
     {
@@ -173,7 +173,7 @@
       "title": "Keyword Clustering: How to Group Keywords by Search Intent | Tool Box Kart",
       "description": "Learn how keyword clustering works, why grouping keywords by search intent matters, and how to build cleaner SEO keyword groups without relying on search volume alone.",
       "category": "seo-guide",
-      "type": "guide",
+      "type": "news",
       "path": "/seo-guide/keyword-clustering-guide/index.html"
     },
     {
@@ -181,7 +181,7 @@
       "title": "Robots Meta Tag: noindex, nofollow and Other Directives Explained | Tool Box Kart",
       "description": "Learn how robots meta tags work, what noindex and nofollow mean, when to use them, and how to check robots directives on a page.",
       "category": "seo-guide",
-      "type": "guide",
+      "type": "news",
       "path": "/seo-guide/robots-meta-tags-guide/index.html"
     },
     {
@@ -189,7 +189,7 @@
       "title": "SEO Tools: A Practical Guide to Choosing the Right Tool | Tool Box Kart",
       "description": "Learn which SEO tools to use for technical SEO, keywords, content, schema, local SEO, AEO and GSC. A practical guide with free tools from Tool Box Kart.",
       "category": "seo-guide",
-      "type": "guide",
+      "type": "news",
       "path": "/seo-guide/seo-tools-guide/index.html"
     },
     {
@@ -197,7 +197,7 @@
       "title": "Technical SEO Checklist: 30 Checks for a Healthier Website | Tool Box Kart",
       "description": "Use this practical technical SEO checklist to check crawling, indexing, URLs, canonicals, robots, links, schema, headings and page speed signals.",
       "category": "seo-guide",
-      "type": "guide",
+      "type": "news",
       "path": "/seo-guide/technical-seo-checklist/index.html"
     },
     {
