@@ -28,12 +28,14 @@ jobs:
         shell: bash
         run: python3 scripts/build-category-indexes.py
 
-      - name: Ensure every HTML page loads the shared site script
+      - name: Ensure every HTML page loads the current shared site script
         shell: python
         run: |
           from pathlib import Path
+          import re
 
-          SCRIPT_TAG = '<script src="/assets/site.js" defer></script>'
+          SCRIPT_TAG = '<script src="/assets/site.js?v=20260906" defer></script>'
+          SCRIPT_PATTERN = re.compile(r'<script\s+src=["\']/assets/site\.js(?:\?[^"\']*)?["\']\s+defer\s*></script>', re.I)
           changed = []
 
           for path in Path(".").rglob("index.html"):
@@ -41,12 +43,16 @@ jobs:
                   continue
 
               text = path.read_text(encoding="utf-8", errors="ignore")
-              if SCRIPT_TAG not in text:
-                  if "</body>" in text:
-                      text = text.replace("</body>", f"{SCRIPT_TAG}\n</body>", 1)
+              updated = SCRIPT_PATTERN.sub(SCRIPT_TAG, text)
+
+              if SCRIPT_TAG not in updated:
+                  if "</body>" in updated:
+                      updated = updated.replace("</body>", f"{SCRIPT_TAG}\n</body>", 1)
                   else:
-                      text += f"\n{SCRIPT_TAG}\n"
-                  path.write_text(text, encoding="utf-8")
+                      updated += f"\n{SCRIPT_TAG}\n"
+
+              if updated != text:
+                  path.write_text(updated, encoding="utf-8")
                   changed.append(str(path))
 
           print("Updated:", changed if changed else "No HTML pages needed changes.")
