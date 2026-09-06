@@ -35,8 +35,24 @@
     document.head.appendChild(style);
   }
 
+  function hasNativeSiteHeader() {
+    return Boolean(
+      document.querySelector('.site-header') ||
+      document.querySelector('header.site-header') ||
+      document.querySelector('body > nav') ||
+      document.querySelector('header[aria-label="Primary navigation"]')
+    );
+  }
+
+  function hasNativeSiteFooter() {
+    return Boolean(
+      document.querySelector('.site-footer') ||
+      document.querySelector('footer.site-footer')
+    );
+  }
+
   function renderHeader() {
-    if (document.querySelector('.tbk-site-header')) return;
+    if (document.querySelector('.tbk-site-header') || hasNativeSiteHeader()) return;
 
     const header = document.createElement('header');
     header.className = 'tbk-site-header';
@@ -58,7 +74,7 @@
   }
 
   function renderFooter() {
-    if (document.querySelector('.tbk-site-footer')) return;
+    if (document.querySelector('.tbk-site-footer') || hasNativeSiteFooter()) return;
 
     const footer = document.createElement('footer');
     footer.className = 'tbk-site-footer';
