@@ -102,6 +102,6 @@ document.getElementById('run').addEventListener('click',run);
 document.getElementById('copy').addEventListener('click',()=>{if(normalized)navigator.clipboard.writeText(normalized)});
 document.getElementById('download').addEventListener('click',()=>{if(!normalized)return;const blob=new Blob([normalized],{type:'application/ld+json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='schema-markup.json';a.click();URL.revokeObjectURL(a.href)});
 </script>
-<script src="/assets/site.js" defer></script>
+<script src="/assets/site.js?v=20260906" defer></script>
 </body>
 </html>
