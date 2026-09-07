@@ -1,0 +1,3 @@
+document.addEventListener('DOMContentLoaded',()=>TBKTool.init(async H=>{
+const type=H.v('type'), name=H.v('name').trim(), url=H.v('url').trim(), description=H.v('description').trim(), image=H.v('image').trim(); if(!name) return H.err('Add a name or headline.'); const o={'@context':'https://schema.org','@type':type,name}; if(type==='Article') {delete o.name;o.headline=name;} if(url)o.url=url;if(description)o.description=description;if(image)o.image=image; H.code('<script type="application/ld+json">\n'+JSON.stringify(o,null,2)+'\n<\/script>'); H.note('Validate and extend the markup for the exact page before publishing.');
+}));

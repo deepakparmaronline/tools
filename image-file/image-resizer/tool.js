@@ -1,0 +1,3 @@
+document.addEventListener('DOMContentLoaded',()=>TBKTool.init(async H=>{
+const file=H.file('file'); if(!file)return H.err('Choose an image first.'); const img=await H.loadImage(file); let w=H.n('width'),h=H.n('height'); if(w<=0||h<=0)return H.err('Enter positive width and height.'); if(H.checked('lock')){const r=img.width/img.height; if(w/h>r)w=Math.round(h*r);else h=Math.round(w/r);} const c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(img,0,0,w,h); const type=H.v('format'); const blob=await new Promise(r=>c.toBlob(r,type,.9)); H.imageResult(blob,{original:file.size,width:w,height:h,filename:'resized.'+(type==='image/png'?'png':type==='image/jpeg'?'jpg':'webp')});
+}));

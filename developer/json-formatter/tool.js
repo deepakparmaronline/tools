@@ -1,0 +1,3 @@
+document.addEventListener('DOMContentLoaded',()=>TBKTool.init(async H=>{
+const raw=H.v('json'); try{let data=JSON.parse(raw); if(H.checked('sort')){const sort=o=>Array.isArray(o)?o.map(sort):(o&&typeof o==='object'?Object.fromEntries(Object.keys(o).sort().map(k=>[k,sort(o[k])])):o); data=sort(data);} const a=H.v('action'); if(a==='validate'){H.ok('Valid JSON'); H.cards([['Characters',H.num(raw.length)],['Top-level type',Array.isArray(data)?'Array':typeof data]]); return;} const space=a==='minify'?0:(H.v('indent')==='tab'?'	':Number(H.v('indent'))); H.code(JSON.stringify(data,null,space),'data.json'); H.ok('Valid JSON');}catch(e){H.err('Invalid JSON: '+e.message);}
+}));

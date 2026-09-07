@@ -1,0 +1,2 @@
+<?php
+require dirname(__DIR__).'/config.php';require_once TBK_ROOT.'/includes/helpers.php';$fail=[];$tools=tbk_tools();foreach($tools as $t){$d=TBK_ROOT.'/'.$t['category'].'/'.$t['slug'];foreach(['index.php','tool.php','form.php','tool.js'] as $f)if(!is_file($d.'/'.$f))$fail[]=$t['slug'].' missing '.$f;$meta=require $d.'/tool.php';if(empty($meta['research']['rivals'])||empty($meta['research']['observed']))$fail[]=$t['slug'].' missing competitor research';}echo 'Tools: '.count($tools).PHP_EOL;echo $fail?implode(PHP_EOL,$fail).PHP_EOL:'PASS'.PHP_EOL;exit($fail?1:0);

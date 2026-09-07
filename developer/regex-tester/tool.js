@@ -1,0 +1,3 @@
+document.addEventListener('DOMContentLoaded',()=>TBKTool.init(async H=>{
+const p=H.v('pattern'), flags=H.v('flags'), text=H.v('text'); try{const re=new RegExp(p,flags); let rows=[]; if(flags.includes('g')){let m; while((m=re.exec(text))&&rows.length<200){rows.push([m[0],m.index,String(m.length)]); if(m[0]==='') re.lastIndex++;}}else{const m=re.exec(text); if(m) rows.push([m[0],m.index,String(m.length)]);} H.cards([['Matches',H.num(rows.length)],['Pattern','/'+p+'/'+flags]]); H.table(['Match','Index','Length'],rows); if(!rows.length)H.note('No matches found.');}catch(e){H.err('Invalid regular expression: '+e.message);}
+}));

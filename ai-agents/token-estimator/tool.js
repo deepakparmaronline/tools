@@ -1,0 +1,3 @@
+document.addEventListener('DOMContentLoaded',()=>TBKTool.init(async H=>{
+const t=H.v('text'),chars=t.length,words=t.trim()?t.trim().split(/\s+/).length:0, byChars=Math.ceil(chars/4), byWords=Math.ceil(words*1.33), method=H.v('method'); let estimate=method==='chars'?byChars:method==='words'?byWords:Math.round((byChars+byWords)/2); H.cards([['Estimated tokens',H.num(estimate)],['Characters',H.num(chars)],['Words',H.num(words)],['Heuristic range',H.num(Math.min(byChars,byWords))+'–'+H.num(Math.max(byChars,byWords))]]); H.note('Heuristic only. Exact token counts depend on the provider/model tokenizer and language.');
+}));

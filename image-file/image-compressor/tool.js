@@ -1,0 +1,3 @@
+document.addEventListener('DOMContentLoaded',()=>TBKTool.init(async H=>{
+const file=H.file('file'); if(!file) return H.err('Choose an image first.'); const img=await H.loadImage(file), maxw=H.n('maxw'), scale=maxw>0&&img.width>maxw?maxw/img.width:1, w=Math.round(img.width*scale), h=Math.round(img.height*scale), canvas=document.createElement('canvas'); canvas.width=w;canvas.height=h;canvas.getContext('2d').drawImage(img,0,0,w,h); const type=H.v('format'), q=Math.max(.1,Math.min(1,H.n('quality')/100)); const blob=await new Promise(r=>canvas.toBlob(r,type,q)); H.imageResult(blob,{original:file.size,width:w,height:h,filename:'compressed.'+(type==='image/png'?'png':type==='image/jpeg'?'jpg':'webp')});
+}));

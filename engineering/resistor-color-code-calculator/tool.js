@@ -1,0 +1,3 @@
+document.addEventListener('DOMContentLoaded',()=>TBKTool.init(async H=>{
+const digits={black:0,brown:1,red:2,orange:3,yellow:4,green:5,blue:6,violet:7,grey:8,white:9}, mult={silver:.01,gold:.1,black:1,brown:10,red:100,orange:1e3,yellow:1e4,green:1e5,blue:1e6,violet:1e7,grey:1e8,white:1e9}, tol={brown:1,red:2,green:.5,blue:.25,violet:.1,grey:.05,gold:5,silver:10}; const n=H.v('bands'),a=digits[H.v('b1')],b=digits[H.v('b2')]; let value;if(n==='4') value=(10*a+b)*(mult[H.v('mult')]??1); else value=(100*a+10*b+digits[H.v('b3')])*(mult[H.v('mult')]??1); const t=tol[H.v('tol')]??5; H.cards([['Resistance',H.eng(value,'Ω')],['Tolerance','±'+t+'%'],['Range',H.eng(value*(1-t/100),'Ω')+' – '+H.eng(value*(1+t/100),'Ω')]]);
+}));

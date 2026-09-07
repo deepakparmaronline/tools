@@ -1,0 +1,3 @@
+document.addEventListener('DOMContentLoaded',()=>TBKTool.init(async H=>{
+const token=H.v('token').trim(); const parts=token.split('.'); if(parts.length<2) return H.err('A JWT should contain at least header and payload sections.'); const dec=p=>{p=p.replace(/-/g,'+').replace(/_/g,'/'); p+='='.repeat((4-p.length%4)%4); const bin=atob(p), bytes=Uint8Array.from(bin,c=>c.charCodeAt(0)); return JSON.parse(new TextDecoder().decode(bytes));}; try{const h=dec(parts[0]), p=dec(parts[1]); H.dualCode('Header',JSON.stringify(h,null,2),'Payload',JSON.stringify(p,null,2)); H.note('Decoded only. Signature has NOT been verified.');}catch(e){H.err('Could not decode this token: '+e.message);}
+}));

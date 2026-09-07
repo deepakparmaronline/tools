@@ -1,0 +1,3 @@
+document.addEventListener('DOMContentLoaded',()=>TBKTool.init(async H=>{
+const sex=H.v('sex'),age=H.n('age'),act=H.n('activity'),goal=H.n('goal'); let w=H.n('weight'),h=H.n('height'); if(age<=0||w<=0||h<=0)return H.err('Enter valid body measurements.'); if(H.v('unit')==='imperial'){w*=0.45359237;h*=2.54;} const b=10*w+6.25*h-5*age+(sex==='male'?5:-161), t=b*act, target=t+goal; H.cards([['BMR',Math.round(b)+' kcal/day'],['Maintenance estimate',Math.round(t)+' kcal/day'],['Goal estimate',Math.max(0,Math.round(target))+' kcal/day']]); H.note('General estimate only. Health conditions, pregnancy, medications and training needs can change energy requirements.');
+}));

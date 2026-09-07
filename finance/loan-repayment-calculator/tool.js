@@ -1,0 +1,3 @@
+document.addEventListener('DOMContentLoaded',()=>TBKTool.init(async H=>{
+const P=H.n('principal'), annual=H.n('rate'), n=H.n('months'), extra=H.n('extra'); if(P<=0||n<=0||extra<0) return H.err('Enter valid loan values.'); const r=annual/1200; const base=r===0?P/n:P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1); let bal=P, paid=0, m=0, cap=12000; while(bal>0.005&&m<cap){const interest=bal*r; let payment=Math.min(base+extra,bal+interest); bal=bal+interest-payment; paid+=payment; m++;} H.cards([['Scheduled payment',H.money(base)],['Payoff time',m+' months'],['Total interest',H.money(paid-P)]]); if(extra>0) H.note('Includes an extra '+H.money(extra)+' each month.');
+}));

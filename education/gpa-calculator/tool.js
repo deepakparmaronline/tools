@@ -1,0 +1,3 @@
+document.addEventListener('DOMContentLoaded',()=>TBKTool.init(async H=>{
+const map={'A':4,'A-':3.7,'B+':3.3,'B':3,'B-':2.7,'C+':2.3,'C':2,'C-':1.7,'D+':1.3,'D':1,'F':0}; const rows=H.v('courses').split(/\n+/).map(x=>x.trim()).filter(Boolean); let credits=0,points=0,table=[]; for(const row of rows){const [c0,g0]=row.split(',').map(x=>x.trim()), c=Number(c0), g=(g0||'').toUpperCase(); if(c>0&&g in map){credits+=c;points+=c*map[g];table.push([c,g,map[g].toFixed(1),(c*map[g]).toFixed(2)]);}} if(!credits)return H.err('Enter at least one valid line such as 3,A.'); H.cards([['GPA',(points/credits).toFixed(2)],['Credits',credits.toFixed(1)],['Quality points',points.toFixed(2)]]); H.table(['Credits','Grade','Points','Weighted'],table);
+}));

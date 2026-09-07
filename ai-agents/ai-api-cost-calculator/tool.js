@@ -1,0 +1,3 @@
+document.addEventListener('DOMContentLoaded',()=>TBKTool.init(async H=>{
+const ip=H.n('input_price'),op=H.n('output_price'),it=H.n('input_tokens'),ot=H.n('output_tokens'),req=H.n('requests'),cp=H.n('cached_pct')/100,cm=H.n('cache_mult'); if([ip,op,it,ot,req,cp,cm].some(x=>x<0))return H.err('Values cannot be negative.'); const cached=it*cp, normal=it-cached, per=(normal/1e6*ip)+(cached/1e6*ip*cm)+(ot/1e6*op), total=per*req; H.cards([['Cost / request','$'+per.toFixed(6)],['Cost for period','$'+total.toFixed(2)],['Input tokens total',H.num(it*req)],['Output tokens total',H.num(ot*req)]]); H.note('Enter current provider prices yourself; model prices change frequently.');
+}));
