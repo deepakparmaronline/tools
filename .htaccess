@@ -10,7 +10,7 @@ RewriteRule ^ https://toolboxkart.tech%{REQUEST_URI} [R=301,L,NE]
 
 # Let WordPress integrations discover the blog REST API from the site root.
 RewriteCond %{QUERY_STRING} (^|&)rest_route= [NC]
-RewriteRule ^$ blog/index.php [L,QSA]
+RewriteRule ^(?:index\.php)?$ blog/index.php [L,QSA]
 
 # Serve the fresh site's dynamic crawler files.
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
