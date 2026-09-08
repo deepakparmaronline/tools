@@ -84,6 +84,13 @@ return [[
     'status' => 'published',
     'popular' => false
 ], [
+    'slug' => 'search-console-regex-generator',
+    'name' => 'Search Console Regex Generator',
+    'category' => 'seo',
+    'description' => 'Generate RE2-compatible regular expressions for Google Search Console query and page filters from your keywords or values.',
+    'status' => 'published',
+    'popular' => true
+], [
     'slug' => 'json-formatter',
     'name' => 'JSON Formatter & Validator',
     'category' => 'developer',
