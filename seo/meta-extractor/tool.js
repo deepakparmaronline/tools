@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded',()=>TBKTool.init(async H=>{
   const canonicalRows=canonical.map(x=>`<tr><td>${esc(x)}</td></tr>`).join('');
 
   H.clear();
-  $('tool-result').innerHTML=`
+  document.getElementById('tool-result').innerHTML=`
     <div class="result-cards">
       <div class="metric"><span>Title</span><strong>${esc(title||'Missing')}</strong></div>
       <div class="metric"><span>Description</span><strong>${description?`${description.length} chars`:'Missing'}</strong></div>
