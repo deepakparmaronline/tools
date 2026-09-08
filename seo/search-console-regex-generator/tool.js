@@ -10,15 +10,15 @@ document.addEventListener('DOMContentLoaded',()=>TBKTool.init(async H=>{
   if(!values.length) return H.err('Add at least one keyword, phrase, URL or value.');
 
   const escapeRE2=s=>s.replace(/[\\^$.*+?()[\]{}|]/g,'\\$&');
-  const escaped=values.map(escapeRE2);
-  const body=escaped.map(v=>{
-    if(mode==='starts') return '^'+v;
-    if(mode==='ends') return v+'$';
-    if(mode==='exact') return '^'+v+'$';
-    return v;
-  }).join('|');
+  const alternatives=values.map(escapeRE2).join('|');
+  let pattern;
+  if(mode==='starts') pattern=grouped && values.length>1 ? '^(?:'+alternatives+')' : '^'+alternatives;
+  else if(mode==='ends') pattern=grouped && values.length>1 ? '(?:'+alternatives+')$' : alternatives+'$';
+  else if(mode==='exact') pattern=grouped && values.length>1 ? '^(?:'+alternatives+')$' : '^'+alternatives+'$';
+  else pattern=grouped && values.length>1 ? '(?:'+alternatives+')' : alternatives;
 
-  const pattern=(caseSensitive?'(?-i)':'')+(grouped && escaped.length>1 ? '(?:'+body+')' : body);
+  if(caseSensitive) pattern='(?-i)'+pattern;
+
   H.code(pattern);
   const dimLabel=dimension==='page'?'Page':'Query';
   H.note(`${values.length} value${values.length===1?'':'s'} · ${dimLabel} filter · ${pattern.length} characters`);
