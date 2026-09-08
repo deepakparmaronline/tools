@@ -2,7 +2,7 @@
 
 Internal build research. Do not render this file or its contents on public pages.
 
-Research date: 2026-09-07
+Research date: 2026-09-08
 
 ## EMI Calculator
 - Category: Finance
@@ -259,5 +259,11 @@ Research date: 2026-09-07
 ## Search Console Regex Generator
 - Category: SEO & Marketing
 - Rivals checked: MagsTags GSC Regex Generator, Envision Marketing GSC Regex Generator, KairoxBuild GSC Regex Builder & Tester
-- Input/workflow finding: Current tools commonly accept keyword/value lists, offer contains/exact or similar matching modes, include Query/Page context, provide one-click copy, and keep generation/testing in the browser. Google Search Console documents RE2 syntax, partial matching by default, and Matches regex / Doesn't match regex filter modes.
+- Input/workflow finding: Current tools commonly accept keyword/value lists, offer contains/exact or similar matching modes, include Query/Page context, provide one-click copy, and keep generation/testing in the browser. Google Search Console documents RE2 syntax, partial matching by default, and Matches regex / Doesn’t match regex filter modes.
+- Implementation rule: use the useful interaction pattern, but do not copy rival branding, layout, wording or visual design.
+
+## Meta Extractor
+- Category: SEO & Marketing
+- Rivals checked: Zero Snippet Meta Tags Extractor, Content Powered Meta Tag Extractor, Encode64 HTML Meta Tag Extractor
+- Input/workflow finding: Current extractors commonly surface title, description, canonical, robots, Open Graph and Twitter metadata. Some fetch public URLs server-side, while browser-only tools accept pasted HTML. This implementation uses pasted HTML so extraction stays local and avoids server-side URL fetching/SSRF concerns.
 - Implementation rule: use the useful interaction pattern, but do not copy rival branding, layout, wording or visual design.
