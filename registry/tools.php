@@ -91,6 +91,13 @@ return [[
     'status' => 'published',
     'popular' => true
 ], [
+    'slug' => 'meta-extractor',
+    'name' => 'Meta Extractor',
+    'category' => 'seo',
+    'description' => 'Extract title, meta tags, canonical, Open Graph, Twitter Card and heading data from pasted HTML source.',
+    'status' => 'published',
+    'popular' => true
+], [
     'slug' => 'json-formatter',
     'name' => 'JSON Formatter & Validator',
     'category' => 'developer',
