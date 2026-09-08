@@ -255,3 +255,9 @@ Research date: 2026-09-07
 - Rivals checked: RapidTables Electrical Calculators, Omni Electric Power Calculator
 - Input/workflow finding: Voltage and current are common inputs; power factor matters for AC real power, and runtime is useful for an energy estimate.
 - Implementation rule: use the useful interaction pattern, but do not copy rival branding, layout, wording or visual design.
+
+## Search Console Regex Generator
+- Category: SEO & Marketing
+- Rivals checked: MagsTags GSC Regex Generator, Envision Marketing GSC Regex Generator, KairoxBuild GSC Regex Builder & Tester
+- Input/workflow finding: Current tools commonly accept keyword/value lists, offer contains/exact or similar matching modes, include Query/Page context, provide one-click copy, and keep generation/testing in the browser. Google Search Console documents RE2 syntax, partial matching by default, and Matches regex / Doesn't match regex filter modes.
+- Implementation rule: use the useful interaction pattern, but do not copy rival branding, layout, wording or visual design.
