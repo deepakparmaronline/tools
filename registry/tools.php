@@ -98,6 +98,13 @@ return [[
     'status' => 'published',
     'popular' => true
 ], [
+    'slug' => 'duplicate-content-finder',
+    'name' => 'Duplicate Content Finder',
+    'category' => 'seo',
+    'description' => 'Compare two content blocks for exact sentence matches, shared phrases and near-duplicate wording.',
+    'status' => 'published',
+    'popular' => true
+], [
     'slug' => 'json-formatter',
     'name' => 'JSON Formatter & Validator',
     'category' => 'developer',
