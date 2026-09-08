@@ -2,6 +2,12 @@ Options -Indexes
 DirectoryIndex index.php index.html
 RewriteEngine On
 
+# /blog is a separate WordPress installation. Stop root rewrite processing
+# so Apache falls through to /blog's own .htaccess.
+# This must remain the first RewriteRule in this file.
+RewriteCond %{REQUEST_URI} ^/blog(/|$)
+RewriteRule ^ - [L]
+
 # Preserve the existing canonical host and HTTPS redirects.
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE]
