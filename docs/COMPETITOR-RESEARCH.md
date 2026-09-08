@@ -235,7 +235,7 @@ Research date: 2026-09-08
 ## Ohm’s Law Calculator
 - Category: Engineering
 - Rivals checked: Pearson Ohm’s Law Calculator, ElectricalCalcs.online, Eng Bench Ohm’s Law Calculator
-- Input/workflow finding: Best current tools accept any two of V, I, R and P, then solve the other two rather than forcing a single “solve for” mode.
+- Input/workflow finding: Best current tools accept any two of voltage, current, resistance and power to solve the remaining values.
 - Implementation rule: use the useful interaction pattern, but do not copy rival branding, layout, wording or visual design.
 
 ## Voltage Divider Calculator
@@ -266,4 +266,10 @@ Research date: 2026-09-08
 - Category: SEO & Marketing
 - Rivals checked: Zero Snippet Meta Tags Extractor, Content Powered Meta Tag Extractor, Encode64 HTML Meta Tag Extractor
 - Input/workflow finding: Current extractors commonly surface title, description, canonical, robots, Open Graph and Twitter metadata. Some fetch public URLs server-side, while browser-only tools accept pasted HTML. This implementation uses pasted HTML so extraction stays local and avoids server-side URL fetching/SSRF concerns.
+- Implementation rule: use the useful interaction pattern, but do not copy rival branding, layout, wording or visual design.
+
+## Duplicate Content Finder
+- Category: SEO & Marketing
+- Rivals checked: Slogan.website Duplicate Content Checker, RunTheTests Duplicate Content Comparer, Wild Creek Web Studio Duplicate Content Checker
+- Input/workflow finding: Current tools commonly compare two text blocks, show a similarity score, and expose evidence such as shared phrases or matching sentences. Some also fetch URLs, but that requires server-side fetching. ToolboxKart uses a browser-only text workflow and exposes the actual overlapping phrases.
 - Implementation rule: use the useful interaction pattern, but do not copy rival branding, layout, wording or visual design.
