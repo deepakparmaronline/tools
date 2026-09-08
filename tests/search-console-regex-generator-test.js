@@ -16,4 +16,5 @@ const build = (raw, mode = 'contains', grouped = true, caseSensitive = false) =>
 assert.equal(build('seo,technical seo'), '(?:seo|technical seo)');
 assert.equal(build('foo.bar,foo+baz'), '(?:foo\\.bar|foo\\+baz)');
 assert.equal(build('brand,product', 'exact'), '(?:^brand$|^product$)');
-assert.equal(build('how to,what is', 'starts', true, true), '(? -i)');
+assert.equal(build('how to,what is', 'starts', true, true), '(?-i)(?:^how to|^what is)');
+console.log('Search Console Regex Generator smoke tests passed.');
