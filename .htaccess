@@ -1,0 +1,41 @@
+Options -Indexes
+DirectoryIndex index.php
+ErrorDocument 404 /404.php
+RewriteEngine On
+
+# Canonical HTTPS + host. Uncomment after DNS and SSL are confirmed if Hostinger is not already enforcing HTTPS.
+# RewriteCond %{HTTPS} !=on [OR]
+# RewriteCond %{HTTP_HOST} !^toolboxkart\.tech$ [NC]
+# RewriteRule ^ https://toolboxkart.tech%{REQUEST_URI} [R=301,L]
+
+# Do not expose implementation and project documentation directories.
+RewriteRule ^(?:includes|data|docs)(?:/|$) - [F,L,NC]
+
+# Canonicalize index.php to its directory URL, including the site root.
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.php[\s?] [NC]
+RewriteRule ^(.*/)?index\.php$ /$1 [R=301,L,NE]
+
+# Redirect browser requests for other .php pages to extensionless canonical URLs.
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+RewriteRule ^(.+)\.php$ /$1 [R=301,L,NE]
+
+# Extensionless files: /seo/serp-preview -> /seo/serp-preview.php internally.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+</IfModule>

@@ -1,0 +1,21 @@
+{
+  "site": "ToolboxKart",
+  "domain": "https://toolboxkart.tech",
+  "stack": ["PHP 8+", "Apache .htaccess", "Vanilla JavaScript", "CSS"],
+  "tool_file_pattern": "/<category>/<slug>.php",
+  "tool_url_pattern": "https://toolboxkart.tech/<category>/<slug>",
+  "blog_file_pattern": "/blog/<slug>.php",
+  "blog_url_pattern": "https://toolboxkart.tech/blog/<slug>",
+  "author": "Deepak Parmar",
+  "categories": ["seo", "marketing", "finance", "healthcare", "developer", "productivity"],
+  "theme": {
+    "background": "#f7f9fc",
+    "surface": "#ffffff",
+    "text": "#0b1220",
+    "muted": "#5d6b7e",
+    "border": "#dbe4ef",
+    "primary": "#2563eb",
+    "accent": "#0f9f8f",
+    "max_width": "1180px"
+  }
+}

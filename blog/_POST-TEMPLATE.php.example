@@ -1,0 +1,14 @@
+<?php
+// Copy this file to /blog/your-post-slug.php.
+// 1) Add matching metadata in /data/posts.php.
+// 2) Replace the slug below.
+// 3) Write article HTML with one introductory paragraph and descriptive H2 sections.
+require __DIR__.'/../includes/bootstrap.php';
+$post=post_by_slug('your-post-slug');
+ob_start(); ?>
+<p>Opening paragraph that directly answers why the topic matters.</p>
+<h2>First descriptive section heading</h2>
+<p>Useful original explanation. Link to relevant ToolboxKart tools when they genuinely help.</p>
+<h2>Second descriptive section heading</h2>
+<p>Continue the article. The shared blog template automatically builds the table of contents from H2 headings.</p>
+<?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';

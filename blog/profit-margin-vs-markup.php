@@ -1,0 +1,10 @@
+<?php require __DIR__.'/../includes/bootstrap.php';$post=post_by_slug('profit-margin-vs-markup');ob_start(); ?>
+<p>Margin and markup both compare price with cost, but they answer different questions. Confusing them can lead to a selling price that is materially lower than intended.</p>
+<h2>Gross margin uses selling price as the denominator</h2><p>If a product costs $60 and sells for $100, gross profit is $40. Gross margin is $40 divided by the $100 selling price, or 40%.</p>
+<h2>Markup uses cost as the denominator</h2><p>Using the same example, markup is the $40 gross profit divided by the $60 cost. That equals about 66.67%. The profit dollars are identical; only the denominator changes.</p>
+<h2>Use the formulas side by side</h2><ul><li>Gross profit = price − cost.</li><li>Gross margin % = gross profit ÷ price × 100.</li><li>Markup % = gross profit ÷ cost × 100.</li></ul><p>The <a href="/finance/profit-margin-calculator">Profit Margin Calculator</a> computes all three from the same inputs so the distinction stays visible.</p>
+<h2>Convert a target margin into a selling price</h2><p>To reach a target gross margin, divide cost by one minus the target margin rate. With a $60 cost and a 40% target margin, price = 60 ÷ 0.60 = $100.</p>
+<h2>Why a 40% markup does not create a 40% margin</h2><p>A 40% markup on a $60 cost produces an $84 price. Gross profit is $24, and margin is $24 ÷ $84, or about 28.57%. That gap is why teams should label spreadsheets and dashboards explicitly.</p>
+<h2>Gross margin is not net margin</h2><p>Gross margin does not automatically include operating payroll, rent, software, marketing, taxes, financing, returns or every delivery cost. Define what is included in “cost” before using the figure for decisions.</p>
+<h2>Choose the metric that matches the decision</h2><p>Markup is intuitive when pricing starts from cost. Margin is often more useful when comparing gross profitability as a share of revenue. The important thing is to state which one you are using and keep the definition consistent.</p>
+<?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';

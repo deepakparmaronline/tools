@@ -1,0 +1,31 @@
+<?php
+return [
+ 'seo'=>['name'=>'SEO','description'=>'Technical and on-page SEO utilities for snippets, metadata, crawl directives and content analysis.','icon'=>'⌕'],
+ 'marketing'=>['name'=>'Marketing','description'=>'Practical campaign, advertising and messaging calculators for growth teams.','icon'=>'↗'],
+ 'finance'=>['name'=>'Finance','description'=>'Transparent calculators for common business and personal finance scenarios.','icon'=>'$'],
+ 'healthcare'=>['name'=>'Healthcare RCM','description'=>'Aggregate revenue-cycle management metrics for healthcare operations teams.','icon'=>'+'],
+ 'developer'=>['name'=>'Developer','description'=>'Fast browser utilities for everyday data and encoding tasks.','icon'=>'</>'],
+ 'productivity'=>['name'=>'Productivity','description'=>'Simple utilities for writing, counting and everyday calculations.','icon'=>'✓'],
+ 'tools'=>[
+  ['category'=>'seo','slug'=>'serp-preview','name'=>'SERP Preview Tool','description'=>'Preview a title, URL and meta description in a Google-style search result layout.','featured'=>true],
+  ['category'=>'seo','slug'=>'meta-tag-generator','name'=>'Meta Tag Generator','description'=>'Generate modern SEO, canonical, robots, Open Graph and Twitter metadata.','featured'=>true],
+  ['category'=>'seo','slug'=>'faq-schema-generator','name'=>'FAQ Schema Generator','description'=>'Build valid FAQPage JSON-LD from questions and answers you can review on-page.','featured'=>true],
+  ['category'=>'seo','slug'=>'robots-txt-generator','name'=>'Robots.txt Generator','description'=>'Create a clear robots.txt file with allow, disallow and sitemap directives.','featured'=>false],
+  ['category'=>'seo','slug'=>'keyword-density-checker','name'=>'Keyword Density Checker','description'=>'Analyze word, two-word and three-word phrase frequency directly in your browser.','featured'=>true],
+  ['category'=>'marketing','slug'=>'utm-builder','name'=>'UTM Campaign URL Builder','description'=>'Build consistent campaign URLs with source, medium, campaign, term and content parameters.','featured'=>true],
+  ['category'=>'marketing','slug'=>'marketing-metrics-calculator','name'=>'Marketing Metrics Calculator','description'=>'Calculate CTR, CPC, CPM, conversion rate, CPA and ROAS from one input set.','featured'=>true],
+  ['category'=>'marketing','slug'=>'roas-calculator','name'=>'ROAS Calculator','description'=>'Calculate return on ad spend, break-even ROAS and contribution after ad spend.','featured'=>true],
+  ['category'=>'marketing','slug'=>'email-subject-line-analyzer','name'=>'Email Subject Line Analyzer','description'=>'Check subject length, word count, capitalization, punctuation and promotional wording.','featured'=>false],
+  ['category'=>'finance','slug'=>'loan-emi-calculator','name'=>'Loan EMI Calculator','description'=>'Estimate monthly payment, total interest and an initial amortization schedule.','featured'=>true],
+  ['category'=>'finance','slug'=>'compound-interest-calculator','name'=>'Compound Interest Calculator','description'=>'Project a balance with principal, monthly contributions, annual rate and time.','featured'=>true],
+  ['category'=>'finance','slug'=>'profit-margin-calculator','name'=>'Profit Margin Calculator','description'=>'Compare gross profit, margin, markup and target-margin selling price.','featured'=>true],
+  ['category'=>'finance','slug'=>'break-even-calculator','name'=>'Break-Even Calculator','description'=>'Estimate contribution margin, break-even units and break-even revenue.','featured'=>false],
+  ['category'=>'healthcare','slug'=>'clean-claim-rate-calculator','name'=>'Clean Claim Rate Calculator','description'=>'Calculate first-pass clean claim rate and rework volume from aggregate claim counts.','featured'=>true],
+  ['category'=>'healthcare','slug'=>'denial-rate-calculator','name'=>'Denial Rate Calculator','description'=>'Measure denial rate, non-denied count and estimated denied billed amount from aggregate data.','featured'=>true],
+  ['category'=>'healthcare','slug'=>'days-in-ar-calculator','name'=>'Days in A/R Calculator','description'=>'Estimate days in accounts receivable from total A/R and average daily charges.','featured'=>true],
+  ['category'=>'developer','slug'=>'json-formatter','name'=>'JSON Formatter & Validator','description'=>'Validate, pretty-print and minify JSON locally in your browser.','featured'=>true],
+  ['category'=>'developer','slug'=>'base64-encoder-decoder','name'=>'Base64 Encoder & Decoder','description'=>'Encode or decode UTF-8 text as Base64 locally without uploading it.','featured'=>false],
+  ['category'=>'productivity','slug'=>'word-character-counter','name'=>'Word & Character Counter','description'=>'Count words, characters, sentences, paragraphs and estimated reading time.','featured'=>true],
+  ['category'=>'productivity','slug'=>'percentage-calculator','name'=>'Percentage Calculator','description'=>'Solve percentage-of, what-percent and percentage-change calculations.','featured'=>false],
+ ]
+];
