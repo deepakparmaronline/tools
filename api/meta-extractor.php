@@ -3,21 +3,25 @@ declare(strict_types=1);
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 function fail(string $message,int $status=400): never { http_response_code($status); echo json_encode(['ok'=>false,'error'=>$message],JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE); exit; }
+function assertPublicUrl(string $url): void {
+  $parts=parse_url($url);
+  if(!$parts || !isset($parts['scheme'],$parts['host']) || !in_array(strtolower((string)$parts['scheme']),['http','https'],true)) fail('Only http:// and https:// URLs are supported.');
+  if(isset($parts['user'])||isset($parts['pass'])) fail('URLs containing credentials are not allowed.');
+  $host=strtolower((string)$parts['host']);
+  if($host==='localhost'||$host==='127.0.0.1'||$host==='::1'||str_ends_with($host,'.local')) fail('Private or local hosts are not allowed.');
+  $resolved=gethostbynamel($host);
+  if(!$resolved) fail('The hostname could not be resolved.',422);
+  foreach($resolved as $ip){ if(filter_var($ip,FILTER_VALIDATE_IP,FILTER_FLAG_NO_PRIV_RANGE|FILTER_FLAG_NO_RES_RANGE)===false) fail('Private or reserved network targets are not allowed.',422); }
+}
 if($_SERVER['REQUEST_METHOD']!=='POST') fail('POST requests only.',405);
-$raw=file_get_contents('php://input');$input=json_decode($raw ?: '',true);
-$url=is_array($input)?trim((string)($input['url']??'')):'';
+$raw=file_get_contents('php://input');$input=json_decode($raw ?: '',true);$url=is_array($input)?trim((string)($input['url']??'')):'';
 if($url==='' || strlen($url)>2048) fail('Enter a valid public URL under 2,048 characters.');
-$parts=parse_url($url);
-if(!$parts || !isset($parts['scheme'],$parts['host']) || !in_array(strtolower((string)$parts['scheme']),['http','https'],true)) fail('Only http:// and https:// URLs are supported.');
-if(isset($parts['user'])||isset($parts['pass'])) fail('URLs containing credentials are not allowed.');
-$host=strtolower((string)$parts['host']);
-if($host==='localhost'||$host==='127.0.0.1'||$host==='::1'||str_ends_with($host,'.local')) fail('Private or local hosts are not allowed.');
-$ip=gethostbyname($host);
-if($ip===$host && filter_var($host,FILTER_VALIDATE_IP)===false) fail('The hostname could not be resolved.',422);
-if(filter_var($ip,FILTER_VALIDATE_IP,FILTER_FLAG_NO_PRIV_RANGE|FILTER_FLAG_NO_RES_RANGE)===false) fail('Private or reserved network targets are not allowed.',422);
+assertPublicUrl($url);
 $ch=curl_init($url);if($ch===false) fail('Unable to start the fetcher.',500);
-curl_setopt_array($ch,[CURLOPT_RETURNTRANSFER=>true,CURLOPT_FOLLOWLOCATION=>true,CURLOPT_MAXREDIRS=>4,CURLOPT_CONNECTTIMEOUT=>5,CURLOPT_TIMEOUT=>10,CURLOPT_USERAGENT=>'ToolboxKart Meta Extractor/1.0 (+https://toolboxkart.tech/)',CURLOPT_ENCODING=>'',CURLOPT_HTTPHEADER=>['Accept: text/html,application/xhtml+xml;q=0.9,*/*;q=0.1'],CURLOPT_PROTOCOLS=>CURLPROTO_HTTP|CURLPROTO_HTTPS,CURLOPT_REDIR_PROTOCOLS=>CURLPROTO_HTTP|CURLPROTO_HTTPS,CURLOPT_NOPROXY=>'*']);
-$html=curl_exec($ch);$err=curl_error($ch);$status=(int)curl_getinfo($ch,CURLINFO_RESPONSE_CODE);$statusText=(string)curl_getinfo($ch,CURLINFO_RESPONSE_CODE);$contentType=(string)curl_getinfo($ch,CURLINFO_CONTENT_TYPE);$finalUrl=(string)curl_getinfo($ch,CURLINFO_EFFECTIVE_URL);$bytes=strlen((string)$html);curl_close($ch);
+$capturedUrl=$url;$redirects=0;
+curl_setopt_array($ch,[CURLOPT_RETURNTRANSFER=>true,CURLOPT_FOLLOWLOCATION=>false,CURLOPT_CONNECTTIMEOUT=>5,CURLOPT_TIMEOUT=>10,CURLOPT_USERAGENT=>'ToolboxKart Meta Extractor/1.0 (+https://toolboxkart.tech/)',CURLOPT_ENCODING=>'',CURLOPT_HTTPHEADER=>['Accept: text/html,application/xhtml+xml;q=0.9,*/*;q=0.1'],CURLOPT_PROTOCOLS=>CURLPROTO_HTTP|CURLPROTO_HTTPS,CURLOPT_NOPROXY=>'*']);
+while(true){curl_setopt($ch,CURLOPT_URL,$capturedUrl);$html=curl_exec($ch);$err=curl_error($ch);$status=(int)curl_getinfo($ch,CURLINFO_RESPONSE_CODE);$contentType=(string)curl_getinfo($ch,CURLINFO_CONTENT_TYPE);$finalUrl=(string)curl_getinfo($ch,CURLINFO_EFFECTIVE_URL);$bytes=strlen((string)$html);$location=(string)curl_getinfo($ch,CURLINFO_REDIRECT_URL);if($html===false)break;if($status>=300&&$status<400&&$location!==''){if($redirects>=4)fail('The URL redirected too many times.',508);$next=parse_url($capturedUrl)['scheme'].'://'.parse_url($capturedUrl)['host'];if(str_starts_with($location,'/')){$base=parse_url($capturedUrl);$next=$base['scheme'].'://'.$base['host'].($base['port']??null?':'.$base['port']:'').$location;}elseif(preg_match('~^https?://~i',$location)){$next=$location;}else{$next=rtrim($next,'/').'/'.ltrim($location,'/');}assertPublicUrl($next);$capturedUrl=$next;$redirects++;continue;}break;}
+curl_close($ch);
 if($html===false) fail($err!==''?$err:'The page could not be fetched.',502);
 if($bytes>1500000) fail('The response is larger than the 1.5 MB limit.',413);
 if($status<200||$status>=400) fail('The page returned HTTP '.$status.'.',502);
