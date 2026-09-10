@@ -6,6 +6,7 @@
 - Tech Updates — OpenAI AI chip design
 - Gemini — Gemini Gem for SEO content
 - AI & Automation — AI prompt versioning for production workflows
+- Tech Updates — NASA IBM Lunar Foundation Model
 
 ## 2026-09-09
 - Tech Updates — Mistral AI raises €3B; Meta Muse personal AI agent
