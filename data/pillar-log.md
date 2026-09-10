@@ -1,5 +1,12 @@
 # ToolBoxKart Pillar Log
 
+## 2026-09-10
+- Tools Guide — Screaming Frog Custom Search for SEO audits
+- Technical SEO — Canonical tags for faceted navigation SEO
+- Tech Updates — OpenAI AI chip design
+- Gemini — Gemini Gem for SEO content
+- AI & Automation — AI prompt versioning for production workflows
+
 ## 2026-09-09
 - Tech Updates — Mistral AI raises €3B; Meta Muse personal AI agent
 - Claude — Claude text watermarking
