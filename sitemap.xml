@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://toolboxkart.tech/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://toolboxkart.tech/all-tools</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <url><loc>https://toolboxkart.tech/</loc><lastmod>2026-09-11</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://toolboxkart.tech/all-tools</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://toolboxkart.tech/seo/</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://toolboxkart.tech/marketing/</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://toolboxkart.tech/finance/</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
@@ -41,7 +31,16 @@
   <url><loc>https://toolboxkart.tech/developer/base64-encoder-decoder</loc><lastmod>2026-09-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://toolboxkart.tech/productivity/word-character-counter</loc><lastmod>2026-09-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://toolboxkart.tech/productivity/percentage-calculator</loc><lastmod>2026-09-09</lastmod><priority>0.8</priority></url>
-  <url><loc>https://toolboxkart.tech/blog/</loc><lastmod>2026-09-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/blog/</loc><lastmod>2026-09-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolboxkart.tech/blog/gemini-windows-app-guide</loc><lastmod>2026-09-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://toolboxkart.tech/blog/anthropic-september-2026-threat-intelligence</loc><lastmod>2026-09-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://toolboxkart.tech/blog/chatgpt-data-plugin-work-codex-guide</loc><lastmod>2026-09-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://toolboxkart.tech/blog/google-search-robots-meta-tags-outside-head</loc><lastmod>2026-09-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://toolboxkart.tech/blog/seo-content-refresh-vs-new-page</loc><lastmod>2026-09-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://toolboxkart.tech/blog/how-to-find-orphan-pages-with-crawl-and-sitemap</loc><lastmod>2026-09-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://toolboxkart.tech/blog/how-to-use-screaming-frog-json-ld-custom-extraction</loc><lastmod>2026-09-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://toolboxkart.tech/blog/ai-agent-audit-logs-what-to-record</loc><lastmod>2026-09-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://toolboxkart.tech/blog/india-agentic-payments-upi-ai-registry</loc><lastmod>2026-09-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://toolboxkart.tech/blog/meta-muse-personal-ai-agent</loc><lastmod>2026-09-09</lastmod><priority>0.7</priority></url>
   <url><loc>https://toolboxkart.tech/blog/claude-text-watermarking-guide</loc><lastmod>2026-09-09</lastmod><priority>0.7</priority></url>
   <url><loc>https://toolboxkart.tech/blog/mistral-ai-3-billion-funding-2026</loc><lastmod>2026-09-09</lastmod><priority>0.7</priority></url>
@@ -79,15 +78,6 @@
   <url><loc>https://toolboxkart.tech/blog/ai-prompt-versioning-production-workflows</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
   <url><loc>https://toolboxkart.tech/blog/how-to-check-redirect-chains-for-seo</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
   <url><loc>https://toolboxkart.tech/blog/nasa-ibm-lunar-foundation-model</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://toolboxkart.tech/blog/gemini-3-8-flash-api-features-pricing</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://toolboxkart.tech/blog/anthropic-claude-four-cyber-incidents</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://toolboxkart.tech/blog/chatgpt-voice-gpt6-astra-update</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://toolboxkart.tech/blog/google-regional-search-experience-what-seos-need-to-check</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://toolboxkart.tech/blog/optimize-pages-for-google-ai-search</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://toolboxkart.tech/blog/how-to-validate-xml-sitemap-before-publishing</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://toolboxkart.tech/blog/ai-agent-payment-trust-standards</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://toolboxkart.tech/blog/how-to-use-search-console-url-inspection-for-seo</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://toolboxkart.tech/blog/human-approval-gates-ai-agent-workflows</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
   <url><loc>https://toolboxkart.tech/about</loc><lastmod>2026-09-09</lastmod><priority>0.4</priority></url>
   <url><loc>https://toolboxkart.tech/contact</loc><lastmod>2026-09-09</lastmod><priority>0.4</priority></url>
   <url><loc>https://toolboxkart.tech/privacy</loc><lastmod>2026-09-09</lastmod><priority>0.4</priority></url>
