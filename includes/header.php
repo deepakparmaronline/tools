@@ -9,7 +9,7 @@ $ogType=$ogType??'website';
 <title><?=e($pageTitle)?></title><meta name="description" content="<?=e($pageDescription)?>"><meta name="robots" content="<?=e($robots)?>"><link rel="canonical" href="<?=e($canonical)?>">
 <meta property="og:type" content="<?=e($ogType)?>"><meta property="og:site_name" content="<?=SITE_NAME?>"><meta property="og:title" content="<?=e($pageTitle)?>"><meta property="og:description" content="<?=e($pageDescription)?>"><meta property="og:url" content="<?=e($canonical)?>">
 <meta name="twitter:card" content="summary"><meta name="twitter:title" content="<?=e($pageTitle)?>"><meta name="twitter:description" content="<?=e($pageDescription)?>">
-<meta name="theme-color" content="#2563eb"><link rel="icon" href="<?=asset('favicon.svg')?>" type="image/svg+xml"><link rel="stylesheet" href="<?=asset('css/app.css')?>"><script defer src="<?=asset('js/app.js')?>"></script>
+<meta name="theme-color" content="#2563eb"><link rel="icon" href="<?=asset('favicon.svg')?>" type="image/svg+xml"><link rel="stylesheet" href="<?=asset('css/app.css')?>"><link rel="stylesheet" href="<?=asset('css/article-overflow-fixes.css')?>"><script defer src="<?=asset('js/app.js')?>"></script>
 <?=jsonld(['@context'=>'https://schema.org','@type'=>'WebSite','name'=>SITE_NAME,'url'=>SITE_URL,'potentialAction'=>['@type'=>'SearchAction','target'=>SITE_URL.'/all-tools?q={search_term_string}','query-input'=>'required name=search_term_string']])?>
 <?=$extraHead??''?>
 </head><body>
