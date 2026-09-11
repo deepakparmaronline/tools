@@ -1,0 +1,91 @@
+/* Article content overflow protection. Loaded after app.css. */
+.article-layout,
+.article-body,
+.article-body > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.article-body {
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.article-body p,
+.article-body li,
+.article-body h2,
+.article-body h3,
+.article-body a,
+.article-body strong,
+.article-body code {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.article-body img,
+.article-body svg,
+.article-body video,
+.article-body iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.article-body figure,
+.article-body picture {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+}
+
+.article-body pre,
+.article-body .code-output {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+  overflow-wrap: normal;
+}
+
+.article-body .data-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.article-body .data-table th,
+.article-body .data-table td {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+@media (max-width: 900px) {
+  .article-layout,
+  .article-layout > *,
+  .article-head .container {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  .article-head {
+    padding-top: 36px;
+  }
+
+  .article-head h1 {
+    max-width: 100%;
+  }
+
+  .article-body {
+    font-size: 17px;
+  }
+
+  .article-body h2 {
+    font-size: 27px;
+  }
+
+  .article-body h3 {
+    font-size: 20px;
+  }
+}
