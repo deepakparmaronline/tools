@@ -1,10 +1,10 @@
 <?php
 // Copy this file to /blog/your-post-slug.php.
 // 1) Add matching metadata in /data/posts.php.
-// 2) Replace the slug below.
+// 2) Replace the slug and fallback metadata below.
 // 3) Write article HTML with one introductory paragraph and descriptive H2 sections.
 require __DIR__.'/../includes/bootstrap.php';
-$post=post_by_slug('your-post-slug');
+$post=post_by_slug('your-post-slug') ?? ['slug'=>'your-post-slug','title'=>'Your Post Title','description'=>'A clear description for this article.','category'=>'Category','date'=>'YYYY-MM-DD','read_time'=>'8 min read'];
 ob_start(); ?>
 <p>Opening paragraph that directly answers why the topic matters.</p>
 <h2>First descriptive section heading</h2>
