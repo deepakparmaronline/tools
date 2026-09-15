@@ -10,9 +10,20 @@ $ogType=$ogType??'website';
 <meta property="og:type" content="<?=e($ogType)?>"><meta property="og:site_name" content="<?=SITE_NAME?>"><meta property="og:title" content="<?=e($pageTitle)?>"><meta property="og:description" content="<?=e($pageDescription)?>"><meta property="og:url" content="<?=e($canonical)?>">
 <meta name="twitter:card" content="summary"><meta name="twitter:title" content="<?=e($pageTitle)?>"><meta name="twitter:description" content="<?=e($pageDescription)?>">
 <meta name="theme-color" content="#2563eb"><link rel="icon" href="<?=asset('favicon.svg')?>" type="image/svg+xml"><link rel="stylesheet" href="<?=asset('css/app.css')?>"><link rel="stylesheet" href="<?=asset('css/article-overflow-fixes.css')?>"><script defer src="<?=asset('js/app.js')?>"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-53VHLS4K');</script>
+<!-- End Google Tag Manager -->
 <?=jsonld(['@context'=>'https://schema.org','@type'=>'WebSite','name'=>SITE_NAME,'url'=>SITE_URL,'potentialAction'=>['@type'=>'SearchAction','target'=>SITE_URL.'/all-tools?q={search_term_string}','query-input'=>'required name=search_term_string']])?>
 <?=$extraHead??''?>
 </head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53VHLS4K"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><div class="container header-inner">
 <a class="brand" href="/"><span class="brand-mark">TK</span><span>ToolboxKart</span></a>
