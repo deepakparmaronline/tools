@@ -1,4 +1,4 @@
-<?php $post=post_by_slug('gemini-3-8-live-api-guide-2026');ob_start(); ?>
+<?php require __DIR__.'/../includes/bootstrap.php';$post=post_by_slug('gemini-3-8-live-api-guide-2026');ob_start(); ?>
 <p>Google introduced Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking on September 15, 2026, as its newest live dialogue models for real-time voice applications. The important change is not only better speech quality. Google is combining native audio-to-audio interaction with multimodal input, background tool execution, asynchronous function calling and a separate model variant for deeper reasoning. For developers, the practical question is how the two models differ, what the Live API actually supports, where the limits are, and what changes when you move from the older Gemini 3.1 Flash Live model.</p>
 <figure class="article-image"><img src="/assets/images/blog/gemini-3-8-live-api-guide-2026.svg" alt="Diagram showing Gemini 3.8 Live and Extended Thinking handling multimodal input, live dialogue and background tool calls"></figure>
 
@@ -60,19 +60,7 @@
 <p>The Live API also exposes session-resumption features, which means a robust application should plan for reconnects rather than assuming a WebSocket will stay open forever. Logging, rate limits, tool timeouts and audit records should be implemented at the application layer.</p>
 
 <h2>How the two 3.8 Live models compare</h2>
-<table class="data-table"><thead><tr><th>Area</th><th>Gemini 3.8 Live</th><th>Gemini 3.8 Live Extended Thinking</th></tr></thead><tbody>
-<tr><td>Primary use</td><td>Low-latency live dialogue and most voice agents</td><td>Complex, multi-step real-time tasks</td></tr>
-<tr><td>Model ID</td><td><code>gemini-3.8-live</code></td><td><code>gemini-3.8-live-extended-thinking</code></td></tr>
-<tr><td>Inputs</td><td>Text, images, audio, video</td><td>Text, images, audio, video</td></tr>
-<tr><td>Outputs</td><td>Text and audio</td><td>Text and audio</td></tr>
-<tr><td>Input limit</td><td>131,072 tokens</td><td>131,072 tokens</td></tr>
-<tr><td>Output limit</td><td>65,536 tokens</td><td>65,536 tokens</td></tr>
-<tr><td>Function calling</td><td>Supported; asynchronous default</td><td>Supported; asynchronous</td></tr>
-<tr><td>Search grounding</td><td>Supported</td><td>Supported</td></tr>
-<tr><td>Code execution</td><td>Not supported</td><td>Not supported</td></tr>
-<tr><td>File search</td><td>Not supported</td><td>Not supported</td></tr>
-<tr><td>Structured outputs</td><td>Not supported</td><td>Not supported</td></tr>
-</tbody></table>
+<table class="data-table"><thead><tr><th>Area</th><th>Gemini 3.8 Live</th><th>Gemini 3.8 Live Extended Thinking</th></tr></thead><tbody><tr><td>Primary use</td><td>Low-latency live dialogue and most voice agents</td><td>Complex, multi-step real-time tasks</td></tr><tr><td>Model ID</td><td><code>gemini-3.8-live</code></td><td><code>gemini-3.8-live-extended-thinking</code></td></tr><tr><td>Inputs</td><td>Text, images, audio, video</td><td>Text, images, audio, video</td></tr><tr><td>Outputs</td><td>Text and audio</td><td>Text and audio</td></tr><tr><td>Input limit</td><td>131,072 tokens</td><td>131,072 tokens</td></tr><tr><td>Output limit</td><td>65,536 tokens</td><td>65,536 tokens</td></tr><tr><td>Function calling</td><td>Supported; asynchronous default</td><td>Supported; asynchronous</td></tr><tr><td>Search grounding</td><td>Supported</td><td>Supported</td></tr><tr><td>Code execution</td><td>Not supported</td><td>Not supported</td></tr><tr><td>File search</td><td>Not supported</td><td>Not supported</td></tr><tr><td>Structured outputs</td><td>Not supported</td><td>Not supported</td></tr></tbody></table>
 
 <h2>Where Gemini 3.8 Live fits compared with other voice architectures</h2>
 <p>The launch also highlights an architectural difference that matters beyond model quality. An independent analysis from The New Stack describes Google’s approach as keeping reasoning inside the live voice model, while OpenAI’s GPT-Live-1 approach can separate real-time conversation from a backend reasoning model.</p>
@@ -101,24 +89,10 @@
 <h3>What is the Gemini 3.8 Live model ID?</h3>
 <p>The standard model ID is <code>gemini-3.8-live</code>. The higher-reasoning variant is <code>gemini-3.8-live-extended-thinking</code>.</p>
 <h3>Does Gemini 3.8 Live support video input?</h3>
-<p>Yes. Google’s current model documentation lists video, along with text, images and audio, as supported inputs. Output is listed as text and audio.</p>
+<p>Yes. Google's current model documentation lists video alongside text, images and audio as supported input types.</p>
 <h3>Does Gemini 3.8 Live support function calling?</h3>
-<p>Yes. Function calling is supported. Google documents asynchronous execution as the default behavior for 3.8 Live and asynchronous function calling for the Extended Thinking model.</p>
-<h3>What are the paid audio prices?</h3>
-<p>Google’s current pricing page lists $0.005 per minute for audio input and $0.018 per minute for audio output on the paid tier, alongside token-based pricing.</p>
+<p>Yes. Google documents function calling for the Live models and asynchronous execution for live tool use.</p>
 
 <h2>Sources</h2>
-<ul>
-<li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/">Google — Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking</a></li>
-<li><a href="https://ai.google.dev/gemini-api/docs/models/gemini-3.8-live">Google AI for Developers — Gemini 3.8 Live</a></li>
-<li><a href="https://ai.google.dev/gemini-api/docs/models/gemini-3.8-live-extended-thinking">Google AI for Developers — Gemini 3.8 Live Extended Thinking</a></li>
-<li><a href="https://ai.google.dev/gemini-api/docs/live-api/capabilities">Google AI for Developers — Live API capabilities</a></li>
-<li><a href="https://ai.google.dev/gemini-api/docs/pricing">Google AI for Developers — Gemini API pricing</a></li>
-<li><a href="https://ai.google.dev/gemini-api/docs/live-api/best-practices">Google AI for Developers — Live API best practices</a></li>
-<li><a href="https://ai.google.dev/gemini-api/docs/live-api/session-management">Google AI for Developers — Live API session management</a></li>
-<li><a href="https://ai.google.dev/gemini-api/docs/live-api/ephemeral-tokens">Google AI for Developers — Live API ephemeral tokens</a></li>
-<li><a href="https://ai.google.dev/gemini-api/docs/deprecations">Google AI for Developers — Gemini deprecations</a></li>
-<li><a href="https://deepmind.google/models/model-cards/gemini-3-8-audio/">Google DeepMind — Gemini 3.8 Audio model card</a></li>
-<li><a href="https://thenewstack.io/voice-agent-latency-architectures/">The New Stack — Voice-agent latency architectures</a></li>
-</ul>
+<ul><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/">Google — Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking</a></li><li><a href="https://ai.google.dev/gemini-api/docs/live">Google AI for Developers — Live API</a></li><li><a href="https://ai.google.dev/gemini-api/docs/models/gemini-3.8-live">Google AI for Developers — Gemini 3.8 Live model documentation</a></li><li><a href="https://ai.google.dev/gemini-api/docs/live-guide">Google AI for Developers — Live API guide and best practices</a></li><li><a href="https://ai.google.dev/gemini-api/docs/ephemeral-tokens">Google AI for Developers — Ephemeral tokens</a></li><li><a href="https://ai.google.dev/gemini-api/docs/deprecations">Google AI for Developers — Deprecations</a></li><li><a href="https://www.theregister.com/2026/09/16/google_gemini_38_live/">The Register — Google Gemini 3.8 Live coverage</a></li><li><a href="https://thenewstack.io/google-gemini-3-8-live-vs-openai-gpt-live/">The New Stack — Gemini 3.8 Live architecture analysis</a></li></ul>
 <?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';
