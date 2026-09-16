@@ -27,7 +27,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><div class="container header-inner">
 <a class="brand" href="/"><span class="brand-mark">TK</span><span>ToolboxKart</span></a>
-<nav class="desktop-nav" aria-label="Primary"><a href="/seo/">SEO</a><a href="/marketing/">Marketing</a><a href="/finance/">Finance</a><a href="/healthcare/">Healthcare</a><a href="/developer/">Developer</a><a href="/blog/">Blog</a></nav>
+<nav class="desktop-nav" aria-label="Primary"><a href="/chatgpt/">ChatGPT</a><a href="/claude/">Claude</a><a href="/ai-news/">AI News</a><a href="/tools-guide/">Tools Guide</a><a href="/all-tools">All tools</a></nav>
 <div class="header-actions"><button class="icon-btn search-trigger" type="button" aria-label="Search tools">⌕ <span>Search</span><kbd>⌘K</kbd></button><button class="icon-btn theme-toggle" type="button" aria-label="Toggle theme">◐</button><button class="menu-toggle" type="button" aria-label="Open menu">☰</button></div>
-</div><div class="mobile-nav" aria-label="Mobile"><a href="/seo/">SEO</a><a href="/marketing/">Marketing</a><a href="/finance/">Finance</a><a href="/healthcare/">Healthcare</a><a href="/developer/">Developer</a><a href="/productivity/">Productivity</a><a href="/blog/">Blog</a></div></header>
+</div><div class="mobile-nav" aria-label="Mobile"><a href="/chatgpt/">ChatGPT</a><a href="/claude/">Claude</a><a href="/ai-news/">AI News</a><a href="/tools-guide/">Tools Guide</a><a href="/all-tools">All tools</a></div></header>
 <main id="main">
