@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Gemini 3.8 Live API architecture</title>
+<desc id="desc">A diagram showing text, image, audio and video inputs flowing through Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking into audio and text responses, with optional search grounding and function calling.</desc>
+<rect width="1200" height="630" fill="#f7f9fc"/>
+<rect x="54" y="48" width="1092" height="534" rx="28" fill="#ffffff" stroke="#dbe4ef" stroke-width="2"/>
+<text x="90" y="112" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#0b1220">Gemini 3.8 Live API</text>
+<text x="90" y="150" font-family="Arial, sans-serif" font-size="20" fill="#5d6b7e">Real-time multimodal input, live dialogue, reasoning and tool calls</text>
+<g font-family="Arial, sans-serif">
+  <rect x="92" y="205" width="215" height="245" rx="18" fill="#f7f9fc" stroke="#dbe4ef"/>
+  <text x="120" y="245" font-size="22" font-weight="700" fill="#0b1220">Inputs</text>
+  <text x="120" y="288" font-size="18" fill="#0b1220">• Text</text>
+  <text x="120" y="326" font-size="18" fill="#0b1220">• Images</text>
+  <text x="120" y="364" font-size="18" fill="#0b1220">• Audio</text>
+  <text x="120" y="402" font-size="18" fill="#0b1220">• Video</text>
+  <text x="120" y="440" font-size="15" fill="#5d6b7e">Live API uses WebSockets</text>
+  <line x1="307" y1="327" x2="380" y2="327" stroke="#2563eb" stroke-width="4"/>
+  <polygon points="380,327 362,317 362,337" fill="#2563eb"/>
+  <rect x="385" y="205" width="330" height="245" rx="18" fill="#f7f9fc" stroke="#dbe4ef"/>
+  <text x="415" y="245" font-size="22" font-weight="700" fill="#0b1220">Live models</text>
+  <rect x="415" y="270" width="270" height="67" rx="12" fill="#ffffff" stroke="#2563eb"/>
+  <text x="435" y="310" font-size="18" font-weight="700" fill="#0b1220">Gemini 3.8 Live</text>
+  <text x="435" y="331" font-size="14" fill="#5d6b7e">Low latency, interleaved reasoning</text>
+  <rect x="415" y="351" width="270" height="67" rx="12" fill="#ffffff" stroke="#0f9f8f"/>
+  <text x="435" y="391" font-size="18" font-weight="700" fill="#0b1220">3.8 Live Extended Thinking</text>
+  <text x="435" y="412" font-size="14" fill="#5d6b7e">Deeper reasoning, async tool calls</text>
+  <line x1="715" y1="327" x2="788" y2="327" stroke="#0f9f8f" stroke-width="4"/>
+  <polygon points="788,327 770,317 770,337" fill="#0f9f8f"/>
+  <rect x="793" y="205" width="260" height="245" rx="18" fill="#f7f9fc" stroke="#dbe4ef"/>
+  <text x="823" y="245" font-size="22" font-weight="700" fill="#0b1220">Outputs & tools</text>
+  <text x="823" y="288" font-size="18" fill="#0b1220">• Audio + text</text>
+  <text x="823" y="326" font-size="18" fill="#0b1220">• Function calling</text>
+  <text x="823" y="364" font-size="18" fill="#0b1220">• Google Search grounding</text>
+  <text x="823" y="402" font-size="18" fill="#0b1220">• Background work</text>
+  <text x="823" y="440" font-size="15" fill="#5d6b7e">Client app handles tool results</text>
+</g>
+<text x="90" y="530" font-family="Arial, sans-serif" font-size="18" fill="#5d6b7e">Source: Google AI for Developers and Google DeepMind model documentation, September 2026.</text>
+</svg>
