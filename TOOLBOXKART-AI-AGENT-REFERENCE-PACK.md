@@ -144,9 +144,14 @@ Current Healthcare tools are administrative Revenue Cycle Management utilities, 
 14. Link to relevant tools naturally; do not force links into unrelated paragraphs.
 15. Add the canonical post URL to `/sitemap.xml`.
 16. Use a real publication date; never invent “updated” dates just for freshness.
-17. **Blog-listing freshness is mandatory.** The public `/blog/` page must load the current `/data/posts.php` registry and sort posts by date so the newest published article appears without a manual edit to `blog/index.php` for each post.
-18. **Cache/runtime guard.** When publishing changes to `/data/posts.php`, verify that `/blog/` is not serving a stale PHP opcode or page-cache copy. The current `blog/index.php` contains explicit post-registry reload and no-cache handling for this reason. Do not remove those safeguards without a replacement that is tested to keep the listing current.
-19. **Every-run listing verification.** After deploying a new post, open the exact public `/blog/` URL and verify that every article published in that run is actually present there, with its title and link. If not present, diagnose deployment/cache/runtime state and resolve the issue before declaring the run successful. Never mark the post published merely because the GitHub source changed.
+
+### 9A. Blog listing freshness and publication verification
+
+- The public `/blog/` listing must be generated from the current `/data/posts.php` registry and sorted so the newest published post appears automatically. A new post must not require a manual edit to the listing page.
+- The current `/blog/index.php` is deliberately protected against stale PHP opcode and intermediary page-cache copies. Do not remove its post-registry reload or no-cache handling unless an equivalent tested solution replaces it.
+- After every publishing run, verify the exact public `/blog/` URL and confirm that every article published in that run appears there with its correct title and link.
+- If a new article exists in the repository but is missing from `/blog/`, treat the run as failed until deployment, PHP runtime/opcache, page-cache, or other proven delivery issue is diagnosed and resolved within available tools.
+- Never declare an article successfully published merely because `data/posts.php` or the article file was updated in GitHub.
 
 ### 10. Performance rules
 
@@ -195,7 +200,7 @@ If a future request conflicts with these rules, preserve safety, architecture, a
 - ☐ `/seo/serp-preview` loads without `.php` in the public URL.
 - ☐ Category URLs such as `/marketing/` load.
 - ☐ Blog post URL such as `/blog/how-to-create-a-utm-naming-system` loads.
-- ☐ `/blog/` returns the newly deployed article after every publishing run; do not accept an old cached listing.
+- ☐ `/blog/` is checked after every deployment and shows the newly published post rather than an old cached listing.
 - ☐ `/sitemap.xml` and `/robots.txt` return 200.
 - ☐ Custom 404 works for a nonexistent URL.
 - ☐ Search modal, mobile menu, dark mode and copy buttons work.
@@ -262,3 +267,123 @@ Do not publish empty tool pages from this list. A URL should go live only when i
 - Markup-to-margin converter.
 - Cash runway calculator.
 - Burn rate calculator.
+- Working capital calculator.
+- Inventory turnover calculator.
+- Accounts receivable turnover calculator.
+- ROI calculator.
+- Payback-period calculator.
+
+#### Healthcare RCM / operations
+
+- Collection rate calculator using aggregate totals.
+- Net collection rate calculator with clearly defined contractual adjustments.
+- Gross collection rate calculator.
+- A/R aging percentage calculator using aggregate aging buckets.
+- A/R over-90-days calculator.
+- First-pass resolution rate calculator.
+- Claim rejection rate calculator with rejection/denial distinction.
+- Charge lag calculator using aggregate dates/counts, no PHI.
+- Payment variance percentage calculator using aggregate expected/paid totals.
+- Provider productivity aggregate calculator only where definitions are operational and non-clinical.
+
+Never add diagnosis, symptom, dose, treatment, triage or clinical decision utilities under the normal RCM template.
+
+#### Developer
+
+- URL encoder/decoder.
+- HTML entity encoder/decoder.
+- JWT decoder that explicitly does not claim to verify signatures without a key.
+- UUID generator.
+- Unix timestamp converter.
+- Regex tester with clear runtime limitations.
+- CSV-to-JSON converter.
+- JSON-to-CSV converter.
+- XML formatter/validator.
+- YAML/JSON converter using a vetted parser dependency if needed.
+- Hash generator for non-password integrity uses; explain password hashing separately.
+- Color HEX/RGB/HSL converter.
+- CSS minifier.
+- JavaScript minifier only with a vetted parser/minifier; do not use dangerous regex-only transformation.
+- Lorem ipsum / structured placeholder text generator.
+
+#### Productivity
+
+- Case converter.
+- Duplicate line remover.
+- Sort lines.
+- Text difference viewer.
+- Random list picker.
+- Number list generator.
+- Date difference calculator.
+- Time duration calculator.
+- Business-day calculator with user-selected holidays/calendar assumptions.
+- Age calculator.
+- Tip calculator.
+- Pace calculator.
+- Ratio calculator.
+- Average/median calculator.
+- Roman numeral converter.
+
+### Priority B — new categories after enough tools exist
+
+#### Ecommerce
+
+- Marketplace fee calculator with user-supplied/current fee configuration.
+- Product margin calculator.
+- Average order value calculator.
+- Cart abandonment impact calculator.
+- Free-shipping threshold calculator.
+- Inventory reorder-point calculator.
+- Safety stock calculator.
+- SKU profit calculator.
+
+#### Content / Writing
+
+- Reading-time estimator (can reuse core logic from word counter without duplicating CSS/UI).
+- Headline length checker.
+- Meta description batch checker.
+- Text case converter.
+- Sentence/paragraph counter.
+- Markdown previewer.
+- HTML-to-plain-text cleaner.
+- Content outline organizer.
+
+#### Data / Conversion
+
+- Unit converter.
+- Area converter.
+- Length converter.
+- Weight converter.
+- Temperature converter.
+- Storage-size converter.
+- Percentage/ratio converter.
+- CSV cleaner.
+
+#### Image utilities
+
+Only add after image-processing dependencies and hosting resource limits are tested.
+
+- Resize image.
+- Compress image.
+- Crop image.
+- Convert PNG/JPEG/WebP.
+- Favicon generator.
+- Image metadata viewer/remover.
+
+#### Document utilities
+
+Only add after server limits, privacy, temporary-file deletion and library licensing are reviewed.
+
+- Merge PDF.
+- Split PDF.
+- Compress PDF.
+- Images to PDF.
+- PDF page counter/metadata viewer.
+
+### Product priorities learned from rival benchmarking
+
+- Breadth helps discovery, but avoid a homepage that becomes a wall of hundreds of links.
+- Keep category landing pages and universal search as the scaling mechanism.
+- Tool pages should be task-focused, with the interactive utility above long-form content.
+- New high-cost/API tools should disclose limits and data sources instead of presenting opaque scores.
+- Do not clone competitor wording, UI, examples, code, or proprietary scoring logic.
