@@ -4,7 +4,7 @@
 
 ## How the AI publishing agent must use this document
 
-Read this reference pack before every ToolBoxKart publishing run. Treat the live connected repository as the current implementation source of truth. If the repository shows that a blog listing, sitemap, feed, index, or other derived file is generated automatically from a source file such as `/data/posts.php`, update only the documented source of truth and do not manually edit generated output. If the current repository documents a static/manual sitemap or listing, update it carefully according to the live architecture. Never change working architecture, shared templates, routing, CSS, JavaScript, deployment configuration, or other global systems merely to publish content. When uncertain, choose the least invasive change that preserves security, accessibility, SEO integrity, existing functionality, and current repository conventions.
+Read this reference pack before every ToolBoxKart publishing run. Treat the live connected repository as the current implementation source of truth. If the repository shows that a category listing, sitemap, feed, index, or other derived file is generated automatically from a source file such as `/data/posts.php`, update only the documented source of truth and do not manually edit generated output. If the current repository documents a static/manual sitemap or listing, update it carefully according to the live architecture. Never change working architecture, shared templates, routing, CSS, JavaScript, deployment configuration, or other global systems merely to publish content. When uncertain, choose the least invasive change that preserves security, accessibility, SEO integrity, existing functionality, and current repository conventions.
 
 The three source documents below are reproduced from the files supplied for this workflow.
 
@@ -19,10 +19,10 @@ This file is the source of truth for anyone—human or AI—adding a tool, categ
 - Production stack: PHP 8+, Apache .htaccess, vanilla JavaScript, shared CSS. Do not introduce a framework, CMS, jQuery, package manager, or database just to add a simple tool.
 - Every tool has exactly one page file: `/<category>/<tool-slug>.php`.
 - Public canonical tool URL never includes `.php`: `https://toolboxkart.tech/<category>/<tool-slug>`.
-- Blog file: `/blog/<post-slug>.php`; canonical URL: `https://toolboxkart.tech/blog/<post-slug>`.
+- Article file: `/blog/<post-slug>.php`; public canonical URL: `https://toolboxkart.tech/<article-category>/<post-slug>`.
 - Header and footer are shared in `/includes/header.php` and `/includes/footer.php`. Never copy them into a tool or post.
 - Global UI lives in `/assets/css/app.css` and `/assets/js/app.js`. Do not duplicate the global theme inside individual pages.
-- Tool/category discovery comes from `/data/catalog.php`. Blog discovery comes from `/data/posts.php`.
+- Tool/category discovery comes from `/data/catalog.php`. Article discovery and metadata come from `/data/posts.php`.
 - Reusable rendering is in `/includes/tool-template.php`, `/includes/category-template.php`, and `/includes/blog-template.php`.
 - `/includes`, `/data`, and `/docs` are intentionally blocked from direct public browsing by `.htaccess`.
 
@@ -134,23 +134,25 @@ Current Healthcare tools are administrative Revenue Cycle Management utilities, 
 - Update `/privacy.php` before adding analytics, ads, accounts, forms, persistent storage, payment systems or third-party tracking.
 - Keep dependencies minimal and vetted.
 
-### 9. Adding a blog post
+### 9. Adding an article
 
 9. Copy `/blog/_POST-TEMPLATE.php.example` to `/blog/<slug>.php`.
 10. Add matching metadata to `/data/posts.php` with slug, title, description, category, date (YYYY-MM-DD) and read_time.
-11. Keep author as Deepak Parmar unless ownership intentionally changes site-wide.
-12. Use one introductory paragraph followed by descriptive H2 sections. H2s generate the table of contents automatically.
-13. The shared template automatically adds author, published date, read time, About Author, Latest Posts, Recent Posts, BlogPosting schema and breadcrumbs.
-14. Link to relevant tools naturally; do not force links into unrelated paragraphs.
-15. Add the canonical post URL to `/sitemap.xml`.
-16. Use a real publication date; never invent “updated” dates just for freshness.
+11. Assign exactly one public category: `chatgpt`, `claude`, `ai-news`, or `tools-guide`. ChatGPT and Claude articles belong in their own category; other AI-company news belongs in `ai-news`; tool tutorials, comparisons, workflows and guides belong in `tools-guide`.
+12. Keep author attribution as Deepak Parmar unless ownership intentionally changes site-wide. The shared author information includes LinkedIn (`https://www.linkedin.com/in/deepakparmaronline/`) and YouTube (`https://www.youtube.com/@deepakparmaronline/`).
+13. Use one introductory paragraph followed by descriptive H2 sections. H2s generate the table of contents automatically.
+14. The shared template automatically adds author, published date, read time, BlogPosting schema and breadcrumbs. Do not add “Recent posts by Deepak Parmar” or generic recent-post modules.
+15. Link to relevant tools naturally; do not force links into unrelated paragraphs.
+16. Add the category-based canonical post URL to `/sitemap.php`; do not add `/blog/<slug>` as a new canonical URL.
+17. Use a real publication date; never invent “updated” dates just for freshness.
 
-### 9A. Blog listing freshness and publication verification
+### 9A. Category listing freshness and publication verification
 
-- The public `/blog/` listing must be generated from the current `/data/posts.php` registry and sorted so the newest published post appears automatically. A new post must not require a manual edit to the listing page.
-- The current `/blog/index.php` is deliberately protected against stale PHP opcode and intermediary page-cache copies. Do not remove its post-registry reload or no-cache handling unless an equivalent tested solution replaces it.
-- After every publishing run, verify the exact public `/blog/` URL and confirm that every article published in that run appears there with its correct title and link.
-- If a new article exists in the repository but is missing from `/blog/`, treat the run as failed until deployment, PHP runtime/opcache, page-cache, or other proven delivery issue is diagnosed and resolved within available tools.
+- The public category listings `/chatgpt/`, `/claude/`, `/ai-news/`, and `/tools-guide/` are generated from `/data/posts.php` and sorted so matching published articles appear automatically. A new article must not require a manual listing-page edit.
+- The homepage “Latest practical guides” section intentionally shows only the three newest articles. Do not expand it to show the full registry.
+- After every publishing run, verify the category listing that owns each new article and confirm the article appears with its correct title and category-based link.
+- Verify the article URL as `/<category>/<post-slug>`. The old `/blog/<post-slug>` path is a legacy URL and should 301 redirect through `blog-redirect.php`; `/blog/` redirects to `/chatgpt/`.
+- If a new article exists in the repository but is missing from its category listing, treat the run as failed until the registry, category mapping, PHP runtime/opcache, page-cache, or deployment issue is diagnosed and resolved within available tools.
 - Never declare an article successfully published merely because `data/posts.php` or the article file was updated in GitHub.
 
 ### 10. Performance rules
@@ -164,8 +166,9 @@ Current Healthcare tools are administrative Revenue Cycle Management utilities, 
 ### 11. URL and link rules
 
 - Internal public links use extensionless URLs.
-- Category index uses trailing slash: `/seo/`, `/marketing/`, etc.
-- Tools and posts do not use trailing slashes in canonicals.
+- Tool category indexes use trailing slash: `/seo/`, `/marketing/`, etc. Article category indexes use trailing slash: `/chatgpt/`, `/claude/`, `/ai-news/`, `/tools-guide/`.
+- Tools and articles do not use trailing slashes in canonicals.
+- Article canonicals use the assigned category path, never `/blog/`.
 - Never rename an indexed slug without a 301 redirect from the old URL and a sitemap update.
 - Do not create multiple live URLs for the same tool.
 
@@ -198,9 +201,11 @@ If a future request conflicts with these rules, preserve safety, architecture, a
 - ☐ Upload site contents to the correct web root (`public_html` or configured document root).
 - ☐ `.htaccess` uploaded successfully (some file managers hide dotfiles).
 - ☐ `/seo/serp-preview` loads without `.php` in the public URL.
-- ☐ Category URLs such as `/marketing/` load.
-- ☐ Blog post URL such as `/blog/how-to-create-a-utm-naming-system` loads.
-- ☐ `/blog/` is checked after every deployment and shows the newly published post rather than an old cached listing.
+- ☐ Tool category URLs such as `/marketing/` load.
+- ☐ Article category URLs `/chatgpt/`, `/claude/`, `/ai-news/`, and `/tools-guide/` load.
+- ☐ A new article loads at its category URL, such as `/tools-guide/how-to-create-a-utm-naming-system`.
+- ☐ The matching category listing shows every newly published article after deployment.
+- ☐ A legacy `/blog/<slug>` URL 301 redirects to the correct category URL, and `/blog/` redirects to `/chatgpt/`.
 - ☐ `/sitemap.xml` and `/robots.txt` return 200.
 - ☐ Custom 404 works for a nonexistent URL.
 - ☐ Search modal, mobile menu, dark mode and copy buttons work.
