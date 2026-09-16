@@ -48,7 +48,7 @@ Never publish an article simply because an AI system can write it quickly. Accur
 - The homepage “Latest practical guides” section displays only the three newest articles; do not use it as the complete article index.
 - Article canonicals and sitemap entries must use category-based URLs. Update the registry/source files and generated sitemap logic, never create a separate manual blog listing.
 - The shared author attribution is Deepak Parmar, with LinkedIn at `https://www.linkedin.com/in/deepakparmaronline/` and YouTube at `https://www.youtube.com/@deepakparmaronline/`.
-- Do not add “Recent posts by Deepak Parmar” or generic recent-post sections to article pages.
+- Every article page automatically includes a “Latest published posts” section after the author introduction. It must show exactly three other articles, sorted by publication date descending. Do not add “Recent posts by Deepak Parmar” or duplicate this section inside individual article files.
 
 ## Daily article publishing gate
 
@@ -60,3 +60,4 @@ Before declaring a daily run complete, check every article:
 4. Its legacy `/blog/<post-slug>` URL redirects to the same category URL.
 5. The article appears in `/sitemap.xml` with the category-based URL.
 6. No article was added to the homepage beyond the newest-three limit.
+7. The article page shows exactly three other latest published posts after the author introduction, ordered by publication date.

@@ -141,7 +141,7 @@ Current Healthcare tools are administrative Revenue Cycle Management utilities, 
 11. Assign exactly one public category: `chatgpt`, `claude`, `ai-news`, or `tools-guide`. ChatGPT and Claude articles belong in their own category; other AI-company news belongs in `ai-news`; tool tutorials, comparisons, workflows and guides belong in `tools-guide`.
 12. Keep author attribution as Deepak Parmar unless ownership intentionally changes site-wide. The shared author information includes LinkedIn (`https://www.linkedin.com/in/deepakparmaronline/`) and YouTube (`https://www.youtube.com/@deepakparmaronline/`).
 13. Use one introductory paragraph followed by descriptive H2 sections. H2s generate the table of contents automatically.
-14. The shared template automatically adds author, published date, read time, BlogPosting schema and breadcrumbs. Do not add “Recent posts by Deepak Parmar” or generic recent-post modules.
+14. The shared template automatically adds author, published date, read time, BlogPosting schema, breadcrumbs, and a “Latest published posts” section after the author introduction. That section must contain exactly three other articles sorted by publication date descending. Do not add “Recent posts by Deepak Parmar” or duplicate latest-post modules inside individual articles.
 15. Link to relevant tools naturally; do not force links into unrelated paragraphs.
 16. Add the category-based canonical post URL to `/sitemap.php`; do not add `/blog/<slug>` as a new canonical URL.
 17. Use a real publication date; never invent “updated” dates just for freshness.
