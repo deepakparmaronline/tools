@@ -12,6 +12,7 @@ This file is the source of truth for anyone—human or AI—adding a tool, categ
 - Global UI lives in `/assets/css/app.css` and `/assets/js/app.js`. Do not duplicate the global theme inside individual pages.
 - Tool/category discovery comes from `/data/catalog.php`. Blog discovery comes from `/data/posts.php`.
 - Reusable rendering is in `/includes/tool-template.php`, `/includes/category-template.php`, and `/includes/blog-template.php`.
+- `/TOOLBOXKART-AI-CATEGORY-TOOL-PACKAGING-PROMPT.md` defines the required format when an external AI agent returns new tools as separate category ZIP packages.
 - `/includes`, `/data`, and `/docs` are intentionally blocked from direct public browsing by `.htaccess`.
 
 ## 1A. Categories / niches — automatic workflow

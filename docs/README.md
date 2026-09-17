@@ -44,6 +44,7 @@ Then open `/seo/serp-preview.php`. Clean public URLs are handled by Apache after
 - `assets/css/app.css` — design system.
 - `assets/js/app.js` — shared interactions/search/theme.
 - `docs/AI-SITE-RULES.md` — rules for future additions.
+- `TOOLBOXKART-AI-CATEGORY-TOOL-PACKAGING-PROMPT.md` — prompt for receiving separate import-ready ZIP packages per tool category.
 
 ## Adding a new tool niche
 
