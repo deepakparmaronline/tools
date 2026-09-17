@@ -22,6 +22,50 @@ The goal is not to produce generic “AI content.” The goal is to publish genu
 
 ToolBoxKart must never become a source of thin, repetitive, generic, press-release-style, copied, speculative, or fabricated articles.
 
+## Implementation reference for AI and developers
+
+This repository is a PHP 8+ utility site. The implementation source of truth is `/data/catalog.php` for tools and niches, `/data/posts.php` for articles, `/includes` for shared templates and functions, `/assets` for global CSS and JavaScript, `/router.php` and `.htaccess` for clean URLs, and `/docs/AI-SITE-RULES.md` for the complete engineering rules.
+
+### Automatic niche/category contract
+
+To create a new tool niche, add one top-level record to `/data/catalog.php`:
+
+```php
+'seo'=>[
+	'name'=>'SEO',
+	'description'=>'Technical and on-page SEO utilities for snippets, metadata, crawl directives and content analysis.',
+	'icon'=>'⌕',
+],
+```
+
+The `name` is the category title and the `description` is its introduction. The category page presents the required content in this form:
+
+```text
+# SEO tools built for real work
+Technical and on-page SEO utilities for snippets, metadata, crawl directives and content analysis. Every tool is designed to expose its inputs and outputs clearly instead of hiding the logic behind a vague score.
+```
+
+Add tools to the catalog `tools` array with the same category key. Do not create duplicate category arrays or manually edit the browse page, home page, menu, or sitemap. `tool_categories()` in `/includes/functions.php` discovers the category automatically. `/browse-tools-by-niche`, the home category section, and `/sitemap.xml` update from that helper. `/router.php` and `.htaccess` send the new `/<category>/` URL to `/includes/category-template.php`, which automatically creates the title, intro, breadcrumbs, tool listing, canonical URL, ItemList schema, and supporting content. New niches therefore do not need a directory or `index.php` file.
+
+### AI implementation sequence
+
+1. Read `/TOOLBOXKART-AI-AGENT-REFERENCE-PACK.md`, `/docs/AI-SITE-RULES.md`, `/docs/README.md`, and the nearby templates before editing.
+2. Add category metadata once, using a lowercase hyphenated key, factual title, useful intro, and icon.
+3. Add tool records and one PHP page per tool under the category key.
+4. Reuse shared templates, escaping, metadata, breadcrumbs, schemas, CSS, and JavaScript. Do not invent a parallel page structure.
+5. Run `php -l` on changed PHP files and start the routed local server with `php -S 127.0.0.1:8765 router.php`.
+6. Verify the new category URL, browse page, home page, menu, sitemap, canonical URL, tool links, mobile layout, and edge cases.
+
+For category format, URL rules, tool templates, accessibility, SEO, privacy, healthcare, finance, security, performance, and definition of done, `/docs/AI-SITE-RULES.md` takes precedence over ad hoc instructions.
+
+### Required tool page content and SEO rules
+
+Every new tool must use `/includes/tool-template.php`. Set the catalog `name` to the natural primary search phrase users would use for the utility; the shared template renders that name as the page title and H1. The H1 must be clear and useful, such as `SERP Preview Tool`, `Loan EMI Calculator`, or `JSON Formatter & Validator`. Do not force keywords or make unsupported search-volume claims.
+
+After the working tool interface, add original human-focused `$toolContent` explaining what the tool does, how to use it, its inputs and outputs, formula or method, examples, interpretation, assumptions, and limitations. Do not add generic filler or repeat the catalog description.
+
+Every tool must define 3–5 specific `$faqs` based on real user questions. Answers must be visible, accurate, useful, and consistent with `$toolContent`; the shared template displays them and adds `FAQPage` schema. The shared related-tools block must remain below the tool content and may include only tools with the same catalog `category` as the current tool. Use `get_related_tools()` and never cross-link a different niche in that block.
+
 ---
 
 ## 2. Daily Automation Context

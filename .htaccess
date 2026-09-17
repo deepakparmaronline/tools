@@ -23,6 +23,11 @@ RewriteRule ^blog/?$ /chatgpt/ [R=301,L]
 RewriteRule ^blog/(.+)$ /blog-redirect.php?slug=$1 [L,QSA]
 RewriteRule ^(chatgpt|claude|ai-news|tools-guide)/(.+)$ /category-article.php?category=$1&slug=$2 [L,QSA]
 
+# Send catalog-defined category indexes through the shared dynamic category template.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z0-9-]+)/?$ router.php [L,QSA]
+
 # Redirect browser requests for other .php pages to extensionless canonical URLs.
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
 RewriteRule ^(.+)\.php$ /$1 [R=301,L,NE]

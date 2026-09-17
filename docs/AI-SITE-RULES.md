@@ -14,6 +14,52 @@ This file is the source of truth for anyone—human or AI—adding a tool, categ
 - Reusable rendering is in `/includes/tool-template.php`, `/includes/category-template.php`, and `/includes/blog-template.php`.
 - `/includes`, `/data`, and `/docs` are intentionally blocked from direct public browsing by `.htaccess`.
 
+## 1A. Categories / niches — automatic workflow
+
+Tool niches are defined only in `/data/catalog.php`. Do not maintain a second category list in a page, menu, sitemap, or stylesheet.
+
+Each category record must use this shape:
+
+```php
+'seo'=>[
+  'name'=>'SEO',
+  'description'=>'Technical and on-page SEO utilities for snippets, metadata, crawl directives and content analysis.',
+  'icon'=>'⌕',
+],
+```
+
+The `name` is the visible category title. The `description` is the category introduction. Category pages append this standard sentence:
+
+```text
+Every tool is designed to expose its inputs and outputs clearly instead of hiding the logic behind a vague score.
+```
+
+The rendered category page therefore follows this content pattern:
+
+```text
+# SEO tools built for real work
+Technical and on-page SEO utilities for snippets, metadata, crawl directives and content analysis. Every tool is designed to expose its inputs and outputs clearly instead of hiding the logic behind a vague score.
+```
+
+To create a new niche:
+
+1. Add one top-level category record to `/data/catalog.php` with a lowercase hyphenated key, human-readable `name`, useful `description`, and short `icon`.
+2. Add each tool under that niche to the `tools` array with the exact same `category` key, unique `slug`, `name`, `description`, and `featured` value.
+3. Do not create a manual category page. `/router.php` automatically sends any catalog-defined category URL such as `/<new-category>/` to `/includes/category-template.php`.
+4. The shared category template automatically creates the category title, introduction, tool grid, breadcrumbs, canonical URL, ItemList schema, and supporting sections.
+5. The Browse Tools by Niche page, home category section, and sitemap automatically discover the new category through `tool_categories()`.
+
+The shared helper is `tool_categories()` in `/includes/functions.php`. It is the only approved way for PHP pages to enumerate tool niches. Never replace it with a hardcoded list such as `['seo','marketing',...]`.
+
+### Category URL and AI verification rules
+
+- Public category URL: `https://toolboxkart.tech/<category>/`.
+- Local routed URL: `http://127.0.0.1:8765/<category>/` when started with `php -S 127.0.0.1:8765 router.php`.
+- New categories do not need a directory or `index.php`; the shared router and Apache fallback serve them automatically.
+- Never use `.php` in public category links or canonical URLs.
+- Run `php -l` on every changed PHP file, then verify the browse page, home page, new category page, tool links, sitemap, canonical URL, title, H1, intro, breadcrumbs, and mobile layout.
+- Before any AI edit, read `/TOOLBOXKART-AI-AGENT-REFERENCE-PACK.md`, this file, `/README.md`, `/docs/README.md`, `/data/catalog.php`, `/includes/functions.php`, `/includes/category-template.php`, `/router.php`, and `.htaccess`.
+
 ## 2. Design system: do not freelance a new theme
 
 Use the existing CSS variables. Do not hard-code random brand colors per tool.
@@ -53,28 +99,36 @@ Rules:
    - buffer `$toolBody`, then buffer `$toolContent`
    - define `$faqs`
    - load `/includes/tool-template.php`
-5. Keep tool-specific JavaScript inside that tool file unless the exact behavior is reused by multiple tools; shared behavior belongs in `/assets/js/app.js`.
-6. Add the canonical URL to `/sitemap.xml`.
-7. Test default values, empty values, zero, negative values where applicable, very large inputs, malformed text, and copy/reset behavior.
-8. Run `php -l` on every PHP file and perform a mobile/desktop rendering check.
+5. Choose the catalog `name` as the primary user search phrase and write a natural SEO-focused H1 through the shared template. Keep wording readable; do not keyword-stuff.
+6. Write `$toolContent` for the human reader after the interface. Include useful explanations, steps, examples, assumptions, limitations, and interpretation specific to the tool.
+7. Define 3–5 specific `$faqs` with answers supported by the visible `$toolContent`; never add generic or unsupported FAQs.
+8. Keep tool-specific JavaScript inside that tool file unless the exact behavior is reused by multiple tools; shared behavior belongs in `/assets/js/app.js`.
+9. Use the shared related-tools block. It must list only tools whose catalog `category` equals the current tool category.
+10. Add the canonical URL to `/sitemap.xml`.
+11. Test default values, empty values, zero, negative values where applicable, very large inputs, malformed text, and copy/reset behavior.
+12. Run `php -l` on every PHP file and perform a mobile/desktop rendering check.
 
 ## 4. Required tool-page SEO/content structure
 
 Every indexable tool page must have:
-- One unique H1: the tool name.
-- Unique title and meta description from the catalog/tool configuration.
+- One unique, search-intent-focused H1: the tool name must contain the primary phrase people would use to find that utility, for example `SERP Preview Tool`, `Loan EMI Calculator`, or `JSON Formatter & Validator`. Do not force awkward keyword variations or make unsupported search-volume claims.
+- Unique title and meta description from the catalog/tool configuration. The catalog `name` is the primary H1/title keyword phrase; the catalog `description` must explain the practical use case in natural language.
 - Self-referencing canonical URL.
 - Breadcrumbs.
 - Working tool UI near the top.
+- Human-written, original content after the tool interface. `$toolContent` must explain the tool's purpose, inputs, outputs, formula or method, interpretation, practical use cases, limitations, and assumptions in clear language. It must help a person complete a task; do not write filler paragraphs or repeat the description to add length.
 - At least these visible content sections using useful, non-keyword-stuffed H2s:
   - what the tool does / formula / concept,
   - how to use it,
   - important assumptions or interpretation,
   - FAQs.
-- 3–5 useful FAQs whose answers match visible page content.
+- A visible FAQ section on every tool page with 3–5 useful, human questions and direct answers. Questions must reflect real user intent around using, interpreting, or troubleshooting that tool. Answers must match visible page content, must not invent guarantees, and must be included in the shared `FAQPage` schema.
 - `WebApplication`, `BreadcrumbList`, and `FAQPage` JSON-LD from the shared template.
-- Internal links only when they genuinely help the user.
+- A related-tools block below the tool interface/content. It must use `get_related_tools($tool['category'], $tool['slug'])` or an equivalent category-filtered helper so every related link belongs to the current niche only. Never recommend tools from another category in this block.
+- Internal links only when they genuinely help the user; related tools must be relevant and must not be keyword-stuffed.
 - Original content. Never copy rival explanations, examples, FAQs or visual design.
+
+The shared `/includes/tool-template.php` already renders the catalog name as the H1, places `$toolContent` after the tool UI, renders `$faqs` visibly and as FAQ schema, and renders same-category related tools from `get_related_tools()`. New tools must supply those variables instead of bypassing the template.
 
 Do not promise rankings, rich results, deliverability, medical outcomes, profit, revenue or other results that the tool cannot guarantee. FAQ structured data describes visible content; it does not guarantee a rich result.
 
