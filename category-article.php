@@ -9,7 +9,7 @@ if (!in_array($category, $allowed, true) || $slug === '') {
     exit;
 }
 $post = post_by_slug($slug);
-if (!$post || post_category_key($post['title'].' '.$post['slug'].' '.$post['category']) !== $category) {
+if (!$post || post_category_key($post['category']) !== $category) {
     http_response_code(404);
     include __DIR__.'/404.php';
     exit;
