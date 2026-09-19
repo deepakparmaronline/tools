@@ -1,0 +1,25 @@
+<?php require __DIR__.'/../includes/bootstrap.php';$post=post_by_slug('figma-weave-figma-frames-workflow-guide') ?? ['slug'=>'figma-weave-figma-frames-workflow-guide','title'=>'Figma Weave Figma Frames: How the New Workflow Works','description'=>'Figma now lets teams bring Figma frames directly into Weave workflows. Here is how the new node works and what it changes for AI-assisted content creation.','category'=>'Tools Guide','date'=>'2026-09-19','read_time'=>'7 min read'];ob_start(); ?>
+<p>Figma added a new workflow connection between Figma Design and Figma Weave on September 17, 2026. Its new Figma node lets a frame become an input inside a Weave workflow, so teams can keep approved design structure while using AI workflows to create variations, localized assets and new visual content.</p>
+<figure class="article-image"><img src="/assets/images/blog/figma-weave-figma-frames-workflow-guide.svg" width="1200" height="630" alt="Figma frame connected to a Figma Weave AI workflow for controlled content variations"></figure>
+<h2>What changed</h2>
+<p>Figma's release notes say users can copy a frame from Figma Design, paste it into Figma Weave and use the frame as a node in a workflow. Teams can then choose which text and image layers become inputs while keeping the original fonts, layout and styling intact.</p>
+<p>This turns a finished design into a reusable workflow input instead of requiring a team to rebuild the visual structure for every new variation.</p>
+<h2>How the Figma node works</h2>
+<table class="data-table"><thead><tr><th>Step</th><th>What happens</th></tr></thead><tbody><tr><td>Start with a frame</td><td>Use an existing Figma Design frame as the approved visual base</td></tr><tr><td>Add to Weave</td><td>Paste the frame into a Weave workflow as a Figma node</td></tr><tr><td>Select inputs</td><td>Choose the text and image layers that can change</td></tr><tr><td>Generate variations</td><td>Use downstream AI steps for campaign assets, localization or new visuals</td></tr></tbody></table>
+<h2>Why preserving the design system matters</h2>
+<p>AI-generated creative can drift away from approved brand rules. Figma says the Figma node keeps the original fonts, layout and styling intact while allowing selected layers to become workflow inputs.</p>
+<p>For marketing teams, that can reduce the amount of manual cleanup between the original brand-approved design and AI-generated variants.</p>
+<h2>Good use cases for SEO and marketing teams</h2>
+<p>A campaign team can create one approved social frame and turn the copy and image layers into controlled inputs. The workflow can then produce language variations, market-specific graphics or different content versions without rebuilding the layout from scratch.</p>
+<p>The same pattern can work for landing-page graphics, blog promotion assets and paid-social variations. The value is in keeping the design system stable while changing only the parts the campaign needs to change.</p>
+<h2>Where human review still matters</h2>
+<p>A connected design-to-AI workflow does not remove the need for review. Teams still need to check claims, product names, localized copy, images, legal text and accessibility before publishing.</p>
+<p>It is also worth defining which layers are allowed to change. Giving an automated workflow access to every part of the frame can make brand drift harder to detect.</p>
+<h2>How to test the workflow</h2>
+<p>Start with one frame and two or three controlled variables. Compare the generated variants against the approved source for typography, spacing, visual hierarchy and required copy.</p>
+<p>Then test scale: more languages, more campaigns and more output types. Track rework time, approval time and the number of variants that pass review without manual redesign.</p>
+<h2>What the update does not promise</h2>
+<p>Figma's release notes describe the workflow connection and layer controls. They do not promise that every generated asset will be production-ready or that AI output will always preserve every design decision. Quality still depends on the workflow and review process.</p>
+<h2>Frequently asked questions</h2><h3>Can a Figma frame be used inside Weave?</h3><p>Yes. Figma says users can copy a Figma Design frame, paste it into Weave and use it as a Figma node in a workflow.</p><h3>Can every part of the frame change?</h3><p>The workflow lets users choose the text and image layers that become inputs while keeping the original design structure intact.</p><h3>What can teams create with the workflow?</h3><p>Figma lists campaign variations, localized assets, new visuals and videos among the use cases for the connected workflow.</p>
+<h2>Sources</h2><ul><li><a href="https://www.figma.com/release-notes/">Figma Release Notes — Create on-brand content with your Figma designs in Weave workflows</a></li><li><a href="https://www.figma.com/blog/connecting-figma-and-weave/">Figma — Connecting Figma and Weave</a></li></ul>
+<?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';
