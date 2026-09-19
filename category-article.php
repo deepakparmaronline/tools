@@ -14,4 +14,13 @@ if (!$post || post_category_key($post['category']) !== $category) {
     include __DIR__.'/404.php';
     exit;
 }
-require __DIR__.'/blog/'.$slug.'.php';
+$source = __DIR__.'/blog/'.$slug.'.php';
+if ($slug === 'australian-youth-safety-blueprint-six-pillars') {
+    $source = __DIR__.'/blog/australian-youth-safety-runtime.php';
+}
+if (!is_file($source)) {
+    http_response_code(404);
+    include __DIR__.'/404.php';
+    exit;
+}
+require $source;
