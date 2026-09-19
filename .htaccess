@@ -19,6 +19,8 @@ RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.php[\s?] [NC]
 RewriteRule ^(.*/)?index\.php$ /$1 [R=301,L,NE]
 
 # Redirect old blog and category article URLs to the new category-based URL structure.
+RewriteRule ^blog/australian-youth-safety-blueprint-six-pillars/?$ /ai-news/openai-safety-blueprint-australia-2026 [R=301,L,NE]
+
 RewriteRule ^ai-news/australian-youth-safety-blueprint-six-pillars/?$ /ai-news/openai-safety-blueprint-australia-2026 [R=301,L,NE]
 
 RewriteRule ^blog/?$ /chatgpt/ [R=301,L]
