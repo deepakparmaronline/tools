@@ -1,1 +1,0 @@
-<?php require __DIR__."/australian-youth-safety-runtime.php";
