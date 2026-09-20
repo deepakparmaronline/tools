@@ -29,7 +29,6 @@ RewriteRule ^(chatgpt|claude|ai-news|tools-guide)/(.+)$ /category-article.php?ca
 
 # Send catalog-defined category indexes through the shared dynamic category template.
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([a-z0-9-]+)/?$ router.php [L,QSA]
 
 # Redirect browser requests for other .php pages to extensionless canonical URLs.
