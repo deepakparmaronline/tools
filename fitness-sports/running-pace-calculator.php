@@ -1,0 +1,26 @@
+<?php
+require __DIR__.'/../includes/bootstrap.php';
+$tool=tool_by_path('fitness-sports','running-pace-calculator');
+ob_start();
+?>
+<h2>Calculate running pace</h2><p class="lead">Enter distance and elapsed time to calculate pace, speed and common-distance projections at the same pace.</p>
+<div class="form-grid"><div class="field"><label for="distance">Distance</label><input id="distance" type="number" min="0" step="any" value="5"></div><div class="field"><label for="unit">Distance unit</label><select id="unit"><option value="km">Kilometres</option><option value="mi">Miles</option><option value="m">Metres</option></select></div><div class="field"><label for="time">Elapsed time (HH:MM:SS or MM:SS)</label><input id="time" type="text" value="25:00"></div></div>
+<div class="tool-actions"><button class="btn btn-primary" id="calc" type="button">Calculate pace</button><button class="btn btn-secondary" id="reset" type="button">Reset</button></div>
+<div class="result-box"><div class="result-grid"><div class="metric"><span>Pace / km</span><strong id="pk">—</strong></div><div class="metric"><span>Pace / mile</span><strong id="pm">—</strong></div><div class="metric"><span>Average speed</span><strong id="speed">—</strong></div></div><div class="table-wrap" style="margin-top:14px"><table class="data-table"><thead><tr><th>Distance</th><th>Same-pace finish</th></tr></thead><tbody id="proj"></tbody></table></div><div id="note" class="helper" style="margin-top:12px"></div></div>
+<script>
+(()=>{const $=id=>document.getElementById(id),n=id=>parseFloat($(id).value);function sec(s){const p=s.trim().split(':').map(Number);if(p.some(x=>!Number.isFinite(x))||p.length<2||p.length>3)return NaN;return p.length===2?p[0]*60+p[1]:p[0]*3600+p[1]*60+p[2]}function clock(s){s=Math.round(s);const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),x=s%60;return h?`${h}:${String(m).padStart(2,'0')}:${String(x).padStart(2,'0')}`:`${m}:${String(x).padStart(2,'0')}`}function go(){const d=n('distance'),t=sec($('time').value),u=$('unit').value;if(!Number.isFinite(d)||d<=0||!Number.isFinite(t)||t<=0){$('note').textContent='Enter a positive distance and a valid elapsed time such as 25:00 or 1:42:30.';$('note').className='helper danger';return;}const km=u==='km'?d:u==='mi'?d*1.609344:d/1000,spk=t/km,spm=spk*1.609344;$('pk').textContent=clock(spk)+'/km';$('pm').textContent=clock(spm)+'/mi';$('speed').textContent=(km/(t/3600)).toFixed(2)+' km/h';const races=[['5K',5],['10K',10],['Half marathon',21.0975],['Marathon',42.195]];$('proj').innerHTML=races.map(r=>'<tr><td>'+r[0]+'</td><td>'+clock(spk*r[1])+'</td></tr>').join('');$('note').textContent='Projected times assume exactly the same average pace. Real race pace changes with terrain, weather, fatigue, stops and distance-specific endurance.';$('note').className='helper';}
+['distance','unit','time'].forEach(id=>$(id).addEventListener('input',go));$('calc').onclick=go;$('reset').onclick=()=>{$('distance').value=5;$('unit').value='km';$('time').value='25:00';go();};go();})();
+</script>
+<?php
+$toolBody=ob_get_clean();
+ob_start();
+?>
+<h2>Running pace formula</h2><p>Running pace is elapsed time divided by distance. The calculator converts the entered route into kilometres, calculates seconds per kilometre, and then converts that pace into seconds per mile and average speed.</p>
+<h2>Pace versus speed</h2><p>Pace answers “how long does one kilometre or mile take?” Speed answers “how many kilometres are covered in one hour?” Runners often prefer pace because it maps directly to split times.</p>
+<h2>How race projections are calculated</h2><p>The projection table simply extends the same average pace to 5K, 10K, half-marathon and marathon distances. It is not a physiological race-prediction model, so it does not account for the normal slowing that can occur over longer distances.</p>
+<h2>Use moving time consistently</h2><p>If your recorded activity includes stopped time, decide whether you want elapsed pace or moving pace and enter the matching time. Mixing moving time with total route distance can make comparisons misleading.</p>
+<h2>Use pace with terrain and effort context</h2><p>The same pace can represent very different effort on hills, trails, wind, heat or altitude. For race planning, compare pace with recent workouts and course conditions rather than assuming a flat-road conversion predicts performance. GPS devices can also smooth or mismeasure short segments. When precision matters, measured course distance and elapsed chip/manual time provide a stronger basis for pace than an instantaneous watch reading.</p>
+<?php
+$toolContent=ob_get_clean();
+$faqs=[['How do I calculate pace per kilometre?','Divide total elapsed time by distance in kilometres. The calculator performs that conversion automatically.'],['Can I enter miles?','Yes. Choose miles and the tool converts the distance to kilometres internally while still showing pace per mile.'],['Are the race finish projections predictions?','No. They are same-pace projections only and do not account for endurance, terrain, weather or race conditions.'],['What time format can I use?','Use MM:SS for shorter efforts or HH:MM:SS for longer runs.']];
+require __DIR__.'/../includes/tool-template.php';

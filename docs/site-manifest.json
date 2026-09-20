@@ -7,7 +7,9 @@
   "blog_file_pattern": "/blog/<slug>.php",
   "blog_url_pattern": "https://toolboxkart.tech/blog/<slug>",
   "author": "Deepak Parmar",
-  "categories": ["seo", "marketing", "finance", "healthcare", "developer", "productivity"],
+  "category_count": 29,
+  "tool_count": 180,
+  "categories": ["seo", "marketing", "finance", "healthcare", "developer", "productivity", "agriculture", "automotive", "beauty-salon", "construction", "cybersecurity", "data-analysis", "education", "events", "writing-publishing", "fitness-sports", "food-manufacturing", "government-ngos", "graphic-design", "insurance", "logistics", "manufacturing", "photography-video", "printing-packaging", "real-estate", "sales-business-development", "science-labs", "solar-energy", "telecom-networking"],
   "theme": {
     "background": "#f7f9fc",
     "surface": "#ffffff",

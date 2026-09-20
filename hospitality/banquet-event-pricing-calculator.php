@@ -1,0 +1,24 @@
+<?php require __DIR__.'/../includes/bootstrap.php';$tool=tool_by_path('hospitality','banquet-event-pricing-calculator');ob_start(); ?>
+<h2>Build an event price from cost and margin</h2>
+<p class="lead">Add expected event costs, then set a target margin and guest count to estimate total and per-person pricing.</p>
+<div class="form-grid"><div class="field"><label for="food">Food & beverage cost</label><input id="food" type="number" value="75000" step="0.01" min="0"></div><div class="field"><label for="labor">Labor cost</label><input id="labor" type="number" value="25000" step="0.01" min="0"></div><div class="field"><label for="venue">Venue / setup cost</label><input id="venue" type="number" value="15000" step="0.01" min="0"></div><div class="field"><label for="other">Other direct cost</label><input id="other" type="number" value="10000" step="0.01" min="0"></div><div class="field"><label for="margin">Target margin (%)</label><input id="margin" type="number" value="30" step="0.01" min="0" max="99.9"></div><div class="field"><label for="guests">Expected guests</label><input id="guests" type="number" value="150" step="1" min="1"></div></div>
+<div class="tool-actions"><button class="btn btn-primary" id="calc">Calculate</button><button class="btn btn-secondary" id="reset" type="button">Reset</button></div>
+<div class="result-box"><div class="result-grid"><div class="metric"><span>Total cost</span><strong id="cost">—</strong></div><div class="metric"><span>Target quote</span><strong id="quote">—</strong></div><div class="metric"><span>Target profit</span><strong id="profit">—</strong></div><div class="metric"><span>Price per guest</span><strong id="perGuest">—</strong></div></div><div id="note" class="helper" style="margin-top:12px"></div></div>
+<script>
+(()=>{
+const $=id=>document.getElementById(id);
+const num=id=>{const v=parseFloat($(id)?.value);return Number.isFinite(v)?v:0;};
+const money=(v,c='')=>Number.isFinite(v)?c+v.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}):'—';
+const dec=(v,d=2)=>Number.isFinite(v)?v.toLocaleString(undefined,{maximumFractionDigits:d}):'—';
+const pct=v=>Number.isFinite(v)?v.toFixed(2)+'%':'—';
+const note=(m,bad=false)=>{const el=$('note');if(el){el.textContent=m||'';el.className='helper'+(bad?' danger':'');}};
+function go(){const vals=['food','labor','venue','other'].map(num),m=num('margin')/100,g=num('guests');if(vals.some(v=>v<0)||m<0||m>=1||g<=0){note('Costs must be non-negative, guests positive, and target margin below 100%.',true);return;}const c=vals.reduce((a,b)=>a+b,0),q=c/(1-m);$('cost').textContent=money(c,'');$('quote').textContent=money(q,'');$('profit').textContent=money(q-c,'');$('perGuest').textContent=money(q/g,'');note('Margin is calculated on selling price, not as a markup on cost.');}
+if($('calc')) $('calc').addEventListener('click',go);
+if($('reset')) $('reset').addEventListener('click',()=>{document.querySelectorAll('.tool-panel input,.tool-panel textarea,.tool-panel select').forEach(el=>{if(el.tagName==='SELECT') el.selectedIndex=0; else el.value=el.defaultValue;});go();});
+document.querySelectorAll('.tool-panel input,.tool-panel select').forEach(el=>el.addEventListener('input',go));
+go();
+})();
+</script>
+<?php $toolBody=ob_get_clean();ob_start(); ?>
+<h2>How the calculation works</h2><p>Total event cost is the sum of food and beverage, labor, venue/setup and other direct costs. To price for a target margin, quote = total cost ÷ (1 − target margin). Per-guest price divides the quote by expected guests.</p><h2>How to use the result</h2><p>Use this as a starting point for banquet packages or custom event proposals. Compare the result with minimum spends, room capacity, demand by date, service level, menu mix and competitive positioning before finalizing a quote.</p><h2>Assumptions and limitations</h2><p>The model assumes entered costs capture the relevant event economics. It does not automatically include taxes, commissions, cancellation risk, complimentary guests, overtime, wastage or fixed overhead unless you add them.</p><h2>Example</h2><p>A 30% target margin is different from a 30% markup. Dividing cost by 0.70 produces the price required for a true 30% margin on revenue.</p>
+<?php $toolContent=ob_get_clean();$faqs=[['Why does the formula divide by one minus margin?','Because margin is profit divided by selling price. This formula solves for the selling price that leaves the requested margin.'],['Should fixed hotel overhead be added?','Add any overhead allocation you want the event to recover in one of the cost fields.'],['Can I use this for per-person packages?','Yes. Enter expected guests and use the calculated price per guest as a planning reference.'],['Does the quote include tax?','Only if you include tax as a cost or deliberately build it into the amounts. The tool does not apply taxes automatically.']];require __DIR__.'/../includes/tool-template.php';

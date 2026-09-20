@@ -8,6 +8,10 @@ Read this reference pack before every ToolBoxKart publishing run. Treat the live
 
 The three source documents below are reproduced from the files supplied for this workflow.
 
+### Current repository inventory
+
+The current repository catalog contains 29 categories and 180 registered tools, including the recent Manufacturing, Photography & Video, Printing & Packaging, Real Estate & Property, Sales & Business Development, Science & Laboratories, Solar & Energy, and Telecom & Networking additions. Always verify the live counts and exact category keys from `/data/catalog.php` before planning another expansion; this inventory note is not a substitute for inspecting the repository.
+
 ## AI Site Rules
 
 # ToolboxKart AI / Developer Site Rules
@@ -221,6 +225,8 @@ If a future request conflicts with these rules, preserve safety, architecture, a
 # ToolboxKart Expansion Roadmap
 
 Do not publish empty tool pages from this list. A URL should go live only when its tool works, content is original/useful, edge cases are tested, and it follows AI-SITE-RULES.md.
+
+Roadmap status: the repository is ahead of parts of this list. Some roadmap concepts, including Unix timestamp conversion, YAML/JSON conversion, lead-to-customer conversion, sales commission, sales velocity, territory capacity, win rate, throughput, dilution, molarity, and bandwidth calculation, are already live under the current catalog categories. Before creating a roadmap item, search `/data/catalog.php` and confirm that an equivalent slug does not already exist.
 
 ### Priority A — expand existing categories
 

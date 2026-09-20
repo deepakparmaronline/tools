@@ -1,0 +1,26 @@
+<?php
+require __DIR__.'/../includes/bootstrap.php';
+$tool=tool_by_path('government-ngos','volunteer-hour-value-calculator');
+ob_start();
+?>
+<h2>Estimate volunteer hour value</h2><p class="lead">Multiply recorded volunteer hours by the benchmark value appropriate to your reporting method or location.</p>
+<div class="form-grid"><div class="field"><label for="volunteers">Number of volunteers</label><input id="volunteers" type="number" min="0" step="1" value="25"></div><div class="field"><label for="hours">Average hours per volunteer</label><input id="hours" type="number" min="0" step="any" value="12"></div><div class="field"><label for="value">Value per volunteer hour</label><input id="value" type="number" min="0" step="any" value="36.14"><small>Editable. $36.14 is the U.S. national estimate for 2025 volunteer time announced in 2026.</small></div><div class="field"><label for="currency">Currency symbol</label><input id="currency" type="text" maxlength="6" value="$"></div></div>
+<div class="tool-actions"><button class="btn btn-primary" id="calc" type="button">Calculate value</button><button class="btn btn-secondary" id="reset" type="button">Reset</button></div>
+<div class="result-box"><div class="result-grid"><div class="metric"><span>Total volunteer hours</span><strong id="totalHours">—</strong></div><div class="metric"><span>Estimated service value</span><strong id="totalValue">—</strong></div><div class="metric"><span>Value per volunteer</span><strong id="perVolunteer">—</strong></div></div><div id="note" class="helper" style="margin-top:12px"></div></div>
+<script>
+(()=>{const $=id=>document.getElementById(id),n=id=>parseFloat($(id).value);function go(){const v=n('volunteers'),h=n('hours'),rate=n('value'),c=$('currency').value||'';if(![v,h,rate].every(Number.isFinite)||v<0||h<0||rate<0){$('note').textContent='Enter non-negative volunteer counts, hours and hourly value.';$('note').className='helper danger';return;}const th=v*h,tv=th*rate;$('totalHours').textContent=th.toLocaleString(undefined,{maximumFractionDigits:2});$('totalValue').textContent=c+tv.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});$('perVolunteer').textContent=c+(h*rate).toFixed(2);$('note').textContent='An economic value estimate is useful for describing contributed effort, but it is not automatically an allowable accounting, grant-match or financial-statement amount.';$('note').className='helper';}
+['volunteers','hours','value','currency'].forEach(id=>$(id).addEventListener('input',go));$('calc').onclick=go;$('reset').onclick=()=>{$('volunteers').value=25;$('hours').value=12;$('value').value=36.14;$('currency').value='$';go();};go();})();
+</script>
+<?php
+$toolBody=ob_get_clean();
+ob_start();
+?>
+<h2>Volunteer hour value formula</h2><p>Total volunteer value = number of volunteers × average hours per volunteer × value per hour. If you already have total hours from a timekeeping system, set the volunteer count to 1 and enter the total hours directly.</p>
+<h2>Which hourly value should you use?</h2><p>Use the benchmark required by your report, donor or jurisdiction. For U.S. context, Independent Sector and the Do Good Institute announced in April 2026 that the estimated national value of a volunteer hour for 2025 was $36.14. <a href="https://independentsector.org/research/value-of-volunteer-time/" target="_blank" rel="noopener">Independent Sector volunteer value</a>. State or role-specific values can differ.</p>
+<h2>Economic value is not the same as accounting recognition</h2><p>A volunteer-service estimate can communicate community contribution, but financial reporting and grant-match rules may recognize donated services differently. Follow the applicable accounting standard or award conditions.</p>
+<h2>Improve accuracy with actual time records</h2><p>Whenever possible, use recorded volunteer hours rather than a rough average. Segmenting skilled professional services from general volunteer activity may also be necessary under some reporting rules.</p>
+<h2>Use volunteer value consistently in reports and match documentation</h2><p>An economic value per volunteer hour can help describe donated capacity, but it should not be presented as cash revenue or automatic grant match. Some funders require role-specific prevailing rates or prohibit certain in-kind valuations. Keep timesheets or equivalent records for contributed hours and document why the selected hourly value is appropriate. If you use the Independent Sector national estimate, label the reference year and distinguish it from staff payroll cost.</p>
+<?php
+$toolContent=ob_get_clean();
+$faqs=[['How is volunteer service value calculated?','Multiply total volunteer hours by the hourly benchmark value you choose.'],['Why is $36.14 shown as the default?','Independent Sector and the Do Good Institute announced $36.14 as the U.S. national estimate for a 2025 volunteer hour in April 2026. The field is editable.'],['Can I use volunteer value as grant match?','Only if the specific grant rules allow the service and valuation method. This calculator does not determine eligibility.'],['Is volunteer value the same as wages that would have been paid?','Not necessarily. It is an economic benchmark and may differ from replacement wages or accounting treatment.']];
+require __DIR__.'/../includes/tool-template.php';

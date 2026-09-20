@@ -1,0 +1,23 @@
+<?php
+require __DIR__.'/../includes/bootstrap.php';
+$tool=tool_by_path('manufacturing','changeover-loss-calculator');
+ob_start();
+?>
+<h2>Calculate production changeover loss</h2><p class="lead">Estimate setup time consumed by changeovers and the theoretical units that could have been produced during that time.</p>
+<div class="form-grid"><div class="field"><label for="scheduled">Scheduled production time (minutes)</label><input id="scheduled" type="number" min="0.0001" step="any" value="480"></div><div class="field"><label for="count">Changeovers</label><input id="count" type="number" min="0" step="1" value="3"></div><div class="field"><label for="duration">Average changeover duration (minutes)</label><input id="duration" type="number" min="0" step="any" value="35"></div><div class="field"><label for="rate">Ideal production rate (units/minute)</label><input id="rate" type="number" min="0" step="any" value="2.5"></div></div>
+<div class="result-box"><div class="result-grid"><div class="metric"><span>Changeover time</span><strong id="lost">—</strong></div><div class="metric"><span>Scheduled-time loss</span><strong id="pct">—</strong></div><div class="metric"><span>Time left after changeovers</span><strong id="left">—</strong></div><div class="metric"><span>Theoretical units forgone</span><strong id="units">—</strong></div></div><div id="note" class="helper" style="margin-top:12px"></div></div>
+<script>
+(()=>{const $=id=>document.getElementById(id);function go(){const s=+$('scheduled').value,c=+$('count').value,d=+$('duration').value,r=+$('rate').value;if(!(s>0&&c>=0&&d>=0&&r>=0)){['lost','pct','left','units'].forEach(id=>$(id).textContent='—');return}const l=c*d;$('lost').textContent=l.toFixed(1)+' min';$('pct').textContent=(l/s*100).toFixed(1)+'%';$('left').textContent=Math.max(0,s-l).toFixed(1)+' min';$('units').textContent=(l*r).toLocaleString(undefined,{maximumFractionDigits:1});$('note').textContent=l>s?'Changeover time exceeds scheduled production time; verify the time scope or overlapping events.':'Theoretical units use the ideal rate and should not be treated as guaranteed recovered output.';$('note').className='helper'+(l>s?' danger':'')}['scheduled','count','duration','rate'].forEach(id=>$(id).addEventListener('input',go));go()})();
+</script>
+<?php
+$toolBody=ob_get_clean();
+ob_start();
+?>
+<h2>Changeover loss in manufacturing</h2><p>Changeovers consume time that was scheduled for production. A simple first-level loss calculation is <strong>number of changeovers × average changeover duration</strong>. Dividing that time by scheduled production time shows how much of the planned window is absorbed by setups.</p>
+<h2>Theoretical output opportunity</h2><p>Multiplying changeover minutes by the ideal production rate estimates units that could theoretically have been produced during those minutes. This is an opportunity indicator—not a promise—because actual recovered time may still be affected by startup scrap, ramp-up speed, material availability and other stops.</p>
+<h2>Use with SMED improvement work</h2><p>Track internal versus external setup tasks, variation by product family and the distribution of changeover duration instead of relying only on an average. A lower median setup time with high outliers can still create schedule instability. Video/time studies and standardized work can identify which tasks can move outside the stopped-machine window.</p>
+<h2>Avoid double counting with OEE</h2><p>If planned production time and downtime are already feeding an OEE availability calculation, changeover downtime may already be included there. Use this tool to isolate the reason code, not to add the same lost time a second time to a plant-wide loss total.</p>
+<?php
+$toolContent=ob_get_clean();
+$faqs=[['What is changeover time?','It is the elapsed time associated with switching a process from one product, batch or setup condition to another, using the operational start/end definition your plant adopts.'],['Should planned changeovers count as loss?','They consume production time even when planned. Whether they are included in a specific KPI denominator depends on how your organization defines planned production time.'],['What are theoretical units forgone?','Changeover minutes multiplied by ideal units per minute. It is an opportunity estimate, not guaranteed recoverable production.'],['How can I compare lines fairly?','Use consistent boundaries for scheduled time, changeover start/end and ideal rate; also segment by product family when setup complexity differs materially.']];
+require __DIR__.'/../includes/tool-template.php';

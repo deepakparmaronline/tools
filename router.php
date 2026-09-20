@@ -25,6 +25,15 @@ if (preg_match('#^/(chatgpt|claude|ai-news|tools-guide)/(.+)$#', $path, $matches
     return;
 }
 
+if (preg_match('#^/([a-z0-9-]+)/([^/]+)/?$#', $path, $matches)) {
+    require_once __DIR__ . '/includes/bootstrap.php';
+    $toolFile = $toolFilesByPath[$matches[1].'/'.$matches[2]] ?? null;
+    if ($toolFile && is_file($toolFile)) {
+        require $toolFile;
+        return;
+    }
+}
+
 if (preg_match('#^/([a-z0-9-]+)/?$#', $path, $matches)) {
     require_once __DIR__ . '/includes/bootstrap.php';
     if (array_key_exists($matches[1], tool_categories())) {

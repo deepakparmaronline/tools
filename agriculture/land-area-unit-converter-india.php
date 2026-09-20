@@ -1,0 +1,24 @@
+<?php require __DIR__.'/../includes/bootstrap.php';$tool=tool_by_path('agriculture','land-area-unit-converter-india');ob_start(); ?>
+<h2>Convert common land-area units</h2>
+<p class="lead">Enter an area, choose its unit, and convert it to commonly used metric, imperial and local units.</p>
+<div class="form-grid"><div class="field"><label for="value">Area value</label><input id="value" type="number" value="1" step="0.01" min="0"></div><div class="field"><label for="unit">From unit</label><select id="unit"><option value="acre" selected>Acre</option><option value="hectare">Hectare</option><option value="sqm">Square metre</option><option value="sqft">Square foot</option><option value="bigha">Bigha (local)</option></select></div><div class="field full"><label for="bighaSqm">Square metres in 1 local bigha</label><input id="bighaSqm" type="number" value="2508.38" step="0.01" min="0.0001"><small>Bigha varies by region. Enter the local definition you use.</small></div></div>
+<div class="tool-actions"><button class="btn btn-primary" id="calc">Calculate</button><button class="btn btn-secondary" id="reset" type="button">Reset</button></div>
+<div class="result-box"><div class="result-grid"><div class="metric"><span>Acres</span><strong id="acre">—</strong></div><div class="metric"><span>Hectares</span><strong id="hectare">—</strong></div><div class="metric"><span>Square metres</span><strong id="sqm">—</strong></div><div class="metric"><span>Square feet</span><strong id="sqft">—</strong></div><div class="metric"><span>Local bigha</span><strong id="bigha">—</strong></div></div><div id="note" class="helper" style="margin-top:12px"></div></div>
+<script>
+(()=>{
+const $=id=>document.getElementById(id);
+const num=id=>{const v=parseFloat($(id)?.value);return Number.isFinite(v)?v:0;};
+const money=(v,c='')=>Number.isFinite(v)?c+v.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}):'—';
+const dec=(v,d=2)=>Number.isFinite(v)?v.toLocaleString(undefined,{maximumFractionDigits:d}):'—';
+const pct=v=>Number.isFinite(v)?v.toFixed(2)+'%':'—';
+const note=(m,bad=false)=>{const el=$('note');if(el){el.textContent=m||'';el.className='helper'+(bad?' danger':'');}};
+function go(){const v=num('value'),u=$('unit').value,b=num('bighaSqm');if(v<0||b<=0){note('Enter a non-negative area and a positive local bigha size.',true);return;}const f={acre:4046.8564224,hectare:10000,sqm:1,sqft:0.09290304,bigha:b};const sqm=v*f[u];$('acre').textContent=dec(sqm/f.acre,6);$('hectare').textContent=dec(sqm/f.hectare,6);$('sqm').textContent=dec(sqm,2);$('sqft').textContent=dec(sqm/f.sqft,2);$('bigha').textContent=dec(sqm/b,6);note('Bigha output uses the local square-metre definition entered above.');}
+if($('calc')) $('calc').addEventListener('click',go);
+if($('reset')) $('reset').addEventListener('click',()=>{document.querySelectorAll('.tool-panel input,.tool-panel textarea,.tool-panel select').forEach(el=>{if(el.tagName==='SELECT') el.selectedIndex=0; else el.value=el.defaultValue;});go();});
+document.querySelectorAll('.tool-panel input,.tool-panel select').forEach(el=>el.addEventListener('input',go));
+go();
+})();
+</script>
+<?php $toolBody=ob_get_clean();ob_start(); ?>
+<h2>How the calculation works</h2><p>The tool first converts the entered area to square metres, then converts that base value into each destination unit. One acre equals 4,046.8564224 m², one hectare equals 10,000 m², and one square foot equals 0.09290304 m². Bigha is intentionally user-defined because its size is not uniform across India.</p><h2>How to use the result</h2><p>Use this converter when comparing land listings, farm records, survey notes or documents that use different area units. For local units, confirm the convention used by the relevant state, district or transaction before relying on the converted figure.</p><h2>Assumptions and limitations</h2><p>This is a mathematical unit conversion, not a cadastral or legal land measurement. Local units such as bigha can vary substantially, and title records or official surveys should control where precision has legal consequences.</p><h2>Example</h2><p>With 1 acre entered, the calculator converts the same area to roughly 0.404686 hectares and 43,560 square feet.</p>
+<?php $toolContent=ob_get_clean();$faqs=[['Why is bigha editable?','Bigha does not have one nationwide size in India, so the calculator lets you enter the local square-metre definition.'],['How many square feet are in an acre?','One international acre equals 43,560 square feet.'],['Can I use this for legal land records?','Use it for arithmetic conversion only. Official surveys and local land records should be used for legal boundaries and area.'],['Does the tool upload my land data?','No. The conversion runs in your browser.']];require __DIR__.'/../includes/tool-template.php';

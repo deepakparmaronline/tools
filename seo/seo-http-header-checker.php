@@ -1,0 +1,27 @@
+<?php require __DIR__.'/../includes/bootstrap.php';$tool=tool_by_path('seo','seo-http-header-checker');ob_start(); ?>
+<h2>Review SEO-relevant HTTP headers</h2>
+<p class="lead">Paste the response status line and headers copied from a browser, curl or monitoring tool.</p>
+<div class="form-grid"><div class="field full"><label for="headers">Raw HTTP response headers</label><textarea id="headers">HTTP/2 200
+content-type: text/html; charset=UTF-8
+cache-control: public, max-age=3600
+x-robots-tag: all</textarea></div></div>
+<div class="tool-actions"><button class="btn btn-primary" id="calc">Check Headers</button><button class="btn btn-secondary" id="reset" type="button">Reset</button></div>
+<div class="result-box"><div class="result-grid"><div class="metric"><span>Status line</span><strong id="statusLine">—</strong></div><div class="metric"><span>Content-Type</span><strong id="contentType">—</strong></div><div class="metric"><span>X-Robots-Tag</span><strong id="robots">—</strong></div><div class="metric"><span>Location</span><strong id="location">—</strong></div><div class="metric"><span>Cache-Control</span><strong id="cache">—</strong></div></div><div id="note" class="helper" style="margin-top:12px"></div></div><div class="result-box"><strong>Header review</strong><pre id="issues" class="code-output">—</pre></div>
+<script>
+(()=>{
+const $=id=>document.getElementById(id);
+const num=id=>{const v=parseFloat($(id)?.value);return Number.isFinite(v)?v:0;};
+const money=(v,c='')=>Number.isFinite(v)?c+v.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}):'—';
+const dec=(v,d=2)=>Number.isFinite(v)?v.toLocaleString(undefined,{maximumFractionDigits:d}):'—';
+const pct=v=>Number.isFinite(v)?v.toFixed(2)+'%':'—';
+const note=(m,bad=false)=>{const el=$('note');if(el){el.textContent=m||'';el.className='helper'+(bad?' danger':'');}};
+function go(){const raw=$('headers').value,lines=raw.split(/\r?\n/).map(x=>x.trim()).filter(Boolean),status=lines.find(x=>/^HTTP\//i.test(x))||'Not provided',h={};for(const line of lines){const i=line.indexOf(':');if(i>0){const k=line.slice(0,i).trim().toLowerCase(),v=line.slice(i+1).trim();h[k]=h[k]?h[k]+', '+v:v;}}$('statusLine').textContent=status;$('contentType').textContent=h['content-type']||'Not provided';$('robots').textContent=h['x-robots-tag']||'Not provided';$('location').textContent=h['location']||'Not provided';$('cache').textContent=h['cache-control']||'Not provided';const issues=[];const sm=status.match(/\s(\d{3})(?:\s|$)/),code=sm?+sm[1]:null;if(code&&code>=300&&code<400&&!h.location)issues.push('Redirect status is present but no Location header was found in the pasted block.');if(h['x-robots-tag']&&/noindex/i.test(h['x-robots-tag']))issues.push('X-Robots-Tag contains noindex. Confirm that this is intentional.');if(h['content-type']&&!/text\/html|application\/xhtml\+xml/i.test(h['content-type']))issues.push('Content-Type is not HTML/XHTML. That can be correct for non-HTML resources.');if(!h['content-type'])issues.push('Content-Type header was not found in the pasted block.');$('issues').textContent=issues.length?issues.join('\n'):'No obvious issue detected by these limited header checks.';note('The checker only sees the header text you paste; verify live responses separately.',issues.length>0);} $('headers').addEventListener('input',go);
+if($('calc')) $('calc').addEventListener('click',go);
+if($('reset')) $('reset').addEventListener('click',()=>{document.querySelectorAll('.tool-panel input,.tool-panel textarea,.tool-panel select').forEach(el=>{if(el.tagName==='SELECT') el.selectedIndex=0; else el.value=el.defaultValue;});go();});
+document.querySelectorAll('.tool-panel input,.tool-panel select').forEach(el=>el.addEventListener('input',go));
+go();
+})();
+</script>
+<?php $toolBody=ob_get_clean();ob_start(); ?>
+<h2>How the calculation works</h2><p>The tool parses a pasted HTTP status line and case-insensitive header names, then surfaces SEO-relevant fields such as Content-Type, X-Robots-Tag, Location and Cache-Control. It also performs a few structural checks, such as a redirect status without a Location header.</p><h2>How to use the result</h2><p>Use it when debugging crawling, indexation, redirects or file responses. X-Robots-Tag can control indexing outside HTML, while status and Location headers determine redirect behavior at the HTTP layer.</p><h2>Assumptions and limitations</h2><p>The checker does not request the live URL and cannot confirm what Googlebot receives, whether a CDN varies headers by user agent, or whether multiple response hops exist. It is a text parser, not a crawler.</p><h2>Example</h2><p>Paste the complete response header block when possible so status and redirect signals can be interpreted together.</p>
+<?php $toolContent=ob_get_clean();$faqs=[['Does this send a request to my URL?','No. It analyzes only raw HTTP headers that you paste.'],['Can X-Robots-Tag override HTML meta robots?','Header and HTML robots directives can both contribute to indexing controls; review all signals rather than assuming one is irrelevant.'],['Why check Content-Type for SEO?','Content type affects how a response is interpreted and can reveal misconfigured HTML, feeds, files or error responses.'],['Can this detect a redirect chain?','Not from one header block. Use the Redirect Map Checker for planned mappings or a live crawler for actual response hops.']];require __DIR__.'/../includes/tool-template.php';

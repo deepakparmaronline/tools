@@ -2,9 +2,9 @@
 
 This package contains a launch-ready multi-category utility website for `toolboxkart.tech`.
 
-## Included in v1
+## Current repository contents
 
-- 20 working browser-based tools across SEO, Marketing, Finance, Healthcare RCM, Developer and Productivity.
+- 180 working browser-based tools across 29 data-driven categories, including SEO, Marketing, Finance, Healthcare RCM, Developer, Productivity, Agriculture, Manufacturing, Photography & Video, Real Estate & Property, Science & Laboratories and Telecom & Networking.
 - Shared responsive header/footer, mobile navigation, keyboard search (Ctrl/Cmd+K) and light/dark theme.
 - Clean extensionless URLs through Apache `.htaccess`.
 - Tool pages with unique metadata, visible long-form explanations, FAQs and JSON-LD.
@@ -29,11 +29,11 @@ Before launch:
 
 ## Local development
 
-PHP's built-in server does not read Apache `.htaccess`. You can inspect direct PHP paths locally, for example:
+PHP's built-in server does not read Apache `.htaccess`, so use the repository router for local clean-URL checks:
 
-`php -S 127.0.0.1:8765 -t .`
+`php -S 127.0.0.1:8765 router.php`
 
-Then open `/seo/serp-preview.php`. Clean public URLs are handled by Apache after deployment.
+Then open `/seo/serp-preview` or another extensionless tool URL. Direct `.php` paths can be used for syntax checks, but they are not the public URL contract.
 
 ## Main source files
 

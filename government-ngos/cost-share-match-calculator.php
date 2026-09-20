@@ -1,0 +1,26 @@
+<?php
+require __DIR__.'/../includes/bootstrap.php';
+$tool=tool_by_path('government-ngos','cost-share-match-calculator');
+ob_start();
+?>
+<h2>Calculate grant cost share or match</h2><p class="lead">Model a project budget from total cost and funder share, then split the required match into cash and in-kind contributions.</p>
+<div class="form-grid"><div class="field"><label for="total">Total project cost</label><input id="total" type="number" min="0" step="any" value="100000"></div><div class="field"><label for="funderPct">Funder share of total cost (%)</label><input id="funderPct" type="number" min="0" max="100" step="any" value="75"></div><div class="field"><label for="cashPct">Match paid as cash (%)</label><input id="cashPct" type="number" min="0" max="100" step="any" value="60"><small>Remaining match is shown as in-kind.</small></div><div class="field"><label for="currency">Currency symbol</label><input id="currency" type="text" maxlength="6" value="$"></div></div>
+<div class="tool-actions"><button class="btn btn-primary" id="calc" type="button">Calculate match</button><button class="btn btn-secondary" id="reset" type="button">Reset</button></div>
+<div class="result-box"><div class="result-grid"><div class="metric"><span>Funder amount</span><strong id="funder">—</strong></div><div class="metric"><span>Required match</span><strong id="match">—</strong></div><div class="metric"><span>Cash match</span><strong id="cash">—</strong></div><div class="metric"><span>In-kind match</span><strong id="inkind">—</strong></div><div class="metric"><span>Match : funder ratio</span><strong id="ratio">—</strong></div></div><div id="note" class="helper" style="margin-top:12px"></div></div>
+<script>
+(()=>{const $=id=>document.getElementById(id),n=id=>parseFloat($(id).value);function go(){const t=n('total'),p=n('funderPct'),cp=n('cashPct'),s=$('currency').value||'';if(![t,p,cp].every(Number.isFinite)||t<0||p<0||p>100||cp<0||cp>100){$('note').textContent='Enter a non-negative project cost and percentages between 0 and 100.';$('note').className='helper danger';return;}const f=t*p/100,m=t-f,c=m*cp/100,i=m-c;$('funder').textContent=s+f.toFixed(2);$('match').textContent=s+m.toFixed(2);$('cash').textContent=s+c.toFixed(2);$('inkind').textContent=s+i.toFixed(2);$('ratio').textContent=f>0?(m/f).toFixed(3)+':1':'—';$('note').textContent='Eligibility of in-kind contributions, valuation methods and whether match is based on total project cost or award amount depend on the specific grant rules. Verify the notice of funding or agreement.';$('note').className='helper';}
+['total','funderPct','cashPct','currency'].forEach(id=>$(id).addEventListener('input',go));$('calc').onclick=go;$('reset').onclick=()=>{$('total').value=100000;$('funderPct').value=75;$('cashPct').value=60;$('currency').value='$';go();};go();})();
+</script>
+<?php
+$toolBody=ob_get_clean();
+ob_start();
+?>
+<h2>Cost-share and match formula</h2><p>If a funder covers a percentage of total eligible project cost, the funder amount equals total cost multiplied by that percentage. Required match is the difference between total project cost and the funder amount.</p>
+<h2>Cash versus in-kind match</h2><p>Some programs allow contributed goods, services, volunteer time or other non-cash resources to count toward match. Others restrict or prohibit certain forms of in-kind contribution. This calculator only allocates the match mathematically; it does not decide eligibility.</p>
+<h2>Match percentage can be stated in different ways</h2><p>A “25% match” can be ambiguous if one document means 25% of total project cost while another means 25 cents for every grant dollar. Always identify the denominator before calculating.</p>
+<h2>Keep source documentation</h2><p>Grant match normally needs the same level of support as other project costs. Track valuation method, source, date, contributor and supporting records for each cash or in-kind contribution according to the applicable agreement.</p>
+<h2>Document the match source before treating it as eligible</h2><p>A mathematical match percentage does not prove compliance with a grant agreement. Cash, third-party in-kind contributions, volunteer time and donated facilities can have different allowability, valuation and documentation rules. Record the source, valuation method, date and restriction for each contribution, and reconcile the eligible match to the award's approved budget categories. Use the calculator for planning and gap tracking, then apply the governing award terms for final compliance.</p>
+<?php
+$toolContent=ob_get_clean();
+$faqs=[['How is required match calculated?','In this tool, required match equals total project cost minus the funder share of total project cost.'],['Can volunteer time count as match?','Sometimes, but eligibility and valuation depend on the grant terms and applicable rules. The calculator does not determine allowability.'],['What is the match-to-funder ratio?','It is required match divided by the funder amount. For example, 0.25:1 means 25 cents of match for each funder dollar.'],['Why does the denominator matter in a match requirement?','Because a percentage of total project cost is not the same as a percentage of the award. Read the funding terms carefully before calculating.']];
+require __DIR__.'/../includes/tool-template.php';

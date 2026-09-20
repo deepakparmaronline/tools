@@ -20,6 +20,14 @@ Return one separate ZIP file for each tool category/niche. For example:
 - `healthcare-tools.zip`
 - `developer-tools.zip`
 - `productivity-tools.zip`
+- `manufacturing-tools.zip`
+- `photography-video-tools.zip`
+- `printing-packaging-tools.zip`
+- `real-estate-tools.zip`
+- `sales-business-development-tools.zip`
+- `science-labs-tools.zip`
+- `solar-energy-tools.zip`
+- `telecom-networking-tools.zip`
 
 If only one category was requested, return only that category ZIP. If multiple categories were requested, return one ZIP per category. Never combine all categories into one ZIP.
 
@@ -42,6 +50,8 @@ If only one category was requested, return only that category ZIP. If multiple c
 3. Identify the existing PHP version, public URL pattern, category keys, catalog structure, template variables, CSS classes, JavaScript conventions, and validation commands.
 4. Never invent a new framework, CMS, database, package manager, design system, or routing system when the attached site already provides one.
 5. Ask a concise clarification only when the requested category, tool behavior, safety boundary, or import destination cannot be determined from the request and ZIP.
+
+Before importing a generated package, compare every package category and filename with the existing site. Add only new files to an existing category, move entirely new category directories to the site root, and never overwrite a collision. If a filename or slug collides, inspect both versions and preserve the existing site file unless the owner explicitly authorizes replacement. Merge category metadata and tool records into the existing `/data/catalog.php`; never replace it with a fragment. Remove package fragments only after the imported files, catalog load, duplicate-slug check, and PHP syntax checks pass.
 
 ## Category and tool rules
 
@@ -153,6 +163,7 @@ Before returning any category ZIP:
 7. Check that no secret, credential, PHI, tracking key, generated cache, or unrelated site file is included.
 8. Confirm each ZIP can be extracted directly into the existing site root without overwriting unrelated files.
 9. Report the exact ZIP filenames, contained files, tool URLs, test commands, and any manual catalog merge step.
+10. If the package is imported later, verify category/file collisions and merge the catalog into the existing source of truth before deleting any package fragments.
 
 ## Final response format
 

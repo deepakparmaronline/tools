@@ -1,0 +1,24 @@
+<?php require __DIR__.'/../includes/bootstrap.php';$tool=tool_by_path('small-business','proposal-pricing-calculator');ob_start(); ?>
+<h2>Price a service proposal</h2>
+<p class="lead">Estimate delivery cost first, then add contingency and solve for a target margin.</p>
+<div class="form-grid"><div class="field"><label for="hours">Estimated delivery hours</label><input id="hours" type="number" value="120" step="0.01" min="0"></div><div class="field"><label for="costRate">Loaded internal cost per hour</label><input id="costRate" type="number" value="900" step="0.01" min="0"></div><div class="field"><label for="expenses">Project expenses / vendor cost</label><input id="expenses" type="number" value="20000" step="0.01" min="0"></div><div class="field"><label for="contingency">Contingency on cost (%)</label><input id="contingency" type="number" value="10" step="0.01" min="0"></div><div class="field"><label for="margin">Target profit margin (%)</label><input id="margin" type="number" value="30" step="0.01" min="0" max="99.9"></div></div>
+<div class="tool-actions"><button class="btn btn-primary" id="calc">Calculate</button><button class="btn btn-secondary" id="reset" type="button">Reset</button></div>
+<div class="result-box"><div class="result-grid"><div class="metric"><span>Base delivery cost</span><strong id="base">—</strong></div><div class="metric"><span>Cost incl. contingency</span><strong id="withCont">—</strong></div><div class="metric"><span>Target proposal price</span><strong id="price">—</strong></div><div class="metric"><span>Target profit</span><strong id="profit">—</strong></div></div><div id="note" class="helper" style="margin-top:12px"></div></div>
+<script>
+(()=>{
+const $=id=>document.getElementById(id);
+const num=id=>{const v=parseFloat($(id)?.value);return Number.isFinite(v)?v:0;};
+const money=(v,c='')=>Number.isFinite(v)?c+v.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}):'—';
+const dec=(v,d=2)=>Number.isFinite(v)?v.toLocaleString(undefined,{maximumFractionDigits:d}):'—';
+const pct=v=>Number.isFinite(v)?v.toFixed(2)+'%':'—';
+const note=(m,bad=false)=>{const el=$('note');if(el){el.textContent=m||'';el.className='helper'+(bad?' danger':'');}};
+function go(){const h=num('hours'),r=num('costRate'),e=num('expenses'),c=num('contingency')/100,m=num('margin')/100;if([h,r,e,c].some(v=>v<0)||m<0||m>=1){note('Check hours, costs, contingency and keep target margin below 100%.',true);return;}const base=h*r+e,w=base*(1+c),price=w/(1-m);$('base').textContent=money(base,'');$('withCont').textContent=money(w,'');$('price').textContent=money(price,'');$('profit').textContent=money(price-w,'');note('Target margin is calculated on selling price. This is a cost-based pricing reference, not a value-pricing ceiling.');}
+if($('calc')) $('calc').addEventListener('click',go);
+if($('reset')) $('reset').addEventListener('click',()=>{document.querySelectorAll('.tool-panel input,.tool-panel textarea,.tool-panel select').forEach(el=>{if(el.tagName==='SELECT') el.selectedIndex=0; else el.value=el.defaultValue;});go();});
+document.querySelectorAll('.tool-panel input,.tool-panel select').forEach(el=>el.addEventListener('input',go));
+go();
+})();
+</script>
+<?php $toolBody=ob_get_clean();ob_start(); ?>
+<h2>How the calculation works</h2><p>Base delivery cost = estimated hours × loaded cost per hour + project expenses. Contingency increases that cost by the entered percentage. Target proposal price = cost including contingency ÷ (1 − target margin).</p><h2>How to use the result</h2><p>Use the output as a financial floor or reference before applying value-based pricing, strategic discounts, scope risk and commercial judgment. Explicit contingency can reduce the temptation to hide uncertainty inside an inflated hour estimate.</p><h2>Assumptions and limitations</h2><p>Estimate accuracy depends on scope quality and the internal cost rate. The model does not automatically include taxes, payment fees, sales commission, bad debt or change requests unless those are represented in the inputs.</p><h2>Example</h2><p>A 30% target margin requires a higher price than applying a 30% markup to cost because margin uses selling price as its denominator.</p>
+<?php $toolContent=ob_get_clean();$faqs=[['Why is target margin different from markup?','Margin is profit divided by selling price, while markup is profit divided by cost. They produce different prices.'],['Should contingency be part of profit?','In this calculator contingency increases the modeled delivery cost before profit margin is added.'],['Can I use this for fixed-price proposals?','Yes. It is especially useful for testing whether a fixed price covers estimated delivery cost and target margin.'],['Does this tell me what clients will pay?','No. It is a cost-and-margin model; willingness to pay and value delivered require commercial judgment.']];require __DIR__.'/../includes/tool-template.php';

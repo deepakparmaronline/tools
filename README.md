@@ -26,6 +26,8 @@ ToolBoxKart must never become a source of thin, repetitive, generic, press-relea
 
 This repository is a PHP 8+ utility site. The implementation source of truth is `/data/catalog.php` for tools and niches, `/data/posts.php` for articles, `/includes` for shared templates and functions, `/assets` for global CSS and JavaScript, `/router.php` and `.htaccess` for clean URLs, and `/docs/AI-SITE-RULES.md` for the complete engineering rules.
 
+The current catalog contains 29 categories and 180 registered tools. Read `/data/catalog.php` before planning additions because roadmap documents may contain items that are already live under a renamed or expanded category.
+
 When asking an external AI agent to create tools from an attached site ZIP, use `/TOOLBOXKART-AI-CATEGORY-TOOL-PACKAGING-PROMPT.md`. It requires separate import-ready ZIP files per category, such as `seo-tools.zip`, and explicitly forbids returning a replacement ZIP of the entire website.
 
 ### Automatic niche/category contract

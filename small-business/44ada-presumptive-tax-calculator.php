@@ -1,0 +1,24 @@
+<?php require __DIR__.'/../includes/bootstrap.php';$tool=tool_by_path('small-business','44ada-presumptive-tax-calculator');ob_start(); ?>
+<h2>Estimate presumptive income under 44ADA</h2>
+<p class="lead">Enter eligible gross receipts and the presumptive-income percentage you have verified for your situation.</p>
+<div class="form-grid"><div class="field"><label for="receipts">Gross professional receipts</label><input id="receipts" type="number" value="3000000" step="0.01" min="0"></div><div class="field"><label for="presumptive">Presumptive income (%)</label><input id="presumptive" type="number" value="50" step="0.01" min="0" max="100"><small>50% is a common reference for 44ADA, but verify current eligibility and rules before relying on it.</small></div><div class="field"><label for="otherIncome">Other taxable income to add for planning</label><input id="otherIncome" type="number" value="0" step="0.01" min="0"></div></div>
+<div class="tool-actions"><button class="btn btn-primary" id="calc">Calculate</button><button class="btn btn-secondary" id="reset" type="button">Reset</button></div>
+<div class="result-box"><div class="result-grid"><div class="metric"><span>Presumptive professional income</span><strong id="presIncome">—</strong></div><div class="metric"><span>Combined planning income</span><strong id="totalIncome">—</strong></div><div class="metric"><span>Implied balance of receipts</span><strong id="expenseImplied">—</strong></div><div class="metric"><span>Income tax</span><strong id="tax">—</strong></div></div><div id="note" class="helper" style="margin-top:12px"></div></div>
+<script>
+(()=>{
+const $=id=>document.getElementById(id);
+const num=id=>{const v=parseFloat($(id)?.value);return Number.isFinite(v)?v:0;};
+const money=(v,c='₹')=>Number.isFinite(v)?c+v.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}):'—';
+const dec=(v,d=2)=>Number.isFinite(v)?v.toLocaleString(undefined,{maximumFractionDigits:d}):'—';
+const pct=v=>Number.isFinite(v)?v.toFixed(2)+'%':'—';
+const note=(m,bad=false)=>{const el=$('note');if(el){el.textContent=m||'';el.className='helper'+(bad?' danger':'');}};
+function go(){const r=num('receipts'),p=num('presumptive')/100,o=num('otherIncome');if([r,o].some(v=>v<0)||p<0||p>1){note('Receipts and other income cannot be negative, and the percentage must be between 0% and 100%.',true);return;}const inc=r*p;$('presIncome').textContent=money(inc,'₹');$('totalIncome').textContent=money(inc+o,'₹');$('expenseImplied').textContent=money(r-inc,'₹');$('tax').textContent='Not calculated';note('This tool estimates the presumptive income base only. It does not determine 44ADA eligibility, receipt thresholds, tax regime or final income tax.');}
+if($('calc')) $('calc').addEventListener('click',go);
+if($('reset')) $('reset').addEventListener('click',()=>{document.querySelectorAll('.tool-panel input,.tool-panel textarea,.tool-panel select').forEach(el=>{if(el.tagName==='SELECT') el.selectedIndex=0; else el.value=el.defaultValue;});go();});
+document.querySelectorAll('.tool-panel input,.tool-panel select').forEach(el=>el.addEventListener('input',go));
+go();
+})();
+</script>
+<?php $toolBody=ob_get_clean();ob_start(); ?>
+<h2>How the calculation works</h2><p>Presumptive professional income = gross professional receipts × entered presumptive-income percentage. The tool also shows the mathematical balance of receipts and optionally adds other income for a planning total, but it does not calculate income tax.</p><h2>How to use the result</h2><p>Use it as an arithmetic scenario tool only after confirming that Section 44ADA applies to the taxpayer, profession, receipt level and year in question. Keeping the percentage editable avoids treating a statutory rule as permanently fixed.</p><h2>Assumptions and limitations</h2><p>Eligibility, specified professions, digital-receipt conditions, receipt limits, deductions, books/audit requirements and income-tax rates can change or depend on facts. The calculator does not determine tax liability or filing position.</p><h2>Example</h2><p>At ₹30 lakh of receipts and a 50% presumptive-income percentage, the arithmetic presumptive income is ₹15 lakh before considering other income and tax rules.</p>
+<?php $toolContent=ob_get_clean();$faqs=[['Does this calculator determine whether I am eligible for Section 44ADA?','No. Eligibility and the applicable receipt limit must be verified separately for the relevant tax year.'],['Why is the presumptive percentage editable?','It lets you model the rule you have verified rather than relying on a hard-coded assumption that may not fit every case.'],['Does the tool calculate income tax?','No. It estimates a presumptive professional-income base only.'],['Does the implied balance equal deductible expenses?','No. It is only the mathematical difference between receipts and the presumptive income figure, not an itemized expense claim.']];require __DIR__.'/../includes/tool-template.php';
