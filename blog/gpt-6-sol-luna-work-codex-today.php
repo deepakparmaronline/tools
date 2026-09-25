@@ -1,37 +1,27 @@
-<?php require __DIR__.'/../includes/bootstrap.php';$post=post_by_slug('gpt-6-sol-luna-work-codex-today') ?? ['slug'=>'gpt-6-sol-luna-work-codex-today','title'=>'GPT-6 Sol and Luna: What Changed in Work and Codex Today','description'=>'OpenAI added GPT-6 Sol and Luna to Work and Codex. Learn where each model fits, what changed, and how teams can choose the right workflow today at scale.','category'=>'ChatGPT','date'=>'2026-09-24','read_time'=>'8 min read'];ob_start(); ?>
-
-<p>OpenAI added GPT-6 Sol and GPT-6 Luna to ChatGPT Work and Codex on September 22, 2026. OpenAI's current release notes describe them as separate from the models available in ordinary ChatGPT conversations. The developer announcement says the two models are aimed at bringing more of the capabilities behind GPT-6 Astra into faster, lower-cost models for work at scale.</p>
-<figure class="article-image"><img src="/assets/images/blog/gpt-6-sol-luna-work-codex-today.svg" width="1200" height="630" alt="GPT-6 Sol and Luna models mapped to ChatGPT Work and Codex workflows"></figure>
-<h2>Where GPT-6 Sol and Luna fit</h2>
-<p>The clearest distinction is product context. OpenAI says Sol and Luna are used in Work and Codex rather than being ordinary ChatGPT chat models. That matters because Work and Codex are designed around longer-running tasks, files, coding and connected workflows.</p>
-<p>The goal is not to make every user pick between two names. It is to give work-focused products more model choices for balancing capability, speed and cost.</p>
-<h2>What OpenAI says changed</h2>
-<p>OpenAI's developer announcement says Sol and Luna build on the advances behind GPT-6 Astra and improve efficiency in caching and inference. OpenAI also says the models are available through the API, while access in ChatGPT Work and Codex depends on the account and product.</p>
-<p>For buyers and developers, the useful part is the model-family structure. A single “best model” is less useful than a model choice that matches the type of work being done.</p>
-<h2>How to choose between models in a real workflow</h2>
-<table class="data-table"><thead><tr><th>Task pattern</th><th>What to optimize</th></tr></thead><tbody><tr><td>Quick classification</td><td>Speed, low cost and predictable output.</td></tr><tr><td>Long coding task</td><td>Reasoning depth, tool use and ability to keep context.</td></tr><tr><td>Repeated business workflow</td><td>Cost per task, latency and error rate.</td></tr><tr><td>High-stakes research</td><td>Evidence quality, review and reproducibility.</td></tr></tbody></table>
-<h2>Why model names can mislead teams</h2>
-<p>Model numbers are useful for version control, but they do not tell you whether a model is the right operational choice. The same model can behave differently when the product adds file tools, coding tools, browser access, system instructions or workspace controls.</p>
-<p>That is why model evaluation should happen inside the real workflow. Test the full chain: prompt, model, tools, context, permissions and output review.</p>
-<h2>What SEO teams can test</h2>
-<p>For SEO work, a good test is not just “which model writes a better article?” Compare complete tasks such as building a content brief from Search Console exports, classifying keyword groups, checking technical issues, turning research into a report and creating a final set of pages for review.</p>
-<p>Track the time spent per finished task, not only token or message usage. A model that needs fewer corrections can be cheaper even when the headline price looks higher.</p>
-<h2>GPT-6 Sol and Luna in Codex</h2>
-<p>Codex workflows are different from ordinary chat because the model may inspect a repository, edit code and run tools. In that setting, the model's practical value depends heavily on how well it can maintain a task across multiple steps.</p>
-<p>For production repositories, keep the same controls you would use for any coding agent: review diffs, restrict credentials, test locally or in a safe environment, and verify deployment separately from the Git commit.</p>
-<h2>What remains uncertain</h2>
-<p>OpenAI's public release material gives the product placement and high-level direction, but it does not provide a single universal performance score that can predict every team's results. Usage limits, model availability and workspace controls can also differ by plan.</p>
-<p>You can also compare this with our <a href="/chatgpt/openai-agents-api-production-guide">OpenAI Agents API production guide</a>, which covers the tool and agent side of longer-running work.</p>
-<h2>Practical takeaways</h2>
-<ul><li>GPT-6 Sol and Luna are positioned for Work and Codex, not ordinary ChatGPT chat.</li><li>Evaluate model choice inside the full workflow, not from the model name alone.</li><li>Measure completed work, correction time and reliability alongside usage cost.</li><li>For coding, keep repository and deployment controls separate from model access.</li></ul>
-<h2>Frequently asked questions</h2>
-<h3>Are GPT-6 Sol and Luna available in regular ChatGPT chat?</h3>
-<p>OpenAI's current release notes say they are models for Work and Codex and are separate from the models available in Chat.</p>
-<h3>Can developers use Sol and Luna through the API?</h3>
-<p>OpenAI's developer announcement says both are available in the API. Current API availability and limits should be checked before production use.</p>
-<h3>Which model is better for SEO?</h3>
-<p>There is no single answer that applies to every workflow. Test the models on your real research, content and analysis tasks and compare accuracy, correction time and total workflow cost.</p>
-<h2>Sources</h2>
-<ul><li><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">OpenAI — ChatGPT Release Notes</a></li><li><a href="https://community.openai.com/t/announcing-gpt-6-sol-and-gpt-6-luna-in-the-api-codex-and-chatgpt/1399925">OpenAI Developer Community — GPT-6 Sol and Luna announcement</a></li></ul>
-
+<?php require __DIR__.'/../includes/bootstrap.php';$post=post_by_slug('gpt-6-sol-luna-work-codex-today') ?? ['slug'=>'gpt-6-sol-luna-work-codex-today','title'=>'GPT-6 Sol and Luna: What Changed for Work and Codex Now','description'=>'OpenAI added GPT-6 Sol and Luna to Work and Codex. See pricing, model roles, workflow testing, limits and how teams can choose the right model at scale.','category'=>'ChatGPT','date'=>'2026-09-25','read_time'=>'9 min read'];ob_start(); ?>
+<p>OpenAI introduced GPT-6 Sol and GPT-6 Luna on September 22, 2026, expanding the GPT-6 family below GPT-6 Astra. The important change for working teams is not simply another pair of model names. OpenAI positions Sol and Luna as lower-cost ways to bring newer reasoning, coding, computer-use and alignment improvements into everyday work at larger scale.</p>
+<figure class="article-image"><img src="/assets/images/blog/gpt-6-sol-luna-work-codex-today.svg" width="1200" height="630" alt="GPT-6 Sol and Luna mapped to ChatGPT Work and Codex workflows"></figure>
+<p>OpenAI lists GPT-6 Sol at $2 per million input tokens and $10 per million output tokens, and GPT-6 Luna at $0.10 per million input tokens and $0.50 per million output tokens. The company says these prices are 50% below its GPT-5.6 promotional prices. Actual production cost still depends on context, caching, output size, tool calls and retries.</p>
+<h2>Where Sol and Luna fit</h2>
+<p>GPT-6 Astra remains OpenAI's highest-capability model in the announcement. Sol and Luna widen the range of work that can use GPT-6 capabilities without paying Astra-level API prices. OpenAI positions Sol for more demanding professional work and Luna as the lower-cost option.</p>
+<p>That makes model selection an operating decision. A team should ask which model can finish a defined task with acceptable accuracy, latency and review effort. The model name alone does not answer that.</p>
+<h2>What the pricing changes</h2>
+<table class="data-table"><thead><tr><th>Model</th><th>Input / 1M</th><th>Output / 1M</th><th>Best test</th></tr></thead><tbody><tr><td>GPT-6 Sol</td><td>$2</td><td>$10</td><td>Complex work and coding</td></tr><tr><td>GPT-6 Luna</td><td>$0.10</td><td>$0.50</td><td>High-volume workflows</td></tr><tr><td>GPT-6 Astra</td><td>$10</td><td>$50</td><td>Highest-capability tasks</td></tr></tbody></table>
+<p>The gap is large enough to change architecture decisions. A workflow that was too expensive to run repeatedly can now be worth testing with Luna. But a cheaper model that needs more retries or human correction may not be cheaper per completed task.</p>
+<h2>How to read OpenAI's benchmark results</h2>
+<p>OpenAI reports results across professional work, coding and computer use. It reports GPT-6 Sol at 33.2% on AutomationBench at xhigh effort, 68.8% on DeepSWE 1.1 at maximum effort and 60.5% on OSWorld 2.0 offline at xhigh effort. These are useful signals, but they are not guarantees for your workload.</p>
+<p>Benchmarks use defined tasks and settings. Your internal codebase, CRM, analytics exports, content rules and tools are different. Build a small evaluation set from real work and keep the comparison fair.</p>
+<h2>A practical Sol versus Luna test</h2>
+<ol><li>Choose 20–50 representative tasks.</li><li>Define success before testing.</li><li>Keep tools and instructions as similar as possible.</li><li>Record factual errors, tool failures and retries.</li><li>Measure human correction time.</li><li>Calculate cost per completed task, not only token cost.</li></ol>
+<h2>What this means for Codex</h2>
+<p>Codex workflows add another layer because the model can inspect files, edit code and run tools. Model capability therefore matters across a chain of actions. Keep repository permissions, tests and deployment approval separate from model access. A lower API price is not a reason to remove code review.</p>
+<p>For SEO automation, use the same principle. If an agent can change metadata, redirects or content, give it only the permissions needed for that stage and review the resulting diff before publishing.</p>
+<h2>What SEO teams should measure</h2>
+<p>Compare models on finished workflows such as Search Console analysis, technical audit classification, content brief creation and internal-link planning. Track time to a verified deliverable, broken links, factual errors, missed requirements and editor time. This gives a clearer view of business value than asking which model writes the nicest paragraph.</p>
+<p>See <a href="/chatgpt/openai-agents-api-production-guide">OpenAI Agents API: A Practical Guide to Building Production Agents</a>.</p>
+<h2>Limits and unknowns</h2>
+<p>OpenAI's announcement provides pricing and benchmark results, but not a universal cost-per-business-task figure. Product access and usage limits can also differ between the API, ChatGPT Work and Codex. Teams should test their own workload before changing production defaults.</p>
+<h2>Practical takeaways</h2><ul><li>Sol and Luna expand the GPT-6 family at lower API prices.</li><li>Use Sol for demanding work and test Luna for lower-cost volume.</li><li>Benchmark claims need validation on your own tasks.</li><li>Measure completed-task cost including retries and review.</li><li>Keep model permissions separate from production permissions.</li></ul>
+<h2>Frequently asked questions</h2><h3>How much does GPT-6 Sol cost?</h3><p>OpenAI lists $2 per million input tokens and $10 per million output tokens.</p><h3>How much does GPT-6 Luna cost?</h3><p>OpenAI lists $0.10 per million input tokens and $0.50 per million output tokens.</p><h3>Should teams move everything to Luna?</h3><p>No. Test which workloads Luna can complete reliably before changing production defaults.</p><h3>Is Astra still the top GPT-6 model?</h3><p>Yes. OpenAI describes GPT-6 Astra as its highest-capability model in the announcement.</p>
+<h2>Sources</h2><ul><li><a href="https://openai.com/index/introducing-gpt-6-sol-and-luna/">OpenAI — Introducing GPT-6 Sol and Luna</a></li><li><a href="https://openai.com/index/gpt-6-astra/">OpenAI — GPT-6 Astra</a></li></ul>
 <?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';
