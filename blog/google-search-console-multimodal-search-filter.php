@@ -1,0 +1,15 @@
+<?php require __DIR__.'/../includes/bootstrap.php';$post=post_by_slug('google-search-console-multimodal-search-filter') ?? ['slug'=>'google-search-console-multimodal-search-filter','title'=>'Google Search Console Multimodal Search Filter: How SEOs Can Use It','description'=>'Google added a multimodal search type filter to Search Console on September 24, 2026. Learn what it covers and how to add it to SEO reporting.','category'=>'Tools Guide','date'=>'2026-09-25','read_time'=>'8 min read'];ob_start(); ?>
+<p>Google added a new multimodal search type filter to Search Console on September 24, 2026. Google says the filter covers searches that use Lens, Circle to Search on Android, image uploads to Google Search, and Chrome's right-click “Search this image” feature. The rollout adds a separate way to study search activity that starts from visual input rather than a typed query.</p>
+<h2>What the multimodal filter measures</h2>
+<p>Google says the filter is available in the Performance report for Search results and in the Generative AI features report. It is designed to identify the search traffic associated with supported multimodal experiences.</p>
+<h2>Why this matters for SEO reporting</h2>
+<p>Before this filter, teams could see search performance without a dedicated label for these visual search paths. A separate filter makes it easier to track whether image-heavy pages, products, local pages, or visual content are gaining visibility from multimodal searches.</p>
+<h2>How to use the filter</h2>
+<ol><li>Open the relevant Search Console Performance report.</li><li>Use the Search type filter inside the Web results reporting.</li><li>Select the multimodal option when it is available for the property.</li><li>Compare pages, countries, devices, and dates.</li><li>Export the data when you need to combine it with your normal SEO reporting.</li></ol>
+<h2>What the filter does not tell you</h2>
+<p>The filter identifies the supported search type, but it does not replace page-level analysis. Use it with your existing page, country, device, and date breakdowns to understand where the activity is coming from and which content types receive it.</p>
+<h2>How SEO teams can use the data</h2>
+<p>For image-led sites, create a baseline for multimodal impressions and clicks. Then compare the pages receiving that traffic with their image quality, structured data, visible product or local information, and overall search intent. The goal is to learn which pages benefit from visual discovery rather than treating the filter as a ranking score.</p>
+<h2>Sources</h2>
+<ul><li><a href="https://developers.google.com/search/blog/2026/09/web-multimodal-in-sc">Google Search Central — Announcing web multimodal Search performance reporting in Search Console</a></li><li><a href="https://developers.google.com/search/updates">Google Search Central — Latest documentation updates</a></li></ul>
+<?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';
