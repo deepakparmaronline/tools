@@ -79,3 +79,4 @@ $posts[]=['slug'=>'git-2-56-ai-coding-agents-developer-workflows','title'=>'Git 
 $posts[]=['slug'=>'anthropic-project-swap-ai-agents-marketplace','title'=>'Anthropic Project Swap: What Agent-to-Agent Trading Reveals','description'=>'Anthropic used a miniature book market to study agents trading for people. The results show where agent preferences and negotiation systems still fall short.','category'=>'Claude','date'=>'2026-09-30','read_time'=>'8 min read'];
 return $posts;
 // September 30, 2026 batch: deployment verification touch; existing slugs/URLs are unchanged.
+// Deployment verification: September 30 batch branch trigger.
