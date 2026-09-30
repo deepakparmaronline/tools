@@ -78,3 +78,4 @@ $posts[]=['slug'=>'ai-coding-agents-pixelleak-github-screenshots','title'=>'AI C
 $posts[]=['slug'=>'git-2-56-ai-coding-agents-developer-workflows','title'=>'Git 2.56: Changes Developers and AI Coding Agents Should Know','description'=>'Git 2.56 adds safer conflict staging, faster history operations, branch cleanup and repository performance improvements that matter for modern development workflows.','category'=>'Tools Guide','date'=>'2026-09-30','read_time'=>'8 min read'];
 $posts[]=['slug'=>'anthropic-project-swap-ai-agents-marketplace','title'=>'Anthropic Project Swap: What Agent-to-Agent Trading Reveals','description'=>'Anthropic used a miniature book market to study agents trading for people. The results show where agent preferences and negotiation systems still fall short.','category'=>'Claude','date'=>'2026-09-30','read_time'=>'8 min read'];
 return $posts;
+// September 30, 2026 batch: deployment verification touch; existing slugs/URLs are unchanged.
