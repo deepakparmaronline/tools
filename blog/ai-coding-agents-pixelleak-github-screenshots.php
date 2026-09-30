@@ -50,6 +50,6 @@ ob_start(); ?>
 <h2>Sources</h2>
 <ul>
 <li><a href="https://thehackernews.com/2026/09/ai-coding-agents-exposed-13000-internal.html">The Hacker News: AI Coding Agents Exposed 13,000 Internal Images</a></li>
-<li><a href="https://www.glow.io/blog/pixelleak">Glow Security: PixelLeak research</a></li>
+<li><a href="https://www.glow.io/blogs">Glow Security: PixelLeak research</a></li>
 </ul>
 <?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';
