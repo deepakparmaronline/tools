@@ -33,6 +33,19 @@ ob_start(); ?>
 <h2>What the release says about model strategy</h2>
 <p>Sonnet 5.5 shows why model choice is becoming a routing problem. The strongest model does not have to handle every request. A team can use different models based on task difficulty, latency, cost and risk.</p>
 <p>That approach also makes systems easier to control. Simple tasks can follow a predictable path, while complex tasks can be sent to a stronger model with more review.</p>
+<h2>Why token efficiency matters in agent workflows</h2>
+<p>Token efficiency becomes more important when a model is part of a long workflow. An agent may read files, inspect tool output, revise a plan, and check its work several times. A small reduction in tokens per step can therefore affect the cost of the whole task.</p>
+<p>This is also why teams should avoid judging a model from the price of one request. Measure the full workflow from the first instruction to the accepted result. Include retries, tool calls, context passed between steps, and any human correction.</p>
+<h2>How to build a fair Sonnet 5.5 test</h2>
+<p>Create a fixed evaluation set before changing the model. The set should include easy, normal, and difficult examples from the actual workload.</p>
+<ol><li>Collect representative tasks from the last few weeks.</li><li>Remove private or unnecessary data before using the set for evaluation.</li><li>Run the current model and Sonnet 5.5 with the same instructions.</li><li>Score correctness and usefulness with a consistent rubric.</li><li>Record latency, token use, tool calls, and human corrections.</li></ol>
+<p>For coding, the final test should be the repository state after the change, not the quality of the explanation. For documents, review the finished file. For research, check the important claims against the source material.</p>
+<h2>When faster is better than smarter</h2>
+<p>Not every task benefits from maximum reasoning effort. A short classification, formatting change, simple code edit, or routine summary may not need the strongest model available.</p>
+<p>A faster model can also improve the user experience when a workflow involves many back-and-forth steps. If people are waiting after every small request, response speed becomes part of product quality.</p>
+<h2>Where human review still matters</h2>
+<p>Higher benchmark scores do not remove the need for review. Teams should keep human checks for decisions that are difficult to reverse or that can create material business impact.</p>
+<p>Use the model to reduce repetitive work, but keep the final responsibility with the person or process that owns the outcome. This is especially important when an agent can modify production code, publish content, change records, or communicate externally.</p>
 <h2>Sources</h2>
 <ul><li><a href="https://www.anthropic.com/claude-sonnet-5-5" target="_blank" rel="noopener noreferrer">Anthropic: Introducing Claude Sonnet 5.5</a></li><li><a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer">Anthropic Newsroom</a></li></ul>
 <?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';

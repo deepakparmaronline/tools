@@ -36,6 +36,22 @@ ob_start(); ?>
 <h2>The bigger lesson</h2>
 <p>Real-time speech systems are becoming less about transcription as a standalone feature and more about reducing the delay across the full agent loop. A good voice experience listens, understands, acts, and speaks without forcing the user to wait through long silent gaps.</p>
 <p>MAI-Transcribe-2-Streaming is a useful building block for that design. Its strongest value is the ability to expose useful speech information early while still allowing the transcript to stabilize before important actions are taken.</p>
+<h2>Partial text should not be treated as final truth</h2>
+<p>The main engineering detail to remember is that partial transcripts can change. A phrase may look clear after the first few words and become different when the speaker finishes the sentence.</p>
+<p>That means a voice agent should separate early understanding from final action. Early text can be used to prepare context, but important changes should normally wait for a stable transcript or another confirmation signal.</p>
+<p>This is similar to autocomplete in a search box: the first prediction is useful for speed, but it is not necessarily the final intent.</p>
+<h2>Building a low-latency voice pipeline</h2>
+<p>A complete voice agent has several stages. Audio has to be captured, transcribed, interpreted, connected to tools or data, and converted back into speech. Improving only one stage may not improve the experience if another stage remains slow.</p>
+<ol><li>Stream audio as it arrives.</li><li>Expose partial transcription quickly.</li><li>Run lightweight intent detection while the user speaks.</li><li>Prepare likely context without committing an external action too early.</li><li>Use stable text for important tool calls.</li><li>Return speech as soon as the response is ready.</li></ol>
+<p>Teams should measure each stage separately. This makes it easier to find the actual bottleneck.</p>
+<h2>Testing multilingual voice experiences</h2>
+<p>Automatic language detection is useful, but production testing should include the way real customers speak. Try mixed-language conversations, accents, background noise, interruptions, names, numbers, addresses, and domain-specific words.</p>
+<p>Numbers and names deserve special attention because a small transcription error can change the meaning of an action. A reservation number, account reference, or product code should have a confirmation step when accuracy is critical.</p>
+<h2>Where streaming speech fits best</h2>
+<p>Streaming transcription is especially useful when users expect an immediate response. It can make customer support, live captions, interactive learning, and voice assistants feel more natural.</p>
+<p>It is less important when the user is uploading a recording for later processing and does not need a response during the conversation. In those cases, a non-streaming transcription workflow may be simpler.</p>
+<h2>A practical adoption checklist</h2>
+<ul><li>Define the target languages and environments.</li><li>Measure end-to-end latency, not only transcription latency.</li><li>Decide which actions require stable transcripts.</li><li>Test interruptions and corrections.</li><li>Log enough information to debug failures.</li><li>Confirm current pricing and regional availability before launch.</li></ul>
 <h2>Sources</h2>
 <ul><li><a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/build-expressive-voice-experiences-with-new-mai-models-in-microsoft-foundry/4524637" target="_blank" rel="noopener noreferrer">Microsoft Community Hub: Build expressive voice experiences with new MAI models</a></li><li><a href="https://news.microsoft.com/source/latam/company-news-es/nuestro-primer-modelo-de-transcripcion-de-streaming-debuta-en-el-numero-1-en-analisis-artificial/" target="_blank" rel="noopener noreferrer">Microsoft News: MAI-Transcribe-2-Streaming</a></li></ul>
 <?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';
