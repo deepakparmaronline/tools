@@ -1,0 +1,11 @@
+<?php
+require __DIR__.'/../includes/bootstrap.php';
+$post=post_by_slug('anthropic-project-swap-ai-agents-october-2026') ?? ['slug'=>'anthropic-project-swap-ai-agents-october-2026','title'=>'Anthropic Project Swap: What Agent-to-Agent Trading Reveals','description'=>'Anthropic used a miniature book market to study agents negotiating trades for people and found useful limits in preference representation and negotiation.','category'=>'Claude','date'=>'2026-10-01','read_time'=>'8 min read'];
+ob_start(); ?>
+<p>Anthropic's Project Swap is an experiment about what happens when AI agents negotiate with other agents on behalf of people. Employees brought books they wanted to exchange and Claude-powered agents participated in a miniature trading environment.</p>
+<h2>Why the experiment is useful</h2><p>The task goes beyond answering a question. Each agent had to represent a person's preferences, evaluate offers, negotiate and complete a trade.</p>
+<h2>What the experiment can teach</h2><p>Agent-to-agent interaction adds a new layer of uncertainty. A user's stated preference may not fully describe what they would accept, and an agent can make a locally reasonable trade that does not match the person's broader preference.</p>
+<h2>Why human preferences are hard to encode</h2><p>People often use context that is not written down. A book may have sentimental value, a preferred genre may depend on the author, or a user may care more about fairness than getting the highest-value exchange.</p>
+<h2>Lessons for product teams</h2><ol><li>Give agents clear preference information.</li><li>Allow users to set boundaries before negotiation.</li><li>Require approval when a decision is hard to reverse.</li><li>Log offers and decisions so users can review the process.</li><li>Test edge cases where preferences conflict.</li></ol>
+<h2>Sources</h2><ul><li><a href="https://www.anthropic.com/">Anthropic</a></li><li><a href="https://www.anthropic.com/research">Anthropic Research</a></li></ul>
+<?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';
