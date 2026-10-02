@@ -1,0 +1,2 @@
+<?php
+return [['slug'=>'nvidia-dgx-spark-64gb-local-ai','title'=>'NVIDIA DGX Spark 64GB: What Local AI Developers Get','description'=>'NVIDIA is adding a 64GB DGX Spark configuration for local AI. Learn what it can run, how it compares with 128GB and when local AI makes sense.','category'=>'Tools Guide','date'=>'2026-10-02','read_time'=>'9 min read']];

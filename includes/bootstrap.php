@@ -48,4 +48,8 @@ foreach ($toolFiles as $toolFile) {
 }
 $catalog['tools'] = array_values($uniqueTools);
 $posts = require __DIR__.'/../data/posts.php';
+foreach (glob(__DIR__.'/../data/post-*.php') ?: [] as $postFile) {
+	$extraPosts = require $postFile;
+	if (is_array($extraPosts)) { $posts = array_merge($posts, $extraPosts); }
+}
 require_once __DIR__.'/functions.php';

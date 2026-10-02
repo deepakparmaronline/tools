@@ -1,0 +1,2 @@
+<?php
+return [['slug'=>'gemini-live-guided-vision','title'=>'Gemini Live Guided Vision: How Real-Time Visual Help Works','description'=>'Google\'s Guided Vision adds real-time visual assistance to Gemini Live. Learn how camera input, audio descriptions and reframing cues work.','category'=>'AI News','date'=>'2026-10-02','read_time'=>'9 min read']];

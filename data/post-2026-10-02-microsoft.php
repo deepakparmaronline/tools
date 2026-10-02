@@ -1,0 +1,2 @@
+<?php
+return [['slug'=>'microsoft-mai-transcribe-2-streaming-guide','title'=>'Microsoft MAI-Transcribe-2 Streaming: What Developers Need','description'=>'Microsoft\'s MAI-Transcribe-2-Streaming transcribes speech in real time across 60 languages. Learn how it changes voice-agent design.','category'=>'Tools Guide','date'=>'2026-10-02','read_time'=>'9 min read']];

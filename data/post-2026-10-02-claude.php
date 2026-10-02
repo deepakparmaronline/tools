@@ -1,0 +1,2 @@
+<?php
+return [['slug'=>'claude-sonnet-5-5-guide','title'=>'Claude Sonnet 5.5: What Changed for AI Workflows','description'=>'Claude Sonnet 5.5 is faster and more efficient than Sonnet 5. Learn about its coding, pricing, speed and workflow changes for teams.','category'=>'Claude','date'=>'2026-10-02','read_time'=>'10 min read']];
