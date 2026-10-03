@@ -1,0 +1,2 @@
+<?php
+return [['slug'=>'microsoft-referential-uncertainty-human-ai-collaboration','title'=>'Microsoft Research: Why AI Assistants Need Better Reference Resolution','description'=>'Microsoft Research studied referential uncertainty in human-AI collaboration. Here is why shared references matter for reliable AI assistants and agents.','category'=>'AI News','date'=>'2026-10-03','read_time'=>'9 min read']];

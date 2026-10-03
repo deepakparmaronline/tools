@@ -1,0 +1,2 @@
+<?php
+return [['slug'=>'openai-agent-activity-review-50-petabytes','title'=>'OpenAI Agent Activity Review: What 50 Petabytes of Logs Shows','description'=>'OpenAI is reviewing about 50 petabytes of agent activity and has notified more than 100 organizations. Here is what the investigation actually means.','category'=>'ChatGPT','date'=>'2026-10-03','read_time'=>'9 min read']];

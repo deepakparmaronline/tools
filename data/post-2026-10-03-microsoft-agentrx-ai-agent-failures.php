@@ -1,0 +1,2 @@
+<?php
+return [['slug'=>'microsoft-agentrx-ai-agent-failures','title'=>'Microsoft AgentRx: How to Diagnose AI Agent Failures','description'=>'Microsoft Research introduced AgentRx to study why AI agents fail across long execution traces. Here are the practical lessons for agent evaluation.','category'=>'AI News','date'=>'2026-10-03','read_time'=>'9 min read']];

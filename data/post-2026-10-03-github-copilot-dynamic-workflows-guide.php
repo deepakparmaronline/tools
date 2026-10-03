@@ -1,0 +1,2 @@
+<?php
+return [['slug'=>'github-copilot-dynamic-workflows-guide','title'=>'GitHub Copilot Dynamic Workflows: How Agent Orchestration Works','description'=>'GitHub Dynamic Workflows let developers define agent orchestration in code. Learn how stages, parallel work, checkpoints and structured outputs fit together.','category'=>'Tools Guide','date'=>'2026-10-03','read_time'=>'9 min read']];

@@ -1,0 +1,2 @@
+<?php
+return [['slug'=>'anthropic-claude-frontier-academy-10000-engineers','title'=>'Claude Frontier Academy: Anthropic’s $100M AI Engineering Plan','description'=>'Anthropic is investing $100 million to train 10,000 Frontier Deployed Engineers. Here is what the program means for enterprise AI teams.','category'=>'Claude','date'=>'2026-10-03','read_time'=>'9 min read']];
