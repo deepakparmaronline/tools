@@ -1,0 +1,2 @@
+<?php
+return [['slug'=>'google-ai-flu-forecasting','title'=>'Google AI Flu Forecasting: What the CDC Result Means','description'=>'Google says its AI flu forecast ranked first among 39 eligible models in CDC FluSight. Here is what the result actually shows.','category'=>'Google','date'=>'2026-10-04','read_time'=>'8 min read']];
