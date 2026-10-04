@@ -1,0 +1,2 @@
+<?php
+return [['slug'=>'anthropic-robot-exposure-index','title'=>'Anthropic Robot Exposure Index: What 74% Really Means','description'=>'Anthropic says robots can perform 74% of physical work tasks in some settings. Here is what the measure means and where robots still fall short.','category'=>'Claude','date'=>'2026-10-04','read_time'=>'9 min read']];
