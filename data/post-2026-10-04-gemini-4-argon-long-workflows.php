@@ -1,0 +1,2 @@
+<?php
+return [['slug'=>'gemini-4-argon-long-workflows','title'=>'Gemini 4 Argon: What the 1M-Token Context Means','description'=>'Google Gemini 4 Argon targets long, complex workflows with a 1-million-token context window. Here is what developers should understand.','category'=>'Gemini','date'=>'2026-10-04','read_time'=>'9 min read']];
