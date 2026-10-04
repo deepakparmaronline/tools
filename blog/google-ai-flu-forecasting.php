@@ -2,7 +2,6 @@
 require __DIR__.'/../includes/bootstrap.php';
 $post=post_by_slug('google-ai-flu-forecasting') ?? ['slug'=>'google-ai-flu-forecasting','title'=>'Google AI Flu Forecasting: What the CDC Result Means','description'=>'Google says its AI flu forecast ranked first among 39 eligible models in CDC FluSight. Here is what the result actually shows.','category'=>'Google','date'=>'2026-10-04','read_time'=>'8 min read'];
 ob_start(); ?>
-<figure><img src="/assets/articles/2026-10-04-google-flu-forecast.svg" width="1200" height="630" alt="Illustration of an AI model forecasting flu hospital admissions"><figcaption>Google's research model was evaluated through the CDC's FluSight forecasting program.</figcaption></figure>
 <p>Google Research says one of its AI-based flu forecasting models performed best in the U.S. Centers for Disease Control and Prevention's end-of-season evaluation for the 2025–26 season.</p>
 <p>The result is interesting because it is not simply a benchmark run by Google. FluSight is a real forecasting program in which government, industry and academic teams submit weekly predictions of U.S. hospital admissions.</p>
 <h2>What the CDC evaluation measured</h2>
