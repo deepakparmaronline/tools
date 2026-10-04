@@ -52,4 +52,11 @@ foreach (glob(__DIR__.'/../data/post-*.php') ?: [] as $postFile) {
 	$extraPosts = require $postFile;
 	if (is_array($extraPosts)) { $posts = array_merge($posts, $extraPosts); }
 }
+$uniquePosts = [];
+foreach ($posts as $post) {
+	if (is_array($post) && isset($post['slug'])) {
+		$uniquePosts[$post['slug']] = $post;
+	}
+}
+$posts = array_values($uniquePosts);
 require_once __DIR__.'/functions.php';
