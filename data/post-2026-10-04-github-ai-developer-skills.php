@@ -1,0 +1,2 @@
+<?php
+return [['slug'=>'github-ai-developer-skills','title'=>'GitHub: Three Developer Skills That Matter More With AI','description'=>'GitHub says developers need to direct AI agents, review their output and strengthen technical judgment as coding work changes.','category'=>'Tools Guide','date'=>'2026-10-04','read_time'=>'8 min read']];
