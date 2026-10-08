@@ -9,5 +9,5 @@ Six options selected for Firefox control, current Chrome compatibility, configur
 - Research-based recommendations, no hands-on testing claims.
 - No affiliate links, fabricated screenshots, ratings, or duplicate schema.
 - Article contains five decision-specific FAQs; no FAQ rich-result promise.
-- Publication: published locally after content and rendering QA. Live deployment pending access.
-- Layout verification: local browser checked at 360px mobile and 1280px desktop; no page overflow. Live rendering remains pending.
+- Publication: live verified on October 8, 2026. The canonical URL returns HTTP 200 with one H1, the expected canonical, description, Alternatives navigation, and related links; it is included in the live listing and sitemap.
+- Layout verification: local browser checked at 360px mobile and 1280px desktop; no page overflow. Live browser visual review covered Ghostery and confirmed the shared styles load; all ten articles passed live HTTP and metadata checks.

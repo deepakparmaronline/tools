@@ -6,7 +6,7 @@ Limits: no model calls, benchmark reproduction, or region account availability t
 
 Internal links: JSON Formatter validates syntax only; approval policy supports permission decisions. Recent articles use verified registry/source files. Optional unrelated tool links omitted.
 
-Publication: published locally after editorial and structural QA. GitHub push awaits authentication; no live verification claimed.
+Publication: published locally after editorial and structural QA. GitHub push awaits Git write authentication: HTTPS has no login and SSH rejects the available authentication. An existing GitHub browser login was confirmed, but no supported complete-file transfer is available through that interface. The production article URL and new site.js return HTTP 404. No live publication of this story is claimed.
 
 QA passed: raw complete HTML, one H1/date, two author blocks, static TOC IDs/links, five recent links, exact visible FAQ/schema alignment, canonical/social/image consistency, valid SVG, internal destinations, category and central index, homepage discovery, sitemap, and nonempty typed assets. PHP lint and both publication/Alternatives checks passed. Browser review at 360px and 1280px confirmed image loading, wrapping, mobile TOC links, header/footer injection, search/theme/menu, and no page overflow. Apache execution and live URLs remain pending.
 
