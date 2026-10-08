@@ -127,7 +127,9 @@ def main():
         for path in ['/', '/seo/', '/seo/serp-preview', '/chatgpt/', '/all-tools']:
             code, _, html = get(path)
             assert code == 200, path
-            assert html.count('<a href="/alternatives/">Alternatives</a>') >= 3, path
+            assert '<header id="site-header" class="site-header"></header>' in html, path
+            assert 'src="/assets/site.js"' in html, path
+            assert '<a href="/alternatives/">Alternatives</a>' in html, path
             assert '<a href="https://toolboxkart.tech/' not in html, path
         print('PASS: CSS/JS content and MIME types, published article links, site-wide navigation, draft/future exclusion, related cards, SEO/schema, redirects, sitemap, existing routes')
     finally:

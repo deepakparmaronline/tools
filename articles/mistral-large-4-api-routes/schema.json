@@ -1,0 +1,85 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/tech/mistral-large-4-api-routes/#article",
+      "url": "https://toolboxkart.tech/tech/mistral-large-4-api-routes/",
+      "mainEntityOfPage": "https://toolboxkart.tech/tech/mistral-large-4-api-routes/",
+      "headline": "Mistral Large 4: API Routes, Pricing, and Limits",
+      "description": "Mistral Large 4 is in public preview. Compare API context limits, launch prices, regional restrictions, and the checks to make before switching your workflow.",
+      "image": "https://toolboxkart.tech/images/mistral-large-4-api-routes.svg",
+      "datePublished": "2026-10-08T08:34:15+05:30",
+      "dateModified": "2026-10-08T08:34:15+05:30",
+      "author": {
+        "@id": "https://toolboxkart.tech/about-deepak-parmar/#person"
+      },
+      "publisher": {
+        "@id": "https://toolboxkart.tech/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://toolboxkart.tech/about-deepak-parmar/#person",
+      "name": "Deepak Parmar",
+      "url": "https://toolboxkart.tech/about-deepak-parmar/",
+      "image": "https://toolboxkart.tech/images/deepak-parmar.jpeg",
+      "sameAs": [
+        "https://www.linkedin.com/in/deepakparmaronline/",
+        "https://www.youtube.com/@deepakparmaronline"
+      ],
+      "jobTitle": "Technology writer",
+      "worksFor": {
+        "@id": "https://toolboxkart.tech/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://toolboxkart.tech/#organization",
+      "name": "Tool Box Kart",
+      "url": "https://toolboxkart.tech/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://toolboxkart.tech/assets/favicon.svg"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://toolboxkart.tech/tech/mistral-large-4-api-routes/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I download Mistral Large 4 now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The sources checked on October 8 describe hosted public preview access and weights planned by the end of October. Verify the official release before planning a downloadable deployment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does OpenRouter list a smaller context window?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Its listing publishes a different allowance for its API route. Use that route’s documented limit; the pages reviewed do not establish the reason for the difference."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the launch price permanent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Mistral’s changelog describes a two-week launch discount. Confirm current pricing before purchase and model your ongoing costs at the undiscounted rates too."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does EU inference mean all account data stays in the EU?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Mistral says regional inference does not provide regional storage for all control-plane data, including billing and account configuration."
+          }
+        }
+      ]
+    }
+  ]
+}

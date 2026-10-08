@@ -4,3 +4,5 @@
 /* Alternatives reuse the shared cards and article layout. */
 .alternative-card{display:flex;flex-direction:column;min-width:0}.alternative-card h2{overflow-wrap:anywhere}.alternative-card-image{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin-bottom:16px}.alternative-read-more{display:inline-block;margin-top:auto;padding-top:16px}.alternative-featured-image{display:block;width:100%;height:auto;border-radius:var(--radius);margin-bottom:28px}.alternative-layout .article-body{min-width:0;overflow-wrap:anywhere}.alternative-layout .article-body img{max-width:100%;height:auto}.alternative-layout .article-body pre{overflow:auto}.alternative-layout .article-body table{display:block;max-width:100%;overflow:auto}.alternative-layout .article-body iframe{max-width:100%}
 @media(min-width:901px) and (max-width:1100px){.desktop-nav{display:none}.menu-toggle{display:block}}
+
+.site-nav-fallback{display:flex;gap:16px;flex-wrap:wrap;padding:18px;background:var(--surface);border-block:1px solid var(--line)}.site-nav-fallback a{color:var(--primary);font-weight:650}

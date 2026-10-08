@@ -12,7 +12,7 @@ $ogType=$ogType??'website';
 <?php if (!empty($socialImage)): ?>
 <meta property="og:image" content="<?=e($socialImage)?>"><meta property="og:image:alt" content="<?=e($socialImageAlt ?? '')?>"><meta name="twitter:image" content="<?=e($socialImage)?>"><meta name="twitter:image:alt" content="<?=e($socialImageAlt ?? '')?>">
 <?php endif; ?>
-<meta name="theme-color" content="#2563eb"><link rel="icon" href="<?=asset('favicon.svg')?>" type="image/svg+xml"><link rel="stylesheet" href="<?=asset('css/app.css')?>"><link rel="stylesheet" href="<?=asset('css/article-overflow-fixes.css')?>"><script defer src="<?=asset('js/app.js')?>"></script>
+<meta name="theme-color" content="#2563eb"><link rel="icon" href="<?=asset('favicon.svg')?>" type="image/svg+xml"><link rel="stylesheet" href="<?=asset('css/app.css')?>"><link rel="stylesheet" href="<?=asset('css/article-overflow-fixes.css')?>"><script defer src="/assets/site.js"></script><script defer src="<?=asset('js/app.js')?>"></script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -28,9 +28,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><div class="container header-inner">
-<a class="brand" href="/"><span class="brand-mark">TK</span><span>ToolboxKart</span></a>
-<nav class="desktop-nav" aria-label="Primary"><a href="/chatgpt/">ChatGPT</a><a href="/claude/">Claude</a><a href="/ai-news/">AI News</a><a href="/tools-guide/">Tools Guide</a><a href="/alternatives/">Alternatives</a><a href="/browse-tools-by-niche">Browse tools by niche</a></nav>
-<div class="header-actions"><button class="icon-btn search-trigger" type="button" aria-label="Search tools">⌕ <span>Search</span><kbd>⌘K</kbd></button><button class="icon-btn theme-toggle" type="button" aria-label="Toggle theme">◐</button><button class="menu-toggle" type="button" aria-label="Open menu">☰</button></div>
-</div><div class="mobile-nav" aria-label="Mobile"><a href="/chatgpt/">ChatGPT</a><a href="/claude/">Claude</a><a href="/ai-news/">AI News</a><a href="/tools-guide/">Tools Guide</a><a href="/alternatives/">Alternatives</a><a href="/browse-tools-by-niche">Browse tools by niche</a></div></header>
+<header id="site-header" class="site-header"></header>
+<noscript><nav class="site-nav-fallback" aria-label="Site navigation"><a href="/">ToolboxKart</a><a href="/tech/">Tech</a><a href="/tools-guide/">Tool guides</a><a href="/alternatives/">Alternatives</a><a href="/all-tools">All tools</a></nav></noscript>
 <main id="main">

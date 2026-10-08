@@ -2,6 +2,25 @@
 $uri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
 $path = rawurldecode($uri);
 
+// Complete editorial HTML pages retain their directory canonical URLs.
+if (preg_match('#^/(tech|seo-guide|explainers)/([a-z0-9-]+)/index\.html$#', $path, $matches) && is_file(__DIR__.$path)) {
+    header('Location: /'.$matches[1].'/'.$matches[2].'/', true, 301);
+    exit;
+}
+if (preg_match('#^/(tech|seo-guide|explainers)/([a-z0-9-]+)/?$#', $path, $matches)) {
+    $editorialPath = '/'.$matches[1].'/'.$matches[2].'/';
+    $editorialFile = __DIR__.$editorialPath.'index.html';
+    if (is_file($editorialFile)) {
+        if ($path !== $editorialPath) {
+            header('Location: '.$editorialPath, true, 301);
+            exit;
+        }
+        header('Content-Type: text/html; charset=UTF-8');
+        readfile($editorialFile);
+        return;
+    }
+}
+
 if ($path === '' || $path === '/') {
     require __DIR__ . '/index.php';
     return;
@@ -76,6 +95,11 @@ if (is_file($physical)) {
 }
 
 if (is_dir($physical)) {
+    if (is_file($physical.'/index.html')) {
+        header('Content-Type: text/html; charset=UTF-8');
+        readfile($physical.'/index.html');
+        return;
+    }
     $index = $physical . '/index.php';
     if (is_file($index)) {
         require $index;

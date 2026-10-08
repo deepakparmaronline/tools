@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Mistral Large 4: choose the API route</title>
+  <desc id="desc">Three route cards distinguish Mistral's one-million-token listed context, OpenRouter's 524,288-token listed context, and regional endpoints that require model and feature checks. Open weights are planned for later in October.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#09111f"/><stop offset="1" stop-color="#142a45"/></linearGradient><linearGradient id="accent"><stop stop-color="#60a5fa"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1120" cy="80" r="250" fill="#2563eb" opacity=".08"/>
+  <g font-family="system-ui, sans-serif">
+    <text x="64" y="67" fill="#5eead4" font-size="19" font-weight="700" letter-spacing="3">TOOLBOXKART · TECH ANALYSIS</text>
+    <text x="64" y="148" fill="#edf4ff" font-size="62" font-weight="800">Mistral Large 4</text>
+    <text x="64" y="194" fill="#a7b6c9" font-size="27">Choose the route. Check the limits.</text>
+    <path d="M64 228H1136" stroke="url(#accent)" stroke-width="3"/>
+    <g fill="#0f1a2c" stroke="#314761"><rect x="64" y="276" width="344" height="214" rx="22"/><rect x="428" y="276" width="344" height="214" rx="22"/><rect x="792" y="276" width="344" height="214" rx="22"/></g>
+    <g font-size="23" font-weight="700" fill="#93c5fd"><text x="90" y="321">Mistral API</text><text x="454" y="321">OpenRouter</text><text x="818" y="321">Regional API</text></g>
+    <g fill="#edf4ff" font-size="44" font-weight="800"><text x="90" y="384">1M</text><text x="454" y="384">524,288</text><text x="818" y="378" font-size="29">Check models</text><text x="818" y="414" font-size="29">and features</text></g>
+    <g fill="#a7b6c9" font-size="20"><text x="90" y="431">Listed context</text><text x="454" y="431">Listed context tokens</text><text x="818" y="455">Endpoint restrictions apply</text></g>
+    <circle cx="78" cy="553" r="7" fill="#2dd4bf"/>
+    <text x="100" y="560" fill="#cbd5e1" font-size="23">Public API preview · Open weights planned for later in October</text>
+  </g>
+</svg>

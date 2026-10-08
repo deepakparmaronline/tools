@@ -1,7 +1,11 @@
 Options -Indexes
-DirectoryIndex index.php
+DirectoryIndex index.php index.html
 ErrorDocument 404 /404.php
 RewriteEngine On
+
+# Standalone editorial pages use a directory canonical; avoid duplicate index URLs.
+RewriteCond %{THE_REQUEST} \s/+(tech|seo-guide|explainers)/([a-z0-9-]+)/index\.html[\s?] [NC]
+RewriteRule ^(tech|seo-guide|explainers)/([a-z0-9-]+)/index\.html$ /$1/$2/ [R=301,L,NE]
 
 # Alternatives are discovered from editorial records, never served as raw PHP data.
 RewriteRule ^alternatives/articles(?:/|$) - [F,L,NC]

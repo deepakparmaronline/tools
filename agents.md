@@ -1,4 +1,12 @@
-# Alternatives article workflow for ToolBoxKart
+# Publishing instructions for ToolBoxKart
+
+The user-supplied locked standard in `docs/PUBLISHING-STANDARD.md` governs new general technology, SEO, AI-search, tool-guide, and explainer publishing tasks. Read it alongside the actual repository implementation. Explicit user instructions take precedence over older reference documents. A general news run selects one useful, verified story and creates the full article, original image, static article UI, metadata/schema, author information, category and central-index entries, sitemap entry, and requested GitHub push. Keep existing article URLs stable; do not infer a bulk migration from a new publishing request.
+
+For new general articles, use complete HTML with static article-specific elements and `/assets/site.js` for shared header/footer navigation. Use `/assets/css/publication.css`; keep existing utility interactions in their current scripts. No breadcrumbs are added to these articles. Exactly two author blocks, a truthful timezone-bearing timestamp, static heading IDs and TOC, and five existing recent-article links are required. Register the article in `data/post-*.php` with its actual category and `standalone` flag so homepage, category discovery, the central `/content/` index, and sitemap use its canonical URL.
+
+The Alternative article research and evidence requirements below remain applicable to alternatives requests. For any conflict with a later user-supplied publishing standard, follow the newer explicit instructions and document any necessary implementation change.
+
+# Alternatives article workflow
 
 ## Role and when these rules apply
 
