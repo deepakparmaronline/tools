@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "6 Ghostery Alternatives for Ads, Trackers, and Browser Control",
+      "description": "Compare six Ghostery alternatives, including uBlock Origin, Lite, AdGuard, and Privacy Badger. Check Chrome support, free options, and migration limits.",
+      "datePublished": "2026-10-08",
+      "dateModified": "2026-10-08",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/alternatives/ghostery-alternatives/",
+      "url": "https://toolboxkart.tech/alternatives/ghostery-alternatives/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alternatives",
+          "item": "https://toolboxkart.tech/alternatives/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "6 Ghostery Alternatives for Ads, Trackers, and Browser Control",
+          "item": "https://toolboxkart.tech/alternatives/ghostery-alternatives/"
+        }
+      ]
+    }
+  ]
+}

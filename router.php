@@ -7,6 +7,32 @@ if ($path === '' || $path === '/') {
     return;
 }
 
+if ($path === '/sitemap.xml') {
+    require __DIR__.'/sitemap.php';
+    return;
+}
+
+if (preg_match('#^/alternatives(?:/index\.php)?/?$#', $path)) {
+    if ($path !== '/alternatives/') {
+        header('Location: /alternatives/', true, 301);
+        exit;
+    }
+    require __DIR__.'/alternatives/index.php';
+    return;
+}
+
+if (preg_match('#^/alternatives/([a-z0-9-]+)(?:\.php)?/?$#', $path, $matches)) {
+    $_GET['slug'] = $matches[1];
+    require __DIR__.'/alternatives/article.php';
+    return;
+}
+
+if (str_starts_with($path, '/alternatives/')) {
+    http_response_code(404);
+    require __DIR__.'/404.php';
+    return;
+}
+
 if (preg_match('#^/blog/?$#', $path)) {
     header('Location: /chatgpt/', true, 301);
     exit;

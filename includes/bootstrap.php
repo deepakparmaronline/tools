@@ -60,3 +60,4 @@ foreach ($posts as $post) {
 }
 $posts = array_values($uniquePosts);
 require_once __DIR__.'/functions.php';
+require_once __DIR__.'/alternatives.php';

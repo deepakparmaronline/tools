@@ -8,7 +8,10 @@ $ogType=$ogType??'website';
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title><?=e($pageTitle)?></title><meta name="description" content="<?=e($pageDescription)?>"><meta name="robots" content="<?=e($robots)?>"><link rel="canonical" href="<?=e($canonical)?>">
 <meta property="og:type" content="<?=e($ogType)?>"><meta property="og:site_name" content="<?=SITE_NAME?>"><meta property="og:title" content="<?=e($pageTitle)?>"><meta property="og:description" content="<?=e($pageDescription)?>"><meta property="og:url" content="<?=e($canonical)?>">
-<meta name="twitter:card" content="summary"><meta name="twitter:title" content="<?=e($pageTitle)?>"><meta name="twitter:description" content="<?=e($pageDescription)?>">
+<meta name="twitter:card" content="<?=!empty($socialImage)?'summary_large_image':'summary'?>"><meta name="twitter:title" content="<?=e($pageTitle)?>"><meta name="twitter:description" content="<?=e($pageDescription)?>">
+<?php if (!empty($socialImage)): ?>
+<meta property="og:image" content="<?=e($socialImage)?>"><meta property="og:image:alt" content="<?=e($socialImageAlt ?? '')?>"><meta name="twitter:image" content="<?=e($socialImage)?>"><meta name="twitter:image:alt" content="<?=e($socialImageAlt ?? '')?>">
+<?php endif; ?>
 <meta name="theme-color" content="#2563eb"><link rel="icon" href="<?=asset('favicon.svg')?>" type="image/svg+xml"><link rel="stylesheet" href="<?=asset('css/app.css')?>"><link rel="stylesheet" href="<?=asset('css/article-overflow-fixes.css')?>"><script defer src="<?=asset('js/app.js')?>"></script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -27,7 +30,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><div class="container header-inner">
 <a class="brand" href="/"><span class="brand-mark">TK</span><span>ToolboxKart</span></a>
-<nav class="desktop-nav" aria-label="Primary"><a href="/chatgpt/">ChatGPT</a><a href="/claude/">Claude</a><a href="/ai-news/">AI News</a><a href="/tools-guide/">Tools Guide</a><a href="/browse-tools-by-niche">Browse tools by niche</a></nav>
+<nav class="desktop-nav" aria-label="Primary"><a href="/chatgpt/">ChatGPT</a><a href="/claude/">Claude</a><a href="/ai-news/">AI News</a><a href="/tools-guide/">Tools Guide</a><a href="/alternatives/">Alternatives</a><a href="/browse-tools-by-niche">Browse tools by niche</a></nav>
 <div class="header-actions"><button class="icon-btn search-trigger" type="button" aria-label="Search tools">⌕ <span>Search</span><kbd>⌘K</kbd></button><button class="icon-btn theme-toggle" type="button" aria-label="Toggle theme">◐</button><button class="menu-toggle" type="button" aria-label="Open menu">☰</button></div>
-</div><div class="mobile-nav" aria-label="Mobile"><a href="/chatgpt/">ChatGPT</a><a href="/claude/">Claude</a><a href="/ai-news/">AI News</a><a href="/tools-guide/">Tools Guide</a><a href="/browse-tools-by-niche">Browse tools by niche</a></div></header>
+</div><div class="mobile-nav" aria-label="Mobile"><a href="/chatgpt/">ChatGPT</a><a href="/claude/">Claude</a><a href="/ai-news/">AI News</a><a href="/tools-guide/">Tools Guide</a><a href="/alternatives/">Alternatives</a><a href="/browse-tools-by-niche">Browse tools by niche</a></div></header>
 <main id="main">

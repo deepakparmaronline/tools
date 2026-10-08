@@ -3,6 +3,14 @@ DirectoryIndex index.php
 ErrorDocument 404 /404.php
 RewriteEngine On
 
+# Alternatives are discovered from editorial records, never served as raw PHP data.
+RewriteRule ^alternatives/articles(?:/|$) - [F,L,NC]
+RewriteCond %{THE_REQUEST} \s/+alternatives/index\.php[\s?] [NC]
+RewriteRule ^alternatives/index\.php$ /alternatives/ [R=301,L]
+RewriteRule ^alternatives$ /alternatives/ [R=301,L]
+RewriteRule ^alternatives/$ alternatives/index.php [END]
+RewriteRule ^alternatives/([a-z0-9-]+)(?:\.php)?/?$ alternatives/article.php?slug=$1 [END,QSA]
+
 # Serve the sitemap dynamically from the current posts/tools index.
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
 

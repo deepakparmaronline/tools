@@ -5,6 +5,8 @@ $esc=fn($v)=>htmlspecialchars((string)$v,ENT_XML1|ENT_QUOTES,'UTF-8');
 $latestPostDate='';
 foreach($posts as $p){if(($p['date']??'')>$latestPostDate)$latestPostDate=$p['date'];}
 $urls=[];
+$urls[]=['url'=>SITE_URL.'/alternatives/','lastmod'=>array_reduce(alternative_articles(),fn($latest,$article)=>max($latest,$article['updated']),''),'changefreq'=>'weekly','priority'=>'0.9'];
+foreach(alternative_articles() as $article){$urls[]=['url'=>alternative_url($article),'lastmod'=>$article['updated'],'priority'=>'0.7'];}
 $urls[]=['url'=>SITE_URL.'/','lastmod'=>$latestPostDate,'changefreq'=>'daily','priority'=>'1.0'];
 $urls[]=['url'=>SITE_URL.'/all-tools','lastmod'=>'2026-09-09','changefreq'=>'weekly','priority'=>'0.9'];
 $urls[]=['url'=>SITE_URL.'/browse-tools-by-niche','lastmod'=>'2026-09-17','changefreq'=>'weekly','priority'=>'0.9'];

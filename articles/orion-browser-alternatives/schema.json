@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "6 Orion Browser Alternatives for Your Devices and Extensions",
+      "description": "Compare six Orion Browser alternatives by Apple integration, extensions, privacy, and devices. Includes Kagi’s Linux and Windows development update.",
+      "datePublished": "2026-10-08",
+      "dateModified": "2026-10-08",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/alternatives/orion-browser-alternatives/",
+      "url": "https://toolboxkart.tech/alternatives/orion-browser-alternatives/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alternatives",
+          "item": "https://toolboxkart.tech/alternatives/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "6 Orion Browser Alternatives for Your Devices and Extensions",
+          "item": "https://toolboxkart.tech/alternatives/orion-browser-alternatives/"
+        }
+      ]
+    }
+  ]
+}

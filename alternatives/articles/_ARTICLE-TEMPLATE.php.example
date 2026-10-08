@@ -1,0 +1,22 @@
+<?php
+// Copy to a permanent date-free slug, e.g. alternatives/articles/best-notion-alternatives.php.
+// Drafts and future publication dates are excluded from public pages and the sitemap.
+return [
+    'status' => 'draft', // Change to published only when editorial review is complete.
+    'title' => 'Article title',
+    'seo_title' => 'Optional search title',
+    'description' => 'Write a unique, accurate description of the comparison.',
+    'date' => 'YYYY-MM-DD',
+    // 'updated' => 'YYYY-MM-DD', // Only for a real update.
+    'tag' => 'Productivity',
+    'author' => 'Deepak Parmar',
+    // 'image' => '/assets/images/your-featured-image.webp',
+    // 'image_alt' => 'Describe the actual featured image.',
+    // 'image_width' => 1200,
+    // 'image_height' => 675,
+    'content' => <<<'HTML'
+<p>Write the introduction here.</p>
+<h2>Compare the alternatives</h2>
+<p>Add original researched content with useful H2/H3 headings and relevant internal links.</p>
+HTML,
+];
