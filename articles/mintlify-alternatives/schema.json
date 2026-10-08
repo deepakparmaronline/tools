@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "6 Mintlify Alternatives for Product and API Documentation",
+      "description": "Compare six Mintlify alternatives for hosted docs, API portals, and self-managed sites, with plan limits, contributor costs, and MDX migration advice.",
+      "datePublished": "2026-10-08",
+      "dateModified": "2026-10-08",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/alternatives/mintlify-alternatives/",
+      "url": "https://toolboxkart.tech/alternatives/mintlify-alternatives/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alternatives",
+          "item": "https://toolboxkart.tech/alternatives/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "6 Mintlify Alternatives for Product and API Documentation",
+          "item": "https://toolboxkart.tech/alternatives/mintlify-alternatives/"
+        }
+      ]
+    }
+  ]
+}
