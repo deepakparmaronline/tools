@@ -1,10 +1,10 @@
 <?php
 return [
-    'status' => 'draft',
+    'status' => 'published',
     'title' => '6 Mintlify Alternatives for Product and API Documentation',
     'seo_title' => 'Mintlify Alternatives for Developer Docs',
     'description' => 'Compare six Mintlify alternatives for hosted docs, API portals, and self-managed sites, with plan limits, contributor costs, and MDX migration advice.',
-    'date' => '2026-10-08',
+    'date' => '2026-10-09',
     'tag' => 'Developer Tools',
     'author' => 'Deepak Parmar',
     'content' => <<<'HTML'
