@@ -1,10 +1,10 @@
 <?php
 return [
-    'status' => 'draft',
+    'status' => 'published',
     'title' => '6 Taskade alternatives for projects, apps and AI workflows',
     'seo_title' => 'Taskade Alternatives for Projects and AI',
     'description' => 'Compare six Taskade alternatives for docs, team projects, internal apps and AI workflows. Review seat costs, usage limits and what will need rebuilding.',
-    'date' => '2026-10-08',
+    'date' => '2026-10-09',
     'tag' => 'AI productivity',
     'author' => 'Deepak Parmar',
     'content' => <<<'HTML'
