@@ -1,10 +1,10 @@
 <?php
 return [
-    'status' => 'draft',
+    'status' => 'published',
     'title' => '6 MobiLoud Alternatives for Turning a Website into an App',
     'seo_title' => 'MobiLoud Alternatives for Website Apps',
     'description' => 'Compare six MobiLoud alternatives by website reuse, Shopify support, code ownership, and maintenance, with pricing limits and an app migration checklist.',
-    'date' => '2026-10-08',
+    'date' => '2026-10-09',
     'tag' => 'App Development',
     'author' => 'Deepak Parmar',
     'content' => <<<'HTML'
