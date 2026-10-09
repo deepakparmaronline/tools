@@ -10,6 +10,8 @@ The Alternative article research and evidence requirements below remain applicab
 
 The user instructed on October 9, 2026 that future article requests must proceed to publication rather than leave completed articles saved as drafts. Unless the user explicitly requests drafts or review-only work, complete research and QA, set finished article records to `published`, commit and push the required changes to `main` in `deepakparmaronline/tools`, and use the existing deployment workflow when hosting access is available. Do not ask again for routine publication permission. Verify local discovery and distinguish a successful GitHub push from a verified live deployment. If authentication, deployment access, product identity or material QA is unresolved, record the exact blocker and next action; never publish unsupported content or claim success without evidence.
 
+Hostinger deployment is automatic from GitHub `main`, as confirmed by the user on October 9, 2026. Push reviewed changes to `main`, let the existing auto-deployment run, and verify the public article URLs, listing and sitemap. Hostinger sign-in is not a prerequisite for routine publishing. Report a hosting blocker only when an actual deployment or live verification fails; do not infer one from the control panel login screen.
+
 # Alternatives article workflow
 
 ## Role and when these rules apply
