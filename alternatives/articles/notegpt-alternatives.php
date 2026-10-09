@@ -1,10 +1,10 @@
 <?php
 return [
-    'status' => 'draft',
+    'status' => 'published',
     'title' => '6 NoteGPT Alternatives for Video Notes, PDFs and Study',
     'seo_title' => '6 NoteGPT Alternatives for Summaries, PDFs and Study',
     'description' => 'Compare six NoteGPT alternatives for YouTube summaries, PDF research, flashcards and lecture recordings, with verified limits, costs and migration advice.',
-    'date' => '2026-10-08',
+    'date' => '2026-10-09',
     'tag' => 'AI Study',
     'author' => 'Deepak Parmar',
     'content' => <<<'HTML'
