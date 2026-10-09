@@ -10,6 +10,8 @@ The Alternatives section uses the existing PHP/shared-template architecture. Its
 
 Standing user preference, October 9, 2026: future article requests proceed through research, QA, published status, commit and push to GitHub `main`, and the existing hosting deployment workflow unless the user explicitly requests drafts. Do not leave completed articles saved as drafts or ask again for routine publication approval. If access or a material editorial check blocks completion, record the blocker and next action. A GitHub push does not establish live deployment; verify the live article, listing and sitemap separately.
 
+Hostinger automatically deploys GitHub `main`, confirmed by the user on October 9, 2026. A normal publication needs the GitHub update followed by public live verification; it does not need Hostinger sign-in or a manual upload. Investigate hosting access only if an actual deployment or live check fails.
+
 Only published, complete records with valid publication dates no later than today in Asia/Kolkata are public. Drafts, future articles, and invalid records do not appear in the listing, related articles, sitemap, or single-article routes. `updated` defaults to publication date if invalid.
 
 `includes/alternatives.php` discovers records automatically. No edits to listing pages, related sections, `data/posts.php`, or XML sitemap files are required. The existing blog registry and article URLs remain separate. This section does not migrate existing articles or publish sample editorial content.
