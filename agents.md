@@ -6,6 +6,10 @@ For new general articles, use complete HTML with static article-specific element
 
 The Alternative article research and evidence requirements below remain applicable to alternatives requests. For any conflict with a later user-supplied publishing standard, follow the newer explicit instructions and document any necessary implementation change.
 
+## Standing publication preference
+
+The user instructed on October 9, 2026 that future article requests must proceed to publication rather than leave completed articles saved as drafts. Unless the user explicitly requests drafts or review-only work, complete research and QA, set finished article records to `published`, commit and push the required changes to `main` in `deepakparmaronline/tools`, and use the existing deployment workflow when hosting access is available. Do not ask again for routine publication permission. Verify local discovery and distinguish a successful GitHub push from a verified live deployment. If authentication, deployment access, product identity or material QA is unresolved, record the exact blocker and next action; never publish unsupported content or claim success without evidence.
+
 # Alternatives article workflow
 
 ## Role and when these rules apply
@@ -173,9 +177,9 @@ Also create the separate website record at `alternatives/articles/{topic-slug}.p
 
 Store content as trusted HTML, using a PHP nowdoc or the existing safe convention. Keep Markdown and rendered HTML synchronized. Do not add guessed fields expecting the template to render them. Optional image paths must point to a real included asset or a verified usable HTTPS image.
 
-Create records as `draft` while preparing and reviewing them. Mark editorial work `done` only when all five artifacts, the website record, and applicable QA are complete. This does not mean the article is live.
+Use an isolated preview or a non-public work-in-progress record while preparing and reviewing content. After all five artifacts, the website record and applicable QA are complete, set the finished record to `published` and verify local article routes, the Alternatives listing and the sitemap. Do not leave a completed article as `draft` unless the user explicitly requested draft-only work. Editorial status `done`, successful GitHub push and verified live publication remain separate facts.
 
-A request to write articles authorizes local editorial files and draft records. When the user asks to publish, set approved records to `published` after QA and use the existing authorized deployment workflow. Do not push, deploy, or claim live publication merely because draft files exist. If the user has already authorized publishing in the session, do not ask for that permission again.
+The standing publication preference authorizes committing and pushing completed, reviewed articles to `main` and deploying them through the existing workflow without another routine permission question. An explicit later request for drafts overrides this default. GitHub presence alone is not live publication: verify the deployed pages, listing and sitemap before recording `live verified`. Keep incomplete or unresolved work out of public discovery and report its blocker accurately.
 
 ## QA and publication verification
 
