@@ -1,10 +1,10 @@
 <?php
 return [
-    'status' => 'draft',
+    'status' => 'published',
     'title' => '6 TidyCal Alternatives for Booking Pages and Team Scheduling',
     'seo_title' => '6 TidyCal Alternatives: Booking Costs and Features Compared',
     'description' => 'Compare six TidyCal alternatives for solo bookings, team scheduling and service appointments. Check free limits, paid features, fees and migration steps.',
-    'date' => '2026-10-08',
+    'date' => '2026-10-09',
     'tag' => 'Scheduling',
     'author' => 'Deepak Parmar',
     'content' => <<<'HTML'
