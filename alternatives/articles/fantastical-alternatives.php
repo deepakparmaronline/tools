@@ -1,10 +1,10 @@
 <?php
 return [
-    'status' => 'draft',
+    'status' => 'published',
     'title' => '6 Fantastical Alternatives for Different Calendar Workflows',
     'seo_title' => '6 Fantastical Alternatives: Free Calendars and Paid Options',
     'description' => 'Compare six Fantastical alternatives for Apple devices, Google and Microsoft calendars, and task planning, with licensing tradeoffs and migration advice.',
-    'date' => '2026-10-08',
+    'date' => '2026-10-09',
     'tag' => 'Calendar',
     'author' => 'Deepak Parmar',
     'content' => <<<'HTML'
