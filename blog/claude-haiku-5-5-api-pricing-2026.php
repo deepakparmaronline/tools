@@ -25,6 +25,7 @@
 <h3>What is Claude Haiku 5.5?</h3><p>It is Anthropic's small model for fast, high-volume and cost-sensitive workloads.</p>
 <h3>How much does Haiku 5.5 cost?</h3><p>Anthropic lists $0.10 per million input tokens and $0.50 per million output tokens up to 100K tokens, then $0.50 and $2.50 above that threshold.</p>
 <h3>Does Haiku 5.5 have a 1M context window?</h3><p>Yes. Anthropic lists a 1 million token context window.</p>
+<p>For a broader budget that includes tools, retries and successful task counts, see our <a href="/tools-guide/how-to-calculate-llm-api-cost-per-task">guide to calculating LLM API cost per task</a>.</p>
 <h2>Sources</h2>
 <ul><li><a href="https://www.anthropic.com/claude-haiku-5-5">Anthropic: Claude Haiku 5.5</a></li><li><a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/haiku-5-5">Google Cloud: Claude Haiku 5.5 model availability</a></li><li><a href="https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot/">GitHub Changelog: Claude Haiku 5.5 in GitHub Copilot</a></li></ul>
 <?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';

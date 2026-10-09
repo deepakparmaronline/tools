@@ -31,6 +31,7 @@ ob_start(); ?>
 <h2>The bigger lesson from DevDay 2026</h2>
 <p>The most important shift is from model selection to system design. Better models help, but production AI depends on the surrounding workflow: prompts, tools, permissions, data, evaluation, monitoring, and human review.</p>
 <p>Developers who build that layer well will be able to change models more easily later. Teams that tightly couple their entire product to one model response format will have a harder migration path.</p>
+<p>OpenAI announced faster steering for Codex on desktop on October 8, 2026. Our <a href="/chatgpt/openai-codex-faster-steering-october-2026">Codex faster-steering guide</a> explains how to steer a running task or queue a follow-up.</p>
 <h2>Sources</h2>
 <ul><li><a href="https://openai.com/index/devday-2026-recap/" target="_blank" rel="noopener noreferrer">OpenAI: DevDay 2026 Recap</a></li><li><a href="https://openai.com/" target="_blank" rel="noopener noreferrer">OpenAI</a></li></ul>
 <?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';
