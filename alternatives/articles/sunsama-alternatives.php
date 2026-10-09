@@ -1,10 +1,10 @@
 <?php
 return [
-    'status' => 'draft',
+    'status' => 'published',
     'title' => '6 Sunsama Alternatives for More Flexible Daily Planning',
     'seo_title' => 'Sunsama Alternatives for Daily Planning',
     'description' => 'Find a Sunsama alternative for simpler timeboxing, customizable routines, automatic scheduling, or lower costs, with export advice and current plan context.',
-    'date' => '2026-10-08',
+    'date' => '2026-10-09',
     'tag' => 'Productivity',
     'author' => 'Deepak Parmar',
     'content' => <<<'HTML'
