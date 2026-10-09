@@ -1,10 +1,10 @@
 <?php
 return [
-    'status' => 'draft',
+    'status' => 'published',
     'title' => '6 Akiflow Alternatives for Tasks and Time Blocking',
     'seo_title' => 'Akiflow Alternatives for Daily Planning',
     'description' => 'Compare six Akiflow alternatives for daily planning, automatic scheduling, and simpler task lists, with pricing context and a practical switching checklist.',
-    'date' => '2026-10-08',
+    'date' => '2026-10-09',
     'tag' => 'Productivity',
     'author' => 'Deepak Parmar',
     'content' => <<<'HTML'
