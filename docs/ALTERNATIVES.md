@@ -8,6 +8,8 @@ The Alternatives section uses the existing PHP/shared-template architecture. Its
 4. Use `updated` only for an actual editorial update. Author defaults to Deepak Parmar; `author` and `author_bio` can be supplied for another contributor.
 5. Set `status` to `published` after editorial review, validate PHP, and deploy the article file and image through the existing deployment process.
 
+Standing user preference, October 9, 2026: future article requests proceed through research, QA, published status, commit and push to GitHub `main`, and the existing hosting deployment workflow unless the user explicitly requests drafts. Do not leave completed articles saved as drafts or ask again for routine publication approval. If access or a material editorial check blocks completion, record the blocker and next action. A GitHub push does not establish live deployment; verify the live article, listing and sitemap separately.
+
 Only published, complete records with valid publication dates no later than today in Asia/Kolkata are public. Drafts, future articles, and invalid records do not appear in the listing, related articles, sitemap, or single-article routes. `updated` defaults to publication date if invalid.
 
 `includes/alternatives.php` discovers records automatically. No edits to listing pages, related sections, `data/posts.php`, or XML sitemap files are required. The existing blog registry and article URLs remain separate. This section does not migrate existing articles or publish sample editorial content.
