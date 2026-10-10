@@ -26,6 +26,7 @@ ob_start(); ?>
 <p>Start with a small set of repositories, compare AI review findings with normal human reviews and expand only after the results are useful. The goal is not more comments. The goal is better risk detection before code reaches production.</p>
 <h2>Bottom line</h2>
 <p>GitHub’s code review API turns Copilot review into a more programmable part of the development workflow. The best use is not to remove human review, but to add an automated layer that runs consistently, scales across repositories and focuses human attention on the changes that matter most.</p>
+<p>For complementary static analysis changes, see our <a href="/ai-news/codeql-2-27-2-security-analysis-changes">CodeQL 2.27.2 release guide</a>. Copilot review and CodeQL cover different parts of code quality and security.</p>
 <h2>Sources</h2>
 <ul><li><a href="https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level/">GitHub Changelog: Copilot code review API support</a></li><li><a href="https://docs.github.com/en/copilot">GitHub Copilot documentation</a></li></ul>
 <?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';
