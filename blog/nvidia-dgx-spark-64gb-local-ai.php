@@ -35,6 +35,7 @@ ob_start(); ?>
 <h2>The practical value of the 64GB option</h2>
 <p>The new configuration makes local AI more flexible because developers can choose a memory tier that better matches their workload. The key is to treat memory as one part of the system rather than the only specification.</p>
 <p>For many builders, the right question is not “Can this machine run a 100-billion-parameter model?” It is “Can this machine run the models and workflows I actually need at a useful speed and cost?”</p>
+<p>To estimate whether a particular model and context length fit your available memory, use our <a href="/tools-guide/how-to-estimate-gpu-memory-for-local-llm-inference">step-by-step GPU memory sizing guide</a>.</p>
 <h2>Sources</h2>
 <ul><li><a href="https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/" target="_blank" rel="noopener noreferrer">NVIDIA: DGX Spark 64GB</a></li><li><a href="https://www.nvidia.com/en-us/products/workstations/dgx-spark/" target="_blank" rel="noopener noreferrer">NVIDIA DGX Spark</a></li></ul>
 <?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';

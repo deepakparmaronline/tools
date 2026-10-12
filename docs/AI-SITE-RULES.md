@@ -7,7 +7,7 @@ This file is the source of truth for anyone—human or AI—adding a tool, categ
 - Production stack: PHP 8+, Apache `.htaccess`, vanilla JavaScript, shared CSS. Do not introduce a framework, CMS, jQuery, package manager, or database just to add a simple tool.
 - Every tool has exactly one page file: `/<category>/<tool-slug>.php`.
 - Public canonical tool URL never includes `.php`: `https://toolboxkart.tech/<category>/<tool-slug>`.
-- Blog file: `/blog/<post-slug>.php`; canonical URL: `https://toolboxkart.tech/blog/<post-slug>`.
+- Blog file: `/blog/<post-slug>.php`; public canonical URL: `https://toolboxkart.tech/<article-category>/<post-slug>`.
 - Header and footer are shared in `/includes/header.php` and `/includes/footer.php`. Never copy them into a tool or post.
 - Global UI lives in `/assets/css/app.css` and `/assets/js/app.js`. Do not duplicate the global theme inside individual pages.
 - Tool/category discovery comes from `/data/catalog.php`. Blog discovery comes from `/data/posts.php`.
@@ -182,7 +182,7 @@ Current Healthcare tools are **administrative Revenue Cycle Management utilities
 4. Use one introductory paragraph followed by descriptive H2 sections. H2s generate the table of contents automatically.
 5. The shared template automatically adds author, published date, read time, About Author, Latest Posts, Recent Posts, BlogPosting schema and breadcrumbs.
 6. Link to relevant tools naturally; do not force links into unrelated paragraphs.
-7. Add the canonical post URL to `/sitemap.xml`.
+7. Verify that the article registry feeds the generated `/sitemap.xml` with the category-based canonical URL; do not manually edit generated sitemap output.
 8. Use a real publication date; never invent “updated” dates just for freshness.
 
 ## 10. Performance rules

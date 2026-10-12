@@ -336,7 +336,7 @@ Source file:
 
 Public canonical:
 
-`https://toolboxkart.tech/blog/<post-slug>`
+`https://toolboxkart.tech/<category>/<post-slug>`
 
 Do not expose `.php` in public article links.
 
@@ -1612,7 +1612,7 @@ Use the repository's current canonical rules.
 
 Documented format:
 
-`https://toolboxkart.tech/blog/<slug>`
+`https://toolboxkart.tech/<category>/<slug>`
 
 No `.php` in the public canonical.
 

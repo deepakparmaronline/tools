@@ -18,6 +18,7 @@
 <p>This approach avoids the common mistake of buying faster infrastructure when the real bottleneck is a slow database query or an inefficient agent loop.</p>
 <h2>What remains unknown</h2>
 <p>Google's U4 announcement is focused on capital-markets infrastructure, so AI teams should not assume that every U4 performance characteristic transfers directly to model-serving workloads. Capacity, region, supported configurations and pricing should be checked for the exact workload.</p>
+<p>For another view of how cloud infrastructure is being shaped around AI inference, see our <a href="/ai-news/microsoft-maia-300-inference-architecture-2027">overview of Microsoft Maia 300</a>, including the vendor claims and what developers should wait to verify.</p>
 <h2>Sources</h2>
 <ul><li><a href="https://cloud.google.com/blog/topics/financial-services/ultra-low-latency-solution-with-u4-enables-high-velocity-trading">Google Cloud: Introducing Google Cloud's U4 compute</a></li><li><a href="https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026">Google Cloud: Gemini at Work 2026</a></li></ul>
 <?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';
