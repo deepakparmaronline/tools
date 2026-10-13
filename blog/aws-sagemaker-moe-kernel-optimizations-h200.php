@@ -1,0 +1,48 @@
+<?php require __DIR__.'/../includes/bootstrap.php';$post=post_by_slug('aws-sagemaker-moe-kernel-optimizations-h200');ob_start(); ?>
+<figure class="article-image"><img src="/assets/images/blog/aws-sagemaker-moe-kernel-optimizations-h200.svg" alt="Three mixture-of-experts inference optimizations: matrix layout, FP8 backend routing and fewer JIT recompilations" width="1200" height="630" loading="eager" decoding="async"></figure>
+<p>AWS published three kernel optimizations for mixture-of-experts (MoE) model serving on Amazon SageMaker AI on October 13, 2026. The company reports up to 10% higher end-to-end throughput and up to 9% faster time to first token on NVIDIA H200 GPUs across the optimizations it describes. The changes target GPU matrix layout, the backend used for FP8 quantized models and unnecessary Triton just-in-time compilations.</p>
+<p>These are specific engineering results, not a promise that every MoE model will become 10% faster. The gains depend on the model, quantization, batch size, serving stack and the bottleneck in the current deployment. AWS presents the results from its own implementation and testing.</p>
+<h2>Why MoE inference needs specialized kernels</h2>
+<p>A mixture-of-experts model contains multiple expert networks, but a token usually activates only a selected subset of them. This lets the model increase its total parameter capacity without running every expert for every token. The trade-off is that routing tokens to experts, moving data and combining expert outputs can add work around the matrix multiplications.</p>
+<p>During the decode phase, a serving system may generate only one new token per sequence at a time. That creates small, irregular batches. GPU matrix instructions and kernels often work best when their tiles are filled efficiently, so a small batch can leave compute capacity idle even when the model is large.</p>
+<p>Fused MoE kernels combine routing, data movement and expert calculations into fewer GPU operations. That can reduce launch overhead and intermediate data movement, but the implementation must still match the GPU architecture and the shape of the workload.</p>
+<h2>The three optimizations AWS describes</h2>
+<table class="data-table"><thead><tr><th>Change</th><th>Target</th><th>AWS-reported result</th></tr></thead><tbody>
+<tr><td>Swap-AB for WGMMA</td><td>Improve matrix tile use during thin decode batches</td><td>About 2–4% higher end-to-end output throughput in the reported large-scale MoE tests on H200</td></tr>
+<tr><td>FP8 backend routing</td><td>Route FP8 tensor-quantized fused MoE work to Triton instead of the default FlashInfer/CUTLASS path</td><td>About 10% higher end-to-end throughput in the reported H200 workload</td></tr>
+<tr><td>Remove unnecessary Triton JIT recompilation</td><td>Avoid recompiling a variable-length kernel for each new token count</td><td>About 9% faster time to first token on H200 at eight-way tensor parallelism</td></tr>
+</tbody></table>
+<p>The figures describe separate optimizations and test conditions. Do not add the percentages together or assume that enabling all three yields a 15%, 20% or any other fixed combined improvement. The starting implementation and workload determine how much of each bottleneck exists.</p>
+<h2>1. Swap-AB makes better use of the WGMMA tile</h2>
+<p>AWS describes a mismatch between the small token-row dimension in decode and the way NVIDIA Hopper GPUs map operands for Warp Group Matrix Multiply Accumulate (WGMMA) instructions. The instruction layout expects a fixed row scale for one operand, while decode often presents only a few token rows. If the matrix is laid out in the less favorable direction, many execution lanes can remain underused.</p>
+<p>The Swap-AB change transposes the multiplication so the large expert dimension occupies the operand position that benefits from the hardware layout. AWS says this improves tile utilization and asynchronous prefetching, producing a 2–4% end-to-end output-throughput gain in its large-scale MoE tests on H200. The optimization was upstreamed to vLLM and is available in vLLM 0.24.0 or later, according to the AWS post.</p>
+<p>This is a low-level layout change, not a different model or a reduction in model quality. It matters most when the serving workload and matrix shapes match the conditions that expose the original utilization problem.</p>
+<h2>2. FP8 backend routing changes which kernel path runs</h2>
+<p>The second change concerns FP8 tensor-quantized fused MoE models. AWS says profiling showed that the Triton backend outperformed the default FlashInfer/CUTLASS path in the low-concurrency Hopper workloads it examined. Its routing policy now selects Triton for that case.</p>
+<p>The point is not that Triton is always faster than CUTLASS. Kernel backends behave differently across hardware, quantization formats, token counts and concurrency levels. AWS reports a 10% end-to-end throughput improvement for the FP8 quantized fused MoE workload it tested on H200. The change is available in the AWS Large Model Inference container version 28, according to the post.</p>
+<p>Teams should confirm which container version they use and whether the model is actually running the FP8 fused MoE path. A configuration change will not help a deployment that uses a different quantization format or is limited by network transfer, CPU preprocessing or another part of the request.</p>
+<h2>3. Removing repeat compilation can reduce first-token delay</h2>
+<p>The third optimization addresses Triton JIT compilation. Triton can specialize a kernel for integer arguments. If a serving workload passes a new value for a specialized argument, the runtime may compile another kernel variant. AWS found that the variable token count in the fused rotary-position-embedding and FP8-quantization kernel was causing repeated compilation.</p>
+<p>The team marked variable-length parameters so Triton would not specialize on them. AWS says that removed the repeated compilations and improved time to first token by 9% on H200 at eight-way tensor parallelism. The change was upstreamed to vLLM 0.22.0 or later.</p>
+<p>Time to first token measures how long a request waits before the first generated token arrives. It is not the same as total completion time or tokens per second. A deployment can improve first-token latency without achieving the same percentage gain in full-response latency, especially when long outputs dominate the request.</p>
+<h2>How to evaluate the gains on your own serving stack</h2>
+<p>Start with the current serving container, vLLM version, GPU type, quantization format and model architecture. Record them before changing a kernel or backend. If the deployment uses a managed SageMaker container, verify the exact image version rather than assuming that a new upstream change is already present.</p>
+<ol>
+<li><strong>Choose a representative workload.</strong> Include realistic prompt lengths, output lengths, request concurrency and the mix of short and long generations.</li>
+<li><strong>Separate latency from throughput.</strong> Record time to first token, end-to-end latency, generated tokens per second, requests per second and queue time. Use p50 and p95 values, not only an average.</li>
+<li><strong>Warm the serving process.</strong> JIT compilation and model loading can distort early measurements. Track cold-start time separately from steady-state serving.</li>
+<li><strong>Change one factor at a time.</strong> Compare the same model and input set before and after a backend or container change. If several optimizations change at once, you will not know which one caused the result.</li>
+<li><strong>Check output quality and errors.</strong> A faster configuration still needs regression tests for model output, failed requests, memory pressure and numerical stability.</li>
+<li><strong>Keep a rollback path.</strong> Pin the previous container or serving configuration until the new path passes load testing and production monitoring.</li>
+</ol>
+<p>For a wider view of serving performance, our <a href="/tools-guide/how-to-diagnose-llm-api-latency">guide to diagnosing LLM API latency</a> explains how to separate queueing, first-token wait and generation time. If memory pressure is the limiting factor, use the <a href="/tools-guide/how-to-estimate-gpu-memory-for-local-llm-inference">GPU memory sizing guide</a> before changing concurrency or context limits.</p>
+<h2>What the announcement does not prove</h2>
+<p>The reported percentages do not establish a universal speedup for every MoE model or every H200 deployment. The post focuses on particular kernel paths and test configurations. It also does not mean that a serving team can ignore batching, memory use, request scheduling or the cost of keeping GPUs underused while models load.</p>
+<p>The useful lesson is to profile the decode path before making broad claims about model speed. Layout inefficiency, backend selection and compilation overhead are different bottlenecks, and each needs evidence from the real workload.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://aws.amazon.com/blogs/machine-learning/mixture-of-experts-kernel-engineering-on-amazon-sagemaker-ai/" target="_blank" rel="noopener noreferrer">AWS Machine Learning Blog: Mixture-of-Experts kernel engineering on Amazon SageMaker AI</a>.</li>
+<li><a href="https://github.com/vllm-project/vllm/releases/tag/v0.24.0" target="_blank" rel="noopener noreferrer">vLLM v0.24.0 release notes</a>.</li>
+<li><a href="https://docs.vllm.ai/en/latest/serving/parallelism_scaling/" target="_blank" rel="noopener noreferrer">vLLM documentation: Parallelism and scaling</a>.</li>
+</ul>
+<?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';
