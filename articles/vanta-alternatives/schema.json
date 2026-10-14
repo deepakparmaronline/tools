@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "6 Vanta Alternatives for Compliance and Trust Management",
+      "description": "Compare six Vanta alternatives for compliance and trust management, with official pricing context, audit-service distinctions and an evidence-migration checklist.",
+      "datePublished": "2026-10-14",
+      "dateModified": "2026-10-14",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/alternatives/vanta-alternatives/",
+      "url": "https://toolboxkart.tech/alternatives/vanta-alternatives/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Alternatives",
+          "item": "https://toolboxkart.tech/alternatives/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "6 Vanta Alternatives for Compliance and Trust Management",
+          "item": "https://toolboxkart.tech/alternatives/vanta-alternatives/"
+        }
+      ]
+    }
+  ]
+}

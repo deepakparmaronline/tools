@@ -27,3 +27,7 @@ No suitable licensed image was selected; no invented screenshots or logos. The s
 ## QA and publication
 
 Markdown generated the PHP HTML. PHP syntax, JSON, one article title, 80 to 100 word lead and semantic table headers passed. Published locally after editorial review. Local HTTP 200, one H1, canonical/description/social metadata, exact Article/BreadcrumbList schema, resolving internal links, listing and sitemap membership, four nonempty CSS/JavaScript files with correct MIME types passed. Browser screenshots inspected at actual 360px and 1280px widths; readable shared styles, contained scrolling table and no page overflow. TOC navigation checked. No shared scripts or styles changed. GitHub push and Hostinger auto-deployment live verification pending.
+
+## October 14 live verification
+
+Commit 88b171ba pushed main. Hostinger deployed automatically; live HTTP200, exact metadata and Article/BreadcrumbList, listing/sitemap, four internal links and four nonempty correctly typed assets passed after the initial deployment lag.
