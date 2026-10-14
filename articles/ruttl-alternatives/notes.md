@@ -27,3 +27,7 @@ No suitable licensed asset selected. No fabricated screenshot or logo. The share
 ## QA and publication
 
 The complete Markdown article generated the PHP HTML, preserving headings, source links and table semantics. PHP syntax and schema JSON passed; the 80 to 100 word lead and absence of an extra H1, document shell or scripts were checked. The record is published locally after editorial review. Local HTTP, metadata/schema, internal links, listing/sitemap and all four assets passed. Browser inspection at actual 360px and 1280px widths confirmed styled content, an accessible scrolling table, no page overflow and TOC navigation. GitHub push and Hostinger auto-deployment live verification are pending. Completed records will not be left as drafts.
+
+## October 14 live verification
+
+Commit 0f55ba7a was pushed to main. Hostinger auto-deployment was confirmed by public HTTP 200 at the exact canonical, one H1, correct metadata and expected Article/BreadcrumbList graph. Listing, sitemap, related/internal links and all four CSS/JavaScript asset responses passed. Publication is live verified.
