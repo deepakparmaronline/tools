@@ -1,0 +1,44 @@
+<?php require __DIR__.'/../includes/bootstrap.php';$post=post_by_slug('github-actions-dependency-lockfiles');ob_start(); ?>
+<figure class="article-image"><img src="/assets/images/blog/github-actions-dependency-lockfiles.svg" alt="Diagram showing GitHub Actions references pinned to reviewed commits, checked through a dependency lockfile and CI verification." width="1200" height="630" loading="eager" decoding="async"></figure>
+<p>GitHub announced on October 14, 2026 that workflow dependency lockfiles are in public preview for GitHub Enterprise Cloud, including the data-residency offering. The feature records the exact commits used by actions and reusable workflows so a later run does not silently follow a moved tag or branch. It adds a reviewable control to the build process, but it does not prove that a dependency is trustworthy or remove the need to review code before pinning it.</p>
+<h2>What the preview changes</h2>
+<p>A GitHub Actions workflow often refers to an action by a tag, such as a version label, or by a branch. Those references are convenient, but a tag or branch can point to a different commit later. If the upstream repository is compromised or a maintainer moves a reference, a workflow may run code that was not present when the original change was reviewed.</p>
+<p>The new lockfile records the commit behind each dependency. GitHub says the generated file covers actions, transitive dependencies and reusable workflow dependencies. The default location is <code>.github/workflows/actions.lock</code>. Once a workflow is onboarded, GitHub Actions uses the recorded commits for its dependencies rather than resolving moving references at run time.</p>
+<p>The feature is designed to be adopted one workflow at a time. Teams do not have to lock every workflow in one large change, but they do need a clear process for keeping the lockfile aligned with changes to workflows and local actions.</p>
+<h2>Why a pinned dependency is easier to review</h2>
+<p>A pinned commit makes the code choice explicit. Reviewers can compare the old and new commit IDs in a pull request and decide whether the dependency change is expected. Without that record, a workflow can change behavior because an upstream tag moved, even when the workflow file in the application repository did not change.</p>
+<p>This is a supply-chain control, not a code-quality score. A malicious or vulnerable action can be pinned perfectly. Lockfiles help keep the reviewed version stable; they do not replace dependency review, permission limits, runner isolation, secret protection or testing. Treat the lockfile as one layer in the workflow security model.</p>
+<h2>Who can use it now</h2>
+<p>GitHub announced the public preview for GitHub Enterprise Cloud and GitHub Enterprise Cloud with data residency. The Require lockfile policy is also in public preview. Do not assume the same enterprise controls are available to every plan or to GitHub Enterprise Server. Confirm current eligibility in the product documentation before planning an organization-wide rollout.</p>
+<p>GitHub provides the <code>gh actions-lock</code> extension for the GitHub CLI. It can generate a lockfile, verify whether entries are current, and help teams adopt locking gradually. The official setup guide also describes pre-commit verification, pull-request checks and Dependabot integration.</p>
+<h2>Roll it out without breaking builds</h2>
+<ol>
+<li><strong>Inventory the workflows.</strong> List the workflows, reusable workflows and local actions that run in production. Identify which repositories deploy software, access cloud credentials or publish packages. Start with the workflows whose failure or compromise would have the largest impact.</li>
+<li><strong>Review the existing references.</strong> Check that every action points to a version the team intends to use. Do not lock a dependency just because it currently resolves. Read its release notes, inspect the upstream repository and confirm the requested permissions.</li>
+<li><strong>Generate the lockfile.</strong> Install the official <code>gh actions-lock</code> extension and create the lockfile for a small pilot. Commit the workflow and lockfile changes together so reviewers can see which dependency references changed.</li>
+<li><strong>Add verification.</strong> Run the lock command in a pull-request check and fail the check when a lockfile is stale or incomplete. A local pre-commit check can provide earlier feedback, but it does not replace server-side enforcement.</li>
+<li><strong>Require review.</strong> Add the lockfile to <code>CODEOWNERS</code> and require an appropriate reviewer for changes. A changed commit ID is a meaningful code change even when the workflow YAML looks almost the same.</li>
+<li><strong>Expand in stages.</strong> Test builds, releases, scheduled jobs and reusable workflows. Watch for legitimate workflows that were missed, then widen the policy only after the update process is reliable.</li>
+</ol>
+<h2>Keep lockfiles current</h2>
+<p>Locking only helps when the file stays in sync. GitHub documents a Dependabot integration that regenerates the matching lockfile entry when Dependabot updates an action in a workflow that is already onboarded. Dependabot does not automatically onboard workflows that have no lockfile entries, so teams still need a way to cover new workflows.</p>
+<p>For a stronger process, trigger a lockfile update check when workflow files or local action definitions change. Verify the result in pull requests and avoid manually editing commit IDs without reviewing the dependency change. If the check needs write access to update a file automatically, scope that permission to the repository and branch policy involved.</p>
+<h2>Measure adoption, not just enforcement</h2>
+<p>For a rollout dashboard, track the number of eligible workflows, the number onboarded, the percentage passing lockfile verification and the age of unresolved lockfile changes. A high compliance rate is useful only when it represents workflows that actually run in production. Separate a workflow that is intentionally out of scope from one that was missed.</p>
+<p>When a dependency update changes a commit, compare the upstream release notes and the diff before approving it. If the new version needs different permissions or environment variables, update those controls in the same reviewed change. A lockfile is most valuable when it makes dependency changes visible to the people who understand the build.</p>
+<h2>What lockfiles do not solve</h2>
+<ul>
+<li><strong>Unsafe dependencies:</strong> A pinned action can still contain vulnerable or malicious code. Review before pinning and continue monitoring upstream advisories.</li>
+<li><strong>Excessive workflow permissions:</strong> A trusted action can do more damage when the workflow gives it broad repository or cloud access. Use least-privilege tokens and short-lived credentials where possible.</li>
+<li><strong>Compromised runners or secrets:</strong> A lockfile does not protect a runner that is already compromised or prevent a workflow from exposing a secret through its own logic.</li>
+<li><strong>Unreviewed lockfile changes:</strong> If reviewers approve every dependency update without reading the diff, the lockfile becomes bookkeeping rather than a meaningful control.</li>
+</ul>
+<p>For related controls, our <a href="/ai-news/github-push-attribution-committer-must-match-pusher">guide to GitHub push attribution</a> explains why the authenticated pusher is different from the name written in commit metadata. Teams that use coding agents should also review the permissions they expose through <a href="/tools-guide/how-to-test-mcp-server-permissions-before-use">MCP servers</a> and keep agent workflows narrow. For orchestration patterns, see our <a href="/tools-guide/github-copilot-dynamic-workflows-guide">GitHub Copilot dynamic workflows guide</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://github.blog/changelog/2026-10-14-github-actions-workflow-lockfiles-in-public-preview/" target="_blank" rel="noopener noreferrer">GitHub Changelog: GitHub Actions workflow lockfiles in public preview</a>.</li>
+<li><a href="https://docs.github.com/en/actions/concepts/security/workflow-dependency-lockfiles" target="_blank" rel="noopener noreferrer">GitHub Docs: Workflow dependency lockfiles</a>.</li>
+<li><a href="https://docs.github.com/en/actions/how-tos/secure-your-work/lock-workflow-dependencies" target="_blank" rel="noopener noreferrer">GitHub Docs: Locking action dependencies in a repository’s workflows</a>.</li>
+<li><a href="https://docs.github.com/en/actions/how-tos/administer/enforce-workflow-lockfiles" target="_blank" rel="noopener noreferrer">GitHub Docs: Enforcing lockfiles for action dependencies</a>.</li>
+</ul>
+<?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';

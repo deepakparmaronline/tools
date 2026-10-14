@@ -131,4 +131,49 @@ $posts[] = ['slug'=>'aws-sagemaker-moe-kernel-optimizations-h200','title'=>'AWS 
 $posts[] = ['slug'=>'github-ai-scan-metrics-security-overview','title'=>'GitHub Adds AI Scan Metrics to Security View','description'=>'GitHub AI Scan now reports findings, remediation rates and autofix use across repositories. See who can access the preview and how to read the metrics.','category'=>'AI News','date'=>'2026-10-13','read_time'=>'10 min read'];
 $posts[] = ['slug'=>'how-to-use-bedrock-global-cross-region-inference-asia','title'=>'How to Use Bedrock Cross-Region Inference','description'=>'Use Bedrock global profiles for GPT-6 Sol, Luna and Astra from supported Asia Pacific Regions, with IAM, quota and data-residency checks before production.','category'=>'Tools Guide','date'=>'2026-10-13','read_time'=>'9 min read'];
 $posts[] = ['slug'=>'github-push-attribution-committer-must-match-pusher','title'=>'GitHub Adds Verified Pusher to Commit Records','description'=>'GitHub Enterprise preview adds authenticated pusher identity and a committer-matching rule. Learn what it proves, who can access it and how to roll it out.','category'=>'AI News','date'=>'2026-10-13','read_time'=>'8 min read'];
+$posts[] = [
+    'slug' => 'github-actions-dependency-lockfiles',
+    'title' => 'GitHub Adds Dependency Lockfiles for Actions',
+    'description' => 'GitHub Actions lockfiles pin dependencies to reviewed commits. Learn access, rollout steps, Dependabot updates and remaining supply-chain risks for teams.',
+    'category' => 'AI News',
+    'date' => '2026-10-14',
+    'read_time' => '9 min read',
+];
+
+$posts[] = [
+    'slug' => 'github-secret-scanning-ai-api-keys-default-protection',
+    'title' => 'GitHub Adds Default Protection for AI API Keys',
+    'description' => 'GitHub added Anthropic key detectors and default push protection for supported secrets. Learn the coverage limits and how teams should respond safely.',
+    'category' => 'AI News',
+    'date' => '2026-10-14',
+    'read_time' => '7 min read',
+];
+
+$posts[] = [
+    'slug' => 'github-app-fine-grained-permissions-october-2026',
+    'title' => 'GitHub Apps Gain More Fine-Grained Permissions',
+    'description' => 'GitHub added narrower repository-creation and installation permissions for Apps and fine-grained tokens, plus changes to token rotation and management.',
+    'category' => 'AI News',
+    'date' => '2026-10-14',
+    'read_time' => '9 min read',
+];
+
+$posts[] = [
+    'slug' => 'how-to-deploy-evaluate-models-sagemaker-jumpstart',
+    'title' => 'How to Deploy and Evaluate Models in JumpStart',
+    'description' => 'Use SageMaker JumpStart to deploy a model, test it with your own prompts, compare quality and risk metrics, and remove endpoints before costs build up.',
+    'category' => 'Tools Guide',
+    'date' => '2026-10-14',
+    'read_time' => '10 min read',
+];
+
+$posts[] = [
+    'slug' => 'tamnoon-ai-cloud-remediation-bedrock',
+    'title' => 'Tamnoon’s AI Cloud Remediation on Bedrock',
+    'description' => 'AWS says Tamnoon’s Tami orchestrator cut critical cloud exposure by over 90% in 90 days. Learn the reported design and the controls teams should keep.',
+    'category' => 'AI News',
+    'date' => '2026-10-14',
+    'read_time' => '10 min read',
+];
+
 return $posts;
