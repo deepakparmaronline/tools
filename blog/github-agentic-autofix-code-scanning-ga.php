@@ -1,6 +1,6 @@
 <?php require __DIR__.'/../includes/bootstrap.php';$post=post_by_slug('github-agentic-autofix-code-scanning-ga');ob_start(); ?>
 <figure class="article-image"><img src="/assets/images/blog/github-agentic-autofix-code-scanning-ga.svg" alt="Diagram showing a code scanning alert moving through agent investigation, a proposed fix, validation and a draft pull request." width="1200" height="630" loading="eager" decoding="async"></figure>
-<p>GitHub announced general availability for Agentic Autofix for code scanning on October 15, 2026. The feature can investigate one or more eligible security alerts, change code across the repository, run validation and open a draft pull request for a developer to review. It reduces the manual work needed to prepare a fix, but the resulting patch still needs normal engineering and security review.</p>
+<p>GitHub's Agentic Autofix for code scanning can investigate one or more eligible security alerts, change code across the repository, run validation and open a draft pull request for a developer to review. It reduces the manual work needed to prepare a fix, but the resulting patch still needs normal engineering and security review.</p>
 <h2>What changed with general availability</h2>
 <p>Agentic Autofix works from a code scanning alert rather than waiting for a developer to write a patch from scratch. A developer or security team assigns an alert to Copilot. The agent explores relevant code, proposes changes, and validates the result by rerunning the applicable CodeQL analysis. If it can prepare a fix, it opens a draft pull request with the changes for review.</p>
 <p>The important output is a reviewable pull request, not an automatic merge. Teams keep their existing branch protections, code-owner review, tests and release process. The feature can help a security backlog move faster, but it does not remove the need to decide whether the proposed change is correct for the application.</p>
@@ -28,7 +28,6 @@
 <p>For teams using multiple AI coding tools, the permissions exposed to those agents also need review. Our <a href="/tools-guide/how-to-test-mcp-server-permissions-before-use">MCP server permission checklist</a> explains how to inspect tool access before an agent can reach services or files. The <a href="/tools-guide/github-copilot-code-review-api-guide">GitHub Copilot code review API guide</a> covers a separate way to bring review into a development workflow.</p>
 <h2>Sources</h2>
 <ul>
-<li><a href="https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-generally-available/" target="_blank" rel="noopener noreferrer">GitHub Changelog: Agentic Autofix for code scanning alerts</a>.</li>
 <li><a href="https://docs.github.com/en/enterprise-cloud@latest/code-security/concepts/code-scanning/autofix-for-code-scanning" target="_blank" rel="noopener noreferrer">GitHub Docs: About autofix for code scanning</a>.</li>
 </ul>
 <?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';
