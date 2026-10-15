@@ -176,4 +176,50 @@ $posts[] = [
     'read_time' => '10 min read',
 ];
 
+
+$posts[] = [
+    'slug' => 'github-agentic-autofix-code-scanning-ga',
+    'title' => 'GitHub Agentic Autofix for Code Scanning',
+    'description' => 'GitHub made agentic autofix available for code scanning alerts. See how it validates fixes, who can use it, the costs, and the checks reviewers still need.',
+    'category' => 'AI News',
+    'date' => '2026-10-15',
+    'read_time' => '9 min read',
+];
+
+$posts[] = [
+    'slug' => 'cloudflare-ai-discovery-pilot-seo-impact',
+    'title' => 'Cloudflare AI Discovery Pilot: SEO Impact',
+    'description' => 'Cloudflare and OpenAI say their discovery pilot helped ChatGPT find hundreds of millions of pages. Learn what changed and what publishers should check.',
+    'category' => 'AI News',
+    'date' => '2026-10-15',
+    'read_time' => '9 min read',
+];
+
+$posts[] = [
+    'slug' => 'aws-trust-in-depth-ai-agent-controls',
+    'title' => 'AWS Trust in Depth: Safer Agent Autonomy',
+    'description' => 'AWS\'s Trust in Depth outlines controls for AI agents. See how scope, identity, runtime limits, monitoring and formal checks work together for safer use.',
+    'category' => 'AI News',
+    'date' => '2026-10-15',
+    'read_time' => '10 min read',
+];
+
+$posts[] = [
+    'slug' => 'nvidia-nemotron-3-5-super-vl-multimodal-agents',
+    'title' => 'NVIDIA Nemotron 3.5 Super VL: What Changed',
+    'description' => 'NVIDIA\'s Nemotron 3.5 Super VL combines reasoning, tool use and vision in one open model. Review its benchmarks, efficiency claims and deployment limits.',
+    'category' => 'AI News',
+    'date' => '2026-10-15',
+    'read_time' => '11 min read',
+];
+
+$posts[] = [
+    'slug' => 'how-to-build-agentcore-document-pipelines',
+    'title' => 'How to Build AgentCore Document Pipelines',
+    'description' => 'Build document extraction with Amazon Bedrock AgentCore. Follow the classify, extract, validate and reuse flow, then review testing and cost controls.',
+    'category' => 'Tools Guide',
+    'date' => '2026-10-15',
+    'read_time' => '12 min read',
+];
+
 return $posts;
