@@ -222,4 +222,49 @@ $posts[] = [
     'read_time' => '12 min read',
 ];
 
+$posts[] = [
+    'slug' => 'github-license-policy-setup-rulesets-limits',
+    'title' => 'GitHub License Policy: Setup, Rules and Limits',
+    'description' => 'Set up GitHub's open-source license compliance preview with rulesets, dependency checks, exception owners and a rollout plan for Enterprise Cloud teams.',
+    'category' => 'Tools Guide',
+    'date' => '2026-10-16',
+    'read_time' => '5 min read',
+];
+
+$posts[] = [
+    'slug' => 'reflection-beam-open-weight-model-sagemaker',
+    'title' => 'Reflection Beam Arrives on SageMaker JumpStart',
+    'description' => 'Reflection Beam is now on SageMaker JumpStart. Review its 501B-parameter design, deployment paths, GPU needs, license and limits for coding agents in AWS.',
+    'category' => 'AI News',
+    'date' => '2026-10-16',
+    'read_time' => '5 min read',
+];
+
+$posts[] = [
+    'slug' => 'how-to-test-rag-prompt-injection-attacks',
+    'title' => 'RAG Prompt Injection Testing: A Safe Workflow',
+    'description' => 'Build a repeatable RAG prompt-injection test suite for poisoned documents, unsafe tool calls, data leaks and guardrail gaps before launch and repeat it.',
+    'category' => 'Tools Guide',
+    'date' => '2026-10-16',
+    'read_time' => '6 min read',
+];
+
+$posts[] = [
+    'slug' => 'rag-retrieval-quality-recall-mrr-ndcg',
+    'title' => 'RAG Retrieval Quality: Recall, MRR and NDCG',
+    'description' => 'Measure RAG retrieval with Recall@k, MRR and NDCG. Label relevant documents, compare retrievers and spot ranking failures across query types before launch.',
+    'category' => 'Tools Guide',
+    'date' => '2026-10-16',
+    'read_time' => '6 min read',
+];
+
+$posts[] = [
+    'slug' => 'how-to-set-tenant-level-llm-rate-limits',
+    'title' => 'Tenant-Level LLM Rate Limits for Production',
+    'description' => 'Set per-tenant LLM rate limits with token budgets, concurrency caps, spend controls and safe retries so one customer cannot starve others in production.',
+    'category' => 'Tools Guide',
+    'date' => '2026-10-16',
+    'read_time' => '6 min read',
+];
+
 return $posts;
