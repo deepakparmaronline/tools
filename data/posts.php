@@ -267,4 +267,49 @@ $posts[] = [
     'read_time' => '6 min read',
 ];
 
+$posts[] = [
+    'slug' => 'amazon-torchneuron-pytorch-trainium',
+    'title' => 'Amazon TorchNeuron: PyTorch on Trainium Explained',
+    'description' => 'Amazon TorchNeuron connects existing PyTorch workflows to Trainium. Learn what is confirmed, what opens October 20, and how to test compatibility and cost.',
+    'category' => 'AI News',
+    'date' => '2026-10-19',
+    'read_time' => '7 min read',
+];
+
+$posts[] = [
+    'slug' => 'accenture-google-gemini-launchpads',
+    'title' => 'Google and Accenture Bring Gemini Agents to US Agencies',
+    'description' => 'Accenture and Google announced Gemini Launchpads for US federal agencies. Learn the delivery model, likely use cases, security questions and open details.',
+    'category' => 'AI News',
+    'date' => '2026-10-19',
+    'read_time' => '7 min read',
+];
+
+$posts[] = [
+    'slug' => 'github-copilot-model-retirement',
+    'title' => 'GitHub Copilot Model Retirement: What to Change',
+    'description' => 'GitHub Copilot retires six AI models on October 19. Review suggested replacements, plan checks, testing steps and how teams should handle pinned model IDs.',
+    'category' => 'AI News',
+    'date' => '2026-10-19',
+    'read_time' => '7 min read',
+];
+
+$posts[] = [
+    'slug' => 'hreflang-reciprocity-audit-workflow',
+    'title' => 'Hreflang Reciprocity Audit: A Crawl Workflow',
+    'description' => 'Audit multilingual hreflang clusters for reciprocal links, valid locale codes, canonical conflicts and sitemap coverage with a repeatable crawl workflow.',
+    'category' => 'Tools Guide',
+    'date' => '2026-10-19',
+    'read_time' => '7 min read',
+];
+
+$posts[] = [
+    'slug' => 'open-graph-metadata-audit-workflow',
+    'title' => 'Open Graph Metadata Audit: A Practical Workflow',
+    'description' => 'Audit Open Graph titles, descriptions, canonical URLs and images across a site, then separate broken tags from stale social-preview cache issues.',
+    'category' => 'Tools Guide',
+    'date' => '2026-10-19',
+    'read_time' => '8 min read',
+];
+
 return $posts;
