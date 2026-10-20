@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Prepare responsive images for desktop, tablet and mobile</title>
+<desc id="desc">A landscape image source is delivered in three proportionally sized variants for desktop, tablet and mobile while preserving the same aspect ratio.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#102035"/><stop offset="1" stop-color="#164e63"/></linearGradient><linearGradient id="scene" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#34d399"/></linearGradient></defs>
+<rect width="1600" height="900" rx="40" fill="url(#bg)"/><circle cx="1380" cy="120" r="180" fill="#38bdf8" opacity=".11"/>
+<text x="100" y="112" fill="#67e8f9" font-family="Arial, sans-serif" font-size="27" font-weight="700" letter-spacing="4">WEB PERFORMANCE · DESIGN</text>
+<text x="100" y="190" fill="#ffffff" font-family="Arial, sans-serif" font-size="54" font-weight="700">One image, the right size for each screen</text>
+<text x="100" y="240" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="26">Preserve proportions · choose a useful crop · deliver fewer pixels</text>
+<g>
+<rect x="100" y="315" width="690" height="388" rx="26" fill="#142a40" stroke="#3a6174" stroke-width="2"/>
+<rect x="140" y="355" width="610" height="286" rx="14" fill="url(#scene)"/>
+<circle cx="625" cy="420" r="45" fill="#fef3c7" opacity=".9"/>
+<path d="M140 575 L290 455 L400 540 L515 445 L750 600 V641 H140 Z" fill="#0f766e" opacity=".9"/>
+<path d="M140 610 L310 525 L445 585 L575 510 L750 620 V641 H140 Z" fill="#115e59"/>
+<text x="140" y="678" fill="#ffffff" font-family="Arial, sans-serif" font-size="23" font-weight="700">Master source · 1600 × 900</text>
+</g>
+<g>
+<rect x="850" y="315" width="650" height="388" rx="26" fill="#142a40" stroke="#3a6174" stroke-width="2"/>
+<text x="895" y="365" fill="#dbeafe" font-family="Arial, sans-serif" font-size="24" font-weight="700">RESPONSIVE VARIANTS</text>
+<rect x="900" y="410" width="350" height="197" rx="12" fill="url(#scene)"/><circle cx="1175" cy="445" r="25" fill="#fef3c7" opacity=".9"/><path d="M900 545 L990 470 L1065 520 L1120 465 L1250 565 V607 H900 Z" fill="#0f766e"/><path d="M900 578 L1000 525 L1085 570 L1165 520 L1250 580 V607 H900 Z" fill="#115e59"/>
+<text x="1290" y="455" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="700">Desktop</text><text x="1290" y="490" fill="#9fb8c8" font-family="Arial, sans-serif" font-size="21">1200w</text>
+<rect x="900" y="625" width="190" height="60" rx="10" fill="#203f57" stroke="#60a5fa" stroke-width="2"/><text x="995" y="663" text-anchor="middle" fill="#dbeafe" font-family="Arial, sans-serif" font-size="20">Tablet · 800w</text>
+<rect x="1110" y="625" width="190" height="60" rx="10" fill="#203f57" stroke="#34d399" stroke-width="2"/><text x="1205" y="663" text-anchor="middle" fill="#d1fae5" font-family="Arial, sans-serif" font-size="20">Mobile · 400w</text>
+</g>
+<path d="M795 505 H835" stroke="#67e8f9" stroke-width="5" stroke-linecap="round"/><path d="M820 490 L838 505 L820 520" fill="none" stroke="#67e8f9" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="100" y="790" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="700">Use srcset and sizes; reserve space with width and height.</text>
+<text x="100" y="840" fill="#9fb8c8" font-family="Arial, sans-serif" font-size="20">ToolboxKart · Practical web publishing workflows</text>
+</svg>
