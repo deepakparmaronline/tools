@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">CodeQL compatibility for macOS 27, Xcode 27 and Swift 6.4</title>
+<desc id="desc">A compatibility diagram showing pinned macOS 26 and Xcode 26 as the temporary option for traced scans, with a separate note that Swift 6.4 is not supported.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101827"/><stop offset="1" stop-color="#26314b"/></linearGradient></defs>
+<rect width="1600" height="900" rx="40" fill="url(#bg)"/><circle cx="1360" cy="140" r="190" fill="#f59e0b" opacity=".10"/>
+<text x="100" y="112" fill="#93c5fd" font-family="Arial, sans-serif" font-size="27" font-weight="700" letter-spacing="4">DEVELOPER TOOLING UPDATE</text>
+<text x="100" y="188" fill="#ffffff" font-family="Arial, sans-serif" font-size="52" font-weight="700">CodeQL compatibility checklist</text>
+<text x="100" y="238" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="26">macOS 27 · Xcode 27 · Swift 6.4</text>
+<rect x="100" y="300" width="650" height="360" rx="28" fill="#163b3a" stroke="#34d399" stroke-width="3"/>
+<text x="145" y="355" fill="#a7f3d0" font-family="Arial, sans-serif" font-size="23" font-weight="700">TEMPORARY PINNED TOOLCHAIN</text>
+<text x="145" y="420" fill="#ffffff" font-family="Arial, sans-serif" font-size="39" font-weight="700">macOS 26 or earlier</text>
+<text x="145" y="470" fill="#ffffff" font-family="Arial, sans-serif" font-size="39" font-weight="700">Xcode 26 or earlier</text>
+<path d="M145 515 H700" stroke="#34d399" stroke-width="4" stroke-linecap="round"/>
+<text x="145" y="565" fill="#d1fae5" font-family="Arial, sans-serif" font-size="24">Use for Swift and affected traced scans</text>
+<text x="145" y="610" fill="#9fbab8" font-family="Arial, sans-serif" font-size="20">Pin runner and toolchain versions explicitly</text>
+<rect x="850" y="300" width="650" height="360" rx="28" fill="#3a2528" stroke="#fb7185" stroke-width="3"/>
+<text x="895" y="355" fill="#fda4af" font-family="Arial, sans-serif" font-size="23" font-weight="700">COMPATIBILITY LIMITS</text>
+<g font-family="Arial, sans-serif" font-size="30" fill="#ffffff"><text x="895" y="420">macOS 27</text><text x="895" y="470">Xcode 27 traced extraction</text><text x="895" y="520">Swift 6.4 on any platform</text></g>
+<path d="M895 555 H1450" stroke="#fb7185" stroke-width="4" stroke-linecap="round"/>
+<text x="895" y="605" fill="#fecdd3" font-family="Arial, sans-serif" font-size="21">Check language and build mode before upgrading</text>
+<rect x="100" y="710" width="1400" height="92" rx="20" fill="#1d2d45" stroke="#52657e" stroke-width="2"/>
+<text x="145" y="766" fill="#ffffff" font-family="Arial, sans-serif" font-size="27" font-weight="700">C/C++, C# and Java: evaluate build mode none where supported.</text>
+<text x="100" y="850" fill="#94a3b8" font-family="Arial, sans-serif" font-size="20">Always test extraction, analysis and SARIF upload before changing a critical workflow.</text>
+</svg>
