@@ -17,6 +17,14 @@ RewriteRule ^alternatives/([a-z0-9-]+)(?:\.php)?/?$ alternatives/article.php?slu
 
 # Serve the sitemap dynamically from the current posts/tools index.
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
+RewriteRule ^sitemap-alternatives\.xml$ sitemap-alternatives.php [L]
+
+# Preserve authority from verified legacy URLs that no longer have a one-to-one source record.
+RewriteRule ^blog/claude-fable-5-1-whats-new-pricing-access-and-how-to-use-it/?$ /claude/ [R=301,L,NE]
+RewriteRule ^blog/gpt-6-astra-chatgpt-new-capabilities/?$ /chatgpt/chatgpt-gpt6-astra-workflow-guide [R=301,L,NE]
+RewriteRule ^blog/google-ai-studio-prompt-testing-workflow/?$ /tools-guide/ [R=301,L,NE]
+RewriteRule ^seo-guide/keyword-clustering-guide/?$ /tools-guide/ [R=301,L,NE]
+RewriteRule ^seo-guide/robots-meta-tags-guide/?$ /ai-news/google-search-robots-meta-tags-outside-head [R=301,L,NE]
 
 # Canonical HTTPS + host. Uncomment after DNS and SSL are confirmed if Hostinger is not already enforcing HTTPS.
 # RewriteCond %{HTTPS} !=on [OR]

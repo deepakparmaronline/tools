@@ -1,5 +1,9 @@
 # Editorial and publication notes
 
+## October 20 update
+
+Rechecked Freedom and Cold Turkey official pricing/features pages, added the current India-localized Cold Turkey price, and linked the new `/versus/freedom-vs-cold-turkey/` comparison. This is a substantive update, so the publication record uses an accurate `updated` date of 2026-10-20.
+
 Six distinct workflows selected: desktop commitment, configurable plans, free Mac timer, phone rules, app-opening interventions, and included Apple controls. Partial scope and sync limitations explicit. No software installs, bypass attempts, clinical claims or productivity benchmarks. Freedom real free tier verified against February 2026 help. Opal free-rule and monthly-billing conflicts disclosed rather than choosing an unsupported number. Current Apple documentation uses version27-specific controls; qualified. Internal inventory reviewed; no unrelated utility links forced. Shared listing/related sections provide navigation. No licensed image selected.
 
 ## QA

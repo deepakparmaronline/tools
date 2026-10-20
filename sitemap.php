@@ -11,9 +11,15 @@ $urls[]=['url'=>SITE_URL.'/','lastmod'=>$latestPostDate,'changefreq'=>'daily','p
 $urls[]=['url'=>SITE_URL.'/all-tools','lastmod'=>'2026-09-09','changefreq'=>'weekly','priority'=>'0.9'];
 $urls[]=['url'=>SITE_URL.'/browse-tools-by-niche','lastmod'=>'2026-09-17','changefreq'=>'weekly','priority'=>'0.9'];
 foreach(['chatgpt','claude','ai-news','tools-guide'] as $key){$urls[]=['url'=>SITE_URL.'/'.$key.'/','lastmod'=>$latestPostDate,'changefreq'=>'weekly','priority'=>'0.9'];}
+$urls[]=['url'=>SITE_URL.'/versus/','lastmod'=>$latestPostDate,'changefreq'=>'weekly','priority'=>'0.8'];
+$urls[]=['url'=>SITE_URL.'/reviews/','lastmod'=>$latestPostDate,'changefreq'=>'weekly','priority'=>'0.8'];
 $urls[]=['url'=>SITE_URL.'/tech/','lastmod'=>$latestPostDate,'changefreq'=>'weekly','priority'=>'0.9'];
 $urls[]=['url'=>SITE_URL.'/content/','lastmod'=>$latestPostDate,'changefreq'=>'weekly','priority'=>'0.8'];
-$urls[]=['url'=>SITE_URL.'/about-deepak-parmar/','priority'=>'0.4'];
+$urls[]=['url'=>SITE_URL.'/about-deepak-parmar/','lastmod'=>'2026-10-20','priority'=>'0.6'];
+$urls[]=['url'=>SITE_URL.'/editorial-policy','lastmod'=>'2026-10-20','priority'=>'0.4'];
+$urls[]=['url'=>SITE_URL.'/review-methodology','lastmod'=>'2026-10-20','priority'=>'0.5'];
+$urls[]=['url'=>SITE_URL.'/advertising-disclosure','lastmod'=>'2026-10-20','priority'=>'0.4'];
+$urls[]=['url'=>SITE_URL.'/corrections-policy','lastmod'=>'2026-10-20','priority'=>'0.4'];
 foreach(array_keys(tool_categories()) as $key){$urls[]=['url'=>SITE_URL.'/'.$key.'/','lastmod'=>'2026-09-09','changefreq'=>'weekly','priority'=>'0.9'];}
 foreach($catalog['tools'] as $tool){$urls[]=['url'=>SITE_URL.'/'.$tool['category'].'/'.$tool['slug'],'lastmod'=>'2026-09-09','priority'=>'0.8'];}
 foreach($posts as $p){$urls[]=['url'=>post_url($p),'lastmod'=>$p['date'],'priority'=>'0.7'];}

@@ -257,6 +257,14 @@ Plain-English concepts:
 
 /explainers/{slug}/
 
+Focused comparison between two named software products:
+
+/versus/{slug}/
+
+Research-based review of one software product:
+
+/reviews/{slug}/
+
 Slug rules:
 
 - lowercase

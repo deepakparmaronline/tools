@@ -39,6 +39,46 @@ function alternative_image_url(array $article): string {
     return filter_var($image, FILTER_VALIDATE_URL) && str_starts_with($image, 'https://') ? $image : '';
 }
 
+function alternative_topic_group(array $article): array {
+    $slug = $article['slug'] ?? '';
+    $groups = [
+        'productivity'=>['name'=>'Productivity, focus and scheduling','description'=>'Task planning, calendars, focus blockers, booking and personal workflow tools.','slugs'=>['akiflow-alternatives','fantastical-alternatives','freedom-alternatives','odrive-alternatives','sunsama-alternatives','taskade-alternatives','tidycal-alternatives','vector-alternatives']],
+        'privacy-browsers'=>['name'=>'Browsers and privacy','description'=>'Browser, tracker-blocking and private-search choices for different devices.','slugs'=>['arc-search-alternatives','ghostery-alternatives','orion-browser-alternatives']],
+        'customer-growth'=>['name'=>'Customer, sales and marketing','description'=>'Customer success, support, feedback, messaging and lead-conversion software.','slugs'=>['callpage-alternatives','gainsight-alternatives','leave-me-alone-alternatives','stonly-alternatives','survicate-alternatives','wati-alternatives']],
+        'developer-creative'=>['name'=>'Developer and creative workflows','description'=>'Documentation, integrations, app delivery, design review and motion tools.','slugs'=>['hera-alternatives','mintlify-alternatives','mobiloud-alternatives','nylas-alternatives','ruttl-alternatives']],
+        'documents-specialist'=>['name'=>'Documents, study and specialist software','description'=>'PDF, study, meeting, compliance and industry-specific software.','slugs'=>['notegpt-alternatives','pearl-alternatives','shadow-alternatives','updf-alternatives','vanta-alternatives']],
+    ];
+    foreach ($groups as $key=>$group) if (in_array($slug,$group['slugs'],true)) return ['key'=>$key]+$group;
+    return ['key'=>'other','name'=>'More software alternatives','description'=>'Additional researched alternatives for specific workflows.','slugs'=>[]];
+}
+
+function alternative_grouped_articles(): array {
+    $groups = [];
+    foreach (alternative_articles() as $article) {
+        $group = alternative_topic_group($article);
+        if (!isset($groups[$group['key']])) $groups[$group['key']] = ['name'=>$group['name'],'description'=>$group['description'],'articles'=>[]];
+        $groups[$group['key']]['articles'][] = $article;
+    }
+    return $groups;
+}
+
+function related_alternative_articles(array $source, int $limit=3): array {
+    $sourceGroup = alternative_topic_group($source)['key'];
+    $sourceTokens = array_filter(preg_split('/[^a-z0-9]+/',strtolower(($source['title'] ?? '').' '.($source['tag'] ?? ''))) ?: [],fn($token)=>strlen($token)>3);
+    $candidates = array_values(array_filter(alternative_articles(),fn($item)=>$item['slug'] !== $source['slug']));
+    usort($candidates,function($a,$b) use ($source,$sourceGroup,$sourceTokens) {
+        $score = function($item) use ($source,$sourceGroup,$sourceTokens) {
+            $value = alternative_topic_group($item)['key'] === $sourceGroup ? 20 : 0;
+            $value += ($item['tag'] ?? '') === ($source['tag'] ?? '') ? 30 : 0;
+            $text = strtolower(($item['title'] ?? '').' '.($item['tag'] ?? ''));
+            foreach ($sourceTokens as $token) if (str_contains($text,$token)) $value += 4;
+            return $value;
+        };
+        return $score($b) <=> $score($a) ?: strcmp($b['date'],$a['date']);
+    });
+    return array_slice($candidates,0,$limit);
+}
+
 function render_alternative_cards(array $articles): void {
     foreach ($articles as $article): $image = alternative_image_url($article); ?>
     <article class="post-card alternative-card">

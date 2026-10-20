@@ -31,6 +31,23 @@ if ($path === '/sitemap.xml') {
     return;
 }
 
+if ($path === '/sitemap-alternatives.xml') {
+    require __DIR__.'/sitemap-alternatives.php';
+    return;
+}
+
+$legacyRedirects = [
+    '/blog/claude-fable-5-1-whats-new-pricing-access-and-how-to-use-it/' => '/claude/',
+    '/blog/gpt-6-astra-chatgpt-new-capabilities/' => '/chatgpt/chatgpt-gpt6-astra-workflow-guide',
+    '/blog/google-ai-studio-prompt-testing-workflow/' => '/tools-guide/',
+    '/seo-guide/keyword-clustering-guide/' => '/tools-guide/',
+    '/seo-guide/robots-meta-tags-guide/' => '/ai-news/google-search-robots-meta-tags-outside-head',
+];
+if (isset($legacyRedirects[$path])) {
+    header('Location: '.$legacyRedirects[$path], true, 301);
+    exit;
+}
+
 if (preg_match('#^/alternatives(?:/index\.php)?/?$#', $path)) {
     if ($path !== '/alternatives/') {
         header('Location: /alternatives/', true, 301);

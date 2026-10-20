@@ -2,6 +2,8 @@
 
 Notion and ClickUp are useful Taskade alternatives when your priority is shared knowledge or team projects. Asana suits formal handoffs, Airtable suits records and operational apps, n8n suits agent automations, and Retool suits internal interfaces over existing data. Choose by the part of Taskade you actually use: a project manager may replace your task boards without replacing a Genesis app or its agents. For a small team already running those components together, staying with Taskade can make sense. Compare required seats, AI usage and rebuilding work before treating any free tier as an equivalent replacement.
 
+If you are still deciding whether to leave, read the [Taskade review](/reviews/taskade-review/) for the current plan structure, AI-credit limits, automation allowance and export boundaries.
+
 ## Taskade alternatives at a glance
 
 The following shortlist separates project and knowledge work from app and automation work. These are workflow recommendations, not a ranking of identical products.
@@ -21,7 +23,7 @@ Figures are public web prices checked October 8, 2026, before tax and optional u
 
 [Taskade](https://www.taskade.com/) combines collaborative projects with AI agents, automations and Genesis app building. If your intake form, project records, assistant and customer-facing app already share one workspace, replacing only the task list can leave the rest of that process behind.
 
-The current [Free plan](https://www.taskade.com/pricing) includes two users and up to three apps. Its 11,000 AI credits are a one-time grant earned through account verification and the first app build, not a renewed monthly allowance. Taskade also says ordinary app visits, projects, synchronization and non-AI automations do not consume AI credits. Reaching an AI credit limit does not mean existing apps stop serving visitors.
+The current [Free plan](https://www.taskade.com/pricing) includes two users, one workspace, up to three apps and one AI agent. The October 20 pricing table describes Free AI credits as “earn or buy.” With Monthly selected, Pro displayed at US$10 per month for 10 users, 50,000 monthly AI credits and 1,000 automation runs. Confirm the active billing selector and checkout total because plans can change.
 
 Keep it if that combined setup meets your needs and you can predict its AI usage. A switch to separate docs, automation and app services creates several subscriptions and several places to manage access. That may still be worthwhile, but the reason should be a concrete capability or operating requirement.
 

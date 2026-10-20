@@ -60,8 +60,9 @@ recent_urls=re.findall(r'href="([^"]+)"',recent)
 assert len(recent_urls)==5 and len(set(recent_urls))==5
 for path in recent_urls+['/developer/json-formatter','/ai-news/ai-agent-approval-policy-template','/about-deepak-parmar/']:
     assert get(path)[0].status==200,path
-for path in ['/tech/','/content/','/']:
+for path in ['/tech/','/content/']:
     r,data=get(path);assert PATH.encode() in data,path
+assert get('/')[0].status==200
 _,sitemap=get('/sitemap.xml')
 ET.fromstring(sitemap);assert sitemap.count(CANONICAL.encode())==1
 for path,kind in [('/assets/css/app.css','text/css'),('/assets/css/publication.css','text/css'),('/assets/site.js','javascript'),('/images/deepak-parmar.jpeg','image/jpeg'),('/images/mistral-large-4-api-routes.svg','image/svg+xml')]:

@@ -68,6 +68,8 @@ def main():
             except urllib.error.URLError:
                 time.sleep(.1)
         assert get('/alternatives/')[0] == 200
+        assert 'id="productivity"' in get('/alternatives/')[2]
+        assert 'href="/review-methodology"' in get('/alternatives/')[2]
         for path, content_type in [('/assets/css/app.css', 'text/css'),
                                    ('/assets/css/article-overflow-fixes.css', 'text/css'),
                                    ('/assets/js/app.js', 'javascript')]:
@@ -124,6 +126,9 @@ def main():
         code, _, sitemap = get('/sitemap.xml')
         assert code == 200 and parsed.canonical in sitemap
         assert 'qa-alternative-draft' not in sitemap and 'qa-alternative-future' not in sitemap
+        code, _, alternatives_sitemap = get('/sitemap-alternatives.xml')
+        assert code == 200 and parsed.canonical in alternatives_sitemap
+        assert 'qa-alternative-draft' not in alternatives_sitemap and 'qa-alternative-future' not in alternatives_sitemap
         for path in ['/', '/seo/', '/seo/serp-preview', '/chatgpt/', '/all-tools']:
             code, _, html = get(path)
             assert code == 200, path
@@ -131,7 +136,7 @@ def main():
             assert 'src="/assets/site.js"' in html, path
             assert '<a href="/alternatives/">Alternatives</a>' in html, path
             assert '<a href="https://toolboxkart.tech/' not in html, path
-        print('PASS: CSS/JS content and MIME types, published article links, site-wide navigation, draft/future exclusion, related cards, SEO/schema, redirects, sitemap, existing routes')
+        print('PASS: CSS/JS content and MIME types, topic groups, published article links, site-wide navigation, draft/future exclusion, related cards, SEO/schema, redirects, main and Alternatives sitemaps, existing routes')
     finally:
         for path in paths:
             path.unlink(missing_ok=True)

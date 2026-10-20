@@ -28,6 +28,8 @@ This repository is a PHP 8+ utility site. The implementation source of truth is 
 
 The current catalog contains 29 categories and 180 registered tools. Read `/data/catalog.php` before planning additions because roadmap documents may contain items that are already live under a renamed or expanded category.
 
+Software decision content has three permanent public sections: `/alternatives/` for multi-option shortlists, `/versus/` for focused two-product comparisons, and `/reviews/` for single-product reviews. Do not move existing Alternatives URLs. `/sitemap-alternatives.xml` is a dedicated Alternatives sitemap alongside the complete `/sitemap.xml`. The author and editorial trust pages are documented in `/agents.md` and `/docs/ALTERNATIVES.md`.
+
 When asking an external AI agent to create tools from an attached site ZIP, use `/TOOLBOXKART-AI-CATEGORY-TOOL-PACKAGING-PROMPT.md`. It requires separate import-ready ZIP files per category, such as `seo-tools.zip`, and explicitly forbids returning a replacement ZIP of the entire website.
 
 ### Automatic niche/category contract

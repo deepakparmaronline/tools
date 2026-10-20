@@ -10,6 +10,8 @@ This package contains a launch-ready multi-category utility website for `toolbox
 - Tool pages with unique metadata, visible long-form explanations, FAQs and JSON-LD.
 - Category pages generated from a central catalog.
 - Blog template with automatic table of contents, author `Deepak Parmar`, published date, read time, About Author, Latest Posts, Recent Posts and BlogPosting schema.
+- Dedicated Alternatives topic hub and XML sitemap, plus focused `/versus/` and `/reviews/` editorial sections.
+- Author, editorial, review-methodology, advertising-disclosure and corrections pages for transparent software coverage.
 - Three starter articles.
 - Privacy, Terms, Disclaimer, About, Contact and custom 404 pages.
 - `robots.txt` and `sitemap.xml`.
@@ -44,6 +46,7 @@ Then open `/seo/serp-preview` or another extensionless tool URL. Direct `.php` p
 - `assets/css/app.css` — design system.
 - `assets/js/app.js` — shared interactions/search/theme.
 - `docs/AI-SITE-RULES.md` — rules for future additions.
+- `docs/ALTERNATIVES.md` — permanent Alternatives URLs, topic grouping, related-card and sitemap rules.
 - `TOOLBOXKART-AI-CATEGORY-TOOL-PACKAGING-PROMPT.md` — prompt for receiving separate import-ready ZIP packages per tool category.
 
 ## Adding a new tool niche

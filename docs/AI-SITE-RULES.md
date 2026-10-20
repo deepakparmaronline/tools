@@ -193,6 +193,15 @@ Current Healthcare tools are **administrative Revenue Cycle Management utilities
 - Optimize future images as WebP/AVIF where practical, include width/height, descriptive alt text, and lazy-load below-the-fold images.
 - Keep tool pages useful with JavaScript enabled; if a tool fundamentally requires JS, explanatory content must still render server-side.
 
+## 9B. Software decision content
+
+- Preserve established Alternatives URLs at `/alternatives/<slug>/`; never move them into `/reviews/` or `/versus/`.
+- Use `/versus/<slug>/` only for a focused comparison between two named products.
+- Use `/reviews/<slug>/` for a research-based evaluation of one product, including pricing, limits, portability and best-fit users.
+- Register Versus and Reviews pages in a `data/post-*.php` record with `standalone => true`. Their category and central indexes are generated from that registry.
+- Keep the dedicated `/sitemap-alternatives.xml` limited to the Alternatives hub and published Alternatives records. The complete sitemap remains `/sitemap.xml`.
+- Link every software decision page to the author profile and the review methodology. Label sponsored placements and never let payment control an editorial ranking.
+
 ## 11. URL and link rules
 
 - Internal public links use extensionless URLs.

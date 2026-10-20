@@ -1,5 +1,9 @@
 # Editorial notes
 
+## October 20 update
+
+Rechecked Taskade's official pricing and export pages, corrected the changed Free/Pro limits, and added a contextual link to `/reviews/taskade-review/`. This is a substantive update, so the publication record uses an accurate `updated` date of 2026-10-20.
+
 ## Selection and information gain
 
 Six candidates cover materially different replacement needs. Notion organizes page-based knowledge and databases; ClickUp adds task operations and time tracking; Asana structures cross-team delivery; Airtable models operational records and interfaces; n8n handles integrations and agent workflows; Retool builds internal interfaces over databases and APIs. No universal winner or full-parity claim. Original information gain is a component inventory, a budget exercise using billable roles and distinct usage meters, and a migration acceptance checklist separating project exports from app/agent reconstruction.

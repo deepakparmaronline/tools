@@ -1,5 +1,7 @@
 # Evidence ledger
 
+Update checked 2026-10-20 (Asia/Kolkata): Freedom's Free, monthly, annual-equivalent and lifetime-offer details remained visible. Cold Turkey's India-localized official pricing page displayed Blocker Pro at ₹2,499 as a one-time purchase. The article now links to the focused Freedom vs Cold Turkey comparison.
+
 Checked 2026-10-08 (Asia/Kolkata). Facts below came from opened official pages, except rows explicitly marked discovery. No hands-on product tests or user accounts used.
 
 | Product/source | URL | Evidence used / context |

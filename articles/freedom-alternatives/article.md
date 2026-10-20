@@ -33,7 +33,9 @@ This comparison uses official product pages, plan documentation, and support gui
 
 ## Cold Turkey Blocker: consider a desktop-only commitment
 
-[Cold Turkey Blocker](https://getcoldturkey.com/) targets website and app distractions on desktop computers. Its [pricing guide](https://getcoldturkey.com/pricing/) distinguishes Free timed website blocks from Pro features such as app blocking, schedules, all locking options, and breaks or allowances. Pro is a one-time purchase with lifetime updates. The fetched official page did not expose a reliable numeric purchase amount, so check its current checkout rather than relying on an old US$39 quotation.
+[Cold Turkey Blocker](https://getcoldturkey.com/) targets website and app distractions on desktop computers. Its [pricing guide](https://getcoldturkey.com/pricing/) distinguishes Free timed website blocks from Pro features such as app blocking, schedules, all locking options, and breaks or allowances. Pro is a one-time purchase with lifetime updates. The India-localized official page displayed ₹2,499 on October 20, 2026; check your own regional checkout before comparing totals.
+
+The focused [Freedom vs Cold Turkey comparison](/versus/freedom-vs-cold-turkey/) covers device support, locks and current pricing side by side.
 
 The same guide confirms Windows and macOS support and a license for computers you personally use. It does not support Linux, ChromeOS, Android, or iOS. A desktop license therefore cannot replace Freedom's phone coverage on its own.
 

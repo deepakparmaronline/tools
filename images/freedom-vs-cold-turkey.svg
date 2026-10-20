@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Freedom versus Cold Turkey comparison</title>
+  <desc id="desc">A split comparison showing multi-device coordination for Freedom and desktop locking controls for Cold Turkey.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eff6ff"/><stop offset="1" stop-color="#ecfdf5"/></linearGradient></defs>
+  <rect width="1200" height="630" rx="36" fill="url(#bg)"/>
+  <rect x="70" y="74" width="470" height="482" rx="28" fill="#fff" stroke="#bfdbfe" stroke-width="3"/>
+  <rect x="660" y="74" width="470" height="482" rx="28" fill="#fff" stroke="#99f6e4" stroke-width="3"/>
+  <circle cx="600" cy="315" r="62" fill="#0b1220"/><text x="600" y="329" text-anchor="middle" font-family="system-ui,sans-serif" font-size="38" font-weight="800" fill="#fff">VS</text>
+  <text x="120" y="150" font-family="system-ui,sans-serif" font-size="44" font-weight="800" fill="#1d4ed8">Freedom</text>
+  <text x="710" y="150" font-family="system-ui,sans-serif" font-size="44" font-weight="800" fill="#0f766e">Cold Turkey</text>
+  <g fill="none" stroke="#2563eb" stroke-width="10" stroke-linecap="round"><rect x="120" y="220" width="150" height="95" rx="12"/><rect x="326" y="213" width="92" height="150" rx="15"/><path d="M196 315v42m-45 0h90M270 265h56"/></g>
+  <g fill="none" stroke="#0f9f8f" stroke-width="10" stroke-linecap="round"><rect x="715" y="220" width="230" height="145" rx="14"/><path d="M830 365v42m-72 0h144"/><rect x="969" y="238" width="110" height="100" rx="18"/><path d="M994 274h60m-60 28h60"/></g>
+  <text x="120" y="430" font-family="system-ui,sans-serif" font-size="25" font-weight="700" fill="#0b1220">Multi-device sessions</text>
+  <text x="120" y="469" font-family="system-ui,sans-serif" font-size="22" fill="#5d6b7e">Desktop + mobile coordination</text>
+  <text x="710" y="430" font-family="system-ui,sans-serif" font-size="25" font-weight="700" fill="#0b1220">Desktop-first controls</text>
+  <text x="710" y="469" font-family="system-ui,sans-serif" font-size="22" fill="#5d6b7e">Schedules, locks and allowances</text>
+</svg>

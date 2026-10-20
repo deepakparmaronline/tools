@@ -1,5 +1,7 @@
 # Evidence ledger
 
+Update checked 2026-10-20 (Asia/Kolkata): Taskade's official pricing page now lists Free as two users, one workspace, three apps and one agent with credits described as “earn or buy.” With Monthly selected, Pro displayed at US$10 per month for 10 users, 50,000 monthly credits and 1,000 automation runs. The published article was corrected and linked to the new Taskade review.
+
 Official pages and indexed official help evidence reviewed independently for this article; access limitations are identified below. Checked 2026-10-08 in Asia/Kolkata. USD prices are public web prices where stated; no currency conversion. Local tax, checkout region, app-store pricing, optional add-ons and negotiated contracts may differ. No firsthand testing or community complaint claims.
 
 | Product | Fact used | Official source | Checked | Plan / billing context and verification notes |

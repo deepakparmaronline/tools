@@ -12,6 +12,14 @@ The user instructed on October 9, 2026 that future article requests must proceed
 
 Hostinger deployment is automatic from GitHub `main`, as confirmed by the user on October 9, 2026. Push reviewed changes to `main`, let the existing auto-deployment run, and verify the public article URLs, listing and sitemap. Hostinger sign-in is not a prerequisite for routine publishing. Report a hosting blocker only when an actual deployment or live verification fails; do not infer one from the control panel login screen.
 
+## Software decision-content architecture
+
+Keep existing Alternatives URLs permanently stable at `/alternatives/{slug}/`. The Alternatives hub groups published records by practical topic through `includes/alternatives.php`; do not replace it with a flat manual list. Related cards are selected through `related_alternative_articles()` and should remain topically connected.
+
+Use `/versus/{slug}/` for a focused two-product comparison and `/reviews/{slug}/` for a research-based single-product review. Register these standalone pages in `data/post-*.php` with `category` set to `versus` or `reviews` and `standalone => true`; their category indexes and `/content/` discovery update from the registry. Use complete article HTML with static author, dates, TOC, sources and schema, following `docs/PUBLISHING-STANDARD.md`.
+
+The dedicated `/sitemap-alternatives.xml` contains only the Alternatives hub and published Alternatives records. Keep it alongside the complete `/sitemap.xml`, and keep both declarations in `robots.txt`. Editorial trust pages are `/about-deepak-parmar/`, `/editorial-policy`, `/review-methodology`, `/advertising-disclosure` and `/corrections-policy`. Product-payment opportunities must use a clearly labeled sponsored placement; payment never buys an undisclosed editorial ranking.
+
 # Alternatives article workflow
 
 ## Role and when these rules apply
