@@ -97,7 +97,8 @@ $posts[]=['slug'=>'claude-code-mods-guide','title'=>'Claude Code Mods: How They 
 $posts[]=['slug'=>'claude-frontier-academy-enterprise-ai-engineers','title'=>'Claude Frontier Academy: Anthropic’s Plan to Train 10,000 AI Engineers','description'=>'Anthropic is investing $100 million in Claude Frontier Academy to train 10,000 Frontier Deployed Engineers by the end of 2027.','category'=>'Claude','date'=>'2026-10-05','read_time'=>'8 min read'];
 $posts[]=['slug'=>'barclays-claude-ai-enterprise-workflows','title'=>'How Barclays Is Using Claude Across Engineering and Banking Operations','description'=>'Barclays is expanding Claude across software development, employee support and email processing while adding stronger AI governance.','category'=>'Claude','date'=>'2026-10-05','read_time'=>'8 min read'];
 $posts[]=['slug'=>'gpt-rosalind-pricing-october-2026','title'=>'GPT-Rosalind Pricing Starts October 5: What Research Teams Need to Know','description'=>'OpenAI starts billing for GPT-Rosalind on October 5, 2026. Here are the API prices, access limits and practical implications for research teams.','category'=>'ChatGPT','date'=>'2026-10-05','read_time'=>'8 min read'];
-$posts[]=['slug'=>'claude-for-government-general-availability','title'=>'Claude for Government Is Now Generally Available: What Agencies Get','description'=>'Anthropic has made Claude for Government generally available with FedRAMP High authorization, spending controls, audit logs and early access to Claude Code.','category'=>'Claude','date'=>'2026-10-05','read_time'=>'8 min read'];$posts[]=['slug'=>'gpt-6-intelligent-ui-chatgpt-2026','title'=>'GPT-6 Intelligent UI in ChatGPT: What Changed','description'=>'OpenAI is rolling out GPT-6 with Intelligent UI in ChatGPT. Here is what the new interactive answers do, where they are available, and what to watch.','category'=>'ChatGPT','date'=>'2026-10-08','read_time'=>'8 min read'];
+$posts[]=['slug'=>'claude-for-government-general-availability','title'=>'Claude for Government Is Now Generally Available: What Agencies Get','description'=>'Anthropic has made Claude for Government generally available with FedRAMP High authorization, spending controls, audit logs and early access to Claude Code.','category'=>'Claude','date'=>'2026-10-05','read_time'=>'8 min read'];
+$posts[]=['slug'=>'gpt-6-intelligent-ui-chatgpt-2026','title'=>'GPT-6 Intelligent UI in ChatGPT: What Changed','description'=>'OpenAI is rolling out GPT-6 with Intelligent UI in ChatGPT. Here is what the new interactive answers do, where they are available, and what to watch.','category'=>'ChatGPT','date'=>'2026-10-08','read_time'=>'8 min read'];
 $posts[]=['slug'=>'openai-false-front-influence-operations-2026','title'=>'OpenAI False-Front Operations Report: What AI Security Teams Should Learn','description'=>'OpenAI says it disrupted Russia and Iran linked false-front influence operations using ChatGPT and traditional techniques. Here are the practical lessons.','category'=>'ChatGPT','date'=>'2026-10-08','read_time'=>'8 min read'];
 $posts[]=['slug'=>'gemini-agent-at-work-2026','title'=>'Google Gemini Agent at Work 2026: What the New Enterprise Agent Does','description'=>'Google Cloud introduced a universal Gemini agent for work with tools, memory, model routing, governance and persistent execution. Here is what changed.','category'=>'AI News','date'=>'2026-10-08','read_time'=>'9 min read'];
 $posts[]=['slug'=>'claude-haiku-5-5-api-pricing-2026','title'=>'Claude Haiku 5.5: API Pricing, Context and Where It Fits','description'=>'Anthropic launched Claude Haiku 5.5 on October 7 with lower pricing, a 1M context window and adjustable effort. Here is what developers need to know.','category'=>'Claude','date'=>'2026-10-08','read_time'=>'9 min read'];
@@ -196,7 +197,8 @@ $posts[] = [
 
 $posts[] = [
     'slug' => 'aws-trust-in-depth-ai-agent-controls',
-    'title' => 'AWS Trust in Depth: Safer Agent Autonomy',    'description' => 'AWS\'s Trust in Depth outlines controls for AI agents. See how scope, identity, runtime limits, monitoring and formal checks work together for safer use.',
+    'title' => 'AWS Trust in Depth: Safer Agent Autonomy',
+    'description' => 'AWS\'s Trust in Depth outlines controls for AI agents. See how scope, identity, runtime limits, monitoring and formal checks work together for safer use.',
     'category' => 'AI News',
     'date' => '2026-10-15',
     'read_time' => '10 min read',
@@ -295,7 +297,8 @@ $posts[] = [
 $posts[] = [
     'slug' => 'hreflang-reciprocity-audit-workflow',
     'title' => 'Hreflang Reciprocity Audit: A Crawl Workflow',
-    'description' => 'Audit multilingual hreflang clusters for reciprocal links, valid locale codes, canonical conflicts and sitemap coverage with a repeatable crawl workflow.',    'category' => 'Tools Guide',
+    'description' => 'Audit multilingual hreflang clusters for reciprocal links, valid locale codes, canonical conflicts and sitemap coverage with a repeatable crawl workflow.',
+    'category' => 'Tools Guide',
     'date' => '2026-10-19',
     'read_time' => '7 min read',
 ];
