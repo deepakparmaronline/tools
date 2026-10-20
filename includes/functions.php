@@ -1,7 +1,12 @@
 <?php
 function e(?string $value): string { return htmlspecialchars($value ?? '', ENT_QUOTES, 'UTF-8'); }
 function url(string $path=''): string { return SITE_URL.'/'.ltrim($path,'/'); }
-function asset(string $path): string { return url('assets/'.ltrim($path,'/')); }
+function asset(string $path): string {
+    $cleanPath = ltrim($path, '/');
+    $assetUrl = url('assets/'.$cleanPath);
+    $assetFile = __DIR__.'/../assets/'.$cleanPath;
+    return is_file($assetFile) ? $assetUrl.'?v='.filemtime($assetFile) : $assetUrl;
+}
 function tool_by_path(string $category,string $slug): ?array { global $catalog; foreach($catalog['tools'] as $t){ if($t['category']===$category && $t['slug']===$slug) return $t; } return null; }
 function tool_categories(): array { global $catalog; return array_filter($catalog,fn($value,$key)=>$key!=='tools' && is_array($value) && isset($value['name'],$value['description'],$value['icon']),ARRAY_FILTER_USE_BOTH); }
 function tools_in_category(string $category): array { global $catalog; return array_values(array_filter($catalog['tools'],fn($t)=>$t['category']===$category)); }

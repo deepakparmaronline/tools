@@ -12,7 +12,7 @@ $ogType=$ogType??'website';
 <?php if (!empty($socialImage)): ?>
 <meta property="og:image" content="<?=e($socialImage)?>"><meta property="og:image:alt" content="<?=e($socialImageAlt ?? '')?>"><meta name="twitter:image" content="<?=e($socialImage)?>"><meta name="twitter:image:alt" content="<?=e($socialImageAlt ?? '')?>">
 <?php endif; ?>
-<meta name="theme-color" content="#2563eb"><link rel="icon" href="<?=asset('favicon.svg')?>" type="image/svg+xml"><link rel="stylesheet" href="<?=asset('css/app.css')?>"><link rel="stylesheet" href="<?=asset('css/article-overflow-fixes.css')?>"><script defer src="/assets/site.js"></script><script defer src="<?=asset('js/app.js')?>"></script>
+<meta name="theme-color" content="#2563eb"><link rel="icon" href="<?=asset('favicon.svg')?>" type="image/svg+xml"><link rel="stylesheet" href="<?=asset('css/app.css')?>"><link rel="stylesheet" href="<?=asset('css/article-overflow-fixes.css')?>"><script defer src="<?=asset('site.js')?>"></script><script defer src="<?=asset('js/app.js')?>"></script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

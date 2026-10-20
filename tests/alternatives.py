@@ -133,7 +133,7 @@ def main():
             code, _, html = get(path)
             assert code == 200, path
             assert '<header id="site-header" class="site-header"></header>' in html, path
-            assert 'src="/assets/site.js"' in html, path
+            assert '/assets/site.js?v=' in html, path
             assert '<a href="/alternatives/">Alternatives</a>' in html, path
             assert '<a href="https://toolboxkart.tech/' not in html, path
         print('PASS: CSS/JS content and MIME types, topic groups, published article links, site-wide navigation, draft/future exclusion, related cards, SEO/schema, redirects, main and Alternatives sitemaps, existing routes')
