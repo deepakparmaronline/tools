@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Evaluating coding models in less-common programming languages</title>
+<desc id="desc">Two evaluation tracks compare building a SQLite-compatible engine across programming languages and migrating COBOL while preserving program behavior.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1730"/><stop offset="1" stop-color="#123b57"/></linearGradient><linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55d6be"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
+<rect width="1600" height="900" rx="40" fill="url(#bg)"/>
+<circle cx="1370" cy="140" r="180" fill="#2563eb" opacity=".14"/><circle cx="180" cy="780" r="210" fill="#2dd4bf" opacity=".10"/>
+<text x="100" y="115" fill="#8de7d5" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">AI ENGINEERING · EVALUATION</text>
+<text x="100" y="195" fill="#ffffff" font-family="Arial, sans-serif" font-size="54" font-weight="700">Coding beyond popular languages</text>
+<text x="100" y="245" fill="#c8d7e8" font-family="Arial, sans-serif" font-size="27">Two tests measure implementation and behavior preservation</text>
+<rect x="100" y="310" width="650" height="390" rx="28" fill="#142944" stroke="#355574" stroke-width="2"/>
+<rect x="850" y="310" width="650" height="390" rx="28" fill="#142944" stroke="#355574" stroke-width="2"/>
+<rect x="140" y="350" width="120" height="44" rx="22" fill="#174e58"/><text x="200" y="380" text-anchor="middle" fill="#a9f4e7" font-family="Arial, sans-serif" font-size="21" font-weight="700">TEST 01</text>
+<text x="140" y="445" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">Build a database engine</text>
+<text x="140" y="492" fill="#c8d7e8" font-family="Arial, sans-serif" font-size="24">MultiLangBench</text>
+<g font-family="Arial, sans-serif" font-size="22" fill="#e4edf8"><rect x="140" y="535" width="150" height="48" rx="12" fill="#223e5c"/><text x="215" y="566" text-anchor="middle">COBOL</text><rect x="305" y="535" width="150" height="48" rx="12" fill="#223e5c"/><text x="380" y="566" text-anchor="middle">Fortran</text><rect x="470" y="535" width="150" height="48" rx="12" fill="#223e5c"/><text x="545" y="566" text-anchor="middle">OCaml</text></g>
+<path d="M140 620 H650" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/><text x="140" y="665" fill="#c8d7e8" font-family="Arial, sans-serif" font-size="22">20 languages · test pass rate · API cost</text>
+<rect x="890" y="350" width="120" height="44" rx="22" fill="#253c70"/><text x="950" y="380" text-anchor="middle" fill="#c5d8ff" font-family="Arial, sans-serif" font-size="21" font-weight="700">TEST 02</text>
+<text x="890" y="445" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">Migrate legacy COBOL</text>
+<text x="890" y="492" fill="#c8d7e8" font-family="Arial, sans-serif" font-size="24">Keep observable behavior unchanged</text>
+<g><rect x="890" y="535" width="230" height="60" rx="14" fill="#223e5c"/><text x="1005" y="573" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="22">Original output</text><path d="M1135 565 H1195" stroke="#55d6be" stroke-width="5" stroke-linecap="round"/><path d="M1180 550 L1197 565 L1180 580" fill="none" stroke="#55d6be" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="1210" y="535" width="230" height="60" rx="14" fill="#174e58"/><text x="1325" y="573" text-anchor="middle" fill="#a9f4e7" font-family="Arial, sans-serif" font-size="22">Test parity</text></g>
+<path d="M890 620 H1400" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/><text x="890" y="665" fill="#c8d7e8" font-family="Arial, sans-serif" font-size="22">Hidden tests · business rules · regression review</text>
+<text x="100" y="790" fill="#ffffff" font-family="Arial, sans-serif" font-size="27" font-weight="700">Benchmark gains are useful evidence — not a substitute for testing real systems.</text>
+<text x="100" y="840" fill="#8fa8c2" font-family="Arial, sans-serif" font-size="20">ToolboxKart · Practical AI and developer workflows</text>
+</svg>
