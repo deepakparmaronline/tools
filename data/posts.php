@@ -358,4 +358,49 @@ $posts[] = [
     'read_time' => '10 min read',
 ];
 
+$posts[] = [
+    'slug' => 'openai-models-google-cloud-model-garden',
+    'title' => 'OpenAI Models Come to Google Cloud Model Garden',
+    'description' => 'OpenAI models and Codex are coming to Google Cloud Model Garden. Learn rollout timing, billing, governance and how to test this new access route for teams.',
+    'category' => 'AI News',
+    'date' => '2026-10-22',
+    'read_time' => '9 min read',
+];
+
+$posts[] = [
+    'slug' => 'chatgpt-ads-expands-26-countries',
+    'title' => 'ChatGPT Ads Expand to 26 More Countries',
+    'description' => 'ChatGPT Ads are expanding to 26 more countries. Learn what changes for advertisers, market access, measurement, privacy and campaign setup before launch.',
+    'category' => 'ChatGPT',
+    'date' => '2026-10-22',
+    'read_time' => '8 min read',
+];
+
+$posts[] = [
+    'slug' => 'ai-agents-biological-data-research-leads',
+    'title' => 'How AI Agents Help Researchers Explore Brain Data',
+    'description' => 'OpenAI and research partners used thousands of AI agents to analyze mouse brain data. See the reported findings, limits and validation steps in practice.',
+    'category' => 'AI News',
+    'date' => '2026-10-22',
+    'read_time' => '9 min read',
+];
+
+$posts[] = [
+    'slug' => 'github-cli-expiring-oauth-tokens',
+    'title' => 'GitHub CLI Expiring OAuth Tokens: What to Know',
+    'description' => 'GitHub CLI can now use expiring, auto-refreshing OAuth tokens. Learn how to opt in, test Git workflows and avoid stale credentials in automation reliably.',
+    'category' => 'Tools Guide',
+    'date' => '2026-10-22',
+    'read_time' => '8 min read',
+];
+
+$posts[] = [
+    'slug' => 'openai-consistent-safety-standards-model-providers',
+    'title' => 'OpenAI Sets Shared Safety Rules for Model Providers',
+    'description' => 'OpenAI is aligning safety rules across model providers and gateways. Learn what changes on November 20 and what buyers must verify before rollout at work.',
+    'category' => 'AI News',
+    'date' => '2026-10-22',
+    'read_time' => '8 min read',
+];
+
 return $posts;
