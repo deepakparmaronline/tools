@@ -362,7 +362,7 @@ $posts[] = [
     'slug' => 'openai-models-google-cloud-model-garden',
     'title' => 'OpenAI Models Come to Google Cloud Model Garden',
     'description' => 'OpenAI models and Codex are coming to Google Cloud Model Garden. Learn rollout timing, billing, governance and how to test this new access route for teams.',
-    'category' => 'AI News',
+    'category' => 'ChatGPT',
     'date' => '2026-10-22',
     'read_time' => '9 min read',
 ];
@@ -398,7 +398,7 @@ $posts[] = [
     'slug' => 'openai-consistent-safety-standards-model-providers',
     'title' => 'OpenAI Sets Shared Safety Rules for Model Providers',
     'description' => 'OpenAI is aligning safety rules across model providers and gateways. Learn what changes on November 20 and what buyers must verify before rollout at work.',
-    'category' => 'AI News',
+    'category' => 'ChatGPT',
     'date' => '2026-10-22',
     'read_time' => '8 min read',
 ];
