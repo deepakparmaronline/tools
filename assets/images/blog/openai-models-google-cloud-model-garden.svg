@@ -6,7 +6,7 @@
 <text x="150" y="180" font-family="Arial,sans-serif" font-size="32" fill="#526276">ENTERPRISE AI MODEL CHOICE</text>
 <rect x="150" y="250" width="390" height="360" rx="24" fill="#102d43"/>
 <text x="195" y="315" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#fff">Model Garden</text>
-<rect x="195" y="360" width="300" height="58" rx="14" fill="#dbeafe"/><text x="220" y="397" font-family="Arial,sans-serif" font-size="24" fill="#1e40af">GPT-6 Astra</text>
+<rect x="195" y="360" width="300" height="58" rx="14" fill="#dbeafe"/><text x="220" y="397" font-family="Arial,sans-serif" font-size="24" fill="#1e40af">GPT-Astra</text>
 <rect x="195" y="440" width="300" height="58" rx="14" fill="#dbeafe"/><text x="220" y="477" font-family="Arial,sans-serif" font-size="24" fill="#1e40af">GPT-6.1 Sol</text>
 <rect x="195" y="520" width="300" height="58" rx="14" fill="#dbeafe"/><text x="220" y="557" font-family="Arial,sans-serif" font-size="24" fill="#1e40af">GPT-6 Luna</text>
 <path d="M560 430 H680" stroke="#0f9f8f" stroke-width="10" stroke-linecap="round"/><path d="M660 405 L690 430 L660 455" fill="none" stroke="#0f9f8f" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
