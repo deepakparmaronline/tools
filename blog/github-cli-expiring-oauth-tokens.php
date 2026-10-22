@@ -10,6 +10,14 @@ ob_start(); ?>
 <p>GitHub's preview changes the lifetime and renewal path of the credential used by the CLI. Instead of relying on a long-lived access token, GitHub CLI can use a short-lived access token together with a rotating refresh token. The CLI renews the access token when it is needed, so users can remain signed in without manually repeating authentication at every expiry.</p>
 <p>The security benefit is limited but useful: a copied access token has a shorter window in which it can be reused. It does not make a compromised workstation safe, protect a refresh token stored on a compromised machine, or replace least-privilege permissions. Treat it as one layer in credential hygiene rather than a complete account security solution.</p>
 <p>The feature is opt-in and backward compatible. If you do not enable it, existing sign-ins and manually supplied tokens continue to work as before. GitHub says the behavior is available on github.com and ghe.com, while GitHub Enterprise Server support starts with GHES 3.23; earlier versions fall back to non-expiring behavior.</p>
+<h2>How to opt in safely</h2>
+<p>GitHub CLI v2.103.0 adds an explicit login flag. To enable the preview for a single sign-in, use:</p>
+<pre><code>gh auth login --expiring</code></pre>
+<p>To enable the setting for future sign-ins, GitHub documents this configuration command:</p>
+<pre><code>gh config set expiring_credentials enabled</code></pre>
+<p>After signing in, check the credential state with <code>gh auth status</code>. If you use Git over HTTPS and want GitHub CLI to manage the credential, GitHub recommends:</p>
+<pre><code>gh auth setup-git</code></pre>
+<p>Start with a development machine or a low-risk repository. Confirm that your CLI version is current, that the sign-in used the expiring option, and that the credential helper is configured if Git operations depend on it. Do not paste access or refresh tokens into logs, tickets or shell transcripts while testing.</p>
 <h2>Sources</h2>
 <ul><li><a href="https://github.blog/changelog/2026-10-21-github-cli-opt-in-to-expiring-auto-refreshing-oauth-tokens/" target="_blank" rel="noopener noreferrer">GitHub Changelog: Expiring, auto-refreshing OAuth tokens</a></li><li><a href="https://cli.github.com/manual/gh_auth_login" target="_blank" rel="noopener noreferrer">GitHub CLI: gh auth login manual</a></li></ul>
 <?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';
