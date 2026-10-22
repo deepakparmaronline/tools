@@ -360,7 +360,7 @@ $posts[] = [
 
 $posts[] = [
     'slug' => 'openai-models-google-cloud-model-garden',
-    'title' => 'OpenAI Models Come to Google Cloud Model Garden',
+    'title' => 'OpenAI Models Coming to Google Cloud Platform',
     'description' => 'OpenAI models and Codex are coming to Google Cloud Model Garden. Learn rollout timing, billing, governance and how to test this new access route for teams.',
     'category' => 'ChatGPT',
     'date' => '2026-10-22',
@@ -369,7 +369,7 @@ $posts[] = [
 
 $posts[] = [
     'slug' => 'chatgpt-ads-expands-26-countries',
-    'title' => 'ChatGPT Ads Expand to 26 More Countries',
+    'title' => 'ChatGPT Ads Expand to 26 More Countries Now',
     'description' => 'ChatGPT Ads are expanding to 26 more countries. Learn what changes for advertisers, market access, measurement, privacy and campaign setup before launch.',
     'category' => 'ChatGPT',
     'date' => '2026-10-22',
@@ -378,7 +378,7 @@ $posts[] = [
 
 $posts[] = [
     'slug' => 'ai-agents-biological-data-research-leads',
-    'title' => 'How AI Agents Help Researchers Explore Brain Data',
+    'title' => 'AI Agents Explore Brain Data in 32 Minutes',
     'description' => 'OpenAI and research partners used thousands of AI agents to analyze mouse brain data. See the reported findings, limits and validation steps in practice.',
     'category' => 'AI News',
     'date' => '2026-10-22',
@@ -396,7 +396,7 @@ $posts[] = [
 
 $posts[] = [
     'slug' => 'openai-consistent-safety-standards-model-providers',
-    'title' => 'OpenAI Sets Shared Safety Rules for Model Providers',
+    'title' => 'OpenAI Updates Safety Rules for Model Gateways',
     'description' => 'OpenAI is aligning safety rules across model providers and gateways. Learn what changes on November 20 and what buyers must verify before rollout at work.',
     'category' => 'ChatGPT',
     'date' => '2026-10-22',
