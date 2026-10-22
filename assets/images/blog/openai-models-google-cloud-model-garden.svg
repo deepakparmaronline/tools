@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">OpenAI models in Google Cloud Model Garden</title>
+<desc id="desc">A central model garden connects OpenAI models to enterprise workloads with governance and billing layers.</desc>
+<rect width="1600" height="900" rx="36" fill="#f4f7fb"/>
+<rect x="90" y="90" width="1420" height="720" rx="32" fill="#fff" stroke="#dbe4ef" stroke-width="4"/>
+<text x="150" y="180" font-family="Arial,sans-serif" font-size="32" fill="#526276">ENTERPRISE AI MODEL CHOICE</text>
+<rect x="150" y="250" width="390" height="360" rx="24" fill="#102d43"/>
+<text x="195" y="315" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#fff">Model Garden</text>
+<rect x="195" y="360" width="300" height="58" rx="14" fill="#dbeafe"/><text x="220" y="397" font-family="Arial,sans-serif" font-size="24" fill="#1e40af">GPT-6 Astra</text>
+<rect x="195" y="440" width="300" height="58" rx="14" fill="#dbeafe"/><text x="220" y="477" font-family="Arial,sans-serif" font-size="24" fill="#1e40af">GPT-6.1 Sol</text>
+<rect x="195" y="520" width="300" height="58" rx="14" fill="#dbeafe"/><text x="220" y="557" font-family="Arial,sans-serif" font-size="24" fill="#1e40af">GPT-6 Luna</text>
+<path d="M560 430 H680" stroke="#0f9f8f" stroke-width="10" stroke-linecap="round"/><path d="M660 405 L690 430 L660 455" fill="none" stroke="#0f9f8f" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="710" y="250" width="320" height="360" rx="24" fill="#e7f7f4" stroke="#9ddbd0" stroke-width="3"/>
+<text x="755" y="315" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#115e59">Governance</text>
+<text x="755" y="385" font-family="Arial,sans-serif" font-size="23" fill="#134e4a">Access controls</text>
+<text x="755" y="445" font-family="Arial,sans-serif" font-size="23" fill="#134e4a">Data policies</text>
+<text x="755" y="505" font-family="Arial,sans-serif" font-size="23" fill="#134e4a">Review & monitoring</text>
+<path d="M1045 430 H1155" stroke="#0f9f8f" stroke-width="10" stroke-linecap="round"/><path d="M1135 405 L1165 430 L1135 455" fill="none" stroke="#0f9f8f" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1180" y="250" width="270" height="360" rx="24" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="3"/>
+<text x="1215" y="315" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#243447">Workloads</text>
+<text x="1215" y="385" font-family="Arial,sans-serif" font-size="22" fill="#526276">Coding</text><text x="1215" y="445" font-family="Arial,sans-serif" font-size="22" fill="#526276">Research</text><text x="1215" y="505" font-family="Arial,sans-serif" font-size="22" fill="#526276">Agent workflows</text>
+<text x="150" y="710" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#102d43">Check availability, billing, governance and model limits before rollout.</text>
+</svg>
