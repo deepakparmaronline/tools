@@ -369,7 +369,7 @@ $posts[] = [
 
 $posts[] = [
     'slug' => 'chatgpt-ads-expands-26-countries',
-    'title' => 'ChatGPT Ads Expand to 26 More Countries Now',
+    'title' => 'ChatGPT Ads Expand to 26 Additional Countries',
     'description' => 'ChatGPT Ads are expanding to 26 more countries. Learn what changes for advertisers, market access, measurement, privacy and campaign setup before launch.',
     'category' => 'ChatGPT',
     'date' => '2026-10-22',
