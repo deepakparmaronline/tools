@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Consistent safety standards across model providers</title><desc id="desc">Different access paths connect to shared policy, monitoring and enforcement checks before model use.</desc>
+<rect width="1600" height="900" rx="36" fill="#f5f8fc"/><rect x="90" y="80" width="1420" height="740" rx="30" fill="#fff" stroke="#dbe4ef" stroke-width="4"/>
+<text x="150" y="160" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#102d43">MODEL ACCESS WITH SHARED SAFEGUARDS</text>
+<rect x="150" y="240" width="300" height="120" rx="20" fill="#e0e7ff"/><text x="205" y="290" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#3730a3">Direct API</text><text x="205" y="325" font-family="Arial,sans-serif" font-size="20" fill="#4338ca">Provider access</text>
+<rect x="150" y="410" width="300" height="120" rx="20" fill="#dbeafe"/><text x="205" y="460" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#1e40af">Cloud platform</text><text x="205" y="495" font-family="Arial,sans-serif" font-size="20" fill="#1d4ed8">Hosted models</text>
+<rect x="150" y="580" width="300" height="120" rx="20" fill="#f3e8ff"/><text x="205" y="630" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#6b21a8">Router / gateway</text><text x="205" y="665" font-family="Arial,sans-serif" font-size="20" fill="#7e22ce">Model routing</text>
+<path d="M470 300 H585 M470 470 H585 M470 640 H585 M585 300 V640 M585 470 H660" fill="none" stroke="#94a3b8" stroke-width="7" stroke-linecap="round"/>
+<path d="M640 448 L670 470 L640 492" fill="none" stroke="#94a3b8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="690" y="250" width="400" height="440" rx="24" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="3"/>
+<text x="740" y="310" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#065f46">Shared safeguards</text>
+<rect x="740" y="350" width="300" height="62" rx="14" fill="#d1fae5"/><text x="770" y="390" font-family="Arial,sans-serif" font-size="22" fill="#065f46">Policy requirements</text>
+<rect x="740" y="435" width="300" height="62" rx="14" fill="#d1fae5"/><text x="770" y="475" font-family="Arial,sans-serif" font-size="22" fill="#065f46">Abuse monitoring</text>
+<rect x="740" y="520" width="300" height="62" rx="14" fill="#d1fae5"/><text x="770" y="560" font-family="Arial,sans-serif" font-size="22" fill="#065f46">Review & enforcement</text>
+<path d="M1110 470 H1190" stroke="#0f9f8f" stroke-width="9" stroke-linecap="round"/><path d="M1170 447 L1200 470 L1170 493" fill="none" stroke="#0f9f8f" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1220" y="350" width="220" height="240" rx="20" fill="#102d43"/><text x="1260" y="410" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#fff">Enterprise</text><text x="1260" y="455" font-family="Arial,sans-serif" font-size="22" fill="#cbd5e1">Choice</text><text x="1260" y="495" font-family="Arial,sans-serif" font-size="22" fill="#cbd5e1">Controls</text><text x="1260" y="535" font-family="Arial,sans-serif" font-size="22" fill="#cbd5e1">Accountability</text>
+</svg>
