@@ -25,5 +25,5 @@ ob_start(); ?>
 <h2>What remains unknown</h2>
 <p>The expansion announcement does not provide a complete country-by-country feature matrix, universal pricing details or a guarantee that every advertiser can self-serve immediately. OpenAI says it plans to add formats, objectives, buying options and measurement capabilities over time. Those are future plans, so teams should confirm the current product rather than build forecasts around features that have not launched.</p>
 <h2>Sources</h2>
-<ul><li><a href="https://openai.com/index/chatgpt-ads-expands-26-new-countries/" target="_blank" rel="noopener noreferrer">OpenAI: ChatGPT Ads expansion</a></li><li><a href="https://openai.com/advertising-principles/" target="_blank" rel="noopener noreferrer">OpenAI: Advertising principles</a></li></ul>
+<ul><li><a href="https://openai.com/index/chatgpt-ads-expands-26-new-countries/" target="_blank" rel="noopener noreferrer">OpenAI: ChatGPT Ads expansion</a></li><li><a href="https://openai.com/index/our-approach-to-advertising-and-expanding-access/" target="_blank" rel="noopener noreferrer">OpenAI: Advertising principles</a></li></ul>
 <?php $articleHtml=ob_get_clean();require __DIR__.'/../includes/blog-template.php';
