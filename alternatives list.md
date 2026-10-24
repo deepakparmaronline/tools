@@ -369,7 +369,7 @@ The score combines search volume, lower keyword difficulty, commercial or transa
 
 Published pages are marked Live and stay outside the new-content queue. Unsafe paywall-bypass or piracy topics are excluded. Generic names are marked Review until the exact software product and official source can be confirmed. Non-software queries are also held for a site-fit review.
 
-Priority is a planning aid, not a ranking guarantee. Recheck the chosen tool in Semrush and verify all tool facts on official sources before drafting.
+Priority is a planning aid, not a ranking guarantee. The recurring publisher uses this committed snapshot without opening Semrush. Verify all tool facts on current official sources before drafting.
 
 ### P1 publishing queue
 

@@ -13,6 +13,13 @@ $urls[]=['url'=>SITE_URL.'/browse-tools-by-niche','lastmod'=>'2026-09-17','chang
 foreach(['chatgpt','claude','ai-news','tools-guide'] as $key){$urls[]=['url'=>SITE_URL.'/'.$key.'/','lastmod'=>$latestPostDate,'changefreq'=>'weekly','priority'=>'0.9'];}
 $urls[]=['url'=>SITE_URL.'/versus/','lastmod'=>$latestPostDate,'changefreq'=>'weekly','priority'=>'0.8'];
 $urls[]=['url'=>SITE_URL.'/reviews/','lastmod'=>$latestPostDate,'changefreq'=>'weekly','priority'=>'0.8'];
+$softwareIndexes=['tools'=>'tool_hubs','pricing'=>'pricing','how-to-use'=>'how_to_use','compare'=>'comparisons','best'=>'categories'];
+foreach($softwareIndexes as $slug=>$collection){
+    $items=software_pages($collection);
+    $lastmod=array_reduce($items,fn($latest,$item)=>max($latest,$item['date']), '2026-10-25');
+    $urls[]=['url'=>SITE_URL.'/'.$slug.'/','lastmod'=>$lastmod,'changefreq'=>'weekly','priority'=>'0.8'];
+    foreach($items as $item)$urls[]=['url'=>url($item['url']),'lastmod'=>$item['date'],'priority'=>'0.7'];
+}
 $urls[]=['url'=>SITE_URL.'/tech/','lastmod'=>$latestPostDate,'changefreq'=>'weekly','priority'=>'0.9'];
 $urls[]=['url'=>SITE_URL.'/content/','lastmod'=>$latestPostDate,'changefreq'=>'weekly','priority'=>'0.8'];
 $urls[]=['url'=>SITE_URL.'/about-deepak-parmar/','lastmod'=>'2026-10-20','priority'=>'0.6'];

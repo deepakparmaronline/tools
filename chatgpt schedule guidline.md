@@ -19,11 +19,12 @@ Read the latest full contents of:
 1. `seo/content_guide.md`
 2. `seo/toolboxkart_publishing_plan.md`
 3. `seo/tool_publishing_queue.md`
-4. `alternatives list.md`
-5. `agents.md`
-6. `docs/ALTERNATIVES.md`
-7. `articles/progress.md`
-8. Existing tool, alternatives, reviews, versus, pricing, how-to, category, sitemap, and navigation implementation files that affect the queued tool.
+4. `seo/search_research_snapshot.md`
+5. `alternatives list.md`
+6. `agents.md`
+7. `docs/ALTERNATIVES.md`
+8. `articles/progress.md`
+9. Existing tool, alternatives, reviews, compare or versus, pricing, how-to, category, sitemap, navigation, and `data/software-pages.php` implementation files that affect the queued tool.
 
 If a required file is missing or unreadable, stop before publishing and report the exact blocker.
 
@@ -38,14 +39,14 @@ If a required file is missing or unreadable, stop before publishing and report t
 - Never select a held, duplicate, excluded, unsafe, paywall-bypass, piracy, non-software, or news topic.
 - Do not touch the separate Tech Updates repository or its ChatGPT schedule.
 
-## 4. Refresh only the queued tool
+## 4. Use only the saved search research
 
-- Open Semrush Keyword Overview in the signed-in browser session.
-- Refresh the queued primary keyword and record its check date, search volume, keyword difficulty, CPC, intent, trend, useful variants, SERP features, and available People Also Ask questions.
-- Research comparison keywords for the queued tool and use the highest relevant verified `tool vs competitor` opportunity. If none has volume, use the strongest relevant alternative from the Alternatives brief.
-- The refresh supports the queued tool's content brief. It must not change the fixed queue order.
-- Never invent missing Semrush metrics or questions.
-- If Semrush access is unavailable, do not pretend the refresh ran. Keep the row `in_progress`, stop before publishing, and report the exact blocker.
+- Do not open, sign in to, or run Semrush during a scheduled publication.
+- Read the selected row in `seo/tool_publishing_queue.md` and its matching full row in the 2026-10-24 Semrush snapshot in `alternatives list.md`.
+- Use only the committed search volume, keyword difficulty, CPC, intent, trend, and SERP features. Never invent a missing metric, variant, query, or People Also Ask question.
+- For the comparison page, use a comparison query already committed in the repository. If none is committed, use the strongest relevant alternative supported by the cluster brief, as allowed by `seo/content_guide.md`.
+- Missing Semrush access is not a blocker because the schedule must not use Semrush. If missing committed search evidence prevents a required page from passing the quality gate, mark the row `needs_review`, record what is missing, and continue with the next queued row.
+- Search research can be refreshed only in a separate owner-authorized task that saves the results in GitHub before a scheduled run uses them.
 
 ## 5. Build the complete cluster
 
@@ -94,8 +95,8 @@ If a check fails, fix it before publishing. If the facts cannot be verified, mar
 
 - Commit and push the reviewed cluster to GitHub `main`.
 - Verify the live hub, alternatives, review, pricing, how-to, comparison, and category pages that were created or changed.
-- Verify the Alternatives, Reviews, and Versus indexes where applicable.
-- Verify the homepage navigation still contains Alternatives, Versus, Reviews, and Browse tools by niche, and does not contain ChatGPT, Claude, AI News, Tools Guide, or Tech.
+- Verify the Tool hubs, Alternatives, Reviews, Pricing, How to use, Comparisons, and Best software indexes where applicable.
+- Verify the homepage navigation contains Tool hubs, Alternatives, Reviews, Pricing, How to use, Comparisons, Best software, and Browse tools by niche, and does not contain ChatGPT, Claude, AI News, Tools Guide, or Tech.
 - Verify the live sitemap entries and canonical URLs.
 - Never claim live success from a GitHub commit alone.
 
@@ -104,7 +105,7 @@ If a check fails, fix it before publishing. If the facts cannot be verified, mar
 Update the queue or progress record with:
 
 - The queue order and queued tool handled.
-- The selected-tool Semrush refresh date and metrics.
+- The committed Semrush snapshot date and the saved metrics used.
 - Any identity, duplicate, skipped, blocked, or `needs_review` issue.
 - Every page created or updated.
 - Commit SHA and GitHub link.

@@ -9,7 +9,7 @@
 - Change the selected row to `in_progress` before content work. Change it to `published` only after GitHub push, Hostinger deployment, and live verification all succeed.
 - If the exact product or essential official facts cannot be verified, change the row to `needs_review`, add the reason to the run log, and continue with the next `queued` row.
 - `new cluster` means create the complete cluster. `expand live alternative` means preserve the existing Alternatives URL and add or improve its missing sibling pages and internal links.
-- Refresh Semrush only for the selected primary keyword, useful variants, People Also Ask questions, and comparison candidates. Do not run a new 100-keyword selection batch.
+- Use only the committed Semrush snapshot in `alternatives list.md` and the rules in `seo/search_research_snapshot.md`. A scheduled run must not open, sign in to, or run Semrush.
 - Never add AI news, ChatGPT news, Claude news, general technology news, piracy, paywall bypass, or non-software topics to this queue.
 - The separate `deepakparmaronline/tech-updates` repository and its ChatGPT schedule are outside this file and must not be changed.
 
@@ -17,7 +17,7 @@
 
 The order was prepared on 2026-10-24 from the Semrush US snapshot in `alternatives list.md`. It combines search volume, lower keyword difficulty, intent, CPC, trend, and useful SERP features. Existing published Alternatives pages receive a small cluster-leverage bonus because adding their missing hub, review, pricing, how-to, comparison, and category links can strengthen an already indexed URL. The score is a planning aid, not a ranking guarantee.
 
-Full-queue metrics should be reviewed after the first 60 completed rows or after 90 days, whichever comes first. Daily runs may refresh the selected tool but may not reorder the remaining queue.
+Full-queue metrics may be reviewed only in a separate owner-authorized research task after the first 60 completed rows or after 90 days, whichever comes first. Daily runs may not refresh the selected tool or reorder the remaining queue.
 
 ## Ordered queue
 
@@ -156,5 +156,4 @@ These rows are not part of the runnable queue. A daily run must not select them.
 - `Fireflies.ai alternative` uses the Semrush metrics exported for the supplied `Fireflies.ai 👔 alternative` query. The article must use the official product name Fireflies.ai without the emoji.
 - `HelpScout alternative` is the higher-volume keyword variant in the snapshot. Article copy must use the official product name Help Scout.
 - `ProtonMail alternative` is the researched keyword. Article copy must use the current official product name confirmed from Proton sources.
-- Metrics marked `n/a` require a selected-tool refresh before content work.
-
+- Metrics marked `n/a` must remain `n/a` during scheduled runs. Do not invent or refresh them. Product identity and all article facts still require current official-source verification.

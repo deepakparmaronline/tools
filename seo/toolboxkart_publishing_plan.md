@@ -32,7 +32,7 @@ Each page must have a different primary keyword and a distinct purpose. Facts mu
 4. If verification fails, mark `needs_review` with the reason and continue to the next queued row.
 5. Never publish a held, duplicate, excluded, unsafe, non-software, or news topic.
 
-The broad Semrush research remains in `alternatives list.md`. It is evidence for the prepared order, not a nightly selection task.
+The complete one-time Semrush research remains in `alternatives list.md`, and `seo/search_research_snapshot.md` defines how the schedule may use it. It is committed evidence for the prepared order, not a nightly research task.
 
 ## Daily workflow
 
@@ -40,9 +40,9 @@ The broad Semrush research remains in `alternatives list.md`. It is evidence for
 
 Pull current `main`, read the required repository instructions, claim the next queue row, and inspect all existing pages for that tool. Preserve existing permanent URLs.
 
-### 2. Refresh only the selected tool
+### 2. Load the committed search research
 
-In Semrush, refresh the primary keyword and gather useful variants, questions, SERP features, and comparison queries for the selected tool. This refresh supports the brief; it does not change the queue order.
+Read the queued row and its matching full Semrush snapshot row in `alternatives list.md`. Use the saved volume, keyword difficulty, CPC, intent, trend, and SERP features. Do not open or run Semrush during a scheduled publication. Do not invent missing variants, questions, or metrics. Use the documented comparison fallback when no committed comparison query is available.
 
 ### 3. Build an evidence ledger
 
