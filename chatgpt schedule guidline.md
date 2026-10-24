@@ -17,40 +17,39 @@
 Read the latest full contents of:
 
 1. `seo/content_guide.md`
-2. `alternatives list.md`
-3. `agents.md`
-4. `docs/ALTERNATIVES.md`
-5. `articles/progress.md`
-6. Existing tool, alternatives, reviews, versus, pricing, category, sitemap, and navigation implementation files that affect the selected tool.
+2. `seo/toolboxkart_publishing_plan.md`
+3. `seo/tool_publishing_queue.md`
+4. `alternatives list.md`
+5. `agents.md`
+6. `docs/ALTERNATIVES.md`
+7. `articles/progress.md`
+8. Existing tool, alternatives, reviews, versus, pricing, how-to, category, sitemap, and navigation implementation files that affect the queued tool.
 
 If a required file is missing or unreadable, stop before publishing and report the exact blocker.
 
-## 3. Semrush keyword batch
+## 3. Take the next fixed queue item
+
+- `seo/tool_publishing_queue.md` is the only tool-selection source.
+- If a row is marked `in_progress`, resume the lowest Order `in_progress` row.
+- Otherwise take the lowest Order row marked `queued`.
+- Do not score candidates, choose among tools, reorder the queue, or use source-row order from `alternatives list.md`.
+- Change the selected row to `in_progress` before content work.
+- If its exact product or essential official facts cannot be verified, change it to `needs_review`, record the reason, and continue with the next `queued` row.
+- Never select a held, duplicate, excluded, unsafe, paywall-bypass, piracy, non-software, or news topic.
+- Do not touch the separate Tech Updates repository or its ChatGPT schedule.
+
+## 4. Refresh only the queued tool
 
 - Open Semrush Keyword Overview in the signed-in browser session.
-- Take the next 100 unfinished keyword rows from `alternatives list.md`, preserving their order.
-- Search all 100 keywords in one Keyword Overview batch when Semrush accepts the batch.
-- Record the check date, search volume, keyword difficulty, intent, useful variants, and People Also Ask questions that Semrush provides.
-- Never invent missing Semrush metrics.
-- If Semrush access, login, or the 100-keyword batch is unavailable, do not pretend the research ran. Stop before selecting a new tool and report the blocker.
-- Ignore duplicate rows for selection after recording that they are duplicates. Do not delete the source rows.
-- Skip a keyword only when its product identity cannot be confirmed, its required facts cannot be verified, or the corresponding content already exists. Record the reason.
-
-## 4. Choose one tool cluster
-
-Choose one tool from the researched 100-keyword batch for the run. Prioritize:
-
-1. Relevant software with a confirmed official site.
-2. Strong search volume relative to keyword difficulty.
-3. Clear user intent for alternatives, reviews, pricing, how-to, and comparison content.
-4. A useful category cluster that can support internal links.
-5. Credible future affiliate or sponsored placement potential without changing editorial rankings.
-
-Do not choose by volume alone. Reject unsafe, illegal, piracy, paywall bypass, or non-software intent. If the best candidate is ambiguous or cannot be sourced, mark it `needs_review` and evaluate the next candidate in the same batch.
+- Refresh the queued primary keyword and record its check date, search volume, keyword difficulty, CPC, intent, trend, useful variants, SERP features, and available People Also Ask questions.
+- Research comparison keywords for the queued tool and use the highest relevant verified `tool vs competitor` opportunity. If none has volume, use the strongest relevant alternative from the Alternatives brief.
+- The refresh supports the queued tool's content brief. It must not change the fixed queue order.
+- Never invent missing Semrush metrics or questions.
+- If Semrush access is unavailable, do not pretend the refresh ran. Keep the row `in_progress`, stop before publishing, and report the exact blocker.
 
 ## 5. Build the complete cluster
 
-Create or update the selected tool's complete cluster according to `seo/content_guide.md`:
+Create or update the queued tool's complete cluster according to `seo/content_guide.md` and `seo/toolboxkart_publishing_plan.md`:
 
 - Tool hub
 - Alternatives page
@@ -63,6 +62,8 @@ Create or update the selected tool's complete cluster according to `seo/content_
 Existing legacy Alternatives pages keep their current permanent URLs. Do not rename or remove them. Link them naturally into the new cluster where useful, and do not create duplicate pages that target the same primary keyword.
 
 Use the current site architecture and shared components. Add new reusable routing, templates, registry entries, and sitemap support only when required. Keep facts consistent across every page in the cluster.
+
+Use `HUB_MIN_TOOLS = 4`. Before four published tool clusters exist in a category, link to the closest live browse page instead of publishing a thin category pillar.
 
 ## 6. Research and honesty
 
@@ -87,7 +88,7 @@ Before committing:
 - Confirm sitemap XML is valid and contains only live, canonical, indexable URLs.
 - Review the complete diff and exclude unrelated changes, credentials, private data, and research debris.
 
-If a check fails, fix it before publishing. If the facts cannot be verified, mark the item `needs_review` in the queue and move to the next candidate.
+If a check fails, fix it before publishing. If the facts cannot be verified, mark the item `needs_review` in the queue, record the reason, and move to the next queued row.
 
 ## 8. Publish and verify
 
@@ -102,12 +103,14 @@ If a check fails, fix it before publishing. If the facts cannot be verified, mar
 
 Update the queue or progress record with:
 
-- The 100 keywords checked and the Semrush check date.
-- The selected tool and selection reason.
-- Duplicate, ambiguous, skipped, and `needs_review` rows.
+- The queue order and queued tool handled.
+- The selected-tool Semrush refresh date and metrics.
+- Any identity, duplicate, skipped, blocked, or `needs_review` issue.
 - Every page created or updated.
 - Commit SHA and GitHub link.
 - Test, build, sitemap, and live verification status.
-- The exact next unprocessed keyword row for the following run.
+- The exact next `queued` row for the following run.
+
+Mark the current queue row `published` only after GitHub push, Hostinger deployment, and live verification all succeed. If publication is incomplete or blocked, leave it `in_progress` with the exact blocker recorded in `articles/progress.md`.
 
 Keep the final report concise. Report blockers honestly and do not fall back to news publishing.
