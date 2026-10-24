@@ -1,85 +1,113 @@
 # ChatGPT Schedule Guideline
 
-**Purpose:** Mandatory operating rules for every ChatGPT-scheduled ToolBoxKart publishing run. Read this file in full before doing any research or editing. These rules are safeguards against incomplete article registration, broken category URLs, and falsely reporting a deployment as successful.
+**Purpose:** Mandatory operating rules for the recurring ToolBoxKart software decision content workflow. This schedule replaces ToolboxKart AI news, ChatGPT news, Claude news, Tools Guide, and general Tech publishing. Existing pages stay live, but the scheduled workflow does not create new content for those sections.
 
 ## 1. Repository and branch rules
 
 - Repository: `deepakparmaronline/tools`.
-- Work only on the existing `main` branch and commit the reviewed publishing batch directly to `main`.
-- Do not create a branch, pull request, GitHub Actions scheduler, or Hostinger-side scheduled job.
-- Do not change Hostinger configuration.
-- Preserve the existing custom PHP website architecture and current design. Do not redesign the site as part of publishing.
-- Never add dates to permanent article URLs. Preserve the existing category URL format: `/<category>/<slug>`.
+- Work on the existing `main` branch and preserve the custom PHP site.
+- Pull the latest `main` before every run.
+- Do not delete or redirect existing AI news, ChatGPT, Claude, Tools Guide, Tech, Alternatives, Versus, or Reviews pages.
+- Do not add a navigation link to a route that is not live.
+- Commit and push only reviewed changes needed for the current run.
+- Hostinger deploys automatically from GitHub `main`. Verify the live result after pushing.
 
-## 2. Mandatory files to read at the start of EVERY scheduled run
+## 2. Required files to read at the start of every run
 
-Fetch the latest versions from `main` and read the full relevant contents before research or edits:
+Read the latest full contents of:
 
-1. `chatgpt schedule guidline.md` (this file)
-2. `README.md`
-3. `TOOLBOXKART-MASTER-DAILY-RESEARCH-WRITING-QA-PUBLISHING-PROMPT.md`
-4. `TOOLBOXKART-AI-AGENT-REFERENCE-PACK.md`
-5. `docs/AI-SITE-RULES.md`
+1. `seo/content_guide.md`
+2. `alternatives list.md`
+3. `agents.md`
+4. `docs/ALTERNATIVES.md`
+5. `articles/progress.md`
+6. Existing tool, alternatives, reviews, versus, pricing, category, sitemap, and navigation implementation files that affect the selected tool.
 
-If any required file cannot be read, stop before publishing, report the missing file, and do not claim the run succeeded. Treat the latest repository instructions as authoritative, while preserving the explicit safeguards in this file.
+If a required file is missing or unreadable, stop before publishing and report the exact blocker.
 
-## 3. Daily publishing requirements
+## 3. Semrush keyword batch
 
-- Research current, verifiable developments from the last 24 hours and follow the master prompt's research and content-quality rules.
-- Publish exactly five complete articles per successful run. If current news is weak, use the master prompt's permitted evergreen fallback rather than inventing news.
-- Verify factual claims against reliable primary sources where possible; include useful source links and relevant internal links.
-- Follow the repository's actual category allowlist, article template, metadata schema, image conventions, canonical rules, and navigation conventions.
-- Create the article PHP files and required image assets, and register every article in `data/posts.php`.
-- Keep the author and other site-wide conventions consistent with existing articles and the master prompt.
+- Open Semrush Keyword Overview in the signed-in browser session.
+- Take the next 100 unfinished keyword rows from `alternatives list.md`, preserving their order.
+- Search all 100 keywords in one Keyword Overview batch when Semrush accepts the batch.
+- Record the check date, search volume, keyword difficulty, intent, useful variants, and People Also Ask questions that Semrush provides.
+- Never invent missing Semrush metrics.
+- If Semrush access, login, or the 100-keyword batch is unavailable, do not pretend the research ran. Stop before selecting a new tool and report the blocker.
+- Ignore duplicate rows for selection after recording that they are duplicates. Do not delete the source rows.
+- Skip a keyword only when its product identity cannot be confirmed, its required facts cannot be verified, or the corresponding content already exists. Record the reason.
 
-## 4. Critical PHP registry safeguard
+## 4. Choose one tool cluster
 
-**Never place article records after `return $posts;` in `data/posts.php`.** PHP stops executing the file at the return statement; any records after it are silently ignored.
+Choose one tool from the researched 100-keyword batch for the run. Prioritize:
 
-Before committing, inspect the complete final `data/posts.php` and verify:
+1. Relevant software with a confirmed official site.
+2. Strong search volume relative to keyword difficulty.
+3. Clear user intent for alternatives, reviews, pricing, how-to, and comparison content.
+4. A useful category cluster that can support internal links.
+5. Credible future affiliate or sponsored placement potential without changing editorial rankings.
 
-1. Every one of the five new article records occurs before the single final `return $posts;`.
-2. The return statement is after all existing and new records, at the end of the registry logic.
-3. All five slugs are unique and match their article filenames, metadata, internal links, and canonical URLs.
-4. No duplicate, premature, or misplaced return statement prevents records from loading.
-5. Each category key is one of the site's supported categories and matches the intended public URL.
+Do not choose by volume alone. Reject unsafe, illegal, piracy, paywall bypass, or non-software intent. If the best candidate is ambiguous or cannot be sourced, mark it `needs_review` and evaluate the next candidate in the same batch.
 
-Do not rely only on the commit diff or on the presence of article files. Check the final full file and the position of each new record relative to the return statement.
+## 5. Build the complete cluster
 
-## 5. Required pre-commit quality assurance
+Create or update the selected tool's complete cluster according to `seo/content_guide.md`:
 
-Review the full batch and its diff. Confirm:
+- Tool hub
+- Alternatives page
+- Review page
+- Pricing page
+- How to use page
+- One comparison page selected from Semrush comparison volume, or the top alternatives pick when no comparison keyword has volume
+- Category pillar update when the publication threshold is met
 
-- Exactly five new article records and the expected five article files are included.
-- Every article file exists at the path expected by the current router/template.
-- PHP syntax is valid. Use an available syntax/runtime check when possible; if it is unavailable, say so and perform a careful structural review rather than claiming a syntax check ran.
-- Article metadata is complete and uses the repository's existing field names and formats.
-- Category route, slug, canonical URL, title, sitemap URL, and redirect behavior agree.
-- Internal links resolve to valid site routes; external sources work and substantiate the claims.
-- Images/assets referenced by each article exist and load.
-- The sitemap and homepage/category listing logic will discover the new records.
-- No unrelated files or permanent URL changes are included.
+Existing legacy Alternatives pages keep their current permanent URLs. Do not rename or remove them. Link them naturally into the new cluster where useful, and do not create duplicate pages that target the same primary keyword.
 
-If a check fails, fix it before committing. Do not publish a success report for a batch with unresolved blockers.
+Use the current site architecture and shared components. Add new reusable routing, templates, registry entries, and sitemap support only when required. Keep facts consistent across every page in the cluster.
 
-## 6. Post-commit and live deployment verification
+## 6. Research and honesty
 
-After committing directly to `main`:
+- Open every product's official website, pricing page, documentation, help center, and changelog needed for the claims.
+- Use official sources for prices, limits, features, integrations, imports, exports, and setup steps.
+- Put a linked `Checked on [date]` note next to every price, plan detail, and material limit.
+- Do not claim testing or hands-on use unless the repository contains confirmed test notes from the owner.
+- Do not invent ratings, screenshots, user counts, quotes, discounts, pros, cons, or affiliate relationships.
+- If a material fact cannot be verified, leave it out or mark the tool `needs_review` rather than publish unsupported content.
+- Paid placement never changes editorial ranking. Any later paid link must use `rel="sponsored"` and a clear disclosure.
 
-1. Verify the commit exists on `main` and inspect the committed files, not just local assumptions.
-2. Check each of the five public category URLs on the live Hostinger site. Verify an actual successful HTTP response (prefer HTTP 200), the expected article title/body, and the correct canonical URL.
-3. Check the homepage and relevant category listing for the new articles, and check the live sitemap for their URLs.
-4. Distinguish a confirmed live result from a stale search-engine cache or a tool that cannot access the page. A search snippet alone is not proof of deployment.
-5. If the live site still serves old content, diagnose the registry, routing, cache/deployment status, and relevant files. Do not edit Hostinger settings. Report the exact unresolved check and do not claim that all five articles are live.
-6. Never say deployment succeeded unless the live verification actually supports that statement. If live verification is unavailable, report the GitHub commit as complete and deployment verification as unconfirmed.
+## 7. Quality gate
 
-## 7. Final run report
+Before committing:
 
-Report:
-- The five article titles and permanent URLs.
-- The commit SHA and link.
-- The key QA checks completed.
-- Live verification status, clearly marked **verified**, **not verified**, or **blocked**.
-- Any unresolved issue and the precise next step.
+- Confirm every page follows its required order and word-count range.
+- Confirm one unique primary keyword, title, meta description, canonical, H1, visible update date, breadcrumbs, and required schema per page.
+- Confirm no banned phrases, em dashes used as punctuation, copied text, fake testing claims, or unsupported facts.
+- Confirm internal links point only to live or included pages.
+- Confirm all relevant PHP syntax checks and repository tests pass.
+- Confirm the build passes.
+- Confirm sitemap XML is valid and contains only live, canonical, indexable URLs.
+- Review the complete diff and exclude unrelated changes, credentials, private data, and research debris.
 
-**Success means all five articles are registered correctly, the code and links pass QA, and live deployment is verified. A successful GitHub commit alone is not proof of a successful live publication.**
+If a check fails, fix it before publishing. If the facts cannot be verified, mark the item `needs_review` in the queue and move to the next candidate.
+
+## 8. Publish and verify
+
+- Commit and push the reviewed cluster to GitHub `main`.
+- Verify the live hub, alternatives, review, pricing, how-to, comparison, and category pages that were created or changed.
+- Verify the Alternatives, Reviews, and Versus indexes where applicable.
+- Verify the homepage navigation still contains Alternatives, Versus, Reviews, and Browse tools by niche, and does not contain ChatGPT, Claude, AI News, Tools Guide, or Tech.
+- Verify the live sitemap entries and canonical URLs.
+- Never claim live success from a GitHub commit alone.
+
+## 9. Progress and final report
+
+Update the queue or progress record with:
+
+- The 100 keywords checked and the Semrush check date.
+- The selected tool and selection reason.
+- Duplicate, ambiguous, skipped, and `needs_review` rows.
+- Every page created or updated.
+- Commit SHA and GitHub link.
+- Test, build, sitemap, and live verification status.
+- The exact next unprocessed keyword row for the following run.
+
+Keep the final report concise. Report blockers honestly and do not fall back to news publishing.

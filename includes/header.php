@@ -29,5 +29,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <a class="skip-link" href="#main">Skip to content</a>
 <header id="site-header" class="site-header"></header>
-<noscript><nav class="site-nav-fallback" aria-label="Site navigation"><a href="/">ToolboxKart</a><a href="/tech/">Tech</a><a href="/tools-guide/">Tool guides</a><a href="/alternatives/">Alternatives</a><a href="/versus/">Versus</a><a href="/reviews/">Reviews</a><a href="/all-tools">All tools</a></nav></noscript>
+<noscript><nav class="site-nav-fallback" aria-label="Site navigation"><a href="/">ToolboxKart</a><a href="/alternatives/">Alternatives</a><a href="/versus/">Versus</a><a href="/reviews/">Reviews</a><a href="/browse-tools-by-niche">Browse tools by niche</a></nav></noscript>
 <main id="main">
