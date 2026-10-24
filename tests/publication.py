@@ -64,7 +64,9 @@ for path in ['/tech/','/content/']:
     r,data=get(path);assert PATH.encode() in data,path
 assert get('/')[0].status==200
 _,sitemap=get('/sitemap.xml')
-ET.fromstring(sitemap);assert sitemap.count(CANONICAL.encode())==1
+ET.fromstring(sitemap);assert b'https://toolboxkart.tech/sitemap-pages.xml' in sitemap
+_,pages_sitemap=get('/sitemap-pages.xml')
+ET.fromstring(pages_sitemap);assert pages_sitemap.count(CANONICAL.encode())==1
 for path,kind in [('/assets/css/app.css','text/css'),('/assets/css/publication.css','text/css'),('/assets/site.js','javascript'),('/images/deepak-parmar.jpeg','image/jpeg'),('/images/mistral-large-4-api-routes.svg','image/svg+xml')]:
     r,data=get(path);assert kind in r.headers['Content-Type'] and len(data)>100,path
 svg=ET.fromstring((ROOT/'images/mistral-large-4-api-routes.svg').read_text());assert svg.tag=='{http://www.w3.org/2000/svg}svg'

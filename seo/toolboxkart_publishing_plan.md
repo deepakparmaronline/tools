@@ -66,6 +66,20 @@ Follow `seo/content_guide.md` for page order, word ranges, language, sourcing, c
 
 Every page links to the tool hub, the live category destination, and at least two useful sibling pages. The hub links to every sibling. Alternatives pages link only to alternative reviews that exist. Update older same-category pages when they already mention the new tool.
 
+Publishing a page and registering it are one atomic change. A newly published page must appear immediately on its matching public pillar and in its matching child sitemap:
+
+| Published page | Public pillar | XML sitemap | Registration source |
+| --- | --- | --- | --- |
+| Tool hub | `/tools/` | `/sitemap-tools.xml` | `data/software-pages.php` → `tool_hubs` |
+| Alternatives | `/alternatives/` | `/sitemap-alternatives.xml` | `alternatives/articles/*.php` |
+| Review | `/reviews/` | `/sitemap-reviews.xml` | published Reviews post registry entry |
+| Pricing | `/pricing/` | `/sitemap-pricing.xml` | `data/software-pages.php` → `pricing` |
+| How to use | `/how-to-use/` | `/sitemap-how-to-use.xml` | `data/software-pages.php` → `how_to_use` |
+| Comparison | `/compare/` | `/sitemap-compare.xml` | `data/software-pages.php` → `comparisons` |
+| Category pillar | `/best/` | `/sitemap-categories.xml` | `data/software-pages.php` → `categories` |
+
+`/sitemap.xml` is the sitemap index. A page is not publishable if it is missing from either its pillar or its child sitemap.
+
 ### 8. Run the quality gate
 
 Check factual support, checked dates, originality, banned language, word ranges, primary-keyword uniqueness, metadata, canonicals, breadcrumbs, schema, PHP syntax, tests, internal links, sitemap XML, mobile layout, desktop layout, and the complete diff.

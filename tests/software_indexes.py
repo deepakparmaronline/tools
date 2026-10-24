@@ -77,15 +77,28 @@ def main():
         compare = get('/compare/')
         assert '/versus/freedom-vs-cold-turkey/' in compare
         sitemap = get('/sitemap.xml')
-        ET.fromstring(sitemap)
-        for path in indexes:
-            assert f'https://toolboxkart.tech{path}' in sitemap, path
+        root = ET.fromstring(sitemap)
+        assert root.tag.endswith('sitemapindex')
+        child_maps = {
+            '/tools/': '/sitemap-tools.xml',
+            '/pricing/': '/sitemap-pricing.xml',
+            '/how-to-use/': '/sitemap-how-to-use.xml',
+            '/compare/': '/sitemap-compare.xml',
+            '/best/': '/sitemap-categories.xml',
+        }
+        required_maps = list(child_maps.values()) + ['/sitemap-alternatives.xml', '/sitemap-reviews.xml', '/sitemap-pages.xml']
+        for child in required_maps:
+            assert f'https://toolboxkart.tech{child}' in sitemap, child
+            ET.fromstring(get(child))
+        for path, child in child_maps.items():
+            assert f'https://toolboxkart.tech{path}' in get(child), path
+        assert '/versus/freedom-vs-cold-turkey/' in get('/sitemap-compare.xml')
         navigation = (ROOT / 'assets/site.js').read_text()
         fallback = (ROOT / 'includes/header.php').read_text()
         for path in indexes + ['/alternatives/', '/reviews/', '/browse-tools-by-niche']:
             assert path in navigation, path
             assert path in fallback, path
-        print('PASS: software indexes, registry, navigation, metadata, schemas and sitemap discovery')
+        print('PASS: software indexes, registry, navigation, metadata, schemas and type-specific sitemap discovery')
     finally:
         server.terminate()
         server.wait(timeout=5)

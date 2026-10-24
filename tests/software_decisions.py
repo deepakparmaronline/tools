@@ -62,7 +62,12 @@ def main():
         for path in ['/about-deepak-parmar/','/editorial-policy','/review-methodology','/advertising-disclosure','/corrections-policy']:
             code,_,html=get(path);assert code==200 and Page(html).h1==1,path
         _,_,sitemap=get('/sitemap.xml')
-        for canonical in pages.values():assert canonical in sitemap,canonical
+        assert 'https://toolboxkart.tech/sitemap-reviews.xml' in sitemap
+        assert 'https://toolboxkart.tech/sitemap-compare.xml' in sitemap
+        _,_,review_sitemap=get('/sitemap-reviews.xml')
+        _,_,compare_sitemap=get('/sitemap-compare.xml')
+        assert pages['/reviews/taskade-review/'] in review_sitemap
+        assert pages['/versus/freedom-vs-cold-turkey/'] in compare_sitemap
         _,_,alt_sitemap=get('/sitemap-alternatives.xml')
         assert '/alternatives/freedom-alternatives/' in alt_sitemap and '/reviews/' not in alt_sitemap
         redirects={

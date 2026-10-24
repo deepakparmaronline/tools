@@ -66,6 +66,18 @@ Use the current site architecture and shared components. Add new reusable routin
 
 Use `HUB_MIN_TOOLS = 4`. Before four published tool clusters exist in a category, link to the closest live browse page instead of publishing a thin category pillar.
 
+Every page and its discovery records must be committed together. Add each published page to its matching pillar and child sitemap through the shared registry:
+
+- Tool hub: `/tools/` and `/sitemap-tools.xml`
+- Alternatives: `/alternatives/` and `/sitemap-alternatives.xml`
+- Review: `/reviews/` and `/sitemap-reviews.xml`
+- Pricing: `/pricing/` and `/sitemap-pricing.xml`
+- How to use: `/how-to-use/` and `/sitemap-how-to-use.xml`
+- Comparison: `/compare/` and `/sitemap-compare.xml`
+- Category pillar: `/best/` and `/sitemap-categories.xml`
+
+Tool hubs, pricing guides, how-to guides, comparisons, and category pillars are registered in `data/software-pages.php`. Alternatives use their published article records. Reviews use the published Reviews post registry. Never publish an article file without its registration entry.
+
 ## 6. Research and honesty
 
 - Open every product's official website, pricing page, documentation, help center, and changelog needed for the claims.
@@ -87,6 +99,7 @@ Before committing:
 - Confirm all relevant PHP syntax checks and repository tests pass.
 - Confirm the build passes.
 - Confirm sitemap XML is valid and contains only live, canonical, indexable URLs.
+- Confirm `/sitemap.xml` lists every required child sitemap. Confirm every new page appears exactly once in its matching child sitemap and appears on its matching public pillar.
 - Review the complete diff and exclude unrelated changes, credentials, private data, and research debris.
 
 If a check fails, fix it before publishing. If the facts cannot be verified, mark the item `needs_review` in the queue, record the reason, and move to the next queued row.
@@ -98,6 +111,7 @@ If a check fails, fix it before publishing. If the facts cannot be verified, mar
 - Verify the Tool hubs, Alternatives, Reviews, Pricing, How to use, Comparisons, and Best software indexes where applicable.
 - Verify the homepage navigation contains Tool hubs, Alternatives, Reviews, Pricing, How to use, Comparisons, Best software, and Browse tools by niche, and does not contain ChatGPT, Claude, AI News, Tools Guide, or Tech.
 - Verify the live sitemap entries and canonical URLs.
+- Treat a missing pillar card or missing child-sitemap URL as a failed publication. Keep the queue row `in_progress` until both are live.
 - Never claim live success from a GitHub commit alone.
 
 ## 9. Progress and final report

@@ -31,8 +31,8 @@ if ($path === '/sitemap.xml') {
     return;
 }
 
-if ($path === '/sitemap-alternatives.xml') {
-    require __DIR__.'/sitemap-alternatives.php';
+if (preg_match('#^/sitemap-(tools|alternatives|reviews|pricing|how-to-use|compare|categories|pages)\.xml$#', $path, $matches)) {
+    require __DIR__.'/sitemap-'.$matches[1].'.php';
     return;
 }
 

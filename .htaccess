@@ -17,7 +17,7 @@ RewriteRule ^alternatives/([a-z0-9-]+)(?:\.php)?/?$ alternatives/article.php?slu
 
 # Serve the sitemap dynamically from the current posts/tools index.
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
-RewriteRule ^sitemap-alternatives\.xml$ sitemap-alternatives.php [L]
+RewriteRule ^sitemap-(tools|alternatives|reviews|pricing|how-to-use|compare|categories|pages)\.xml$ sitemap-$1.php [L]
 
 # Preserve authority from verified legacy URLs that no longer have a one-to-one source record.
 RewriteRule ^blog/claude-fable-5-1-whats-new-pricing-access-and-how-to-use-it/?$ /claude/ [R=301,L,NE]

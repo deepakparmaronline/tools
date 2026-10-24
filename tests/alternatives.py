@@ -124,7 +124,7 @@ def main():
             assert get(path)[0] == 404
         assert get('/alternatives')[0] == 301
         code, _, sitemap = get('/sitemap.xml')
-        assert code == 200 and parsed.canonical in sitemap
+        assert code == 200 and 'https://toolboxkart.tech/sitemap-alternatives.xml' in sitemap
         assert 'qa-alternative-draft' not in sitemap and 'qa-alternative-future' not in sitemap
         code, _, alternatives_sitemap = get('/sitemap-alternatives.xml')
         assert code == 200 and parsed.canonical in alternatives_sitemap
