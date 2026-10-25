@@ -124,6 +124,8 @@ If a check fails, fix it before publishing. If the facts cannot be verified, mar
 - Do not treat missing local shell access as a publication blocker.
 - Review the complete proposed change first. Commit only the current tool cluster and its required discovery, queue and progress updates.
 - After the commit reaches GitHub, wait for `ToolboxKart quality checks` to finish. It checks every changed PHP file, validates the sitemap and runs the software and publication integration tests.
+- Read `seo/quality-status.json` from the latest `main`. The workflow is confirmed only when its `status` is `passed` and its `commit` exactly matches the content commit being checked. The file also records the workflow run link and check time.
+- The workflow creates a separate status-only commit after a pass. Do not mistake that status commit for the content commit and do not treat it as a new publishing checkpoint.
 - If the workflow fails, read the failing step, fix the content or code and run it again. Do not mark the tool published and do not claim live success until the workflow passes.
 - A passing workflow does not prove Hostinger deployment. Complete the live checks in section 8 before marking the row published.
 
