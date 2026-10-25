@@ -1,0 +1,78 @@
+name: ToolboxKart quality checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: toolboxkart-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Install PHP XML support
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes php-cli php-xml
+
+      - name: Check changed PHP syntax
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE_SHA: ${{ github.event.before }}
+          PULL_REQUEST_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            base="$PULL_REQUEST_BASE_SHA"
+          elif [ -n "$BEFORE_SHA" ] && [ "$BEFORE_SHA" != "0000000000000000000000000000000000000000" ]; then
+            base="$BEFORE_SHA"
+          else
+            base="$(git rev-parse HEAD^)"
+          fi
+
+          git diff --diff-filter=ACMR --name-only -z "$base" "$GITHUB_SHA" -- '*.php' > "$RUNNER_TEMP/changed-php-files"
+
+          if [ -s "$RUNNER_TEMP/changed-php-files" ]; then
+            while IFS= read -r -d '' file; do
+              php -l "$file"
+            done < "$RUNNER_TEMP/changed-php-files"
+          else
+            echo "No PHP files changed in this run."
+          fi
+
+      - name: Validate the static sitemap
+        run: php tools/validate-sitemap.php
+
+      - name: Run software content tests
+        run: |
+          python3 tests/alternatives.py
+          python3 tests/software_decisions.py
+          python3 tests/software_indexes.py
+
+      - name: Run publication rendering test
+        run: |
+          php -S 127.0.0.1:8765 preview-router.php > "$RUNNER_TEMP/php-preview.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8765/ > /dev/null; then
+              break
+            fi
+            sleep 1
+          done
+
+          curl --fail --silent http://127.0.0.1:8765/ > /dev/null
+          python3 tests/publication.py
