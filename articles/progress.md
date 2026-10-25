@@ -104,7 +104,7 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - Zendesk remains `in_progress`. No Zendesk page was created or published during this recovery work.
 - A manual run after the repair read the current repository, queue, architecture and official Zendesk sources without repeating the old checkout or runner error. It completed safely but did not save a content checkpoint because the full six-page cluster exceeded the bounded scheduled turn.
 - The scheduled workflow now uses saved checkpoints. The exact next checkpoint is Zendesk evidence ledger and cluster brief. It must record official sources, factual boundaries, audience, category, alternatives criteria, comparison choice and internal-link plan before page drafting starts.
-- Checkpoint 1 later completed in commit `3d2b483a51b09c8f48507871a947297447c449d5`. GitHub run `40168137004` passed all quality steps. The scheduled ChatGPT interface could not read that Actions result directly, so the workflow is being extended to save the exact passing commit in `seo/quality-status.json` for future runs.
+- Checkpoint 1 later completed in commit `3d2b483a51b09c8f48507871a947297447c449d5`. GitHub run `40168137004` passed all quality steps. The workflow now saves each exact passing content commit in `seo/quality-status.json`, which future scheduled runs can read without direct Actions access.
 
 ## Zendesk cluster checkpoint 1: evidence ledger and cluster brief (2026-10-25)
 
