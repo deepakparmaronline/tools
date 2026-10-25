@@ -104,9 +104,19 @@ Before committing:
 
 If a check fails, fix it before publishing. If the facts cannot be verified, mark the item `needs_review` in the queue, record the reason, and move to the next queued row.
 
+### GitHub runner for scheduled ChatGPT runs
+
+- The repository workflow named `ToolboxKart quality checks` is the required execution environment when the scheduled ChatGPT task cannot run a local checkout.
+- Do not treat missing local shell access as a publication blocker.
+- Review the complete proposed change first. Commit only the current tool cluster and its required discovery, queue and progress updates.
+- After the commit reaches GitHub, wait for `ToolboxKart quality checks` to finish. It checks every changed PHP file, validates the sitemap and runs the software and publication integration tests.
+- If the workflow fails, read the failing step, fix the content or code and run it again. Do not mark the tool published and do not claim live success until the workflow passes.
+- A passing workflow does not prove Hostinger deployment. Complete the live checks in section 8 before marking the row published.
+
 ## 8. Publish and verify
 
 - Commit and push the reviewed cluster to GitHub `main`.
+- Wait for the `ToolboxKart quality checks` workflow on that commit and confirm it passes.
 - Verify the live hub, alternatives, review, pricing, how-to, comparison, and category pages that were created or changed.
 - Verify the Tool hubs, Alternatives, Reviews, Pricing, How to use, Comparisons, and Best software indexes where applicable.
 - Verify the homepage navigation contains Tool hubs, Alternatives, Reviews, Pricing, How to use, Comparisons, Best software, and Browse tools by niche, and does not contain ChatGPT, Claude, AI News, Tools Guide, or Tech.

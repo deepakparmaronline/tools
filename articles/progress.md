@@ -93,3 +93,12 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - **Queue-claim commit:** [`eb8fb3329cc2af64ad7752850297e79ad86800cd`](https://github.com/deepakparmaronline/tools/commit/eb8fb3329cc2af64ad7752850297e79ad86800cd). This commit only changed Zendesk to `in_progress`.
 - **Resume rule:** Next run must resume Order 1 Zendesk before taking any other row. The next queued row after Zendesk is Order 2: `Freshdesk alternative`, volume 480, KD 16, CPC US$46.98, commercial intent.
 - **Exact next unprocessed row:** `| 1 | Zendesk | Zendesk alternative | new cluster | 880 | 22 | $64.61 | C | in_progress |`.
+
+### Scheduled runner recovery: 2026-10-25
+
+- Added `.github/workflows/quality.yml` so scheduled publishing can use GitHub Actions when ChatGPT has no local shell or checkout.
+- The workflow checks changed PHP files, validates the static sitemap, runs all three software integration suites and runs the full publication rendering test.
+- Local verification passed for the Alternatives, software decision, software index and publication test suites.
+- An unrelated older file, `blog/gemini-live-guided-vision.php`, already contains a PHP syntax error. The workflow therefore checks PHP files changed by the current publication instead of failing every run because of untouched legacy content.
+- Updated `chatgpt schedule guidline.md` so the scheduled task must wait for the GitHub quality workflow, fix any failed check and complete live verification before marking a tool published.
+- Zendesk remains `in_progress`. No Zendesk page was created or published during this recovery work.
