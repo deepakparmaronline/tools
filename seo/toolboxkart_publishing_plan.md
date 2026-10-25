@@ -34,7 +34,9 @@ Each page must have a different primary keyword and a distinct purpose. Facts mu
 
 The complete one-time Semrush research remains in `alternatives list.md`, and `seo/search_research_snapshot.md` defines how the schedule may use it. It is committed evidence for the prepared order, not a nightly research task.
 
-## Daily workflow
+## Scheduled workflow
+
+One tool cluster may take several scheduled runs. Each run completes one bounded checkpoint, records it in `articles/progress.md`, and leaves the queue row `in_progress` until the complete cluster is tested, published and live verified. Incomplete pages remain unregistered and excluded from public indexes and sitemaps.
 
 ### 1. Establish the work item
 

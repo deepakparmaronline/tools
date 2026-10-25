@@ -50,6 +50,20 @@ If a required file is missing or unreadable, stop before publishing and report t
 
 ## 5. Build the complete cluster
 
+The complete cluster may span several scheduled runs. Scheduled runs are bounded, so each run must finish one safe checkpoint instead of repeatedly attempting the whole cluster and saving nothing.
+
+Use these checkpoints in order:
+
+1. Evidence ledger and cluster brief.
+2. Shared routing, template, registry and test support that the tool needs.
+3. Tool hub and pricing draft.
+4. Review and how-to draft.
+5. Alternatives and comparison draft.
+6. Cross-page consistency, internal links, registration, sitemap and public pillar integration.
+7. GitHub quality workflow, publication and live verification.
+
+At the end of every run, save the completed checkpoint and the exact next checkpoint in `articles/progress.md`. Keep the queue row `in_progress` until checkpoint 7 succeeds. Draft content must remain unregistered, unlinked and excluded from every public index and sitemap. Do not mark a partial cluster published. If a checkpoint is still too large for one run, finish one named file or one focused infrastructure change, record it and resume the same checkpoint next time.
+
 Create or update the queued tool's complete cluster according to `seo/content_guide.md` and `seo/toolboxkart_publishing_plan.md`:
 
 - Tool hub
