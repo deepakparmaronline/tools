@@ -151,3 +151,17 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - **Changed files for this checkpoint:** `.htaccess`, `router.php`, `includes/software-pages.php`, new `includes/software-detail.php`, new `assets/css/software-detail.css`, `tests/software_indexes.py`, and this progress record. The queue remains unchanged.
 - **Quality and deployment gate:** The matching workflow result must be confirmed from the latest `seo/quality-status.json`; its `status` must be `passed` and its `commit` must equal this checkpoint's content commit. The content commit and workflow link will be in that status file after the workflow completes. No live Zendesk page checks are applicable because no Zendesk page was created or published.
 - **Exact next checkpoint after the matching quality gate passes:** Checkpoint 3, prepare the Zendesk tool hub and pricing draft as named files only. Keep both unregistered, unlinked from public indexes, and absent from every sitemap until the final publication checkpoint. If the status file does not match this content commit or the workflow fails, resume this checkpoint and repair the failing check before proceeding.
+
+
+## Zendesk cluster publication commit prepared (2026-10-27)
+
+- User direction: commit complete reviewed content to main and do not block on live HTTP access; Hostinger auto-deploys and the user will verify live URLs.
+- Cluster pages prepared: /tools/zendesk/, /alternatives/zendesk-alternatives/, /reviews/zendesk-review/, /pricing/zendesk/, /how-to-use/zendesk/, and /compare/zendesk-vs-freshdesk/.
+- Saved search evidence remains snapshot 2026-10-24: US volume 880, KD 22, CPC US$64.61, commercial intent, rising trend and SERP features SL/AIO/Rev/Vid/PAA/Rel. No Semrush run, no invented metric, and no exact PAA question invented.
+- Official product, pricing and support sources checked on 2026-10-27. Evidence ledger: articles/zendesk-alternatives/sources.md.
+- No category pillar was created because fewer than four customer-support tool clusters are published.
+- No hands-on testing is claimed. Prices are linked to official sources and dated.
+- Quality gate: wait for ToolboxKart quality checks and confirm seo/quality-status.json records status passed and this exact content commit. If it fails, fix the reported step and rerun.
+- Live verification is delegated to the user; this commit is the Hostinger auto-deployment handoff, not proof of live HTTP status.
+- Queue remains in_progress until the matching quality workflow passes. Then close Zendesk as published in a follow-up commit and set Freshdesk (Order 2) as the next item.
+- Exact next step: commit the complete cluster, wait for matching quality status, repair any CI failures, then close the queue row after the pass.

@@ -127,18 +127,15 @@ If a check fails, fix it before publishing. If the facts cannot be verified, mar
 - Read `seo/quality-status.json` from the latest `main`. The workflow is confirmed only when its `status` is `passed` and its `commit` exactly matches the content commit being checked. The file also records the workflow run link and check time.
 - The workflow creates a separate status-only commit after a pass. Do not mistake that status commit for the content commit and do not treat it as a new publishing checkpoint.
 - If the workflow fails, read the failing step, fix the content or code and run it again. Do not mark the tool published and do not claim live success until the workflow passes.
-- A passing workflow does not prove Hostinger deployment. Complete the live checks in section 8 before marking the row published.
+- A passing workflow does not prove live HTTP status. The user has explicitly taken responsibility for live verification. Do not make live HTTP/browser access a publication gate.
 
 ## 8. Publish and verify
 
 - Commit and push the reviewed cluster to GitHub `main`.
 - Wait for the `ToolboxKart quality checks` workflow on that commit and confirm it passes.
-- Verify the live hub, alternatives, review, pricing, how-to, comparison, and category pages that were created or changed.
-- Verify the Tool hubs, Alternatives, Reviews, Pricing, How to use, Comparisons, and Best software indexes where applicable.
-- Verify the homepage navigation contains Tool hubs, Alternatives, Reviews, Pricing, How to use, Comparisons, Best software, and Browse tools by niche, and does not contain ChatGPT, Claude, AI News, Tools Guide, or Tech.
-- Verify the live sitemap entries and canonical URLs.
-- Treat a missing pillar card or missing child-sitemap URL as a failed publication. Keep the queue row `in_progress` until both are live.
-- Never claim live success from a GitHub commit alone.
+- Verify repository-rendered indexes, registration, canonicals, internal links, child sitemaps and sitemap-index entries through the quality workflow.
+- The user will verify live HTTP responses after Hostinger auto-deploys from GitHub main. Do not claim live verification unless it was actually performed, but do not block a complete commit because live access is unavailable.
+- Missing registry, index or child-sitemap records are repository quality failures and must be fixed before publication.
 
 ## 9. Progress and final report
 
@@ -152,6 +149,6 @@ Update the queue or progress record with:
 - Test, build, sitemap, and live verification status.
 - The exact next `queued` row for the following run.
 
-Mark the current queue row `published` only after GitHub push, Hostinger deployment, and live verification all succeed. If publication is incomplete or blocked, leave it `in_progress` with the exact blocker recorded in `articles/progress.md`.
+Mark the queue row `published` after the complete reviewed cluster and its registry, public index and child-sitemap entries are committed to main and the matching quality workflow passes. Hostinger auto-deploys from main; the user performs live verification. Do not hold publication for unavailable live HTTP checks.
 
 Keep the final report concise. Report blockers honestly and do not fall back to news publishing.

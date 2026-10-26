@@ -19,7 +19,7 @@ For the selected queue row, the scheduled run must use:
 3. The page and keyword rules in `seo/content_guide.md`.
 4. Current official product sources for product facts, prices, limits, features, setup steps, imports, exports, and changes.
 
-If the saved research does not contain a requested metric, query, or People Also Ask question, the run must not invent it and must not open Semrush. It may use the content guide's documented fallback for the comparison page: choose the strongest relevant alternative supported by the cluster brief. If missing search information prevents a required page from meeting the quality gate, mark the queue row `needs_review`, record the missing item, and continue to the next queued tool.
+If committed research lacks a metric or exact question, use public SERP research to understand intent and competitor coverage. Do not invent Semrush metrics or exact PAA questions. Missing search metrics are not a blocker: preserve saved values and omit unknowns.
 
 ## Manual refresh rule
 

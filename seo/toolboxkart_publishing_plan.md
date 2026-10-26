@@ -29,14 +29,14 @@ Each page must have a different primary keyword and a distinct purpose. Facts mu
 1. Resume the first `in_progress` row.
 2. Otherwise take the lowest Order row marked `queued`.
 3. Verify the exact product and its official website.
-4. If verification fails, mark `needs_review` with the reason and continue to the next queued row.
+4. If ordinary search or product details are missing, research official sources and public SERPs, omit unsupported claims, and continue. Reserve `needs_review` for genuine unresolved product identity, safety, or material accuracy issues.
 5. Never publish a held, duplicate, excluded, unsafe, non-software, or news topic.
 
 The complete one-time Semrush research remains in `alternatives list.md`, and `seo/search_research_snapshot.md` defines how the schedule may use it. It is committed evidence for the prepared order, not a nightly research task.
 
 ## Scheduled workflow
 
-One tool cluster may take several scheduled runs. Each run completes one bounded checkpoint, records it in `articles/progress.md`, and leaves the queue row `in_progress` until the complete cluster is tested, published and live verified. Incomplete pages remain unregistered and excluded from public indexes and sitemaps.
+One cluster may take several runs, but do not repeatedly stop at drafts when the complete cluster can be finished. Use public SERPs to fill search-intent gaps, never invent metrics, and omit unsupported details. The user performs live verification after auto-deployment; a matching quality workflow pass is the publication gate.
 
 ### 1. Establish the work item
 
@@ -88,11 +88,11 @@ Check factual support, checked dates, originality, banned language, word ranges,
 
 ### 9. Publish and verify
 
-Commit and push reviewed changes to GitHub `main`. Wait for Hostinger deployment. Verify the changed live pages, indexes, navigation, canonical URLs, HTTP responses, and sitemap entries. A GitHub commit is not proof of live publication.
+Commit the complete reviewed cluster and discovery records to GitHub main. Wait for the matching ToolboxKart quality workflow and confirm seo/quality-status.json. Hostinger auto-deploys from main; the user will verify live URLs, HTTP responses, navigation and sitemaps. Do not claim live verification, but do not block a complete final commit because direct live access is unavailable.
 
 ### 10. Close the queue row
 
-Mark the row `published` only after live verification. Record the completion date, canonical URLs, commit SHA, checks, and next queue row in `articles/progress.md`. If deployment is pending or blocked, leave the row `in_progress` and report the exact state.
+Mark the row `published` after the complete cluster and discovery records are committed and the matching quality workflow passes. Record canonical URLs, commit SHA, workflow status, user live-verification handoff, and next queue row in articles/progress.md.
 
 ## Ranking principles
 
