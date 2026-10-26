@@ -173,3 +173,14 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - PHP syntax checks and static sitemap validation passed. The alternatives and software decision test suites passed. The failure is the software index test's outdated unpublished-fixture expectations.
 - Repair: update the test to require HTTP 200 for the four published detail routes, verify their canonical URLs and index cards, require their child sitemap URLs, require the new Alternatives and Reviews URLs in their sitemaps, and continue requiring the category route to remain unavailable because the four-tool category threshold is not met.
 - Exact next step: commit the test correction and this progress note, then wait for the matching quality workflow. If another test fails, inspect its exact log and fix it before closing the queue row.
+
+
+## Zendesk publication closed after matching quality pass (2026-10-27)
+
+- Final cluster state is present on main: hub, alternatives, review, pricing, how-to, and Zendesk vs Freshdesk comparison, plus review registry, software registries, alternatives record and editorial evidence files.
+- Content commit 6dc8824d01f24736447f86bb44567b7470a3926c first exposed stale test expectations for unpublished routes. The test was updated in commit a7fa32deca46697da414a309db66254b84bba379.
+- Matching quality status from latest main: status passed; commit a7fa32deca46697da414a309db66254b84bba379; workflow https://github.com/deepakparmaronline/tools/actions/runs/40410442507. PHP syntax, static sitemap validation, software content tests and publication rendering test passed.
+- Queue Order 1 Zendesk is now marked published. Hostinger auto-deployment is expected from main. Live HTTP verification was not performed; the user will check the production URLs.
+- Canonical URLs published: https://toolboxkart.tech/tools/zendesk/; https://toolboxkart.tech/alternatives/zendesk-alternatives/; https://toolboxkart.tech/reviews/zendesk-review/; https://toolboxkart.tech/pricing/zendesk/; https://toolboxkart.tech/how-to-use/zendesk/; https://toolboxkart.tech/compare/zendesk-vs-freshdesk/.
+- No customer-support category pillar was added because the category still has fewer than four published clusters.
+- Exact next queue item: Order 2, Freshdesk, primary keyword “Freshdesk alternative”, US volume 480, KD 16, CPC US$46.98, commercial intent, status queued. Continue using official-source research and public SERP research for intent gaps, do not run Semrush, and do not require live HTTP access as a commit gate.
