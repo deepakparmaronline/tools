@@ -79,10 +79,9 @@ Primary keyword: "best [category] software". Length 2,000 to 3,200 words. Order:
 
 - Every page links to its tool hub, the category page (if live), and 2 sibling pages of the same tool.
 - The tool hub links to all 5 sibling pages and the category page.
-- An alternatives page links to the review page of every alternative that exists on the site. Do not link to pages that do not exist.
-- The category page links to the tool hub and alternatives page of every tool in the category.
-- When a new tool goes live: go back through live pages in the same category. Where a page mentions the new tool, add a natural link. Add the tool to the category page. Update any alternatives page that lists the tool.
-- 3 to 8 internal links in the body of each page. Descriptive anchor text. Vary the anchors.
+- Review, pricing, how-to, alternatives and comparison pages must cross-link naturally to the relevant live pages in the same cluster. A review should link to the hub, pricing, how-to, alternatives and comparison where relevant. Pricing and how-to pages should link back to the review and alternatives pages, plus the hub and comparison when useful.
+- Never link to a draft, missing route or category pillar that has not met the publication threshold.
+- 3 to 8 useful internal links in the body of each page. Descriptive anchor text. Vary the anchors.
 - No orphan pages. Every page is reachable within 3 clicks of the home page.
 
 8. XML SITEMAP RULES
