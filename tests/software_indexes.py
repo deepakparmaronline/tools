@@ -166,22 +166,39 @@ def main():
         compare = get('/compare/')
         assert '/versus/freedom-vs-cold-turkey/' in compare
 
-        # Unregistered software detail URLs must stay unavailable until complete records are published.
-        unknown_detail_routes = [
-            '/tools/zendesk/',
-            '/pricing/zendesk/',
-            '/how-to-use/zendesk/',
-            '/compare/zendesk-vs-freshdesk/',
-            '/best/customer-service-help-desk-software/',
-        ]
+        # The complete Zendesk cluster is now published. Unknown detail routes must remain unavailable.
+        unknown_detail_routes = ['/best/customer-service-help-desk-software/']
         for path in unknown_detail_routes:
             status, _, _ = get_response(path)
             assert status == 404, f'{path}: expected 404, got {status}'
 
-        for path in ['/tools/', '/pricing/', '/how-to-use/', '/compare/', '/best/']:
-            assert 'zendesk' not in get(path).lower(), path
-        for path in ['/sitemap-tools.xml', '/sitemap-pricing.xml', '/sitemap-how-to-use.xml', '/sitemap-compare.xml', '/sitemap-categories.xml']:
-            assert 'zendesk' not in get(path).lower(), path
+        published_details = {
+            '/tools/zendesk/': 'https://toolboxkart.tech/tools/zendesk/',
+            '/pricing/zendesk/': 'https://toolboxkart.tech/pricing/zendesk/',
+            '/how-to-use/zendesk/': 'https://toolboxkart.tech/how-to-use/zendesk/',
+            '/compare/zendesk-vs-freshdesk/': 'https://toolboxkart.tech/compare/zendesk-vs-freshdesk/',
+        }
+        for path, canonical in published_details.items():
+            html = get(path)
+            page = Page(html)
+            assert page.h1 == 1, path
+            assert page.canonical == canonical, path
+            assert 'zendesk' in ' '.join(page.text).lower(), path
+
+        for path in ['/tools/', '/pricing/', '/how-to-use/', '/compare/']:
+            assert 'zendesk' in get(path).lower(), path
+        assert 'zendesk' not in get('/best/').lower()
+
+        expected_sitemap_urls = {
+            '/sitemap-tools.xml': 'https://toolboxkart.tech/tools/zendesk/',
+            '/sitemap-pricing.xml': 'https://toolboxkart.tech/pricing/zendesk/',
+            '/sitemap-how-to-use.xml': 'https://toolboxkart.tech/how-to-use/zendesk/',
+            '/sitemap-compare.xml': 'https://toolboxkart.tech/compare/zendesk-vs-freshdesk/',
+            '/sitemap-alternatives.xml': 'https://toolboxkart.tech/alternatives/zendesk-alternatives/',
+            '/sitemap-reviews.xml': 'https://toolboxkart.tech/reviews/zendesk-review/',
+        }
+        for path, url in expected_sitemap_urls.items():
+            assert url in get(path), f'{url} missing from {path}'
 
         rewrite_rules = (ROOT / '.htaccess').read_text()
         assert 'RewriteRule ^(tools|pricing|how-to-use|compare|best)/([a-z0-9-]+)/?$ router.php [L,QSA]' in rewrite_rules

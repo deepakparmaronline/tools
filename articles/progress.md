@@ -165,3 +165,11 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - Live verification is delegated to the user; this commit is the Hostinger auto-deployment handoff, not proof of live HTTP status.
 - Queue remains in_progress until the matching quality workflow passes. Then close Zendesk as published in a follow-up commit and set Freshdesk (Order 2) as the next item.
 - Exact next step: commit the complete cluster, wait for matching quality status, repair any CI failures, then close the queue row after the pass.
+
+## Zendesk cluster quality repair (2026-10-27)
+
+- Content commit 6dc8824d01f24736447f86bb44567b7470a3926c added the full Zendesk cluster and updated publication instructions.
+- The first matching ToolboxKart quality workflow failed in tests/software_indexes.py because the existing test still expected the Zendesk detail routes to return 404 and expected Zendesk to be absent from indexes and sitemaps. Those assertions were correct before publication but stale after the cluster was committed.
+- PHP syntax checks and static sitemap validation passed. The alternatives and software decision test suites passed. The failure is the software index test's outdated unpublished-fixture expectations.
+- Repair: update the test to require HTTP 200 for the four published detail routes, verify their canonical URLs and index cards, require their child sitemap URLs, require the new Alternatives and Reviews URLs in their sitemaps, and continue requiring the category route to remain unavailable because the four-tool category threshold is not met.
+- Exact next step: commit the test correction and this progress note, then wait for the matching quality workflow. If another test fails, inspect its exact log and fix it before closing the queue row.
