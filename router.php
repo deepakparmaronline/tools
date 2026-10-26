@@ -130,5 +130,32 @@ if (is_file($phpCandidate)) {
     return;
 }
 
+// Software detail pages are served only from complete, published registry records.
+$softwareDetailPrefixes = [
+    'tools' => 'tool_hubs',
+    'pricing' => 'pricing',
+    'how-to-use' => 'how_to_use',
+    'compare' => 'comparisons',
+    'best' => 'categories',
+];
+if (preg_match('#^/(tools|pricing|how-to-use|compare|best)/([a-z0-9-]+)/?$#D', $path, $detailMatches)) {
+    require_once __DIR__.'/includes/bootstrap.php';
+    $collectionKey = $softwareDetailPrefixes[$detailMatches[1]];
+    $canonicalPath = '/'.$detailMatches[1].'/'.$detailMatches[2].'/';
+    foreach (software_pages($collectionKey) as $softwarePage) {
+        if (($softwarePage['url'] ?? null) !== $canonicalPath) continue;
+        if ($path !== $canonicalPath) {
+            header('Location: '.$canonicalPath, true, 301);
+            exit;
+        }
+        require_once __DIR__.'/includes/software-detail.php';
+        $renderedPage = render_software_detail_page($softwarePage, $collectionKey);
+        if ($renderedPage !== '') {
+            echo $renderedPage;
+            return;
+        }
+    }
+}
+
 http_response_code(404);
 require __DIR__ . '/404.php';

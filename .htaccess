@@ -19,6 +19,11 @@ RewriteRule ^alternatives/([a-z0-9-]+)(?:\.php)?/?$ alternatives/article.php?slu
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
 RewriteRule ^sitemap-(tools|alternatives|reviews|pricing|how-to-use|compare|categories|pages)\.xml$ sitemap-$1.php [L]
 
+# Route only missing software detail paths through the published-record renderer.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(tools|pricing|how-to-use|compare|best)/([a-z0-9-]+)/?$ router.php [L,QSA]
+
 # Preserve authority from verified legacy URLs that no longer have a one-to-one source record.
 RewriteRule ^blog/claude-fable-5-1-whats-new-pricing-access-and-how-to-use-it/?$ /claude/ [R=301,L,NE]
 RewriteRule ^blog/gpt-6-astra-chatgpt-new-capabilities/?$ /chatgpt/chatgpt-gpt6-astra-workflow-guide [R=301,L,NE]
