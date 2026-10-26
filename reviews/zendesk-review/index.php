@@ -6,7 +6,7 @@ if ($requestPath !== $canonicalPath) { header('Location: '.$canonicalPath,true,3
 $pageTitle='Zendesk Review: Pricing, Fit and Limits | ToolboxKart';
 $pageDescription='A research-based Zendesk review covering support workflows, pricing, export limits, strengths, trade-offs and who should compare alternatives.';
 $canonical=url($canonicalPath); $ogType='article';
-$extraHead=jsonld(['@context'=>'https://schema.org','@graph'=>[
+$extraHead='<link rel="stylesheet" href="'.e(asset('css/publication.css')).'">'.jsonld(['@context'=>'https://schema.org','@graph'=>[
  ['@type'=>'Article','@id'=>$canonical.'#article','url'=>$canonical,'mainEntityOfPage'=>$canonical,'headline'=>'Zendesk Review: Pricing, Fit and Limits','description'=>$pageDescription,'datePublished'=>'2026-10-27T00:00:00+05:30','dateModified'=>'2026-10-27T00:00:00+05:30','author'=>['@type'=>'Person','name'=>'Deepak Parmar','url'=>url('about-deepak-parmar/')],'publisher'=>['@type'=>'Organization','name'=>SITE_NAME,'url'=>SITE_URL]],
  ['@type'=>'FAQPage','mainEntity'=>[
  ['@type'=>'Question','name'=>'How much does Zendesk cost?','acceptedAnswer'=>['@type'=>'Answer','text'=>'The official page checked October 27, 2026 listed Support Team at US$19, Suite Team at US$55 and Suite Professional at US$115 per agent/month billed yearly.']],
