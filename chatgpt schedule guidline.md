@@ -107,6 +107,9 @@ Tool hubs, pricing guides, how-to guides, comparisons, and category pillars are 
 Before committing:
 
 - Confirm every page follows its required order and word-count range.
+- Visually inspect the rendered page template against an existing correctly formatted page of the same type. Confirm the page loads its required stylesheet (for example, `assets/css/publication.css` for standalone publication pages), the table of contents renders as a vertical list rather than concatenated inline links, tables are readable and horizontally scrollable on mobile, and author/date/breadcrumb blocks have the intended spacing.
+- Check the final rendered HTML and CSS together, not only the source text. Do not publish a page with missing styles, broken heading anchors, jammed navigation/TOC links, unstyled tables, or overflow on mobile.
+- Confirm every live tool-cluster page has natural cross-links to the hub and at least two relevant live siblings. Reviews, pricing, how-to, alternatives and comparison pages should connect to each other wherever useful; never link to a draft or missing route.
 - Confirm one unique primary keyword, title, meta description, canonical, H1, visible update date, breadcrumbs, and required schema per page.
 - Confirm no banned phrases, em dashes used as punctuation, copied text, fake testing claims, or unsupported facts.
 - Confirm internal links point only to live or included pages.
