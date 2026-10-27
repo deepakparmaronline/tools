@@ -76,13 +76,26 @@ def main():
             code, headers, body = get(path)
             assert code == 200 and content_type in headers.get('Content-Type', ''), path
             assert len(body) > 100, f'Empty or incomplete asset: {path}'
+        registry = (ROOT / 'data/software-pages.php').read_text()
         for record in (ROOT / 'alternatives/articles').glob('*.php'):
             if "'status' => 'published'" not in record.read_text():
                 continue
-            path = f'/alternatives/{record.stem}/'
+            tool_slug = record.stem[:-len('-alternatives')] if record.stem.endswith('-alternatives') else ''
+            tool_first = bool(tool_slug and f"'url'=>'/{tool_slug}/'" in registry)
+            path = f'/{tool_slug}/alternatives/' if tool_first else f'/alternatives/{record.stem}/'
             code, _, html = get(path)
             assert code == 200 and Page(html).h1 == 1, path
             assert f'href="{path}"' in get('/alternatives/')[2], path
+            if record.stem == 'freshdesk-alternatives':
+                page = Page(html)
+                graph = next(item['@graph'] for item in page.schemas if '@graph' in item)
+                assert page.canonical == 'https://toolboxkart.tech/freshdesk/alternatives/'
+                assert any(item.get('@type') == 'BreadcrumbList' for item in graph)
+                item_list = next(item for item in graph if item.get('@type') == 'ItemList')
+                assert len(item_list['itemListElement']) == 8
+                faq = next(item for item in graph if item.get('@type') == 'FAQPage')
+                assert len(faq['mainEntity']) == 5
+                assert 'href="/freshdesk/"' in html and 'Freshdesk' in html
         for slug, status, date in [('qa-alternative-one', 'published', '2026-01-01'),
                                    ('qa-alternative-two', 'published', '2026-01-02'),
                                    ('qa-alternative-draft', 'draft', '2026-01-01'),
@@ -128,7 +141,12 @@ def main():
         assert 'qa-alternative-draft' not in sitemap and 'qa-alternative-future' not in sitemap
         code, _, alternatives_sitemap = get('/sitemap-alternatives.xml')
         assert code == 200 and parsed.canonical in alternatives_sitemap
+        assert 'https://toolboxkart.tech/freshdesk/alternatives/' in alternatives_sitemap
+        assert 'https://toolboxkart.tech/zendesk/alternatives/' in alternatives_sitemap
         assert 'qa-alternative-draft' not in alternatives_sitemap and 'qa-alternative-future' not in alternatives_sitemap
+        code, headers, _ = get('/alternatives/freshdesk-alternatives/')
+        assert code == 301 and headers['Location'] == '/freshdesk/alternatives/'
+        assert get('/freshdesk/alternatives/')[0] == 200
         for path in ['/', '/seo/', '/seo/serp-preview', '/chatgpt/', '/all-tools']:
             code, _, html = get(path)
             assert code == 200, path
