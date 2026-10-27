@@ -29,41 +29,57 @@ Zendesk is not a poor fit by default. Its official pricing page lists ticketing,
 
 Price is another reason to compare. Seat count, annual commitment, AI usage, channel add-ons, migration effort and the plan required for a particular feature all affect total cost. Compare the workflow and plan you will actually use, not only a headline starting price.
 
-## 1. Freshdesk: best first like-for-like comparison
+## 1. Freshdesk: closest like-for-like help desk
 
 Freshdesk is the first product to compare for a conventional help desk. Freshworks lists ticketing, shared inbox, customer portal, knowledge base and analytics in Growth. Its official page checked October 28, 2026 lists Growth at US$19, Pro at US$55 and Enterprise at US$89 per agent/month billed annually. The listed plans include the first 500 Freddy AI Agent sessions, with additional sessions charged separately. Read the [Freshdesk hub](/freshdesk/), [Freshdesk review](/freshdesk/review/), [pricing guide](/freshdesk/pricing/) and [setup guide](/freshdesk/how-to-use/) for the product-specific details.
 
 **Advantages:** familiar ticketing, explicit tiers, customer portal and knowledge base. **Trade-offs:** verify AI usage, routing and dashboards by plan. **Skip it if:** you need a CRM-first or specialized ecommerce workflow.
 
-## 2. Help Scout: best for shared inbox support
+Freshdesk's published annual rates are Growth at US$19, Pro at US$55 and Enterprise at US$89 per agent/month. Its first 500 Freddy AI Agent sessions are listed as included, with additional sessions charged at US$49 per 100; Copilot is listed at US$29 per agent/month on Pro and Enterprise. These details were checked October 28, 2026. Compare the plan and expected AI volume rather than treating the entry rate as the full bill.
+
+## 2. Help Scout: shared inbox for smaller teams
 
 Help Scout focuses on shared conversations, inboxes, help content and workflows. Its official pricing page lists a free plan for up to five users with one inbox and one Docs site; Standard was displayed at US$25 per user/month when checked October 27, 2026.
 
 **Advantages:** a focused option for email-first teams. **Trade-offs:** compare inbox, reporting, SLA and workflow limits. **Skip it if:** your process requires advanced routing beyond the plan.
 
-## 3. Zoho Desk: best for small teams
+Help Scout's Free plan is limited to five users, one inbox and one Docs site. The annual view lists Standard at US$25, Plus at US$45 and Pro at US$75 per user/month. That can suit a team that wants a shared inbox and knowledge content, but a team with many queues or detailed routing needs should check the plan limits before importing its existing process.
+
+## 3. Zoho Desk: support inside the Zoho stack
 
 Zoho Desk offers a free edition for up to three users, with ticketing, a support email address and a help center described in its help content. Paid prices depend on region and billing. **Advantages:** low-friction start and a logical candidate for existing Zoho users. **Trade-offs:** check automation, reporting, AI and department limits. **Skip it if:** a required feature is only in an unaffordable edition.
 
-## 4. Intercom: best for messaging and AI
+The free edition is for up to three users, while paid plan prices depend on region. Zoho Desk becomes more attractive when the business already uses Zoho CRM and wants the support history close to customer records. If your company uses a different CRM, check the current integration and data-sync options first. Do not assume that the free edition includes every workflow from a paid plan.
+
+## 4. Intercom: in-product messaging and AI
 
 Intercom combines a shared inbox and ticketing with Messenger, a help center and Fin AI Agent. Its current pricing page shows seat-based plans and Fin pricing from US$0.99 per outcome. **Advantages:** worth evaluating for product-led teams focused on messaging. **Trade-offs:** outcome charges affect total cost. **Skip it if:** you need predictable seat-only pricing.
 
-## 5. Front: best for collaborative inboxes
+The pricing page showed an Essential offer of US$19 per seat/month for new customers, reduced from a regular US$29, plus US$0.99 per Fin outcome when checked October 28, 2026. The offer may change. Intercom fits a product-led team that wants to answer questions in the app, but an email-only support team should estimate the value of messaging and AI before adding another usage-based bill.
+
+## 5. Front: collaborative inbox workflows
 
 Front centers on shared inboxes, assignments, internal comments, templates and rules. Its page checked October 27, 2026 showed Starter at US$25, Professional at US$65 and Enterprise at US$105 per seat/month billed annually. **Advantages:** useful for teams coordinating customer conversations. **Trade-offs:** check channel, automation and reporting limits.
 
-## 6. HubSpot Service Hub: best for CRM-connected service
+Front's annual pricing page lists Starter at US$25 per seat/month for up to 10 seats, Professional at US$65 for up to 50 seats, and Enterprise at US$105. Starter includes a shared inbox and a basic set of automation rules; higher plans add broader channels and controls. Check the seat cap and any AI add-on before moving a team that has more than ten agents.
+
+## 6. HubSpot Service Hub: service connected to CRM
 
 HubSpot Service Hub connects support workflows with HubSpot CRM. Its pricing page lists free tools for up to two users and seat-based paid plans. **Advantages:** service context alongside the wider CRM. **Trade-offs:** confirm seats, credits, onboarding and setup costs. **Skip it if:** you need a standalone help desk without CRM scope.
 
-## 7. Gorgias: best for ecommerce support
+HubSpot's product catalog separates Core Seats from Service Seats. It lists Starter from US$20 per Core Seat/month, Professional from US$100 per Service Seat/month and Enterprise from US$150 per Service Seat/month on the stated annual terms. HubSpot also offers select service tools free. This is a stronger fit when the company already relies on HubSpot customer records; it is a poor price comparison if the seat types are not equivalent.
+
+## 7. Gorgias: ecommerce conversations
 
 Gorgias is built around ecommerce support. Its billing documentation says the help desk fee is based on ticket volume, and AI Agent may add outcome-based fees. **Advantages:** evaluate it when support is closely tied to ecommerce operations. **Trade-offs:** forecast ticket volume and AI outcomes before comparing costs.
 
-## 8. Salesforce Service Cloud: best for CRM-led operations
+Gorgias prices its help desk by monthly ticket volume rather than agent count. Its official page describes a range from 50 to 5,000 tickets per month and an AI Agent charged when it resolves a conversation. The page's current rendered text did not expose a stable starting price, so use the live calculator and test a busy month. This model can suit store support, but volume spikes can change the bill.
+
+## 8. Salesforce Service Cloud: CRM-led service operations
 
 Salesforce Service Cloud is worth evaluating when service workflows need to connect with Salesforce CRM and enterprise processes. Its official pricing page lists multiple editions with substantial differences in functionality and price. **Advantages:** CRM context and a wider service operation. **Trade-offs:** implementation, training and add-ons can increase total cost.
+
+Salesforce Service Cloud is worth checking when customer service needs to share records, permissions and workflows with Salesforce CRM. Its official pricing page lists multiple editions, including Starter Suite from US$25 per user/month. Compare the edition's service features and any additional Salesforce products you would need. A CRM-led stack can reduce context switching, but it may be more administration than a small support team needs.
 
 ## How to switch safely
 
@@ -85,7 +101,7 @@ Freshdesk is a sensible first comparison for conventional ticketing. The best fi
 
 ### Which alternatives have a free plan?
 
-Help Scout lists a free plan for up to five users, Zoho Desk a free edition for three users, and HubSpot free service tools for up to two users. Check current limits with each vendor.
+Help Scout lists a free plan for up to five users, Zoho Desk a free edition for three users, and HubSpot offers select service tools in its free tools. Check current access limits with each vendor.
 
 ### Is Freshdesk cheaper?
 
@@ -101,6 +117,6 @@ Compare seats, usage charges, implementation and migration effort. A lower seat 
 
 ## Method and sources
 
-This guide uses public product, pricing and help documentation checked October 27, 2026, plus public SERP research for competitor coverage and search intent. It is not a hands-on test. Exact PAA questions and missing Semrush metrics were not invented. Prices may change; confirm the official page before purchase.
+This guide uses public product, pricing and help documentation checked October 27 and 28, 2026 as noted, plus public SERP research for competitor coverage and search intent. It is not a hands-on test. Exact PAA questions and missing Semrush metrics were not invented. Prices may change; confirm the official page before purchase.
 
 Related: [Zendesk hub](/zendesk/), [review](/zendesk/review/), [pricing](/zendesk/pricing/), [how-to](/zendesk/how-to-use/), [comparison](/compare/zendesk-vs-freshdesk/).
