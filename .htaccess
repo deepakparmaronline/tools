@@ -19,6 +19,23 @@ RewriteRule ^alternatives/([a-z0-9-]+)(?:\.php)?/?$ alternatives/article.php?slu
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
 RewriteRule ^sitemap-(tools|alternatives|reviews|pricing|how-to-use|compare|categories|pages)\.xml$ sitemap-$1.php [L]
 
+# Permanent migration for the Zendesk tool cluster. Keep these before legacy routing.
+RewriteRule ^tools/zendesk/?$ /zendesk/ [R=301,L,NE]
+RewriteRule ^alternatives/zendesk-alternatives/?$ /zendesk/alternatives/ [R=301,L,NE]
+RewriteRule ^reviews/zendesk-review/?$ /zendesk/review/ [R=301,L,NE]
+RewriteRule ^pricing/zendesk/?$ /zendesk/pricing/ [R=301,L,NE]
+RewriteRule ^how-to-use/zendesk/?$ /zendesk/how-to-use/ [R=301,L,NE]
+
+# Tool-first software detail URLs are routed through the published-record renderer.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z0-9-]+)/(pricing|how-to-use)/?$ router.php [L,QSA]
+RewriteRule ^([a-z0-9-]+)/alternatives/?$ router.php [L,QSA]
+RewriteRule ^([a-z0-9-]+)/review/?$ router.php [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z0-9-]+)/?$ router.php [L,QSA]
+
 # Route only missing software detail paths through the published-record renderer.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
