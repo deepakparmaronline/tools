@@ -3,7 +3,7 @@ return [
  'tool_hubs' => [[
   'title'=>'Zendesk: Support Software Hub','seo_title'=>'Zendesk Guide: Features, Pricing and Alternatives',
   'description'=>'Research Zendesk support software, compare current plans, review strengths and limits, and find alternatives for different support workflows before you buy.',
-  'url'=>'/zendesk/','date'=>'2026-10-27','status'=>'published',
+  'url'=>'/zendesk/','date'=>'2026-10-27','status'=>'published','software_name'=>'Zendesk','official_url'=>'https://www.zendesk.com/service/',
   'content'=><<<'HTML'
 <h2>What is Zendesk?</h2><p>Zendesk is customer service software built around ticketing, customer context, support workflows and reporting. Its Suite plans add broader channels and knowledge features. See the <a href="https://www.zendesk.com/">official product overview</a>, checked October 27, 2026.</p>
 <h2>Quick facts</h2><table><thead><tr><th>Question</th><th>Answer</th></tr></thead><tbody><tr><th>Category</th><td>Customer support and help desk software</td></tr><tr><th>Starting paid plan</th><td>Support Team at US$19 per agent/month billed yearly. <a href="https://www.zendesk.com/pricing/">Official pricing, checked October 27, 2026.</a></td></tr><tr><th>Free plan</th><td>A trial is advertised; a permanent free support plan was not listed on the page checked.</td></tr><tr><th>Best fit</th><td>Teams needing ticket routing, customer history, automation and structured support processes.</td></tr></tbody></table>
