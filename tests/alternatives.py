@@ -1,5 +1,6 @@
 """Integration checks with temporary editorial fixtures; no articles are published."""
 import json
+import re
 from pathlib import Path
 import socket
 import subprocess
@@ -77,7 +78,7 @@ def main():
             assert code == 200 and content_type in headers.get('Content-Type', ''), path
             assert len(body) > 100, f'Empty or incomplete asset: {path}'
         for record in (ROOT / 'alternatives/articles').glob('*.php'):
-            if "'status' => 'published'" not in record.read_text():
+            if not re.search(r"'status'\s*=>\s*'published'", record.read_text()):
                 continue
             if record.stem == 'freshdesk-alternatives':
                 path = '/freshdesk/alternatives/'
@@ -88,6 +89,16 @@ def main():
             code, _, html = get(path)
             assert code == 200 and Page(html).h1 == 1, path
             assert f'href="{path}"' in get('/alternatives/')[2], path
+        code, _, zendesk_article = get('/zendesk/alternatives/')
+        assert code == 200
+        zendesk_page = Page(zendesk_article)
+        assert zendesk_page.canonical == 'https://toolboxkart.tech/zendesk/alternatives/'
+        zendesk_graph = next(item['@graph'] for item in zendesk_page.schemas if '@graph' in item)
+        zendesk_crumbs = next(item for item in zendesk_graph if item['@type'] == 'BreadcrumbList')
+        assert [item['name'] for item in zendesk_crumbs['itemListElement']] == ['Home', 'Zendesk', 'Alternatives']
+        assert any(item['@type'] == 'ItemList' and len(item['itemListElement']) == 8 for item in zendesk_graph)
+        assert any(item['@type'] == 'FAQPage' and len(item['mainEntity']) == 5 for item in zendesk_graph)
+
         code, _, freshdesk_article = get('/freshdesk/alternatives/')
         assert code == 200
         freshdesk_page = Page(freshdesk_article)
@@ -143,6 +154,8 @@ def main():
         for source, target in [
             ('/alternatives/freshdesk-alternatives/', '/freshdesk/alternatives/'),
             ('/alternatives/freshdesk-alternatives', '/freshdesk/alternatives/'),
+            ('/alternatives/zendesk-alternatives/', '/zendesk/alternatives/'),
+            ('/alternatives/zendesk-alternatives', '/zendesk/alternatives/'),
         ]:
             code, headers, _ = get(source)
             assert code == 301 and headers['Location'] == target, source
@@ -152,6 +165,9 @@ def main():
         code, _, alternatives_sitemap = get('/sitemap-alternatives.xml')
         assert code == 200 and parsed.canonical in alternatives_sitemap
         assert 'https://toolboxkart.tech/freshdesk/alternatives/' in alternatives_sitemap
+        assert 'https://toolboxkart.tech/zendesk/alternatives/' in alternatives_sitemap
+        assert 'https://toolboxkart.tech/alternatives/freshdesk-alternatives/' not in alternatives_sitemap
+        assert 'https://toolboxkart.tech/alternatives/zendesk-alternatives/' not in alternatives_sitemap
         assert 'qa-alternative-draft' not in alternatives_sitemap and 'qa-alternative-future' not in alternatives_sitemap
         for path in ['/', '/seo/', '/seo/serp-preview', '/chatgpt/', '/all-tools']:
             code, _, html = get(path)
