@@ -10,6 +10,7 @@
 - [x] Existing Zendesk vs Freshdesk comparison reused; no reverse-order duplicate created.
 - [x] BreadcrumbList is mandatory and implemented in the shared renderer, alternatives template and standalone review.
 - [x] Product-specific copy, semantic HTML, responsive tables and relevant schema added.
+- [x] Non-essential unavailable product facts are omitted or qualified rather than blocking the cluster.
 - [ ] GitHub Actions quality workflow must pass for the final main content commit.
 - [ ] Inspect the matching seo/quality-status.json record after merge.
 - [ ] User will verify live URLs after Hostinger auto-deployment; live verification is not a publication gate.
