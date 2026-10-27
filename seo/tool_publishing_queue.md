@@ -6,8 +6,8 @@
 
 - At the start of a run, resume the first row marked `in_progress`. If none exists, take the lowest Order row marked `queued`.
 - Do not recalculate, reorder, or replace the queue during a daily publishing run.
-- Change the selected row to `in_progress` before content work. Change it to `published` only after GitHub push, Hostinger deployment, and live verification all succeed.
-- If the exact product or essential official facts cannot be verified, change the row to `needs_review`, add the reason to the run log, and continue with the next `queued` row.
+- Change the selected row to `in_progress` before content work. Change it to `published` only after the complete cluster is committed to `main`, all finished pages are registered and present in public indexes/sitemaps, and the ToolboxKart quality workflow passes for the exact content commit. Hostinger auto-deploys from `main`; live HTTP verification is the owner's step and is not a commit gate.
+- Use public SERPs to fill search-intent gaps when committed evidence is incomplete. Do not invent metrics or exact PAA questions. If a price, limit or feature cannot be verified, omit the claim or say public details were not found and continue. Mark `needs_review` only when product identity, safety, or a material core fact remains genuinely unresolved.
 - `new cluster` means create the complete cluster. `expand live alternative` means preserve the existing Alternatives URL and add or improve its missing sibling pages and internal links.
 - Preserve committed Semrush metrics exactly and follow seo/search_research_snapshot.md. Do not open Semrush. Public SERP research is allowed for intent and competitor coverage, but never invent Semrush metrics or undocumented PAA questions.
 - Never add AI news, ChatGPT news, Claude news, general technology news, piracy, paywall bypass, or non-software topics to this queue.
