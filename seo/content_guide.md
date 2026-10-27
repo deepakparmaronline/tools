@@ -41,7 +41,7 @@ Primary keyword: "[tool] alternatives". Also cover "[tool] alternative", "free [
 5. Each alternative (6 to 10): best for, what it does, price from, pros, cons, who should skip it, and a link to its review page if it exists.
 6. Migration: what can be imported or exported, from official docs.
 7. How to choose: 4 to 6 simple rules.
-8. FAQ: 4 to 6 questions from People Also Ask data in Semrush.
+8. FAQ: use a saved PAA list when it exists; otherwise research real public SERP questions and official help-center topics. Never invent questions and label them as Semrush PAA when no such list was saved.
 9. Checked on date, method note, disclosure.
 
 C. Review page: /[tool]/review/
@@ -108,3 +108,25 @@ Primary keyword: "best [category] software". Length 2,000 to 3,200 words. Order:
 - Each page has a unique title, meta description and primary keyword.
 - All internal links work. The build passes.
 - The sitemap is updated and valid. If a check fails, fix it. If the tool facts cannot be verified, do not publish the tool. Mark it "needs\_review" in the queue and move to the next tool.   |&#x20;
+
+
+## Latest mandatory editorial requirements (2026-10-28)
+
+### Originality across tools
+- Do not use a templatized article as the base for a new product. Research and write each review, pricing guide, how-to, comparison and alternatives article around that product's actual features, pricing model, workflows, limits, migration needs and audience.
+- Shared HTML components, CSS and metadata patterns may be reused. Do not reuse paragraphs, product evaluations, pros and cons, examples, FAQ answers or an identical outline when they do not fit the product.
+- Use a product-specific angle and page structure. If changing only the tool name leaves most of the article valid, rewrite it.
+- Public SERP research can fill search-intent gaps. Preserve all committed volume, KD, CPC, intent, trend and SERP-feature values. Never invent metrics or claim that editorial FAQs came from Semrush PAA when no saved PAA list exists.
+
+### Mandatory breadcrumb navigation and schema
+- Every applicable indexable article and tool page must include visible breadcrumbs and valid BreadcrumbList JSON-LD.
+- The visible breadcrumb trail and schema must have the same labels, hierarchy, sequential positions and canonical URLs. The current page may omit its own item only if that matches the site's schema convention; never point a crumb at an old URL.
+- Include breadcrumb schema on standalone review pages, alternatives pages, tool hubs, pricing guides, how-to guides and comparisons. Add regression tests for new route types and migrations.
+- Use tool-first hierarchy for tool clusters: Home > Tool > Alternatives/Review/Pricing/How to Use. Tool hubs can use Home > Software Tool Hubs > Tool. Comparisons use the real comparison index and current canonical URL.
+ 
+### HTML, CSS and schema validation
+- Use semantic HTML, one H1, logical H2/H3 order, accessible navigation, descriptive links and working anchor IDs. Do not create empty headings or broken TOC entries.
+- Load the right shared CSS. Wrap wide tables in a responsive container, inspect TOC spacing and ensure content does not overflow on mobile. A page must not ship as unstyled HTML.
+- Use Article/BlogPosting plus BreadcrumbList where appropriate; SoftwareApplication on tool hubs without invented ratings; ItemList for a visible alternatives list when supported; FAQPage only when its questions and answers are present in the visible content. Do not invent ratings, prices, features or author credentials.
+- Check JSON-LD syntax, schema duplication, canonical URL, publication/modified dates, internal links, public index registration and the relevant XML sitemap before publication.
+- Preserve the existing custom PHP architecture and permanent URL structure. Do not create a duplicate reverse-direction comparison when an existing page already covers the same product pair and search intent.
