@@ -90,7 +90,11 @@ def main():
                 page = Page(html)
                 graph = next(item['@graph'] for item in page.schemas if '@graph' in item)
                 assert page.canonical == 'https://toolboxkart.tech/freshdesk/alternatives/'
-                assert any(item.get('@type') == 'BreadcrumbList' for item in graph)
+                crumbs = next(item for item in graph if item.get('@type') == 'BreadcrumbList')
+                crumb_items = crumbs['itemListElement']
+                assert [item['name'] for item in crumb_items] == ['Home', 'Freshdesk', 'Alternatives']
+                assert [item['position'] for item in crumb_items] == [1, 2, 3]
+                assert [item['item'] for item in crumb_items] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/freshdesk/', 'https://toolboxkart.tech/freshdesk/alternatives/']
                 item_list = next(item for item in graph if item.get('@type') == 'ItemList')
                 assert len(item_list['itemListElement']) == 8
                 faq = next(item for item in graph if item.get('@type') == 'FAQPage')
