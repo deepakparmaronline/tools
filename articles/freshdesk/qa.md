@@ -4,7 +4,7 @@
 
 - [x] Product identity and official site confirmed.
 - [x] Official product, pricing, onboarding, email setup, automation, SLA, export and product-update sources checked.
-- [x] Saved search metrics retained exactly from the queue and 2026-10-24 snapshot.
+- [x] Saved queue metrics retained exactly: US volume 480, KD 16, CPC US$46.98, commercial intent. No matching full row was found in `alternatives list.md`; trend, SERP-feature and exact PAA fields were not inferred.
 - [x] No Semrush session used and no exact PAA question invented.
 - [x] New cluster uses tool-first, date-free URLs.
 - [x] Existing Zendesk vs Freshdesk comparison reused; no reverse-order duplicate created.
