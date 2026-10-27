@@ -112,4 +112,4 @@ Primary keyword: "best [category] software". Length 2,000 to 3,200 words. Order:
 - No text copied from other sites. No large repeated blocks between pages of the same tool.
 - Each page has a unique title, meta description and primary keyword.
 - All internal links work. The build passes.
-- The sitemap is updated and valid. If a check fails, fix it. If the tool facts cannot be verified, do not publish the tool. Mark it "needs\_review" in the queue and move to the next tool.   |&#x20;
+- The sitemap is updated and valid. If a check fails, fix it. If a non-essential product fact cannot be verified, omit it or say public details were not found and continue. Use "needs_review" only when product identity or a material requirement remains unresolved after research.   |&#x20;
