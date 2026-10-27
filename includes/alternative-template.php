@@ -6,7 +6,7 @@ $canonical = alternative_url($alternative);
 $ogType = 'article';
 $socialImage = alternative_image_url($alternative);
 $socialImageAlt = $alternative['image_alt'] ?? $alternative['title'];
-$schema = ['@type'=>'Article','headline'=>$alternative['title'],'description'=>$pageDescription,'datePublished'=>$alternative['date'],'dateModified'=>$alternative['updated'],'author'=>['@type'=>'Person','name'=>$alternative['author'],'url'=>url('about-deepak-parmar/'),'image'=>url('images/deepak-parmar.jpeg'),'sameAs'=>['https://www.linkedin.com/in/deepakparmaronline/','https://www.youtube.com/@deepakparmaronline'],'jobTitle'=>'SEO specialist and technology writer'],'publisher'=>['@type'=>'Organization','name'=>SITE_NAME,'url'=>SITE_URL],'mainEntityOfPage'=>$canonical,'url'=>$canonical];
+$schema = ['@type'=>'Article','@id'=>$canonical.'#article','headline'=>$alternative['title'],'description'=>$pageDescription,'datePublished'=>$alternative['date'],'dateModified'=>$alternative['updated'],'author'=>['@type'=>'Person','name'=>$alternative['author'],'url'=>url('about-deepak-parmar/'),'image'=>url('images/deepak-parmar.jpeg'),'sameAs'=>['https://www.linkedin.com/in/deepakparmaronline/','https://www.youtube.com/@deepakparmaronline'],'jobTitle'=>'SEO specialist and technology writer'],'publisher'=>['@type'=>'Organization','name'=>SITE_NAME,'url'=>SITE_URL],'mainEntityOfPage'=>$canonical,'url'=>$canonical];
 if ($socialImage) $schema['image'] = ['@type'=>'ImageObject','url'=>$socialImage,'caption'=>$socialImageAlt];
 $toolSlug = is_string($alternative['tool_slug'] ?? null) ? $alternative['tool_slug'] : '';
 $toolName = trim((string)($alternative['tool_name'] ?? ($toolSlug !== '' ? ucwords(str_replace('-', ' ', $toolSlug)) : '')));
