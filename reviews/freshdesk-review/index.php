@@ -4,7 +4,7 @@ $canonicalPath='/freshdesk/review/';
 $requestPath=parse_url($_SERVER['REQUEST_URI'] ?? $canonicalPath,PHP_URL_PATH) ?: $canonicalPath;
 if ($requestPath !== $canonicalPath) { header('Location: '.$canonicalPath,true,301); exit; }
 $pageTitle='Freshdesk Review: Pricing, Features and Limits | ToolboxKart';
-$pageDescription='A research-based Freshdesk review of ticketing, automation, current pricing, AI costs, data export limits and which support teams should compare alternatives before switching.';
+$pageDescription='Research-based Freshdesk review covering ticketing, automation, pricing, AI costs, export limits and which support teams should also compare alternatives.';
 $canonical=url($canonicalPath); $ogType='article';
 $extraHead='<link rel="stylesheet" href="'.e(asset('css/publication.css')).'"><meta property="article:published_time" content="2026-10-28T00:00:00+05:30"><meta property="article:modified_time" content="2026-10-28T00:00:00+05:30">'.jsonld(['@context'=>'https://schema.org','@graph'=>[
  ['@type'=>'Article','@id'=>$canonical.'#article','url'=>$canonical,'mainEntityOfPage'=>$canonical,'headline'=>'Freshdesk Review: Pricing, Features and Limits','description'=>$pageDescription,'datePublished'=>'2026-10-28T00:00:00+05:30','dateModified'=>'2026-10-28T00:00:00+05:30','author'=>['@type'=>'Person','name'=>'Deepak Parmar','url'=>url('about-deepak-parmar/')],'publisher'=>['@type'=>'Organization','name'=>SITE_NAME,'url'=>SITE_URL]],
