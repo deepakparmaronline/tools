@@ -138,7 +138,7 @@
           "name": "Which alternatives have a free plan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Help Scout lists a free plan for up to five users, Zoho Desk a free edition for three users, and HubSpot free service tools for up to two users. Check current limits with each vendor."
+            "text": "Help Scout lists a free plan for up to five users, Zoho Desk a free edition for three users, and HubSpot offers select service tools in its free tools. Check current access limits with each vendor."
           }
         },
         {
@@ -162,7 +162,7 @@
           "name": "Should I switch only to save money?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Compare seats, usage charges, implementation and migration effort. A lower seat price may not lower total cost."
+            "text": "Compare seats, usage charges, implementation and migration effort. A lower seat price may not lower total cost if you need extra products or must rebuild workflows."
           }
         }
       ]
