@@ -196,6 +196,14 @@ A tool/post is not finished until:
 
 If a future request conflicts with these rules, preserve safety, architecture, accessibility and working functionality over a cosmetic shortcut.
 
+## Software decision content rules (current)
+
+- New software clusters use `/{tool}/`, `/{tool}/alternatives/`, `/{tool}/review/`, `/{tool}/pricing/`, and `/{tool}/how-to-use/`; comparisons use `/compare/{tool}-vs-{other}/`. Preserve legacy URLs unless an explicit migration is authorized.
+- Every future applicable indexable cluster page must show visible breadcrumbs and include matching `BreadcrumbList` JSON-LD.
+- Write product-specific reviews, pricing analysis, setup steps and comparisons. Do not recycle prior articles by replacing product names.
+- Use semantic HTML, the correct shared CSS, responsive tables and page-specific schema that matches visible content. Do not claim hands-on testing without evidence.
+- If a comparison between the same products already exists, reuse that URL instead of publishing a reverse-order duplicate.
+
 ## Deployment Checklist
 
 # ToolboxKart Production Deployment Checklist
