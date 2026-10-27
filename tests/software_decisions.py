@@ -57,6 +57,17 @@ def main():
             assert 'BreadcrumbList' not in html,path
             assert any('@graph' in schema for schema in page.schemas),path
             assert 'Review methodology' in visible and 'Sources' in visible,path
+        code, _, freshdesk_review_html = get('/freshdesk/review/')
+        assert code == 200
+        freshdesk_review = Page(freshdesk_review_html)
+        assert freshdesk_review.h1 == 1
+        assert freshdesk_review.canonical == 'https://toolboxkart.tech/freshdesk/review/'
+        assert 'publication.css' in freshdesk_review_html
+        assert 'href="/freshdesk/">Freshdesk</a>' in freshdesk_review_html
+        freshdesk_graph = next(schema['@graph'] for schema in freshdesk_review.schemas if '@graph' in schema)
+        freshdesk_crumbs = next(item for item in freshdesk_graph if item['@type'] == 'BreadcrumbList')
+        assert [item['name'] for item in freshdesk_crumbs['itemListElement']] == ['Home', 'Freshdesk', 'Review']
+        assert any(item['@type'] == 'FAQPage' and len(item['mainEntity']) == 4 for item in freshdesk_graph)
         for index,slug in [('/versus/','freedom-vs-cold-turkey'),('/reviews/','taskade-review'),('/content/','taskade-review')]:
             code,_,html=get(index);assert code==200 and slug in html,index
         for path in ['/about-deepak-parmar/','/editorial-policy','/review-methodology','/advertising-disclosure','/corrections-policy']:
@@ -67,6 +78,7 @@ def main():
         _,_,review_sitemap=get('/sitemap-reviews.xml')
         _,_,compare_sitemap=get('/sitemap-compare.xml')
         assert pages['/reviews/taskade-review/'] in review_sitemap
+        assert 'https://toolboxkart.tech/freshdesk/review/' in review_sitemap
         assert pages['/versus/freedom-vs-cold-turkey/'] in compare_sitemap
         _,_,alt_sitemap=get('/sitemap-alternatives.xml')
         assert '/alternatives/freedom-alternatives/' in alt_sitemap and '/reviews/' not in alt_sitemap
