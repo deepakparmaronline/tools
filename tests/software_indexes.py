@@ -166,7 +166,7 @@ def main():
         compare = get('/compare/')
         assert '/versus/freedom-vs-cold-turkey/' in compare
 
-        # The complete Zendesk cluster is now published. Unknown detail routes must remain unavailable.
+        # Zendesk and Freshdesk are published. Unknown category pillars must remain unavailable.
         unknown_detail_routes = ['/best/customer-service-help-desk-software/']
         for path in unknown_detail_routes:
             status, _, _ = get_response(path)
@@ -199,9 +199,13 @@ def main():
                 assert names == ['Home', 'Freshdesk'], names
             if path == '/freshdesk/':
                 assert any(item.get('@type') == 'SoftwareApplication' for item in graph), path
+            if path == '/compare/zendesk-vs-freshdesk/':
+                assert names == ['Home', 'Comparisons', 'Zendesk vs Freshdesk: Which Help Desk Fits?'], names
 
         for path in ['/tools/', '/pricing/', '/how-to-use/', '/compare/']:
-            assert 'zendesk' in get(path).lower(), path
+            body = get(path).lower()
+            assert 'zendesk' in body, path
+            assert 'freshdesk' in body, path
         assert 'zendesk' not in get('/best/').lower()
 
         expected_sitemap_urls = {
