@@ -113,7 +113,7 @@ return [
 <h3>What is the closest alternative to Freshdesk?</h3>
 <p>Zendesk is the closest broad help desk comparison in this list. Zoho Desk is worth checking for price-sensitive teams, Help Scout for email-led support, and Gorgias for ecommerce. The right choice depends on channels, workflow depth and total cost.</p>
 <h3>Does Freshdesk have a free plan?</h3>
-<p>Freshdesk has a Free Program for up to two agents for six months. Freshworks says this program applies to Freshdesk, not Freshdesk Omni. Check the <a href="https://support.freshdesk.com/support/solutions/articles/50000010099-explore-freshdesk-free-program-freshdesk-only-">official Free Program guide</a> for current eligibility and limits.</p>
+<p>Freshdesk has a Free Program for up to two agents for six months. Freshworks says this program applies to Freshdesk, not Freshdesk Omni. Its current 2026 product updates say switching to the Free Program is no longer self-serve and should be arranged through a Customer Success Manager. Check the <a href="https://support.freshdesk.com/support/solutions/articles/50000010099-explore-freshdesk-free-program-freshdesk-only-">official Free Program guide</a> and <a href="https://www.freshworks.com/freshdesk/new-features/">product updates</a> for current eligibility and limits.</p>
 <h3>Is Zendesk better than Freshdesk?</h3>
 <p>Neither is better for every team. The entry prices match on the official annual-billing pages checked October 28, 2026, but plan features, AI usage, channels and migration requirements differ. Compare the exact workflows you need.</p>
 <h3>Can I export tickets from Freshdesk before switching?</h3>
