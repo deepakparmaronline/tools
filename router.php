@@ -130,6 +130,50 @@ if (is_file($phpCandidate)) {
     return;
 }
 
+// Permanent redirects from the previous software-cluster URL structure.
+$softwareLegacyRedirects = [
+    '/tools/zendesk/' => '/zendesk/',
+    '/pricing/zendesk/' => '/zendesk/pricing/',
+    '/how-to-use/zendesk/' => '/zendesk/how-to-use/',
+    '/alternatives/zendesk-alternatives/' => '/zendesk/alternatives/',
+    '/reviews/zendesk-review/' => '/zendesk/review/',
+];
+if (isset($softwareLegacyRedirects[$path])) {
+    header('Location: '.$softwareLegacyRedirects[$path], true, 301);
+    exit;
+}
+
+// Tool-first URLs: /tool/, /tool/pricing/, /tool/how-to-use/.
+if (preg_match('#^/([a-z0-9-]+)/(pricing|how-to-use)/?$#D', $path, $newDetailMatches)) {
+    require_once __DIR__.'/includes/bootstrap.php';
+    $newCollection = $newDetailMatches[2] === 'pricing' ? 'pricing' : 'how_to_use';
+    $newCanonical = '/'.$newDetailMatches[1].'/'.$newDetailMatches[2].'/';
+    foreach (software_pages($newCollection) as $newPage) {
+        if (($newPage['url'] ?? null) !== $newCanonical) continue;
+        if ($path !== $newCanonical) {
+            header('Location: '.$newCanonical, true, 301);
+            exit;
+        }
+        require_once __DIR__.'/includes/software-detail.php';
+        echo render_software_detail_page($newPage, $newCollection);
+        return;
+    }
+}
+if (preg_match('#^/([a-z0-9-]+)/?$#D', $path, $newHubMatches)) {
+    require_once __DIR__.'/includes/bootstrap.php';
+    $newCanonical = '/'.$newHubMatches[1].'/';
+    foreach (software_pages('tool_hubs') as $newPage) {
+        if (($newPage['url'] ?? null) !== $newCanonical) continue;
+        if ($path !== $newCanonical) {
+            header('Location: '.$newCanonical, true, 301);
+            exit;
+        }
+        require_once __DIR__.'/includes/software-detail.php';
+        echo render_software_detail_page($newPage, 'tool_hubs');
+        return;
+    }
+}
+
 // Software detail pages are served only from complete, published registry records.
 $softwareDetailPrefixes = [
     'tools' => 'tool_hubs',
