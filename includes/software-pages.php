@@ -6,9 +6,9 @@
  */
 function software_page_has_detail_content(string $collection, array $item): bool {
     $routes = [
-        'tool_hubs' => ['prefix' => '/tools/', 'pattern' => '#^/tools/[a-z0-9-]+/$#D'],
-        'pricing' => ['prefix' => '/pricing/', 'pattern' => '#^/pricing/[a-z0-9-]+/$#D'],
-        'how_to_use' => ['prefix' => '/how-to-use/', 'pattern' => '#^/how-to-use/[a-z0-9-]+/$#D'],
+        'tool_hubs' => ['prefix' => '/', 'pattern' => '#^/[a-z0-9-]+/$#D'],
+        'pricing' => ['prefix' => '/', 'pattern' => '#^/[a-z0-9-]+/pricing/$#D'],
+        'how_to_use' => ['prefix' => '/', 'pattern' => '#^/[a-z0-9-]+/how-to-use/$#D'],
         'comparisons' => ['prefix' => '/compare/', 'pattern' => '#^/compare/[a-z0-9-]+/$#D'],
         'categories' => ['prefix' => '/best/', 'pattern' => '#^/best/[a-z0-9-]+/$#D'],
     ];
