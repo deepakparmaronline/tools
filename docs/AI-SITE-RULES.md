@@ -195,10 +195,12 @@ Current Healthcare tools are **administrative Revenue Cycle Management utilities
 
 ## 9B. Software decision content
 
-- Preserve established Alternatives URLs at `/alternatives/<slug>/`; never move them into `/reviews/` or `/versus/`.
-- Use `/versus/<slug>/` only for a focused comparison between two named products.
-- Use `/reviews/<slug>/` for a research-based evaluation of one product, including pricing, limits, portability and best-fit users.
-- Register Versus and Reviews pages in a `data/post-*.php` record with `standalone => true`. Their category and central indexes are generated from that registry.
+- Preserve established Alternatives URLs at `/alternatives/<slug>/` unless a migration is explicitly authorized. New tool-cluster alternatives use `/{tool}/alternatives/` through `tool_slug` metadata; do not change legacy URLs by default.
+- New tool-cluster pages use `/{tool}/`, `/{tool}/review/`, `/{tool}/pricing/`, and `/{tool}/how-to-use/`. New tool-to-tool comparisons use `/compare/{tool}-vs-{other}/`. Legacy `/reviews/` and `/versus/` pages keep their existing URLs.
+- Register standalone review pages in `data/post-*.php` with `standalone => true` and a canonical `url` override when the tool-first route differs from the legacy category path.
+- Every future indexable software-cluster page needs visible breadcrumbs and a valid `BreadcrumbList` JSON-LD trail matching the displayed hierarchy and canonical URLs. Alternatives pages may include `ItemList` only when it matches the visible alternatives list. Tool hubs may include accurate `SoftwareApplication` schema without fabricated ratings.
+- Write product-specific copy, evidence, section order and examples for every tool. Do not reuse a past review, pricing page, how-to guide or comparison by swapping product names.
+- Use semantic HTML and accessible headings, links and tables. Load the shared design system plus the required publication/software CSS. Keep wide tables scrollable on mobile and verify the rendered page at 360px and desktop width.
 - Keep the dedicated `/sitemap-alternatives.xml` limited to the Alternatives hub and published Alternatives records. The complete sitemap remains `/sitemap.xml`.
 - Link every software decision page to the author profile and the review methodology. Label sponsored placements and never let payment control an editorial ranking.
 
