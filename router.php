@@ -57,15 +57,26 @@ if (preg_match('#^/alternatives(?:/index\.php)?/?$#', $path)) {
     return;
 }
 
-// Zendesk alternatives migrated to the tool-first URL.
-if ($path === '/zendesk/alternatives' || $path === '/zendesk/alternatives/') {
-    if ($path !== '/zendesk/alternatives/') {
-        header('Location: /zendesk/alternatives/', true, 301);
-        exit;
+// Tool-first alternatives URLs are served only when both the tool hub and article are published.
+if (preg_match('#^/([a-z0-9-]+)/alternatives/?$#D', $path, $alternativeMatches)) {
+    require_once __DIR__.'/includes/bootstrap.php';
+    $toolSlug = $alternativeMatches[1];
+    $candidateSlug = $toolSlug.'-alternatives';
+    $hasHub = false;
+    foreach (software_pages('tool_hubs') as $hub) {
+        if (($hub['url'] ?? null) === '/'.$toolSlug.'/') { $hasHub = true; break; }
     }
-    $_GET['slug'] = 'zendesk-alternatives';
-    require __DIR__.'/alternatives/article.php';
-    return;
+    $articles = alternative_articles();
+    if ($hasHub && isset($articles[$candidateSlug]) && ($articles[$candidateSlug]['status'] ?? '') === 'published') {
+        $canonicalAlternativePath = '/'.$toolSlug.'/alternatives/';
+        if ($path !== $canonicalAlternativePath) {
+            header('Location: '.$canonicalAlternativePath, true, 301);
+            exit;
+        }
+        $_GET['slug'] = $candidateSlug;
+        require __DIR__.'/alternatives/article.php';
+        return;
+    }
 }
 
 if (preg_match('#^/alternatives/([a-z0-9-]+)(?:\.php)?/?$#', $path, $matches)) {
@@ -148,18 +159,33 @@ $softwareLegacyRedirects = [
     '/how-to-use/zendesk/' => '/zendesk/how-to-use/',
     '/alternatives/zendesk-alternatives/' => '/zendesk/alternatives/',
     '/reviews/zendesk-review/' => '/zendesk/review/',
+    '/reviews/freshdesk-review/' => '/freshdesk/review/',
 ];
 if (isset($softwareLegacyRedirects[$path])) {
     header('Location: '.$softwareLegacyRedirects[$path], true, 301);
     exit;
 }
 
-// Zendesk's migrated alternatives and review pages.
-if ($path === '/zendesk/alternatives/' || $path === '/zendesk/alternatives') {
-    if ($path !== '/zendesk/alternatives/') { header('Location: /zendesk/alternatives/', true, 301); exit; }
-    $_GET['slug'] = 'zendesk-alternatives';
-    require __DIR__.'/alternatives/article.php';
-    return;
+// Tool-first review URLs are served only when a published review record and renderer exist.
+if (preg_match('#^/([a-z0-9-]+)/review/?$#D', $path, $reviewMatches)) {
+    require_once __DIR__.'/includes/bootstrap.php';
+    $toolSlug = $reviewMatches[1];
+    $reviewSlug = $toolSlug.'-review';
+    $review = post_by_slug($reviewSlug);
+    $reviewFile = __DIR__.'/reviews/'.$reviewSlug.'.php';
+    $canonicalReviewPath = '/'.$toolSlug.'/review/';
+    if (is_array($review)
+        && ($review['category'] ?? null) === 'reviews'
+        && !empty($review['standalone'])
+        && ($review['url'] ?? null) === $canonicalReviewPath
+        && is_file($reviewFile)) {
+        if ($path !== $canonicalReviewPath) {
+            header('Location: '.$canonicalReviewPath, true, 301);
+            exit;
+        }
+        require $reviewFile;
+        return;
+    }
 }
 if ($path === '/zendesk/review/' || $path === '/zendesk/review') {
     if ($path !== '/zendesk/review/') { header('Location: /zendesk/review/', true, 301); exit; }
