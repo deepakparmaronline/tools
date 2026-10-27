@@ -29,9 +29,14 @@ function alternative_articles(): array {
     return $articles;
 }
 
-function alternative_url(array $article): string { return url('alternatives/'.$article['slug'].'/'); }
+function alternative_url(array $article): string {
+    $path = ($article['slug'] ?? '') === 'zendesk-alternatives' ? 'zendesk/alternatives/' : 'alternatives/'.$article['slug'].'/';
+    return url($path);
+}
 
-function alternative_path(array $article): string { return '/alternatives/'.$article['slug'].'/'; }
+function alternative_path(array $article): string {
+    return ($article['slug'] ?? '') === 'zendesk-alternatives' ? '/zendesk/alternatives/' : '/alternatives/'.$article['slug'].'/';
+}
 
 function alternative_image_url(array $article): string {
     $image = $article['image'] ?? '';
