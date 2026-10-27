@@ -191,6 +191,8 @@ def main():
             page = Page(html)
             assert page.h1 == 1, path
             assert page.canonical == canonical, path
+            assert len(page.title) <= 60, path
+            assert 'Last updated' in html, path
             assert expected_text in ' '.join(page.text).lower(), path
             graph = next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
             assert any(item.get('@type') == 'BreadcrumbList' for item in graph), path
@@ -201,6 +203,11 @@ def main():
                 assert 150 <= len(page.description) <= 155, path
                 app = next(item for item in graph if item.get('@type') == 'SoftwareApplication')
                 assert app['name'] == 'Freshdesk' and 'aggregateRating' not in app, path
+                faq = next(item for item in graph if item.get('@type') == 'FAQPage')
+                visible = ' '.join(page.text)
+                for question in faq['mainEntity']:
+                    assert question['name'] in visible, path
+                    assert question['acceptedAnswer']['text'] in visible, path
             if path == '/freshdesk/pricing/':
                 assert crumb_names == ['Home', 'Freshdesk', 'Pricing'], path
                 assert 150 <= len(page.description) <= 155, path
