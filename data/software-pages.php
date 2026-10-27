@@ -1,7 +1,7 @@
 <?php
 return [
  'tool_hubs' => [[
-  'title'=>'Zendesk: Support Software Hub','seo_title'=>'Zendesk Guide: Features, Pricing and Fit',
+  'title'=>'Zendesk: Support Software Hub','seo_title'=>'Zendesk Guide: Features, Pricing and Support',
   'description'=>'Research Zendesk support software, compare current plans, review strengths and limits, and find alternatives for different support workflows.',
   'url'=>'/zendesk/','date'=>'2026-10-27','status'=>'published',
   'content'=><<<'HTML'
