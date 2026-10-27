@@ -470,20 +470,18 @@ These elements must exist directly in article HTML.
 If JavaScript fails, the article must still work.
 
 ==================================================
-12. NO BREADCRUMBS
+12. BREADCRUMB NAVIGATION AND SCHEMA
 ==================================================
 
-Breadcrumbs are permanently disabled for Tool Box Kart articles.
+Every applicable indexable article and software decision page must include visible breadcrumbs and matching BreadcrumbList JSON-LD.
 
-Do NOT add:
-
-- breadcrumb navigation
-- BreadcrumbList schema
-- breadcrumb HTML
-- breadcrumb JavaScript
-- breadcrumb placeholders
-
-There must be NO breadcrumb system in article pages.
+- Use the real site hierarchy and canonical URLs.
+- The visible breadcrumb trail and JSON-LD must use the same names, URLs, and positions.
+- Use the URL format and trailing-slash convention of each page's canonical URL.
+- The current page is the final item. Its canonical URL may be included.
+- Do not add breadcrumbs to endpoints, utility responses, or non-indexable output that is not an article or page.
+- Do not create duplicate or conflicting breadcrumb blocks.
+- Validate the rendered breadcrumb markup and schema before publication.
 
 ==================================================
 13. SITE-WIDE HEADER
@@ -1068,16 +1066,10 @@ Use an Organization object.
 Use a real logo/image URL.
 
 ==================================================
-37. NO BREADCRUMB SCHEMA
+37. BREADCRUMB SCHEMA REQUIRED
 ==================================================
 
-Never create:
-
-BreadcrumbList
-
-Never add breadcrumb structured data.
-
-Breadcrumbs are permanently removed.
+Use BreadcrumbList JSON-LD on every applicable indexable article and software decision page. Keep it consistent with the visible breadcrumb navigation, actual page hierarchy, and canonical URLs. Do not add duplicate breadcrumb schema or invent parent pages. Validate the final rendered markup before publishing.
 
 ==================================================
 38. META TAGS
