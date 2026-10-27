@@ -109,7 +109,12 @@ def main():
             assert html.count('<strong>Written by <a href="/about-deepak-parmar/">Deepak Parmar</a></strong>') == 2, path
             graph = next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
             crumbs = next(item for item in graph if item.get('@type') == 'BreadcrumbList')
-            assert [item['name'] for item in crumbs['itemListElement']] == expected_crumbs, path
+            crumb_items = crumbs['itemListElement']
+            assert [item['name'] for item in crumb_items] == expected_crumbs, path
+            assert [item['position'] for item in crumb_items] == list(range(1, len(crumb_items) + 1)), path
+            assert crumb_items[0]['item'] == 'https://toolboxkart.tech/', path
+            assert crumb_items[-1]['item'] == canonical, path
+            assert 'BreadcrumbList' in html and 'publication.css' in html and 'publication-layout--two-column' in html, path
             assert 'Review methodology' in visible and 'Sources' in visible, path
             assert all(label in html for label in expected_crumbs), path
 
