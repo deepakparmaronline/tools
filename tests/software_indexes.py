@@ -173,9 +173,9 @@ def main():
             assert status == 404, f'{path}: expected 404, got {status}'
 
         published_details = {
-            '/tools/zendesk/': 'https://toolboxkart.tech/tools/zendesk/',
-            '/pricing/zendesk/': 'https://toolboxkart.tech/pricing/zendesk/',
-            '/how-to-use/zendesk/': 'https://toolboxkart.tech/how-to-use/zendesk/',
+            '/zendesk/': 'https://toolboxkart.tech/zendesk/',
+            '/zendesk/pricing/': 'https://toolboxkart.tech/zendesk/pricing/',
+            '/zendesk/how-to-use/': 'https://toolboxkart.tech/zendesk/how-to-use/',
             '/compare/zendesk-vs-freshdesk/': 'https://toolboxkart.tech/compare/zendesk-vs-freshdesk/',
         }
         for path, canonical in published_details.items():
@@ -190,12 +190,12 @@ def main():
         assert 'zendesk' not in get('/best/').lower()
 
         expected_sitemap_urls = {
-            '/sitemap-tools.xml': 'https://toolboxkart.tech/tools/zendesk/',
-            '/sitemap-pricing.xml': 'https://toolboxkart.tech/pricing/zendesk/',
-            '/sitemap-how-to-use.xml': 'https://toolboxkart.tech/how-to-use/zendesk/',
+            '/sitemap-tools.xml': 'https://toolboxkart.tech/zendesk/',
+            '/sitemap-pricing.xml': 'https://toolboxkart.tech/zendesk/pricing/',
+            '/sitemap-how-to-use.xml': 'https://toolboxkart.tech/zendesk/how-to-use/',
             '/sitemap-compare.xml': 'https://toolboxkart.tech/compare/zendesk-vs-freshdesk/',
-            '/sitemap-alternatives.xml': 'https://toolboxkart.tech/alternatives/zendesk-alternatives/',
-            '/sitemap-reviews.xml': 'https://toolboxkart.tech/reviews/zendesk-review/',
+            '/sitemap-alternatives.xml': 'https://toolboxkart.tech/zendesk/alternatives/',
+            '/sitemap-reviews.xml': 'https://toolboxkart.tech/zendesk/review/',
         }
         for path, url in expected_sitemap_urls.items():
             assert url in get(path), f'{url} missing from {path}'
