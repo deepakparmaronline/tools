@@ -10,7 +10,7 @@
 - Preserve existing non-software pages. Software-cluster URLs use the permanent tool-first structure: `/{tool}/`, `/{tool}/alternatives/`, `/{tool}/review/`, `/{tool}/pricing/`, and `/{tool}/how-to-use/`. Comparisons remain `/compare/{tool}-vs-{other}/` unless explicitly migrated.
 - Do not add a navigation link to a route that is not live.
 - Commit and push only reviewed changes needed for the current run.
-- Hostinger deploys automatically from GitHub `main`. Verify the live result after pushing.
+- Hostinger deploys automatically from GitHub `main`. The user performs live verification; do not make live HTTP/browser access a publication gate and do not claim it was verified unless it was actually checked.
 
 ## 2. Required files to read at the start of every run
 
@@ -45,7 +45,7 @@ If a required file is missing or unreadable, stop before publishing and report t
 - Read the selected row in `seo/tool_publishing_queue.md` and its matching full row in the 2026-10-24 Semrush snapshot in `alternatives list.md`.
 - Use only the committed search volume, keyword difficulty, CPC, intent, trend, and SERP features. Never invent a missing metric, variant, query, or People Also Ask question.
 - For the comparison page, use a comparison query already committed in the repository. If none is committed, use the strongest relevant alternative supported by the cluster brief, as allowed by `seo/content_guide.md`.
-- Missing Semrush access is not a blocker because the schedule must not use Semrush. If missing committed search evidence prevents a required page from passing the quality gate, mark the row `needs_review`, record what is missing, and continue with the next queued row.
+- Missing committed search evidence is not an ordinary blocker. Use public SERP research and official product sources to understand intent and fill supported facts. Preserve saved volume, KD, CPC, intent, trend and SERP-feature fields exactly. Never invent Semrush metrics or PAA questions. Omit unsupported details and continue; reserve `needs_review` for a genuine unresolved product identity, safety or material accuracy issue.
 - Search research can be refreshed only in a separate owner-authorized task that saves the results in GitHub before a scheduled run uses them.
 
 ## 5. Build the complete cluster
@@ -62,7 +62,7 @@ Use these checkpoints in order:
 6. Cross-page consistency, internal links, registration, sitemap and public pillar integration.
 7. GitHub quality workflow, publication and live verification.
 
-At the end of every run, save the completed checkpoint and the exact next checkpoint in `articles/progress.md`. Keep the queue row `in_progress` until checkpoint 7 succeeds. Draft content must remain unregistered, unlinked and excluded from every public index and sitemap. Do not mark a partial cluster published. If a checkpoint is still too large for one run, finish one named file or one focused infrastructure change, record it and resume the same checkpoint next time.
+Complete the selected software cluster end-to-end in the current run whenever the connected GitHub tools can safely support it. Do not stop at a draft checkpoint or move to another queue row because ordinary research is incomplete. Keep drafts unregistered, unlinked and out of public indexes/sitemaps until every required page is ready. Then register all completed pages and their listing/sitemap records in the same reviewed publication change. Keep the queue row `in_progress` until the complete cluster is committed to `main` and the matching quality workflow passes. If a genuine technical block prevents completion, record the exact block and next action in `articles/progress.md` without publishing partial pages.
 
 Create or update the queued tool's complete cluster according to `seo/content_guide.md` and `seo/toolboxkart_publishing_plan.md`:
 
@@ -150,9 +150,22 @@ Update the queue or progress record with:
 - Any identity, duplicate, skipped, blocked, or `needs_review` issue.
 - Every page created or updated.
 - Commit SHA and GitHub link.
-- Test, build, sitemap, and live verification status.
+- Test, build and sitemap status, plus the live-verification handoff. Never claim live verification unless it was actually performed.
 - The exact next `queued` row for the following run.
 
-Mark the queue row `published` after the complete reviewed cluster and its registry, public index and child-sitemap entries are committed to main and the matching quality workflow passes. Hostinger auto-deploys from main; the user performs live verification. Do not hold publication for unavailable live HTTP checks.
+Mark the queue row `published` only after the complete reviewed cluster and its registry, public index and child-sitemap entries are committed to `main` and the matching quality workflow passes for the exact content commit. Hostinger auto-deploys from `main`; the user performs live verification. Do not hold publication for unavailable live HTTP checks.
 
 Keep the final report concise. Report blockers honestly and do not fall back to news publishing.
+
+
+## 10. Mandatory editorial and technical standards from the latest user instructions (2026-10-28)
+
+These rules supersede any older wording in this file that conflicts with them.
+
+- Original writing, never product-name swaps: every review, pricing page, how-to guide, comparison and alternatives article must be researched and written for that product's real workflows, plans, limits and audience. Do not reuse paragraphs, arguments, FAQ sets or a fixed article outline from another tool. Shared components and design styles are fine; article structure and analysis must fit the specific search intent. If changing only the product name leaves most of an article valid, rewrite it.
+- Correct tool-first URLs: use /{tool}/, /{tool}/alternatives/, /{tool}/review/, /{tool}/pricing/, and /{tool}/how-to-use/. Comparisons use /compare/{tool}-vs-{competitor}/. Preserve existing permanent URLs. If a valid comparison already covers the same product pair and intent, improve and link to it instead of creating a reverse-direction duplicate.
+- Breadcrumb schema is mandatory: every applicable indexable article and tool page must show visible breadcrumbs and valid BreadcrumbList JSON-LD. The visible trail and JSON-LD must match the real site hierarchy, positions and canonical URLs. Add a regression test for each new page type or route. Standalone review pages are not exempt.
+- HTML and CSS: use semantic HTML, one H1, logical heading order, valid anchors, descriptive links, accessible labels and responsive tables. Load the required shared stylesheet. Check rendered layout for desktop and mobile, including TOC spacing, author/date/breadcrumb blocks and table overflow. Do not publish unstyled HTML or rely on source inspection alone when a rendered preview is available.
+- Schema by page type: use Article/BlogPosting and BreadcrumbList as appropriate; use SoftwareApplication on a tool hub without fabricated ratings; use ItemList for a visible alternatives list when supported; add FAQPage only for questions and answers visible on the page. Never invent ratings, reviews, author credentials, prices or features.
+- Research: read the selected queue row and its committed research snapshot, then use current public SERPs plus official product, pricing, help/documentation and product-update/changelog sources. Do not open or run Semrush. Keep saved metrics unchanged and do not claim editorial FAQs are Semrush PAA questions unless that exact data is saved.
+- Publication handoff: commit the complete cluster and its registration/index/sitemap records to main, wait for the ToolboxKart quality workflow and confirm seo/quality-status.json matches the exact content commit. Live HTTP checks are the user's responsibility and are not a publication gate.
