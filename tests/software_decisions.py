@@ -57,7 +57,22 @@ def main():
             assert 'BreadcrumbList' not in html,path
             assert any('@graph' in schema for schema in page.schemas),path
             assert 'Review methodology' in visible and 'Sources' in visible,path
-        for index,slug in [('/versus/','freedom-vs-cold-turkey'),('/reviews/','taskade-review'),('/content/','taskade-review')]:
+        cluster_pages={
+            '/zendesk/review/':'https://toolboxkart.tech/zendesk/review/',
+            '/freshdesk/review/':'https://toolboxkart.tech/freshdesk/review/',
+        }
+        for path,canonical in cluster_pages.items():
+            code,_,html=get(path);assert code==200,path
+            page=Page(html);visible=' '.join(page.text)
+            assert page.h1==1 and page.canonical==canonical,path
+            assert html.count('<strong>Written by <a href="/about-deepak-parmar/">Deepak Parmar</a></strong>')==2,path
+            assert 'BreadcrumbList' in html,path
+            assert 'Review methodology' in visible and 'Sources' in visible,path
+            graph=next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
+            breadcrumb=next(item for item in graph if item.get('@type')=='BreadcrumbList')
+            names=[item['name'] for item in breadcrumb['itemListElement']]
+            assert names==['Home', 'Zendesk' if 'zendesk' in path else 'Freshdesk', 'Review'],path
+        for index,slug in [('/versus/','freedom-vs-cold-turkey'),('/reviews/','taskade-review'),('/reviews/','freshdesk-review'),('/content/','taskade-review'),('/content/','freshdesk-review')]:
             code,_,html=get(index);assert code==200 and slug in html,index
         for path in ['/about-deepak-parmar/','/editorial-policy','/review-methodology','/advertising-disclosure','/corrections-policy']:
             code,_,html=get(path);assert code==200 and Page(html).h1==1,path
@@ -67,10 +82,17 @@ def main():
         _,_,review_sitemap=get('/sitemap-reviews.xml')
         _,_,compare_sitemap=get('/sitemap-compare.xml')
         assert pages['/reviews/taskade-review/'] in review_sitemap
+        assert cluster_pages['/freshdesk/review/'] in review_sitemap
+        assert cluster_pages['/zendesk/review/'] in review_sitemap
         assert pages['/versus/freedom-vs-cold-turkey/'] in compare_sitemap
         _,_,alt_sitemap=get('/sitemap-alternatives.xml')
         assert '/alternatives/freedom-alternatives/' in alt_sitemap and '/reviews/' not in alt_sitemap
+        assert 'https://toolboxkart.tech/freshdesk/alternatives/' in alt_sitemap
+        assert 'https://toolboxkart.tech/zendesk/alternatives/' in alt_sitemap
         redirects={
+            '/reviews/zendesk-review/':'/zendesk/review/',
+            '/reviews/freshdesk-review/':'/freshdesk/review/',
+            '/alternatives/freshdesk-alternatives/':'/freshdesk/alternatives/',
             '/blog/gpt-6-astra-chatgpt-new-capabilities/':'/chatgpt/chatgpt-gpt6-astra-workflow-guide',
             '/seo-guide/robots-meta-tags-guide/':'/ai-news/google-search-robots-meta-tags-outside-head',
         }
