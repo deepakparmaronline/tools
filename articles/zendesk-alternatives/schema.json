@@ -1,23 +1,153 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "8 Zendesk Alternatives for Support Teams in 2026",
-  "description": "Compare Zendesk alternatives by support workflow, published pricing, team size, channel needs and migration effort before switching help desks.",
-  "datePublished": "2026-10-27",
-  "dateModified": "2026-10-27",
-  "author": {
-    "@type": "Person",
-    "name": "Deepak Parmar"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ToolboxKart",
-    "url": "https://toolboxkart.tech"
-  },
-  "mainEntityOfPage": "https://toolboxkart.tech/alternatives/zendesk-alternatives/",
-  "keywords": [
-    "Zendesk alternative",
-    "Zendesk alternatives",
-    "Zendesk competitors"
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/zendesk/alternatives/#article",
+      "url": "https://toolboxkart.tech/zendesk/alternatives/",
+      "mainEntityOfPage": "https://toolboxkart.tech/zendesk/alternatives/",
+      "headline": "8 Zendesk Alternatives for Support Teams in 2026",
+      "description": "Compare Zendesk alternatives by support workflow, published pricing, team size, channel needs and migration effort before switching help desks.",
+      "datePublished": "2026-10-27T00:00:00+05:30",
+      "dateModified": "2026-10-28T00:00:00+05:30",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/",
+        "image": "https://toolboxkart.tech/images/deepak-parmar.jpeg",
+        "sameAs": [
+          "https://www.linkedin.com/in/deepakparmaronline/",
+          "https://www.youtube.com/@deepakparmaronline"
+        ],
+        "jobTitle": "SEO specialist and technology writer"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Zendesk",
+          "item": "https://toolboxkart.tech/zendesk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Alternatives",
+          "item": "https://toolboxkart.tech/zendesk/alternatives/"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "8 Zendesk Alternatives for Support Teams in 2026",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Freshdesk",
+          "url": "https://www.freshworks.com/freshdesk/helpdesk-ticketing/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Help Scout",
+          "url": "https://www.helpscout.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Zoho Desk",
+          "url": "https://www.zoho.com/desk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Intercom",
+          "url": "https://www.intercom.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Front",
+          "url": "https://front.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "HubSpot Service Hub",
+          "url": "https://www.hubspot.com/products/service"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Gorgias",
+          "url": "https://www.gorgias.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Salesforce Service Cloud",
+          "url": "https://www.salesforce.com/service/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the closest alternative to Zendesk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Freshdesk is a sensible first comparison for conventional ticketing. The best fit depends on plan, channels and migration needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which alternatives have a free plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Help Scout lists a free plan for up to five users, Zoho Desk a free edition for three users, and HubSpot free service tools for up to two users. Check current limits with each vendor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Freshdesk cheaper?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The entry annual prices displayed October 28, 2026 were US$19 per agent/month for Freshdesk Growth and Zendesk Support Team. Suite features, add-ons and AI usage change the total."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Zendesk tickets be migrated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Options depend on destination and data type. Review both vendors' documentation and test a sample before committing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I switch only to save money?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Compare seats, usage charges, implementation and migration effort. A lower seat price may not lower total cost if you need extra products or must rebuild workflows."
+          }
+        }
+      ]
+    }
   ]
 }
