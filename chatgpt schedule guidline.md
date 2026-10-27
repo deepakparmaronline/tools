@@ -68,7 +68,7 @@ If a required file is missing or unreadable, stop before publishing and report t
 - Put a linked `Checked on [date]` note next to every price, plan detail, and material limit.
 - Do not claim testing or hands-on use unless the repository contains confirmed test notes from the owner.
 - Do not invent ratings, screenshots, user counts, quotes, discounts, pros, cons, or affiliate relationships.
-- If a material fact cannot be verified, leave it out or mark the tool `needs_review` rather than publish unsupported content.
+- If a non-essential fact cannot be verified, leave it out or say public details were not found and continue. Use `needs_review` only when product identity or a material requirement remains unresolved after research.
 - Paid placement never changes editorial ranking. Any later paid link must use `rel="sponsored"` and a clear disclosure.
 
 ## 7. Quality gate
@@ -89,7 +89,7 @@ Before committing:
 - Confirm `/sitemap.xml` lists every required child sitemap. Confirm every new page appears exactly once in its matching child sitemap and appears on its matching public pillar.
 - Review the complete diff and exclude unrelated changes, credentials, private data, and research debris.
 
-If a check fails, fix it before publishing. If the facts cannot be verified, mark the item `needs_review` in the queue, record the reason, and move to the next queued row.
+If a code, structure or schema check fails, fix it before publishing. If an optional product detail cannot be verified, omit it or state that public details were not found and continue. Use `needs_review` only when product identity or a material requirement remains unresolved after research.
 
 ### GitHub runner for scheduled ChatGPT runs
 
