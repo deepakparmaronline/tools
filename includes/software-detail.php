@@ -4,20 +4,20 @@ require_once __DIR__.'/bootstrap.php';
 function software_detail_config(string $collectionKey): ?array {
     $configs = [
         'tool_hubs' => [
-            'pattern' => '#^/tools/[a-z0-9-]+/$#D',
+            'pattern' => '#^/[a-z0-9-]+/$#D',
             'index_url' => '/tools/',
             'index_title' => 'Software Tool Hubs',
             'eyebrow' => 'Software tool hub',
         ],
         'pricing' => [
-            'pattern' => '#^/pricing/[a-z0-9-]+/$#D',
-            'index_url' => '/pricing/',
+            'pattern' => '#^/[a-z0-9-]+/pricing/$#D',
+            'index_url' => '/tools/',
             'index_title' => 'Software Pricing Guides',
             'eyebrow' => 'Pricing guide',
         ],
         'how_to_use' => [
-            'pattern' => '#^/how-to-use/[a-z0-9-]+/$#D',
-            'index_url' => '/how-to-use/',
+            'pattern' => '#^/[a-z0-9-]+/how-to-use/$#D',
+            'index_url' => '/tools/',
             'index_title' => 'How to Use Software',
             'eyebrow' => 'How-to guide',
         ],
