@@ -13,7 +13,13 @@
       "author": {
         "@type": "Person",
         "name": "Deepak Parmar",
-        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+        "url": "https://toolboxkart.tech/about-deepak-parmar/",
+        "image": "https://toolboxkart.tech/images/deepak-parmar.jpeg",
+        "sameAs": [
+          "https://www.linkedin.com/in/deepakparmaronline/",
+          "https://www.youtube.com/@deepakparmaronline"
+        ],
+        "jobTitle": "SEO specialist and technology writer"
       },
       "publisher": {
         "@type": "Organization",
@@ -122,7 +128,7 @@
           "name": "Is Zendesk better than Freshdesk?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Neither is better for every team. Zendesk and Freshdesk have matching annual-billing entry prices on the pages checked, but plan features, AI usage, channels and migration requirements differ. Compare the exact workflows you need."
+            "text": "Neither is better for every team. The entry annual prices match on the official annual-billing pages checked October 28, 2026, but plan features, AI usage, channels and migration requirements differ."
           }
         },
         {
