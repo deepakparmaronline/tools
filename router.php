@@ -143,6 +143,19 @@ if (isset($softwareLegacyRedirects[$path])) {
     exit;
 }
 
+// Zendesk's migrated alternatives and review pages.
+if ($path === '/zendesk/alternatives/' || $path === '/zendesk/alternatives') {
+    if ($path !== '/zendesk/alternatives/') { header('Location: /zendesk/alternatives/', true, 301); exit; }
+    $_GET['slug'] = 'zendesk-alternatives';
+    require __DIR__.'/alternatives/article.php';
+    return;
+}
+if ($path === '/zendesk/review/' || $path === '/zendesk/review') {
+    if ($path !== '/zendesk/review/') { header('Location: /zendesk/review/', true, 301); exit; }
+    require __DIR__.'/reviews/zendesk-review/index.php';
+    return;
+}
+
 // Tool-first URLs: /tool/, /tool/pricing/, /tool/how-to-use/.
 if (preg_match('#^/([a-z0-9-]+)/(pricing|how-to-use)/?$#D', $path, $newDetailMatches)) {
     require_once __DIR__.'/includes/bootstrap.php';
