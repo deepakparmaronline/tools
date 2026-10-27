@@ -28,10 +28,10 @@ CONTENT GUIDE FOR THE ALTERNATIVES SITE
 4. PAGE TYPES AND TEMPLATES
    Each tool has 6 pages. Each page has one primary keyword. No two pages share a primary keyword.
 
-A. Tool hub page: /tools/[tool]/
+A. Tool hub page: /[tool]/
 Length 500 to 900 words. Content: what the tool is, who it is for, a quick facts table (category, starting price, free plan, best for), and one line plus a link for each page: review, pricing, how to use, alternatives, comparison, category page. Do not copy text from the review page.
 
-B. Alternatives page: /tools/[tool]/alternatives/
+B. Alternatives page: /[tool]/alternatives/
 Primary keyword: "[tool] alternatives". Also cover "[tool] alternative", "free [tool] alternative", "[tool] competitors". Length 1,800 to 2,800 words. Order:
 
 1. H1 with the year.
@@ -44,13 +44,13 @@ Primary keyword: "[tool] alternatives". Also cover "[tool] alternative", "free [
 8. FAQ: 4 to 6 questions from People Also Ask data in Semrush.
 9. Checked on date, method note, disclosure.
 
-C. Review page: /tools/[tool]/review/
+C. Review page: /[tool]/review/
 Primary keyword: "[tool] review". Length 1,500 to 2,200 words. Order: verdict first (3 sentences), summary box (best for, price from, free plan, main limit), what the tool does, key features (5 to 8), pricing summary with a link to the pricing page, pros and cons, who it fits, who should skip it, short alternatives section linking to the alternatives page, FAQ, checked on date.
 
-D. Pricing page: /tools/[tool]/pricing/
+D. Pricing page: /[tool]/pricing/
 Primary keyword: "[tool] pricing". Length 800 to 1,400 words. Content: plan table (plan, price, billing, key limits, best for), what is free, what costs extra, which plan fits which person, saving tips only if official, a link to the alternatives page for cheaper options. Checked on date and source link.
 
-E. How to use page: /tools/[tool]/how-to-use/
+E. How to use page: /[tool]/how-to-use/
 Primary keyword: "how to use [tool]". Length 1,200 to 2,000 words. Order: what you need first, quick setup (numbered steps from official docs), common tasks, tips, common mistakes, troubleshooting, links to docs, link to the review. Include only steps you can confirm in the docs.
 
 F. Comparison page: /compare/[tool]-vs-[other]/
