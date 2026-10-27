@@ -6,10 +6,10 @@
 
 - At the start of a run, resume the first row marked `in_progress`. If none exists, take the lowest Order row marked `queued`.
 - Do not recalculate, reorder, or replace the queue during a daily publishing run.
-- Change the selected row to `in_progress` before content work. Change it to `published` only after GitHub push, Hostinger deployment, and live verification all succeed.
-- If the exact product or essential official facts cannot be verified, change the row to `needs_review`, add the reason to the run log, and continue with the next `queued` row.
+- Change the selected row to `in_progress` before content work. Change it to `published` only after the complete cluster, page registry, public index and sitemap records are committed to `main` and the ToolboxKart quality workflow passes for that exact content commit. Hostinger auto-deploys from `main`; live verification is the user's responsibility and is not a publication gate.
+- If a price, limit or feature detail cannot be verified publicly, omit it or say public details were not found, then continue the article using supported facts. Use `needs_review` only for a genuine unresolved product identity, safety or material accuracy issue. Ordinary research gaps are not a blocker.
 - `new cluster` means create the complete cluster. `expand live alternative` means preserve the existing Alternatives URL and add or improve its missing sibling pages and internal links.
-- Preserve committed Semrush metrics exactly and follow seo/search_research_snapshot.md. Do not open Semrush. Public SERP research is allowed for intent and competitor coverage, but never invent Semrush metrics or undocumented PAA questions.
+- Preserve committed Semrush metrics exactly and follow seo/search_research_snapshot.md. Do not open or run Semrush. Public SERP research is required when saved evidence is incomplete and is allowed for intent, result types, related questions and competitor coverage. Never invent Semrush metrics or claim that an editorial FAQ came from PAA unless the exact PAA data was saved.
 - Never add AI news, ChatGPT news, Claude news, general technology news, piracy, paywall bypass, or non-software topics to this queue.
 - The separate `deepakparmaronline/tech-updates` repository and its ChatGPT schedule are outside this file and must not be changed.
 
