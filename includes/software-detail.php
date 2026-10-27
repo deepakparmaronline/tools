@@ -122,7 +122,7 @@ function render_software_detail_page(array $page, string $collectionKey): string
         $breadcrumbItems[] = ['name'=>$toolName,'url'=>url($toolSlug.'/')];
         $breadcrumbItems[] = ['name'=>(string)($page['breadcrumb_label'] ?? ($collectionKey === 'pricing' ? 'Pricing' : 'How to Use')),'url'=>$canonical];
     } else {
-        $breadcrumbItems[] = ['name'=>$config['index_title'],'url'=>url($config['index_url'])];
+        $breadcrumbItems[] = ['name'=>($collectionKey === 'comparisons' ? 'Comparisons' : $config['index_title']),'url'=>url($config['index_url'])];
         $breadcrumbItems[] = ['name'=>$title,'url'=>$canonical];
     }
     $schemaGraph = [$articleSchema,breadcrumbs($breadcrumbItems)];
