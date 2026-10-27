@@ -4,8 +4,7 @@ Checked: 2026-10-28
 Target market: United States
 Primary query from committed snapshot: Freshdesk alternative
 Saved metrics: volume 480, KD 16, CPC US$46.98, commercial intent
-Saved trend: ▄▂▂▄█▃▂▄▃█▆▆ ↑
-Saved SERP features: SL, AIO, Rev, Vid, Rel
+The queue stores no trend or SERP-feature field for this keyword. A matching Freshdesk row was not found in seo/search_research_snapshot.md or alternatives list.md, so these values are not inferred.
 
 ## Result types and search intent
 
