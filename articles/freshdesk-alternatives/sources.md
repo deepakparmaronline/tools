@@ -4,6 +4,8 @@ All official product, plan and help-center pages below were opened and checked o
 
 ## Freshdesk primary sources
 - Freshdesk product and pricing: https://www.freshworks.com/freshdesk/helpdesk-ticketing/
+- Freshdesk product updates: https://www.freshworks.com/freshdesk/new-features/
+  - Current 2026 updates include contact/company views, analytics time formats and agent field controls. The page also states that switching to the Free Program is no longer self-serve and should be arranged through Customer Success.
   - Standard Freshdesk vs Freshdesk Omni, annual-billing Growth/Pro/Enterprise prices, feature differences, 500 included Freddy AI Agent sessions, $49 per 100 additional sessions, and Freddy AI Copilot price on Pro/Enterprise.
 - Freshdesk subscription plans and trial: https://support.freshdesk.com/support/solutions/articles/50000011778
   - Product distinction, 14-day trial, plan overview and Free Program transition.
@@ -13,7 +15,7 @@ All official product, plan and help-center pages below were opened and checked o
   - CSV/Excel export for eligible Admin or Supervisor users; ticket-list export does not include the entire conversation or archived ticket history.
 - Full help desk export: https://support.freshdesk.com/support/solutions/articles/225487-how-do-i-export-my-helpdesk-data-
   - Broader account export location.
-- Ticket creation automation: https://support.freshdesk.com/support/solutions/articles/37614-setting-up-automation-rules-to-run-on-ticket-creation
+- Ticket creation automation: https://support.freshdesk.com/support/solutions/articles/240670-automation-rules-that-run-on-ticket-creation
   - Conditions and actions for ticket creation rules.
 - Knowledge base: https://support.freshdesk.com/support/solutions
   - Setup, ticket management, automation, knowledge, reporting, channel and integration documentation.
