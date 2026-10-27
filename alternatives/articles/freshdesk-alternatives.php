@@ -2,7 +2,7 @@
 return [
     'status' => 'published',
     'title' => '8 Freshdesk Alternatives for Support Teams in 2026',
-    'seo_title' => '8 Freshdesk Alternatives for Support Teams (2026)',
+    'seo_title' => 'Freshdesk Alternatives: 8 Top Picks for 2026',
     'description' => 'Compare eight Freshdesk alternatives by support model, plan costs, AI fees, free access, and migration needs so you can shortlist the right help desk.',
     'date' => '2026-10-28',
     'tag' => 'Customer support',
