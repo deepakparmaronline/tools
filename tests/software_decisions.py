@@ -68,6 +68,8 @@ def main():
         freshdesk_crumbs = next(item for item in freshdesk_graph if item['@type'] == 'BreadcrumbList')
         assert [item['name'] for item in freshdesk_crumbs['itemListElement']] == ['Home', 'Freshdesk', 'Review']
         assert any(item['@type'] == 'FAQPage' and len(item['mainEntity']) == 4 for item in freshdesk_graph)
+        code, headers, _ = get('/reviews/freshdesk-review/')
+        assert code == 301 and headers['Location'] == '/freshdesk/review/'
         for index,slug in [('/versus/','freedom-vs-cold-turkey'),('/reviews/','taskade-review'),('/content/','taskade-review')]:
             code,_,html=get(index);assert code==200 and slug in html,index
         for path in ['/about-deepak-parmar/','/editorial-policy','/review-methodology','/advertising-disclosure','/corrections-policy']:
