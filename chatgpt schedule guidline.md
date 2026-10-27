@@ -43,54 +43,23 @@ If a required file is missing or unreadable, stop before publishing and report t
 
 - Do not open, sign in to, or run Semrush during a scheduled publication.
 - Read the selected row in `seo/tool_publishing_queue.md` and its matching full row in the 2026-10-24 Semrush snapshot in `alternatives list.md`.
-- Use only the committed search volume, keyword difficulty, CPC, intent, trend, and SERP features. Never invent a missing metric, variant, query, or People Also Ask question.
-- For the comparison page, use a comparison query already committed in the repository. If none is committed, use the strongest relevant alternative supported by the cluster brief, as allowed by `seo/content_guide.md`.
-- Missing Semrush access is not a blocker because the schedule must not use Semrush. If missing committed search evidence prevents a required page from passing the quality gate, mark the row `needs_review`, record what is missing, and continue with the next queued row.
-- Search research can be refreshed only in a separate owner-authorized task that saves the results in GitHub before a scheduled run uses them.
+- Keep committed search volume, keyword difficulty, CPC, intent, trend, and SERP-feature fields exactly as saved. Never invent a missing metric, keyword variant, exact People Also Ask question, or Semrush data.
+- Use public SERP research to understand current result types, intent, related questions and competitor gaps when saved evidence is incomplete. Public SERP research may guide article coverage, but it must not be mislabeled as Semrush data or exact PAA evidence.
+- For the comparison page, reuse a relevant comparison query already committed in the repository. If no separate query is saved, use the existing cluster comparison URL when it covers the same two products; do not create a reverse-order duplicate.
+- Ordinary research gaps are not blockers. Omit unsupported facts or state that public details were not found, then continue with the supported article. Reserve `needs_review` for a genuinely unresolved product identity, safety issue, or material accuracy problem that cannot be handled honestly.
 
-## 5. Build the complete cluster
+## 5. Build the complete cluster end-to-end
 
-The complete cluster may span several scheduled runs. Scheduled runs are bounded, so each run must finish one safe checkpoint instead of repeatedly attempting the whole cluster and saving nothing.
-
-Use these checkpoints in order:
-
-1. Evidence ledger and cluster brief.
-2. Shared routing, template, registry and test support that the tool needs.
-3. Tool hub and pricing draft.
-4. Review and how-to draft.
-5. Alternatives and comparison draft.
-6. Cross-page consistency, internal links, registration, sitemap and public pillar integration.
-7. GitHub quality workflow, publication and live verification.
-
-At the end of every run, save the completed checkpoint and the exact next checkpoint in `articles/progress.md`. Keep the queue row `in_progress` until checkpoint 7 succeeds. Draft content must remain unregistered, unlinked and excluded from every public index and sitemap. Do not mark a partial cluster published. If a checkpoint is still too large for one run, finish one named file or one focused infrastructure change, record it and resume the same checkpoint next time.
-
-Create or update the queued tool's complete cluster according to `seo/content_guide.md` and `seo/toolboxkart_publishing_plan.md`:
-
-- Tool hub
-- Alternatives page
-- Review page
-- Pricing page
-- How to use page
-- One comparison page selected from Semrush comparison volume, or the top alternatives pick when no comparison keyword has volume
-- Category pillar update when the publication threshold is met
-
-Existing legacy Alternatives pages keep their current permanent URLs. Do not rename or remove them. Link them naturally into the new cluster where useful, and do not create duplicate pages that target the same primary keyword.
-
-Use the current site architecture and shared components. Add new reusable routing, templates, registry entries, and sitemap support only when required. Keep facts consistent across every page in the cluster.
-
-Use `HUB_MIN_TOOLS = 4`. Before four published tool clusters exist in a category, link to the closest live browse page instead of publishing a thin category pillar.
-
-Every page and its discovery records must be committed together. Add each published page to its matching pillar and child sitemap through the shared registry:
-
-- Tool hub: `/tools/` and `/sitemap-tools.xml`
-- Alternatives: `/alternatives/` and `/sitemap-alternatives.xml`
-- Review: `/reviews/` and `/sitemap-reviews.xml`
-- Pricing: `/pricing/` and `/sitemap-pricing.xml`
-- How to use: `/how-to-use/` and `/sitemap-how-to-use.xml`
-- Comparison: `/compare/` and `/sitemap-compare.xml`
-- Category pillar: `/best/` and `/sitemap-categories.xml`
-
-Tool hubs, pricing guides, how-to guides, comparisons, and category pillars are registered in `data/software-pages.php`. Alternatives use their published article records. Reviews use the published Reviews post registry. Never publish an article file without its registration entry.
+- Finish the selected tool cluster in this run whenever the connected GitHub tools can safely support it. Do not repeatedly stop at a draft checkpoint or treat ordinary research gaps as blockers.
+- Read the existing page records, route logic, templates, stylesheets, navigation, sitemap generators, tests and article progress before changing anything.
+- Prepare the full cluster: tool hub, alternatives, review, pricing, how-to guide and the relevant comparison. If the comparison between the same two products already exists, improve and reuse that permanent page instead of creating a duplicate.
+- Keep new pages out of public indexes and sitemaps until the complete cluster is reviewed. Then register all completed records and public discovery entries in the same reviewed content change.
+- Keep established URLs stable unless the user explicitly authorizes migration. New cluster pages use `/{tool}/`, `/{tool}/alternatives/`, `/{tool}/review/`, `/{tool}/pricing/`, `/{tool}/how-to-use/`, and `/compare/{tool}-vs-{other}/`.
+- Write original, product-specific copy. Do not reuse prior tool content by changing names or prices. Shared layout may be consistent, but the examples, reasoning, headings and recommendations must fit the specific product.
+- Use semantic HTML, the correct shared and page-specific CSS, accessible headings and responsive tables. Each long page should have a working table of contents. Visually inspect styled output where local preview tools are available.
+- `BreadcrumbList` JSON-LD is mandatory for every future applicable indexable tool-cluster page. The visible breadcrumb trail, schema hierarchy and canonical URLs must match. Add suitable page schema only when supported by visible content and verified facts.
+- Create the required editorial artifacts and source ledger. Do not claim hands-on testing. Keep official product facts and prices linked and dated.
+- Do not create a category pillar until `HUB_MIN_TOOLS=4` published tools meet the same quality standard.
 
 ## 6. Research and honesty
 
