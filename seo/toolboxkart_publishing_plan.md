@@ -20,7 +20,7 @@ One tool is one content cluster. A cluster gives a reader every major decision a
 | Comparison | Choose between two tools | `[tool] vs [competitor]` |
 | Category pillar | Compare the strongest tools in one category | `best [category] software` |
 
-Each page must have a different primary keyword and a distinct purpose. Facts must remain consistent across the cluster.
+Each page must have a different primary keyword and a distinct purpose. Facts must remain consistent across the cluster. Do not reuse generic paragraphs or force identical section layouts across products. Keep the site design consistent, but make the wording, examples, analysis and page structure fit the specific tool and search intent.
 
 ## Fixed selection system
 
@@ -84,7 +84,7 @@ Publishing a page and registering it are one atomic change. A newly published pa
 
 ### 8. Run the quality gate
 
-Check factual support, checked dates, originality, banned language, word ranges, primary-keyword uniqueness, metadata, canonicals, breadcrumbs, schema, PHP syntax, tests, internal links, sitemap XML, mobile layout, desktop layout, and the complete diff.
+Check factual support, checked dates, originality, banned language, word ranges, primary-keyword uniqueness, metadata, canonicals, visible breadcrumbs and matching BreadcrumbList JSON-LD, page-specific schema, PHP syntax, tests, internal links, sitemap XML, mobile layout, desktop layout, and the complete diff. Confirm the correct shared CSS is loaded and the rendered HTML is properly structured.
 
 ### 9. Publish and verify
 
