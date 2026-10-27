@@ -2,7 +2,7 @@
 return [
  'tool_hubs' => [[
   'title'=>'Zendesk: Support Software Hub','seo_title'=>'Zendesk Guide: Features, Pricing and Alternatives',
-  'description'=>'Research Zendesk support software, compare current plans, review strengths and limits, and find alternatives for different support workflows.',
+  'description'=>'Research Zendesk support software, compare current plans, review strengths and limits, and find alternatives for different support workflows before you buy.',
   'url'=>'/zendesk/','date'=>'2026-10-27','status'=>'published',
   'content'=><<<'HTML'
 <h2>What is Zendesk?</h2><p>Zendesk is customer service software built around ticketing, customer context, support workflows and reporting. Its Suite plans add broader channels and knowledge features. See the <a href="https://www.zendesk.com/">official product overview</a>, checked October 27, 2026.</p>
@@ -38,7 +38,7 @@ HTML
  ],
  'pricing' => [[
   'title'=>'Zendesk Pricing: Plans, Costs and Limits','seo_title'=>'Zendesk Pricing: Plans, Costs and Limits',
-  'description'=>'Compare Zendesk Support and Suite prices, billing terms, plan capabilities and extra costs before choosing a support plan.',
+  'description'=>'Compare Zendesk Support and Suite prices, billing terms, plan features, AI costs and extra fees before choosing the right support plan for your team.',
   'url'=>'/zendesk/pricing/','date'=>'2026-10-27','status'=>'published',
   'content'=><<<'HTML'
 <h2>Zendesk pricing at a glance</h2><p>The official pricing page checked October 27, 2026 lists Support Team at US$19 per agent/month billed yearly, Suite Team at US$55 and Suite Professional at US$115. <a href="https://www.zendesk.com/pricing/">Confirm current prices and billing terms on Zendesk's official page.</a></p>
@@ -84,7 +84,7 @@ HTML
  ],
  'how_to_use' => [[
   'title'=>'How to Use Zendesk: Setup and Ticket Workflow','seo_title'=>'How to Use Zendesk: Setup and Ticket Workflow',
-  'description'=>'Follow a practical Zendesk setup sequence for support channels, ticket routing, saved replies, knowledge content and migration planning.',
+  'description'=>'Follow a practical Zendesk setup guide for support channels, ticket routing, saved replies, knowledge content, reporting and migration planning for your team.',
   'url'=>'/zendesk/how-to-use/','date'=>'2026-10-27','status'=>'published',
   'content'=><<<'HTML'
 <h2>Before you start</h2><p>Decide which channels you will support, who owns each ticket type, what agents need to know, and how managers will measure response and resolution. Menus and available features depend on product and plan, so confirm details in the <a href="https://support.zendesk.com/hc/en-us">official Zendesk Help Center</a>.</p>
