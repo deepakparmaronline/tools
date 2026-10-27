@@ -1,12 +1,12 @@
 # Publishing alternative articles
 
-The Alternatives section uses the existing PHP/shared-template architecture. Its permanent listing is `/alternatives/`; article canonicals are `/alternatives/topic-slug/`.
+The Alternatives section uses the existing PHP/shared-template architecture. Its permanent listing is `/alternatives/`. Legacy article canonicals remain `/alternatives/topic-slug/`; new software-cluster alternatives use `/{tool}/alternatives/` by setting `tool_slug` and `tool_name` in the article record. Never move an established URL without an explicit migration plan.
 
-1. Copy `alternatives/articles/_ARTICLE-TEMPLATE.php.example` to `alternatives/articles/topic-slug.php`. Use a stable lowercase, hyphenated filename with no date prefix.
-2. Fill in the title, description, publication date (`YYYY-MM-DD`), tag, and researched HTML content. An optional `seo_title` overrides the search title; the visible H1 remains the article title. Use H2/H3 for content headings, never another H1.
+1. Copy `alternatives/articles/_ARTICLE-TEMPLATE.php.example` to `alternatives/articles/topic-slug.php`. Use a stable lowercase, hyphenated filename with no date prefix. For a new tool cluster, set `tool_slug` and `tool_name` so the shared route and canonical use `/{tool}/alternatives/`; leave those fields absent for legacy URLs.
+2. Fill in the title, description, publication date (`YYYY-MM-DD`), tag, and researched HTML content. An optional `seo_title` overrides the search title; the visible H1 remains the article title. Use H2/H3 for content headings, never another H1. Write a distinct, product-specific analysis; do not recycle prior tool copy or a fixed article layout.
 3. Add an optional featured image using a root-relative path or HTTPS URL, meaningful `image_alt`, and its actual width/height. Images feed the cards, article, Open Graph, Twitter/X, and Article schema automatically.
 4. Use `updated` only for an actual editorial update. Author defaults to Deepak Parmar; `author` and `author_bio` can be supplied for another contributor.
-5. Set `status` to `published` after editorial review, validate PHP, and deploy the article file and image through the existing deployment process.
+5. Set `status` to `published` after editorial review, validate PHP, and deploy the article file and image through the existing deployment process. Include a visible breadcrumb trail and `BreadcrumbList` JSON-LD that match the canonical route. For alternatives pages, include `ItemList` JSON-LD only when it accurately matches the visible list.
 
 Standing user preference, October 9, 2026: future article requests proceed through research, QA, published status, commit and push to GitHub `main`, and the existing hosting deployment workflow unless the user explicitly requests drafts. Do not leave completed articles saved as drafts or ask again for routine publication approval. If access or a material editorial check blocks completion, record the blocker and next action. A GitHub push does not establish live deployment; verify the live article, listing and sitemap separately.
 
@@ -16,7 +16,7 @@ Only published, complete records with valid publication dates no later than toda
 
 `includes/alternatives.php` discovers records automatically. It also assigns practical topic groups for the Alternatives hub and chooses topical related cards through `related_alternative_articles()`. Do not hardcode a flat replacement listing or restore date-only related recommendations. No edits to `data/posts.php` are required for Alternatives records. The existing blog registry and article URLs remain separate.
 
-The main `/sitemap.xml` continues to include published Alternatives URLs. `/sitemap-alternatives.xml` is a dedicated child sitemap for the Alternatives hub and published Alternatives records; keep both sitemap declarations in `robots.txt`. A focused two-product comparison belongs under `/versus/`, while a single-product research review belongs under `/reviews/`. Those pages use the standalone editorial registry rather than the Alternatives record directory.
+The main `/sitemap.xml` continues to include published Alternatives URLs. `/sitemap-alternatives.xml` is a dedicated child sitemap for the Alternatives hub and published Alternatives records; keep both sitemap declarations in `robots.txt`. Legacy focused comparisons and reviews may remain under `/versus/` and `/reviews/`. New software-cluster comparisons use `/compare/{tool}-vs-{other}/`, and new cluster reviews use `/{tool}/review/` with a canonical URL override in the standalone `data/post-*.php` registry. These pages must also include visible breadcrumbs and `BreadcrumbList` JSON-LD.
 
 Article content is trusted editorial HTML, like existing blog content. These PHP records must only be authored by trusted site editors; they are not a public upload interface. Apache blocks direct access to the record directory.
 
