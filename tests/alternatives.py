@@ -80,9 +80,14 @@ def main():
             assert page.h1 == 1 and page.canonical == canonical, path
             graph = next(item['@graph'] for item in page.schemas if '@graph' in item)
             assert any(item.get('@type') == 'BreadcrumbList' for item in graph), path
+            breadcrumb = next(item for item in graph if item.get('@type') == 'BreadcrumbList')
+            expected_tool = 'Zendesk' if 'zendesk' in path else 'Freshdesk'
+            assert [item['name'] for item in breadcrumb['itemListElement']] == ['Home', expected_tool, 'Alternatives'], path
             item_list = next(item for item in graph if item.get('@type') == 'ItemList')
             assert item_list['numberOfItems'] == 8, path
             assert f'href="{parent}"' in html and '>Alternatives</span>' in html, path
+            description = page.meta.get('description', '')
+            assert 150 <= len(description) <= 155, path
         for old_path, target in [
             ('/alternatives/zendesk-alternatives/', '/zendesk/alternatives/'),
             ('/alternatives/freshdesk-alternatives/', '/freshdesk/alternatives/'),
