@@ -29,13 +29,27 @@ function alternative_articles(): array {
     return $articles;
 }
 
+function alternative_tool_slug(array $article): ?string {
+    $slug = is_string($article['slug'] ?? null) ? $article['slug'] : '';
+    if (!str_ends_with($slug, '-alternatives')) return null;
+    $toolSlug = substr($slug, 0, -strlen('-alternatives'));
+    if ($toolSlug === '') return null;
+    foreach (software_pages('tool_hubs') as $hub) {
+        if (($hub['url'] ?? null) === '/'.$toolSlug.'/') return $toolSlug;
+    }
+    return null;
+}
+
 function alternative_url(array $article): string {
-    $path = ($article['slug'] ?? '') === 'zendesk-alternatives' ? 'zendesk/alternatives/' : 'alternatives/'.$article['slug'].'/';
-    return url($path);
+    $toolSlug = alternative_tool_slug($article);
+    $slug = is_string($article['slug'] ?? null) ? $article['slug'] : '';
+    return url($toolSlug !== null ? $toolSlug.'/alternatives/' : 'alternatives/'.$slug.'/');
 }
 
 function alternative_path(array $article): string {
-    return ($article['slug'] ?? '') === 'zendesk-alternatives' ? '/zendesk/alternatives/' : '/alternatives/'.$article['slug'].'/';
+    $toolSlug = alternative_tool_slug($article);
+    $slug = is_string($article['slug'] ?? null) ? $article['slug'] : '';
+    return $toolSlug !== null ? '/'.$toolSlug.'/alternatives/' : '/alternatives/'.$slug.'/';
 }
 
 function alternative_image_url(array $article): string {
