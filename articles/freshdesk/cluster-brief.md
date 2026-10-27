@@ -2,7 +2,7 @@
 
 ## Search intent and audience
 
-The committed primary query is “Freshdesk alternative” with US volume 480, KD 16, CPC US$46.98 and commercial intent in the fixed 2026-10-24 snapshot. Do not change these values. Public SERP research checked October 28, 2026 shows product pricing pages, direct product comparisons, review/alternatives roundups and product-specific guides. The content must help a buyer compare operating models, plan cost and migration risk.
+The fixed queue row for “Freshdesk alternative” carries US volume 480, KD 16, CPC US$46.98 and commercial intent. Do not change these values. A matching full metric row was not found in `alternatives list.md`, so trend and SERP-feature values are not inferred. Public SERP research checked October 28, 2026 shows product pricing pages, direct product comparisons, review/alternatives roundups and product-specific guides. The content must help a buyer compare operating models, plan cost and migration risk.
 
 ## Permanent URLs
 
@@ -19,7 +19,7 @@ Do not create a reverse-order comparison duplicate. Do not create a customer-sup
 
 - Standard Freshdesk is email-first; Freshdesk Omni adds broader channels in a unified inbox.
 - US annual-billing prices checked 2026-10-28: Growth US$19, Pro US$55, Enterprise US$89 per agent/month.
-- The public pricing page advertises a 14-day trial. The 2026 product update says switching to the Free program is no longer self-service.
+- The public pricing page advertises a 14-day trial. Official support docs describe a separate six-month Free Program for eligible Freshdesk customers, limited to two agents and not available in Freshdesk Omni; confirm account eligibility.
 - The pricing page lists an included Freddy AI Agent session allowance and paid additional sessions; Copilot is an extra cost on eligible plans.
 - Freshdesk documents CSV/Excel exports for tickets and other records, with Admin/Supervisor permissions. Export capability is not a guarantee of complete migration.
 - No hands-on test or rating is claimed.
