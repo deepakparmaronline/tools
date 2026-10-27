@@ -10,7 +10,7 @@
 - Preserve existing non-software pages. Software-cluster URLs use the permanent tool-first structure: `/{tool}/`, `/{tool}/alternatives/`, `/{tool}/review/`, `/{tool}/pricing/`, and `/{tool}/how-to-use/`. Comparisons remain `/compare/{tool}-vs-{other}/` unless explicitly migrated.
 - Do not add a navigation link to a route that is not live.
 - Commit and push only reviewed changes needed for the current run.
-- Hostinger deploys automatically from GitHub `main`. Verify the live result after pushing.
+- Hostinger deploys automatically from GitHub `main`. The user performs live HTTP/browser verification; it is not a publication gate. Do not claim live verification unless it was actually performed.
 
 ## 2. Required files to read at the start of every run
 
