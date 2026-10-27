@@ -10,8 +10,7 @@
 - CPC: US$46.98
 - Intent: Commercial
 - Snapshot date: 2026-10-24
-- Saved trend: ▄▂▂▄█▃▂▄▃█▆▆ ↑
-- Saved SERP features: SL, AIO, Rev, Vid, Rel
+- Trend and SERP feature fields: not present in a matching committed Freshdesk row; not inferred.
 - Target market: United States
 - Content length: 2770 words by tag-stripped count, within the 1,800 to 2,800 target
 - Schema: Article, BreadcrumbList, ItemList and FAQPage
