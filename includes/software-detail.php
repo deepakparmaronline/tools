@@ -106,16 +106,40 @@ function render_software_detail_page(array $page, string $collectionKey): string
         $articleSchema['image'] = ['@type' => 'ImageObject', 'url' => $socialImage, 'caption' => $socialImageAlt];
     }
 
+    $pathParts = explode('/', trim($canonicalPath, '/'));
+    $toolSlug = $pathParts[0] ?? '';
+    $toolName = trim((string)($page['breadcrumb_tool_name'] ?? ucwords(str_replace('-', ' ', $toolSlug))));
+    $breadcrumbItems = [['name' => 'Home', 'url' => SITE_URL]];
+    if ($collectionKey === 'tool_hubs') {
+        $breadcrumbItems[] = ['name' => $toolName, 'url' => $canonical];
+    } elseif (in_array($collectionKey, ['pricing', 'how_to_use'], true)) {
+        $breadcrumbItems[] = ['name' => $toolName, 'url' => url($toolSlug.'/')];
+        $breadcrumbItems[] = ['name' => $collectionKey === 'pricing' ? 'Pricing' : 'How to Use', 'url' => $canonical];
+    } elseif ($collectionKey === 'comparisons') {
+        $breadcrumbItems[] = ['name' => 'Comparisons', 'url' => url('compare/')];
+        $breadcrumbItems[] = ['name' => $title, 'url' => $canonical];
+    } else {
+        $breadcrumbItems[] = ['name' => $config['index_title'], 'url' => url($config['index_url'])];
+        $breadcrumbItems[] = ['name' => $title, 'url' => $canonical];
+    }
+
+    $schemaGraph = [$articleSchema, breadcrumbs($breadcrumbItems)];
+    if ($collectionKey === 'tool_hubs') {
+        $officialUrl = trim((string)($page['official_url'] ?? $canonical));
+        $softwareName = trim((string)($page['software_name'] ?? $toolName));
+        $schemaGraph[] = [
+            '@type' => 'SoftwareApplication',
+            'name' => $softwareName,
+            'applicationCategory' => 'BusinessApplication',
+            'operatingSystem' => 'Web',
+            'description' => $description,
+            'url' => $officialUrl,
+        ];
+    }
+
     $extraHead = '<meta property="article:published_time" content="'.e($date.'T00:00:00+05:30').'">'
         .'<meta property="article:modified_time" content="'.e($updatedDate.'T00:00:00+05:30').'">'
-        .jsonld(['@context' => 'https://schema.org', '@graph' => [
-            $articleSchema,
-            breadcrumbs([
-                ['name' => 'Home', 'url' => SITE_URL],
-                ['name' => $config['index_title'], 'url' => url($config['index_url'])],
-                ['name' => $title, 'url' => $canonical],
-            ]),
-        ]])
+        .jsonld(['@context' => 'https://schema.org', '@graph' => $schemaGraph])
         .'<link rel="stylesheet" href="'.e(asset('css/software-detail.css')).'">';
 
     ob_start();
@@ -124,9 +148,15 @@ function render_software_detail_page(array $page, string $collectionKey): string
     <header class="article-head software-detail__head">
         <div class="container">
             <nav class="crumbs" aria-label="Breadcrumb">
-                <a href="/">Home</a><span aria-hidden="true">›</span>
-                <a href="<?=e($config['index_url'])?>"><?=e($config['index_title'])?></a><span aria-hidden="true">›</span>
-                <span><?=e($title)?></span>
+                <?php foreach ($breadcrumbItems as $index => $crumb): ?>
+                    <?php if ($index > 0): ?><span aria-hidden="true">›</span><?php endif; ?>
+                    <?php if ($index < count($breadcrumbItems) - 1): ?>
+                        <?php $crumbPath = parse_url($crumb['url'], PHP_URL_PATH) ?: '/'; ?>
+                        <a href="<?=e($crumbPath)?>"><?=e($crumb['name'])?></a>
+                    <?php else: ?>
+                        <span><?=e($crumb['name'])?></span>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </nav>
             <span class="eyebrow"><?=e($config['eyebrow'])?></span>
             <h1><?=e($title)?></h1>
