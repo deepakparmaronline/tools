@@ -6,7 +6,7 @@
 
 - At the start of a run, resume the first row marked `in_progress`. If none exists, take the lowest Order row marked `queued`.
 - Do not recalculate, reorder, or replace the queue during a daily publishing run.
-- Change the selected row to `in_progress` before content work. Change it to `published` only after GitHub push, Hostinger deployment, and live verification all succeed.
+- Change the selected row to `in_progress` before content work. Change it to `published` after the complete cluster, registry, public index and sitemap entries are committed to `main` and the matching quality workflow passes. Hostinger auto-deploys; the user performs live verification, so unavailable live HTTP access is not a publication gate.
 - If the exact product or essential official facts cannot be verified, change the row to `needs_review`, add the reason to the run log, and continue with the next `queued` row.
 - `new cluster` means create the complete cluster. `expand live alternative` means preserve the existing Alternatives URL and add or improve its missing sibling pages and internal links.
 - Preserve committed Semrush metrics exactly and follow seo/search_research_snapshot.md. Do not open Semrush. Public SERP research is allowed for intent and competitor coverage, but never invent Semrush metrics or undocumented PAA questions.
