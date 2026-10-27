@@ -106,16 +106,61 @@ function render_software_detail_page(array $page, string $collectionKey): string
         $articleSchema['image'] = ['@type' => 'ImageObject', 'url' => $socialImage, 'caption' => $socialImageAlt];
     }
 
+    $breadcrumbItems = [['name' => 'Home', 'url' => SITE_URL]];
+    $breadcrumbLabels = [['name' => 'Home', 'href' => '/']];
+
+    if ($collectionKey === 'tool_hubs') {
+        $softwareName = trim(is_string($page['software_name'] ?? null) ? $page['software_name'] : '');
+        if ($softwareName === '') {
+            $softwareName = trim(explode(':', $title, 2)[0]);
+            if ($softwareName === '') $softwareName = ucwords(str_replace('-', ' ', trim($canonicalPath, '/')));
+        }
+        $breadcrumbItems[] = ['name' => $config['index_title'], 'url' => url($config['index_url'])];
+        $breadcrumbItems[] = ['name' => $softwareName, 'url' => $canonical];
+        $breadcrumbLabels[] = ['name' => $config['index_title'], 'href' => $config['index_url']];
+        $breadcrumbLabels[] = ['name' => $softwareName, 'href' => null];
+    } elseif (in_array($collectionKey, ['pricing', 'how_to_use'], true)
+        && preg_match('#^/([a-z0-9-]+)/(pricing|how-to-use)/$#D', $canonicalPath, $crumbMatch)) {
+        $hubPath = '/'.$crumbMatch[1].'/';
+        $hub = null;
+        foreach (software_pages('tool_hubs') as $candidateHub) {
+            if (($candidateHub['url'] ?? null) === $hubPath) { $hub = $candidateHub; break; }
+        }
+        if ($hub !== null) {
+            $toolName = trim(is_string($hub['software_name'] ?? null) ? $hub['software_name'] : '');
+            if ($toolName === '') $toolName = ucwords(str_replace('-', ' ', $crumbMatch[1]));
+            $sectionName = $collectionKey === 'pricing' ? 'Pricing' : 'How to Use';
+            $breadcrumbItems[] = ['name' => $toolName, 'url' => url($hubPath)];
+            $breadcrumbItems[] = ['name' => $sectionName, 'url' => $canonical];
+            $breadcrumbLabels[] = ['name' => $toolName, 'href' => $hubPath];
+            $breadcrumbLabels[] = ['name' => $sectionName, 'href' => null];
+        }
+    }
+
+    if (count($breadcrumbItems) === 1) {
+        $breadcrumbItems[] = ['name' => $config['index_title'], 'url' => url($config['index_url'])];
+        $breadcrumbItems[] = ['name' => $title, 'url' => $canonical];
+        $breadcrumbLabels[] = ['name' => $config['index_title'], 'href' => $config['index_url']];
+        $breadcrumbLabels[] = ['name' => $title, 'href' => null];
+    }
+
+    $schemaGraph = [$articleSchema, breadcrumbs($breadcrumbItems)];
+    if ($collectionKey === 'tool_hubs') {
+        $softwareName = trim(is_string($page['software_name'] ?? null) ? $page['software_name'] : '');
+        if ($softwareName === '') $softwareName = trim(explode(':', $title, 2)[0]);
+        $schemaGraph[] = [
+            '@type' => 'SoftwareApplication',
+            '@id' => $canonical.'#software',
+            'name' => $softwareName,
+            'applicationCategory' => 'BusinessApplication',
+            'operatingSystem' => 'Web browser',
+            'url' => $canonical,
+        ];
+    }
+
     $extraHead = '<meta property="article:published_time" content="'.e($date.'T00:00:00+05:30').'">'
         .'<meta property="article:modified_time" content="'.e($updatedDate.'T00:00:00+05:30').'">'
-        .jsonld(['@context' => 'https://schema.org', '@graph' => [
-            $articleSchema,
-            breadcrumbs([
-                ['name' => 'Home', 'url' => SITE_URL],
-                ['name' => $config['index_title'], 'url' => url($config['index_url'])],
-                ['name' => $title, 'url' => $canonical],
-            ]),
-        ]])
+        .jsonld(['@context' => 'https://schema.org', '@graph' => $schemaGraph])
         .'<link rel="stylesheet" href="'.e(asset('css/software-detail.css')).'">';
 
     ob_start();
@@ -124,9 +169,14 @@ function render_software_detail_page(array $page, string $collectionKey): string
     <header class="article-head software-detail__head">
         <div class="container">
             <nav class="crumbs" aria-label="Breadcrumb">
-                <a href="/">Home</a><span aria-hidden="true">›</span>
-                <a href="<?=e($config['index_url'])?>"><?=e($config['index_title'])?></a><span aria-hidden="true">›</span>
-                <span><?=e($title)?></span>
+                <?php foreach ($breadcrumbLabels as $index => $crumb): ?>
+                    <?php if ($index > 0): ?><span aria-hidden="true">›</span><?php endif; ?>
+                    <?php if ($index < count($breadcrumbLabels) - 1 && is_string($crumb['href'])): ?>
+                        <a href="<?=e($crumb['href'])?>"><?=e($crumb['name'])?></a>
+                    <?php else: ?>
+                        <span><?=e($crumb['name'])?></span>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </nav>
             <span class="eyebrow"><?=e($config['eyebrow'])?></span>
             <h1><?=e($title)?></h1>
