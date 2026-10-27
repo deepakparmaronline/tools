@@ -140,6 +140,12 @@ def main():
                      '/alternatives/missing/', '/alternatives/articles/qa-alternative-one.php']:
             assert get(path)[0] == 404
         assert get('/alternatives')[0] == 301
+        for source, target in [
+            ('/alternatives/freshdesk-alternatives/', '/freshdesk/alternatives/'),
+            ('/alternatives/freshdesk-alternatives', '/freshdesk/alternatives/'),
+        ]:
+            code, headers, _ = get(source)
+            assert code == 301 and headers['Location'] == target, source
         code, _, sitemap = get('/sitemap.xml')
         assert code == 200 and 'https://toolboxkart.tech/sitemap-alternatives.xml' in sitemap
         assert 'qa-alternative-draft' not in sitemap and 'qa-alternative-future' not in sitemap
