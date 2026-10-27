@@ -30,12 +30,17 @@ function alternative_articles(): array {
 }
 
 function alternative_url(array $article): string {
-    $path = ($article['slug'] ?? '') === 'zendesk-alternatives' ? 'zendesk/alternatives/' : 'alternatives/'.$article['slug'].'/';
-    return url($path);
+    $slug = $article['slug'] ?? '';
+    if ($slug === 'zendesk-alternatives') return url('zendesk/alternatives/');
+    if ($slug === 'freshdesk-alternatives') return url('freshdesk/alternatives/');
+    return url('alternatives/'.$slug.'/');
 }
 
 function alternative_path(array $article): string {
-    return ($article['slug'] ?? '') === 'zendesk-alternatives' ? '/zendesk/alternatives/' : '/alternatives/'.$article['slug'].'/';
+    $slug = $article['slug'] ?? '';
+    if ($slug === 'zendesk-alternatives') return '/zendesk/alternatives/';
+    if ($slug === 'freshdesk-alternatives') return '/freshdesk/alternatives/';
+    return '/alternatives/'.$slug.'/';
 }
 
 function alternative_image_url(array $article): string {
