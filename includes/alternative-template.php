@@ -8,10 +8,37 @@ $socialImage = alternative_image_url($alternative);
 $socialImageAlt = $alternative['image_alt'] ?? $alternative['title'];
 $schema = ['@type'=>'Article','headline'=>$alternative['title'],'description'=>$pageDescription,'datePublished'=>$alternative['date'],'dateModified'=>$alternative['updated'],'author'=>['@type'=>'Person','name'=>$alternative['author'],'url'=>url('about-deepak-parmar/'),'image'=>url('images/deepak-parmar.jpeg'),'sameAs'=>['https://www.linkedin.com/in/deepakparmaronline/','https://www.youtube.com/@deepakparmaronline'],'jobTitle'=>'SEO specialist and technology writer'],'publisher'=>['@type'=>'Organization','name'=>SITE_NAME,'url'=>SITE_URL],'mainEntityOfPage'=>$canonical,'url'=>$canonical];
 if ($socialImage) $schema['image'] = ['@type'=>'ImageObject','url'=>$socialImage,'caption'=>$socialImageAlt];
-$extraHead = '<meta property="article:published_time" content="'.e($alternative['date']).'"><meta property="article:modified_time" content="'.e($alternative['updated']).'">'.jsonld(['@context'=>'https://schema.org','@graph'=>[$schema,breadcrumbs([['name'=>'Home','url'=>SITE_URL],['name'=>'Alternatives','url'=>url('alternatives/')],['name'=>$alternative['title'],'url'=>$canonical]])]]);
+$slug = $alternative['slug'] ?? '';
+$breadcrumbItems = [['name'=>'Home','url'=>SITE_URL]];
+if (in_array($slug, ['zendesk-alternatives','freshdesk-alternatives'], true)) {
+    $toolName = $slug === 'zendesk-alternatives' ? 'Zendesk' : 'Freshdesk';
+    $breadcrumbItems[] = ['name'=>$toolName,'url'=>url(strtolower($toolName).'/')];
+    $breadcrumbItems[] = ['name'=>'Alternatives','url'=>$canonical];
+} else {
+    $breadcrumbItems[] = ['name'=>'Alternatives','url'=>url('alternatives/')];
+    $breadcrumbItems[] = ['name'=>$alternative['title'],'url'=>$canonical];
+}
+$schemaGraph = [$schema, breadcrumbs($breadcrumbItems)];
+if (!empty($alternative['item_list']) && is_array($alternative['item_list'])) {
+    $listItems = [];
+    foreach (array_values($alternative['item_list']) as $index => $item) {
+        if (!is_array($item) || empty($item['name']) || empty($item['url'])) continue;
+        $listItems[] = ['@type'=>'ListItem','position'=>count($listItems)+1,'item'=>['@type'=>'SoftwareApplication','name'=>$item['name'],'url'=>$item['url']]];
+    }
+    if ($listItems) $schemaGraph[] = ['@type'=>'ItemList','name'=>$alternative['title'],'itemListElement'=>$listItems];
+}
+if (!empty($alternative['faq']) && is_array($alternative['faq'])) {
+    $questions = [];
+    foreach ($alternative['faq'] as $faq) {
+        if (!is_array($faq) || empty($faq['question']) || empty($faq['answer'])) continue;
+        $questions[] = ['@type'=>'Question','name'=>$faq['question'],'acceptedAnswer'=>['@type'=>'Answer','text'=>$faq['answer']]];
+    }
+    if ($questions) $schemaGraph[] = ['@type'=>'FAQPage','mainEntity'=>$questions];
+}
+$extraHead = '<meta property="article:published_time" content="'.e($alternative['date']).'"><meta property="article:modified_time" content="'.e($alternative['updated']).'">'.jsonld(['@context'=>'https://schema.org','@graph'=>$schemaGraph]);
 require __DIR__.'/header.php';
 ?>
-<header class="article-head"><div class="container"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/alternatives/">Alternatives</a><span aria-hidden="true">›</span><span><?=e($alternative['title'])?></span></nav><span class="eyebrow"><?=e($alternative['tag'])?></span><h1><?=e($alternative['title'])?></h1><p><?=e($pageDescription)?></p><div class="article-meta"><span>By <strong><a href="/about-deepak-parmar/"><?=e($alternative['author'])?></a></strong></span><span>Published <time datetime="<?=e($alternative['date'])?>"><?=e(fmt_date($alternative['date']))?></time></span><?php if ($alternative['updated'] !== $alternative['date']): ?><span>Updated <time datetime="<?=e($alternative['updated'])?>"><?=e(fmt_date($alternative['updated']))?></time></span><?php endif; ?></div></div></header>
+<header class="article-head"><div class="container"><nav class="crumbs" aria-label="Breadcrumb"><?php foreach ($breadcrumbItems as $index => $crumb): ?><?php if ($index > 0): ?><span aria-hidden="true">›</span><?php endif; ?><?php if ($index < count($breadcrumbItems) - 1): ?><?php $crumbPath = parse_url($crumb['url'], PHP_URL_PATH) ?: '/'; ?><a href="<?=e($crumbPath)?>"><?=e($crumb['name'])?></a><?php else: ?><span><?=e($crumb['name'])?></span><?php endif; ?><?php endforeach; ?></nav><span class="eyebrow"><?=e($alternative['tag'])?></span><h1><?=e($alternative['title'])?></h1><p><?=e($pageDescription)?></p><div class="article-meta"><span>By <strong><a href="/about-deepak-parmar/"><?=e($alternative['author'])?></a></strong></span><span>Published <time datetime="<?=e($alternative['date'])?>"><?=e(fmt_date($alternative['date']))?></time></span><?php if ($alternative['updated'] !== $alternative['date']): ?><span>Updated <time datetime="<?=e($alternative['updated'])?>"><?=e(fmt_date($alternative['updated']))?></time></span><?php endif; ?></div></div></header>
 <div class="container article-layout alternative-layout"><article class="article-body">
 <?php if ($socialImage): ?><img class="alternative-featured-image" src="<?=e($socialImage)?>" alt="<?=e($socialImageAlt)?>" width="<?=e((string)($alternative['image_width'] ?? 1200))?>" height="<?=e((string)($alternative['image_height'] ?? 675))?>" fetchpriority="high" decoding="async"><?php endif; ?>
 <?=$alternative['content']?>
