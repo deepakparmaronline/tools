@@ -70,6 +70,25 @@ def main():
         assert get('/alternatives/')[0] == 200
         assert 'id="productivity"' in get('/alternatives/')[2]
         assert 'href="/review-methodology"' in get('/alternatives/')[2]
+        for path, canonical, parent in [
+            ('/zendesk/alternatives/', 'https://toolboxkart.tech/zendesk/alternatives/', '/zendesk/'),
+            ('/freshdesk/alternatives/', 'https://toolboxkart.tech/freshdesk/alternatives/', '/freshdesk/'),
+        ]:
+            code, _, html = get(path)
+            assert code == 200, path
+            page = Page(html)
+            assert page.h1 == 1 and page.canonical == canonical, path
+            graph = next(item['@graph'] for item in page.schemas if '@graph' in item)
+            assert any(item.get('@type') == 'BreadcrumbList' for item in graph), path
+            item_list = next(item for item in graph if item.get('@type') == 'ItemList')
+            assert item_list['numberOfItems'] == 8, path
+            assert f'href="{parent}"' in html and '>Alternatives</span>' in html, path
+        for old_path, target in [
+            ('/alternatives/zendesk-alternatives/', '/zendesk/alternatives/'),
+            ('/alternatives/freshdesk-alternatives/', '/freshdesk/alternatives/'),
+        ]:
+            code, headers, _ = get(old_path)
+            assert code == 301 and headers['Location'] == target, old_path
         for path, content_type in [('/assets/css/app.css', 'text/css'),
                                    ('/assets/css/article-overflow-fixes.css', 'text/css'),
                                    ('/assets/js/app.js', 'javascript')]:
