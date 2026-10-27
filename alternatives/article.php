@@ -7,7 +7,7 @@ if (!$alternative) {
     require __DIR__.'/../404.php';
     return;
 }
-$canonicalPath = '/alternatives/'.$alternative['slug'].'/';
+$canonicalPath = alternative_path($alternative);
 if ((parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '') !== $canonicalPath) {
     header('Location: '.$canonicalPath, true, 301);
     exit;
