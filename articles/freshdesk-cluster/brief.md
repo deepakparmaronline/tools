@@ -12,9 +12,7 @@ Primary alternatives keyword: Freshdesk alternative
 - Keyword difficulty: 16
 - CPC: US$46.98
 - Intent: Commercial
-- 12-month trend: ▄▂▂▄█▃▂▄▃█▆▆ ↑
-- SERP features: SL, AIO, Rev, Vid, Rel
-- Snapshot: Semrush research dated 2026-10-24, recorded in alternatives list.md
+- Matching committed metrics: volume, KD, CPC and intent only. A matching Freshdesk row was not found in seo/search_research_snapshot.md or alternatives list.md, so no trend or SERP-feature metric is inferred.
 - The published page targets the natural plural query "Freshdesk alternatives" while preserving the saved singular keyword and metrics.
 
 No new Semrush metrics or exact People Also Ask questions were created. Public SERPs were reviewed for intent and competing page types. Questions in the article come from practical decision needs and official documentation, not a claim that they are exact PAA results.
