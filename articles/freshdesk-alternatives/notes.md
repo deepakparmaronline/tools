@@ -4,7 +4,7 @@
 Commercial comparison for teams considering a Freshdesk replacement. The page opens with an answer and three use-case picks, then compares eight products, explains Freshdesk-specific pricing and plan boundaries, and gives a migration checklist.
 
 ## Saved research
-The 2026-10-24 repository snapshot row records Freshdesk alternative, volume 480, KD 16, CPC US$46.98, commercial intent, trend ▄▂▂▄█▃▂▄▃█▆▆ ↑, and SERP features SL, AIO, Rev, Vid, Rel. These values are unchanged. No Semrush session was opened.
+The fixed queue row records Freshdesk alternative, volume 480, KD 16, CPC US$46.98 and commercial intent. No matching Freshdesk row was found in seo/search_research_snapshot.md or alternatives list.md. Trend and SERP-feature fields are not inferred. No Semrush session was opened.
 
 ## Originality guard
 The page uses product-specific analysis rather than copied paragraphs. The sections vary by model: per-agent ticketing and routing, Zoho CRM, shared inboxes, outcome-priced AI, CRM-first service, collaborative inboxes, ecommerce ticket volume and multichannel support. Section wording and the trade-offs differ by product. The site template, schema and breadcrumbs stay consistent.
