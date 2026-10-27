@@ -1,5 +1,6 @@
 """Integration checks with temporary editorial fixtures; no articles are published."""
 import json
+import re
 from pathlib import Path
 import socket
 import subprocess
@@ -70,6 +71,30 @@ def main():
         assert get('/alternatives/')[0] == 200
         assert 'id="productivity"' in get('/alternatives/')[2]
         assert 'href="/review-methodology"' in get('/alternatives/')[2]
+        for path, canonical, parent in [
+            ('/zendesk/alternatives/', 'https://toolboxkart.tech/zendesk/alternatives/', '/zendesk/'),
+            ('/freshdesk/alternatives/', 'https://toolboxkart.tech/freshdesk/alternatives/', '/freshdesk/'),
+        ]:
+            code, _, html = get(path)
+            assert code == 200, path
+            page = Page(html)
+            assert page.h1 == 1 and page.canonical == canonical, path
+            graph = next(item['@graph'] for item in page.schemas if '@graph' in item)
+            assert any(item.get('@type') == 'BreadcrumbList' for item in graph), path
+            breadcrumb = next(item for item in graph if item.get('@type') == 'BreadcrumbList')
+            expected_tool = 'Zendesk' if 'zendesk' in path else 'Freshdesk'
+            assert [item['name'] for item in breadcrumb['itemListElement']] == ['Home', expected_tool, 'Alternatives'], path
+            item_list = next(item for item in graph if item.get('@type') == 'ItemList')
+            assert item_list['numberOfItems'] == 8, path
+            assert f'href="{parent}"' in html and '>Alternatives</span>' in html, path
+            description = page.meta.get('description', '')
+            assert 150 <= len(description) <= 155, path
+        for old_path, target in [
+            ('/alternatives/zendesk-alternatives/', '/zendesk/alternatives/'),
+            ('/alternatives/freshdesk-alternatives/', '/freshdesk/alternatives/'),
+        ]:
+            code, headers, _ = get(old_path)
+            assert code == 301 and headers['Location'] == target, old_path
         for path, content_type in [('/assets/css/app.css', 'text/css'),
                                    ('/assets/css/article-overflow-fixes.css', 'text/css'),
                                    ('/assets/js/app.js', 'javascript')]:
@@ -77,11 +102,17 @@ def main():
             assert code == 200 and content_type in headers.get('Content-Type', ''), path
             assert len(body) > 100, f'Empty or incomplete asset: {path}'
         for record in (ROOT / 'alternatives/articles').glob('*.php'):
-            if "'status' => 'published'" not in record.read_text():
+            source = record.read_text()
+            if not re.search(r"'status'\s*=>\s*'published'", source):
                 continue
-            path = f'/alternatives/{record.stem}/'
+            tool_slug = re.search(r"'tool_slug'\s*=>\s*'([a-z0-9-]+)'", source)
+            path = f'/{tool_slug.group(1)}/alternatives/' if tool_slug else f'/alternatives/{record.stem}/'
             code, _, html = get(path)
             assert code == 200 and Page(html).h1 == 1, path
+            parsed = Page(html)
+            assert parsed.canonical == f'https://toolboxkart.tech{path}', path
+            graph = next(item['@graph'] for item in parsed.schemas if '@graph' in item)
+            assert any(item.get('@type') == 'BreadcrumbList' for item in graph), path
             assert f'href="{path}"' in get('/alternatives/')[2], path
         for slug, status, date in [('qa-alternative-one', 'published', '2026-01-01'),
                                    ('qa-alternative-two', 'published', '2026-01-02'),

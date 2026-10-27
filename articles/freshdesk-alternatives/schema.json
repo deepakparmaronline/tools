@@ -1,0 +1,128 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/freshdesk/alternatives/#article",
+      "headline": "8 Freshdesk Alternatives for Support Teams in 2026",
+      "description": "Compare Freshdesk alternatives by support model, pricing, channels, AI costs and migration needs to find the best help desk for your team before switching.",
+      "datePublished": "2026-10-28",
+      "dateModified": "2026-10-28",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/freshdesk/alternatives/",
+      "url": "https://toolboxkart.tech/freshdesk/alternatives/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Freshdesk",
+          "item": "https://toolboxkart.tech/freshdesk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Alternatives",
+          "item": "https://toolboxkart.tech/freshdesk/alternatives/"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://toolboxkart.tech/freshdesk/alternatives/#alternatives",
+      "name": "8 Freshdesk Alternatives for Support Teams in 2026",
+      "numberOfItems": 8,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Zendesk",
+            "url": "https://www.zendesk.com/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Zoho Desk",
+            "url": "https://www.zoho.com/desk/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Help Scout",
+            "url": "https://www.helpscout.com/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Front",
+            "url": "https://front.com/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "HubSpot Service Hub",
+            "url": "https://www.hubspot.com/products/service"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Intercom",
+            "url": "https://www.intercom.com/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Gorgias",
+            "url": "https://www.gorgias.com/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "LiveAgent",
+            "url": "https://www.liveagent.com/"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -13,6 +13,7 @@ CONTENT GUIDE FOR THE ALTERNATIVES SITE
 - Use tables for comparisons and prices. Use bullets for pros and cons.
 - Use the current year from the system date in titles when a year helps. Update it when content is refreshed.
 - Write fresh sentences. Never copy text from any website. Do not quote more than a few words.
+- Do not use a templatized article by replacing product names. Every review, pricing guide, how-to guide, alternatives article and comparison must use product-specific evidence, examples, trade-offs, section order and wording. Shared site layout and technical standards may stay consistent; the article itself must not read like a recycled version of another tool page.
 
 3. HONESTY AND SOURCES (MOST IMPORTANT)
 
@@ -64,7 +65,10 @@ Primary keyword: "best [category] software". Length 2,000 to 3,200 words. Order:
 - One H1. Title under 60 characters. Meta description 140 to 160 characters, plain, with the keyword.
 - Slug: lowercase, short, no dates, no stop words unless needed.
 - Visible "Last updated" date. Breadcrumbs on every page. Canonical tag on every page.
-- JSON LD schema: Article (with author and dates) and BreadcrumbList on all pages. SoftwareApplication on the tool hub with no rating. ItemList on alternatives and category pages. FAQPage is optional.
+- JSON-LD schema: Article (with author and dates) and BreadcrumbList on every applicable indexable page. BreadcrumbList is mandatory for future tool hubs, reviews, pricing guides, how-to guides, alternatives articles and comparisons.
+- Visible breadcrumbs must match the schema trail and real URL hierarchy. Tool hub: Home > Tool. Pricing: Home > Tool > Pricing. How-to: Home > Tool > How to Use. Review: Home > Tool > Review. Alternatives: Home > Tool > Alternatives. Comparison: Home > Comparisons > Tool A vs Tool B. Legacy pages keep their established hierarchy.
+- SoftwareApplication on tool hubs when product facts are verified, without fabricated ratings. ItemList on alternatives pages only when it matches the visible alternatives and order. HowTo may be added to a how-to guide when its steps match the visible instructions. FAQPage is optional and must match visible FAQs. Never add Review or AggregateRating schema without real, documented review evidence.
+- Use semantic HTML, a single H1, logical H2/H3 headings, accessible links and tables with header cells. Long pages should have a working table of contents. Load the correct shared CSS, use scoped page styles, and make wide tables horizontally scrollable on mobile. Verify that styles actually render, not just that a stylesheet link exists.
 - Images: only use images the site owner provided or simple diagrams you create. Add alt text. No tool logos unless provided.
 
 6. WRITING FOR AI SEARCH
@@ -77,7 +81,7 @@ Primary keyword: "best [category] software". Length 2,000 to 3,200 words. Order:
 
 7. INTERNAL LINKING
 
-- Every page links to its tool hub, the category page (if live), and 2 sibling pages of the same tool.
+- Every page links to its tool hub, the category page (if live), and 2 sibling pages of the same tool. Use the permanent tool-first URLs: `/{tool}/`, `/{tool}/alternatives/`, `/{tool}/review/`, `/{tool}/pricing/`, and `/{tool}/how-to-use/`. Comparisons use `/compare/{tool}-vs-{other}/`. Preserve legacy URLs unless an explicit migration is authorized.
 - The tool hub links to all 5 sibling pages and the category page.
 - Review, pricing, how-to, alternatives and comparison pages must cross-link naturally to the relevant live pages in the same cluster. A review should link to the hub, pricing, how-to, alternatives and comparison where relevant. Pricing and how-to pages should link back to the review and alternatives pages, plus the hub and comparison when useful.
 - An alternatives page links to the review page of every alternative that exists on the site. Do not link to pages that do not exist.
@@ -85,6 +89,7 @@ Primary keyword: "best [category] software". Length 2,000 to 3,200 words. Order:
 - When a new tool goes live: go back through live pages in the same category. Where a page mentions the new tool, add a natural link. Add the tool to the category page. Update any alternatives page that lists the tool.
 - 3 to 8 internal links in the body of each page. Descriptive anchor text. Vary the anchors.
 - No orphan pages. Every page is reachable within 3 clicks of the home page.
+- If a relevant comparison already exists for two tools, reuse that permanent URL and update its links/content where needed. Do not create a reverse-order duplicate comparison just to complete the second tool's cluster.
 
 8. XML SITEMAP RULES
 
@@ -107,4 +112,4 @@ Primary keyword: "best [category] software". Length 2,000 to 3,200 words. Order:
 - No text copied from other sites. No large repeated blocks between pages of the same tool.
 - Each page has a unique title, meta description and primary keyword.
 - All internal links work. The build passes.
-- The sitemap is updated and valid. If a check fails, fix it. If the tool facts cannot be verified, do not publish the tool. Mark it "needs\_review" in the queue and move to the next tool.   |&#x20;
+- The sitemap is updated and valid. If a check fails, fix it. If a non-essential product fact cannot be verified, omit it or say public details were not found and continue. Use "needs_review" only when product identity or a material requirement remains unresolved after research.   |&#x20;

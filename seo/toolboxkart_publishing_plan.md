@@ -20,7 +20,7 @@ One tool is one content cluster. A cluster gives a reader every major decision a
 | Comparison | Choose between two tools | `[tool] vs [competitor]` |
 | Category pillar | Compare the strongest tools in one category | `best [category] software` |
 
-Each page must have a different primary keyword and a distinct purpose. Facts must remain consistent across the cluster.
+Each page must have a different primary keyword and a distinct purpose. Facts must remain consistent across the cluster. Do not recycle an earlier article by swapping product names: the evidence, examples, trade-offs, section order and writing must fit the specific tool and search intent.
 
 ## Fixed selection system
 
@@ -36,7 +36,7 @@ The complete one-time Semrush research remains in `alternatives list.md`, and `s
 
 ## Scheduled workflow
 
-One cluster may take several runs, but do not repeatedly stop at drafts when the complete cluster can be finished. Use public SERPs to fill search-intent gaps, never invent metrics, and omit unsupported details. The user performs live verification after auto-deployment; a matching quality workflow pass is the publication gate.
+One cluster may take several runs, but do not repeatedly stop at drafts when the complete cluster can be finished. Use public SERPs to fill search-intent gaps, never invent metrics, and omit unsupported details. The user performs live verification after auto-deployment; a matching quality workflow pass is the publication gate. Every applicable indexable cluster page must have visible breadcrumbs and matching `BreadcrumbList` JSON-LD. Use semantic HTML, correct CSS, responsive tables and appropriate page-specific schema. Reuse an existing comparison URL rather than creating a reverse-order duplicate.
 
 ### 1. Establish the work item
 

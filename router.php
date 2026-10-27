@@ -154,16 +154,37 @@ if (isset($softwareLegacyRedirects[$path])) {
     exit;
 }
 
-// Zendesk's migrated alternatives and review pages.
-if ($path === '/zendesk/alternatives/' || $path === '/zendesk/alternatives') {
-    if ($path !== '/zendesk/alternatives/') { header('Location: /zendesk/alternatives/', true, 301); exit; }
-    $_GET['slug'] = 'zendesk-alternatives';
-    require __DIR__.'/alternatives/article.php';
-    return;
-}
-if ($path === '/zendesk/review/' || $path === '/zendesk/review') {
-    if ($path !== '/zendesk/review/') { header('Location: /zendesk/review/', true, 301); exit; }
-    require __DIR__.'/reviews/zendesk-review/index.php';
+// Tool-first software cluster routes. Legacy URLs remain handled by their existing redirects.
+if (preg_match('#^/([a-z0-9-]+)/(alternatives|review)/?$#D', $path, $clusterMatches)) {
+    require_once __DIR__.'/includes/bootstrap.php';
+    $toolSlug = $clusterMatches[1];
+    $clusterType = $clusterMatches[2];
+    $clusterCanonicalPath = '/'.$toolSlug.'/'.$clusterType.'/';
+    if ($path !== $clusterCanonicalPath) {
+        header('Location: '.$clusterCanonicalPath, true, 301);
+        exit;
+    }
+    if ($clusterType === 'alternatives') {
+        $articleSlug = $toolSlug.'-alternatives';
+        $article = alternative_articles()[$articleSlug] ?? null;
+        if (!$article || alternative_path($article) !== $clusterCanonicalPath) {
+            http_response_code(404);
+            require __DIR__.'/404.php';
+            return;
+        }
+        $_GET['slug'] = $articleSlug;
+        require __DIR__.'/alternatives/article.php';
+        return;
+    }
+    $reviewSlug = $toolSlug.'-review';
+    $review = post_by_slug($reviewSlug);
+    $reviewFile = __DIR__.'/reviews/'.$reviewSlug.'/index.php';
+    if (!$review || post_url($review) !== url($clusterCanonicalPath) || !is_file($reviewFile)) {
+        http_response_code(404);
+        require __DIR__.'/404.php';
+        return;
+    }
+    require $reviewFile;
     return;
 }
 

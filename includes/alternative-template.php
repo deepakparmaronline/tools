@@ -6,12 +6,29 @@ $canonical = alternative_url($alternative);
 $ogType = 'article';
 $socialImage = alternative_image_url($alternative);
 $socialImageAlt = $alternative['image_alt'] ?? $alternative['title'];
-$schema = ['@type'=>'Article','headline'=>$alternative['title'],'description'=>$pageDescription,'datePublished'=>$alternative['date'],'dateModified'=>$alternative['updated'],'author'=>['@type'=>'Person','name'=>$alternative['author'],'url'=>url('about-deepak-parmar/'),'image'=>url('images/deepak-parmar.jpeg'),'sameAs'=>['https://www.linkedin.com/in/deepakparmaronline/','https://www.youtube.com/@deepakparmaronline'],'jobTitle'=>'SEO specialist and technology writer'],'publisher'=>['@type'=>'Organization','name'=>SITE_NAME,'url'=>SITE_URL],'mainEntityOfPage'=>$canonical,'url'=>$canonical];
+$schema = ['@type'=>'Article','@id'=>$canonical.'#article','headline'=>$alternative['title'],'description'=>$pageDescription,'datePublished'=>$alternative['date'],'dateModified'=>$alternative['updated'],'author'=>['@type'=>'Person','name'=>$alternative['author'],'url'=>url('about-deepak-parmar/'),'image'=>url('images/deepak-parmar.jpeg'),'sameAs'=>['https://www.linkedin.com/in/deepakparmaronline/','https://www.youtube.com/@deepakparmaronline'],'jobTitle'=>'SEO specialist and technology writer'],'publisher'=>['@type'=>'Organization','name'=>SITE_NAME,'url'=>SITE_URL],'mainEntityOfPage'=>$canonical,'url'=>$canonical];
 if ($socialImage) $schema['image'] = ['@type'=>'ImageObject','url'=>$socialImage,'caption'=>$socialImageAlt];
-$extraHead = '<meta property="article:published_time" content="'.e($alternative['date']).'"><meta property="article:modified_time" content="'.e($alternative['updated']).'">'.jsonld(['@context'=>'https://schema.org','@graph'=>[$schema,breadcrumbs([['name'=>'Home','url'=>SITE_URL],['name'=>'Alternatives','url'=>url('alternatives/')],['name'=>$alternative['title'],'url'=>$canonical]])]]);
+$toolSlug = is_string($alternative['tool_slug'] ?? null) ? $alternative['tool_slug'] : '';
+$toolName = trim((string)($alternative['tool_name'] ?? ($toolSlug !== '' ? ucwords(str_replace('-', ' ', $toolSlug)) : '')));
+$breadcrumbItems = [['name'=>'Home','url'=>SITE_URL]];
+if ($toolSlug !== '' && preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*$/D', $toolSlug)) {
+    $breadcrumbItems[] = ['name'=>$toolName,'url'=>url($toolSlug.'/')];
+    $breadcrumbItems[] = ['name'=>'Alternatives','url'=>$canonical];
+} else {
+    $breadcrumbItems[] = ['name'=>'Alternatives','url'=>url('alternatives/')];
+    $breadcrumbItems[] = ['name'=>$alternative['title'],'url'=>$canonical];
+}
+$schemaGraph = [$schema,breadcrumbs($breadcrumbItems)];
+$itemList = [];
+foreach (is_array($alternative['item_list'] ?? null) ? $alternative['item_list'] : [] as $item) {
+    if (!is_array($item) || !is_string($item['name'] ?? null) || !is_string($item['url'] ?? null) || !filter_var($item['url'], FILTER_VALIDATE_URL) || !str_starts_with($item['url'], 'https://')) continue;
+    $itemList[] = ['@type'=>'ListItem','position'=>count($itemList)+1,'item'=>['@type'=>'SoftwareApplication','name'=>$item['name'],'url'=>$item['url']]];
+}
+if ($itemList) $schemaGraph[] = ['@type'=>'ItemList','@id'=>$canonical.'#alternatives','name'=>$alternative['title'],'numberOfItems'=>count($itemList),'itemListElement'=>$itemList];
+$extraHead = '<meta property="article:published_time" content="'.e($alternative['date']).'"><meta property="article:modified_time" content="'.e($alternative['updated']).'">'.jsonld(['@context'=>'https://schema.org','@graph'=>$schemaGraph]);
 require __DIR__.'/header.php';
 ?>
-<header class="article-head"><div class="container"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/alternatives/">Alternatives</a><span aria-hidden="true">›</span><span><?=e($alternative['title'])?></span></nav><span class="eyebrow"><?=e($alternative['tag'])?></span><h1><?=e($alternative['title'])?></h1><p><?=e($pageDescription)?></p><div class="article-meta"><span>By <strong><a href="/about-deepak-parmar/"><?=e($alternative['author'])?></a></strong></span><span>Published <time datetime="<?=e($alternative['date'])?>"><?=e(fmt_date($alternative['date']))?></time></span><?php if ($alternative['updated'] !== $alternative['date']): ?><span>Updated <time datetime="<?=e($alternative['updated'])?>"><?=e(fmt_date($alternative['updated']))?></time></span><?php endif; ?></div></div></header>
+<header class="article-head"><div class="container"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><?php if ($toolSlug !== '' && preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*$/D', $toolSlug)): ?><a href="<?=e('/'.$toolSlug.'/')?>"><?=e($toolName)?></a><span aria-hidden="true">›</span><span>Alternatives</span><?php else: ?><a href="/alternatives/">Alternatives</a><span aria-hidden="true">›</span><span><?=e($alternative['title'])?></span><?php endif; ?></nav><span class="eyebrow"><?=e($alternative['tag'])?></span><h1><?=e($alternative['title'])?></h1><p><?=e($pageDescription)?></p><div class="article-meta"><span>By <strong><a href="/about-deepak-parmar/"><?=e($alternative['author'])?></a></strong></span><span>Published <time datetime="<?=e($alternative['date'])?>"><?=e(fmt_date($alternative['date']))?></time></span><?php if ($alternative['updated'] !== $alternative['date']): ?><span>Last updated <time datetime="<?=e($alternative['updated'])?>"><?=e(fmt_date($alternative['updated']))?></time></span><?php else: ?><span>Last updated <time datetime="<?=e($alternative['date'])?>"><?=e(fmt_date($alternative['date']))?></time></span><?php endif; ?></div></div></header>
 <div class="container article-layout alternative-layout"><article class="article-body">
 <?php if ($socialImage): ?><img class="alternative-featured-image" src="<?=e($socialImage)?>" alt="<?=e($socialImageAlt)?>" width="<?=e((string)($alternative['image_width'] ?? 1200))?>" height="<?=e((string)($alternative['image_height'] ?? 675))?>" fetchpriority="high" decoding="async"><?php endif; ?>
 <?=$alternative['content']?>
