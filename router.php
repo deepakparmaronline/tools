@@ -57,6 +57,25 @@ if (preg_match('#^/alternatives(?:/index\.php)?/?$#', $path)) {
     return;
 }
 
+// Freshdesk alternatives and review use the tool-first URL structure.
+if ($path === '/freshdesk/alternatives' || $path === '/freshdesk/alternatives/') {
+    if ($path !== '/freshdesk/alternatives/') {
+        header('Location: /freshdesk/alternatives/', true, 301);
+        exit;
+    }
+    $_GET['slug'] = 'freshdesk-alternatives';
+    require __DIR__.'/alternatives/article.php';
+    return;
+}
+if ($path === '/freshdesk/review' || $path === '/freshdesk/review/') {
+    if ($path !== '/freshdesk/review/') {
+        header('Location: /freshdesk/review/', true, 301);
+        exit;
+    }
+    require __DIR__.'/reviews/freshdesk-review/index.php';
+    return;
+}
+
 // Zendesk alternatives migrated to the tool-first URL.
 if ($path === '/zendesk/alternatives' || $path === '/zendesk/alternatives/') {
     if ($path !== '/zendesk/alternatives/') {
