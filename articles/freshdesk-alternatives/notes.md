@@ -20,6 +20,7 @@ Current public results tend to list 8 to 16 products with price tables and short
 - Freshdesk and Freshdesk Omni are described as different products.
 - Do not describe the 500 AI sessions as a recurring monthly allowance because the official pricing table does not say that.
 - Freshdesk ticket-list export is not described as a full historical conversation export.
+- Freshworks' current product updates say Free Program switching is no longer self-serve; do not tell readers to activate it through the old UI flow.
 - No hands-on testing, customer ratings or fabricated pros/cons.
 - FAQs are based on common public search intent and official documentation, not claimed as copied Semrush PAA questions.
 - Keep this article unique. Do not reuse its sections as a template for future tools.
