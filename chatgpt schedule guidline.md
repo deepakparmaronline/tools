@@ -59,7 +59,7 @@ Create or update the queued tool's complete cluster according to `seo/content_gu
 - Review page
 - Pricing page
 - How to use page
-- One comparison page selected from Semrush comparison volume, or the top alternatives pick when no comparison keyword has volume
+- One comparison page selected from committed comparison keyword evidence when available, or the strongest relevant alternative when no comparison keyword is saved. Reuse an existing comparison for the same pair and do not create a reversed duplicate.
 - Category pillar update when the publication threshold is met
 
 Existing legacy Alternatives pages keep their current permanent URLs. Do not rename or remove them. Link them naturally into the new cluster where useful, and do not create duplicate pages that target the same primary keyword.
