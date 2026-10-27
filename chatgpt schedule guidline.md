@@ -5,12 +5,12 @@
 ## 1. Repository and branch rules
 
 - Repository: `deepakparmaronline/tools`.
-- Work on the existing `main` branch and preserve the custom PHP site.
+- Publish only to `main` and preserve the custom PHP site. When atomic tree/commit/ref tools are available, use them. If they are not available, stage the complete cluster on a temporary branch and squash-merge it as one reviewed content commit to `main`.
 - Pull the latest `main` before every run.
 - Preserve existing non-software pages. Software-cluster URLs use the permanent tool-first structure: `/{tool}/`, `/{tool}/alternatives/`, `/{tool}/review/`, `/{tool}/pricing/`, and `/{tool}/how-to-use/`. Comparisons remain `/compare/{tool}-vs-{other}/` unless explicitly migrated.
 - Do not add a navigation link to a route that is not live.
 - Commit and push only reviewed changes needed for the current run.
-- Hostinger deploys automatically from GitHub `main`. Verify the live result after pushing.
+- Hostinger deploys automatically from GitHub `main`. The owner handles live HTTP verification; never claim it was checked when it was not, and never block a complete content commit because live access is unavailable.
 
 ## 2. Required files to read at the start of every run
 
@@ -45,24 +45,12 @@ If a required file is missing or unreadable, stop before publishing and report t
 - Read the selected row in `seo/tool_publishing_queue.md` and its matching full row in the 2026-10-24 Semrush snapshot in `alternatives list.md`.
 - Use only the committed search volume, keyword difficulty, CPC, intent, trend, and SERP features. Never invent a missing metric, variant, query, or People Also Ask question.
 - For the comparison page, use a comparison query already committed in the repository. If none is committed, use the strongest relevant alternative supported by the cluster brief, as allowed by `seo/content_guide.md`.
-- Missing Semrush access is not a blocker because the schedule must not use Semrush. If missing committed search evidence prevents a required page from passing the quality gate, mark the row `needs_review`, record what is missing, and continue with the next queued row.
+- Do not use Semrush. If committed metrics or exact PAA questions are missing, preserve the saved fields and use public SERPs to understand intent, related questions, result types and competitor coverage. Never invent metrics or claim a question is PAA without evidence. Ordinary research gaps are not blockers: omit unsupported claims and continue. Reserve `needs_review` for a genuine unresolved product identity, safety issue, or material core fact that cannot be verified.
 - Search research can be refreshed only in a separate owner-authorized task that saves the results in GitHub before a scheduled run uses them.
 
 ## 5. Build the complete cluster
 
-The complete cluster may span several scheduled runs. Scheduled runs are bounded, so each run must finish one safe checkpoint instead of repeatedly attempting the whole cluster and saving nothing.
-
-Use these checkpoints in order:
-
-1. Evidence ledger and cluster brief.
-2. Shared routing, template, registry and test support that the tool needs.
-3. Tool hub and pricing draft.
-4. Review and how-to draft.
-5. Alternatives and comparison draft.
-6. Cross-page consistency, internal links, registration, sitemap and public pillar integration.
-7. GitHub quality workflow, publication and live verification.
-
-At the end of every run, save the completed checkpoint and the exact next checkpoint in `articles/progress.md`. Keep the queue row `in_progress` until checkpoint 7 succeeds. Draft content must remain unregistered, unlinked and excluded from every public index and sitemap. Do not mark a partial cluster published. If a checkpoint is still too large for one run, finish one named file or one focused infrastructure change, record it and resume the same checkpoint next time.
+Finish the selected tool cluster end-to-end in the current run whenever the connected GitHub tools can safely support it. Do not stop at a draft checkpoint or leave ordinary research gaps as blockers. Research, write, validate and cross-link every required page; keep all new records unregistered until the complete cluster is ready. Then register the finished pages, update indexes and sitemap discovery, and merge the reviewed content as one commit to `main`. Keep the queue row `in_progress` until that content commit's matching quality workflow passes. If a genuine tool or API limitation makes completion impossible, save exact progress and explain the specific limitation, but do not use routine research gaps as a reason to stop.
 
 Create or update the queued tool's complete cluster according to `seo/content_guide.md` and `seo/toolboxkart_publishing_plan.md`:
 
@@ -99,7 +87,7 @@ Tool hubs, pricing guides, how-to guides, comparisons, and category pillars are 
 - Put a linked `Checked on [date]` note next to every price, plan detail, and material limit.
 - Do not claim testing or hands-on use unless the repository contains confirmed test notes from the owner.
 - Do not invent ratings, screenshots, user counts, quotes, discounts, pros, cons, or affiliate relationships.
-- If a material fact cannot be verified, leave it out or mark the tool `needs_review` rather than publish unsupported content.
+- If a material detail cannot be verified, omit it or say the public details were not found, then continue with supported content. Do not mark a whole tool `needs_review` for an ordinary missing price, feature limit or metric.
 - Paid placement never changes editorial ranking. Any later paid link must use `rel="sponsored"` and a clear disclosure.
 
 ## 7. Quality gate
@@ -111,7 +99,8 @@ Before committing:
 - Visually inspect the rendered page template against an existing correctly formatted page of the same type. Confirm the page loads its required stylesheet (for example, `assets/css/publication.css` for standalone publication pages), the table of contents renders as a vertical list rather than concatenated inline links, tables are readable and horizontally scrollable on mobile, and author/date/breadcrumb blocks have the intended spacing.
 - Check the final rendered HTML and CSS together, not only the source text. Do not publish a page with missing styles, broken heading anchors, jammed navigation/TOC links, unstyled tables, or overflow on mobile.
 - Confirm every live tool-cluster page has natural cross-links to the hub and at least two relevant live siblings. Reviews, pricing, how-to, alternatives and comparison pages should connect to each other wherever useful; never link to a draft or missing route.
-- Confirm one unique primary keyword, title, meta description, canonical, H1, visible update date, breadcrumbs, and required schema per page.
+- Confirm one unique primary keyword, title, meta description, canonical, H1, visible update date, visible breadcrumbs and matching BreadcrumbList JSON-LD per applicable page. Breadcrumb labels, positions and canonical URLs must match.
+- Each article must be original to its product and intent. Do not swap names into a previous tool's template. Use semantic HTML, the correct shared CSS, readable tables and a properly spaced vertical TOC; verify desktop and mobile rendering.
 - Confirm no banned phrases, em dashes used as punctuation, copied text, fake testing claims, or unsupported facts.
 - Confirm internal links point only to live or included pages.
 - Confirm all relevant PHP syntax checks and repository tests pass.
@@ -150,7 +139,7 @@ Update the queue or progress record with:
 - Any identity, duplicate, skipped, blocked, or `needs_review` issue.
 - Every page created or updated.
 - Commit SHA and GitHub link.
-- Test, build, sitemap, and live verification status.
+- Changed files, test/build/sitemap status, matching quality workflow status, and live-verification handoff.
 - The exact next `queued` row for the following run.
 
 Mark the queue row `published` after the complete reviewed cluster and its registry, public index and child-sitemap entries are committed to main and the matching quality workflow passes. Hostinger auto-deploys from main; the user performs live verification. Do not hold publication for unavailable live HTTP checks.
