@@ -1,5 +1,6 @@
 """Integration checks with temporary editorial fixtures; no articles are published."""
 import json
+import re
 from pathlib import Path
 import socket
 import subprocess
@@ -101,11 +102,17 @@ def main():
             assert code == 200 and content_type in headers.get('Content-Type', ''), path
             assert len(body) > 100, f'Empty or incomplete asset: {path}'
         for record in (ROOT / 'alternatives/articles').glob('*.php'):
-            if "'status' => 'published'" not in record.read_text():
+            source = record.read_text()
+            if not re.search(r"'status'\s*=>\s*'published'", source):
                 continue
-            path = f'/alternatives/{record.stem}/'
+            tool_slug = re.search(r"'tool_slug'\s*=>\s*'([a-z0-9-]+)'", source)
+            path = f'/{tool_slug.group(1)}/alternatives/' if tool_slug else f'/alternatives/{record.stem}/'
             code, _, html = get(path)
             assert code == 200 and Page(html).h1 == 1, path
+            parsed = Page(html)
+            assert parsed.canonical == f'https://toolboxkart.tech{path}', path
+            graph = next(item['@graph'] for item in parsed.schemas if '@graph' in item)
+            assert any(item.get('@type') == 'BreadcrumbList' for item in graph), path
             assert f'href="{path}"' in get('/alternatives/')[2], path
         for slug, status, date in [('qa-alternative-one', 'published', '2026-01-01'),
                                    ('qa-alternative-two', 'published', '2026-01-02'),
