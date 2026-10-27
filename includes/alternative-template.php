@@ -6,12 +6,58 @@ $canonical = alternative_url($alternative);
 $ogType = 'article';
 $socialImage = alternative_image_url($alternative);
 $socialImageAlt = $alternative['image_alt'] ?? $alternative['title'];
-$schema = ['@type'=>'Article','headline'=>$alternative['title'],'description'=>$pageDescription,'datePublished'=>$alternative['date'],'dateModified'=>$alternative['updated'],'author'=>['@type'=>'Person','name'=>$alternative['author'],'url'=>url('about-deepak-parmar/'),'image'=>url('images/deepak-parmar.jpeg'),'sameAs'=>['https://www.linkedin.com/in/deepakparmaronline/','https://www.youtube.com/@deepakparmaronline'],'jobTitle'=>'SEO specialist and technology writer'],'publisher'=>['@type'=>'Organization','name'=>SITE_NAME,'url'=>SITE_URL],'mainEntityOfPage'=>$canonical,'url'=>$canonical];
+
+$toolSlug = alternative_tool_slug($alternative);
+$breadcrumbItems = [['name'=>'Home','url'=>SITE_URL]];
+$breadcrumbLabels = [['name'=>'Home','href'=>'/']];
+if ($toolSlug !== null) {
+    $toolHub = null;
+    foreach (software_pages('tool_hubs') as $hub) {
+        if (($hub['url'] ?? null) === '/'.$toolSlug.'/') { $toolHub = $hub; break; }
+    }
+    $toolName = trim(is_string($toolHub['software_name'] ?? null) ? $toolHub['software_name'] : '');
+    if ($toolName === '') $toolName = ucwords(str_replace('-', ' ', $toolSlug));
+    $breadcrumbItems[] = ['name'=>$toolName,'url'=>url($toolSlug.'/')];
+    $breadcrumbItems[] = ['name'=>'Alternatives','url'=>$canonical];
+    $breadcrumbLabels[] = ['name'=>$toolName,'href'=>'/'.$toolSlug.'/'];
+    $breadcrumbLabels[] = ['name'=>'Alternatives','href'=>null];
+} else {
+    $breadcrumbItems[] = ['name'=>'Alternatives','url'=>url('alternatives/')];
+    $breadcrumbItems[] = ['name'=>$alternative['title'],'url'=>$canonical];
+    $breadcrumbLabels[] = ['name'=>'Alternatives','href'=>'/alternatives/'];
+    $breadcrumbLabels[] = ['name'=>$alternative['title'],'href'=>null];
+}
+
+$schema = ['@type'=>'Article','@id'=>$canonical.'#article','headline'=>$alternative['title'],'description'=>$pageDescription,'datePublished'=>$alternative['date'].'T00:00:00+05:30','dateModified'=>$alternative['updated'].'T00:00:00+05:30','author'=>['@type'=>'Person','name'=>$alternative['author'],'url'=>url('about-deepak-parmar/'),'image'=>url('images/deepak-parmar.jpeg'),'sameAs'=>['https://www.linkedin.com/in/deepakparmaronline/','https://www.youtube.com/@deepakparmaronline'],'jobTitle'=>'SEO specialist and technology writer'],'publisher'=>['@type'=>'Organization','name'=>SITE_NAME,'url'=>SITE_URL],'mainEntityOfPage'=>$canonical,'url'=>$canonical];
 if ($socialImage) $schema['image'] = ['@type'=>'ImageObject','url'=>$socialImage,'caption'=>$socialImageAlt];
-$extraHead = '<meta property="article:published_time" content="'.e($alternative['date']).'"><meta property="article:modified_time" content="'.e($alternative['updated']).'">'.jsonld(['@context'=>'https://schema.org','@graph'=>[$schema,breadcrumbs([['name'=>'Home','url'=>SITE_URL],['name'=>'Alternatives','url'=>url('alternatives/')],['name'=>$alternative['title'],'url'=>$canonical]])]]);
+
+$schemaGraph = [$schema, breadcrumbs($breadcrumbItems)];
+if (is_array($alternative['item_list'] ?? null)) {
+    $elements = [];
+    foreach (array_values($alternative['item_list']) as $index => $entry) {
+        if (!is_array($entry) || !is_string($entry['name'] ?? null) || trim($entry['name']) === '' || !filter_var($entry['url'] ?? '', FILTER_VALIDATE_URL)) continue;
+        $elements[] = ['@type'=>'ListItem','position'=>count($elements)+1,'name'=>$entry['name'],'url'=>$entry['url']];
+    }
+    if ($elements) $schemaGraph[] = ['@type'=>'ItemList','name'=>$alternative['title'],'itemListElement'=>$elements];
+}
+if (is_array($alternative['faq_schema'] ?? null)) {
+    $questions = [];
+    foreach ($alternative['faq_schema'] as $entry) {
+        if (!is_array($entry) || !is_string($entry['question'] ?? null) || !is_string($entry['answer'] ?? null)) continue;
+        $questions[] = ['@type'=>'Question','name'=>$entry['question'],'acceptedAnswer'=>['@type'=>'Answer','text'=>$entry['answer']]];
+    }
+    if ($questions) $schemaGraph[] = ['@type'=>'FAQPage','mainEntity'=>$questions];
+}
+
+$extraHead = '<meta property="article:published_time" content="'.e($alternative['date'].'T00:00:00+05:30').'"><meta property="article:modified_time" content="'.e($alternative['updated'].'T00:00:00+05:30').'">'.jsonld(['@context'=>'https://schema.org','@graph'=>$schemaGraph]);
 require __DIR__.'/header.php';
 ?>
-<header class="article-head"><div class="container"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/alternatives/">Alternatives</a><span aria-hidden="true">›</span><span><?=e($alternative['title'])?></span></nav><span class="eyebrow"><?=e($alternative['tag'])?></span><h1><?=e($alternative['title'])?></h1><p><?=e($pageDescription)?></p><div class="article-meta"><span>By <strong><a href="/about-deepak-parmar/"><?=e($alternative['author'])?></a></strong></span><span>Published <time datetime="<?=e($alternative['date'])?>"><?=e(fmt_date($alternative['date']))?></time></span><?php if ($alternative['updated'] !== $alternative['date']): ?><span>Updated <time datetime="<?=e($alternative['updated'])?>"><?=e(fmt_date($alternative['updated']))?></time></span><?php endif; ?></div></div></header>
+<header class="article-head"><div class="container"><nav class="crumbs" aria-label="Breadcrumb">
+<?php foreach ($breadcrumbLabels as $index => $crumb): ?>
+<?php if ($index > 0): ?><span aria-hidden="true">›</span><?php endif; ?>
+<?php if ($index < count($breadcrumbLabels) - 1 && is_string($crumb['href'])): ?><a href="<?=e($crumb['href'])?>"><?=e($crumb['name'])?></a><?php else: ?><span><?=e($crumb['name'])?></span><?php endif; ?>
+<?php endforeach; ?>
+</nav><span class="eyebrow"><?=e($alternative['tag'])?></span><h1><?=e($alternative['title'])?></h1><p><?=e($pageDescription)?></p><div class="article-meta"><span>By <strong><a href="/about-deepak-parmar/"><?=e($alternative['author'])?></a></strong></span><span>Published <time datetime="<?=e($alternative['date'])?>"><?=e(fmt_date($alternative['date']))?></time></span><?php if ($alternative['updated'] !== $alternative['date']): ?><span>Updated <time datetime="<?=e($alternative['updated'])?>"><?=e(fmt_date($alternative['updated']))?></time></span><?php endif; ?></div></div></header>
 <div class="container article-layout alternative-layout"><article class="article-body">
 <?php if ($socialImage): ?><img class="alternative-featured-image" src="<?=e($socialImage)?>" alt="<?=e($socialImageAlt)?>" width="<?=e((string)($alternative['image_width'] ?? 1200))?>" height="<?=e((string)($alternative['image_height'] ?? 675))?>" fetchpriority="high" decoding="async"><?php endif; ?>
 <?=$alternative['content']?>
@@ -21,5 +67,5 @@ require __DIR__.'/header.php';
 <?php
 $related = related_alternative_articles($alternative);
 if ($related): ?>
-<section class="section alt"><div class="container"><div class="section-head"><h2>Related alternative articles</h2></div><div class="blog-grid"><?php render_alternative_cards($related); ?></div></div></section>
+<section class="section alt"><div class="container"><div class="section-head"><h2>Related alternative articles</h2></div><div class="blog-grid"><?php render_alternative_cards($related); ?></div></section>
 <?php endif; unset($post); require __DIR__.'/footer.php'; ?>
