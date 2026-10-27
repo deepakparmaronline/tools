@@ -57,6 +57,17 @@ if (preg_match('#^/alternatives(?:/index\.php)?/?$#', $path)) {
     return;
 }
 
+// Zendesk alternatives migrated to the tool-first URL.
+if ($path === '/zendesk/alternatives' || $path === '/zendesk/alternatives/') {
+    if ($path !== '/zendesk/alternatives/') {
+        header('Location: /zendesk/alternatives/', true, 301);
+        exit;
+    }
+    $_GET['slug'] = 'zendesk-alternatives';
+    require __DIR__.'/alternatives/article.php';
+    return;
+}
+
 if (preg_match('#^/alternatives/([a-z0-9-]+)(?:\.php)?/?$#', $path, $matches)) {
     $_GET['slug'] = $matches[1];
     require __DIR__.'/alternatives/article.php';
