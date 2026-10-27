@@ -68,7 +68,9 @@ def test_software_detail_renderer():
         'title': 'Fixture Software Detail',
         'seo_title': 'Fixture Software Detail',
         'description': 'A sample description for shared software detail rendering.',
-        'url': '/tools/fixture-tool/',
+        'url': '/fixture-tool/',
+        'tool_name': 'Fixture Tool',
+        'additional_schema': [{'@type': 'SoftwareApplication', 'name': 'Fixture Tool'}],
         'date': '2026-10-26',
         'content': '<h2 id="overview">Overview</h2><p>Fixture body text.</p>',
     }
@@ -82,7 +84,7 @@ def test_software_detail_renderer():
     page = Page(html)
     assert page.h1 == 1
     assert page.title == 'Fixture Software Detail | ToolboxKart'
-    assert page.canonical == 'https://toolboxkart.tech/tools/fixture-tool/'
+    assert page.canonical == 'https://toolboxkart.tech/fixture-tool/'
     assert page.description == sample['description']
     assert 'Fixture body text.' in ' '.join(page.text)
     assert 'software-detail.css' in html
@@ -92,12 +94,13 @@ def test_software_detail_renderer():
     assert article['datePublished'] == '2026-10-26T00:00:00+05:30'
     assert article['dateModified'] == '2026-10-26T00:00:00+05:30'
     assert any(item.get('@type') == 'BreadcrumbList' for item in graph)
+    assert any(item.get('@type') == 'SoftwareApplication' for item in graph)
 
     records = {
-        'incomplete': {'url': '/tools/hidden-tool/'},
-        'complete': {'url': '/tools/visible-tool/', 'content': '<h2>Overview</h2><p>Ready.</p>'},
-        'duplicate_h1': {'url': '/tools/bad-tool/', 'content': '<h1>Second heading</h1><p>Body.</p>'},
-        'bad_path': {'url': '/tools/nested/path/', 'content': '<h2>Overview</h2><p>Body.</p>'},
+        'incomplete': {'url': '/hidden-tool/'},
+        'complete': {'url': '/visible-tool/', 'content': '<h2>Overview</h2><p>Ready.</p>'},
+        'duplicate_h1': {'url': '/bad-tool/', 'content': '<h1>Second heading</h1><p>Body.</p>'},
+        'bad_path': {'url': '/nested/path/', 'content': '<h2>Overview</h2><p>Body.</p>'},
         'wrong_prefix': {'url': '/pricing/visible-tool/', 'content': '<h2>Overview</h2><p>Body.</p>'},
         'legacy_versus': {'url': '/versus/freedom-vs-cold-turkey/'},
     }
@@ -173,21 +176,38 @@ def main():
             assert status == 404, f'{path}: expected 404, got {status}'
 
         published_details = {
-            '/zendesk/': 'https://toolboxkart.tech/zendesk/',
-            '/zendesk/pricing/': 'https://toolboxkart.tech/zendesk/pricing/',
-            '/zendesk/how-to-use/': 'https://toolboxkart.tech/zendesk/how-to-use/',
-            '/compare/zendesk-vs-freshdesk/': 'https://toolboxkart.tech/compare/zendesk-vs-freshdesk/',
+            '/zendesk/': ('https://toolboxkart.tech/zendesk/', 'zendesk'),
+            '/zendesk/pricing/': ('https://toolboxkart.tech/zendesk/pricing/', 'zendesk'),
+            '/zendesk/how-to-use/': ('https://toolboxkart.tech/zendesk/how-to-use/', 'zendesk'),
+            '/zendesk/alternatives/': ('https://toolboxkart.tech/zendesk/alternatives/', 'zendesk'),
+            '/freshdesk/': ('https://toolboxkart.tech/freshdesk/', 'freshdesk'),
+            '/freshdesk/pricing/': ('https://toolboxkart.tech/freshdesk/pricing/', 'freshdesk'),
+            '/freshdesk/how-to-use/': ('https://toolboxkart.tech/freshdesk/how-to-use/', 'freshdesk'),
+            '/freshdesk/alternatives/': ('https://toolboxkart.tech/freshdesk/alternatives/', 'freshdesk'),
+            '/compare/zendesk-vs-freshdesk/': ('https://toolboxkart.tech/compare/zendesk-vs-freshdesk/', 'zendesk'),
         }
-        for path, canonical in published_details.items():
+        for path, (canonical, expected_text) in published_details.items():
             html = get(path)
             page = Page(html)
             assert page.h1 == 1, path
             assert page.canonical == canonical, path
-            assert 'zendesk' in ' '.join(page.text).lower(), path
+            assert expected_text in ' '.join(page.text).lower(), path
+            graph = next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
+            assert any(item.get('@type') == 'BreadcrumbList' for item in graph), path
+            if path == '/freshdesk/':
+                app = next(item for item in graph if item.get('@type') == 'SoftwareApplication')
+                assert app['name'] == 'Freshdesk' and 'aggregateRating' not in app, path
+            if path == '/freshdesk/how-to-use/':
+                assert any(item.get('@type') == 'HowTo' for item in graph), path
+            if path.endswith('/alternatives/'):
+                assert any(item.get('@type') == 'ItemList' for item in graph), path
 
         for path in ['/tools/', '/pricing/', '/how-to-use/', '/compare/']:
-            assert 'zendesk' in get(path).lower(), path
-        assert 'zendesk' not in get('/best/').lower()
+            listing = get(path).lower()
+            assert 'zendesk' in listing, path
+            if path != '/compare/': assert 'freshdesk' in listing, path
+        assert 'freshdesk' in get('/compare/').lower()
+        assert 'zendesk' not in get('/best/').lower() and 'freshdesk' not in get('/best/').lower()
 
         expected_sitemap_urls = {
             '/sitemap-tools.xml': 'https://toolboxkart.tech/zendesk/',
@@ -198,6 +218,8 @@ def main():
             '/sitemap-reviews.xml': 'https://toolboxkart.tech/zendesk/review/',
         }
         for path, url in expected_sitemap_urls.items():
+            assert url in get(path), f'{url} missing from {path}'
+        for path, url in [('/sitemap-tools.xml','https://toolboxkart.tech/freshdesk/'),('/sitemap-pricing.xml','https://toolboxkart.tech/freshdesk/pricing/'),('/sitemap-how-to-use.xml','https://toolboxkart.tech/freshdesk/how-to-use/'),('/sitemap-alternatives.xml','https://toolboxkart.tech/freshdesk/alternatives/'),('/sitemap-reviews.xml','https://toolboxkart.tech/freshdesk/review/')]:
             assert url in get(path), f'{url} missing from {path}'
 
         rewrite_rules = (ROOT / '.htaccess').read_text()
