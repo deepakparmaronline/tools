@@ -42,7 +42,7 @@ Primary keyword: "[tool] alternatives". Also cover "[tool] alternative", "free [
 5. Each alternative (6 to 10): best for, what it does, price from, pros, cons, who should skip it, and a link to its review page if it exists.
 6. Migration: what can be imported or exported, from official docs.
 7. How to choose: 4 to 6 simple rules.
-8. FAQ: 4 to 6 questions from People Also Ask data in Semrush.
+8. FAQ: 4 to 6 questions based on verified search intent and official product documentation. Use exact People Also Ask questions only when they are present in committed evidence or directly verified in public SERPs. Do not invent PAA questions or label general questions as PAA.
 9. Checked on date, method note, disclosure.
 
 C. Review page: /[tool]/review/
@@ -55,7 +55,7 @@ E. How to use page: /[tool]/how-to-use/
 Primary keyword: "how to use [tool]". Length 1,200 to 2,000 words. Order: what you need first, quick setup (numbered steps from official docs), common tasks, tips, common mistakes, troubleshooting, links to docs, link to the review. Include only steps you can confirm in the docs.
 
 F. Comparison page: /compare/[tool]-vs-[other]/
-Primary keyword: "[tool] vs [other]". Choose the other tool by the best "X vs Y" volume in Semrush. If none has volume, use the top pick from the alternatives page. Length 1,500 to 2,200 words. Order: verdict first, quick table, then sections for pricing, features, ease of use, integrations, support and best for. Then "Choose [tool] if" and "Choose [other] if". Link to both reviews, pricing pages and alternatives pages.
+Primary keyword: "[tool] vs [other]". Use committed comparison keyword evidence when available; do not open Semrush during scheduled runs. If no comparison query is saved, use the strongest relevant alternative from the alternatives page. Reuse an existing canonical comparison for the same product pair instead of creating a reversed duplicate. Length 1,500 to 2,200 words. Order and section choices must fit the actual products. Link to both hubs, reviews, pricing pages and alternatives pages where those pages exist.
 
 G. Category page (pillar): /best/[category]/
 Primary keyword: "best [category] software". Length 2,000 to 3,200 words. Order: answer first with top picks, comparison table, how the list is chosen (based on sources, no testing claims), a short blurb for each tool with links to its hub and alternatives page, how to choose, FAQ. Create it only when the category has at least HUB\_MIN\_TOOLS published tools. Update it every time a new tool is added to the category.
