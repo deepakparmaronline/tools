@@ -189,6 +189,11 @@ def main():
             assert term in ' '.join(page.text).lower(), path
             graph = next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
             crumbs = next(item for item in graph if item.get('@type') == 'BreadcrumbList')
+            crumb_items = crumbs['itemListElement']
+            assert [item['position'] for item in crumb_items] == list(range(1, len(crumb_items) + 1)), path
+            assert crumb_items[0]['item'] == 'https://toolboxkart.tech/', path
+            assert crumb_items[-1]['item'] == canonical, path
+            assert 'assets/css/software-detail.css' in html, path
             if path == '/freshdesk/':
                 assert [item['name'] for item in crumbs['itemListElement']] == ['Home', 'Software Tool Hubs', 'Freshdesk']
                 assert any(item.get('@type') == 'SoftwareApplication' and item.get('name') == 'Freshdesk' for item in graph)
