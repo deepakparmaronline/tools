@@ -5,7 +5,7 @@ $requestPath=parse_url($_SERVER['REQUEST_URI'] ?? $canonicalPath,PHP_URL_PATH) ?
 if ($requestPath !== $canonicalPath) { header('Location: '.$canonicalPath,true,301); exit; }
 
 $pageTitle='Freshdesk Review: Pricing, AI Costs and Fit | ToolboxKart';
-$pageDescription='A research-based Freshdesk review of ticketing, AI charges, plan limits, workflow strengths and trade-offs, plus who should compare alternatives before switching.';
+$pageDescription='Review Freshdesk ticketing, AI charges, plan limits and workflow trade-offs, with guidance on which support teams should compare alternatives before switching.';
 $canonical=url($canonicalPath);
 $ogType='article';
 $faqItems=[
