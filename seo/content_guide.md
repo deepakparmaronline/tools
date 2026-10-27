@@ -13,6 +13,7 @@ CONTENT GUIDE FOR THE ALTERNATIVES SITE
 - Use tables for comparisons and prices. Use bullets for pros and cons.
 - Use the current year from the system date in titles when a year helps. Update it when content is refreshed.
 - Write fresh sentences. Never copy text from any website. Do not quote more than a few words.
+- Do not recycle a previous tool article by swapping product names. Reviews, pricing pages, how-to guides, alternatives and comparisons must use product-specific facts, examples, section choices and analysis. A consistent site design is fine; repeated generic prose is not.
 
 3. HONESTY AND SOURCES (MOST IMPORTANT)
 
@@ -64,7 +65,8 @@ Primary keyword: "best [category] software". Length 2,000 to 3,200 words. Order:
 - One H1. Title under 60 characters. Meta description 140 to 160 characters, plain, with the keyword.
 - Slug: lowercase, short, no dates, no stop words unless needed.
 - Visible "Last updated" date. Breadcrumbs on every page. Canonical tag on every page.
-- JSON LD schema: Article (with author and dates) and BreadcrumbList on all pages. SoftwareApplication on the tool hub with no rating. ItemList on alternatives and category pages. FAQPage is optional.
+- JSON-LD schema: Article (with author and dates) and BreadcrumbList on all applicable indexable pages. SoftwareApplication on the tool hub with no rating. ItemList on alternatives and category pages. FAQPage is optional when matching visible FAQs exist.
+- Visible breadcrumbs and BreadcrumbList must use the same real hierarchy, labels, sequential positions and canonical URLs. Breadcrumb schema is mandatory for every future article in this workflow.
 - Images: only use images the site owner provided or simple diagrams you create. Add alt text. No tool logos unless provided.
 
 6. WRITING FOR AI SEARCH
@@ -107,4 +109,6 @@ Primary keyword: "best [category] software". Length 2,000 to 3,200 words. Order:
 - No text copied from other sites. No large repeated blocks between pages of the same tool.
 - Each page has a unique title, meta description and primary keyword.
 - All internal links work. The build passes.
+- HTML is semantic and valid, the correct shared CSS is loaded, and tables, TOCs, author/date blocks and breadcrumbs render cleanly on desktop and mobile.
+- BreadcrumbList is present, valid and consistent with the visible breadcrumb trail.
 - The sitemap is updated and valid. If a check fails, fix it. If the tool facts cannot be verified, do not publish the tool. Mark it "needs\_review" in the queue and move to the next tool.   |&#x20;
