@@ -7,7 +7,7 @@
 - Repository: `deepakparmaronline/tools`.
 - Work on the existing `main` branch and preserve the custom PHP site.
 - Pull the latest `main` before every run.
-- Do not delete or redirect existing AI news, ChatGPT, Claude, Tools Guide, Tech, Alternatives, Versus, or Reviews pages.
+- Preserve existing non-software pages. Software-cluster URLs use the permanent tool-first structure: `/{tool}/`, `/{tool}/alternatives/`, `/{tool}/review/`, `/{tool}/pricing/`, and `/{tool}/how-to-use/`. Comparisons remain `/compare/{tool}-vs-{other}/` unless explicitly migrated.
 - Do not add a navigation link to a route that is not live.
 - Commit and push only reviewed changes needed for the current run.
 - Hostinger deploys automatically from GitHub `main`. Verify the live result after pushing.
@@ -107,6 +107,7 @@ Tool hubs, pricing guides, how-to guides, comparisons, and category pillars are 
 Before committing:
 
 - Confirm every page follows its required order and word-count range.
+- Use the permanent tool-first URL structure for every new software cluster. Update the registry, router, canonical, breadcrumbs, internal links, public indexes and sitemaps together. Add 301 redirects for any migrated old URL. Never create new software pages using the legacy `/tools/{tool}/`, `/pricing/{tool}/`, or `/how-to-use/{tool}/` patterns.
 - Visually inspect the rendered page template against an existing correctly formatted page of the same type. Confirm the page loads its required stylesheet (for example, `assets/css/publication.css` for standalone publication pages), the table of contents renders as a vertical list rather than concatenated inline links, tables are readable and horizontally scrollable on mobile, and author/date/breadcrumb blocks have the intended spacing.
 - Check the final rendered HTML and CSS together, not only the source text. Do not publish a page with missing styles, broken heading anchors, jammed navigation/TOC links, unstyled tables, or overflow on mobile.
 - Confirm every live tool-cluster page has natural cross-links to the hub and at least two relevant live siblings. Reviews, pricing, how-to, alternatives and comparison pages should connect to each other wherever useful; never link to a draft or missing route.
