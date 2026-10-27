@@ -2,7 +2,7 @@
 return [
  'status'=>'published',
  'title'=>'8 Zendesk Alternatives for Support Teams in 2026',
- 'seo_title'=>'8 Zendesk Alternatives for Support Teams (2026)',
+ 'seo_title'=>'8 Zendesk Alternatives for Support Teams to Compare (2026)',
  'description'=>'Compare Zendesk alternatives by support workflow, published pricing, team size, channel needs and migration effort before switching help desks.',
  'date'=>'2026-10-27','updated'=>'2026-10-28','tag'=>'Customer support','author'=>'Deepak Parmar','tool_slug'=>'zendesk','tool_name'=>'Zendesk',
  'item_list'=>[['name'=>'Freshdesk','url'=>'https://www.freshworks.com/freshdesk/'],['name'=>'Help Scout','url'=>'https://www.helpscout.com/'],['name'=>'Zoho Desk','url'=>'https://www.zoho.com/desk/'],['name'=>'Intercom','url'=>'https://www.intercom.com/'],['name'=>'Front','url'=>'https://front.com/'],['name'=>'HubSpot Service Hub','url'=>'https://www.hubspot.com/products/service'],['name'=>'Gorgias','url'=>'https://www.gorgias.com/'],['name'=>'Salesforce Service Cloud','url'=>'https://www.salesforce.com/service/']],
