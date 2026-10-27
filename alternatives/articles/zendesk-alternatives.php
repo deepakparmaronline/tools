@@ -5,6 +5,23 @@ return [
  'seo_title'=>'8 Zendesk Alternatives for Support Teams (2026)',
  'description'=>'Compare Zendesk alternatives by support workflow, published pricing, team size, channel needs and migration effort before switching help desks.',
  'date'=>'2026-10-27','updated'=>'2026-10-28','tag'=>'Customer support','author'=>'Deepak Parmar',
+ 'item_list'=>[
+  ['name'=>'Freshdesk','url'=>'https://www.freshworks.com/freshdesk/helpdesk-ticketing/'],
+  ['name'=>'Help Scout','url'=>'https://www.helpscout.com/'],
+  ['name'=>'Zoho Desk','url'=>'https://www.zoho.com/desk/'],
+  ['name'=>'Intercom','url'=>'https://www.intercom.com/'],
+  ['name'=>'Front','url'=>'https://front.com/'],
+  ['name'=>'HubSpot Service Hub','url'=>'https://www.hubspot.com/products/service'],
+  ['name'=>'Gorgias','url'=>'https://www.gorgias.com/'],
+  ['name'=>'Salesforce Service Cloud','url'=>'https://www.salesforce.com/service/'],
+ ],
+ 'faq_schema'=>[
+  ['question'=>'What is the closest alternative to Zendesk?','answer'=>'Freshdesk is a sensible first comparison for conventional ticketing. The best fit depends on plan, channels and migration needs.'],
+  ['question'=>'Which alternatives have a free plan?','answer'=>'Help Scout lists a free plan for up to five users, Zoho Desk a free edition for three users, and HubSpot free service tools for up to two users. Check current limits with each vendor.'],
+  ['question'=>'Is Freshdesk cheaper?','answer'=>'The entry annual prices displayed October 28, 2026 were US$19 per agent/month for Freshdesk Growth and Zendesk Support Team. Suite features, add-ons and AI usage change the total.'],
+  ['question'=>'Can Zendesk tickets be migrated?','answer'=>'Options depend on destination and data type. Review both vendors\' documentation and test a sample before committing.'],
+  ['question'=>'Should I switch only to save money?','answer'=>'Compare seats, usage charges, implementation and migration effort. A lower seat price may not lower total cost if you need extra products or must rebuild workflows.'],
+ ],
  'content'=><<<'HTML'
 <p><strong>Short answer:</strong> Freshdesk is the closest like-for-like alternative to compare first. Help Scout suits teams that prefer a shared inbox, Zoho Desk is worth checking for small teams, and Intercom fits businesses that prioritize customer messaging and outcome-priced AI. Front, HubSpot Service Hub, Gorgias and Salesforce Service Cloud fit more specific collaboration, CRM or ecommerce workflows. The best choice depends on your channels, agent count, automation needs and historical data.</p>
 <h2>Compare Zendesk alternatives</h2><table><thead><tr><th>Tool</th><th>Best for</th><th>Published starting point</th></tr></thead><tbody>
