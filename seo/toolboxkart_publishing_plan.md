@@ -36,7 +36,7 @@ The complete one-time Semrush research remains in `alternatives list.md`, and `s
 
 ## Scheduled workflow
 
-One cluster may take several runs, but do not repeatedly stop at drafts when the complete cluster can be finished. Use public SERPs to fill search-intent gaps, never invent metrics, and omit unsupported details. The user performs live verification after auto-deployment; a matching quality workflow pass is the publication gate.
+Finish the selected cluster end-to-end in the current run whenever the connected tools can safely support it. Do not stop at a draft checkpoint or treat ordinary research gaps as blockers. Use public SERPs to fill search-intent gaps, never invent metrics, and omit unsupported details. The user performs live verification after auto-deployment; a matching quality workflow pass is the publication gate.
 
 ### 1. Establish the work item
 
@@ -56,7 +56,7 @@ Define the audience, category, search intent, switching reasons, who should stay
 
 ### 5. Build or extend the architecture
 
-Preserve the custom PHP architecture and existing Alternatives URLs. Reuse shared components and registries. When a page type does not yet have reusable support, add the smallest shared routing, template, registry, sitemap, and index implementation needed before adding the page. Do not create isolated one-off page systems.
+Preserve the custom PHP architecture and existing permanent URLs unless a migration is explicitly requested. New software clusters use the tool-first paths: /{tool}/, /{tool}/alternatives/, /{tool}/review/, /{tool}/pricing/, and /{tool}/how-to-use/. Comparisons use /compare/{tool}-vs-{other}/. Reuse shared components and registries. When a page type does not yet have reusable support, add the smallest shared routing, template, registry, sitemap, and index implementation needed before adding the page. Do not create isolated one-off page systems.
 
 Use `HUB_MIN_TOOLS = 4` for a category pillar. Before four published tool clusters exist in a category, link to the closest live browse page rather than publishing a thin pillar.
 
