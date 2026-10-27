@@ -194,13 +194,26 @@ def main():
             assert expected_text in ' '.join(page.text).lower(), path
             graph = next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
             assert any(item.get('@type') == 'BreadcrumbList' for item in graph), path
+            breadcrumb = next(item for item in graph if item.get('@type') == 'BreadcrumbList')
+            crumb_names = [item['name'] for item in breadcrumb['itemListElement']]
             if path == '/freshdesk/':
+                assert crumb_names == ['Home', 'Freshdesk'], path
+                assert 150 <= len(page.description) <= 155, path
                 app = next(item for item in graph if item.get('@type') == 'SoftwareApplication')
                 assert app['name'] == 'Freshdesk' and 'aggregateRating' not in app, path
+            if path == '/freshdesk/pricing/':
+                assert crumb_names == ['Home', 'Freshdesk', 'Pricing'], path
+                assert 150 <= len(page.description) <= 155, path
             if path == '/freshdesk/how-to-use/':
+                assert crumb_names == ['Home', 'Freshdesk', 'How to Use'], path
+                assert 150 <= len(page.description) <= 155, path
                 assert any(item.get('@type') == 'HowTo' for item in graph), path
             if path.endswith('/alternatives/'):
                 assert any(item.get('@type') == 'ItemList' for item in graph), path
+                assert crumb_names == ['Home', 'Zendesk' if 'zendesk' in path else 'Freshdesk', 'Alternatives'], path
+            if path == '/compare/zendesk-vs-freshdesk/':
+                assert crumb_names == ['Home', 'Comparisons', 'Zendesk vs Freshdesk: Which Help Desk Fits?'], path
+                assert 150 <= len(page.description) <= 155, path
 
         for path in ['/tools/', '/pricing/', '/how-to-use/', '/compare/']:
             listing = get(path).lower()
