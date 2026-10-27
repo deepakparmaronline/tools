@@ -1,7 +1,7 @@
 <?php
 return [
  'tool_hubs' => [[
-  'title'=>'Zendesk: Support Software Hub','seo_title'=>'Zendesk Guide: Features, Pricing and Alternatives',
+  'title'=>'Zendesk: Support Software Hub','seo_title'=>'Zendesk Guide: Features, Pricing and Fit',
   'description'=>'Research Zendesk support software, compare current plans, review strengths and limits, and find alternatives for different support workflows.',
   'url'=>'/zendesk/','date'=>'2026-10-27','status'=>'published',
   'content'=><<<'HTML'
@@ -15,7 +15,7 @@ HTML
  ],
   [
   'title'=>'Freshdesk: Customer Support Software Hub',
-  'seo_title'=>'Freshdesk Guide: Features, Pricing, Alternatives and Fit',
+  'seo_title'=>'Freshdesk Guide: Features, Pricing and Fit',
   'description'=>'Research Freshdesk features, pricing, email-first ticketing, setup steps, alternatives and how it compares with Zendesk before choosing a help desk today.',
   'url'=>'/freshdesk/','date'=>'2026-10-28','updated'=>'2026-10-28','status'=>'published','tool_name'=>'Freshdesk',
   'additional_schema'=>[
@@ -23,13 +23,14 @@ HTML
    ['@type'=>'FAQPage','mainEntity'=>[
     ['@type'=>'Question','name'=>'What is the difference between Freshdesk and Freshdesk Omni?','acceptedAnswer'=>['@type'=>'Answer','text'=>'Freshdesk is the email-first product. Freshdesk Omni adds broader channels such as chat, WhatsApp, Facebook and Instagram in a unified inbox. Confirm the current feature matrix before buying.']],
     ['@type'=>'Question','name'=>'How much does Freshdesk cost?','acceptedAnswer'=>['@type'=>'Answer','text'=>'The US pricing page checked October 28, 2026 lists Growth at US$19, Pro at US$55 and Enterprise at US$89 per agent per month with annual billing.']],
-    ['@type'=>'Question','name'=>'Can Freshdesk tickets be exported?','acceptedAnswer'=>['@type'=>'Answer','text'=>'Freshdesk documents ticket exports in CSV or Excel. Admin or Supervisor permissions are required, and teams should validate the data they need before switching platforms.']]
+    ['@type'=>'Question','name'=>'Can Freshdesk tickets be exported?','acceptedAnswer'=>['@type'=>'Answer','text'=>'Freshdesk documents ticket exports in CSV or Excel. Admin or Supervisor permissions are required, and teams should validate the data they need before switching platforms.']],
+    ['@type'=>'Question','name'=>'Does Freshdesk have a free plan?','acceptedAnswer'=>['@type'=>'Answer','text'=>'The public US pricing page advertises a 14-day trial. Freshworks support docs describe a six-month Free Program for eligible Freshdesk customers, limited to two agents and not available in Freshdesk Omni. It is not a permanent free tier; confirm eligibility in your account.']]
    ]]
   ],
   'content'=><<<'HTML'
 <p><strong>Freshdesk is an email-first customer support help desk from Freshworks.</strong> It brings customer requests into tickets, gives agents shared workflows and supports self-service through a customer portal and knowledge base. The standard Freshdesk product and Freshdesk Omni are different products, so check channel needs before comparing prices.</p>
 <div class="software-detail__callout"><p><strong>Important product distinction:</strong> Freshdesk is designed around email-first support, with ticketing, collaboration and core automation. Freshdesk Omni adds a broader set of channels in a unified inbox. This distinction is confirmed in the <a href="https://support.freshdesk.com/support/solutions/articles/50000011785-getting-started-with-freshdesk-omni">official Freshdesk onboarding guide</a>, checked October 28, 2026.</p></div>
-<nav class="software-detail__toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#overview">What Freshdesk does</a></li><li><a href="#facts">Quick facts</a></li><li><a href="#fit">Where it fits</a></li><li><a href="#decisions">Questions to settle first</a></li><li><a href="#guides">Freshdesk guides</a></li></ol></nav>
+<nav class="software-detail__toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#overview">What Freshdesk does</a></li><li><a href="#facts">Quick facts</a></li><li><a href="#fit">Where it fits</a></li><li><a href="#decisions">Questions to settle first</a></li><li><a href="#guides">Freshdesk guides</a></li><li><a href="#faq">Freshdesk questions</a></li></ol></nav>
 <h2 id="overview">What Freshdesk does</h2>
 <p>Freshdesk is built for teams that need a reliable place to receive, assign, answer and track customer requests. The ticket is the main work item. Agents can use ticket fields, groups, saved replies and automation rules to keep requests moving. Administrators can define service-level targets and use reports to check how the support queue is performing.</p>
 <p>The customer portal and knowledge base can move repeat questions into self-service. That helps when customers ask the same questions about account access, billing, returns or product setup. The usefulness of the knowledge base depends on how clearly articles are written and maintained, not only on the software.</p>
@@ -39,7 +40,7 @@ HTML
 <tr><th scope="row">Product category</th><td>Customer support and help desk software.</td></tr>
 <tr><th scope="row">Starting paid plan</th><td>Growth at US$19 per agent/month with annual billing. Checked October 28, 2026. <a href="https://www.freshworks.com/freshdesk/pricing/">Official pricing</a>.</td></tr>
 <tr><th scope="row">Trial</th><td>The official pricing page advertises a 14-day free trial. Check the current terms before signup.</td></tr>
-<tr><th scope="row">Permanent free access</th><td>The current US pricing page shows paid plans. Freshworks also notes that switching to its Free program is no longer self-service. Ask Freshworks about eligibility if you already have a legacy account. <a href="https://www.freshworks.com/freshdesk/new-features/">Product update</a>.</td></tr>
+<tr><th scope="row">Free Program</th><td>Freshworks support docs describe a six-month Free Program for eligible Freshdesk customers, limited to two agents and not available in Freshdesk Omni. The public pricing page advertises a 14-day trial and paid plans. Confirm eligibility in your account. <a href="https://support.freshdesk.com/support/solutions/articles/50000010099-explore-freshdesk-free-program-freshdesk-only-">Free Program details</a>, checked <a href="https://www.freshworks.com/freshdesk/pricing/">October 28, 2026</a>.</td></tr>
 <tr><th scope="row">Best fit</th><td>Teams that want email-first ticketing, agent collaboration, a customer portal, knowledge base and automation.</td></tr>
 <tr><th scope="row">Main decision</th><td>Choose standard Freshdesk or Freshdesk Omni based on the channels and routing you need.</td></tr>
 </tbody></table></div>
@@ -59,6 +60,11 @@ HTML
 <li><a href="/compare/zendesk-vs-freshdesk/">Zendesk vs Freshdesk comparison</a></li>
 </ul>
 <p>For a vendor overview, see the <a href="https://www.freshworks.com/freshdesk/">official Freshdesk website</a>. For a plan decision, start with the <a href="https://www.freshworks.com/freshdesk/pricing/">official pricing page</a> and confirm current terms before purchase. This hub is based on public product, pricing, help-center and product-update pages checked October 28, 2026. It is not a hands-on test.</p>
+<h2 id="faq">Freshdesk questions answered</h2>
+<div class="software-detail__faq"><h3>What is the difference between Freshdesk and Freshdesk Omni?</h3><p>Freshdesk is the email-first product. Freshdesk Omni adds broader channels such as chat, WhatsApp, Facebook and Instagram in a unified inbox. Confirm the current feature matrix before buying. Read the <a href="https://support.freshdesk.com/support/solutions/articles/50000011785-getting-started-with-freshdesk-omni">official onboarding guide</a>, checked <a href="https://support.freshdesk.com/support/solutions/articles/50000011785-getting-started-with-freshdesk-omni">October 28, 2026</a>.</p></div>
+<div class="software-detail__faq"><h3>How much does Freshdesk cost?</h3><p>The US pricing page checked October 28, 2026 lists Growth at US$19, Pro at US$55 and Enterprise at US$89 per agent per month with annual billing. Confirm the current terms on the <a href="https://www.freshworks.com/freshdesk/pricing/">official pricing page</a>.</p></div>
+<div class="software-detail__faq"><h3>Can Freshdesk tickets be exported?</h3><p>Freshdesk documents ticket exports in CSV or Excel. Admin or Supervisor permissions are required, and teams should validate the data they need before switching platforms. Review the <a href="https://support.freshdesk.com/support/solutions/articles/225158">official export guide</a>, checked <a href="https://support.freshdesk.com/support/solutions/articles/225158">October 28, 2026</a>.</p></div>
+<div class="software-detail__faq"><h3>Does Freshdesk have a free plan?</h3><p>The public US pricing page advertises a 14-day trial. Freshworks support docs describe a six-month Free Program for eligible Freshdesk customers, limited to two agents and not available in Freshdesk Omni. It is not a permanent free tier; confirm eligibility in your account. Read the <a href="https://support.freshdesk.com/support/solutions/articles/50000010099-explore-freshdesk-free-program-freshdesk-only-">official Free Program guide</a>.</p></div>
 HTML
  ],
 
@@ -79,18 +85,18 @@ HTML
  ],
   [
   'title'=>'Freshdesk Pricing: Plans, Add-ons and Total Cost',
-  'seo_title'=>'Freshdesk Pricing: Growth, Pro, Enterprise and AI Costs',
+  'seo_title'=>'Freshdesk Pricing: Plans, Add-ons and Fees',
   'description'=>'Compare Freshdesk Growth, Pro and Enterprise prices, billing terms, AI usage fees, add-ons and plan limits before you set a support budget for your team.',
   'url'=>'/freshdesk/pricing/','date'=>'2026-10-28','updated'=>'2026-10-28','status'=>'published','tool_name'=>'Freshdesk','breadcrumb_label'=>'Pricing',
   'content'=><<<'HTML'
-<p><strong>Freshdesk pricing on the US page checked October 28, 2026 starts at US$19 per agent/month for Growth, with annual billing.</strong> Pro is listed at US$55 and Enterprise at US$89 per agent/month, also with annual billing. AI usage and optional features can add to the seat cost, so compare the plan plus the extras your team will use.</p>
+<p><strong>The US Freshdesk pricing page lists Growth at US$19 per agent/month, billed annually, with Pro at US$55 and Enterprise at US$89.</strong> These prices were <a href="https://www.freshworks.com/freshdesk/pricing/">checked on October 28, 2026</a>. AI usage and optional features can add to the seat cost, so compare the plan plus the extras your team will use.</p>
 <nav class="software-detail__toc" aria-label="On this page"><h2>On this page</h2><ol><li><a href="#plans">Plan prices</a></li><li><a href="#included">What is included</a></li><li><a href="#extras">AI and extra costs</a></li><li><a href="#budget">Estimate your team cost</a></li><li><a href="#choose">Which plan should you choose?</a></li><li><a href="#free">Free access and trial</a></li></ol></nav>
 <h2 id="plans">Freshdesk plans and prices</h2>
 <p>The official US pricing page lists three main paid plans for Freshdesk. The figures below are monthly prices per agent with annual billing, not month-to-month rates. They were checked October 28, 2026; verify the live page and your quote before buying.</p>
 <div class="software-detail__table"><table><thead><tr><th scope="col">Plan</th><th scope="col">Price shown</th><th scope="col">What it is suited to</th><th scope="col">Features to verify</th></tr></thead><tbody>
-<tr><th scope="row">Growth</th><td>US$19 per agent/month, billed annually. <a href="https://www.freshworks.com/freshdesk/pricing/">Official pricing</a>.</td><td>Teams that need core ticketing, shared inbox workflows and a customer portal.</td><td>Knowledge base, basic reporting, core automation and the included AI session allowance.</td></tr>
-<tr><th scope="row">Pro</th><td>US$55 per agent/month, billed annually. <a href="https://www.freshworks.com/freshdesk/pricing/">Official pricing</a>.</td><td>Teams that need more control over routing, dashboards and service operations.</td><td>Custom dashboards, intelligent routing, multiple SLA policies and eligible AI add-ons.</td></tr>
-<tr><th scope="row">Enterprise</th><td>US$89 per agent/month, billed annually. <a href="https://www.freshworks.com/freshdesk/pricing/">Official pricing</a>.</td><td>Teams that need stronger administration and enterprise workflow controls.</td><td>Audit logs, sandbox and advanced routing or security controls listed for the plan.</td></tr>
+<tr><th scope="row">Growth</th><td>US$19 per agent/month, billed annually. <a href="https://www.freshworks.com/freshdesk/pricing/">Checked on October 28, 2026</a>.</td><td>Teams that need core ticketing, shared inbox workflows and a customer portal.</td><td>Knowledge base, basic reporting, core automation and the included AI session allowance.</td></tr>
+<tr><th scope="row">Pro</th><td>US$55 per agent/month, billed annually. <a href="https://www.freshworks.com/freshdesk/pricing/">Checked on October 28, 2026</a>.</td><td>Teams that need more control over routing, dashboards and service operations.</td><td>Custom dashboards, intelligent routing, multiple SLA policies and eligible AI add-ons.</td></tr>
+<tr><th scope="row">Enterprise</th><td>US$89 per agent/month, billed annually. <a href="https://www.freshworks.com/freshdesk/pricing/">Checked on October 28, 2026</a>.</td><td>Teams that need stronger administration and enterprise workflow controls.</td><td>Audit logs, sandbox and advanced routing or security controls listed for the plan.</td></tr>
 </tbody></table></div>
 <h2 id="included">What is included in the plans?</h2>
 <p>Growth is the entry point for a team that needs the core help desk. It is not just a bare inbox: Freshdesk lists ticketing, a customer portal, knowledge base capabilities and reporting in its plan materials. Still, check the exact feature matrix for your account type because Freshdesk and Freshdesk Omni have different channel coverage.</p>
@@ -109,7 +115,7 @@ HTML
 <div class="software-detail__table"><table><thead><tr><th scope="col">Plan</th><th scope="col">10-agent monthly equivalent</th><th scope="col">12-month base equivalent</th></tr></thead><tbody><tr><th scope="row">Growth</th><td>US$190</td><td>US$2,280</td></tr><tr><th scope="row">Pro</th><td>US$550</td><td>US$6,600</td></tr><tr><th scope="row">Enterprise</th><td>US$890</td><td>US$10,680</td></tr></tbody></table></div>
 <p>Use your actual paid seat count. If supervisors, temporary staff or contractors need access, ask how they are billed. Also compare the plan required for each channel, SLA, dashboard or security control; moving to a higher tier can change the budget more than a small difference in base price.</p>
 <h2 id="free">Does Freshdesk have a free plan?</h2>
-<p>The current US pricing page displays paid plans and advertises a 14-day free trial. Freshworks' product updates also say that switching to the Freshdesk Free program is no longer a self-service action inside the product and is supported through Customer Success Managers. That means you should not assume a new account can choose a permanent free tier from the public pricing page. If you have a legacy account, ask Freshworks to confirm eligibility and limits. <a href="https://www.freshworks.com/freshdesk/new-features/">Official product update</a>, checked October 28, 2026.</p>
+<p>The current US pricing page lists paid plans and advertises a 14-day free trial. Freshworks also documents a separate six-month Free Program for eligible Freshdesk customers, limited to two agents and not available in Freshdesk Omni. It is not a permanent free tier, so confirm eligibility and terms in your account. Read the <a href="https://support.freshdesk.com/support/solutions/articles/50000010099-explore-freshdesk-free-program-freshdesk-only-">official Free Program guide</a>, checked <a href="https://support.freshdesk.com/support/solutions/articles/50000010099-explore-freshdesk-free-program-freshdesk-only-">October 28, 2026</a>.</p>
 <h2 id="choose">Which plan should you choose?</h2>
 <div class="software-detail__decision"><h3>Choose Growth when</h3><p>Your team needs core email-first ticketing, a customer portal, a knowledge base and basic support reporting. Confirm that the standard Freshdesk channel set covers the requests you receive.</p></div>
 <div class="software-detail__decision"><h3>Consider Pro when</h3><p>More detailed dashboards, routing controls or multiple SLA policies are required to manage the queue. Compare the price increase with the hours saved by those controls.</p></div>
@@ -120,7 +126,7 @@ HTML
 <h2>Frequently asked questions</h2>
 <div class="software-detail__faq"><h3>Is Freshdesk billed per agent?</h3><p>The listed Growth, Pro and Enterprise prices are per agent/month with annual billing. Confirm your exact quote and any usage-based extras.</p></div>
 <div class="software-detail__faq"><h3>Is Freddy AI included?</h3><p>The current pricing page lists an included Freddy AI Agent session allowance and charges for additional sessions. Freddy AI Copilot is listed as a paid add-on on eligible plans.</p></div>
-<div class="software-detail__faq"><h3>Can I use Freshdesk for free?</h3><p>The current public US pricing page advertises a 14-day trial, not a self-serve permanent free plan. Freshworks says switching to its Free program is no longer self-service, so confirm your eligibility directly.</p></div>
+<div class="software-detail__faq"><h3>Can I use Freshdesk for free?</h3><p>The US pricing page advertises a 14-day trial. Freshworks also documents a six-month Free Program for eligible Freshdesk customers, limited to two agents and not available in Freshdesk Omni. It is not a permanent free tier; confirm eligibility in your account. Read the <a href="https://support.freshdesk.com/support/solutions/articles/50000010099-explore-freshdesk-free-program-freshdesk-only-">official Free Program guide</a>, checked <a href="https://support.freshdesk.com/support/solutions/articles/50000010099-explore-freshdesk-free-program-freshdesk-only-">October 28, 2026</a>.</p></div>
 HTML
  ],
 
@@ -145,7 +151,7 @@ HTML
  ],
   [
   'title'=>'How to Use Freshdesk: Setup, Tickets and Automation',
-  'seo_title'=>'How to Use Freshdesk: Setup, Tickets and Automation Rules',
+  'seo_title'=>'How to Use Freshdesk: Setup, Tickets and SLAs',
   'description'=>'Learn to set up Freshdesk email, route tickets, configure SLA policies, publish help articles and export records with official steps for a safer rollout.',
   'url'=>'/freshdesk/how-to-use/','date'=>'2026-10-28','updated'=>'2026-10-28','status'=>'published','tool_name'=>'Freshdesk','breadcrumb_label'=>'How to Use',
   'additional_schema'=>[
@@ -211,13 +217,14 @@ HTML
   ['title'=>'Freedom vs Cold Turkey: Which Blocker Fits?','description'=>'Compare Freedom and Cold Turkey by device support, blocking controls, current pricing, lock options and the workflow each product fits best.','url'=>'/versus/freedom-vs-cold-turkey/','date'=>'2026-10-20','status'=>'published'],
   [
    'title'=>'Zendesk vs Freshdesk: Which Help Desk Fits?',
-   'seo_title'=>'Zendesk vs Freshdesk: Pricing, Features and Support Fit',
+   'seo_title'=>'Zendesk vs Freshdesk: Price, Features and Fit',
    'description'=>'Compare Zendesk and Freshdesk on ticketing, channels, routing, knowledge, pricing and migration risks before choosing a help desk for your support team.',
    'url'=>'/compare/zendesk-vs-freshdesk/','date'=>'2026-10-27','updated'=>'2026-10-28','status'=>'published',
    'additional_schema'=>[
     ['@type'=>'FAQPage','mainEntity'=>[
      ['@type'=>'Question','name'=>'Is Freshdesk cheaper than Zendesk?','acceptedAnswer'=>['@type'=>'Answer','text'=>'Both vendors list entry annual-billing prices of US$19 per agent/month on the pages checked October 28, 2026. The total depends on the plan, channels, AI usage and add-ons.']],
      ['@type'=>'Question','name'=>'Is Freshdesk the same as Freshdesk Omni?','acceptedAnswer'=>['@type'=>'Answer','text'=>'No. Freshdesk is the email-first product. Freshdesk Omni supports a broader set of channels in a unified inbox. Confirm the current product matrix before comparing plans.']],
+     ['@type'=>'Question','name'=>'Does Freshdesk have a free option?','acceptedAnswer'=>['@type'=>'Answer','text'=>'Freshworks documents a six-month Free Program for eligible Freshdesk customers, limited to two agents and not available in Freshdesk Omni. It is not a permanent free tier. Confirm eligibility in the official Free Program guide.']],
      ['@type'=>'Question','name'=>'Can Freshdesk data move to Zendesk?','acceptedAnswer'=>['@type'=>'Answer','text'=>'Freshdesk documents CSV and Excel exports, while Zendesk documents API-based import paths. Neither statement guarantees every field, comment, attachment or workflow will transfer without mapping and testing.']]
     ]]
    ],
@@ -229,16 +236,16 @@ HTML
 <p>There is one distinction that changes the comparison: standard Freshdesk is email-first, while Freshdesk Omni is the broader multichannel product. Zendesk also separates its Support plan from Suite plans. Compare the correct products and tiers before you decide.</p>
 <h2 id="quick-table">Zendesk vs Freshdesk at a glance</h2>
 <div class="software-detail__table"><table><thead><tr><th scope="col">Decision point</th><th scope="col">Zendesk</th><th scope="col">Freshdesk</th></tr></thead><tbody>
-<tr><th scope="row">Entry annual price</th><td>Support Team: US$19 per agent/month, billed yearly. Checked October 28, 2026. <a href="https://www.zendesk.com/pricing/">Official pricing</a>.</td><td>Growth: US$19 per agent/month, billed annually. Checked October 28, 2026. <a href="https://www.freshworks.com/freshdesk/pricing/">Official pricing</a>.</td></tr>
-<tr><th scope="row">Next plan shown</th><td>Suite Team: US$55 per agent/month billed yearly. Checked October 28, 2026.</td><td>Pro: US$55 per agent/month billed annually. Checked October 28, 2026.</td></tr>
-<tr><th scope="row">Higher plan shown</th><td>Suite Professional: US$115 per agent/month billed yearly. Checked October 28, 2026.</td><td>Enterprise: US$89 per agent/month billed annually. Checked October 28, 2026.</td></tr>
+<tr><th scope="row">Entry annual price</th><td>Support Team: US$19 per agent/month, billed yearly. <a href="https://www.zendesk.com/pricing/">Checked on October 28, 2026</a>.</td><td>Growth: US$19 per agent/month, billed annually. <a href="https://www.freshworks.com/freshdesk/pricing/">Checked on October 28, 2026</a>.</td></tr>
+<tr><th scope="row">Next plan shown</th><td>Suite Team: US$55 per agent/month, billed yearly. <a href="https://www.zendesk.com/pricing/">Checked on October 28, 2026</a>.</td><td>Pro: US$55 per agent/month, billed annually. <a href="https://www.freshworks.com/freshdesk/pricing/">Checked on October 28, 2026</a>.</td></tr>
+<tr><th scope="row">Higher plan shown</th><td>Suite Professional: US$115 per agent/month, billed yearly. <a href="https://www.zendesk.com/pricing/">Checked on October 28, 2026</a>.</td><td>Enterprise: US$89 per agent/month, billed annually. <a href="https://www.freshworks.com/freshdesk/pricing/">Checked on October 28, 2026</a>.</td></tr>
 <tr><th scope="row">Product emphasis</th><td>Ticketing, customer context, routing, automation and a broader Suite option.</td><td>Email-first ticketing, shared inbox, portal, knowledge base and core automation; Omni adds broader channels.</td></tr>
 <tr><th scope="row">AI budget</th><td>Verify the current AI package, usage rules and any add-ons for the selected plan.</td><td>The pricing page lists 500 Freddy AI Agent sessions included and US$49 per additional 100; Copilot is listed as a paid add-on on eligible plans.</td></tr>
 <tr><th scope="row">Data export</th><td>Official docs describe JSON, CSV and XML exports, with access depending on account and permissions.</td><td>Official docs describe CSV and Excel exports for tickets and other records, with Admin or Supervisor permissions.</td></tr>
 </tbody></table></div>
 <h2 id="pricing">Pricing and add-ons</h2>
-<p>Both vendors list an entry annual-billing price of US$19 per agent/month on the pages checked October 28, 2026. That does not make the plans identical. Zendesk Support Team is not the same package as Zendesk Suite Team, and Freshdesk Growth is not equivalent to Freshdesk Omni. Compare what is included in each plan, not just the price point.</p>
-<p>Zendesk lists Support Team at US$19, Suite Team at US$55 and Suite Professional at US$115 per agent/month with yearly billing. Freshdesk lists Growth at US$19, Pro at US$55 and Enterprise at US$89 per agent/month with annual billing. These are the published prices on the official pages checked on that date. Monthly billing, discounts, taxes and contract terms can change the actual quote.</p>
+<p>Both vendors list an entry annual-billing price of US$19 per agent/month on the pages checked October 28, 2026. That does not make the plans identical. Zendesk Support Team is not the same package as Zendesk Suite Team, and Freshdesk Growth is not equivalent to Freshdesk Omni. Freshworks also documents a six-month Free Program for eligible Freshdesk customers, limited to two agents and not available in Freshdesk Omni; it is not a permanent free tier. Check the <a href="https://support.freshdesk.com/support/solutions/articles/50000010099-explore-freshdesk-free-program-freshdesk-only-">Free Program guide</a>, checked <a href="https://support.freshdesk.com/support/solutions/articles/50000010099-explore-freshdesk-free-program-freshdesk-only-">October 28, 2026</a>, and confirm eligibility. Compare what is included in each paid plan, not just the price point.</p>
+<p>Zendesk lists Support Team at US$19, Suite Team at US$55 and Suite Professional at US$115 per agent/month with yearly billing. Freshdesk lists Growth at US$19, Pro at US$55 and Enterprise at US$89 per agent/month with annual billing. The official <a href="https://www.zendesk.com/pricing/">Zendesk pricing page</a> and <a href="https://www.freshworks.com/freshdesk/pricing/">Freshdesk pricing page</a> were checked on October 28, 2026. Monthly billing, discounts, taxes and contract terms can change the actual quote.</p>
 <p>Freshdesk also lists an included Freddy AI Agent session allowance, paid additional sessions and a separate Freddy AI Copilot add-on on eligible plans. Confirm how the session allowance resets and how usage is counted. For Zendesk, verify the exact AI package and any usage fees against the proposed plan rather than assuming that every AI feature is included in the seat price.</p>
 <p>Use the <a href="/zendesk/pricing/">Zendesk pricing guide</a> and <a href="/freshdesk/pricing/">Freshdesk pricing guide</a> to calculate the cost for your real seat count. If you have ten agents, even a small monthly difference becomes a material annual cost. Add onboarding, extra channels, AI usage and the time needed to rebuild workflows.</p>
 <h2 id="ticketing">Ticketing, ownership and routing</h2>
@@ -263,6 +270,7 @@ HTML
 <h2 id="faq">Questions to ask before you decide</h2>
 <div class="software-detail__faq"><h3>Is Freshdesk cheaper than Zendesk?</h3><p>The entry annual-billing prices displayed on October 28, 2026 are both US$19 per agent/month. Total cost depends on the plan, channels, AI usage, extra seats and contract terms.</p></div>
 <div class="software-detail__faq"><h3>Is Freshdesk the same as Freshdesk Omni?</h3><p>No. Standard Freshdesk is email-first. Freshdesk Omni supports a broader set of channels in a unified inbox. Check the current product matrix before comparing plans.</p></div>
+<div class="software-detail__faq"><h3>Does Freshdesk have a free option?</h3><p>Freshworks documents a six-month Free Program for eligible Freshdesk customers, limited to two agents and not available in Freshdesk Omni. It is not a permanent free tier. Confirm eligibility in the <a href="https://support.freshdesk.com/support/solutions/articles/50000010099-explore-freshdesk-free-program-freshdesk-only-">official Free Program guide</a>.</p></div>
 <div class="software-detail__faq"><h3>Can Freshdesk tickets move to Zendesk?</h3><p>Freshdesk documents CSV and Excel exports and Zendesk documents API-based import paths. Test the exact fields, comments and attachments you need; do not assume every object or workflow transfers automatically.</p></div>
 <div class="software-detail__faq"><h3>Which product is better for a small support team?</h3><p>Either may fit. Compare the entry plan against the channels, portal, knowledge base and routing your team actually needs. A plan with unused features may cost more without improving service.</p></div>
 <div class="software-detail__faq"><h3>Should AI be part of the buying decision?</h3><p>Yes, if your team expects to use it. Estimate agent seats, sessions or outcomes and request a written usage example from the vendor before treating AI as included in the base price.</p></div>
