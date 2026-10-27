@@ -12,13 +12,14 @@ ROOT=Path(__file__).resolve().parents[1]
 
 class Page(HTMLParser):
     def __init__(self,html):
-        super().__init__();self.h1=0;self.title='';self.in_title=False;self.canonical=None;self.schemas=[];self.in_schema=False;self.schema_text='';self.text=[]
+        super().__init__();self.h1=0;self.title='';self.in_title=False;self.canonical=None;self.description=None;self.schemas=[];self.in_schema=False;self.schema_text='';self.text=[]
         self.feed(html)
     def handle_starttag(self,tag,attrs):
         attrs=dict(attrs)
         if tag=='h1': self.h1+=1
         if tag=='title': self.in_title=True
         if tag=='link' and attrs.get('rel')=='canonical': self.canonical=attrs.get('href')
+        if tag=='meta' and attrs.get('name')=='description': self.description=attrs.get('content')
         if tag=='script' and attrs.get('type')=='application/ld+json': self.in_schema=True;self.schema_text=''
     def handle_endtag(self,tag):
         if tag=='title': self.in_title=False
@@ -65,6 +66,8 @@ def main():
             code,_,html=get(path);assert code==200,path
             page=Page(html);visible=' '.join(page.text)
             assert page.h1==1 and page.canonical==canonical,path
+            assert len(page.title)<=60,path
+            assert page.description is not None and 150<=len(page.description)<=155,path
             assert html.count('<strong>Written by <a href="/about-deepak-parmar/">Deepak Parmar</a></strong>')==2,path
             assert 'BreadcrumbList' in html,path
             assert 'Review methodology' in visible and 'Sources' in visible,path
@@ -72,8 +75,10 @@ def main():
             breadcrumb=next(item for item in graph if item.get('@type')=='BreadcrumbList')
             names=[item['name'] for item in breadcrumb['itemListElement']]
             assert names==['Home', 'Zendesk' if 'zendesk' in path else 'Freshdesk', 'Review'],path
-        for index,slug in [('/versus/','freedom-vs-cold-turkey'),('/reviews/','taskade-review'),('/reviews/','freshdesk-review'),('/content/','taskade-review'),('/content/','freshdesk-review')]:
+        for index,slug in [('/versus/','freedom-vs-cold-turkey'),('/reviews/','taskade-review'),('/content/','taskade-review')]:
             code,_,html=get(index);assert code==200 and slug in html,index
+        for index,title,href in [('/reviews/','Freshdesk Review: Pricing, Features and Limits','/freshdesk/review/'),('/content/','Freshdesk Review: Pricing, Features and Limits','/freshdesk/review/')]:
+            code,_,html=get(index);assert code==200 and title in html and f'href="{href}"' in html,index
         for path in ['/about-deepak-parmar/','/editorial-policy','/review-methodology','/advertising-disclosure','/corrections-policy']:
             code,_,html=get(path);assert code==200 and Page(html).h1==1,path
         _,_,sitemap=get('/sitemap.xml')
