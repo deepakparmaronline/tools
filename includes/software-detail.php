@@ -106,16 +106,50 @@ function render_software_detail_page(array $page, string $collectionKey): string
         $articleSchema['image'] = ['@type' => 'ImageObject', 'url' => $socialImage, 'caption' => $socialImageAlt];
     }
 
+    $breadcrumbItems = [['name' => 'Home', 'url' => SITE_URL]];
+    $visibleBreadcrumbs = [['name' => 'Home', 'href' => '/']];
+    if ($collectionKey === 'tool_hubs') {
+        $toolSlug = trim($canonicalPath, '/');
+        $toolName = trim(is_string($page['software_name'] ?? null) ? $page['software_name'] : '');
+        if ($toolName === '') $toolName = ucwords(str_replace('-', ' ', $toolSlug));
+        $breadcrumbItems[] = ['name' => $toolName, 'url' => $canonical];
+        $visibleBreadcrumbs[] = ['name' => $toolName, 'href' => null];
+    } elseif (in_array($collectionKey, ['pricing', 'how_to_use'], true) && preg_match('#^/([a-z0-9-]+)/#D', $canonicalPath, $toolMatch)) {
+        $toolSlug = $toolMatch[1];
+        $toolName = trim(is_string($page['software_name'] ?? null) ? $page['software_name'] : '');
+        if ($toolName === '') $toolName = ucwords(str_replace('-', ' ', $toolSlug));
+        $hubUrl = url($toolSlug.'/');
+        $breadcrumbItems[] = ['name' => $toolName, 'url' => $hubUrl];
+        $visibleBreadcrumbs[] = ['name' => $toolName, 'href' => '/'.$toolSlug.'/'];
+        $crumbLabel = $collectionKey === 'pricing' ? 'Pricing' : 'How to use';
+        $breadcrumbItems[] = ['name' => $crumbLabel, 'url' => $canonical];
+        $visibleBreadcrumbs[] = ['name' => $crumbLabel, 'href' => null];
+    } else {
+        $breadcrumbItems[] = ['name' => $config['index_title'], 'url' => url($config['index_url'])];
+        $visibleBreadcrumbs[] = ['name' => $config['index_title'], 'href' => $config['index_url']];
+        $breadcrumbItems[] = ['name' => $title, 'url' => $canonical];
+        $visibleBreadcrumbs[] = ['name' => $title, 'href' => null];
+    }
+
+    $schemaGraph = [$articleSchema, breadcrumbs($breadcrumbItems)];
+    if ($collectionKey === 'tool_hubs') {
+        $toolSlug = trim($canonicalPath, '/');
+        $softwareName = trim(is_string($page['software_name'] ?? null) ? $page['software_name'] : '');
+        if ($softwareName === '') $softwareName = ucwords(str_replace('-', ' ', $toolSlug));
+        $schemaGraph[] = [
+            '@type' => 'SoftwareApplication',
+            '@id' => $canonical.'#software',
+            'name' => $softwareName,
+            'description' => $description,
+            'url' => $canonical,
+            'applicationCategory' => 'BusinessApplication',
+            'publisher' => ['@type' => 'Organization', 'name' => SITE_NAME, 'url' => SITE_URL],
+        ];
+    }
+
     $extraHead = '<meta property="article:published_time" content="'.e($date.'T00:00:00+05:30').'">'
         .'<meta property="article:modified_time" content="'.e($updatedDate.'T00:00:00+05:30').'">'
-        .jsonld(['@context' => 'https://schema.org', '@graph' => [
-            $articleSchema,
-            breadcrumbs([
-                ['name' => 'Home', 'url' => SITE_URL],
-                ['name' => $config['index_title'], 'url' => url($config['index_url'])],
-                ['name' => $title, 'url' => $canonical],
-            ]),
-        ]])
+        .jsonld(['@context' => 'https://schema.org', '@graph' => $schemaGraph])
         .'<link rel="stylesheet" href="'.e(asset('css/software-detail.css')).'">';
 
     ob_start();
@@ -124,9 +158,10 @@ function render_software_detail_page(array $page, string $collectionKey): string
     <header class="article-head software-detail__head">
         <div class="container">
             <nav class="crumbs" aria-label="Breadcrumb">
-                <a href="/">Home</a><span aria-hidden="true">›</span>
-                <a href="<?=e($config['index_url'])?>"><?=e($config['index_title'])?></a><span aria-hidden="true">›</span>
-                <span><?=e($title)?></span>
+                <?php foreach ($visibleBreadcrumbs as $index => $crumb): ?>
+                    <?php if ($index > 0): ?><span aria-hidden="true">›</span><?php endif; ?>
+                    <?php if (is_string($crumb['href'])): ?><a href="<?=e($crumb['href'])?>"><?=e($crumb['name'])?></a><?php else: ?><span><?=e($crumb['name'])?></span><?php endif; ?>
+                <?php endforeach; ?>
             </nav>
             <span class="eyebrow"><?=e($config['eyebrow'])?></span>
             <h1><?=e($title)?></h1>
