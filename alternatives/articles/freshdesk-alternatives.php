@@ -92,7 +92,7 @@ $content .= jsonld([
 return [
     'status' => 'published',
     'title' => '6 Freshdesk Alternatives for Support Teams in 2026',
-    'seo_title' => '6 Freshdesk Alternatives for Support Teams (2026)',
+    'seo_title' => '6 Freshdesk Alternatives for Customer Support Teams (2026)',
     'description' => 'Compare Freshdesk alternatives by ticket workflows, channels, AI costs, CRM links and migration needs before choosing the right support tool for your team.',
     'date' => '2026-10-29',
     'tag' => 'Customer support',
