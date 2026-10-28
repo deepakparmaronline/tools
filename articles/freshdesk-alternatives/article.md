@@ -4,7 +4,7 @@ Freshdesk is a practical email-first help desk, but it is not the right fit for 
 
 ## Quick comparison
 
-| Alternative | Best fit | Public starting point checked October 29, 2026 |
+| Alternative | Best fit | Starting price checked October 29, 2026 |
 | --- | --- | --- |
 | Zendesk | Teams that need structured ticket routing, customer context and a wider service suite | Support Team: US$19 per agent/month billed yearly |
 | Zoho Desk | Teams already using Zoho or comparing regional pricing | India pricing displayed Express at ₹420 per user/month billed annually; US price not confirmed in this check |
