@@ -15,7 +15,7 @@ HTML
  ],
   [
   'title'=>'Freshdesk Customer Support Hub','seo_title'=>'Freshdesk: Features, Plans and Alternatives',
-  'description'=>'Explore Freshdesk ticketing, channels, AI usage and plan differences, then compare pricing, setup steps, reviews and alternatives.',
+  'description'=>'Explore Freshdesk ticketing, channels, AI usage and plan differences, then compare pricing, setup steps, reviews and alternatives for your support team.',
   'url'=>'/freshdesk/','date'=>'2026-10-29','status'=>'published','software_name'=>'Freshdesk',
   'content'=><<<'HTML'
 
@@ -62,7 +62,7 @@ HTML
  ],
   [
   'title'=>'Freshdesk Pricing: Plans, AI Costs and Limits','seo_title'=>'Freshdesk Pricing: Plans, AI Costs and Limits',
-  'description'=>'Compare Freshdesk Growth, Pro and Enterprise prices, included features, AI session costs and add-ons before choosing a plan.',
+  'description'=>'Compare Freshdesk Growth, Pro and Enterprise prices, key features, AI session costs and add-ons to estimate the real cost before you choose a plan today.',
   'url'=>'/freshdesk/pricing/','date'=>'2026-10-29','status'=>'published','software_name'=>'Freshdesk',
   'content'=><<<'HTML'
 <h2>Freshdesk pricing checked October 29, 2026</h2>
@@ -117,7 +117,7 @@ HTML
  ],
   [
   'title'=>'How to Use Freshdesk: Setup and Ticket Workflow','seo_title'=>'How to Use Freshdesk: Setup and Ticket Workflow',
-  'description'=>'Set up Freshdesk email, agents, groups, SLAs, channels, knowledge articles and AI using steps confirmed in official help documentation.',
+  'description'=>'Set up Freshdesk email, agents, groups, SLAs, channels, knowledge articles and AI with steps checked against official help documentation and setup tips.',
   'url'=>'/freshdesk/how-to-use/','date'=>'2026-10-29','status'=>'published','software_name'=>'Freshdesk',
   'content'=><<<'HTML'
 <h2>Before you start</h2>
