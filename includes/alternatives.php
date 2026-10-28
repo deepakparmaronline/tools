@@ -8,13 +8,13 @@ function alternative_articles(): array {
         $article = require $file;
         if (!is_array($article) || ($article['status'] ?? 'draft') !== 'published') continue;
         $slug = basename($file, '.php');
-        if (!preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*$/D', $slug) || preg_match('/^\d{4}-\d{2}-\d{2}(?:-|$)/', $slug)) continue;
+        if (!preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*$/D', $slug) || preg_match('/^\\d{4}-\\d{2}-\\d{2}(?:-|$)/', $slug)) continue;
         if (!is_string($article['title'] ?? null) || trim($article['title']) === '' || !is_string($article['content'] ?? null) || trim($article['content']) === '' || !is_string($article['date'] ?? null)) continue;
         $date = DateTimeImmutable::createFromFormat('!Y-m-d', $article['date']);
         if (!$date || $date->format('Y-m-d') !== $article['date'] || $article['date'] > (new DateTimeImmutable('now', new DateTimeZone('Asia/Kolkata')))->format('Y-m-d')) continue;
         $article['slug'] = $slug;
         if (empty($article['description'])) {
-            $text = trim(preg_replace('/\s+/u', ' ', html_entity_decode(strip_tags($article['content']), ENT_QUOTES, 'UTF-8')));
+            $text = trim(preg_replace('/\\s+/u', ' ', html_entity_decode(strip_tags($article['content']), ENT_QUOTES, 'UTF-8')));
             $characters = preg_split('//u', $text, -1, PREG_SPLIT_NO_EMPTY) ?: [];
             $article['description'] = count($characters) > 160 ? implode('', array_slice($characters, 0, 157)).'…' : $text;
         }
@@ -29,13 +29,16 @@ function alternative_articles(): array {
     return $articles;
 }
 
-function alternative_url(array $article): string {
-    $path = ($article['slug'] ?? '') === 'zendesk-alternatives' ? 'zendesk/alternatives/' : 'alternatives/'.$article['slug'].'/';
-    return url($path);
+function alternative_path(array $article): string {
+    $customPath = $article['url_path'] ?? null;
+    if (is_string($customPath) && preg_match('#^/[a-z0-9-]+/alternatives/$#D', $customPath)) {
+        return $customPath;
+    }
+    return ($article['slug'] ?? '') === 'zendesk-alternatives' ? '/zendesk/alternatives/' : '/alternatives/'.($article['slug'] ?? '').'/';
 }
 
-function alternative_path(array $article): string {
-    return ($article['slug'] ?? '') === 'zendesk-alternatives' ? '/zendesk/alternatives/' : '/alternatives/'.$article['slug'].'/';
+function alternative_url(array $article): string {
+    return url(alternative_path($article));
 }
 
 function alternative_image_url(array $article): string {
@@ -49,7 +52,7 @@ function alternative_topic_group(array $article): array {
     $groups = [
         'productivity'=>['name'=>'Productivity, focus and scheduling','description'=>'Task planning, calendars, focus blockers, booking and personal workflow tools.','slugs'=>['akiflow-alternatives','fantastical-alternatives','freedom-alternatives','odrive-alternatives','sunsama-alternatives','taskade-alternatives','tidycal-alternatives','vector-alternatives']],
         'privacy-browsers'=>['name'=>'Browsers and privacy','description'=>'Browser, tracker-blocking and private-search choices for different devices.','slugs'=>['arc-search-alternatives','ghostery-alternatives','orion-browser-alternatives']],
-        'customer-growth'=>['name'=>'Customer, sales and marketing','description'=>'Customer success, support, feedback, messaging and lead-conversion software.','slugs'=>['callpage-alternatives','gainsight-alternatives','leave-me-alone-alternatives','stonly-alternatives','survicate-alternatives','wati-alternatives']],
+        'customer-growth'=>['name'=>'Customer, sales and marketing','description'=>'Customer success, support, feedback, messaging and lead-conversion software.','slugs'=>['callpage-alternatives','freshdesk-alternatives','gainsight-alternatives','leave-me-alone-alternatives','stonly-alternatives','survicate-alternatives','wati-alternatives','zendesk-alternatives']],
         'developer-creative'=>['name'=>'Developer and creative workflows','description'=>'Documentation, integrations, app delivery, design review and motion tools.','slugs'=>['hera-alternatives','mintlify-alternatives','mobiloud-alternatives','nylas-alternatives','ruttl-alternatives']],
         'documents-specialist'=>['name'=>'Documents, study and specialist software','description'=>'PDF, study, meeting, compliance and industry-specific software.','slugs'=>['notegpt-alternatives','pearl-alternatives','shadow-alternatives','updf-alternatives','vanta-alternatives']],
     ];
