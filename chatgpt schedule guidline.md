@@ -156,3 +156,12 @@ Update the queue or progress record with:
 Mark the queue row `published` after the complete reviewed cluster and its registry, public index and child-sitemap entries are committed to main and the matching quality workflow passes. Hostinger auto-deploys from main; the user performs live verification. Do not hold publication for unavailable live HTTP checks.
 
 Keep the final report concise. Report blockers honestly and do not fall back to news publishing.
+
+
+## 10. Mandatory editorial and breadcrumb rules
+
+- Finish the selected software cluster end-to-end in a run whenever connected GitHub tools safely support it. Checkpoints are an internal checklist, not a reason to stop at drafts or repeatedly leave the cluster incomplete.
+- Use public SERP research to fill ordinary intent and competitor-coverage gaps. Never change committed volume, KD, CPC or trend values, and never invent exact PAA questions. Omit unverified prices or limits and continue with supported content.
+- Every applicable software-cluster page must have visible breadcrumbs and valid `BreadcrumbList` JSON-LD. Breadcrumb names, positions, hierarchy and canonical URLs must match. A hub uses `Home > Tool`; tool-specific pages use `Home > Tool > Page`; comparisons use the comparison index and matchup.
+- Do not reuse another tool's article as a name-swapped template. The structure, wording, examples and trade-offs must fit the exact product. If replacing the product name leaves most of the article unchanged, rewrite it.
+- Hostinger auto-deploys from GitHub `main`. The user performs live verification; live HTTP access is not a publication gate. Never claim live verification unless it was actually performed.
