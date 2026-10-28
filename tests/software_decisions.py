@@ -47,17 +47,22 @@ def main():
         pages={
             '/versus/freedom-vs-cold-turkey/':'https://toolboxkart.tech/versus/freedom-vs-cold-turkey/',
             '/reviews/taskade-review/':'https://toolboxkart.tech/reviews/taskade-review/',
+            '/freshdesk/review/':'https://toolboxkart.tech/freshdesk/review/',
         }
         for path,canonical in pages.items():
             code,_,html=get(path);assert code==200,path
             page=Page(html);visible=' '.join(page.text)
             assert page.h1==1 and page.canonical==canonical,path
-            assert visible.count('Published October 20, 2026')==1,path
+            expected_date = 'Published October 29, 2026' if path == '/freshdesk/review/' else 'Published October 20, 2026'
+            assert visible.count(expected_date)==1,path
             assert html.count('<strong>Written by <a href="/about-deepak-parmar/">Deepak Parmar</a></strong>')==2,path
-            assert 'BreadcrumbList' not in html,path
+            if path == '/freshdesk/review/':
+                assert any(any(item.get('@type') == 'BreadcrumbList' for item in schema.get('@graph', [])) for schema in page.schemas), path
+            else:
+                assert 'BreadcrumbList' not in html,path
             assert any('@graph' in schema for schema in page.schemas),path
             assert 'Review methodology' in visible and 'Sources' in visible,path
-        for index,slug in [('/versus/','freedom-vs-cold-turkey'),('/reviews/','taskade-review'),('/content/','taskade-review')]:
+        for index,slug in [('/versus/','freedom-vs-cold-turkey'),('/reviews/','taskade-review'),('/reviews/','freshdesk-review'),('/content/','taskade-review'),('/content/','freshdesk-review')]:
             code,_,html=get(index);assert code==200 and slug in html,index
         for path in ['/about-deepak-parmar/','/editorial-policy','/review-methodology','/advertising-disclosure','/corrections-policy']:
             code,_,html=get(path);assert code==200 and Page(html).h1==1,path
@@ -67,12 +72,14 @@ def main():
         _,_,review_sitemap=get('/sitemap-reviews.xml')
         _,_,compare_sitemap=get('/sitemap-compare.xml')
         assert pages['/reviews/taskade-review/'] in review_sitemap
+        assert pages['/freshdesk/review/'] in review_sitemap
         assert pages['/versus/freedom-vs-cold-turkey/'] in compare_sitemap
         _,_,alt_sitemap=get('/sitemap-alternatives.xml')
         assert '/alternatives/freedom-alternatives/' in alt_sitemap and '/reviews/' not in alt_sitemap
         redirects={
             '/blog/gpt-6-astra-chatgpt-new-capabilities/':'/chatgpt/chatgpt-gpt6-astra-workflow-guide',
             '/seo-guide/robots-meta-tags-guide/':'/ai-news/google-search-robots-meta-tags-outside-head',
+            '/reviews/freshdesk-review/':'/freshdesk/review/',
         }
         for source,target in redirects.items():
             code,headers,_=get(source);assert code==301 and headers['Location']==target,source
