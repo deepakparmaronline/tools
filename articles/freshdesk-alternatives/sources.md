@@ -15,7 +15,7 @@ Product and pricing pages were opened or checked on **2026-10-29**. Official hel
 | Ticket/contact API resources and API behavior | https://developers.freshdesk.com/api/ | Official API reference checked 2026-10-29. The article links to it as migration research, without asserting a universal import/export guarantee. |
 
 
-| Official quarterly product update session | https://www.freshworks.com/freshdesk/webinars/whats-new-cs-2026/ | On-demand customer-service update dated July 16, 2026. It covers Freshdesk/Freshdesk Omni and AI/automation topics. It is not a release-by-release changelog; no specific recent feature release is claimed. |
+- **Official quarterly product update session:** https://www.freshworks.com/freshdesk/webinars/whats-new-cs-2026/ — on-demand customer-service update dated July 16, 2026. It covers Freshdesk/Freshdesk Omni and AI/automation topics. It is not a release-by-release changelog; no specific recent feature release is claimed.
 
 ## Alternatives
 
