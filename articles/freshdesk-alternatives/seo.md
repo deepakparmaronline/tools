@@ -1,0 +1,21 @@
+# SEO brief: Freshdesk alternatives
+
+- **Product:** Freshdesk, the email-first customer support help desk from Freshworks.
+- **Official product URL:** https://www.freshworks.com/freshdesk/
+- **Page type:** Alternatives guide.
+- **Primary keyword:** Freshdesk alternative.
+- **Primary keyword evidence:** Saved queue row and the matching row in `alternatives list.md`, snapshot dated 2026-10-24.
+- **Saved US metrics (preserved exactly):** Search volume 480; KD 16; CPC US$46.98; intent C (commercial); trend rising; SERP features SL, AIO, Rev, Vid, Rel. Do not add PAA questions because the matched row does not list PAA.
+- **Secondary queries / intents:** Freshdesk alternatives, Freshdesk competitors, Freshdesk vs Zendesk, alternatives for email-first support, low-cost help desk, shared inbox software, ecommerce customer support software, AI support pricing, Freshdesk export and migration.
+- **Search intent:** Commercial comparison. Searchers want a short list, clear product fit, plan costs and limits, and a safe way to switch.
+- **Target reader:** Support leads and small-to-mid-sized teams evaluating whether to keep Freshdesk, change plans, move to a broader help desk, use a shared inbox, or choose a more specialized workflow.
+- **Editorial angle:** Separate product-fit decisions from headline prices. Explain the difference between Freshdesk and Freshdesk Omni, compare seat-based and ticket-volume pricing, and highlight export limitations before a team commits to migration.
+- **Category/tag:** Customer support.
+- **H1:** 7 Freshdesk Alternatives for Different Support Teams.
+- **SEO title:** Freshdesk Alternative: 7 Support Tools for Teams | ToolboxKart.
+- **Meta description:** Compare Freshdesk alternatives by ticketing, channels, pricing models, AI fees, team size and migration needs to find a help desk that fits your workflow.
+- **Permanent canonical:** https://toolboxkart.tech/freshdesk/alternatives/
+- **Publication date:** 2026-10-29 (Asia/Kolkata).
+- **Image:** No featured image. No suitable verified product-neutral image was needed for this decision guide.
+- **Schema:** Shared Article and BreadcrumbList from the template, plus an ItemList matching the seven alternatives in displayed order and FAQPage matching the visible FAQ. No ratings, offers or Review schema.
+- **No invented metrics:** The saved volume, KD, CPC, intent, trend and SERP feature values remain unchanged. Public SERP research was used only to understand intent and competing page formats. Semrush was not opened or run.
