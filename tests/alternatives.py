@@ -77,12 +77,25 @@ def main():
             assert code == 200 and content_type in headers.get('Content-Type', ''), path
             assert len(body) > 100, f'Empty or incomplete asset: {path}'
         for record in (ROOT / 'alternatives/articles').glob('*.php'):
-            if "'status' => 'published'" not in record.read_text():
+            record_text = record.read_text()
+            if "'status'=>'published'" not in record_text and "'status' => 'published'" not in record_text:
                 continue
-            path = f'/alternatives/{record.stem}/'
+            if record.stem == 'zendesk-alternatives':
+                path = '/zendesk/alternatives/'
+            elif record.stem == 'freshdesk-alternatives':
+                path = '/freshdesk/alternatives/'
+            else:
+                path = f'/alternatives/{record.stem}/'
             code, _, html = get(path)
             assert code == 200 and Page(html).h1 == 1, path
             assert f'href="{path}"' in get('/alternatives/')[2], path
+
+        for source, target in [
+            ('/alternatives/zendesk-alternatives/', '/zendesk/alternatives/'),
+            ('/alternatives/freshdesk-alternatives/', '/freshdesk/alternatives/'),
+        ]:
+            code, headers, _ = get(source)
+            assert code == 301 and headers['Location'] == target, source
         for slug, status, date in [('qa-alternative-one', 'published', '2026-01-01'),
                                    ('qa-alternative-two', 'published', '2026-01-02'),
                                    ('qa-alternative-draft', 'draft', '2026-01-01'),
@@ -114,7 +127,7 @@ def main():
         assert parsed.meta['twitter:image:alt'] == 'Comparison illustration'
         graph = next(item['@graph'] for item in parsed.schemas if '@graph' in item)
         schema = next(item for item in graph if item['@type'] == 'Article')
-        assert schema['headline'] == 'qa-alternative-one' and schema['dateModified'] == '2026-02-01'
+        assert schema['headline'] == 'qa-alternative-one' and schema['dateModified'] == '2026-02-01T00:00:00+05:30'
         assert any(item['@type'] == 'BreadcrumbList' for item in graph)
         for path in ['/alternatives/qa-alternative-one', '/alternatives/qa-alternative-one.php']:
             code, headers, _ = get(path)
@@ -123,12 +136,32 @@ def main():
                      '/alternatives/missing/', '/alternatives/articles/qa-alternative-one.php']:
             assert get(path)[0] == 404
         assert get('/alternatives')[0] == 301
+        code, _, freshdesk_article = get('/freshdesk/alternatives/')
+        assert code == 200, '/freshdesk/alternatives/'
+        freshdesk_page = Page(freshdesk_article)
+        assert freshdesk_page.canonical == 'https://toolboxkart.tech/freshdesk/alternatives/'
+        assert freshdesk_page.h1 == 1
+        assert 'href="/freshdesk/"' in freshdesk_article
+        assert 'href="/freshdesk/review/"' in freshdesk_article
+        assert 'href="/freshdesk/pricing/"' in freshdesk_article
+        assert 'href="/freshdesk/how-to-use/"' in freshdesk_article
+        freshdesk_graph = next(item['@graph'] for item in freshdesk_page.schemas if '@graph' in item)
+        freshdesk_crumb = next(item for item in freshdesk_graph if item['@type'] == 'BreadcrumbList')
+        assert [item['name'] for item in freshdesk_crumb['itemListElement']] == ['Home', 'Freshdesk', 'Alternatives']
+        item_list = next(item for item in freshdesk_page.schemas if item.get('@type') == 'ItemList')
+        assert item_list['numberOfItems'] == 7 and len(item_list['itemListElement']) == 7
+        faq = next(item for item in freshdesk_page.schemas if item.get('@type') == 'FAQPage')
+        assert len(faq['mainEntity']) == 5
+        assert 'publication-table' in freshdesk_article and 'Freshdesk Omni' in freshdesk_article
+
         code, _, sitemap = get('/sitemap.xml')
         assert code == 200 and 'https://toolboxkart.tech/sitemap-alternatives.xml' in sitemap
         assert 'qa-alternative-draft' not in sitemap and 'qa-alternative-future' not in sitemap
         code, _, alternatives_sitemap = get('/sitemap-alternatives.xml')
         assert code == 200 and parsed.canonical in alternatives_sitemap
         assert 'qa-alternative-draft' not in alternatives_sitemap and 'qa-alternative-future' not in alternatives_sitemap
+        assert 'https://toolboxkart.tech/zendesk/alternatives/' in alternatives_sitemap
+        assert 'https://toolboxkart.tech/freshdesk/alternatives/' in alternatives_sitemap
         for path in ['/', '/seo/', '/seo/serp-preview', '/chatgpt/', '/all-tools']:
             code, _, html = get(path)
             assert code == 200, path
