@@ -79,7 +79,8 @@ def main():
         for record in (ROOT / 'alternatives/articles').glob('*.php'):
             if "'status' => 'published'" not in record.read_text():
                 continue
-            path = f'/alternatives/{record.stem}/'
+            tool_first = {'zendesk-alternatives': '/zendesk/alternatives/', 'freshdesk-alternatives': '/freshdesk/alternatives/'}
+            path = tool_first.get(record.stem, f'/alternatives/{record.stem}/')
             code, _, html = get(path)
             assert code == 200 and Page(html).h1 == 1, path
             assert f'href="{path}"' in get('/alternatives/')[2], path
@@ -98,6 +99,12 @@ def main():
             paths.append(path)
         code, _, listing = get('/alternatives/')
         assert code == 200 and 'qa-alternative-one' in listing and 'qa-alternative-two' in listing
+        assert 'href="/freshdesk/alternatives/"' in listing
+        code, _, freshdesk_html = get('/freshdesk/alternatives/')
+        assert code == 200 and Page(freshdesk_html).canonical == 'https://toolboxkart.tech/freshdesk/alternatives/'
+        freshdesk_graph = next(schema['@graph'] for schema in Page(freshdesk_html).schemas if '@graph' in schema)
+        assert any(item['@type'] == 'BreadcrumbList' for item in freshdesk_graph)
+        assert any(schema.get('@type') == 'ItemList' for schema in Page(freshdesk_html).schemas)
         assert 'href="/alternatives/qa-alternative-one/"' in listing
         assert 'href="https://toolboxkart.tech/alternatives/qa-alternative-one/"' not in listing
         assert listing.index('qa-alternative-two') < listing.index('qa-alternative-one')
@@ -129,6 +136,7 @@ def main():
         code, _, alternatives_sitemap = get('/sitemap-alternatives.xml')
         assert code == 200 and parsed.canonical in alternatives_sitemap
         assert 'qa-alternative-draft' not in alternatives_sitemap and 'qa-alternative-future' not in alternatives_sitemap
+        assert 'https://toolboxkart.tech/freshdesk/alternatives/' in alternatives_sitemap
         for path in ['/', '/seo/', '/seo/serp-preview', '/chatgpt/', '/all-tools']:
             code, _, html = get(path)
             assert code == 200, path
