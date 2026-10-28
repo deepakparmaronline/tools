@@ -73,7 +73,7 @@ HTML
 <div class="table-scroll"><table><thead><tr><th scope="col">Plan</th><th scope="col">Price</th><th scope="col">Billing</th><th scope="col">Key limits to check</th><th scope="col">Best for</th></tr></thead><tbody>
 <tr><th scope="row">Growth</th><td>US$19 per agent/month</td><td>Billed annually</td><td>500 Freddy AI Agent sessions are listed once per account; extra sessions cost more.</td><td>Teams that need core ticketing, portal and knowledge base.</td></tr>
 <tr><th scope="row">Pro</th><td>US$55 per agent/month</td><td>Billed annually</td><td>AI sessions are limited; Copilot is an add-on. Routing and SLA options vary by plan.</td><td>Teams that need multilingual support, custom dashboards and routing.</td></tr>
-<tr><th scope="row">Enterprise</th><td>US$89 per agent/month</td><td>Pro features plus Freddy AI Insights, skill-based routing, sandbox, audit logs and allowed domains/IP restrictions.</td></tr>
+<tr><th scope="row">Enterprise</th><td>US$89 per agent/month</td><td>Billed annually</td><td>AI sessions remain usage-limited; verify administration and security needs.</td><td>Teams that need skill-based routing, sandbox and audit controls.</td></tr>
 </tbody></table></div>
 <p>Source: <a href="https://www.freshworks.com/freshdesk/pricing/">Freshdesk official pricing</a>, checked October 29, 2026.</p>
 <h2>Which plan fits?</h2>
