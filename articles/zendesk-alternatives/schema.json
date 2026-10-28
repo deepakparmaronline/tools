@@ -1,23 +1,39 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "8 Zendesk Alternatives for Support Teams in 2026",
-  "description": "Compare Zendesk alternatives by support workflow, published pricing, team size, channel needs and migration effort before switching help desks.",
-  "datePublished": "2026-10-27",
-  "dateModified": "2026-10-27",
-  "author": {
-    "@type": "Person",
-    "name": "Deepak Parmar"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ToolboxKart",
-    "url": "https://toolboxkart.tech"
-  },
-  "mainEntityOfPage": "https://toolboxkart.tech/alternatives/zendesk-alternatives/",
-  "keywords": [
-    "Zendesk alternative",
-    "Zendesk alternatives",
-    "Zendesk competitors"
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/zendesk/alternatives/#article",
+      "headline": "8 Zendesk Alternatives for Support Teams in 2026",
+      "description": "Compare Zendesk alternatives by workflow, published prices, team size, AI fees, channels and migration limits before switching help desks.",
+      "datePublished": "2026-10-27T00:00:00+05:30",
+      "dateModified": "2026-10-29T00:00:00+05:30",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/",
+        "image": "https://toolboxkart.tech/images/deepak-parmar.jpeg",
+        "sameAs": [
+          "https://www.linkedin.com/in/deepakparmaronline/",
+          "https://www.youtube.com/@deepakparmaronline"
+        ],
+        "jobTitle": "SEO specialist and technology writer"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/zendesk/alternatives/",
+      "url": "https://toolboxkart.tech/zendesk/alternatives/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://toolboxkart.tech/"},
+        {"@type":"ListItem","position":2,"name":"Zendesk","item":"https://toolboxkart.tech/zendesk/"},
+        {"@type":"ListItem","position":3,"name":"Alternatives","item":"https://toolboxkart.tech/zendesk/alternatives/"}
+      ]
+    }
   ]
 }
