@@ -125,7 +125,7 @@ HTML
 HTML
  ],
   [
-  'title'=>'How to Use Freshdesk: Setup and Ticket Workflow','seo_title'=>'How to Use Freshdesk: Setup and Ticket Workflow',
+  'title'=>'How to Use Freshdesk: Setup and Ticket Workflow','seo_title'=>'How to Use Freshdesk: Setup, Tickets and Workflows Guide',
   'description'=>'Set up Freshdesk email, agents, groups, SLAs, channels, knowledge articles and AI with steps checked against official help documentation and setup tips.',
   'url'=>'/freshdesk/how-to-use/','date'=>'2026-10-29','status'=>'published','software_name'=>'Freshdesk',
   'content'=><<<'HTML'
