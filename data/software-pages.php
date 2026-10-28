@@ -66,9 +66,35 @@ HTML
   'url'=>'/freshdesk/pricing/','date'=>'2026-10-29','status'=>'published','software_name'=>'Freshdesk',
   'content'=><<<'HTML'
 <h2>Freshdesk pricing checked October 29, 2026</h2>
-<p>Freshworks lists Growth at US$19, Pro at US$55 and Enterprise at US$89 per agent/month when billed annually. The pricing page offers a monthly/annual billing switch. Confirm current plan prices and terms before purchase.</p>
-<p>Freshdesk is sold with different channel coverage from Freshdesk Omni. Check the product and plan that includes the workflows you need.</p>
-<p>See the <a href="https://www.freshworks.com/freshdesk/pricing/">official pricing page</a> and our <a href="/freshdesk/">Freshdesk hub</a>.</p>
+<p>Freshworks lists three standard Freshdesk plans. The prices below use the annual billing view and are monthly equivalents, not month-to-month rates. Confirm the current plan and billing option before purchase.</p>
+<div class="table-scroll"><table><thead><tr><th scope="col">Plan</th><th scope="col">Annual billing price</th><th scope="col">What changes</th></tr></thead><tbody>
+<tr><th scope="row">Growth</th><td>US$19 per agent/month</td><td>Ticketing, shared inbox, customer portal and knowledge base, standard analytics, threads, tasks and roles. First 500 Freddy AI Agent sessions are listed.</td></tr>
+<tr><th scope="row">Pro</th><td>US$55 per agent/month</td><td>Growth features plus multilingual help desk, custom dashboards, intelligent routing, multiple SLA policies and external collaborators.</td></tr>
+<tr><th scope="row">Enterprise</th><td>US$89 per agent/month</td><td>Pro features plus Freddy AI Insights, skill-based routing, sandbox, audit logs and allowed domains/IP restrictions.</td></tr>
+</tbody></table></div>
+<p>Source: <a href="https://www.freshworks.com/freshdesk/pricing/">Freshdesk official pricing</a>, checked October 29, 2026.</p>
+<h2>Which plan fits?</h2>
+<p><strong>Growth</strong> is the baseline if you need ticket tracking, a shared inbox, customer self-service, basic reporting and permissions. It is worth comparing before paying for advanced routing or dashboards.</p>
+<p><strong>Pro</strong> is relevant when you need multilingual support, custom reporting, intelligent routing or multiple SLA policies. These features matter when queues have different owners, response targets or languages. Upgrade only when the team can name the workflow that needs the feature.</p>
+<p><strong>Enterprise</strong> adds skill-based routing, sandbox, audit logs and allowed domains/IP restrictions. Compare it with Pro and other vendors if you need those controls; the highest tier is not automatically the right choice.</p>
+<h2>Additional costs to include</h2>
+<div class="table-scroll"><table><thead><tr><th scope="col">Item</th><th scope="col">Published detail</th></tr></thead><tbody>
+<tr><th scope="row">Freddy AI Agent</th><td>First 500 sessions are listed on Growth, Pro and Enterprise; extra sessions are US$49 per 100.</td></tr>
+<tr><th scope="row">Freddy AI Copilot</th><td>US$29 per agent/month on Pro and Enterprise.</td></tr>
+<tr><th scope="row">Day passes</th><td>US$2 on Growth, US$7 on Pro and US$12 on Enterprise.</td></tr>
+<tr><th scope="row">Connector app tasks</th><td>US$80 per 5,000 tasks.</td></tr>
+</tbody></table></div>
+<p>Freshworks says the included 500 AI Agent sessions are limited to once per account. Estimate usage separately, and check which add-ons apply to your product and contract.</p>
+<h2>Is Freshdesk free?</h2>
+<p>The standard pricing page displayed Growth, Pro and Enterprise plus a 14-day free trial. Freshworks also mentions a Free program in its product updates, but says switching to it is handled through Customer Success Managers rather than being self-serve. Ask Freshworks about eligibility instead of assuming a permanent free plan. The <a href="https://support.freshdesk.com/support/solutions/articles/50000011785-getting-started-with-freshdesk-omni">getting-started guide</a> says a credit card is not required to explore the trial; verify current terms during sign-up.</p>
+<h2>Estimate the cost</h2>
+<p>Five Growth seats equal US$95 per month equivalent on annual billing; five Pro seats equal US$275 per month equivalent. These calculations exclude taxes, optional add-ons and usage beyond included allowances.</p>
+<ol><li>Count paid seats, including seasonal staff.</li><li>Choose the lowest tier that covers required routing, reporting, language and security features.</li><li>Estimate AI sessions, Copilot seats, day passes and connector usage.</li><li>Compare billing terms and confirm how plan changes work.</li></ol>
+<p>Check whether you need standard Freshdesk or Freshdesk Omni. They differ in channel coverage, so a plan without a required channel is not a like-for-like option.</p>
+<h2>When to compare other tools</h2>
+<p>Compare <a href="/compare/zendesk-vs-freshdesk/">Zendesk</a> for structured routing and a wider service suite, <a href="https://www.zoho.com/desk/pricing.html">Zoho Desk</a> for its ecosystem and regional pricing, <a href="https://www.helpscout.com/pricing/">Help Scout</a> for a shared inbox, or <a href="https://www.intercom.com/pricing">Intercom</a> for messaging and outcome-priced AI. Their pricing units differ, so compare the same seats, channels and expected volume.</p>
+<h2>Official sources</h2><ul><li><a href="https://www.freshworks.com/freshdesk/pricing/">Freshdesk pricing</a>, checked October 29, 2026.</li><li><a href="https://support.freshdesk.com/support/solutions/articles/50000011785-getting-started-with-freshdesk-omni">Freshdesk Omni setup guide</a>, checked October 29, 2026.</li><li><a href="https://www.freshworks.com/freshdesk/new-features/">Freshdesk product updates</a>, checked October 29, 2026.</li></ul>
+<p>This is a research guide, not a negotiated quote. Region, taxes, billing terms and account eligibility can change the amount you pay.</p>
 HTML
   ],
  'how_to_use' => [[
