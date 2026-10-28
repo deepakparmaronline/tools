@@ -11,20 +11,20 @@ function software_detail_config(string $collectionKey): ?array {
         ],
         'pricing' => [
             'pattern' => '#^/[a-z0-9-]+/pricing/$#D',
-            'index_url' => '/tools/',
+            'index_url' => '/pricing/',
             'index_title' => 'Software Pricing Guides',
             'eyebrow' => 'Pricing guide',
         ],
         'how_to_use' => [
             'pattern' => '#^/[a-z0-9-]+/how-to-use/$#D',
-            'index_url' => '/tools/',
+            'index_url' => '/how-to-use/',
             'index_title' => 'How to Use Software',
             'eyebrow' => 'How-to guide',
         ],
         'comparisons' => [
             'pattern' => '#^/compare/[a-z0-9-]+/$#D',
             'index_url' => '/compare/',
-            'index_title' => 'Software Comparisons',
+            'index_title' => 'Comparisons',
             'eyebrow' => 'Software comparison',
         ],
         'categories' => [
@@ -43,6 +43,51 @@ function software_detail_valid_date($value): ?string {
     if (!$date || $date->format('Y-m-d') !== $value) return null;
     $today = (new DateTimeImmutable('now', new DateTimeZone('Asia/Kolkata')))->format('Y-m-d');
     return $value <= $today ? $value : null;
+}
+
+function software_detail_breadcrumb_items(array $page, string $collectionKey, string $canonicalPath): array {
+    $toolSlug = null;
+    if (in_array($collectionKey, ['tool_hubs', 'pricing', 'how_to_use'], true)) {
+        if (preg_match('#^/([a-z0-9-]+)(?:/(?:pricing|how-to-use))?/$#D', $canonicalPath, $matches)) {
+            $toolSlug = $matches[1];
+        }
+    }
+
+    $toolName = trim((string)($page['software_name'] ?? ''));
+    if ($toolName === '' && $toolSlug !== null) {
+        foreach (software_pages('tool_hubs') as $hub) {
+            if (($hub['url'] ?? null) === '/'.$toolSlug.'/') {
+                $toolName = trim((string)($hub['software_name'] ?? ''));
+                break;
+            }
+        }
+    }
+    if ($toolName === '' && $toolSlug !== null) {
+        $toolName = ucwords(str_replace('-', ' ', $toolSlug));
+    }
+
+    $items = [['name' => 'Home', 'url' => SITE_URL]];
+    if ($collectionKey === 'tool_hubs') {
+        $items[] = ['name' => $toolName !== '' ? $toolName : (string)$page['title'], 'url' => url($canonicalPath)];
+        return $items;
+    }
+    if (in_array($collectionKey, ['pricing', 'how_to_use'], true) && $toolSlug !== null) {
+        $items[] = ['name' => $toolName, 'url' => url('/'.$toolSlug.'/')];
+        $items[] = [
+            'name' => $collectionKey === 'pricing' ? 'Pricing' : 'How to use',
+            'url' => url($canonicalPath),
+        ];
+        return $items;
+    }
+    if ($collectionKey === 'comparisons') {
+        $items[] = ['name' => 'Comparisons', 'url' => url('/compare/')];
+    } elseif ($collectionKey === 'categories') {
+        $items[] = ['name' => 'Best software', 'url' => url('/best/')];
+    } else {
+        $items[] = ['name' => (string)software_detail_config($collectionKey)['index_title'], 'url' => url(software_detail_config($collectionKey)['index_url'])];
+    }
+    $items[] = ['name' => (string)$page['title'], 'url' => url($canonicalPath)];
+    return $items;
 }
 
 function render_software_detail_page(array $page, string $collectionKey): string {
@@ -106,16 +151,25 @@ function render_software_detail_page(array $page, string $collectionKey): string
         $articleSchema['image'] = ['@type' => 'ImageObject', 'url' => $socialImage, 'caption' => $socialImageAlt];
     }
 
+    $breadcrumbItems = software_detail_breadcrumb_items($page, $collectionKey, $canonicalPath);
+    $graph = [$articleSchema, breadcrumbs($breadcrumbItems)];
+    if ($collectionKey === 'tool_hubs') {
+        $softwareName = trim((string)($page['software_name'] ?? $title));
+        $graph[] = [
+            '@type' => 'SoftwareApplication',
+            '@id' => $canonical.'#software',
+            'name' => $softwareName,
+            'applicationCategory' => 'BusinessApplication',
+            'operatingSystem' => 'Web',
+            'url' => $canonical,
+            'description' => $description,
+            'publisher' => ['@type' => 'Organization', 'name' => SITE_NAME, 'url' => SITE_URL],
+        ];
+    }
+
     $extraHead = '<meta property="article:published_time" content="'.e($date.'T00:00:00+05:30').'">'
         .'<meta property="article:modified_time" content="'.e($updatedDate.'T00:00:00+05:30').'">'
-        .jsonld(['@context' => 'https://schema.org', '@graph' => [
-            $articleSchema,
-            breadcrumbs([
-                ['name' => 'Home', 'url' => SITE_URL],
-                ['name' => $config['index_title'], 'url' => url($config['index_url'])],
-                ['name' => $title, 'url' => $canonical],
-            ]),
-        ]])
+        .jsonld(['@context' => 'https://schema.org', '@graph' => $graph])
         .'<link rel="stylesheet" href="'.e(asset('css/software-detail.css')).'">';
 
     ob_start();
@@ -124,9 +178,14 @@ function render_software_detail_page(array $page, string $collectionKey): string
     <header class="article-head software-detail__head">
         <div class="container">
             <nav class="crumbs" aria-label="Breadcrumb">
-                <a href="/">Home</a><span aria-hidden="true">›</span>
-                <a href="<?=e($config['index_url'])?>"><?=e($config['index_title'])?></a><span aria-hidden="true">›</span>
-                <span><?=e($title)?></span>
+                <?php foreach ($breadcrumbItems as $index => $crumb): ?>
+                    <?php if ($index > 0): ?><span aria-hidden="true">›</span><?php endif; ?>
+                    <?php if ($index === count($breadcrumbItems) - 1): ?>
+                        <span aria-current="page"><?=e($crumb['name'])?></span>
+                    <?php else: ?>
+                        <a href="<?=e(parse_url($crumb['url'], PHP_URL_PATH) ?: '/')?>"><?=e($crumb['name'])?></a>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </nav>
             <span class="eyebrow"><?=e($config['eyebrow'])?></span>
             <h1><?=e($title)?></h1>
