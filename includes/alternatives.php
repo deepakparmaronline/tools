@@ -30,12 +30,16 @@ function alternative_articles(): array {
 }
 
 function alternative_url(array $article): string {
-    $path = ($article['slug'] ?? '') === 'zendesk-alternatives' ? 'zendesk/alternatives/' : 'alternatives/'.$article['slug'].'/';
-    return url($path);
+    return url(ltrim(alternative_path($article), '/'));
 }
 
 function alternative_path(array $article): string {
-    return ($article['slug'] ?? '') === 'zendesk-alternatives' ? '/zendesk/alternatives/' : '/alternatives/'.$article['slug'].'/';
+    $toolFirst = [
+        'zendesk-alternatives' => '/zendesk/alternatives/',
+        'freshdesk-alternatives' => '/freshdesk/alternatives/',
+    ];
+    $slug = $article['slug'] ?? '';
+    return $toolFirst[$slug] ?? '/alternatives/'.$slug.'/';
 }
 
 function alternative_image_url(array $article): string {
@@ -47,6 +51,7 @@ function alternative_image_url(array $article): string {
 function alternative_topic_group(array $article): array {
     $slug = $article['slug'] ?? '';
     $groups = [
+        'customer-support'=>['name'=>'Customer support and help desks','description'=>'Help desk platforms and shared inboxes for customer service teams.','slugs'=>['zendesk-alternatives','freshdesk-alternatives']],
         'productivity'=>['name'=>'Productivity, focus and scheduling','description'=>'Task planning, calendars, focus blockers, booking and personal workflow tools.','slugs'=>['akiflow-alternatives','fantastical-alternatives','freedom-alternatives','odrive-alternatives','sunsama-alternatives','taskade-alternatives','tidycal-alternatives','vector-alternatives']],
         'privacy-browsers'=>['name'=>'Browsers and privacy','description'=>'Browser, tracker-blocking and private-search choices for different devices.','slugs'=>['arc-search-alternatives','ghostery-alternatives','orion-browser-alternatives']],
         'customer-growth'=>['name'=>'Customer, sales and marketing','description'=>'Customer success, support, feedback, messaging and lead-conversion software.','slugs'=>['callpage-alternatives','gainsight-alternatives','leave-me-alone-alternatives','stonly-alternatives','survicate-alternatives','wati-alternatives']],
