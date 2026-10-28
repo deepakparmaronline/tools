@@ -6,7 +6,7 @@
  */
 function software_page_has_detail_content(string $collection, array $item): bool {
     $routes = [
-        'tool_hubs' => ['prefix' => '/', 'pattern' => '#^/[a-z0-9-]+/$#D'],
+        'tool_hubs' => ['prefix' => '/', 'pattern' => '#^/(?:tools/)?[a-z0-9-]+/$#D'],
         'pricing' => ['prefix' => '/', 'pattern' => '#^/[a-z0-9-]+/pricing/$#D'],
         'how_to_use' => ['prefix' => '/', 'pattern' => '#^/[a-z0-9-]+/how-to-use/$#D'],
         'comparisons' => ['prefix' => '/compare/', 'pattern' => '#^/compare/[a-z0-9-]+/$#D'],

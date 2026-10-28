@@ -4,7 +4,7 @@ require_once __DIR__.'/bootstrap.php';
 function software_detail_config(string $collectionKey): ?array {
     $configs = [
         'tool_hubs' => [
-            'pattern' => '#^/[a-z0-9-]+/$#D',
+            'pattern' => '#^/(?:tools/)?[a-z0-9-]+/$#D',
             'index_url' => '/tools/',
             'index_title' => 'Software Tool Hubs',
             'eyebrow' => 'Software tool hub',
