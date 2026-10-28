@@ -59,7 +59,18 @@ HTML
 <h2>Cheaper or different options</h2><p>Read the <a href="/zendesk/alternatives/">Zendesk alternatives guide</a> for free-seat, per-seat and ticket-volume pricing models, and the <a href="/zendesk/review/">Zendesk review</a> for best-fit guidance.</p>
 <h2>Sources</h2><p>Plan prices were checked against the <a href="https://www.zendesk.com/pricing/">official Zendesk pricing page</a> on October 27, 2026. Confirm currency, billing, bundle and usage fees before purchase.</p>
 HTML
- ]],
+ ],
+  [
+  'title'=>'Freshdesk Pricing: Plans, AI Costs and Limits','seo_title'=>'Freshdesk Pricing: Plans, AI Costs and Limits',
+  'description'=>'Compare Freshdesk Growth, Pro and Enterprise prices, included features, AI session costs and add-ons before choosing a plan.',
+  'url'=>'/freshdesk/pricing/','date'=>'2026-10-29','status'=>'published','software_name'=>'Freshdesk',
+  'content'=><<<'HTML'
+<h2>Freshdesk pricing checked October 29, 2026</h2>
+<p>Freshworks lists Growth at US$19, Pro at US$55 and Enterprise at US$89 per agent/month when billed annually. The pricing page offers a monthly/annual billing switch. Confirm current plan prices and terms before purchase.</p>
+<p>Freshdesk is sold with different channel coverage from Freshdesk Omni. Check the product and plan that includes the workflows you need.</p>
+<p>See the <a href="https://www.freshworks.com/freshdesk/pricing/">official pricing page</a> and our <a href="/freshdesk/">Freshdesk hub</a>.</p>
+HTML
+  ],
  'how_to_use' => [[
   'title'=>'How to Use Zendesk: Setup and Ticket Workflow','seo_title'=>'How to Use Zendesk: Setup and Ticket Workflow',
   'description'=>'Follow a practical Zendesk setup sequence for support channels, ticket routing, saved replies, knowledge content and migration planning.',
