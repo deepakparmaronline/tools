@@ -92,6 +92,7 @@ def test_software_detail_renderer():
     assert article['datePublished'] == '2026-10-26T00:00:00+05:30'
     assert article['dateModified'] == '2026-10-26T00:00:00+05:30'
     assert any(item.get('@type') == 'BreadcrumbList' for item in graph)
+    assert any(item.get('@type') == 'SoftwareApplication' for item in graph)
 
     records = {
         'incomplete': {'url': '/tools/hidden-tool/'},
@@ -173,32 +174,55 @@ def main():
             assert status == 404, f'{path}: expected 404, got {status}'
 
         published_details = {
-            '/zendesk/': 'https://toolboxkart.tech/zendesk/',
-            '/zendesk/pricing/': 'https://toolboxkart.tech/zendesk/pricing/',
-            '/zendesk/how-to-use/': 'https://toolboxkart.tech/zendesk/how-to-use/',
-            '/compare/zendesk-vs-freshdesk/': 'https://toolboxkart.tech/compare/zendesk-vs-freshdesk/',
+            '/zendesk/': ('https://toolboxkart.tech/zendesk/', 'zendesk', ['Home', 'Zendesk']),
+            '/zendesk/pricing/': ('https://toolboxkart.tech/zendesk/pricing/', 'zendesk', ['Home', 'Zendesk', 'Pricing']),
+            '/zendesk/how-to-use/': ('https://toolboxkart.tech/zendesk/how-to-use/', 'zendesk', ['Home', 'Zendesk', 'How to use']),
+            '/freshdesk/': ('https://toolboxkart.tech/freshdesk/', 'freshdesk', ['Home', 'Freshdesk']),
+            '/freshdesk/pricing/': ('https://toolboxkart.tech/freshdesk/pricing/', 'freshdesk', ['Home', 'Freshdesk', 'Pricing']),
+            '/freshdesk/how-to-use/': ('https://toolboxkart.tech/freshdesk/how-to-use/', 'freshdesk', ['Home', 'Freshdesk', 'How to use']),
+            '/compare/zendesk-vs-freshdesk/': ('https://toolboxkart.tech/compare/zendesk-vs-freshdesk/', 'freshdesk', ['Home', 'Comparisons', 'Zendesk vs Freshdesk: Which Help Desk Fits?']),
         }
-        for path, canonical in published_details.items():
+        for path, (canonical, expected_tool, expected_breadcrumbs) in published_details.items():
             html = get(path)
             page = Page(html)
             assert page.h1 == 1, path
             assert page.canonical == canonical, path
-            assert 'zendesk' in ' '.join(page.text).lower(), path
+            visible = ' '.join(page.text).lower()
+            assert expected_tool in visible, path
+            graph = next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
+            crumb = next(item for item in graph if item.get('@type') == 'BreadcrumbList')
+            names = [item['name'] for item in crumb['itemListElement']]
+            assert names == expected_breadcrumbs, (path, names)
+            if path in ['/zendesk/', '/freshdesk/']:
+                assert any(item.get('@type') == 'SoftwareApplication' for item in graph), path
 
         for path in ['/tools/', '/pricing/', '/how-to-use/', '/compare/']:
-            assert 'zendesk' in get(path).lower(), path
+            listing = get(path).lower()
+            assert 'zendesk' in listing, path
+            assert 'freshdesk' in listing, path
         assert 'zendesk' not in get('/best/').lower()
+        assert 'freshdesk' not in get('/best/').lower()
+
+        for source, target in [
+            ('/alternatives/freshdesk-alternatives/', '/freshdesk/alternatives/'),
+            ('/reviews/freshdesk-review/', '/freshdesk/review/'),
+            ('/freshdesk/review', '/freshdesk/review/'),
+        ]:
+            status, headers, _ = get_response(source)
+            assert status == 301 and headers['Location'] == target, source
 
         expected_sitemap_urls = {
-            '/sitemap-tools.xml': 'https://toolboxkart.tech/zendesk/',
-            '/sitemap-pricing.xml': 'https://toolboxkart.tech/zendesk/pricing/',
-            '/sitemap-how-to-use.xml': 'https://toolboxkart.tech/zendesk/how-to-use/',
-            '/sitemap-compare.xml': 'https://toolboxkart.tech/compare/zendesk-vs-freshdesk/',
-            '/sitemap-alternatives.xml': 'https://toolboxkart.tech/zendesk/alternatives/',
-            '/sitemap-reviews.xml': 'https://toolboxkart.tech/zendesk/review/',
+            '/sitemap-tools.xml': ['https://toolboxkart.tech/zendesk/', 'https://toolboxkart.tech/freshdesk/'],
+            '/sitemap-pricing.xml': ['https://toolboxkart.tech/zendesk/pricing/', 'https://toolboxkart.tech/freshdesk/pricing/'],
+            '/sitemap-how-to-use.xml': ['https://toolboxkart.tech/zendesk/how-to-use/', 'https://toolboxkart.tech/freshdesk/how-to-use/'],
+            '/sitemap-compare.xml': ['https://toolboxkart.tech/compare/zendesk-vs-freshdesk/'],
+            '/sitemap-alternatives.xml': ['https://toolboxkart.tech/zendesk/alternatives/', 'https://toolboxkart.tech/freshdesk/alternatives/'],
+            '/sitemap-reviews.xml': ['https://toolboxkart.tech/zendesk/review/', 'https://toolboxkart.tech/freshdesk/review/'],
         }
-        for path, url in expected_sitemap_urls.items():
-            assert url in get(path), f'{url} missing from {path}'
+        for path, urls in expected_sitemap_urls.items():
+            body = get(path)
+            for url in urls:
+                assert url in body, f'{url} missing from {path}'
 
         rewrite_rules = (ROOT / '.htaccess').read_text()
         assert 'RewriteRule ^(tools|pricing|how-to-use|compare|best)/([a-z0-9-]+)/?$ router.php [L,QSA]' in rewrite_rules
