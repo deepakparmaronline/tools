@@ -12,7 +12,40 @@ return [
 <h2>Before choosing</h2><p>List required channels, agent count, routing rules, reporting needs and the records you must preserve. Price the exact plan and any AI or channel add-ons. A lower seat price does not guarantee a lower total cost if you need more products or implementation work.</p>
 <h2>Plan migration carefully</h2><p>Zendesk documents API-based import paths for tickets, users, organizations and help center articles. It notes that some ticket metrics are not imported through the documented ticket import process. Read the <a href="https://support.zendesk.com/hc/en-us/articles/6696005837082-How-can-I-migrate-information-from-another-platform-into-Zendesk">official migration guidance</a> before moving systems.</p>
 HTML
- ]],
+ ],
+  [
+  'title'=>'Freshdesk Customer Support Hub','seo_title'=>'Freshdesk: Features, Plans and Alternatives',
+  'description'=>'Explore Freshdesk ticketing, channels, AI usage and plan differences, then compare pricing, setup steps, reviews and alternatives.',
+  'url'=>'/freshdesk/','date'=>'2026-10-29','status'=>'published','software_name'=>'Freshdesk',
+  'content'=><<<'HTML'
+
+<h2>Freshdesk at a glance</h2>
+<p>Freshdesk is Freshworks' customer-support help desk. It turns incoming customer requests into trackable tickets, gives agents a shared workspace, and supports a customer portal, knowledge base, workflows and reporting. Freshworks also offers Freshdesk Omni for teams that need broader messaging channels, so confirm which product you are evaluating before comparing plans.</p>
+<div class="table-scroll"><table><thead><tr><th scope="col">Decision point</th><th scope="col">What the official pages show</th></tr></thead><tbody>
+<tr><th scope="row">Category</th><td>Customer support and help desk software</td></tr>
+<tr><th scope="row">Entry paid plan</th><td>Growth at US$19 per agent/month, billed annually</td></tr>
+<tr><th scope="row">Trial</th><td>A 14-day trial is described in the official getting-started guide</td></tr>
+<tr><th scope="row">Core workflow</th><td>Ticketing, shared inbox, customer portal, knowledge base, reporting and automation</td></tr>
+<tr><th scope="row">AI usage</th><td>500 Freddy AI Agent sessions are listed on Growth, Pro and Enterprise; extra sessions cost more</td></tr>
+<tr><th scope="row">Main choice</th><td>Email-first Freshdesk or broader-channel Freshdesk Omni</td></tr>
+</tbody></table></div>
+<p>Prices and capabilities were checked on October 29, 2026. See the <a href="https://www.freshworks.com/freshdesk/pricing/">official pricing page</a> before buying because plan details and billing options can change.</p>
+<h2>Freshdesk and Freshdesk Omni are not the same package</h2>
+<p>Freshworks describes standard Freshdesk as email-first, with email, Facebook and basic web chat. Freshdesk Omni is built around a wider shared inbox that can include email, web chat, WhatsApp, Facebook and Instagram. The Omni guide also describes channel-specific routing, AI agent options and a more unified view of customer conversations.</p>
+<p>This difference matters when you compare Freshdesk with another help desk. If your team needs WhatsApp or Instagram, check the product SKU and the exact plan. Do not assume a feature shown in an Omni walkthrough is included in the email-first Freshdesk plan.</p>
+<h2>What Freshdesk is designed to handle</h2>
+<p>Ticketing is the core. Agents can track status, priority and ownership rather than relying on an unstructured mailbox. Shared inbox features and internal threads help the team coordinate without adding internal discussion to the customer reply. Groups, business hours and service-level policies help define who handles a request and when it should be answered.</p>
+<p>The customer portal and knowledge base let customers find articles or submit requests. Reporting covers measures such as ticket volume, response time, resolution time and customer satisfaction. Workflows can assign tickets, trigger follow-ups and apply service targets. These features are most useful when the team defines its support process before configuring rules.</p>
+<p>Freddy AI adds another decision layer. The pricing page lists an included session allowance for Freddy AI Agent and separate pricing for additional sessions. Freddy AI Copilot is a separately priced add-on on Pro and Enterprise. Treat AI as a budget line with a usage estimate, not as a feature that has no ongoing cost.</p>
+<h2>Who should shortlist Freshdesk?</h2>
+<p>Freshdesk is worth evaluating when you want a dedicated help desk with ticket ownership, a customer portal, knowledge content and automations, but do not need to build a custom service operation from scratch. Growth may cover the basics for a small team; Pro adds items such as multilingual help desk, custom dashboards, intelligent routing and multiple SLA policies. Enterprise adds items including skill-based routing, sandbox, audit logs and IP restrictions.</p>
+<p>It may be a poor fit if your main need is a very lightweight shared inbox, if your team needs a channel that is not available in the chosen SKU, or if your cost model depends on large volumes of AI sessions. Compare the total plan cost with alternatives before you move.</p>
+<h2>Explore the Freshdesk guides</h2>
+<ul><li><a href="/freshdesk/review/">Freshdesk review</a> — strengths, limits and the type of team it suits.</li><li><a href="/freshdesk/pricing/">Freshdesk pricing</a> — annual plan prices, add-ons and a practical cost check.</li><li><a href="/freshdesk/how-to-use/">How to use Freshdesk</a> — a setup sequence based on official help documentation.</li><li><a href="/freshdesk/alternatives/">Freshdesk alternatives</a> — six options for different support workflows.</li><li><a href="/compare/zendesk-vs-freshdesk/">Zendesk vs Freshdesk</a> — the direct comparison already published on ToolboxKart.</li></ul>
+<h2>Before you sign up</h2>
+<p>Write down your current channels, number of paid agents, service targets, knowledge articles, reports and integrations. Then verify the exact Freshdesk product and plan that covers those needs. A trial is useful for checking whether the workflow fits, but do not call it a free plan or assume that all add-ons remain free after the trial.</p>
+HTML
+  ],
  'pricing' => [[
   'title'=>'Zendesk Pricing: Plans, Costs and Limits','seo_title'=>'Zendesk Pricing: Plans, Costs and Limits',
   'description'=>'Compare Zendesk Support and Suite prices, billing terms, plan capabilities and extra costs before choosing a support plan.',
