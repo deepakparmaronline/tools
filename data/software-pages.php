@@ -44,6 +44,7 @@ HTML
 <p>It may be a poor fit if your main need is a very lightweight shared inbox, if your team needs a channel that is not available in the chosen SKU, or if your cost model depends on large volumes of AI sessions. Compare the total plan cost with alternatives before you move.</p>
 <h2>Explore the Freshdesk guides</h2>
 <ul><li><a href="/freshdesk/review/">Freshdesk review</a> — strengths, limits and the type of team it suits.</li><li><a href="/freshdesk/pricing/">Freshdesk pricing</a> — annual plan prices, add-ons and a practical cost check.</li><li><a href="/freshdesk/how-to-use/">How to use Freshdesk</a> — a setup sequence based on official help documentation.</li><li><a href="/freshdesk/alternatives/">Freshdesk alternatives</a> — six options for different support workflows.</li><li><a href="/compare/zendesk-vs-freshdesk/">Zendesk vs Freshdesk</a> — the direct comparison already published on ToolboxKart.</li></ul>
+<p>Browse the <a href="/tools/">ToolboxKart tool hubs</a> to compare Freshdesk with other support and business software.</p>
 <h2>Before you sign up</h2>
 <p>Write down your current channels, number of paid agents, service targets, knowledge articles, reports and integrations. Then verify the exact Freshdesk product and plan that covers those needs. A trial is useful for checking whether the workflow fits, but do not call it a free plan or assume that all add-ons remain free after the trial.</p>
 HTML
