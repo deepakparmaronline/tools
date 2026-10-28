@@ -26,6 +26,10 @@ RewriteRule ^reviews/zendesk-review/?$ /zendesk/review/ [R=301,L,NE]
 RewriteRule ^pricing/zendesk/?$ /zendesk/pricing/ [R=301,L,NE]
 RewriteRule ^how-to-use/zendesk/?$ /zendesk/how-to-use/ [R=301,L,NE]
 
+# Freshdesk legacy paths redirect to the permanent tool-first URLs.
+RewriteRule ^alternatives/freshdesk-alternatives/?$ /freshdesk/alternatives/ [R=301,L,NE]
+RewriteRule ^reviews/freshdesk-review/?$ /freshdesk/review/ [R=301,L,NE]
+
 # Tool-first software detail URLs are routed through the published-record renderer.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
