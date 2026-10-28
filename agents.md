@@ -55,7 +55,9 @@ This workflow creates one article per requested tool, not the five-article daily
 
 Use a lowercase hyphenated slug based on the product and alternatives intent. Do not put years, publication dates, IDs, or query parameters in the slug. Inspect existing files before choosing a slug. Never rename an established article URL without an authorized redirect plan.
 
-Each publication file returns an array containing metadata and trusted editorial HTML. `includes/alternatives.php` discovers published records; the shared template renders them. The listing, related alternatives, and dynamic `sitemap.php` update automatically. Do not manually edit those outputs, register Alternatives in `data/posts.php`, or use `/articles/` or `/blog/` as the new canonical path.
+Each publication file returns an array containing metadata and trusted editorial HTML. `includes/alternatives.php` discovers published records; the shared template renders them. The listing, related alternatives, and dynamic `sitemap.php` update automatically.
+
+Existing legacy Alternatives URLs must stay stable unless an explicit migration is approved. New software-cluster alternatives use `/{tool}/alternatives/` while keeping the PHP record in `alternatives/articles/{topic-slug}.php`. Every applicable software-cluster page must show visible breadcrumbs and matching `BreadcrumbList` JSON-LD. Do not recycle another product's article as a name-swapped template; research, wording, examples and trade-offs must fit the exact product. Do not manually edit those outputs, register Alternatives in `data/posts.php`, or use `/articles/` or `/blog/` as the new canonical path.
 
 ## Batch processing and progress
 
