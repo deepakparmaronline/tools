@@ -1,8 +1,9 @@
 .software-detail__content{min-width:0;overflow-wrap:anywhere}
 .software-detail__content img{max-width:100%;height:auto}
-.software-detail__content table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse}
-.software-detail__content th,.software-detail__content td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-.software-detail__content a{color:var(--primary);text-decoration:underline}
+.software-detail__content table{display:block;width:100%;min-width:0;max-width:100%;overflow-x:auto;border-collapse:collapse;border-spacing:0;margin:22px 0;font-size:14px;-webkit-overflow-scrolling:touch}
+.software-detail__content th,.software-detail__content td{min-width:140px;padding:12px;border:1px solid var(--line);text-align:left;vertical-align:top;overflow-wrap:anywhere}
+.software-detail__content th{background:var(--surface2);font-weight:700}
+.software-detail__content a{color:var(--primary);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 .software-detail__content pre{max-width:100%;overflow:auto}
 .software-detail__feature{margin:0 0 28px}
 .software-detail__feature img{display:block;width:100%;border-radius:var(--radius)}
