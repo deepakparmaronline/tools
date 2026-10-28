@@ -4,14 +4,14 @@ Freshdesk is a practical email-first help desk, but it is not the right fit for 
 
 ## Quick comparison
 
-| Alternative | Best fit | Starting price checked October 29, 2026 |
-| --- | --- | --- |
-| Zendesk | Teams that need structured ticket routing, customer context and a wider service suite | Support Team: US$19 per agent/month billed yearly |
-| Zoho Desk | Teams already using Zoho or comparing regional pricing | India pricing displayed Express at ₹420 per user/month billed annually; US price not confirmed in this check |
-| Help Scout | Teams that want a shared inbox with a customer-facing knowledge base | Free for up to 5 users; Standard displayed at US$25 per user/month |
-| Intercom | Messaging-led support and teams that want outcome-priced AI | Essential: US$29 per seat/month billed annually, plus Fin at US$0.99 per outcome |
-| HubSpot Service Hub | Support teams that want tickets connected to CRM records | Free tools for up to 2 users; Starter displayed from US$7 per seat/month on annual billing |
-| Front | Teams that manage customer conversations collaboratively across channels | Starter: US$25 per seat/month billed annually |
+| Alternative | Best fit | Starting price checked October 29, 2026 | Free plan | Standout feature |
+| --- | --- | --- | --- | --- |
+| [Zendesk](https://www.zendesk.com/pricing/) | Structured ticket routing and customer context | Support Team: US$19 per agent/month billed yearly | Trial; no standard free plan listed | Routing and wider Suite plans |
+| [Zoho Desk](https://www.zoho.com/desk/pricing.html) | Zoho users and regional pricing | India view: ₹420 per user/month billed annually; US price not confirmed | Check regional eligibility | Zoho ecosystem and multi-department workflows |
+| [Help Scout](https://www.helpscout.com/pricing/) | Shared inbox and knowledge base | Standard: US$25 per user/month | Up to 5 users, 1 Inbox and 1 Docs site | Shared inbox and self-service |
+| [Intercom](https://www.intercom.com/pricing) | Messaging-led support and AI | Essential: US$29 per seat/month billed yearly | No free tier confirmed in this check | Fin outcome pricing |
+| [HubSpot Service Hub](https://www.hubspot.com/pricing/service) | CRM-connected tickets | Starter from US$7 per seat/month annual | Free tools for up to 2 users | CRM customer context |
+| [Front](https://front.com/pricing) | Collaborative customer conversations | Starter: US$25 per seat/month billed yearly | Trial; permanent free plan not confirmed | Shared inbox and automation |
 
 Prices and plan details can change. Each amount above links to the vendor's official pricing page. Check the plan, billing option, region, AI usage and seat rules before comparing totals.
 
