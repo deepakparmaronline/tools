@@ -57,6 +57,27 @@ def main():
             assert 'BreadcrumbList' not in html,path
             assert any('@graph' in schema for schema in page.schemas),path
             assert 'Review methodology' in visible and 'Sources' in visible,path
+        breadcrumb_pages={
+            '/zendesk/review/': ('https://toolboxkart.tech/zendesk/review/',['Home','Zendesk','Review']),
+            '/freshdesk/review/': ('https://toolboxkart.tech/freshdesk/review/',['Home','Freshdesk','Review']),
+        }
+        for path,(canonical,expected_names) in breadcrumb_pages.items():
+            code,_,html=get(path);assert code==200,path
+            page=Page(html);assert page.h1==1 and page.canonical==canonical,path
+            assert 'publication.css' in html and 'publication-crumbs' in html,path
+            graph=next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
+            crumb=next(item for item in graph if item.get('@type')=='BreadcrumbList')
+            assert [item['name'] for item in crumb['itemListElement']]==expected_names,path
+            assert all(name in ' '.join(page.text) for name in expected_names),path
+            article=next(item for item in graph if item.get('@type')=='Article')
+            assert article['dateModified'].endswith('+05:30'),path
+
+        for source,target in [
+            ('/freshdesk/review','/freshdesk/review/'),
+            ('/reviews/freshdesk-review/','/freshdesk/review/'),
+        ]:
+            code,headers,_=get(source);assert code==301 and headers['Location']==target,source
+
         for index,slug in [('/versus/','freedom-vs-cold-turkey'),('/reviews/','taskade-review'),('/content/','taskade-review')]:
             code,_,html=get(index);assert code==200 and slug in html,index
         for path in ['/about-deepak-parmar/','/editorial-policy','/review-methodology','/advertising-disclosure','/corrections-policy']:
@@ -67,6 +88,8 @@ def main():
         _,_,review_sitemap=get('/sitemap-reviews.xml')
         _,_,compare_sitemap=get('/sitemap-compare.xml')
         assert pages['/reviews/taskade-review/'] in review_sitemap
+        assert 'https://toolboxkart.tech/zendesk/review/' in review_sitemap
+        assert 'https://toolboxkart.tech/freshdesk/review/' in review_sitemap
         assert pages['/versus/freedom-vs-cold-turkey/'] in compare_sitemap
         _,_,alt_sitemap=get('/sitemap-alternatives.xml')
         assert '/alternatives/freedom-alternatives/' in alt_sitemap and '/reviews/' not in alt_sitemap
