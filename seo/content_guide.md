@@ -64,6 +64,8 @@ Primary keyword: "best [category] software". Length 2,000 to 3,200 words. Order:
 - One H1. Title under 60 characters. Meta description 140 to 160 characters, plain, with the keyword.
 - Slug: lowercase, short, no dates, no stop words unless needed.
 - Visible "Last updated" date. Breadcrumbs on every page. Canonical tag on every page.
+- `BreadcrumbList` JSON-LD is mandatory for every applicable software-cluster page. Visible breadcrumbs and schema must match the real hierarchy, use sequential positions, and point to canonical URLs. Test the rendered page for missing or conflicting breadcrumb data.
+- Do not reuse another product's article as a name-swapped template. Product facts, examples, section choices and trade-offs must be researched for the exact product and intent. If replacing the product name leaves most of the copy unchanged, rewrite it.
 - JSON LD schema: Article (with author and dates) and BreadcrumbList on all pages. SoftwareApplication on the tool hub with no rating. ItemList on alternatives and category pages. FAQPage is optional.
 - Images: only use images the site owner provided or simple diagrams you create. Add alt text. No tool logos unless provided.
 
