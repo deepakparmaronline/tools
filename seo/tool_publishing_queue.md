@@ -157,3 +157,7 @@ These rows are not part of the runnable queue. A daily run must not select them.
 - `HelpScout alternative` is the higher-volume keyword variant in the snapshot. Article copy must use the official product name Help Scout.
 - `ProtonMail alternative` is the researched keyword. Article copy must use the current official product name confirmed from Proton sources.
 - Metrics marked `n/a` must remain `n/a` during scheduled runs. Do not invent or refresh them. Product identity and all article facts still require current official-source verification.
+
+
+## Queue publication gate
+A queue row may be marked published only after the complete cluster and all registry, public index and child sitemap entries are committed to main, and the ToolboxKart quality checks status is passed for the exact content commit. Hostinger auto-deploys from main. Live HTTP/browser verification is the user's responsibility and is not a publication gate.

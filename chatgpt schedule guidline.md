@@ -156,3 +156,10 @@ Update the queue or progress record with:
 Mark the queue row `published` after the complete reviewed cluster and its registry, public index and child-sitemap entries are committed to main and the matching quality workflow passes. Hostinger auto-deploys from main; the user performs live verification. Do not hold publication for unavailable live HTTP checks.
 
 Keep the final report concise. Report blockers honestly and do not fall back to news publishing.
+
+
+## Mandatory breadcrumb and originality rules
+- Every applicable indexable page must include visible breadcrumbs and matching BreadcrumbList JSON-LD. Names, positions and canonical URLs in the schema must match the visible trail.
+- The tool hub must use SoftwareApplication schema without invented ratings. Alternatives pages must use ItemList only when the list is visible and the schema matches its order.
+- Page outlines are guardrails, not reusable copy templates. Headings, examples, analysis, recommendations and wording must be specific to the product and search intent.
+- Hostinger auto-deploys from main. Live HTTP/browser verification is the user's responsibility and is not a publication gate. Never claim live verification unless performed.

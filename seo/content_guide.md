@@ -108,3 +108,10 @@ Primary keyword: "best [category] software". Length 2,000 to 3,200 words. Order:
 - Each page has a unique title, meta description and primary keyword.
 - All internal links work. The build passes.
 - The sitemap is updated and valid. If a check fails, fix it. If the tool facts cannot be verified, do not publish the tool. Mark it "needs\_review" in the queue and move to the next tool.   |&#x20;
+
+
+## Mandatory breadcrumb and originality rules
+- Every applicable indexable page must include visible breadcrumbs and matching BreadcrumbList JSON-LD. Names, positions and canonical URLs in the schema must match the visible trail.
+- The tool hub may use SoftwareApplication schema without ratings. Alternatives pages may use ItemList when it matches the visible alternatives list. Do not add unsupported Review or AggregateRating markup.
+- Page outlines are guardrails, not copy templates. Headings, examples, analysis, trade-offs and conclusions must be product-specific. If replacing the product name leaves most of the article unchanged, rewrite it.
+- Tests must check breadcrumb schema and canonical hierarchy for every new page type.

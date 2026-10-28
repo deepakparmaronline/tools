@@ -21,3 +21,7 @@ The main `/sitemap.xml` continues to include published Alternatives URLs. `/site
 Article content is trusted editorial HTML, like existing blog content. These PHP records must only be authored by trusted site editors; they are not a public upload interface. Apache blocks direct access to the record directory.
 
 Verify `/alternatives/`, the new article's canonical URL, topic group, header/footer links, related articles, metadata, `/sitemap.xml`, and `/sitemap-alternatives.xml` after deployment. Start the local preview from the repository root with `php -S 127.0.0.1:8765 preview-router.php`. This keeps internal navigation and assets local while retaining production SEO metadata. Confirm CSS and JavaScript responses contain content and the correct MIME types; a 200 response alone does not establish that an asset loaded.
+
+
+## Tool-first URLs and breadcrumbs
+Existing legacy Alternatives article canonicals remain /alternatives/topic-slug/. New scheduled software clusters use /{tool}/alternatives/ and set url_path in the article record. Do not migrate established URLs without an authorized redirect plan. Every new applicable article must show visible breadcrumbs and matching BreadcrumbList JSON-LD.

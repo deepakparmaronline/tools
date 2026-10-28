@@ -216,3 +216,7 @@ If a check cannot be run, record the exact limitation and distinguish verified f
 Keep the chat report brief. Link the article folders and relevant publication records rather than pasting every full article into chat unless requested.
 
 Include the tools received, completed now, already completed, needs review, needs clarification, and any unfinished items. Explain each unresolved issue and its next action. Distinguish editorial completion, local published status, and verified live publication. Update the summary in `articles/progress.md` to match the files and final report.
+
+
+## Current software cluster URL and schema rules
+Existing legacy Alternatives URLs remain unchanged unless an authorized redirect plan is included. New software clusters use the tool-first structure, including /{tool}/alternatives/, with an explicit url_path in the article record. Every applicable indexable page must show breadcrumbs and matching BreadcrumbList JSON-LD using the actual canonical hierarchy. Shared layout is allowed, but product copy must not be recycled by swapping names.
