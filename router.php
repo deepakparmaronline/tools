@@ -154,6 +154,27 @@ if (isset($softwareLegacyRedirects[$path])) {
     exit;
 }
 
+// Tool-first alternatives routes use the published alternatives record as the source of truth.
+if (preg_match('#^/([a-z0-9-]+)/alternatives/?$#D', $path, $toolAlternativeMatches) && $toolAlternativeMatches[1] !== 'zendesk') {
+    require_once __DIR__.'/includes/bootstrap.php';
+    $toolSlug = $toolAlternativeMatches[1];
+    $canonicalPath = '/'.$toolSlug.'/alternatives/';
+    $articleSlug = $toolSlug.'-alternatives';
+    $article = alternative_articles()[$articleSlug] ?? null;
+    if (is_array($article) && alternative_path($article) === $canonicalPath) {
+        if ($path !== $canonicalPath) {
+            header('Location: '.$canonicalPath, true, 301);
+            exit;
+        }
+        $_GET['slug'] = $articleSlug;
+        require __DIR__.'/alternatives/article.php';
+        return;
+    }
+    http_response_code(404);
+    require __DIR__.'/404.php';
+    return;
+}
+
 // Zendesk's migrated alternatives and review pages.
 if ($path === '/zendesk/alternatives/' || $path === '/zendesk/alternatives') {
     if ($path !== '/zendesk/alternatives/') { header('Location: /zendesk/alternatives/', true, 301); exit; }
@@ -164,6 +185,24 @@ if ($path === '/zendesk/alternatives/' || $path === '/zendesk/alternatives') {
 if ($path === '/zendesk/review/' || $path === '/zendesk/review') {
     if ($path !== '/zendesk/review/') { header('Location: /zendesk/review/', true, 301); exit; }
     require __DIR__.'/reviews/zendesk-review/index.php';
+    return;
+}
+
+// Tool-first standalone reviews are stored in reviews/{tool}-review/index.php.
+if (preg_match('#^/([a-z0-9-]+)/review/?$#D', $path, $toolReviewMatches) && $toolReviewMatches[1] !== 'zendesk') {
+    $toolSlug = $toolReviewMatches[1];
+    $canonicalPath = '/'.$toolSlug.'/review/';
+    $reviewFile = __DIR__.'/reviews/'.$toolSlug.'-review/index.php';
+    if (is_file($reviewFile)) {
+        if ($path !== $canonicalPath) {
+            header('Location: '.$canonicalPath, true, 301);
+            exit;
+        }
+        require $reviewFile;
+        return;
+    }
+    http_response_code(404);
+    require __DIR__.'/404.php';
     return;
 }
 
