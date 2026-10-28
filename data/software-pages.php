@@ -64,7 +64,7 @@ HTML
 HTML
  ],
   [
-  'title'=>'Freshdesk Pricing: Plans, AI Costs and Limits','seo_title'=>'Freshdesk Pricing: Plans, AI Costs and Limits',
+  'title'=>'Freshdesk Pricing: Plans, AI Costs and Limits','seo_title'=>'Freshdesk Pricing: Plans, AI Costs and Add-ons Explained',
   'description'=>'Compare Freshdesk Growth, Pro and Enterprise prices, key features, AI session costs and add-ons to estimate the real cost before you choose a plan today.',
   'url'=>'/freshdesk/pricing/','date'=>'2026-10-29','status'=>'published','software_name'=>'Freshdesk',
   'content'=><<<'HTML'
