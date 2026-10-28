@@ -24,6 +24,8 @@ HTML
 <div class="table-scroll"><table><thead><tr><th scope="col">Decision point</th><th scope="col">What the official pages show</th></tr></thead><tbody>
 <tr><th scope="row">Category</th><td>Customer support and help desk software</td></tr>
 <tr><th scope="row">Entry paid plan</th><td>Growth at US$19 per agent/month, billed annually</td></tr>
+<tr><th scope="row">Free plan</th><td>The standard pricing page lists paid plans and a 14-day trial; ask Freshworks about its separate Free program.</td></tr>
+<tr><th scope="row">Best for</th><td>Teams that need ticket ownership, a customer portal, knowledge base and service rules.</td></tr>
 <tr><th scope="row">Trial</th><td>A 14-day trial is described in the official getting-started guide</td></tr>
 <tr><th scope="row">Core workflow</th><td>Ticketing, shared inbox, customer portal, knowledge base, reporting and automation</td></tr>
 <tr><th scope="row">AI usage</th><td>500 Freddy AI Agent sessions are listed on Growth, Pro and Enterprise; extra sessions cost more</td></tr>
