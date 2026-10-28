@@ -14,7 +14,7 @@ return [
 HTML
  ],
   [
-  'title'=>'Freshdesk Customer Support Hub','seo_title'=>'Freshdesk: Features, Plans and Alternatives',
+  'title'=>'Freshdesk Customer Support Hub','seo_title'=>'Freshdesk Software: Features, Pricing and Alternatives Guide',
   'description'=>'Explore Freshdesk ticketing, channels, AI usage and plan differences, then compare pricing, setup steps, reviews and alternatives for your support team.',
   'url'=>'/freshdesk/','date'=>'2026-10-29','status'=>'published','software_name'=>'Freshdesk',
   'content'=><<<'HTML'
