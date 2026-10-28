@@ -1,6 +1,6 @@
 # Freshdesk alternatives: evidence ledger
 
-All product and pricing sources below were opened or checked on **2026-10-29**. Prices are public-page snapshots and can change. Use the vendor's current plan selector for the final quote.
+Product and pricing pages were opened or checked on **2026-10-29**. Official help centers and documentation were opened or checked where listed below. Prices are public-page snapshots and can change. Use the vendor's current plan selector for the final quote.
 
 ## Original product: Freshdesk
 
@@ -10,9 +10,12 @@ All product and pricing sources below were opened or checked on **2026-10-29**. 
 | US annual-billing rates: Growth US$19, Pro US$55, Enterprise US$89 per agent/month | https://www.freshworks.com/freshdesk/pricing/ | Page showed annual-billing toggle, three plan prices, feature matrix and add-on rates. Checked 2026-10-29. |
 | 14-day trial and Free Program | https://support.freshdesk.com/support/solutions/articles/50000011778-understanding-freshdesk-pricing-plans | Trial is 14 days. Free Program applies only to Freshdesk, two agent seats, six months; it is not a permanent free plan and is not available for Freshdesk Omni. |
 | First 500 Freddy AI Agent sessions included once per account; extra sessions US$49/100; Copilot US$29/agent/month on Pro and Enterprise | https://www.freshworks.com/freshdesk/pricing/ | Pricing page and FAQ checked 2026-10-29. Other usage charges are also listed, including connector tasks and MCP actions. |
-| Filtered ticket export excludes the entire conversation and archived ticket history | https://support.freshdesk.com/support/solutions/articles/225158 | Official help article modified 2026-02-16. It describes CSV/Excel ticket exports and account export history. |
+| Filtered ticket export limits | https://support.freshdesk.com/support/solutions/articles/225158 | Official help article modified 2026-02-16. It describes ticket export options, account export, and plan availability. The article body was checked on 2026-10-29. |
 | Broader account export can include ticket content and other account data | https://support.freshdesk.com/support/solutions/articles/237405-how-can-i-export-tickets-including-the-content-of-the-ticket- | Official Freshdesk support instructions checked 2026-10-29. |
 | Ticket/contact API resources and API behavior | https://developers.freshdesk.com/api/ | Official API reference checked 2026-10-29. The article links to it as migration research, without asserting a universal import/export guarantee. |
+
+
+| Official quarterly product update session | https://www.freshworks.com/freshdesk/webinars/whats-new-cs-2026/ | On-demand customer-service update dated July 16, 2026. It covers Freshdesk/Freshdesk Omni and AI/automation topics. It is not a release-by-release changelog; no specific recent feature release is claimed. |
 
 ## Alternatives
 
