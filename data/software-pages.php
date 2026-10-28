@@ -18,7 +18,7 @@ HTML
   ],
   [
    'title'=>'Freshdesk Support Software Guide',
-   'seo_title'=>'Freshdesk Guide: Features and Pricing',
+   'seo_title'=>'Freshdesk Guide: Features, Plans and Pricing',
    'software_name'=>'Freshdesk',
    'description'=>'Explore Freshdesk\'s email-first help desk, compare plan prices and AI charges, learn setup basics, and decide when Omni or another tool fits your team.',
    'url'=>'/freshdesk/','date'=>'2026-10-29','status'=>'published',
@@ -52,7 +52,7 @@ HTML
   ],
   [
    'title'=>'Freshdesk Pricing: Plans, AI Fees and Limits',
-   'seo_title'=>'Freshdesk Pricing: Plans and AI Fees',
+   'seo_title'=>'Freshdesk Pricing: Plans, Limits and AI Fees',
    'description'=>'Compare Freshdesk Growth, Pro and Enterprise prices, trial rules, AI session fees, add-ons and annual billing before you choose a support plan.',
    'url'=>'/freshdesk/pricing/','date'=>'2026-10-29','status'=>'published',
    'content'=><<<'HTML'
