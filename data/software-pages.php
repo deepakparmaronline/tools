@@ -114,7 +114,42 @@ HTML
 <h2>Common mistakes</h2><ul><li>Enabling channels without staffing and ownership.</li><li>Creating complex automations before the ticket taxonomy is stable.</li><li>Assuming exports are enabled by default.</li><li>Moving records without checking which metrics and triggers transfer.</li><li>Choosing a plan without confirming billing and feature dependencies.</li></ul>
 <h2>Related guides</h2><p>Visit the <a href="/zendesk/">Zendesk hub</a>, <a href="/zendesk/pricing/">pricing guide</a>, <a href="/zendesk/review/">review</a> and <a href="/zendesk/alternatives/">alternatives guide</a>.</p>
 HTML
- ]],
+ ],
+  [
+  'title'=>'How to Use Freshdesk: Setup and Ticket Workflow','seo_title'=>'How to Use Freshdesk: Setup and Ticket Workflow',
+  'description'=>'Set up Freshdesk email, agents, groups, SLAs, channels, knowledge articles and AI using steps confirmed in official help documentation.',
+  'url'=>'/freshdesk/how-to-use/','date'=>'2026-10-29','status'=>'published','software_name'=>'Freshdesk',
+  'content'=><<<'HTML'
+<h2>Before you start</h2>
+<p>Make sure you have administrator access to Freshdesk, access to the support mailbox, a list of agents, group ownership, business hours, service targets and a few help articles. Freshworks describes two products: email-first Freshdesk and broader-channel Freshdesk Omni. Use the <a href="https://support.freshdesk.com/support/solutions/articles/50000011785-getting-started-with-freshdesk-omni">official getting-started guide</a> to confirm which steps apply.</p>
+<h2>1. Choose the product and trial</h2>
+<p>Start a Freshdesk or Freshdesk Omni trial from the official site. Freshworks' guide describes a 14-day trial and says a payment card is not required to explore it. Decide whether you need email support only or a shared inbox for web chat, WhatsApp, Facebook and Instagram. That choice can determine which product fits.</p>
+<h2>2. Connect the support email</h2>
+<p>Connect the address customers already use. Freshworks lists its own mail server, Gmail, Microsoft Office 365 and custom email servers as supported paths. Follow the steps for your provider in the official help guide. Send a test message from another mailbox, confirm it appears as a ticket, reply from Freshdesk and check that the customer receives the response. Verify the sender identity and conversation threading before the team relies on the connection.</p>
+<h2>3. Add agents and create groups</h2>
+<p>Invite the people who will answer tickets and assign roles based on what they need to do, such as agent, supervisor or administrator. Keep administrator access limited to people who maintain the help desk. Create groups around real queues—for example Billing, Technical Support or VIP Customers—only when each group has clear ownership. Add agents to the right groups and test that each group can see and manage its tickets.</p>
+<h2>4. Set business hours and service targets</h2>
+<p>Configure the hours when your team is expected to respond. If you support several regions or weekends, create schedules that reflect actual coverage. Then set service-level policies for first response and resolution. Use different targets only when the process needs them. Check the time zone and calendar, then test a ticket to see how its SLA timer behaves.</p>
+<h2>5. Prepare the customer portal and knowledge base</h2>
+<p>The customer portal lets people submit tickets, track requests and find help articles. Freshworks' documentation explains that articles can be organized into categories and folders. Start with common questions about account access, billing, setup and errors. Use clear titles and steps, keep policy details current and link relevant articles in saved replies. Review portal access settings so public content is not mixed with material that should require sign-in.</p>
+<h2>6. Add channels carefully</h2>
+<ul><li><strong>Email:</strong> convert incoming mail into tickets and retain conversation history.</li><li><strong>Web chat:</strong> standard Freshdesk offers basic chat with knowledge-base integration; Omni has more advanced routing and AI options.</li><li><strong>Facebook:</strong> both products list Facebook support capabilities.</li><li><strong>WhatsApp and Instagram:</strong> the guide lists these as Omni capabilities, with a note about legacy WhatsApp access for some older accounts.</li></ul>
+<p>Connect one additional channel at a time. Send a test message, confirm the ticket includes the right customer context and decide which group owns it. Do not assume a channel is included in every plan.</p>
+<h2>7. Build rules and saved responses</h2>
+<p>Begin with a few predictable rules, such as assigning billing questions to the Billing group or setting a reminder when a ticket has not received a reply. Create saved responses for repeated questions, but leave room for the agent to personalize them. Test every automation with sample tickets before applying it broadly.</p>
+<h2>8. Enable Freddy AI with a cost estimate</h2>
+<p>Freshworks lists Freddy AI Agent, Freddy AI Copilot and Freddy AI Insights, with availability and costs that vary by plan. Its pricing page lists the first 500 AI Agent sessions on Growth, Pro and Enterprise, extra sessions at US$49 per 100, and Copilot at US$29 per agent/month on Pro and Enterprise. Start with a narrow, documented task. Test unclear questions and escalation to a person, and monitor usage so a pilot does not create an unexpected bill.</p>
+<h2>9. Set up useful reports and train agents</h2>
+<p>Track ticket volume, first response, resolution time, customer satisfaction and unresolved queues. Pick metrics that support decisions instead of collecting every number. Agents should practice opening a ticket, reading internal notes, replying, adding a private note, assigning ownership, setting priority and status, checking the SLA timer and linking a knowledge article. Freshworks' agent guide also documents AI Copilot summaries and writing suggestions; agents should review AI output before sending it.</p>
+<h2>Common setup problems</h2>
+<ul><li><strong>Email creates no tickets:</strong> recheck the connected address, provider setup and permissions.</li><li><strong>Tickets go to the wrong group:</strong> review group membership and rule conditions.</li><li><strong>SLA reports look wrong:</strong> verify business hours, time zone, priority and policy.</li><li><strong>A channel is missing:</strong> confirm whether it requires Omni, a plan upgrade or an integration.</li><li><strong>AI answers are weak:</strong> improve source articles, narrow the task and define an escalation path.</li></ul>
+<h2>Export and migration planning</h2>
+<p>Before leaving another help desk, export a sample and confirm what the destination can import. Freshdesk's <a href="https://support.freshdesk.com/support/solutions/articles/225158">ticket-list export guide</a> says CSV or Excel exports can be filtered, but the export does not include the entire conversation or archived tickets. An account-level export is a separate path for an account administrator. Review the <a href="https://support.freshdesk.com/support/solutions/articles/225487-how-do-i-export-my-helpdesk-data-">account export guide</a> before treating an export as a full backup.</p>
+<h2>Official setup sources</h2>
+<ul><li><a href="https://support.freshdesk.com/support/solutions/articles/50000011785-getting-started-with-freshdesk-omni">Getting started with Freshdesk Omni</a> — checked October 29, 2026.</li><li><a href="https://support.freshdesk.com/support/solutions/articles/37540-using-the-customer-support-portal">Using the customer support portal</a> — checked October 29, 2026.</li><li><a href="https://www.freshworks.com/freshdesk/pricing/">Freshdesk pricing</a> — checked October 29, 2026.</li></ul>
+<p>This guide follows published documentation, not hands-on testing. Interface labels can change and exact features depend on the product and plan.</p>
+HTML
+  ],
  'comparisons' => [
   ['title'=>'Freedom vs Cold Turkey: Which Blocker Fits?','description'=>'Compare Freedom and Cold Turkey by device support, blocking controls, current pricing, lock options and the workflow each product fits best.','url'=>'/versus/freedom-vs-cold-turkey/','date'=>'2026-10-20','status'=>'published'],
   [
