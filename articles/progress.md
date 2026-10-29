@@ -181,6 +181,24 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - Content commit 6dc8824d01f24736447f86bb44567b7470a3926c first exposed stale test expectations for unpublished routes. The test was updated in commit a7fa32deca46697da414a309db66254b84bba379.
 - Matching quality status from latest main: status passed; commit a7fa32deca46697da414a309db66254b84bba379; workflow https://github.com/deepakparmaronline/tools/actions/runs/40410442507. PHP syntax, static sitemap validation, software content tests and publication rendering test passed.
 - Queue Order 1 Zendesk is now marked published. Hostinger auto-deployment is expected from main. Live HTTP verification was not performed; the user will check the production URLs.
-- Canonical URLs published: https://toolboxkart.tech/tools/zendesk/; https://toolboxkart.tech/alternatives/zendesk-alternatives/; https://toolboxkart.tech/reviews/zendesk-review/; https://toolboxkart.tech/pricing/zendesk/; https://toolboxkart.tech/how-to-use/zendesk/; https://toolboxkart.tech/compare/zendesk-vs-freshdesk/.
+- Current canonical URLs: https://toolboxkart.tech/zendesk/; https://toolboxkart.tech/zendesk/alternatives/; https://toolboxkart.tech/zendesk/review/; https://toolboxkart.tech/zendesk/pricing/; https://toolboxkart.tech/zendesk/how-to-use/; https://toolboxkart.tech/compare/zendesk-vs-freshdesk/.
 - No customer-support category pillar was added because the category still has fewer than four published clusters.
 - Exact next queue item: Order 2, Freshdesk, primary keyword “Freshdesk alternative”, US volume 480, KD 16, CPC US$46.98, commercial intent, status queued. Continue using official-source research and public SERP research for intent gaps, do not run Semrush, and do not require live HTTP access as a commit gate.
+
+
+## Freshdesk cluster publication closed after matching quality pass (2026-10-29)
+
+- Content commit: 0895f043cd2f5edd54435e772e528d3157a2f16b ([commit](https://github.com/deepakparmaronline/tools/commit/0895f043cd2f5edd54435e772e528d3157a2f16b)).
+- Matching ToolboxKart quality status: `passed` for the exact content commit `0895f043cd2f5edd54435e772e528d3157a2f16b`; checked at 2026-10-29 05:09:32 UTC. Workflow: https://github.com/deepakparmaronline/tools/actions/runs/40821723994. PHP syntax, static sitemap validation, software content tests and publication rendering test all passed.
+- Queue Order 2 Freshdesk is now marked published. The review route is served at the tool-first canonical `/freshdesk/review/`; the router uses the same generic rule for future tool review pages.
+- Published canonical URLs:
+  - https://toolboxkart.tech/freshdesk/
+  - https://toolboxkart.tech/freshdesk/alternatives/
+  - https://toolboxkart.tech/freshdesk/review/
+  - https://toolboxkart.tech/freshdesk/pricing/
+  - https://toolboxkart.tech/freshdesk/how-to-use/
+  - https://toolboxkart.tech/compare/freshdesk-vs-help-scout/
+- Shared comparison `/compare/zendesk-vs-freshdesk/` remains part of the Zendesk cluster; no duplicate comparison was created. Software pages, review registry, alternatives listing and sitemap discovery use the existing repository architecture. No category pillar was added because only two customer-support tool clusters are published and `HUB_MIN_TOOLS` remains 4.
+- Changed files in the content/quality repair commit: `router.php`, `data/software-pages.php`, `reviews/freshdesk-review/index.php`, `alternatives/articles/freshdesk-alternatives.php`, `articles/freshdesk-alternatives/article.md`, `articles/freshdesk-alternatives/seo.md`, `articles/freshdesk-alternatives/sources.md`, `articles/freshdesk-alternatives/notes.md`, `articles/freshdesk-alternatives/schema.json`, `alternatives/articles/zendesk-alternatives.php`, `articles/zendesk-alternatives/article.md`, and `articles/zendesk-alternatives/sources.md`.
+- Hostinger auto-deployment is expected from main. Live HTTP verification was not performed; the user will verify the production pages.
+- Exact next queue item: Order 3, Drift, primary keyword “Drift alternative”, US volume 320, KD 8, CPC US$36.12, intent I/C, status queued. Keep those saved Semrush metrics unchanged, use official sources and public SERP research, and do not run Semrush.
