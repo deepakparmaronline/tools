@@ -199,6 +199,13 @@ def main():
         }
         for path, url in expected_sitemap_urls.items():
             assert url in get(path), f'{url} missing from {path}'
+        zendesk_review_html = get('/zendesk/review/')
+        zendesk_review_page = Page(zendesk_review_html)
+        assert zendesk_review_page.canonical == 'https://toolboxkart.tech/zendesk/review/'
+        assert '<nav class="crumbs" aria-label="Breadcrumb">' in zendesk_review_html
+        review_graph = next(schema['@graph'] for schema in zendesk_review_page.schemas if '@graph' in schema)
+        review_crumb = next(item for item in review_graph if item.get('@type') == 'BreadcrumbList')
+        assert [item['item'] for item in review_crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/zendesk/', 'https://toolboxkart.tech/zendesk/review/']
 
         rewrite_rules = (ROOT / '.htaccess').read_text()
         assert 'RewriteRule ^(tools|pricing|how-to-use|compare|best)/([a-z0-9-]+)/?$ router.php [L,QSA]' in rewrite_rules

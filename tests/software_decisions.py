@@ -54,7 +54,11 @@ def main():
             assert page.h1==1 and page.canonical==canonical,path
             assert visible.count('Published October 20, 2026')==1,path
             assert html.count('<strong>Written by <a href="/about-deepak-parmar/">Deepak Parmar</a></strong>')==2,path
-            assert 'BreadcrumbList' not in html,path
+            assert 'BreadcrumbList' in html,path
+            assert '<nav class="crumbs" aria-label="Breadcrumb">' in html,path
+            graph=next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
+            crumb=next(item for item in graph if item.get('@type')=='BreadcrumbList')
+            assert crumb['itemListElement'][-1]['item']==canonical,path
             assert any('@graph' in schema for schema in page.schemas),path
             assert 'Review methodology' in visible and 'Sources' in visible,path
         for index,slug in [('/versus/','freedom-vs-cold-turkey'),('/reviews/','taskade-review'),('/content/','taskade-review')]:
