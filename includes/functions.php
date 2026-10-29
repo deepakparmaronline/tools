@@ -30,7 +30,7 @@ function posts_for_category(string $category): array { global $posts; $items=arr
 function post_by_slug(string $slug): ?array { global $posts; foreach($posts as $p){if($p['slug']===$slug)return $p;} return null; }
 function page_title(string $title): string { return $title.' | '.SITE_NAME; }
 function jsonld(array $data): string { return '<script type="application/ld+json">'.json_encode($data, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE).'</script>'; }
-function breadcrumbs(array $items): array { return ['@type'=>'BreadcrumbList','itemListElement'=>array_map(fn($item,$i)=>['@type'=>'ListItem','position'=>$i+1,'name'=>$item['name'],'item'=>$item['url']],$items,array_keys($items))]; }
+function breadcrumbs(array $items): array { $elements=[]; foreach($items as $i=>$item) { $itemUrl=$item['url'] ?? ''; if (($item['name'] ?? '')==='Home' && is_string($itemUrl) && rtrim($itemUrl,'/')===rtrim(SITE_URL,'/')) $itemUrl=rtrim(SITE_URL,'/').'/'; $elements[]=['@type'=>'ListItem','position'=>$i+1,'name'=>$item['name'] ?? '','item'=>$itemUrl]; } return ['@type'=>'BreadcrumbList','itemListElement'=>$elements]; }
 function get_related_tools(string $category,string $slug,int $limit=4): array { $items=array_values(array_filter(tools_in_category($category),fn($t)=>$t['slug']!==$slug)); return array_slice($items,0,$limit); }
 function render_tool_cards(array $tools): void { foreach($tools as $t){ $cat=category_data($t['category']); echo '<a class="tool-card" href="/'.e($t['category']).'/'.e($t['slug']).'"><span class="tool-card__icon">'.e($cat['icon']).'</span><span><strong>'.e($t['name']).'</strong><small>'.e($t['description']).'</small></span><span class="arrow">→</span></a>'; } }
 function fmt_date(string $date): string { return date('F j, Y', strtotime($date)); }
