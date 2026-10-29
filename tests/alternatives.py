@@ -44,6 +44,12 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         return None
 
 
+def run_php(code):
+    result = subprocess.run(['php', '-r', code], cwd=ROOT, check=True,
+                            capture_output=True, text=True)
+    return result.stdout
+
+
 def main():
     paths = []
     with socket.socket() as sock:
@@ -76,13 +82,24 @@ def main():
             code, headers, body = get(path)
             assert code == 200 and content_type in headers.get('Content-Type', ''), path
             assert len(body) > 100, f'Empty or incomplete asset: {path}'
-        for record in (ROOT / 'alternatives/articles').glob('*.php'):
-            if "'status' => 'published'" not in record.read_text():
-                continue
-            path = f'/alternatives/{record.stem}/'
+        published_paths = json.loads(run_php("require 'includes/bootstrap.php'; echo json_encode(array_map('alternative_path', array_values(alternative_articles())));"))
+        for path in published_paths:
             code, _, html = get(path)
-            assert code == 200 and Page(html).h1 == 1, path
+            page = Page(html)
+            assert code == 200 and page.h1 == 1, path
+            assert page.canonical == 'https://toolboxkart.tech' + path, path
             assert f'href="{path}"' in get('/alternatives/')[2], path
+        _, _, freshdesk_alt_html = get('/freshdesk/alternatives/')
+        freshdesk_alt_page = Page(freshdesk_alt_html)
+        assert freshdesk_alt_page.canonical == 'https://toolboxkart.tech/freshdesk/alternatives/'
+        assert '<nav class="crumbs" aria-label="Breadcrumb">' in freshdesk_alt_html
+        freshdesk_graph = next(item['@graph'] for item in freshdesk_alt_page.schemas if '@graph' in item)
+        freshdesk_crumb = next(item for item in freshdesk_graph if item.get('@type') == 'BreadcrumbList')
+        assert [item['item'] for item in freshdesk_crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/freshdesk/', 'https://toolboxkart.tech/freshdesk/alternatives/']
+        item_list_schema = next(item for item in freshdesk_graph if item.get('@type') == 'ItemList')
+        assert len(item_list_schema['itemListElement']) == 8
+        assert any(item.get('@type') == 'FAQPage' for item in freshdesk_graph)
+        assert '/freshdesk/alternatives/' in get('/sitemap-alternatives.xml')[2]
         for slug, status, date in [('qa-alternative-one', 'published', '2026-01-01'),
                                    ('qa-alternative-two', 'published', '2026-01-02'),
                                    ('qa-alternative-draft', 'draft', '2026-01-01'),

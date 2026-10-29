@@ -106,16 +106,50 @@ function render_software_detail_page(array $page, string $collectionKey): string
         $articleSchema['image'] = ['@type' => 'ImageObject', 'url' => $socialImage, 'caption' => $socialImageAlt];
     }
 
+    $schemaGraph = [
+        $articleSchema,
+        breadcrumbs([
+            ['name' => 'Home', 'url' => SITE_URL],
+            ['name' => $config['index_title'], 'url' => url($config['index_url'])],
+            ['name' => $title, 'url' => $canonical],
+        ]),
+    ];
+    $application = $page['software_application'] ?? null;
+    if ($collectionKey === 'tool_hubs' && is_array($application)) {
+        $appName = trim(is_string($application['name'] ?? null) ? $application['name'] : '');
+        $appUrl = trim(is_string($application['url'] ?? null) ? $application['url'] : '');
+        $providerName = trim(is_string($application['provider'] ?? null) ? $application['provider'] : '');
+        $providerUrl = trim(is_string($application['provider_url'] ?? null) ? $application['provider_url'] : '');
+        if ($appName !== '' && filter_var($appUrl, FILTER_VALIDATE_URL) && str_starts_with($appUrl, 'https://')) {
+            $softwareSchema = [
+                '@type' => 'SoftwareApplication',
+                '@id' => $canonical.'#software',
+                'name' => $appName,
+                'url' => $appUrl,
+                'applicationCategory' => is_string($application['applicationCategory'] ?? null) ? $application['applicationCategory'] : 'BusinessApplication',
+                'operatingSystem' => is_string($application['operatingSystem'] ?? null) ? $application['operatingSystem'] : 'Web',
+                'description' => is_string($application['description'] ?? null) ? $application['description'] : $description,
+            ];
+            if ($providerName !== '') {
+                $softwareSchema['provider'] = ['@type' => 'Organization', 'name' => $providerName];
+                if (filter_var($providerUrl, FILTER_VALIDATE_URL) && str_starts_with($providerUrl, 'https://')) $softwareSchema['provider']['url'] = $providerUrl;
+            }
+            $schemaGraph[] = $softwareSchema;
+        }
+    }
+    $faqs = [];
+    foreach (is_array($page['faqs'] ?? null) ? $page['faqs'] : [] as $faq) {
+        if (!is_array($faq) || !is_string($faq['question'] ?? null) || !is_string($faq['answer'] ?? null)) continue;
+        $question = trim($faq['question']);
+        $answer = trim($faq['answer']);
+        if ($question === '' || $answer === '') continue;
+        $faqs[] = ['@type' => 'Question', 'name' => $question, 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $answer]];
+    }
+    if ($faqs) $schemaGraph[] = ['@type' => 'FAQPage', 'mainEntity' => $faqs];
+
     $extraHead = '<meta property="article:published_time" content="'.e($date.'T00:00:00+05:30').'">'
         .'<meta property="article:modified_time" content="'.e($updatedDate.'T00:00:00+05:30').'">'
-        .jsonld(['@context' => 'https://schema.org', '@graph' => [
-            $articleSchema,
-            breadcrumbs([
-                ['name' => 'Home', 'url' => SITE_URL],
-                ['name' => $config['index_title'], 'url' => url($config['index_url'])],
-                ['name' => $title, 'url' => $canonical],
-            ]),
-        ]])
+        .jsonld(['@context' => 'https://schema.org', '@graph' => $schemaGraph])
         .'<link rel="stylesheet" href="'.e(asset('css/software-detail.css')).'">';
 
     ob_start();

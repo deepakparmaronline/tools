@@ -1,6 +1,6 @@
 # Evidence ledger
 
-Checked October 27, 2026 unless noted. Prices are volatile.
+Checked October 29, 2026 unless noted. Prices are volatile.
 
 - Zendesk product: https://www.zendesk.com/
 - Zendesk pricing: https://www.zendesk.com/pricing/ — Support Team US$19, Suite Team US$55, Suite Professional US$115 per agent/month billed yearly.
@@ -14,6 +14,10 @@ Checked October 27, 2026 unless noted. Prices are volatile.
 - HubSpot Service Hub: https://www.hubspot.com/pricing/service — free tools for up to 2 users; paid plans are seat-based.
 - Gorgias: https://www.gorgias.com/pricing and https://helpcenter.gorgias.com/en-US/how-youre-billed-for-using-gorgias-199385 — ticket-volume and possible outcome-based fees.
 - Salesforce Service Cloud: https://www.salesforce.com/service/pricing/ — multiple editions, Starter Suite displayed from US$25/user/month.
-- Public SERP: query “Zendesk alternatives 2026” reviewed October 27, 2026 for competitor coverage and intent. Not a Semrush metric source; no exact PAA question was claimed.
+- Public SERP: query “Zendesk alternatives 2026” reviewed October 29, 2026 for competitor coverage and intent. Not a Semrush metric source; no exact PAA question was claimed.
 
 Do not claim firsthand testing, independent benchmarks, user interviews, ratings, quotes or affiliate relationships. Zendesk-authored comparisons are vendor claims, not independent proof. Omit any unverified detail.
+
+- Freshdesk support email setup: https://support.freshdesk.com/support/solutions/articles/37541-set-up-your-support-email — official setup workflow.
+- Freshdesk ticket export: https://support.freshdesk.com/support/solutions/articles/225158 — ticket export scope and limitations.
+- Help Scout import: https://docs.helpscout.com/article/1495-import-emails-or-tickets-into-help-scout — Freshdesk supported source on Standard, Plus and Pro.

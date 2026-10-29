@@ -166,39 +166,56 @@ def main():
         compare = get('/compare/')
         assert '/versus/freedom-vs-cold-turkey/' in compare
 
-        # The complete Zendesk cluster is now published. Unknown detail routes must remain unavailable.
+        # Both published customer-support software clusters must render with canonical URLs and schema.
         unknown_detail_routes = ['/best/customer-service-help-desk-software/']
         for path in unknown_detail_routes:
             status, _, _ = get_response(path)
             assert status == 404, f'{path}: expected 404, got {status}'
 
         published_details = {
-            '/zendesk/': 'https://toolboxkart.tech/zendesk/',
-            '/zendesk/pricing/': 'https://toolboxkart.tech/zendesk/pricing/',
-            '/zendesk/how-to-use/': 'https://toolboxkart.tech/zendesk/how-to-use/',
-            '/compare/zendesk-vs-freshdesk/': 'https://toolboxkart.tech/compare/zendesk-vs-freshdesk/',
+            '/zendesk/': ('https://toolboxkart.tech/zendesk/', 'zendesk'),
+            '/zendesk/pricing/': ('https://toolboxkart.tech/zendesk/pricing/', 'zendesk'),
+            '/zendesk/how-to-use/': ('https://toolboxkart.tech/zendesk/how-to-use/', 'zendesk'),
+            '/compare/zendesk-vs-freshdesk/': ('https://toolboxkart.tech/compare/zendesk-vs-freshdesk/', 'zendesk'),
+            '/freshdesk/': ('https://toolboxkart.tech/freshdesk/', 'freshdesk'),
+            '/freshdesk/pricing/': ('https://toolboxkart.tech/freshdesk/pricing/', 'freshdesk'),
+            '/freshdesk/how-to-use/': ('https://toolboxkart.tech/freshdesk/how-to-use/', 'freshdesk'),
+            '/compare/freshdesk-vs-help-scout/': ('https://toolboxkart.tech/compare/freshdesk-vs-help-scout/', 'freshdesk'),
         }
-        for path, canonical in published_details.items():
+        for path, (canonical, term) in published_details.items():
             html = get(path)
             page = Page(html)
             assert page.h1 == 1, path
             assert page.canonical == canonical, path
-            assert 'zendesk' in ' '.join(page.text).lower(), path
+            assert term in ' '.join(page.text).lower(), path
+            assert '<nav class="crumbs" aria-label="Breadcrumb">' in html, path
+            graph = next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
+            crumb = next(item for item in graph if item.get('@type') == 'BreadcrumbList')
+            assert crumb['itemListElement'][-1]['item'] == canonical, path
+            if path in ['/zendesk/', '/freshdesk/']:
+                assert any(item.get('@type') == 'SoftwareApplication' for item in graph), path
+            if path.startswith('/freshdesk/') or path == '/compare/freshdesk-vs-help-scout/':
+                assert any(item.get('@type') == 'FAQPage' for item in graph), path
 
         for path in ['/tools/', '/pricing/', '/how-to-use/', '/compare/']:
-            assert 'zendesk' in get(path).lower(), path
+            index_html = get(path).lower()
+            assert 'zendesk' in index_html and 'freshdesk' in index_html, path
         assert 'zendesk' not in get('/best/').lower()
+        assert 'freshdesk' not in get('/best/').lower()
+        reviews_index = get('/reviews/')
+        assert 'Freshdesk Review' in reviews_index
 
         expected_sitemap_urls = {
-            '/sitemap-tools.xml': 'https://toolboxkart.tech/zendesk/',
-            '/sitemap-pricing.xml': 'https://toolboxkart.tech/zendesk/pricing/',
-            '/sitemap-how-to-use.xml': 'https://toolboxkart.tech/zendesk/how-to-use/',
-            '/sitemap-compare.xml': 'https://toolboxkart.tech/compare/zendesk-vs-freshdesk/',
-            '/sitemap-alternatives.xml': 'https://toolboxkart.tech/zendesk/alternatives/',
-            '/sitemap-reviews.xml': 'https://toolboxkart.tech/zendesk/review/',
+            '/sitemap-tools.xml': ['https://toolboxkart.tech/zendesk/', 'https://toolboxkart.tech/freshdesk/'],
+            '/sitemap-pricing.xml': ['https://toolboxkart.tech/zendesk/pricing/', 'https://toolboxkart.tech/freshdesk/pricing/'],
+            '/sitemap-how-to-use.xml': ['https://toolboxkart.tech/zendesk/how-to-use/', 'https://toolboxkart.tech/freshdesk/how-to-use/'],
+            '/sitemap-compare.xml': ['https://toolboxkart.tech/compare/zendesk-vs-freshdesk/', 'https://toolboxkart.tech/compare/freshdesk-vs-help-scout/'],
+            '/sitemap-alternatives.xml': ['https://toolboxkart.tech/zendesk/alternatives/', 'https://toolboxkart.tech/freshdesk/alternatives/'],
+            '/sitemap-reviews.xml': ['https://toolboxkart.tech/zendesk/review/', 'https://toolboxkart.tech/freshdesk/review/'],
         }
-        for path, url in expected_sitemap_urls.items():
-            assert url in get(path), f'{url} missing from {path}'
+        for path, urls in expected_sitemap_urls.items():
+            for url in urls:
+                assert url in get(path), f'{url} missing from {path}'
         zendesk_review_html = get('/zendesk/review/')
         zendesk_review_page = Page(zendesk_review_html)
         assert zendesk_review_page.canonical == 'https://toolboxkart.tech/zendesk/review/'
@@ -206,9 +223,18 @@ def main():
         review_graph = next(schema['@graph'] for schema in zendesk_review_page.schemas if '@graph' in schema)
         review_crumb = next(item for item in review_graph if item.get('@type') == 'BreadcrumbList')
         assert [item['item'] for item in review_crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/zendesk/', 'https://toolboxkart.tech/zendesk/review/']
+        freshdesk_review_html = get('/freshdesk/review/')
+        freshdesk_review_page = Page(freshdesk_review_html)
+        assert freshdesk_review_page.canonical == 'https://toolboxkart.tech/freshdesk/review/'
+        assert '<nav class="crumbs" aria-label="Breadcrumb">' in freshdesk_review_html
+        freshdesk_review_graph = next(schema['@graph'] for schema in freshdesk_review_page.schemas if '@graph' in schema)
+        freshdesk_review_crumb = next(item for item in freshdesk_review_graph if item.get('@type') == 'BreadcrumbList')
+        assert [item['item'] for item in freshdesk_review_crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/freshdesk/', 'https://toolboxkart.tech/freshdesk/review/']
 
         rewrite_rules = (ROOT / '.htaccess').read_text()
         assert 'RewriteRule ^(tools|pricing|how-to-use|compare|best)/([a-z0-9-]+)/?$ router.php [L,QSA]' in rewrite_rules
+        assert 'RewriteRule ^([a-z0-9-]+)/alternatives/?$ router.php [L,QSA]' in rewrite_rules
+        assert 'RewriteRule ^([a-z0-9-]+)/review/?$ router.php [L,QSA]' in rewrite_rules
         sitemap = get('/sitemap.xml')
         root = ET.fromstring(sitemap)
         assert root.tag.endswith('sitemapindex')

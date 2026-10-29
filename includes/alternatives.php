@@ -29,13 +29,12 @@ function alternative_articles(): array {
     return $articles;
 }
 
-function alternative_url(array $article): string {
-    $path = ($article['slug'] ?? '') === 'zendesk-alternatives' ? 'zendesk/alternatives/' : 'alternatives/'.$article['slug'].'/';
-    return url($path);
-}
+function alternative_url(array $article): string { return url(ltrim(alternative_path($article), '/')); }
 
 function alternative_path(array $article): string {
-    return ($article['slug'] ?? '') === 'zendesk-alternatives' ? '/zendesk/alternatives/' : '/alternatives/'.$article['slug'].'/';
+    $customPath = $article['url_path'] ?? null;
+    if (is_string($customPath) && preg_match('#^/[a-z0-9-]+/alternatives/$#D', $customPath)) return $customPath;
+    return '/alternatives/'.($article['slug'] ?? '').'/';
 }
 
 function alternative_image_url(array $article): string {
@@ -49,7 +48,7 @@ function alternative_topic_group(array $article): array {
     $groups = [
         'productivity'=>['name'=>'Productivity, focus and scheduling','description'=>'Task planning, calendars, focus blockers, booking and personal workflow tools.','slugs'=>['akiflow-alternatives','fantastical-alternatives','freedom-alternatives','odrive-alternatives','sunsama-alternatives','taskade-alternatives','tidycal-alternatives','vector-alternatives']],
         'privacy-browsers'=>['name'=>'Browsers and privacy','description'=>'Browser, tracker-blocking and private-search choices for different devices.','slugs'=>['arc-search-alternatives','ghostery-alternatives','orion-browser-alternatives']],
-        'customer-growth'=>['name'=>'Customer, sales and marketing','description'=>'Customer success, support, feedback, messaging and lead-conversion software.','slugs'=>['callpage-alternatives','gainsight-alternatives','leave-me-alone-alternatives','stonly-alternatives','survicate-alternatives','wati-alternatives']],
+        'customer-growth'=>['name'=>'Customer, sales and marketing','description'=>'Customer success, support, feedback, messaging and lead-conversion software.','slugs'=>['callpage-alternatives','freshdesk-alternatives','gainsight-alternatives','leave-me-alone-alternatives','stonly-alternatives','survicate-alternatives','wati-alternatives','zendesk-alternatives']],
         'developer-creative'=>['name'=>'Developer and creative workflows','description'=>'Documentation, integrations, app delivery, design review and motion tools.','slugs'=>['hera-alternatives','mintlify-alternatives','mobiloud-alternatives','nylas-alternatives','ruttl-alternatives']],
         'documents-specialist'=>['name'=>'Documents, study and specialist software','description'=>'PDF, study, meeting, compliance and industry-specific software.','slugs'=>['notegpt-alternatives','pearl-alternatives','shadow-alternatives','updf-alternatives','vanta-alternatives']],
     ];

@@ -57,16 +57,22 @@ if (preg_match('#^/alternatives(?:/index\.php)?/?$#', $path)) {
     return;
 }
 
-// Zendesk alternatives migrated to the tool-first URL.
-if ($path === '/zendesk/alternatives' || $path === '/zendesk/alternatives/') {
-    if ($path !== '/zendesk/alternatives/') {
-        header('Location: /zendesk/alternatives/', true, 301);
-        exit;
+// Tool-first alternatives are routed from each published alternative record.
+if (preg_match('#^/([a-z0-9-]+)/alternatives/?$#D', $path, $alternativeMatches)) {
+    require_once __DIR__.'/includes/bootstrap.php';
+    $requestedAlternativePath = '/'.$alternativeMatches[1].'/alternatives/';
+    foreach (alternative_articles() as $candidateAlternative) {
+        if (alternative_path($candidateAlternative) !== $requestedAlternativePath) continue;
+        if ($path !== $requestedAlternativePath) {
+            header('Location: '.$requestedAlternativePath, true, 301);
+            exit;
+        }
+        $_GET['slug'] = $candidateAlternative['slug'];
+        require __DIR__.'/alternatives/article.php';
+        return;
     }
-    $_GET['slug'] = 'zendesk-alternatives';
-    require __DIR__.'/alternatives/article.php';
-    return;
 }
+
 
 if (preg_match('#^/alternatives/([a-z0-9-]+)(?:\.php)?/?$#', $path, $matches)) {
     $_GET['slug'] = $matches[1];
@@ -154,13 +160,6 @@ if (isset($softwareLegacyRedirects[$path])) {
     exit;
 }
 
-// Zendesk's migrated alternatives and review pages.
-if ($path === '/zendesk/alternatives/' || $path === '/zendesk/alternatives') {
-    if ($path !== '/zendesk/alternatives/') { header('Location: /zendesk/alternatives/', true, 301); exit; }
-    $_GET['slug'] = 'zendesk-alternatives';
-    require __DIR__.'/alternatives/article.php';
-    return;
-}
 if ($path === '/zendesk/review/' || $path === '/zendesk/review') {
     if ($path !== '/zendesk/review/') { header('Location: /zendesk/review/', true, 301); exit; }
     require __DIR__.'/reviews/zendesk-review/index.php';
