@@ -7,7 +7,7 @@
 - Audience: support leaders and operations managers comparing help desk software
 - Title: 8 Freshdesk Alternatives for Support Teams in 2026
 - SEO title: 8 Freshdesk Alternatives for Support Teams to Try (2026)
-- Description: Compare Freshdesk alternatives by ticketing, shared inboxes, AI costs, CRM fit, published pricing and migration options before you choose a help desk for your team.
+- Description: Compare Freshdesk alternatives by ticketing, shared inboxes, AI costs, CRM fit, current pricing and migration before choosing a help desk for your team.
 - Canonical: https://toolboxkart.tech/freshdesk/alternatives/
 - Publication date: 2026-10-29
 - Image: omitted; no verified original asset needed.

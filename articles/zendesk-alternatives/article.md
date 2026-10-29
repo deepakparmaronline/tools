@@ -23,7 +23,7 @@ Zendesk offers structured ticketing, routing, customer context, analytics and au
 
 ## Freshdesk
 
-Freshdesk is a practical first comparison for conventional help desk workflows. Freshworks lists ticketing, shared inbox, customer portal, knowledge base and analytics in Growth. Its pricing page checked October 29, 2026 lists Growth at US$19, Pro at US$55 and Enterprise at US$89 per agent/month billed annually. Listed plans include 500 Freddy AI Agent sessions, with extra sessions charged separately. It is less suitable if your main need is CRM-first service or a specialized ecommerce workflow.
+Freshdesk is a practical first comparison for conventional help desk workflows. Freshworks lists ticketing, shared inbox, customer portal, knowledge base and analytics in Growth. Its pricing page checked October 29, 2026 lists Growth at US$19, Pro at US$55 and Enterprise at US$89 per agent/month billed annually. Freshworks' official AI add-on guide says new customers on Growth, Pro or Enterprise receive a one-time complimentary 500-session allowance. Extra packs cost US$49 per 100 and are valid for the current billing cycle. See the [official AI add-on guide](https://support.freshdesk.com/support/solutions/articles/50000011515), checked October 29, 2026. It is less suitable if your main need is CRM-first service or a specialized ecommerce workflow.
 
 ## Help Scout
 

@@ -4,7 +4,7 @@
     {
       "@type": "Article",
       "headline": "8 Freshdesk Alternatives for Support Teams in 2026",
-      "description": "Compare Freshdesk alternatives by ticketing, shared inboxes, AI costs, CRM fit, published pricing and migration options before you choose a help desk for your team.",
+      "description": "Compare Freshdesk alternatives by ticketing, shared inboxes, AI costs, CRM fit, current pricing and migration before choosing a help desk for your team.",
       "datePublished": "2026-10-29",
       "dateModified": "2026-10-29",
       "author": {
@@ -116,7 +116,7 @@
           "name": "Is there a free Freshdesk alternative?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Help Scout lists a free plan for up to five users, one inbox, one Docs site and 100 contacts per month. Zoho Desk lists a free edition for up to three users, and HubSpot Service Hub lists free tools for up to two users. Confirm current limits on official pages."
+            "text": "Help Scout lists a free plan for up to five users, one inbox, one Docs site and 100 contacts per month. Zoho Desk lists a free edition for up to three users, and HubSpot Service Hub lists free tools for up to two users. Freshdesk's public pricing page shows a 14-day trial but does not list a Free plan; some support docs still reference a Free program, so confirm new-account eligibility."
           }
         },
         {
@@ -129,10 +129,26 @@
         },
         {
           "@type": "Question",
+          "name": "Are the first 500 Freshdesk AI sessions monthly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Freshworks says the 500 sessions are a one-time complimentary allowance for new customers on Growth, Pro or Enterprise. Extra packs cost US$49 per 100 and are valid for the current billing cycle. See the official AI add-on guide, checked October 29, 2026."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "What should I compare besides price?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Compare ticket fields, routing, SLA controls, portal and knowledge base, AI usage meters, reporting, export coverage, integrations and migration effort. A lower base price may not reduce total cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I export before switching?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Inventory tickets, comments, attachments, contacts, organizations, custom fields, macros, rules, knowledge articles, reports and user permissions. Test the exported records and confirm what the destination can import before changing email forwarding."
           }
         }
       ]

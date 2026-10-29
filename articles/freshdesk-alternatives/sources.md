@@ -7,6 +7,8 @@ Checked October 29, 2026 unless a page states otherwise. Pricing is volatile; us
 - Pricing and plan comparison: https://www.freshworks.com/freshdesk/pricing/ — Growth US$19, Pro US$55 and Enterprise US$89 per agent/month billed annually; ticketing, shared inbox, portal, knowledge base, reporting, plan differences, 14-day trial and listed add-ons.
 - Support-email setup: https://support.freshdesk.com/support/solutions/articles/37541-set-up-your-support-email — steps for converting support email into tickets.
 - Ticket export: https://support.freshdesk.com/support/solutions/articles/225158 — ticket-list export workflow and limitations.
+- Freddy AI add-ons and session rules: https://support.freshdesk.com/support/solutions/articles/50000011515 — one-time 500-session allowance for new customers on Growth, Pro and Enterprise; extra packs cost US$49 per 100 and apply to the current billing cycle. Checked October 29, 2026.
+- Freshdesk product announcements: https://support.freshdesk.com/support/solutions/folders/50000002365 — checked October 29, 2026; includes the Freshdesk Upcoming Changes page modified March 10, 2026 and other May 2026 announcements.
 - Freshdesk Omni getting started: https://partnersupport.freshworks.com/support/solutions/articles/50000011785-getting-started-with-freshdesk-omni — distinction between Freshdesk email-first and Freshdesk Omni multichannel setup.
 
 ## Alternative vendors' official sources
@@ -27,4 +29,5 @@ Checked October 29, 2026 unless a page states otherwise. Pricing is volatile; us
 
 ## Editorial limits
 - No hands-on product testing, vendor ranking, user interviews, review counts, star ratings, independent benchmarks or affiliate relationship is claimed.
-- If a pricing page does not show a universal paid price or a renewal period, the article states that limitation rather than guessing.
+- Freshdesk's public pricing page lists a 14-day Enterprise trial but does not show a Free plan; some support documentation still refers to a Free program. The article asks readers to confirm new-account eligibility rather than treating it as guaranteed.
+- Freshworks' AI add-on guide resolves the 500-session question: the allowance is one-time for new customers, and paid packs are valid for the current billing cycle. No unsupported renewal claim remains.

@@ -160,10 +160,15 @@ if (isset($softwareLegacyRedirects[$path])) {
     exit;
 }
 
-if ($path === '/zendesk/review/' || $path === '/zendesk/review') {
-    if ($path !== '/zendesk/review/') { header('Location: /zendesk/review/', true, 301); exit; }
-    require __DIR__.'/reviews/zendesk-review/index.php';
-    return;
+if (preg_match('#^/([a-z0-9-]+)/review/?$#D', $path, $reviewMatches)) {
+    $reviewToolSlug = $reviewMatches[1];
+    $reviewCanonical = '/'.$reviewToolSlug.'/review/';
+    $reviewFile = __DIR__.'/reviews/'.$reviewToolSlug.'-review/index.php';
+    if (is_file($reviewFile)) {
+        if ($path !== $reviewCanonical) { header('Location: '.$reviewCanonical, true, 301); exit; }
+        require $reviewFile;
+        return;
+    }
 }
 
 // Tool-first URLs: /tool/, /tool/pricing/, /tool/how-to-use/.

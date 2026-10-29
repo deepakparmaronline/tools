@@ -6,7 +6,8 @@ Checked October 29, 2026 unless noted. Prices are volatile.
 - Zendesk pricing: https://www.zendesk.com/pricing/ — Support Team US$19, Suite Team US$55, Suite Professional US$115 per agent/month billed yearly.
 - Zendesk export guide: https://support.zendesk.com/hc/en-us/articles/4408886165402-Exporting-ticket-user-or-organization-data-from-your-account — export formats and access conditions.
 - Zendesk migration: https://support.zendesk.com/hc/en-us/articles/6696005837082-How-can-I-migrate-information-from-another-platform-into-Zendesk — API import guidance; some ticket metrics are not imported.
-- Freshdesk: https://www.freshworks.com/freshdesk/ and https://www.freshworks.com/freshdesk/pricing/ — Growth US$19, Pro US$55, Enterprise US$89 per agent/month billed annually; 500 AI Agent sessions listed.
+- Freshdesk: https://www.freshworks.com/freshdesk/ and https://www.freshworks.com/freshdesk/pricing/ — Growth US$19, Pro US$55, Enterprise US$89 per agent/month billed annually.
+- Freshdesk AI add-ons: https://support.freshdesk.com/support/solutions/articles/50000011515 — one-time 500-session allowance for new customers on Growth, Pro or Enterprise; extra packs cost US$49 per 100 and are valid for the current billing cycle. Checked October 29, 2026.
 - Help Scout: https://www.helpscout.com/pricing/ — free plan up to 5 users; Standard displayed at US$25/user/month.
 - Zoho Desk: https://www.zoho.com/desk/pricing.html — free edition for 3 users; paid details vary by region.
 - Intercom: https://www.intercom.com/pricing — seat pricing plus Fin from US$0.99 per outcome.
