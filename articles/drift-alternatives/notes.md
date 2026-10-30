@@ -6,6 +6,7 @@ This page treats Drift as a sunset product, not a new purchase recommendation. T
 ## Research method and saved metrics
 - Fixed queue row: Order 3, Drift alternative. Saved Semrush metrics are US volume 320, KD 8, CPC US$36.12, intent I/C, stable trend, SERP features SL/AIO/Rev/Vid/PAA/Rel from the 2026-10-24 snapshot. No Semrush access used.
 - Official Drift sunset, product, help and export sources checked on 2026-10-30.
+- Added the official restoration guide checked on 2026-10-30 to clarify temporary feature limits while the app is accessible. This does not change the January 31, 2027 sunset or the data export deadlines.
 - Official product and pricing pages for all seven alternatives checked on 2026-10-30.
 - Current public search results were reviewed for intent, competing page coverage and reader questions.
 - The public Salesloft product release feed includes a Drift filter, but no standalone current Drift changelog relevant to the retirement was used. The official Drift Sunset FAQ is the lifecycle source.

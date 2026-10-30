@@ -6,6 +6,7 @@ All checks below were performed on 2026-10-30 unless otherwise noted. Official s
 | Claim | Official source | Verification |
 |---|---|---|
 | Drift is retired January 31, 2027; account access can end sooner at contract end | https://clari.my.site.com/customer/s/article/Drift-Sunset-FAQ | Checked 2026-10-30 |
+| Current restoration limits: widget and playbooks initially off, integrations phased, Drift Email unavailable and some exports down | https://clari.my.site.com/customer/s/article/Drift---Drift-Restoration-Process-and-FAQ | Checked 2026-10-30 |
 | Contracts ending before January 31, 2027 are honored with no billing change; contracts extending beyond that date are handled case by case | https://clari.my.site.com/customer/s/article/Drift-Sunset-FAQ | Checked 2026-10-30 |
 | Data access ends with contract end or January 31, 2027, whichever comes first; for contracts extending past that date, data is offline through April 30, 2027 for export requests and remaining data is scheduled for deletion May 1, 2027 | https://clari.my.site.com/customer/s/article/Drift-Sunset-FAQ | Checked 2026-10-30 |
 | Website chat widget, Drift Email and custom Drift API integrations stop after retirement; FAQ links to export instructions | https://clari.my.site.com/customer/s/article/Drift-Sunset-FAQ ; https://help.salesloft.com/s/article/Drift---Export-Drift-Data?language=en_US | Checked 2026-10-30 |

@@ -3,6 +3,7 @@
 Checked October 30, 2026. The review is documentation-based and does not claim hands-on testing.
 
 - Drift retirement, data-access deadlines, contract billing and recommended replacements: https://clari.my.site.com/customer/s/article/Drift-Sunset-FAQ
+- Current restoration state and temporary feature limits: https://clari.my.site.com/customer/s/article/Drift---Drift-Restoration-Process-and-FAQ (checked October 30, 2026)
 - Current Salesloft chat-agent page and transition statement: https://www.salesloft.com/platform/chat-agents
 - Clari + Salesloft announcement naming 1mind as successor: https://www.salesloft.com/company/newsroom/1-mind-partnership
 - Drift Chat Playbooks: https://help.salesloft.com/articles/Knowledge/What-are-the-different-types-of-Chat-Playbooks

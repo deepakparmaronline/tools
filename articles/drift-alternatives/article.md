@@ -24,6 +24,8 @@ Drift helped teams greet website visitors, ask qualifying questions, route high-
 
 Salesloft's [Drift Sunset FAQ](https://clari.my.site.com/customer/s/article/Drift-Sunset-FAQ), checked October 30, 2026, sets January 31, 2027 as the retirement date. Access ends then or at contract end, whichever comes first. The widget, Drift Email and custom Drift API integrations stop after retirement. For contracts that run later, data stays offline for export requests through April 30, 2027; remaining data is scheduled for deletion on May 1, 2027.
 
+The separate [official restoration guide](https://clari.my.site.com/customer/s/article/Drift---Drift-Restoration-Process-and-FAQ), checked October 30, 2026, says Drift became accessible again but some functions remain limited. Playbooks and the widget are initially turned off, integrations are being restored in phases, Drift Email is not live, and some report exports remain unavailable. Confirm the current state of your account before relying on an old workflow or assuming every feature is restored.
+
 ## 1. 1mind: the named successor for buyer conversations
 
 **Best for:** Existing Drift customers who want an AI sales agent and already use or plan to use the Clari + Salesloft revenue workflow.
@@ -169,6 +171,6 @@ HubSpot offers free live chat, and Tidio and Crisp list free plans on their offi
 
 ## Sources and related guides
 
-Official product, pricing, support and sunset sources plus public search results were checked October 30, 2026. The saved keyword metrics and PAA evidence limitation are recorded in the editorial notes. No hands-on testing was performed.
+Official product, pricing, support, sunset and restoration sources plus public search results were checked October 30, 2026. See the [official Drift Restoration Process and FAQ](https://clari.my.site.com/customer/s/article/Drift---Drift-Restoration-Process-and-FAQ) for current feature limitations. The saved keyword metrics and PAA evidence limitation are recorded in the editorial notes. No hands-on testing was performed.
 
 Read the [Drift software guide](/drift/), [Drift review](/drift/review/), [Drift pricing guide](/drift/pricing/), [how to use Drift](/drift/how-to-use/), and [Drift vs 1mind comparison](/compare/drift-vs-1mind/). For wider software discovery, use [Browse Tools by Niche](/browse-tools-by-niche).
