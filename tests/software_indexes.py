@@ -181,6 +181,10 @@ def main():
             '/freshdesk/pricing/': ('https://toolboxkart.tech/freshdesk/pricing/', 'freshdesk'),
             '/freshdesk/how-to-use/': ('https://toolboxkart.tech/freshdesk/how-to-use/', 'freshdesk'),
             '/compare/freshdesk-vs-help-scout/': ('https://toolboxkart.tech/compare/freshdesk-vs-help-scout/', 'freshdesk'),
+            '/drift/': ('https://toolboxkart.tech/drift/', 'drift'),
+            '/drift/pricing/': ('https://toolboxkart.tech/drift/pricing/', 'drift'),
+            '/drift/how-to-use/': ('https://toolboxkart.tech/drift/how-to-use/', 'drift'),
+            '/compare/drift-vs-1mind/': ('https://toolboxkart.tech/compare/drift-vs-1mind/', 'drift'),
         }
         for path, (canonical, term) in published_details.items():
             html = get(path)
@@ -192,26 +196,29 @@ def main():
             graph = next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
             crumb = next(item for item in graph if item.get('@type') == 'BreadcrumbList')
             assert crumb['itemListElement'][-1]['item'] == canonical, path
-            if path in ['/zendesk/', '/freshdesk/']:
+            if path in ['/drift/pricing/', '/drift/how-to-use/']:
+                assert [item['item'] for item in crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/drift/', canonical], path
+            if path in ['/zendesk/', '/freshdesk/', '/drift/']:
                 assert any(item.get('@type') == 'SoftwareApplication' for item in graph), path
-            if path.startswith('/freshdesk/') or path == '/compare/freshdesk-vs-help-scout/':
+            if path.startswith('/freshdesk/') or path == '/compare/freshdesk-vs-help-scout/' or path.startswith('/drift/') or path == '/compare/drift-vs-1mind/':
                 assert any(item.get('@type') == 'FAQPage' for item in graph), path
 
         for path in ['/tools/', '/pricing/', '/how-to-use/', '/compare/']:
             index_html = get(path).lower()
-            assert 'zendesk' in index_html and 'freshdesk' in index_html, path
+            assert 'zendesk' in index_html and 'freshdesk' in index_html and 'drift' in index_html, path
         assert 'zendesk' not in get('/best/').lower()
         assert 'freshdesk' not in get('/best/').lower()
+        assert 'drift' not in get('/best/').lower()
         reviews_index = get('/reviews/')
-        assert 'Freshdesk Review' in reviews_index
+        assert 'Freshdesk Review' in reviews_index and 'Drift Review' in reviews_index
 
         expected_sitemap_urls = {
-            '/sitemap-tools.xml': ['https://toolboxkart.tech/zendesk/', 'https://toolboxkart.tech/freshdesk/'],
-            '/sitemap-pricing.xml': ['https://toolboxkart.tech/zendesk/pricing/', 'https://toolboxkart.tech/freshdesk/pricing/'],
-            '/sitemap-how-to-use.xml': ['https://toolboxkart.tech/zendesk/how-to-use/', 'https://toolboxkart.tech/freshdesk/how-to-use/'],
-            '/sitemap-compare.xml': ['https://toolboxkart.tech/compare/zendesk-vs-freshdesk/', 'https://toolboxkart.tech/compare/freshdesk-vs-help-scout/'],
-            '/sitemap-alternatives.xml': ['https://toolboxkart.tech/zendesk/alternatives/', 'https://toolboxkart.tech/freshdesk/alternatives/'],
-            '/sitemap-reviews.xml': ['https://toolboxkart.tech/zendesk/review/', 'https://toolboxkart.tech/freshdesk/review/'],
+            '/sitemap-tools.xml': ['https://toolboxkart.tech/zendesk/', 'https://toolboxkart.tech/freshdesk/', 'https://toolboxkart.tech/drift/'],
+            '/sitemap-pricing.xml': ['https://toolboxkart.tech/zendesk/pricing/', 'https://toolboxkart.tech/freshdesk/pricing/', 'https://toolboxkart.tech/drift/pricing/'],
+            '/sitemap-how-to-use.xml': ['https://toolboxkart.tech/zendesk/how-to-use/', 'https://toolboxkart.tech/freshdesk/how-to-use/', 'https://toolboxkart.tech/drift/how-to-use/'],
+            '/sitemap-compare.xml': ['https://toolboxkart.tech/compare/zendesk-vs-freshdesk/', 'https://toolboxkart.tech/compare/freshdesk-vs-help-scout/', 'https://toolboxkart.tech/compare/drift-vs-1mind/'],
+            '/sitemap-alternatives.xml': ['https://toolboxkart.tech/zendesk/alternatives/', 'https://toolboxkart.tech/freshdesk/alternatives/', 'https://toolboxkart.tech/drift/alternatives/'],
+            '/sitemap-reviews.xml': ['https://toolboxkart.tech/zendesk/review/', 'https://toolboxkart.tech/freshdesk/review/', 'https://toolboxkart.tech/drift/review/'],
         }
         for path, urls in expected_sitemap_urls.items():
             for url in urls:

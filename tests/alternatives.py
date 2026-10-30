@@ -100,6 +100,17 @@ def main():
         assert len(item_list_schema['itemListElement']) == 8
         assert any(item.get('@type') == 'FAQPage' for item in freshdesk_graph)
         assert '/freshdesk/alternatives/' in get('/sitemap-alternatives.xml')[2]
+        _, _, drift_alt_html = get('/drift/alternatives/')
+        drift_alt_page = Page(drift_alt_html)
+        assert drift_alt_page.canonical == 'https://toolboxkart.tech/drift/alternatives/'
+        assert '<nav class="crumbs" aria-label="Breadcrumb">' in drift_alt_html
+        drift_graph = next(item['@graph'] for item in drift_alt_page.schemas if '@graph' in item)
+        drift_crumb = next(item for item in drift_graph if item.get('@type') == 'BreadcrumbList')
+        assert [item['item'] for item in drift_crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/drift/', 'https://toolboxkart.tech/drift/alternatives/']
+        drift_list = next(item for item in drift_graph if item.get('@type') == 'ItemList')
+        assert [item['name'] for item in drift_list['itemListElement']] == ['1mind', 'Qualified Piper', 'HubSpot live chat', 'Chili Piper', 'Intercom', 'Tidio', 'Crisp']
+        assert any(item.get('@type') == 'FAQPage' for item in drift_graph)
+        assert 'https://toolboxkart.tech/drift/alternatives/' in get('/sitemap-alternatives.xml')[2]
         for slug, status, date in [('qa-alternative-one', 'published', '2026-01-01'),
                                    ('qa-alternative-two', 'published', '2026-01-02'),
                                    ('qa-alternative-draft', 'draft', '2026-01-01'),

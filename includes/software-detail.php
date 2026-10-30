@@ -106,13 +106,19 @@ function render_software_detail_page(array $page, string $collectionKey): string
         $articleSchema['image'] = ['@type' => 'ImageObject', 'url' => $socialImage, 'caption' => $socialImageAlt];
     }
 
+    $breadcrumbParentName = trim(is_string($page['breadcrumb_parent_name'] ?? null) ? $page['breadcrumb_parent_name'] : '');
+    $breadcrumbParentUrl = trim(is_string($page['breadcrumb_parent_url'] ?? null) ? $page['breadcrumb_parent_url'] : '');
+    $hasBreadcrumbParent = $breadcrumbParentName !== '' && preg_match('#^/[a-z0-9-]+/$#D', $breadcrumbParentUrl) === 1;
+    $breadcrumbItems = [['name' => 'Home', 'url' => SITE_URL]];
+    if ($hasBreadcrumbParent) {
+        $breadcrumbItems[] = ['name' => $breadcrumbParentName, 'url' => url($breadcrumbParentUrl)];
+    } else {
+        $breadcrumbItems[] = ['name' => $config['index_title'], 'url' => url($config['index_url'])];
+    }
+    $breadcrumbItems[] = ['name' => $title, 'url' => $canonical];
     $schemaGraph = [
         $articleSchema,
-        breadcrumbs([
-            ['name' => 'Home', 'url' => SITE_URL],
-            ['name' => $config['index_title'], 'url' => url($config['index_url'])],
-            ['name' => $title, 'url' => $canonical],
-        ]),
+        breadcrumbs($breadcrumbItems),
     ];
     $application = $page['software_application'] ?? null;
     if ($collectionKey === 'tool_hubs' && is_array($application)) {
@@ -159,7 +165,11 @@ function render_software_detail_page(array $page, string $collectionKey): string
         <div class="container">
             <nav class="crumbs" aria-label="Breadcrumb">
                 <a href="/">Home</a><span aria-hidden="true">›</span>
+                <?php if ($hasBreadcrumbParent): ?>
+                <a href="<?=e($breadcrumbParentUrl)?>"><?=e($breadcrumbParentName)?></a><span aria-hidden="true">›</span>
+                <?php else: ?>
                 <a href="<?=e($config['index_url'])?>"><?=e($config['index_title'])?></a><span aria-hidden="true">›</span>
+                <?php endif; ?>
                 <span><?=e($title)?></span>
             </nav>
             <span class="eyebrow"><?=e($config['eyebrow'])?></span>
