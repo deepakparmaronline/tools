@@ -25,7 +25,7 @@ Full-queue metrics may be reviewed only in a separate owner-authorized research 
 | ---: | --- | --- | --- | ---: | ---: | ---: | --- | --- |
 | 1 | Zendesk | Zendesk alternative | new cluster | 880 | 22 | $64.61 | C | published |
 | 2 | Freshdesk | Freshdesk alternative | new cluster | 480 | 16 | $46.98 | C | published |
-| 3 | Drift | Drift alternative | new cluster | 320 | 8 | $36.12 | I/C | queued |
+| 3 | Drift | Drift alternative | new cluster | 320 | 8 | $36.12 | I/C | in_progress |
 | 4 | Fiverr | Fiverr alternative | new cluster | 1900 | 29 | $4.30 | n/a | queued |
 | 5 | Gmail | Gmail alternative | new cluster | 1300 | 38 | $2.10 | I/C | queued |
 | 6 | n8n | n8n alternative | new cluster | 720 | 20 | $6.88 | C | queued |
