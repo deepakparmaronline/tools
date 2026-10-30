@@ -55,7 +55,7 @@ HTML
 <h2>Sources and update note</h2><p>Official sources checked October 30, 2026: <a href="https://www.salesloft.com/platform/chat-agents">Salesloft Chat Agents</a>, <a href="https://www.salesloft.com/company/newsroom/1-mind-partnership">Clari + Salesloft and 1mind partnership announcement</a>, <a href="https://clari.my.site.com/customer/s/article/Drift-Sunset-FAQ">Drift Sunset FAQ</a> and <a href="https://help.salesloft.com/articles/Knowledge/What-are-the-different-types-of-Chat-Playbooks">Drift Chat Playbooks guide</a>. No current public Drift price was found. This is documentation-based research, not a hands-on test.</p>
 HTML
 
- ],
+ ]],
 
  'pricing' => [[
   'title'=>'Zendesk Pricing: Plans, Costs and Limits','seo_title'=>'Zendesk Pricing: Plans, Costs and Limits',
@@ -117,7 +117,7 @@ HTML
 <h2>Sources and update note</h2><p>Official sources checked October 30, 2026: <a href="https://www.salesloft.com/platform/chat-agents">Salesloft Chat Agents</a>, <a href="https://www.salesloft.com/company/newsroom/1-mind-partnership">Clari + Salesloft and 1mind partnership announcement</a> and <a href="https://clari.my.site.com/customer/s/article/Drift-Sunset-FAQ">Drift Sunset FAQ</a>. Current Drift list pricing was not found. No historical third-party price was presented as current and no hands-on billing test was claimed.</p>
 HTML
 
- ],
+ ]],
 
  'how_to_use' => [[
   'title'=>'How to Use Zendesk: Setup and Ticket Workflow','seo_title'=>'How to Use Zendesk: Setup and Ticket Workflow',
@@ -190,7 +190,7 @@ HTML
 <h2>Official sources and update note</h2><p>Sources checked October 30, 2026: <a href="https://help.salesloft.com/s/article/Drift---Manage-Chatbot-Settings?language=en_US">Manage Chatbot Settings</a>, <a href="https://help.salesloft.com/articles/Knowledge/What-are-the-different-types-of-Chat-Playbooks">Chat Playbooks</a>, <a href="https://help.salesloft.com/s/article/How-does-Round-Robin-Routing-Work-for-Chat?language=en_US">round-robin routing</a>, <a href="https://help.salesloft.com/s/article/Integrating-Drift-with-Salesforce?language=en_US">Salesforce integration</a>, <a href="https://help.salesloft.com/s/article/Setting-up-and-Reading-the-Salesforce-Global-Dashboard-Revenue-Reports?language=en_US">revenue reports</a> and the <a href="https://clari.my.site.com/customer/s/article/Drift-Sunset-FAQ">Drift Sunset FAQ</a>. This is documentation-based guidance, not a hands-on account test.</p>
 HTML
 
- ],
+ ]],
 
  'comparisons' => [
   ['title'=>'Freedom vs Cold Turkey: Which Blocker Fits?','description'=>'Compare Freedom and Cold Turkey by device support, blocking controls, current pricing, lock options and the workflow each product fits best.','url'=>'/versus/freedom-vs-cold-turkey/','date'=>'2026-10-20','status'=>'published'],
@@ -263,6 +263,7 @@ HTML
 <h2>Sources and related pages</h2><p>Official sources checked October 30, 2026: <a href="https://www.salesloft.com/platform/chat-agents">Salesloft Chat Agents</a>, <a href="https://www.salesloft.com/company/newsroom/1-mind-partnership">Clari + Salesloft and 1mind partnership announcement</a>, <a href="https://www.1mind.com/">1mind</a>, <a href="https://clari.my.site.com/customer/s/article/Drift-Sunset-FAQ">Drift Sunset FAQ</a> and <a href="https://help.salesloft.com/articles/Knowledge/What-are-the-different-types-of-Chat-Playbooks">Drift Chat Playbooks guide</a>. Read the <a href="/drift/">Drift hub</a>, <a href="/drift/review/">review</a>, <a href="/drift/pricing/">pricing guide</a>, <a href="/drift/how-to-use/">how-to guide</a>, <a href="/drift/alternatives/">alternatives guide</a> and <a href="/browse-tools-by-niche">Browse Tools by Niche</a>. This is documentation-based research, not a hands-on test.</p>
 HTML
 
+ ],
  ],
 
  'categories' => [],
