@@ -48,6 +48,7 @@ def main():
             '/versus/freedom-vs-cold-turkey/':('https://toolboxkart.tech/versus/freedom-vs-cold-turkey/','October 20, 2026'),
             '/reviews/taskade-review/':('https://toolboxkart.tech/reviews/taskade-review/','October 20, 2026'),
             '/drift/review/':('https://toolboxkart.tech/drift/review/','October 30, 2026'),
+            '/fiverr/review/':('https://toolboxkart.tech/fiverr/review/','October 31, 2026'),
         }
         for path,(canonical,published_date) in pages.items():
             code,_,html=get(path);assert code==200,path
@@ -60,11 +61,12 @@ def main():
             graph=next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
             crumb=next(item for item in graph if item.get('@type')=='BreadcrumbList')
             assert crumb['itemListElement'][-1]['item']==canonical,path
-            if path == '/drift/review/':
-                assert [item['item'] for item in crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/drift/', canonical], path
+            if path in ['/drift/review/', '/fiverr/review/']:
+                parent = 'fiverr' if path == '/fiverr/review/' else 'drift'
+                assert [item['item'] for item in crumb['itemListElement']] == ['https://toolboxkart.tech/', f'https://toolboxkart.tech/{parent}/', canonical], path
             assert any('@graph' in schema for schema in page.schemas),path
             assert 'Review methodology' in visible and 'Sources' in visible,path
-        for index,slug in [('/versus/','freedom-vs-cold-turkey'),('/reviews/','taskade-review'),('/reviews/','Drift Review'),('/content/','taskade-review')]:
+        for index,slug in [('/versus/','freedom-vs-cold-turkey'),('/reviews/','taskade-review'),('/reviews/','Drift Review'),('/reviews/','Fiverr Review'),('/content/','taskade-review')]:
             code,_,html=get(index);assert code==200 and slug in html,index
         for path in ['/about-deepak-parmar/','/editorial-policy','/review-methodology','/advertising-disclosure','/corrections-policy']:
             code,_,html=get(path);assert code==200 and Page(html).h1==1,path
@@ -75,6 +77,7 @@ def main():
         _,_,compare_sitemap=get('/sitemap-compare.xml')
         assert pages['/reviews/taskade-review/'][0] in review_sitemap
         assert pages['/drift/review/'][0] in review_sitemap
+        assert pages['/fiverr/review/'][0] in review_sitemap
         assert pages['/versus/freedom-vs-cold-turkey/'][0] in compare_sitemap
         _,_,alt_sitemap=get('/sitemap-alternatives.xml')
         assert '/alternatives/freedom-alternatives/' in alt_sitemap and '/reviews/' not in alt_sitemap

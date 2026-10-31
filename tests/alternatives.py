@@ -75,6 +75,7 @@ def main():
                 time.sleep(.1)
         assert get('/alternatives/')[0] == 200
         assert 'id="productivity"' in get('/alternatives/')[2]
+        assert 'id="freelance-marketplaces"' in get('/alternatives/')[2]
         assert 'href="/review-methodology"' in get('/alternatives/')[2]
         for path, content_type in [('/assets/css/app.css', 'text/css'),
                                    ('/assets/css/article-overflow-fixes.css', 'text/css'),
@@ -111,6 +112,18 @@ def main():
         assert [item['name'] for item in drift_list['itemListElement']] == ['1mind', 'Qualified Piper', 'HubSpot live chat', 'Chili Piper', 'Intercom', 'Tidio', 'Crisp']
         assert any(item.get('@type') == 'FAQPage' for item in drift_graph)
         assert 'https://toolboxkart.tech/drift/alternatives/' in get('/sitemap-alternatives.xml')[2]
+        _, _, fiverr_alt_html = get('/fiverr/alternatives/')
+        fiverr_alt_page = Page(fiverr_alt_html)
+        assert fiverr_alt_page.canonical == 'https://toolboxkart.tech/fiverr/alternatives/'
+        assert 140 <= len(fiverr_alt_page.meta.get('description', '')) <= 160
+        assert '<nav class="crumbs" aria-label="Breadcrumb">' in fiverr_alt_html
+        fiverr_graph = next(item['@graph'] for item in fiverr_alt_page.schemas if '@graph' in item)
+        fiverr_crumb = next(item for item in fiverr_graph if item.get('@type') == 'BreadcrumbList')
+        assert [item['item'] for item in fiverr_crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/fiverr/', 'https://toolboxkart.tech/fiverr/alternatives/']
+        fiverr_list = next(item for item in fiverr_graph if item.get('@type') == 'ItemList')
+        assert [item['name'] for item in fiverr_list['itemListElement']] == ['Upwork', 'Contra', 'Freelancer.com', 'PeoplePerHour', 'Guru', 'Toptal', '99designs']
+        assert any(item.get('@type') == 'FAQPage' for item in fiverr_graph)
+        assert 'https://toolboxkart.tech/fiverr/alternatives/' in get('/sitemap-alternatives.xml')[2]
         for slug, status, date in [('qa-alternative-one', 'published', '2026-01-01'),
                                    ('qa-alternative-two', 'published', '2026-01-02'),
                                    ('qa-alternative-draft', 'draft', '2026-01-01'),

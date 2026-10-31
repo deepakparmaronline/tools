@@ -51,6 +51,7 @@ function alternative_topic_group(array $article): array {
         'customer-growth'=>['name'=>'Customer, sales and marketing','description'=>'Customer success, support, feedback, messaging and lead-conversion software.','slugs'=>['callpage-alternatives','drift-alternatives','freshdesk-alternatives','gainsight-alternatives','leave-me-alone-alternatives','stonly-alternatives','survicate-alternatives','wati-alternatives','zendesk-alternatives']],
         'developer-creative'=>['name'=>'Developer and creative workflows','description'=>'Documentation, integrations, app delivery, design review and motion tools.','slugs'=>['hera-alternatives','mintlify-alternatives','mobiloud-alternatives','nylas-alternatives','ruttl-alternatives']],
         'documents-specialist'=>['name'=>'Documents, study and specialist software','description'=>'PDF, study, meeting, compliance and industry-specific software.','slugs'=>['notegpt-alternatives','pearl-alternatives','shadow-alternatives','updf-alternatives','vanta-alternatives']],
+        'freelance-marketplaces'=>['name'=>'Freelance marketplaces','description'=>'Open freelance marketplaces, portfolio-led workspaces, vetted expert networks and design contests for buyers and independent professionals.','slugs'=>['fiverr-alternatives']],
     ];
     foreach ($groups as $key=>$group) if (in_array($slug,$group['slugs'],true)) return ['key'=>$key]+$group;
     return ['key'=>'other','name'=>'More software alternatives','description'=>'Additional researched alternatives for specific workflows.','slugs'=>[]];

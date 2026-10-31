@@ -167,7 +167,7 @@ def main():
         assert '/versus/freedom-vs-cold-turkey/' in compare
 
         # Both published customer-support software clusters must render with canonical URLs and schema.
-        unknown_detail_routes = ['/best/customer-service-help-desk-software/']
+        unknown_detail_routes = ['/best/customer-service-help-desk-software/', '/best/freelance-marketplace-software/']
         for path in unknown_detail_routes:
             status, _, _ = get_response(path)
             assert status == 404, f'{path}: expected 404, got {status}'
@@ -185,6 +185,10 @@ def main():
             '/drift/pricing/': ('https://toolboxkart.tech/drift/pricing/', 'drift'),
             '/drift/how-to-use/': ('https://toolboxkart.tech/drift/how-to-use/', 'drift'),
             '/compare/drift-vs-1mind/': ('https://toolboxkart.tech/compare/drift-vs-1mind/', 'drift'),
+            '/fiverr/': ('https://toolboxkart.tech/fiverr/', 'fiverr'),
+            '/fiverr/pricing/': ('https://toolboxkart.tech/fiverr/pricing/', 'fiverr'),
+            '/fiverr/how-to-use/': ('https://toolboxkart.tech/fiverr/how-to-use/', 'fiverr'),
+            '/compare/fiverr-vs-upwork/': ('https://toolboxkart.tech/compare/fiverr-vs-upwork/', 'fiverr'),
         }
         for path, (canonical, term) in published_details.items():
             html = get(path)
@@ -192,33 +196,39 @@ def main():
             assert page.h1 == 1, path
             assert page.canonical == canonical, path
             assert term in ' '.join(page.text).lower(), path
+            if path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/':
+                assert 140 <= len(page.description) <= 160, path
             assert '<nav class="crumbs" aria-label="Breadcrumb">' in html, path
             graph = next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
             crumb = next(item for item in graph if item.get('@type') == 'BreadcrumbList')
             assert crumb['itemListElement'][-1]['item'] == canonical, path
-            if path in ['/drift/pricing/', '/drift/how-to-use/']:
-                assert [item['item'] for item in crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/drift/', canonical], path
-            if path in ['/zendesk/', '/freshdesk/', '/drift/']:
+            if path in ['/drift/pricing/', '/drift/how-to-use/', '/fiverr/pricing/', '/fiverr/how-to-use/', '/compare/fiverr-vs-upwork/']:
+                parent = 'fiverr' if path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/' else 'drift'
+                assert [item['item'] for item in crumb['itemListElement']] == ['https://toolboxkart.tech/', f'https://toolboxkart.tech/{parent}/', canonical], path
+            if path == '/fiverr/':
+                assert [item['item'] for item in crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/tools/', canonical], path
+            if path in ['/zendesk/', '/freshdesk/', '/drift/', '/fiverr/']:
                 assert any(item.get('@type') == 'SoftwareApplication' for item in graph), path
-            if path.startswith('/freshdesk/') or path == '/compare/freshdesk-vs-help-scout/' or path.startswith('/drift/') or path == '/compare/drift-vs-1mind/':
+            if path.startswith('/freshdesk/') or path == '/compare/freshdesk-vs-help-scout/' or path.startswith('/drift/') or path == '/compare/drift-vs-1mind/' or path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/':
                 assert any(item.get('@type') == 'FAQPage' for item in graph), path
 
         for path in ['/tools/', '/pricing/', '/how-to-use/', '/compare/']:
             index_html = get(path).lower()
-            assert 'zendesk' in index_html and 'freshdesk' in index_html and 'drift' in index_html, path
+            assert 'zendesk' in index_html and 'freshdesk' in index_html and 'drift' in index_html and 'fiverr' in index_html, path
         assert 'zendesk' not in get('/best/').lower()
         assert 'freshdesk' not in get('/best/').lower()
         assert 'drift' not in get('/best/').lower()
+        assert 'fiverr' not in get('/best/').lower()
         reviews_index = get('/reviews/')
-        assert 'Freshdesk Review' in reviews_index and 'Drift Review' in reviews_index
+        assert 'Freshdesk Review' in reviews_index and 'Drift Review' in reviews_index and 'Fiverr Review' in reviews_index
 
         expected_sitemap_urls = {
-            '/sitemap-tools.xml': ['https://toolboxkart.tech/zendesk/', 'https://toolboxkart.tech/freshdesk/', 'https://toolboxkart.tech/drift/'],
-            '/sitemap-pricing.xml': ['https://toolboxkart.tech/zendesk/pricing/', 'https://toolboxkart.tech/freshdesk/pricing/', 'https://toolboxkart.tech/drift/pricing/'],
-            '/sitemap-how-to-use.xml': ['https://toolboxkart.tech/zendesk/how-to-use/', 'https://toolboxkart.tech/freshdesk/how-to-use/', 'https://toolboxkart.tech/drift/how-to-use/'],
-            '/sitemap-compare.xml': ['https://toolboxkart.tech/compare/zendesk-vs-freshdesk/', 'https://toolboxkart.tech/compare/freshdesk-vs-help-scout/', 'https://toolboxkart.tech/compare/drift-vs-1mind/'],
-            '/sitemap-alternatives.xml': ['https://toolboxkart.tech/zendesk/alternatives/', 'https://toolboxkart.tech/freshdesk/alternatives/', 'https://toolboxkart.tech/drift/alternatives/'],
-            '/sitemap-reviews.xml': ['https://toolboxkart.tech/zendesk/review/', 'https://toolboxkart.tech/freshdesk/review/', 'https://toolboxkart.tech/drift/review/'],
+            '/sitemap-tools.xml': ['https://toolboxkart.tech/zendesk/', 'https://toolboxkart.tech/freshdesk/', 'https://toolboxkart.tech/drift/', 'https://toolboxkart.tech/fiverr/'],
+            '/sitemap-pricing.xml': ['https://toolboxkart.tech/zendesk/pricing/', 'https://toolboxkart.tech/freshdesk/pricing/', 'https://toolboxkart.tech/drift/pricing/', 'https://toolboxkart.tech/fiverr/pricing/'],
+            '/sitemap-how-to-use.xml': ['https://toolboxkart.tech/zendesk/how-to-use/', 'https://toolboxkart.tech/freshdesk/how-to-use/', 'https://toolboxkart.tech/drift/how-to-use/', 'https://toolboxkart.tech/fiverr/how-to-use/'],
+            '/sitemap-compare.xml': ['https://toolboxkart.tech/compare/zendesk-vs-freshdesk/', 'https://toolboxkart.tech/compare/freshdesk-vs-help-scout/', 'https://toolboxkart.tech/compare/drift-vs-1mind/', 'https://toolboxkart.tech/compare/fiverr-vs-upwork/'],
+            '/sitemap-alternatives.xml': ['https://toolboxkart.tech/zendesk/alternatives/', 'https://toolboxkart.tech/freshdesk/alternatives/', 'https://toolboxkart.tech/drift/alternatives/', 'https://toolboxkart.tech/fiverr/alternatives/'],
+            '/sitemap-reviews.xml': ['https://toolboxkart.tech/zendesk/review/', 'https://toolboxkart.tech/freshdesk/review/', 'https://toolboxkart.tech/drift/review/', 'https://toolboxkart.tech/fiverr/review/'],
         }
         for path, urls in expected_sitemap_urls.items():
             for url in urls:
@@ -237,6 +247,13 @@ def main():
         freshdesk_review_graph = next(schema['@graph'] for schema in freshdesk_review_page.schemas if '@graph' in schema)
         freshdesk_review_crumb = next(item for item in freshdesk_review_graph if item.get('@type') == 'BreadcrumbList')
         assert [item['item'] for item in freshdesk_review_crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/freshdesk/', 'https://toolboxkart.tech/freshdesk/review/']
+        fiverr_review_html = get('/fiverr/review/')
+        fiverr_review_page = Page(fiverr_review_html)
+        assert fiverr_review_page.canonical == 'https://toolboxkart.tech/fiverr/review/'
+        assert '<nav class="crumbs" aria-label="Breadcrumb">' in fiverr_review_html
+        fiverr_review_graph = next(schema['@graph'] for schema in fiverr_review_page.schemas if '@graph' in schema)
+        fiverr_review_crumb = next(item for item in fiverr_review_graph if item.get('@type') == 'BreadcrumbList')
+        assert [item['item'] for item in fiverr_review_crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/fiverr/', 'https://toolboxkart.tech/fiverr/review/']
 
         rewrite_rules = (ROOT / '.htaccess').read_text()
         assert 'RewriteRule ^(tools|pricing|how-to-use|compare|best)/([a-z0-9-]+)/?$ router.php [L,QSA]' in rewrite_rules
