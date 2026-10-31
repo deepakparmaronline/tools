@@ -9,3 +9,5 @@
 - Exact PAA question text was not committed in the Semrush snapshot. FAQs are based on official documentation and common task intent; they are not labeled as copied PAA questions.
 - No featured image was added because no site-owner-provided image was available and no rights-cleared product visual was needed for the page.
 - No hands-on test, rating, affiliate relationship or paid placement is claimed.
+
+- No dedicated public product changelog was found in the official sources reviewed; current workflows and fees are sourced from Fiverr's Help Center and legal terms.
