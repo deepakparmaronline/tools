@@ -5,7 +5,7 @@ Checked on 2026-10-31. Product fees and limits below are taken from official pro
 ## Fiverr
 - Product and marketplace: https://www.fiverr.com/
 - Terms of Service (last updated January 2026): https://www.fiverr.com/legal-portal/legal-terms/terms-of-service
-- Payment Terms (last updated October 2026): https://www.fiverr.com/legal-portal/legal-terms/payment-terms-of-service
+- Payment Terms (last updated September 2026): https://www.fiverr.com/legal-portal/legal-terms/payment-terms-of-service
 - Creating a Gig, including desktop-only creation, packages, price minimums and active-Gig limits: https://help.fiverr.com/hc/en-us/articles/360010451397-Creating-a-Gig
 - Earnings page, 80% seller share and downloadable activity reports: https://help.fiverr.com/hc/en-us/articles/9234443621137-Your-earnings-page
 - Buyer service fee and upfront pricing: https://help.fiverr.com/hc/en-us/articles/360011562878-Price-upfront-Clear-and-predictable-pricing

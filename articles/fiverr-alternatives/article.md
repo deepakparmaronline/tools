@@ -31,7 +31,7 @@ The table separates buyer costs from freelancer fees because the cheapest platfo
 
 Fiverr is built around service listings called Gigs. A seller defines a service, scope, delivery time, revisions and price, then a buyer orders that package or requests a custom offer. The model is useful when the work can be described before the project begins. It can feel restrictive when a project needs discovery, weekly hours, a long contract or a detailed statement of work.
 
-Fees are another reason to compare. Fiverr’s official Earnings page says freelancers receive 80% of the purchase amount for completed orders, including extras and tips. The buyer Help Center lists a standard 5.5% service fee and an extra US$3.50 on orders under US$200, while the Payment Terms page describes an Order Initiation Fee. Check the final checkout breakdown for your region instead of assuming one fee example covers every purchase.
+Fees are another reason to compare. Fiverr’s official Earnings page says freelancers receive 80% of the purchase amount for completed orders, including extras and tips. The buyer Help Center lists a standard 5.5% service fee and an extra US$3.50 on orders under US$200. The Payment Terms separately describe a US$5 Order Initiation Fee for eligible hourly contracts. Check the final checkout breakdown for your region instead of assuming one fee example covers every purchase.
 
 Buyers may also need more control over proposal review, milestones, time tracking, specialist screening or team contracts. Freelancers may want a different client-discovery model, a portfolio that works beyond one marketplace, or fee rules that change with the contract or client relationship. These are reasons to compare workflows, not proof that Fiverr is poor for every user.
 
@@ -51,7 +51,7 @@ Upwork supports hourly and fixed-price work. Freelancers apply to jobs using Con
 
 **Best for:** designers, developers, marketers and other independents who want a portfolio, contracts, invoices and client payments in one workspace, especially when they can bring some of their own clients.
 
-Contra describes freelancer payments as commission-free. Its official pricing page lists a free plan and Pro at US$29 per month or US$199 per year. The free plan has platform fees charged to the client: US$15 for payments from US$1 to US$499 and US$29 for payments of US$500 or more. Pro waives those platform fees, but payment processor fees can still apply depending on the method. [Contra pricing, checked October 31, 2026.](https://contra.com/pricing) [Contra fee details, checked October 31, 2026.](https://help.contra.com/en/articles/9322934-fees-overview)
+Contra describes freelancer payments as commission-free. Its official pricing page lists a free plan and Pro at US$29 per month or US$199 per year. The free plan charges the client US$15 or US$29 per payment depending on the amount; Contra Pro waives those platform fees. Payment processor fees can still apply depending on the method. [Contra pricing, checked October 31, 2026.](https://contra.com/pricing) [Contra fee details, checked October 31, 2026.](https://help.contra.com/en/articles/9322934-fees-overview)
 
 **Pros:** no freelancer commission; portfolio and contract tools; supports invoices for work with clients who do not need to discover you through a marketplace.
 
