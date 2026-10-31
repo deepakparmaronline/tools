@@ -55,9 +55,45 @@ HTML
 <h2>Sources and update note</h2><p>Official sources checked October 30, 2026: <a href="https://www.salesloft.com/platform/chat-agents">Salesloft Chat Agents</a>, <a href="https://www.salesloft.com/company/newsroom/1-mind-partnership">Clari + Salesloft and 1mind partnership announcement</a>, <a href="https://clari.my.site.com/customer/s/article/Drift-Sunset-FAQ">Drift Sunset FAQ</a> and <a href="https://help.salesloft.com/articles/Knowledge/What-are-the-different-types-of-Chat-Playbooks">Drift Chat Playbooks guide</a>, and <a href="https://clari.my.site.com/customer/s/article/Drift---Drift-Restoration-Process-and-FAQ">Drift Restoration Process and FAQ</a>. No current public Drift price was found. This is documentation-based research, not a hands-on test.</p>
 HTML
 
- ]],
+ ],
+  [
+    'status' => 'published',
+    'title' => "Fiverr Freelance Marketplace Guide",
+    'seo_title' => "Fiverr: Freelance Marketplace Guide",
+    'description' => "Learn how Fiverr Gigs work, what buyers and sellers pay, where the marketplace fits, and how to compare or use Fiverr with confidence.",
+    'url' => '/fiverr/',
+    'date' => '2026-10-31',
+    'updated' => '2026-10-31',
+    'author' => 'Deepak Parmar',
+    'breadcrumb_parent_name' => 'Fiverr',
+    'breadcrumb_parent_url' => '/fiverr/',
+    'software_application' => ['name' => 'Fiverr', 'url' => 'https://www.fiverr.com/', 'provider' => 'Fiverr International Ltd.', 'provider_url' => 'https://www.fiverr.com/', 'applicationCategory' => 'BusinessApplication', 'operatingSystem' => 'Web', 'description' => 'Freelance services marketplace for packaged services and custom offers.'],
+    'faqs' => [{'question' =>"Is Fiverr a software subscription?",'answer' =>"No. Fiverr is a freelance services marketplace. Sellers set Gig prices and platform fees apply to completed orders and buyer purchases."},{'question' =>"How much do Fiverr sellers earn from an order?",'answer' =>"Fiverr says sellers receive 80% of the purchase amount for a completed order, including extras and tips."},{'question' =>"Can Fiverr handle long-term projects?",'answer' =>"It can handle custom and repeat work where the scope fits, but proposal-based marketplaces may be a better fit for ongoing hourly contracts."}],
+    'content' => <<<'HTML'
+<p>Fiverr is a freelance services marketplace where sellers publish Gigs and buyers order a defined service or request a custom offer. It is most useful when the deliverable, budget and deadline can be described before work starts. If you need open-ended discovery, ongoing hourly work or a screened senior expert, compare the contract model and total fees before you choose.</p>
+<div class="publication-table"><table><caption>Fiverr quick facts, checked October 31, 2026</caption><tbody><tr><th scope="row">Category</th><td>Freelance services marketplace for creative, technical, marketing and business work.</td></tr><tr><th scope="row">Starting Gig price</th><td>US$5 minimum in the official Gig guide; some categories require a higher minimum. <a href="https://help.fiverr.com/hc/en-us/articles/360010451397-Creating-a-Gig">Source, checked October 31, 2026.</a></td></tr><tr><th scope="row">Free plan</th><td>There is no conventional software plan table. A basic account and Gig can be started without a monthly platform subscription, while optional paid programs may add cost.</td></tr><tr><th scope="row">Seller earnings</th><td>80% of the purchase amount for each completed order, including extras and tips. <a href="https://help.fiverr.com/hc/en-us/articles/9234443621137-Your-earnings-page">Source, checked October 31, 2026.</a></td></tr><tr><th scope="row">Buyer fees</th><td>The official Payment Terms list a 5.5% service fee plus US$3.50 for purchases under US$200. Taxes and currency conversion may also affect the final amount. <a href="https://www.fiverr.com/legal-portal/legal-terms/payment-terms-of-service">Source, checked October 31, 2026.</a></td></tr><tr><th scope="row">Best for</th><td>Buyers with a clear brief and freelancers who can package a repeatable service.</td></tr></tbody></table></div>
+<h2>How the marketplace works</h2>
+<p>A Gig is a service listing. The seller describes what is included, sets a price and delivery time, defines revisions, asks for requirements and shows examples of work. Buyers search by service and use the available filters to narrow results. Some Gigs can be ordered directly; others require a request or a custom quote before payment.</p>
+<p>The package price is only one part of the decision. A buyer should read the exclusions, check whether editable source files are included, ask what counts as a revision and review the full checkout total. A seller should price the work with Fiverr’s 20% share, taxes, payout fees and the time spent on messages and revisions in mind.</p>
+<h2>Who should use Fiverr?</h2>
+<p>Fiverr fits a short, clearly scoped job such as a logo concept, a video edit, a specific landing-page task, a writing assignment or a defined marketing deliverable. It can also work for repeat services when both sides know what a package includes and what falls outside it.</p>
+<p>It is less natural for a project whose requirements will change each week, a role that needs regular hourly tracking, or a high-risk engagement that needs formal screening and a long contract. In those cases, compare proposal-based marketplaces or a vetted specialist network rather than forcing the job into a small Gig.</p>
+<h2>Choose the right Fiverr guide</h2>
+<ul><li><a href="/fiverr/alternatives/">Fiverr alternatives:</a> compare marketplaces by buyer fees, freelancer commission, contract style and specialist fit.</li><li><a href="/fiverr/review/">Fiverr review:</a> see the main strengths, limitations, payout details and situations where another platform may fit better.</li><li><a href="/fiverr/pricing/">Fiverr pricing:</a> understand the seller share, buyer fees, hourly-contract charges and payout costs.</li><li><a href="/fiverr/how-to-use/">How to use Fiverr:</a> follow the documented buyer and seller setup steps.</li><li><a href="/compare/fiverr-vs-upwork/">Fiverr vs Upwork:</a> compare packaged Gigs with proposals and longer contracts.</li></ul>
+<p>There is no dedicated freelance-marketplace category pillar on ToolboxKart yet because the published cluster count is below the required threshold. Use <a href="/browse-tools-by-niche">Browse Tools by Niche</a> to discover the site’s other software and utilities.</p>
+<h2>Before placing an order</h2>
+<p>Write the brief first. List the deliverable, audience, file format, deadline, required access, examples and acceptance criteria. Ask the freelancer about any missing detail before paying. Keep the agreement and payment inside Fiverr where its Terms of Service require it, and save copies of work and records that you are allowed to retain.</p>
+<h2>Frequently asked questions</h2>
+<h3>Is Fiverr free to use?</h3><p>A basic account and Gig can be started without a standard monthly marketplace subscription. Buyers may pay service fees, sellers receive 80% of completed order value, and optional programs or payout providers can add costs.</p>
+<h3>How much does a Fiverr seller keep?</h3><p>Fiverr’s Earnings page says a freelancer receives 80% of the purchase amount for each completed order, including extras and tips. Taxes and withdrawal-provider costs are separate.</p>
+<h3>Can Fiverr handle long-term projects?</h3><p>It can handle custom and repeat work where the scope fits, but proposal-based marketplaces may be a better fit for ongoing hourly contracts.</p>
+<h2>Sources and update method</h2>
+<p>Product and fee details were checked against Fiverr’s official website, Terms of Service, Payment Terms and Help Center on October 31, 2026. Pricing and account features can vary by region and may change. This page uses official documentation and does not claim hands-on testing or a user rating.</p>
+HTML
+  ],
+ ],
 
- 'pricing' => [[
+  'pricing' => [[
   'title'=>'Zendesk Pricing: Plans, Costs and Limits','seo_title'=>'Zendesk Pricing: Plans, Costs and Limits',
   'description'=>'Compare Zendesk Support and Suite prices, billing terms, plan capabilities and extra costs before choosing a support plan.',
   'url'=>'/zendesk/pricing/','date'=>'2026-10-27','updated'=>'2026-10-29','status'=>'published',
@@ -117,9 +153,56 @@ HTML
 <h2>Sources and update note</h2><p>Official sources checked October 30, 2026: <a href="https://www.salesloft.com/platform/chat-agents">Salesloft Chat Agents</a>, <a href="https://www.salesloft.com/company/newsroom/1-mind-partnership">Clari + Salesloft and 1mind partnership announcement</a> and <a href="https://clari.my.site.com/customer/s/article/Drift-Sunset-FAQ">Drift Sunset FAQ</a>. Current Drift list pricing was not found. No historical third-party price was presented as current and no hands-on billing test was claimed.</p>
 HTML
 
- ]],
+ ],
+  [
+    'status' => 'published',
+    'title' => "Fiverr Pricing: Buyer Fees and Seller Earnings",
+    'seo_title' => "Fiverr Pricing: Buyer Fees and Seller Earnings",
+    'description' => "See Fiverr buyer fees, seller earnings, Gig minimums, hourly contract charges and payout costs with official pricing sources checked on October 31, 2026.",
+    'url' => '/fiverr/pricing/',
+    'date' => '2026-10-31',
+    'updated' => '2026-10-31',
+    'author' => 'Deepak Parmar',
+    'breadcrumb_parent_name' => 'Fiverr',
+    'breadcrumb_parent_url' => '/fiverr/',
+    'faqs' => [{'question' =>"What is the Fiverr buyer service fee?",'answer' =>"The Payment Terms checked October 31, 2026 list a 5.5% service fee plus US$3.50 for purchases under US$200. Check the checkout total for your location."},{'question' =>"What percentage does Fiverr take from sellers?",'answer' =>"Fiverr credits sellers with 80% of the purchase amount for completed orders, so the platform keeps 20% before any separate tax or payout-provider cost."},{'question' =>"Is there a monthly Fiverr plan?",'answer' =>"A basic Gig can be started without a standard monthly marketplace subscription. Optional seller programs can have separate fees and terms."}],
+    'content' => <<<'HTML'
+<p>Fiverr does not use one monthly subscription price for every user. Sellers set their own Gig prices, Fiverr credits sellers with 80% of a completed order’s purchase amount, and buyers pay a service fee at checkout. Hourly contracts have a separate fee structure. The figures below were checked on October 31, 2026 against Fiverr’s official terms and help pages.</p>
+<h2>Fiverr pricing and fee table</h2>
+<div class="publication-table"><table><thead><tr><th scope="col">Cost item</th><th scope="col">Published detail</th><th scope="col">Who pays</th><th scope="col">What to check</th></tr></thead><tbody>
+<tr><th scope="row">Basic Gig price</th><td>Minimum starting price is US$5, with higher minimums in some categories.</td><td>Buyer pays the Gig price.</td><td>Package scope, extras, delivery time and revisions. <a href="https://help.fiverr.com/hc/en-us/articles/360010451397-Creating-a-Gig">Gig guide, checked October 31, 2026.</a></td></tr>
+<tr><th scope="row">Seller share</th><td>80% of the purchase amount on a completed order, including extras and tips.</td><td>Deducted from seller earnings.</td><td>Tax and payout-provider costs are separate. <a href="https://help.fiverr.com/hc/en-us/articles/9234443621137-Your-earnings-page">Earnings page, checked October 31, 2026.</a></td></tr>
+<tr><th scope="row">Buyer service fee</th><td>5.5% of the purchase amount, plus US$3.50 for orders under US$200.</td><td>Buyer pays at checkout.</td><td>Taxes, currency conversion and regional upfront pricing can affect how the total is displayed. <a href="https://www.fiverr.com/legal-portal/legal-terms/payment-terms-of-service">Payment Terms, checked October 31, 2026.</a></td></tr>
+<tr><th scope="row">Eligible hourly contract</th><td>Payment Terms list a US$5 Order Initiation Fee on a new hourly contract and service fees of 5.5% of the hourly rate.</td><td>Eligible buyer pays the contract fees.</td><td>Confirm eligibility, weekly billing and the final rate before accepting an hourly offer. <a href="https://www.fiverr.com/legal-portal/legal-terms/payment-terms-of-service">Payment Terms, checked October 31, 2026.</a></td></tr>
+<tr><th scope="row">Withdrawal</th><td>Method-specific fees, minimums and transfer times apply.</td><td>Seller may pay provider fees.</td><td>Availability depends on country and provider. <a href="https://help.fiverr.com/hc/en-us/articles/360010530058-Withdrawing-your-earnings-managing-payout-methods">Withdrawal guide, checked October 31, 2026.</a></td></tr>
+</tbody></table></div>
+<h2>Example: what does a US$100 Gig cost?</h2>
+<p>For a standard purchase under US$200, the Payment Terms list a 5.5% service fee plus US$3.50. On a US$100 Gig, that is US$5.50 plus US$3.50, or US$9 in service fees. The subtotal would be US$109 before any tax or currency-conversion amount that applies to the buyer. In selected regions, Fiverr displays an all-in price earlier in the search and Gig flow; the checkout page remains the place to confirm the amount you will pay.</p>
+<p>The seller side uses a different calculation. On a completed US$100 order, Fiverr says the seller receives US$80 before taxes. That is not the seller’s final take-home amount if a payout provider charges a withdrawal or currency-conversion fee.</p>
+<h2>Is there a free Fiverr plan?</h2>
+<p>Fiverr is a marketplace rather than a software subscription with a standard Basic, Pro and Enterprise plan table for every user. A freelancer can start by creating an account and a Gig without paying a monthly marketplace subscription. Optional seller programs and other paid features may be offered separately, so check the price and renewal terms shown in the account before subscribing.</p>
+<p>Gig setup has its own limits. The official guide says the minimum starting price is US$5, some categories require a higher minimum, and each package must offer at least one revision option. Sellers can offer up to three packages and add optional extras. These are listing rules, not monthly plan prices. <a href="https://help.fiverr.com/hc/en-us/articles/360010451397-Creating-a-Gig">Fiverr Gig creation guide, checked October 31, 2026.</a></p>
+<h2>How seller earnings and payout timing work</h2>
+<p>Fiverr credits the seller after an order is completed. The Payment Terms say earnings usually become available for withdrawal after a 14-day safety clearance period; Top Rated Sellers are eligible for a 7-day period, and hourly contracts use a 7-day period after a weekly report is completed. Eligible users may see an Early Payout option with a 1% fee. <a href="https://help.fiverr.com/hc/en-us/articles/9234443621137-Your-earnings-page">Earnings page</a> and <a href="https://www.fiverr.com/legal-portal/legal-terms/payment-terms-of-service">Payment Terms</a>, checked October 31, 2026.</p>
+<p>The withdrawal guide lists PayPal, bank transfer through Payoneer and a Payoneer account, but availability, minimum withdrawal, transfer time and provider fees differ. Do not assume a payout method shown in one country will be available in another. Confirm the options on the Earnings page before you price work around a payout schedule.</p>
+<h2>How buyers can control the total</h2>
+<ul><li>Compare the complete package, not just the lowest starting price. Check whether the needed source files, commercial-use rights, revisions or setup work are included.</li><li>Ask a question or request a custom offer when the brief does not fit the package. Confirm the price and delivery date before paying.</li><li>Review extras, quantity and any milestone structure before confirming checkout. Each payment can have its own fee.</li><li>Check the final currency and taxes before paying. Local-currency display can change with exchange rates and payment-provider rules.</li></ul>
+<h2>How freelancers should price a Gig</h2>
+<p>Start with the amount you need to earn before tax, then account for Fiverr’s 20% share and the time required to deliver the work. If your target seller earnings are US$100, a US$125 purchase amount produces US$100 in Fiverr earnings before tax because the seller share is 80%. Add the value of revisions, communication, software costs and payment-provider charges to your business calculation; do not price only by the time spent producing the final file.</p>
+<p>Use package differences to make scope clear. For example, a basic package may cover one defined deliverable, while higher packages can include additional formats or a larger scope. Set realistic delivery times and state exclusions in the Gig description so a buyer does not assume an unlisted task is included.</p>
+<h2>When another marketplace may cost less</h2>
+<p>A lower freelancer commission is not automatically the lowest total cost. <a href="https://www.upwork.com/pricing/freelancer">Upwork</a> lists a variable 0% to 15% freelancer service fee per contract, while <a href="https://contra.com/pricing">Contra</a> advertises commission-free freelancer payments but applies platform fees to clients on its free plan. <a href="/fiverr/alternatives/">The Fiverr alternatives guide</a> compares the buyer and seller sides of seven platforms. Check each official price page before you move active work.</p>
+<h2>Frequently asked questions</h2>
+<h3>Does Fiverr charge freelancers a monthly fee?</h3><p>A basic Gig can be started without a standard monthly marketplace subscription. Fiverr keeps 20% of completed order value, and optional paid programs may have separate terms.</p>
+<h3>What is Fiverr’s buyer service fee?</h3><p>The Payment Terms checked October 31, 2026 list a 5.5% service fee plus US$3.50 for purchases under US$200. Confirm the final total shown for your location.</p>
+<h3>How much does a Fiverr seller earn from a US$100 order?</h3><p>Fiverr credits 80% of the purchase amount, so a completed US$100 order produces US$80 in earnings before tax and separate payout costs.</p>
+<h2>Sources and update method</h2>
+<p>This pricing guide uses Fiverr’s official Payment Terms, Gig creation guide, Earnings page and withdrawal instructions, checked October 31, 2026. Fees may change and can vary by country, payment method, category and contract type. For alternatives, read the <a href="/fiverr/alternatives/">Fiverr alternatives guide</a>; for the overall product decision, see the <a href="/fiverr/review/">Fiverr review</a>, <a href="/fiverr/">Fiverr hub</a> and <a href="/fiverr/how-to-use/">setup guide</a>.</p>
+HTML
+  ],
+ ],
 
- 'how_to_use' => [[
+  'how_to_use' => [[
   'title'=>'How to Use Zendesk: Setup and Ticket Workflow','seo_title'=>'How to Use Zendesk: Setup and Ticket Workflow',
   'description'=>'Follow a practical Zendesk setup sequence for support channels, ticket routing, saved replies, knowledge content and migration planning.',
   'url'=>'/zendesk/how-to-use/','date'=>'2026-10-27','status'=>'published',
@@ -191,9 +274,69 @@ HTML
 <h2>Official sources and update note</h2><p>Sources checked October 30, 2026: <a href="https://help.salesloft.com/s/article/Drift---Manage-Chatbot-Settings?language=en_US">Manage Chatbot Settings</a>, <a href="https://help.salesloft.com/articles/Knowledge/What-are-the-different-types-of-Chat-Playbooks">Chat Playbooks</a>, <a href="https://help.salesloft.com/s/article/How-does-Round-Robin-Routing-Work-for-Chat?language=en_US">round-robin routing</a>, <a href="https://help.salesloft.com/s/article/Integrating-Drift-with-Salesforce?language=en_US">Salesforce integration</a>, <a href="https://help.salesloft.com/s/article/Setting-up-and-Reading-the-Salesforce-Global-Dashboard-Revenue-Reports?language=en_US">revenue reports</a> and the <a href="https://clari.my.site.com/customer/s/article/Drift-Sunset-FAQ">Drift Sunset FAQ</a> and the <a href="https://clari.my.site.com/customer/s/article/Drift---Drift-Restoration-Process-and-FAQ">Drift Restoration Process and FAQ</a>. This is documentation-based guidance, not a hands-on account test.</p>
 HTML
 
- ]],
+ ],
+  [
+    'status' => 'published',
+    'title' => "How to Use Fiverr to Hire or Sell Services",
+    'seo_title' => "How to Use Fiverr: Buyer and Seller Guide",
+    'description' => "Follow Fiverr’s official buyer and seller steps, from finding a Gig and confirming scope to publishing a service, managing orders and withdrawing earnings.",
+    'url' => '/fiverr/how-to-use/',
+    'date' => '2026-10-31',
+    'updated' => '2026-10-31',
+    'author' => 'Deepak Parmar',
+    'breadcrumb_parent_name' => 'Fiverr',
+    'breadcrumb_parent_url' => '/fiverr/',
+    'faqs' => [{'question' =>"Can I create a Fiverr Gig on mobile?",'answer' =>"Fiverr's official Gig creation guide checked October 31, 2026 says Gigs can only be created and edited from a desktop device."},{'question' =>"How many packages can a Fiverr Gig have?",'answer' =>"The official guide says a Gig can offer up to three packages, with a delivery time, revision count and price for each."},{'question' =>"How long does Fiverr hold seller earnings?",'answer' =>"The Payment Terms list a 14-day clearance period for standard orders, seven days for Top Rated sellers, and seven days for hourly weekly reports."},{'question' =>"Can buyers contact a freelancer before ordering?",'answer' =>"Yes. Fiverr recommends communicating before purchase, and some Gigs use Request to order or a custom quote."}],
+    'content' => <<<'HTML'
+<p>To use Fiverr well, decide whether you are hiring a freelancer or selling a service. Buyers should define the deliverable and compare the full package before paying. Sellers should build a specific Gig, set a realistic scope, collect requirements and price the work after Fiverr’s fee. The steps below follow Fiverr’s official Help Center instructions checked on October 31, 2026.</p>
+<h2>Before you start</h2>
+<p>For buyers, prepare a short brief with the goal, target audience, required format, deadline, budget, examples and acceptance criteria. For freelancers, prepare a portfolio sample you own, a service description, package scope, delivery time, revision rules and any questions you need to ask before work starts.</p>
+<p>Fiverr’s current Gig guide says creation and editing are desktop-only. Buyers can search the marketplace without signing in, but you will need an account and an accepted payment method to place an order. Payment methods and withdrawal options vary by country. <a href="https://help.fiverr.com/hc/en-us/articles/360010451397-Creating-a-Gig">Gig creation guide</a> and <a href="https://help.fiverr.com/hc/en-us/articles/49421104364049-Searching-freelancers-and-services-on-Fiverr-A-Guide">search guide</a>, checked October 31, 2026.</p>
+<h2>Buyer path: find and order a service</h2>
+<ol>
+<li><strong>Search for the deliverable.</strong> Enter the service you need in Fiverr’s homepage search or browse its categories. Use a task phrase such as the deliverable and file type rather than a vague job title.</li>
+<li><strong>Apply filters that match the job.</strong> The official search guide lists filters such as budget, delivery time, freelancer level, language and other details. The available filters vary by category, so use the options shown for the service you need.</li>
+<li><strong>Read the package details.</strong> Compare what is included, delivery time, revisions, add-ons, portfolio examples and any requirements. Check whether you receive editable files, source files, commercial-use rights or ongoing support if those matter to your project.</li>
+<li><strong>Contact the freelancer when anything is unclear.</strong> Fiverr recommends asking questions before the purchase. Some Gigs show a Request to order button. If so, send the project details and relevant files, then wait for the seller’s response. You may also ask for a custom quote.</li>
+<li><strong>Confirm the total and place the order.</strong> Choose the package or custom offer, review add-ons and quantity, check the delivery date, and read the checkout fee breakdown. Payment methods vary by location. Keep payment on Fiverr when its Terms require it.</li>
+<li><strong>Submit complete requirements.</strong> Give the seller the files, brand details, access level, examples and decisions needed to begin. Do not send passwords or sensitive data unless the work truly requires access; use the safest approved sharing method available.</li>
+<li><strong>Review the delivery against the brief.</strong> Compare the files with the agreed scope. Use the order page to communicate about a revision while the order is in the relevant state. Do not use revisions to request unrelated extra work that was not included.</li>
+<li><strong>Resolve issues through the right route.</strong> For an active order, the Resolution Center can send a request to the other party. Fiverr says the other party has 48 hours to accept or decline. Completed or canceled orders have different options, so check the current cancellation guide before acting.</li>
+<li><strong>Leave an honest review when eligible.</strong> Fiverr’s review guide says clients can review completed or eligible canceled orders. Reviews must relate to legitimate purchases. Describe the quality, communication and value you actually received.</li>
+</ol>
+<p>Official references: <a href="https://help.fiverr.com/hc/en-us/articles/49421104364049-Searching-freelancers-and-services-on-Fiverr-A-Guide">searching for services</a>, <a href="https://help.fiverr.com/hc/en-us/articles/360011562878-Price-upfront-Clear-and-predictable-pricing">paying for orders</a>, <a href="https://help.fiverr.com/hc/en-us/articles/37332569612049-Using-the-Resolution-Center">Resolution Center</a> and <a href="https://help.fiverr.com/hc/en-us/articles/37552956376977-How-cancellations-work-for-clients">cancellations</a>, checked October 31, 2026.</p>
+<h2>Seller path: create a Gig</h2>
+<ol>
+<li><strong>Complete freelancer onboarding.</strong> Fiverr’s guide says you need a complete freelancer profile and must use a desktop browser to create or edit Gigs. Read the platform’s Gig policies and prohibited-services rules before publishing.</li>
+<li><strong>Open the Gig editor.</strong> The official route is My Business, then Gigs, then Create a New Gig, or the Create a New Gig option from your profile menu. Menu labels can change, so follow the current dashboard if it differs.</li>
+<li><strong>Write a specific title and choose a category.</strong> Describe the service in client language. Select the category and subcategory carefully because the guide says you cannot change the category after publication. Add relevant tags that match the actual service.</li>
+<li><strong>Set the scope and price.</strong> Fiverr allows up to three packages named Basic, Standard and Premium. Set a delivery time, revision count and price for each. The official guide lists a US$5 minimum starting price, with higher minimums in some categories, and requires at least one revision option per package.</li>
+<li><strong>Explain what is included.</strong> The guide allows a description of up to 1,200 characters and up to 10 FAQs. State deliverables, exclusions, file formats, what you need from the buyer and how a revision works. If the project is complex, explain the milestones or scope boundary before the buyer orders.</li>
+<li><strong>Ask for requirements up front.</strong> Add questions that collect the information needed to begin. Mark required questions where appropriate. A good requirement list can prevent a project from starting without the files, references or access needed.</li>
+<li><strong>Upload work samples you own.</strong> Fiverr requires at least one image to publish a Gig. Its guide says to use images you own and not copyrighted material or images sourced from the internet. Video is required for the Video & Animation category and optional for others. Document-based sellers can add PDFs for preview.</li>
+<li><strong>Complete verification and publish.</strong> Complete the required identity, phone and tax steps shown for your location, then publish the Gig. Fiverr says the Gig goes through automatic review and becomes visible if it meets its policies.</li>
+<li><strong>Manage orders and earnings.</strong> Review requirements, ask follow-up questions and send progress updates through the order chat. After completion, use My Business, then Earnings to review the balance, transaction history and available withdrawal methods.</li>
+</ol>
+<p>Official reference: <a href="https://help.fiverr.com/hc/en-us/articles/360010451397-Creating-a-Gig">Creating a Gig</a>, checked October 31, 2026.</p>
+<h2>Limits and mistakes to avoid</h2>
+<p>The active Gig allowance depends on seller level. Fiverr’s guide lists up to four active Gigs for new freelancers, ten for Level 1 and Level 2, and thirty for Top Rated sellers. Some categories are vetted-only and need approval. Check the current rules before planning a large catalog.</p>
+<ul><li><strong>Do not use a vague Gig title.</strong> Name the deliverable and avoid promising work that the package does not cover.</li><li><strong>Do not underprice revisions.</strong> A low starting price can become unprofitable if the scope, file formats and revision limit are unclear.</li><li><strong>Do not use borrowed images.</strong> Fiverr’s guide requires you to use images you own for the Gig gallery.</li><li><strong>Do not rely on an outdated fee screenshot.</strong> Check current buyer fees, seller share and payout options before setting prices.</li><li><strong>Do not assume every filter or button is universal.</strong> Fiverr says search filters vary by category and Request to order is not available on every Gig.</li><li><strong>Do not move a payment off-platform when prohibited.</strong> Fiverr’s Payment Terms say buyers may not offer or make payment outside the site for covered services.</li></ul>
+<h2>Troubleshooting</h2>
+<h3>I cannot create or edit a Gig on my phone</h3><p>The official Gig guide says creation and editing are desktop-only. Open Fiverr in a desktop browser and complete the required profile or onboarding steps.</p>
+<h3>My Gig does not appear after publishing</h3><p>Fiverr says published Gigs go through automatic review and become visible if they meet platform policies. Check the status shown in the seller dashboard, then review the relevant policy or contact support if the status remains unclear.</p>
+<h3>I cannot add another Gig</h3><p>Check your seller level and active Gig count. The official guide lists different allowances for new, Level 1, Level 2 and Top Rated freelancers. If you have reached your allowance, follow the current dashboard instructions.</p>
+<h3>I cannot withdraw my earnings</h3><p>Open My Business, then Earnings, and check the available balance and payout method. The official withdrawal guide lists country restrictions and waiting periods after changing a payout method or phone number. Do not assume a pending payment is immediately withdrawable.</p>
+<h2>Frequently asked questions</h2>
+<h3>Can I search Fiverr without an account?</h3><p>Yes. Fiverr’s official search guide says you can search for services on the homepage without logging in. An account is needed for the purchase and seller workflows.</p>
+<h3>Can a buyer ask for a custom offer?</h3><p>Yes. Fiverr’s search guide says buyers can contact freelancers for a tailored quote, and some Gigs use a request-to-order step before purchase.</p>
+<h3>How long until Fiverr earnings are available?</h3><p>Fiverr’s Payment Terms list a 14-day safety clearance period for standard orders, a 7-day period for Top Rated sellers, and a 7-day period for hourly weekly reports. Check the current terms and your Earnings page.</p>
+<h2>Sources and update method</h2>
+<p>This guide uses Fiverr’s official Gig creation, search, payment, earnings, withdrawal, review and dispute documentation, checked October 31, 2026. The exact account menu and available payment methods can vary by region. No hands-on testing is claimed. For a product overview, see the <a href="/fiverr/">Fiverr hub</a>; for cost details, use <a href="/fiverr/pricing/">Fiverr pricing</a>; for alternatives, read the <a href="/fiverr/alternatives/">alternatives guide</a>; and for the overall fit, read the <a href="/fiverr/review/">Fiverr review</a>.</p>
+HTML
+  ],
+ ],
 
- 'comparisons' => [
+  'comparisons' => [
   ['title'=>'Freedom vs Cold Turkey: Which Blocker Fits?','description'=>'Compare Freedom and Cold Turkey by device support, blocking controls, current pricing, lock options and the workflow each product fits best.','url'=>'/versus/freedom-vs-cold-turkey/','date'=>'2026-10-20','status'=>'published'],
   [
    'title'=>'Zendesk vs Freshdesk: Which Help Desk Fits?','seo_title'=>'Zendesk vs Freshdesk: Plans, Features and Fit',
@@ -265,6 +408,61 @@ HTML
 HTML
 
  ],
+  [
+    'status' => 'published',
+    'title' => "Fiverr vs Upwork: Fees, Contracts and Fit",
+    'seo_title' => "Fiverr vs Upwork: Fees and Project Fit",
+    'description' => "Compare Fiverr and Upwork fees, hiring workflows, contract types and project fit for buyers and freelancers with current official pricing and help sources.",
+    'url' => '/compare/fiverr-vs-upwork/',
+    'date' => '2026-10-31',
+    'updated' => '2026-10-31',
+    'author' => 'Deepak Parmar',
+    'breadcrumb_parent_name' => 'Fiverr',
+    'breadcrumb_parent_url' => '/fiverr/',
+    'faqs' => [{'question' =>"Does Fiverr take more commission than Upwork?",'answer' =>"Fiverr credits sellers with 80% of completed order value. Upwork's standard freelancer fee ranges from 0% to 15% per contract. Other fees and costs can change the total."},{'question' =>"Which is better for hourly work?",'answer' =>"Upwork is a more direct fit for hourly contracts and time tracking. Fiverr has an eligible hourly contract path, but its usual storefront is based on Gigs and custom offers."},{'question' =>"Can I move my Fiverr reviews to Upwork?",'answer' =>"No official bulk transfer route for Fiverr reviews or seller levels was confirmed in the sources checked October 31, 2026."}],
+    'content' => <<<'HTML'
+<p>Choose Fiverr when the job fits a clearly priced Gig or custom offer and you want to compare ready-made services. Choose Upwork when you need proposals, hourly work, milestones or a longer client relationship. Both are freelance marketplaces, but the fee model and work process differ, so compare the buyer total and freelancer net earnings instead of choosing on headline commission alone.</p>
+<div class="publication-table"><table><caption>Fiverr vs Upwork, checked October 31, 2026</caption><thead><tr><th scope="col">Decision</th><th scope="col">Fiverr</th><th scope="col">Upwork</th></tr></thead><tbody>
+<tr><th scope="row">Main work model</th><td>Packaged Gigs, add-ons, custom offers and eligible hourly contracts.</td><td>Job proposals, invitations, hourly contracts and fixed-price contracts.</td></tr>
+<tr><th scope="row">Freelancer fee</th><td>Seller receives 80% of completed order value.</td><td>Standard service fee ranges from 0% to 15% per contract; exact fee is shown before the contract starts.</td></tr>
+<tr><th scope="row">Buyer fee</th><td>5.5% service fee plus US$3.50 for orders under US$200, before applicable taxes.</td><td>Client fees depend on plan and contract; current pricing lists 5% on Basic and 10% on Business Plus, with contract initiation fees possibly applying.</td></tr>
+<tr><th scope="row">Freelancer entry</th><td>Build a Gig storefront and wait for discovery or share the listing.</td><td>Build a profile, apply with Connects or receive invitations.</td></tr>
+<tr><th scope="row">Best fit</th><td>Defined deliverables with a clear package and deadline.</td><td>Custom scope, hourly work and longer engagements.</td></tr>
+</tbody></table></div>
+<h2>Pricing: compare the whole transaction</h2>
+<p>Fiverr’s official Earnings page says sellers receive 80% of the purchase amount for completed orders, including extras and tips. For a US$100 order, the seller’s Fiverr earnings are US$80 before taxes and payout-provider charges. Buyers pay a 5.5% service fee plus US$3.50 for orders under US$200 according to the Payment Terms checked October 31, 2026. A US$100 Gig therefore has US$9 in service fees before taxes and any currency-conversion cost. <a href="https://www.fiverr.com/legal-portal/legal-terms/payment-terms-of-service">Fiverr Payment Terms</a> and <a href="https://help.fiverr.com/hc/en-us/articles/9234443621137-Your-earnings-page">Earnings page</a>.</p>
+<p>Upwork’s current freelancer pricing lists a standard service fee from 0% to 15% per contract. The fee is displayed before the freelancer submits a proposal or accepts an offer and remains fixed after the contract starts. The Basic freelancer account is free; Freelancer Plus is listed at US$19.99 per month and includes 100 Connects. Additional Connects cost US$0.15 each. The client pricing page lists 5% for Basic and 10% for Business Plus, and contract initiation fees may also apply. <a href="https://www.upwork.com/pricing/freelancer">Upwork freelancer pricing</a> and <a href="https://www.upwork.com/pricing/client">client pricing</a>, checked October 31, 2026.</p>
+<p>Do not compare Fiverr’s 20% seller share with Upwork’s 0% to 15% fee and stop there. A freelancer may spend Connects on proposals that do not become contracts, while a Fiverr seller may spend time answering messages and revising a package. A buyer may pay a service fee on either marketplace, and an ongoing project may have costs that are not visible in the initial quote. Calculate a realistic project total and net earnings using your expected contract value.</p>
+<h2>Features and work process</h2>
+<h3>Fiverr starts from a service package</h3>
+<p>A Fiverr seller publishes a Gig with scope, price, delivery time, revisions, requirements and work samples. A buyer searches by task, applies filters and compares the offers. If the service does not fit the package, the buyer can ask a question, request a custom quote or use Request to order where that option appears. This flow can be quick when the deliverable is easy to define before purchase.</p>
+<p>The trade-off is that a package can hide important differences if a buyer reads only the starting price. Check the included file formats, rights, revisions, quantity and extras. Sellers should write exclusions in plain language and collect requirements before work begins. The <a href="/fiverr/how-to-use/">Fiverr setup guide</a> covers the buyer and seller steps.</p>
+<h3>Upwork starts from a job or contract</h3>
+<p>Upwork lets a client post a job, review proposals and invite talent. Hourly contracts use time tracking and a weekly billing process, while fixed-price contracts can be organized around milestones. This makes it easier to discuss scope before a contract begins and to manage a project that continues after the first deliverable.</p>
+<p>The trade-off is that the buyer may need to review many proposals, and freelancers must spend time finding suitable jobs and writing bids. Connects and paid membership can add costs. The exact fee and available features depend on the account and contract type, so read the current official pricing pages before committing.</p>
+<h2>Ease of use and discovery</h2>
+<p>Fiverr is often simpler for a buyer who already knows what service to purchase. The listing presents a defined offer, and the buyer can compare packages and examples. Upwork is more flexible when the buyer needs to describe a problem and receive tailored proposals. The extra flexibility also means more work to define the brief, review candidates and agree on milestones.</p>
+<p>For freelancers, Fiverr asks you to make the service itself easy to understand and find. Upwork asks you to match job posts, explain why you fit and manage a proposal pipeline. Neither model guarantees a client. A polished Gig does not promise orders, and a large job feed does not promise that a proposal will win.</p>
+<h2>Integrations, collaboration and support</h2>
+<p>For a short task, the most important collaboration features may be the order brief, messages, file delivery, revision process and payment record. Fiverr organizes these around the Gig and order page. Its Resolution Center is designed for order-related requests, and the official guide says the other party has 48 hours to accept or decline a request. See the <a href="https://help.fiverr.com/hc/en-us/articles/37332569612049-Using-the-Resolution-Center">Fiverr Resolution Center guide</a>, checked October 31, 2026.</p>
+<p>For longer work, the contract structure can matter more than the chat interface. Upwork’s hourly and fixed-price options provide a more explicit contract path for ongoing work, including time tracking or milestones depending on the contract. Check the official support pages for payment protection, dispute rules and which terms apply to the project you plan to create. Do not assume the same cancellation or dispute policy applies across both sites.</p>
+<p>Neither marketplace removes the need to protect confidential information. Share only the access and files required for the job, use the platform’s approved workflows, and keep permitted copies of your own deliverables and financial records.</p>
+<h2>Which marketplace fits which job?</h2>
+<h3>Choose Fiverr if</h3>
+<ul><li>The deliverable can be described before work begins.</li><li>You want to compare packaged services and starting prices.</li><li>The job is short, repeatable or easy to split into a custom offer.</li><li>You are a freelancer who can show examples and define clear package boundaries.</li></ul>
+<h3>Choose Upwork if</h3>
+<ul><li>You need proposals for a custom brief rather than a ready-made package.</li><li>The project may run for weeks or months and use hourly work or milestones.</li><li>You are a freelancer who prefers applying to jobs and building contract relationships.</li><li>You need the contract type to define time tracking, milestones and payment terms.</li></ul>
+<h2>Switching from Fiverr to Upwork</h2>
+<p>Do not assume a Gig, reviews, seller level or order history can be imported into Upwork. No official bulk transfer route for these items was confirmed in the sources checked October 31, 2026. Save your own portfolio files, case studies, service descriptions, contracts, invoices and financial reports where you are allowed to retain them. Then rewrite the service as a project proposal or portfolio example that fits Upwork’s format.</p>
+<p>Fiverr’s Earnings page supports downloadable activity reports and PDF earnings statements. Those records help with bookkeeping, but they are not a substitute for saving deliverables and client-approved case studies. Follow each marketplace’s current Terms of Service when communicating with active clients or moving work.</p>
+<h2>Frequently asked questions</h2>
+<h3>Is Fiverr cheaper than Upwork?</h3><p>It depends on the buyer and freelancer. Fiverr takes 20% from seller earnings and adds buyer service fees. Upwork has a 0% to 15% freelancer fee and client fees that depend on plan and contract. Include memberships, Connects, payment fees, taxes and project time.</p>
+<h3>Which is better for beginners?</h3><p>Fiverr can suit a beginner with a clear, packageable service and strong examples. Upwork can suit someone who is comfortable writing proposals and responding to job briefs. Neither platform guarantees a first client.</p>
+<h3>Which is better for long-term contracts?</h3><p>Upwork is usually the more direct fit for hourly or fixed-price contracts that continue over time. Fiverr can handle repeat work when the scope fits its order and custom-offer process.</p>
+<h2>Sources and comparison method</h2>
+<p>Official Fiverr and Upwork pricing, product and help pages were checked October 31, 2026. This comparison uses published terms and workflow descriptions, not hands-on testing or a rating. For more detail, read the <a href="/fiverr/">Fiverr hub</a>, <a href="/fiverr/review/">review</a>, <a href="/fiverr/pricing/">pricing guide</a> and <a href="/fiverr/alternatives/">alternatives guide</a>. Upwork’s own pricing pages are linked above because ToolboxKart does not yet have a separate Upwork cluster.</p>
+HTML
+  ],
  ],
 
  'categories' => [],
