@@ -196,6 +196,8 @@ def main():
             assert page.h1 == 1, path
             assert page.canonical == canonical, path
             assert term in ' '.join(page.text).lower(), path
+            if path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/':
+                assert 140 <= len(page.description) <= 160, path
             assert '<nav class="crumbs" aria-label="Breadcrumb">' in html, path
             graph = next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
             crumb = next(item for item in graph if item.get('@type') == 'BreadcrumbList')
@@ -203,6 +205,8 @@ def main():
             if path in ['/drift/pricing/', '/drift/how-to-use/', '/fiverr/pricing/', '/fiverr/how-to-use/', '/compare/fiverr-vs-upwork/']:
                 parent = 'fiverr' if path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/' else 'drift'
                 assert [item['item'] for item in crumb['itemListElement']] == ['https://toolboxkart.tech/', f'https://toolboxkart.tech/{parent}/', canonical], path
+            if path == '/fiverr/':
+                assert [item['item'] for item in crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/tools/', canonical], path
             if path in ['/zendesk/', '/freshdesk/', '/drift/', '/fiverr/']:
                 assert any(item.get('@type') == 'SoftwareApplication' for item in graph), path
             if path.startswith('/freshdesk/') or path == '/compare/freshdesk-vs-help-scout/' or path.startswith('/drift/') or path == '/compare/drift-vs-1mind/' or path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/':

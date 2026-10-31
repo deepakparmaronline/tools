@@ -65,8 +65,6 @@ HTML
     'date' => '2026-10-31',
     'updated' => '2026-10-31',
     'author' => 'Deepak Parmar',
-    'breadcrumb_parent_name' => 'Fiverr',
-    'breadcrumb_parent_url' => '/fiverr/',
     'software_application' => ['name' => 'Fiverr', 'url' => 'https://www.fiverr.com/', 'provider' => 'Fiverr International Ltd.', 'provider_url' => 'https://www.fiverr.com/', 'applicationCategory' => 'BusinessApplication', 'operatingSystem' => 'Web', 'description' => 'Freelance services marketplace for packaged services and custom offers.'],
     'faqs' => [
       ['question' => "Is Fiverr a software subscription?", 'answer' => "No. Fiverr is a freelance services marketplace. Sellers set Gig prices and platform fees apply to completed orders and buyer purchases."],
@@ -136,7 +134,6 @@ HTML
    'title'=>'Drift Pricing: Current Status and Sunset Costs',
    'seo_title'=>'Drift Pricing: Current Status and Sunset Date',
    'description'=>'Drift has no public price as Salesloft retires it on January 31, 2027. Check contract dates, data export deadlines and replacement costs before you switch.',
-   'url'=>'/drift/pricing/','date'=>'2026-10-30','updated'=>'2026-10-30','status'=>'published','author'=>'Deepak Parmar','breadcrumb_parent_name'=>'Drift','breadcrumb_parent_url'=>'/drift/',
    'faqs'=>[
     ['question'=>'What is the current price of Drift?','answer'=>'Salesloft does not show a current public Drift price on its Chat Agents page checked October 30, 2026. Existing customers should use their signed agreement and ask their account team about the contract end date.'],
     ['question'=>'When does Drift billing or access end?','answer'=>'The official sunset FAQ says data access ends on January 31, 2027 or at contract end, whichever comes first. For billing, contracts ending before January 31, 2027 are honored with no changes; contracts extending beyond that date are handled case by case.'],
@@ -464,6 +461,10 @@ HTML
 <p>For a short task, the most important collaboration features may be the order brief, messages, file delivery, revision process and payment record. Fiverr organizes these around the Gig and order page. Its Resolution Center is designed for order-related requests, and the official guide says the other party has 48 hours to accept or decline a request. See the <a href="https://help.fiverr.com/hc/en-us/articles/37332569612049-Using-the-Resolution-Center">Fiverr Resolution Center guide</a>, checked October 31, 2026.</p>
 <p>For longer work, the contract structure can matter more than the chat interface. Upwork’s hourly and fixed-price options provide a more explicit contract path for ongoing work, including time tracking or milestones depending on the contract. Check the official support pages for payment protection, dispute rules and which terms apply to the project you plan to create. Do not assume the same cancellation or dispute policy applies across both sites.</p>
 <p>Neither marketplace removes the need to protect confidential information. Share only the access and files required for the job, use the platform’s approved workflows, and keep permitted copies of your own deliverables and financial records.</p>
+<h2>Scope changes, ownership and risk</h2>
+<p>Fiverr and Upwork both require the buyer to understand the agreed scope, but they frame the work differently. On Fiverr, check the package description, revision count, delivery requirements and any commercial-use terms before you order. Fiverr’s Payment Terms say ownership transfers are subject to full payment, and a cancellation can affect whether the buyer may use the delivery. If a problem comes up on an active order, use the current Resolution Center process rather than assuming a refund will be automatic.</p>
+<p>On Upwork, choose the contract type deliberately. Hourly work and fixed-price milestones have different payment and review steps. Read the current contract terms for time tracking, milestone approval, disputes and the exact work that is covered. Neither marketplace guarantees quality or removes the need to verify samples, confirm who owns source files and agree on how scope changes will be handled.</p>
+<p>For either service, keep client information private, share only the access needed for the task, and write down what a successful delivery looks like. If the project contains sensitive data or business-critical systems, check the provider’s security and confidentiality terms before sharing files or credentials.</p>
 <h2>Which marketplace fits which job?</h2>
 <h3>Choose Fiverr if</h3>
 <ul><li>The deliverable can be described before work begins.</li><li>You want to compare packaged services and starting prices.</li><li>The job is short, repeatable or easy to split into a custom offer.</li><li>You are a freelancer who can show examples and define clear package boundaries.</li></ul>

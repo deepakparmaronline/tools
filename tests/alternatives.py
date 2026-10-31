@@ -115,6 +115,7 @@ def main():
         _, _, fiverr_alt_html = get('/fiverr/alternatives/')
         fiverr_alt_page = Page(fiverr_alt_html)
         assert fiverr_alt_page.canonical == 'https://toolboxkart.tech/fiverr/alternatives/'
+        assert 140 <= len(fiverr_alt_page.meta.get('description', '')) <= 160
         assert '<nav class="crumbs" aria-label="Breadcrumb">' in fiverr_alt_html
         fiverr_graph = next(item['@graph'] for item in fiverr_alt_page.schemas if '@graph' in item)
         fiverr_crumb = next(item for item in fiverr_graph if item.get('@type') == 'BreadcrumbList')
