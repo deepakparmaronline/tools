@@ -134,6 +134,7 @@ HTML
    'title'=>'Drift Pricing: Current Status and Sunset Costs',
    'seo_title'=>'Drift Pricing: Current Status and Sunset Date',
    'description'=>'Drift has no public price as Salesloft retires it on January 31, 2027. Check contract dates, data export deadlines and replacement costs before you switch.',
+   'url'=>'/drift/pricing/','date'=>'2026-10-30','updated'=>'2026-10-30','status'=>'published','author'=>'Deepak Parmar','breadcrumb_parent_name'=>'Drift','breadcrumb_parent_url'=>'/drift/',
    'faqs'=>[
     ['question'=>'What is the current price of Drift?','answer'=>'Salesloft does not show a current public Drift price on its Chat Agents page checked October 30, 2026. Existing customers should use their signed agreement and ask their account team about the contract end date.'],
     ['question'=>'When does Drift billing or access end?','answer'=>'The official sunset FAQ says data access ends on January 31, 2027 or at contract end, whichever comes first. For billing, contracts ending before January 31, 2027 are honored with no changes; contracts extending beyond that date are handled case by case.'],
