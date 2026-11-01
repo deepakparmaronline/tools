@@ -59,10 +59,10 @@ require __DIR__.'/../../includes/header.php';
 <div class="container publication-layout">
     <nav class="publication-toc" aria-label="Table of contents">
         <h2>On this page</h2>
-        <a href="#verdict">Verdict</a><a href="#summary">Quick summary</a><a href="#what-it-is">What Gmail does</a><a href="#features">Key features</a><a href="#pricing">Pricing</a><a href="#pros-cons">Pros and limits</a><a href="#who-fits">Who should use Gmail</a><a href="#switching">Alternatives and switching</a><a href="#faq">FAQ</a><a href="#method">Review method and sources</a>
+        <a href="#verdict">Verdict</a><a href="#summary">Quick summary</a><a href="#what-it-is">What Gmail does</a><a href="#features">Key features</a><a href="#pricing">Pricing</a><a href="#pros-cons">Pros and limits</a><a href="#who-fits">Who should use Gmail</a><a href="#switching">Alternatives and switching</a><a href="#faq">FAQ</a><a href="#method">Review methodology</a><a href="#sources">Sources</a>
     </nav>
     <article class="publication-body">
-        <details class="publication-mobile-toc"><summary>On this page</summary><nav aria-label="Mobile table of contents"><a href="#verdict">Verdict</a><a href="#summary">Quick summary</a><a href="#what-it-is">What Gmail does</a><a href="#features">Key features</a><a href="#pricing">Pricing</a><a href="#pros-cons">Pros and limits</a><a href="#who-fits">Who should use Gmail</a><a href="#switching">Alternatives and switching</a><a href="#faq">FAQ</a><a href="#method">Review method and sources</a></nav></details>
+        <details class="publication-mobile-toc"><summary>On this page</summary><nav aria-label="Mobile table of contents"><a href="#verdict">Verdict</a><a href="#summary">Quick summary</a><a href="#what-it-is">What Gmail does</a><a href="#features">Key features</a><a href="#pricing">Pricing</a><a href="#pros-cons">Pros and limits</a><a href="#who-fits">Who should use Gmail</a><a href="#switching">Alternatives and switching</a><a href="#faq">FAQ</a><a href="#method">Review methodology</a><a href="#sources">Sources</a></nav></details>
         <section id="verdict" class="publication-verdict">
             <h2>Verdict</h2>
             <p>Gmail is a strong choice for people who already use Google's calendar, files and account services. Its search, labels and filters work well for a busy inbox, and a personal account is free. Its shared storage model, dependence on a Google Account and upcoming changes to third-party mail features are real limits, so the best fit depends on how you use email.</p>
@@ -110,8 +110,9 @@ require __DIR__.'/../../includes/header.php';
         <h3>Is Gmail a private email service?</h3><p>Gmail includes account security and spam controls, but your privacy choice depends on Google account settings, the service terms and the people you email. If end-to-end encryption is a main need, compare Proton Mail and Tuta Mail and check the recipient workflow.</p>
         <h3>Can I use Gmail to collect mail from other providers?</h3><p>Google is removing Gmail web POP and Gmailify support for third-party accounts, with existing users supported until January 2027. The third-party Send as feature also ends in January 2027. Gmail itself is not closing.</p>
         <h3>Should I switch away from Gmail?</h3><p>Switch if your main need is not met by Gmail, such as a privacy-focused provider, a separate mailbox storage model or a business domain. If you only want another interface, a supported mail app may be enough.</p>
-        <h2 id="method">Review method and sources</h2>
+        <h2 id="method">Review methodology</h2>
         <p>This review is based on official product, pricing and support documentation checked on November 1, 2026. We did not connect an account, test delivery, measure spam filtering or assign a rating. Product features can vary by plan, region and account type, so confirm the terms shown in your own account before making a decision. Read the site-wide <a href="/review-methodology">Review methodology</a> for the editorial process and correction policy.</p>
+        <h2 id="sources">Sources</h2>
         <ul class="publication-sources">
             <li><a href="https://workspace.google.com/products/gmail/">Gmail product overview</a>, checked November 1, 2026.</li>
             <li><a href="https://support.google.com/mail/answer/6374270?hl=en">Google Account storage limits</a>, checked November 1, 2026.</li>
