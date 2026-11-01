@@ -93,6 +93,51 @@ HTML
 <p>Product and fee details were checked against Fiverr’s official website, Terms of Service, Payment Terms and Help Center on October 31, 2026. Pricing and account features can vary by region and may change. This page uses official documentation and does not claim hands-on testing or a user rating.</p>
 HTML
   ],
+   [
+   "title"=>"Gmail: Email, Storage and Account Guide",
+   "seo_title"=>"Gmail Guide: Features and Limits",
+   "description"=>"Explore Gmail features, shared storage, account limits and Google Workspace options, then compare alternatives, pricing and setup before switching.",
+   "url"=>"/gmail/","date"=>"2026-11-01","status"=>"published",
+   "software_application"=>["name"=>"Gmail","url"=>"https://mail.google.com/","applicationCategory"=>"CommunicationApplication","operatingSystem"=>"Web, Android, iOS","provider"=>"Google","provider_url"=>"https://about.google/","description"=>"Email service for personal Google Accounts and Google Workspace organizations."],
+   "faqs"=>[['question'=>'Is Gmail free?','answer'=>'Yes. A standard personal Gmail account is free and includes up to 15 GB of Google Account storage shared with Drive, Photos and other supported storage uses. The storage limit and source were checked on November 1, 2026.'],['question'=>'Does Gmail support other email accounts?','answer'=>'Gmail\'s web POP and Gmailify support is being phased out. Existing users can continue until January 2027, but new users lost access after the first quarter of 2026. Check Google\'s current notice before planning a multi-account inbox.'],['question'=>'Should a business use free Gmail?','answer'=>'A personal Gmail account can work for an individual, but a business that needs its own domain, central account management or organization controls should compare Google Workspace with other business email services.']],
+   "content"=><<<'HTML'
+ 
+ <h2 id="overview">What is Gmail?</h2>
+ <p>Gmail is Google's email service for personal accounts and organizations that use Google Workspace. A personal Gmail address ends in <code>@gmail.com</code>. A business account can use a company domain through Google Workspace, which adds admin controls and shared work tools. Their prices, storage rules and controls differ. Start with the <a href="https://workspace.google.com/products/gmail/">official Gmail overview</a>, checked on November 1, 2026.</p>
+ <p>Gmail suits people who use Google Calendar, Drive, Photos, Meet and Android. Its search, labels, filters and spam controls can support both a simple personal inbox and a busy work account. It is less suitable if you want your email storage separated from your other Google files, a privacy-first provider, or a custom domain without a paid business service.</p>
+ <h2 id="quick-facts">Gmail quick facts</h2>
+ <table><thead><tr><th scope="col">Question</th><th scope="col">Answer</th></tr></thead><tbody>
+ <tr><th scope="row">Category</th><td>Personal webmail and business email through Google Workspace.</td></tr>
+ <tr><th scope="row">Personal account</th><td>Free. Google does not list a separate monthly Gmail fee for a standard personal account. <a href="https://mail.google.com/">Gmail</a>, checked on November 1, 2026.</td></tr>
+ <tr><th scope="row">Storage</th><td>Up to 15 GB shared across Gmail, Google Drive and Google Photos for a personal Google Account. Google says WhatsApp backups can also use this storage. <a href="https://support.google.com/mail/answer/6374270?hl=en">Storage rules</a>, checked on November 1, 2026.</td></tr>
+ <tr><th scope="row">Business email</th><td>Google Workspace Starter is listed at US$7 per user/month on an annual commitment, or US$8.40 on the flexible plan, with 30 GB pooled storage per user. <a href="https://knowledge.workspace.google.com/admin/billing/understand-google-workspace-bills-and-charges">Official billing details</a> and <a href="https://workspace.google.com/business/">plan details</a>, checked on November 1, 2026.</td></tr>
+ <tr><th scope="row">Best fit</th><td>People who want searchable email linked to Google's calendar, files and account services.</td></tr>
+ </tbody></table>
+ <h2 id="main-strengths">Where Gmail works well</h2>
+ <p>Gmail's search operators help narrow a large inbox by sender, recipient, date, attachment, label or message status. Labels can be applied to a message in more than one way, unlike a folder-only workflow. Filters can label, archive, delete, star or forward matching new messages. These are useful for receipts, project mail, newsletters and customer requests. The official <a href="https://support.google.com/mail/answer/7190?hl=en">search operator guide</a> and <a href="https://support.google.com/mail/answer/6579?hl=en">filter guide</a> were checked on November 1, 2026.</p>
+ <p>The service also connects closely with Google Calendar and Drive. Eligible accounts may see AI Overviews in Gmail search. Google says personal accounts need an eligible Google AI plan or Workspace Experiments, while work and school accounts need an eligible Workspace edition; supported language, region and smart-feature settings also apply. The feature is still rolling out and may not appear in every account. Checked November 1, 2026: <a href="https://support.google.com/mail/answer/16789526?hl=en">AI Overview requirements</a>. Do not assume every Gmail user has the same AI tools or business controls.</p>
+ <h2 id="limits">Limits to understand before choosing</h2>
+ <p>Personal Gmail storage is shared with other Google services. If the account reaches its quota, Google says you may be unable to send or receive email, create files in Drive or back up new photos. Deleting messages alone may not solve the problem if large files or photos use most of the space. Check the storage page before paying for more space.</p>
+ <p>Personal Gmail is not the same as business email on your own domain. If you need staff accounts, domain administration, retention settings or organization-wide controls, compare Google Workspace plans rather than treating a free Gmail account as a business mailbox.</p>
+ <h2 id="third-party-changes">Important third-party email changes for 2027</h2>
+ <p>Google's current Help Center says Gmail is removing web support for fetching mail from third-party accounts through POP and Gmailify. New users lost access after the first quarter of 2026, while existing users can continue until January 2027. A separate Gmail Help page says the third-party “Send as” feature, such as sending from a Yahoo or Outlook address inside Gmail, ends in January 2027. These changes do not mean Gmail itself is closing. Google Workspace aliases and other Gmail addresses are not affected by the Send as change. Both notices were checked on November 1, 2026: <a href="https://support.google.com/mail/answer/16604719?hl=en">POP and Gmailify notice</a> and <a href="https://support.google.com/mail/answer/22370?hl=en">Send as notice</a>.</p>
+ <p>If you currently use Gmail as a central inbox for several outside accounts, make a plan now. Use each provider's supported account connection in a mail app, set up forwarding where appropriate, or move to a provider with a migration tool. Test replies and new incoming messages before changing your main address.</p>
+ <h2 id="choose-next">Explore the Gmail guide</h2>
+ <ul>
+ <li><a href="/gmail/alternatives/">Gmail alternatives</a> compares seven email providers for privacy, business email, Apple and Microsoft workflows.</li>
+ <li><a href="/gmail/review/">Gmail review</a> explains its strengths, trade-offs and who should keep using it.</li>
+ <li><a href="/gmail/pricing/">Gmail pricing</a> separates the free personal account from paid storage and Google Workspace.</li>
+ <li><a href="/gmail/how-to-use/">How to use Gmail</a> covers setup, inbox organization, search, security and migration.</li>
+ <li><a href="/compare/gmail-vs-outlook/">Gmail vs Outlook</a> compares the two consumer email services.</li>
+ </ul>
+ <p>For other software categories, use <a href="/browse-tools-by-niche">Browse tools by niche</a>. There is no email-provider category pillar yet because the site has fewer than four published clusters in that category.</p>
+ <h2 id="faq">Gmail FAQ</h2>
+ <h3>Is Gmail free?</h3><p>Yes. A standard personal Gmail account is free and includes up to 15 GB of Google Account storage shared with Drive, Photos and other supported storage uses. The storage limit and source were checked on November 1, 2026.</p>
+ <h3>Does Gmail support other email accounts?</h3><p>Gmail's web POP and Gmailify support is being phased out. Existing users can continue until January 2027, but new users lost access after the first quarter of 2026. Check Google's current notice before planning a multi-account inbox.</p>
+ <h3>Should a business use free Gmail?</h3><p>A personal Gmail account can work for an individual, but a business that needs its own domain, central account management or organization controls should compare Google Workspace with other business email services.</p>
+ HTML
+ HTML
+   ]
  ],
 
   'pricing' => [[
@@ -206,6 +251,56 @@ HTML
 <p>This pricing guide uses Fiverr’s official Payment Terms, Gig creation guide, Earnings page and withdrawal instructions, checked October 31, 2026. Fees may change and can vary by country, payment method, category and contract type. For alternatives, read the <a href="/fiverr/alternatives/">Fiverr alternatives guide</a>; for the overall product decision, see the <a href="/fiverr/review/">Fiverr review</a>, <a href="/fiverr/">Fiverr hub</a> and <a href="/fiverr/how-to-use/">setup guide</a>.</p>
 HTML
   ],
+   [
+   "title"=>"Gmail Pricing: Free Accounts and Workspace",
+   "seo_title"=>"Gmail Pricing: Free vs Workspace",
+   "description"=>"See Gmail's free account limits, Google Workspace plan prices, shared storage rules and extra costs. Plan details checked on November 1, 2026.",
+   "url"=>"/gmail/pricing/","date"=>"2026-11-01","status"=>"published",
+   "breadcrumb_parent_name"=>"Gmail","breadcrumb_parent_url"=>"/gmail/",
+   "faqs"=>[['question'=>'How much does Gmail cost per month?','answer'=>'Personal Gmail is free. Google Workspace is paid per user, with US standard prices starting at US$7 per user/month on an annual commitment or US$8.40 on the flexible plan for Starter. Prices were checked on November 1, 2026.'],['question'=>'Does free Gmail have 15 GB of email storage?','answer'=>'No. The 15 GB is shared across Gmail, Drive and Photos, and Google says WhatsApp backups can also use this storage. It is not a Gmail-only mailbox allowance. The limit was checked on November 1, 2026.'],['question'=>'Is Google Workspace billed per user?','answer'=>'Yes. The listed Business editions use per-user pricing, and storage is pooled across the organization. Annual commitment and flexible billing have different rates. Check Google\'s current billing terms before signing up.'],['question'=>'Can I use Gmail with my own domain for free?','answer'=>'Google\'s personal Gmail service uses a Gmail address. A business address on your own domain is offered through a paid Google Workspace plan or another email host, with separate domain costs where applicable.']],
+   "content"=><<<'HTML'
+ 
+ <h2 id="free-account">Is personal Gmail free?</h2>
+ <p>Yes. A standard personal Gmail account does not have a separate monthly subscription fee. Its main cost limit is storage: a personal Google Account has up to 15 GB shared across Gmail, Drive and Photos, and Google says WhatsApp backups can also use this space. The limit and its effects were checked on November 1, 2026 in Google's <a href="https://support.google.com/mail/answer/6374270?hl=en">storage guide</a>.</p>
+ <p>When the shared account reaches its quota, you may be unable to send or receive Gmail messages. A large Drive folder or photo library can use space that you expected to be available for email. Review storage use before buying a plan or moving mail.</p>
+ <h2 id="plan-table">Gmail and Google Workspace pricing</h2>
+ <p>The table separates the personal Gmail account from paid business email. Google Workspace prices below are standard US list prices checked on November 1, 2026. Taxes, regional offers and future price changes can affect the checkout amount.</p>
+ <table><thead><tr><th scope="col">Option</th><th scope="col">Price and billing</th><th scope="col">Storage and key limits</th><th scope="col">Best for</th></tr></thead><tbody>
+ <tr><th scope="row">Personal Gmail</th><td>Free. <a href="https://mail.google.com/">Gmail</a>, checked on November 1, 2026.</td><td>Up to 15 GB shared across Gmail, Drive and Photos; it is not a dedicated 15 GB mailbox. <a href="https://support.google.com/mail/answer/6374270?hl=en">Storage rules</a>, checked on November 1, 2026.</td><td>Personal email and individual Google services.</td></tr>
+ <tr><th scope="row">Google One storage</th><td>Paid plans vary by country and offer. Check the current <a href="https://one.google.com/about/plans?hl=en">Google One plans</a>, checked on November 1, 2026.</td><td>Adds Google Account storage rather than a custom business email domain. Check the storage amount and renewal price shown for your region.</td><td>People who want to keep Gmail and need more shared storage.</td></tr>
+ <tr><th scope="row">Workspace Starter</th><td>US$7 per user/month on an annual commitment, or US$8.40 per user/month on the flexible plan. <a href="https://knowledge.workspace.google.com/admin/billing/understand-google-workspace-bills-and-charges">Google billing table</a>, checked on November 1, 2026.</td><td>30 GB pooled storage per user, custom business email and admin controls. Storage is pooled across the organization. <a href="https://workspace.google.com/business/">Plan details</a>, checked on November 1, 2026.</td><td>Small teams that need a domain address and basic collaboration.</td></tr>
+ <tr><th scope="row">Workspace Standard</th><td>US$14 per user/month on an annual commitment, or US$16.80 on the flexible plan. <a href="https://knowledge.workspace.google.com/admin/billing/understand-google-workspace-bills-and-charges">Google billing table</a>, checked on November 1, 2026.</td><td>2 TB pooled storage per user, with added collaboration features such as meeting recording and mail merge on the listed plan. <a href="https://workspace.google.com/business/">Plan details</a>, checked on November 1, 2026.</td><td>Teams that need more storage and shared work features.</td></tr>
+ <tr><th scope="row">Workspace Plus</th><td>US$22 per user/month on an annual commitment, or US$26.40 on the flexible plan. <a href="https://knowledge.workspace.google.com/admin/billing/understand-google-workspace-bills-and-charges">Google billing table</a>, checked on November 1, 2026.</td><td>5 TB pooled storage per user, Vault and enhanced security controls as listed for the plan. <a href="https://workspace.google.com/business/">Plan details</a>, checked on November 1, 2026.</td><td>Organizations with retention, compliance or larger storage needs.</td></tr>
+ <tr><th scope="row">Workspace Enterprise</th><td>Contact Google sales or a reseller for a quote. <a href="https://workspace.google.com/business/">Official plan page</a>, checked on November 1, 2026.</td><td>Features, storage and support depend on the contracted edition.</td><td>Organizations that need negotiated terms or advanced controls.</td></tr>
+ </tbody></table>
+ <h2 id="what-costs-extra">What costs extra?</h2>
+ <p>More personal storage is purchased through Google One. A business domain also has a registration and renewal cost that is separate from the Workspace licence. Some organizations buy add-ons, third-party migration help, archive tools or additional security services. Do not assume those costs are included in the monthly price shown for a Workspace user.</p>
+ <p>Google's billing guidance explains the difference between its flexible plan and annual or fixed-term plan. The annual commitment has a lower monthly rate, but the organization commits to a set number of licences for the term. Flexible billing costs more per user but gives more room to change the number of users. Check the current terms before removing a licence. <a href="https://knowledge.workspace.google.com/admin/billing/understand-google-workspace-bills-and-charges">Billing details, checked on November 1, 2026.</a></p>
+ <h2 id="which-option">Which Gmail option fits you?</h2>
+ <h3>Choose personal Gmail if you only need an individual inbox</h3>
+ <p>The free account is enough for routine personal mail if your shared Google storage remains below its limit. Keep the recovery email and phone current, use two-step verification, and review the storage breakdown before upgrading. If you need only more room for messages and files, compare Google One before changing providers.</p>
+ <h3>Choose Workspace if you need a business domain</h3>
+ <p>Workspace is the more direct fit when employees need addresses at your company domain, account administration and shared tools. Estimate the number of paid users, pooled storage, meeting features, retention needs and domain renewal cost. The lowest licence price is not always the lowest total cost if you need extra products or migration support.</p>
+ <h3>Compare alternatives if privacy, storage or provider independence matters more</h3>
+ <p>Google Workspace is not the only route to a custom domain. Zoho Mail and Fastmail focus on email hosting, while Proton Mail and Tuta Mail focus on privacy features. Outlook.com can be a good consumer choice for people who use Microsoft services. See the <a href="/gmail/alternatives/">Gmail alternatives guide</a> for the trade-offs and migration limits.</p>
+ <h2 id="save-money">Ways to avoid unnecessary cost</h2>
+ <ul>
+ <li>Check which Google service uses storage before paying for more. Remove unneeded large attachments, Drive files and photos only after you confirm you no longer need them.</li>
+ <li>Compare annual and flexible Workspace billing with your expected user count. Annual billing has a commitment, so do not buy licences for users who may leave soon without checking the terms.</li>
+ <li>Do not buy a business suite only to get a custom email address without comparing other hosted email providers and the features you actually need.</li>
+ <li>When changing providers, include domain renewal, migration work, storage, user seats and any paid aliases in the cost estimate.</li>
+ </ul>
+ <h2 id="pricing-update">Important pricing and account-support note</h2>
+ <p>Google's Help Center says web POP and Gmailify support for third-party accounts is being removed, with existing users supported until January 2027. Gmail's third-party “Send as” feature also ends in January 2027. These changes do not add a fee to Gmail itself, but they may change the setup you need if you use Gmail to manage other providers. Read the <a href="https://support.google.com/mail/answer/16604719?hl=en">POP/Gmailify notice</a> and <a href="https://support.google.com/mail/answer/22370?hl=en">Send as notice</a>, checked on November 1, 2026.</p>
+ <p>For other software categories, use <a href="/browse-tools-by-niche">Browse tools by niche</a>.</p>
+<h2 id="faq">Gmail pricing FAQ</h2>
+ <h3>How much does Gmail cost per month?</h3><p>Personal Gmail is free. Google Workspace is paid per user, with US standard prices starting at US$7 per user/month on an annual commitment or US$8.40 on the flexible plan for Starter. Prices were checked on November 1, 2026.</p>
+ <h3>Does free Gmail have 15 GB of email storage?</h3><p>No. The 15 GB is shared across Gmail, Drive and Photos, and Google says WhatsApp backups can also use this storage. It is not a Gmail-only mailbox allowance. The limit was checked on November 1, 2026.</p>
+ <h3>Is Google Workspace billed per user?</h3><p>Yes. The listed Business editions use per-user pricing, and storage is pooled across the organization. Annual commitment and flexible billing have different rates. Check Google's current billing terms before signing up.</p>
+ <h3>Can I use Gmail with my own domain for free?</h3><p>Google's personal Gmail service uses a Gmail address. A business address on your own domain is offered through a paid Google Workspace plan or another email host, with separate domain costs where applicable.</p>
+ HTML
+ HTML
+   ]
  ],
 
   'how_to_use' => [[
@@ -345,6 +440,79 @@ HTML
 <p>This guide uses Fiverr’s official Gig creation, search, payment, earnings, withdrawal, review and dispute documentation, checked October 31, 2026. The exact account menu and available payment methods can vary by region. No hands-on testing is claimed. For a product overview, see the <a href="/fiverr/">Fiverr hub</a>; for cost details, use <a href="/fiverr/pricing/">Fiverr pricing</a>; for alternatives, read the <a href="/fiverr/alternatives/">alternatives guide</a>; and for the overall fit, read the <a href="/fiverr/review/">Fiverr review</a>.</p>
 HTML
   ],
+   [
+   "title"=>"How to Use Gmail: Setup and Inbox Tips",
+   "seo_title"=>"How to Use Gmail: Setup and Tips",
+   "description"=>"Learn how to set up Gmail, organize messages with labels and filters, manage storage, secure your account and plan for upcoming mail changes.",
+   "url"=>"/gmail/how-to-use/","date"=>"2026-11-01","status"=>"published",
+   "breadcrumb_parent_name"=>"Gmail","breadcrumb_parent_url"=>"/gmail/",
+   "faqs"=>[['question'=>'Can I use Gmail without paying?','answer'=>'Yes. A personal Gmail account is free, with up to 15 GB shared Google Account storage. Paid Google One storage and Google Workspace business plans are separate choices. Details were checked on November 1, 2026.'],['question'=>'Can I use Gmail as an inbox for Outlook and Yahoo?','answer'=>'Gmail\'s web POP and Gmailify features are being removed, and the third-party Send as feature ends in January 2027. The Gmail mobile app can still add supported account types, but check the current provider instructions before relying on a setup.'],['question'=>'Will Google Takeout delete my Gmail messages?','answer'=>'No. Google says downloading your data does not delete it from Google\'s servers. Keep the archive safe and verify the destination import before changing or closing the original account.'],['question'=>'Should I switch from Gmail if I want more privacy?','answer'=>'Compare the provider\'s encryption model, data policy, recovery process and the needs of your recipients. Proton Mail and Tuta Mail offer privacy-focused designs, but no provider can make every message end-to-end encrypted in every recipient workflow.']],
+   "content"=><<<'HTML'
+ 
+ <h2 id="before-start">What you need first</h2>
+ <p>You need a Google Account, a working recovery method and a browser or Gmail app. If you are setting up a work or school account, your administrator may control which features you can use. Start at <a href="https://mail.google.com/">Gmail</a> or create a Google Account through Google's official signup page, checked on November 1, 2026.</p>
+ <p>Before you add a second email account or move mail, decide whether you want a different inbox app or a different email provider. An app change can keep your existing Gmail address. A provider change moves messages and future delivery to another service and requires updates to logins, contacts and recovery settings.</p>
+ <h2 id="quick-setup">Set up Gmail in five steps</h2>
+ <ol>
+ <li><strong>Sign in.</strong> Open Gmail and sign in with your Google Account. Use the account that owns the address you want to manage.</li>
+ <li><strong>Check account recovery.</strong> Open your Google Account security settings and confirm your recovery email, phone and sign-in methods. Add a second step or passkey if available. Google's <a href="https://support.google.com/accounts/answer/185839?hl=en">two-step verification guide</a> was checked on November 1, 2026.</li>
+ <li><strong>Choose an inbox layout.</strong> Open Settings and look under Inbox type. The available layouts include Default, Important first, Unread first, Starred first, Priority Inbox and Multiple Inboxes. The names and steps were checked on November 1, 2026 in Google's <a href="https://support.google.com/mail/answer/18522?hl=en">inbox layout guide</a>.</li>
+ <li><strong>Set up labels.</strong> Create labels for work, bills, clients or topics that matter to you. Gmail labels can be applied to the same message in more than one way, so they are not exactly the same as folders.</li>
+ <li><strong>Test search and filters.</strong> Search for a recent sender or subject, then create a filter only after checking the matching messages. This helps prevent a rule from archiving or forwarding the wrong mail.</li>
+ </ol>
+ <h2 id="organize">Organize messages with labels and filters</h2>
+ <p>Use labels to group messages that belong to a project or action. In Gmail on a computer, choose a message, open Labels and select a label, or create a new one from the left panel. To automate the process, open the search options, enter a sender or subject rule, check the results, choose Create filter and select what Gmail should do. Filters can label, archive, delete, star or forward matching new messages. The official <a href="https://support.google.com/mail/answer/9259770?hl=en">label and filter guide</a> was checked on November 1, 2026.</p>
+ <p>Do not make a filter that deletes messages until you test its search criteria. If a rule forwards mail, check the destination address and keep a copy in Gmail until you are sure the forwarding works. Filters created for forwarding affect new messages, not every old message already in the inbox. <a href="https://support.google.com/mail/answer/6579?hl=en">Filter rules, checked on November 1, 2026.</a></p>
+ <h2 id="search">Find messages faster</h2>
+ <p>Gmail search operators can narrow a large mailbox without opening each message. Try <code>from:me</code> for messages you sent, <code>has:attachment</code> for messages with attachments, <code>older_than:1y</code> for older messages, or <code>subject:invoice</code> to focus on invoice subjects. Combine terms only after you confirm what each part does. Google's <a href="https://support.google.com/mail/answer/7190?hl=en">search operator list</a> was checked on November 1, 2026.</p>
+ <p>Search can also help you clean up storage. Use attachment and size operators to find large messages, review them, and remove only the ones you no longer need. Do not assume a search result includes Spam or Trash unless you choose the right search scope. The current search guide explains how to include those folders.</p>
+ <h2 id="manage-storage">Manage Gmail storage</h2>
+ <p>A personal Google Account has up to 15 GB shared across Gmail, Drive and Photos, and Google says WhatsApp backups can also use the space. This limit was checked on November 1, 2026 in the <a href="https://support.google.com/mail/answer/6374270?hl=en">official storage guide</a>. Open the storage breakdown before deleting messages. A full Google Account can prevent you from sending or receiving Gmail messages, even if the inbox does not look unusually large.</p>
+ <p>After you delete large items, empty the relevant trash folders if you want to free the space permanently. Google warns that storage can take up to 48 to 72 hours to update after deleting many files at once. If you still need more space, compare the current <a href="https://one.google.com/about/plans?hl=en">Google One plans</a> for your region rather than assuming a single price applies everywhere. Both pages were checked on November 1, 2026.</p>
+ <h2 id="secure-account">Secure the account</h2>
+ <ul>
+ <li>Use a unique password or passkey and enable two-step verification where available.</li>
+ <li>Keep recovery options current and save backup codes somewhere separate from your phone.</li>
+ <li>Review recent security activity and remove devices or app access you no longer recognize.</li>
+ <li>Check forwarding rules and filters if messages disappear or a forwarding notice appears unexpectedly.</li>
+ <li>Be careful with requests for verification codes. Google says not to share those codes with anyone.</li>
+ </ul>
+ <p>These steps reduce account takeover risk, but no single setting makes an inbox fully secure. For a work account, ask the administrator about the organization's sign-in and retention rules.</p>
+ <h2 id="other-accounts">Adding other email accounts: an important change</h2>
+ <p>Gmail's web interface has supported checking some outside accounts through POP and Gmailify, but Google is removing that support. The current Help Center says new users lost access after the first quarter of 2026 and existing users can continue until January 2027. The separate “Send as” feature for third-party addresses such as Yahoo or Outlook ends in January 2027. These notices were checked on November 1, 2026: <a href="https://support.google.com/mail/answer/16604719?hl=en">POP and Gmailify changes</a> and <a href="https://support.google.com/mail/answer/22370?hl=en">Send as changes</a>.</p>
+ <p>Google's current help page also says you cannot add an Outlook account to Gmail on a computer because Microsoft requires modern authentication for non-Microsoft email users. The Gmail mobile app can add Outlook accounts. See <a href="https://support.google.com/mail/answer/21289?hl=en">Google's current instructions</a>, checked on November 1, 2026. Do not build a long-term workflow around old POP instructions that may no longer appear in your account.</p>
+ <h2 id="move-email">Export or move your email safely</h2>
+ <ol>
+ <li><strong>Make a backup.</strong> Use <a href="https://support.google.com/accounts/answer/3024190?hl=en">Google Takeout</a> to export Gmail and other Google data. Google says downloading data does not delete it from Google's servers. The export guide was checked on November 1, 2026.</li>
+ <li><strong>Prepare the destination.</strong> Create the new account, set up recovery and two-step verification, and confirm the storage included in its plan.</li>
+ <li><strong>Use the destination's importer.</strong> Proton Easy Switch can import Gmail messages, contacts and calendars for supported personal accounts. Zoho has migration paths for business accounts and mail files. Read the destination's current requirements before granting access.</li>
+ <li><strong>Test the import.</strong> Check recent and old mail, sent messages, attachments, labels or folders, contacts and calendar items. Labels may become folders or be mapped differently.</li>
+ <li><strong>Forward new messages only if needed.</strong> Confirm the destination address, test with an outside account and keep the original Gmail copy until the new setup is reliable.</li>
+ <li><strong>Update important services.</strong> Change bank, billing, recovery, social and work logins one at a time. Keep access to the old account while you check password resets and one-time codes.</li>
+ </ol>
+ <p>Google Takeout is a backup method, not a live synchronization service. The target provider decides which archive formats and fields it can import. For a migration example, see <a href="https://proton.me/support/switch-from-gmail-to-proton">Proton's official Gmail migration guide</a>, checked on November 1, 2026.</p>
+ <h2 id="common-mistakes">Common mistakes to avoid</h2>
+ <ul>
+ <li>Confusing a mail app with a provider. Changing apps does not move your mailbox or remove the original provider's storage rules.</li>
+ <li>Assuming labels, filters, signatures, contacts and calendar settings all transfer automatically. Check each one in the destination.</li>
+ <li>Deleting the old account as soon as the first messages appear. Some archives take time to process, and old services may still send password resets.</li>
+ <li>Buying a business plan before counting users, domain costs and storage. Compare the total bill rather than one feature.</li>
+ <li>Relying on Gmail web POP fetching or third-party Send as for future mail aggregation after the January 2027 changes.</li>
+ </ul>
+ <h2 id="troubleshoot">Troubleshooting</h2>
+ <h3>Gmail cannot send or receive messages</h3><p>Check the Google Account storage breakdown first. If the account is full, delete unneeded files and empty trash, then allow time for storage to update. Also check whether the message was rejected or placed in Spam.</p>
+ <h3>Filters are not working as expected</h3><p>Search using the same criteria before saving the filter. Check whether the message arrived after the filter was created and whether another filter or forwarding rule changes its handling.</p>
+ <h3>An outside account no longer appears in Gmail</h3><p>Check Google's current POP/Gmailify notice. For a long-term connection, use the outside provider's supported account type in a mail app, or move to a provider with an import tool. Do not assume the old web POP menu will return.</p>
+ <h3>Imported mail is missing labels or folders</h3><p>Gmail's import help says messages can be imported without their original folders or labels in the web workflow. Compare the source and destination counts, review the import log if the provider offers one, and keep the Takeout archive until the transfer is checked.</p>
+ <p>For other software categories, use <a href="/browse-tools-by-niche">Browse tools by niche</a>.</p>
+<h2 id="faq">Gmail setup FAQ</h2>
+ <h3>Can I use Gmail without paying?</h3><p>Yes. A personal Gmail account is free, with up to 15 GB shared Google Account storage. Paid Google One storage and Google Workspace business plans are separate choices. Details were checked on November 1, 2026.</p>
+ <h3>Can I use Gmail as an inbox for Outlook and Yahoo?</h3><p>Gmail's web POP and Gmailify features are being removed, and the third-party Send as feature ends in January 2027. The Gmail mobile app can still add supported account types, but check the current provider instructions before relying on a setup.</p>
+ <h3>Will Google Takeout delete my Gmail messages?</h3><p>No. Google says downloading your data does not delete it from Google's servers. Keep the archive safe and verify the destination import before changing or closing the original account.</p>
+ <h3>Should I switch from Gmail if I want more privacy?</h3><p>Compare the provider's encryption model, data policy, recovery process and the needs of your recipients. Proton Mail and Tuta Mail offer privacy-focused designs, but no provider can make every message end-to-end encrypted in every recipient workflow.</p>
+ HTML
+ HTML
+   ]
  ],
 
   'comparisons' => [
@@ -482,6 +650,69 @@ HTML
 <p>Official Fiverr and Upwork pricing, product and help pages were checked October 31, 2026. This comparison uses published terms and workflow descriptions, not hands-on testing or a rating. For more detail, read the <a href="/fiverr/">Fiverr hub</a>, <a href="/fiverr/review/">review</a>, <a href="/fiverr/pricing/">pricing guide</a> and <a href="/fiverr/alternatives/">alternatives guide</a>. Upwork’s own pricing pages are linked above because ToolboxKart does not yet have a separate Upwork cluster.</p>
 HTML
   ],
+   [
+   "title"=>"Gmail vs Outlook: Which Email Fits?",
+   "seo_title"=>"Gmail vs Outlook: Features and Cost",
+   "description"=>"Compare Gmail vs Outlook for storage, search, privacy, apps, business email and migration, using official details checked on November 1, 2026.",
+   "url"=>"/compare/gmail-vs-outlook/","date"=>"2026-11-01","status"=>"published",
+   "breadcrumb_parent_name"=>"Gmail","breadcrumb_parent_url"=>"/gmail/",
+   "faqs"=>[['question'=>'Does Outlook have more free email storage than Gmail?','answer'=>'Both list 15 GB for free personal email, but the allocation differs. Gmail shares Google Account storage with Drive and Photos, while Outlook.com has a separate 15 GB mailbox allowance and a separate 5 GB Microsoft cloud storage allowance. Details were checked November 1, 2026.'],['question'=>'Is Outlook better than Gmail for business?','answer'=>'Neither is always better. Compare the business plan, custom domain, user management, storage, retention, collaboration tools and migration needs. Both Google Workspace and Microsoft 365 offer paid business email.'],['question'=>'Can I keep my Gmail address if I use Outlook?','answer'=>'Yes, if you use Outlook as a mail app and add your Gmail account through a supported connection. That does not move the mailbox or remove Gmail\'s storage rules. If you want to replace Gmail as the provider, plan a separate migration.'],['question'=>'Can I transfer all Gmail messages to Outlook?','answer'=>'Use the current import method supported by your destination account, then check sent messages, attachments, contacts, calendars and labels or folders. Google Takeout provides a backup, but it does not itself create a live connection to Outlook.']],
+   "content"=><<<'HTML'
+ 
+ <h2 id="verdict">Quick verdict</h2>
+ <p>Choose Gmail if you depend on Google Search, Drive, Calendar and Android, and you are comfortable with its shared storage model. Choose Outlook.com if your daily work is built around Microsoft accounts, Outlook Calendar and OneDrive, or if you prefer a separate free mailbox allowance. Neither is the automatic winner for every reader. Compare the exact account type you will use, because free consumer email and paid business hosting are different products.</p>
+ <h2 id="quick-table">Gmail vs Outlook at a glance</h2>
+ <table><thead><tr><th scope="col">Decision point</th><th scope="col">Gmail</th><th scope="col">Outlook.com</th></tr></thead><tbody>
+ <tr><th scope="row">Free storage</th><td>Up to 15 GB shared across Gmail, Drive and Photos, with WhatsApp backups also able to use Google Account storage. <a href="https://support.google.com/mail/answer/6374270?hl=en">Google storage guide</a>, checked November 1, 2026.</td><td>15 GB of free Outlook.com email storage, separate from 5 GB of Microsoft cloud storage. <a href="https://support.microsoft.com/en-us/outlook/storage-limits-in-outlook-com">Microsoft storage guide</a>, checked November 1, 2026.</td></tr>
+ <tr><th scope="row">Organization</th><td>Labels, categories, filters and search operators.</td><td>Folders, rules, categories and focused views, depending on app and account.</td></tr>
+ <tr><th scope="row">Personal price</th><td>Free. More shared storage is available through Google One at regional prices. <a href="https://one.google.com/about/plans?hl=en">Plans</a>, checked November 1, 2026.</td><td>Free. Microsoft 365 Basic is US$1.99/month or US$19.99/year and includes a 100 GB mailbox plus 100 GB cloud storage. <a href="https://www.microsoft.com/en-us/microsoft-365/outlook/outlook-email-plans-and-pricing">Official plan page</a>, checked November 1, 2026.</td></tr>
+ <tr><th scope="row">Business domain</th><td>Google Workspace Starter is US$7 per user/month on annual commitment or US$8.40 on flexible billing, with 30 GB pooled storage per user. <a href="https://knowledge.workspace.google.com/admin/billing/understand-google-workspace-bills-and-charges">Google billing</a> and <a href="https://workspace.google.com/business/">plan details</a>, checked November 1, 2026.</td><td>Microsoft 365 Business Basic is a paid option for custom-domain email. Microsoft pages showed different standard US figures when checked, so confirm the exact price and term on the current checkout page. <a href="https://www.microsoft.com/en-us/microsoft-365/business/compare-all-microsoft-365-business-products">Official plans</a>, checked November 1, 2026.</td></tr>
+ <tr><th scope="row">Best fit</th><td>Google services and search-led inbox workflows.</td><td>Microsoft services, Office workflows and a separate mailbox storage allowance.</td></tr>
+ </tbody></table>
+ <h2 id="price">Pricing and storage are not the same</h2>
+ <p>Both services offer free consumer email. The difference is what their free storage counts toward. Gmail shares its personal Google Account storage with other services, so large Drive files and photos can affect the inbox. Outlook.com provides a separate 15 GB mailbox allowance and a separate 5 GB cloud storage allowance. Both limits were checked on November 1, 2026 in the official Google and Microsoft storage guides linked above.</p>
+ <p>For Outlook, Microsoft 365 Basic is listed at US$1.99 per month or US$19.99 per year in the US. The plan includes 100 GB of mailbox storage and 100 GB of cloud storage. These are optional paid benefits, not a requirement for every Outlook.com user. The current plan page was checked on November 1, 2026.</p>
+ <p>For business email, Google Workspace Starter is listed at US$7 per user/month with an annual commitment or US$8.40 with flexible billing. It includes custom-domain email and 30 GB pooled storage per user. Google's billing guidance explains that the annual plan commits the business to a set number of licences, while the flexible plan costs more but allows user counts to change more freely. Both details were checked on November 1, 2026. Microsoft also offers paid business email, but its US pricing pages showed different standard figures during this review. Confirm the current offer and term at checkout instead of relying on an unverified comparison price.</p>
+ <h2 id="search">Search and inbox organization</h2>
+ <p>Gmail is a strong choice if you often find old messages through search. Its operators can filter by sender, recipient, date, label, size or attachment, and its filters can label or archive incoming messages. Google's official <a href="https://support.google.com/mail/answer/7190?hl=en">search operator guide</a> and <a href="https://support.google.com/mail/answer/6579?hl=en">filter guide</a> were checked on November 1, 2026.</p>
+ <p>Outlook uses a more folder-centered workflow, with rules and categories. Readers who already organize work through Microsoft 365 may prefer keeping mail, calendar and files inside the same account. A Gmail user who relies on multiple labels on one conversation may need to rethink how those messages are filed in Outlook. Neither structure is universally better; it depends on how you look for information.</p>
+ <h2 id="apps">Google and Microsoft integrations</h2>
+ <p>Gmail works naturally with Google Calendar, Drive, Photos, Meet and Android. Workspace adds admin tools and a company domain. Outlook.com works with a Microsoft account and its calendar, OneDrive and Microsoft 365 services. A paid Microsoft business plan is a wider bundle that can include Exchange, Teams and OneDrive, while Workspace combines Gmail with Google's collaboration tools. Compare the plan features you need, not only the inbox interface.</p>
+ <p>Some Gmail accounts may have AI-assisted search features, and Workspace plans list AI tools by edition. Access depends on the account, plan and region. The same rule applies to paid Microsoft features: check current plan details before assuming an AI or desktop feature is included.</p>
+ <h2 id="security">Security and privacy</h2>
+ <p>Both providers offer account security settings, spam controls and additional sign-in checks. Your choice should depend on the security features you need, how the account is managed and which organization controls it. For a personal account, keep recovery options current, enable two-step verification, review connected apps and check forwarding rules regularly.</p>
+ <p>If privacy is the main reason for switching, compare providers designed around encrypted email, such as Proton Mail or Tuta Mail, rather than assuming Gmail and Outlook are identical to those services. Encryption depends on the message, recipient and configuration. Moving to another inbox does not automatically make every email end-to-end encrypted.</p>
+ <h2 id="migration">Switching from Gmail to Outlook</h2>
+ <p>First decide whether you want to replace the provider or only use a different mail app. If you move providers, export a copy of Gmail through <a href="https://support.google.com/accounts/answer/3024190?hl=en">Google Takeout</a>. Google says downloading your data does not delete it from its servers. Then use the destination's supported import method, check attachments, sent mail, contacts and calendar items, and keep the old account available while you update logins. The Takeout instructions were checked on November 1, 2026.</p>
+ <p>Do not assume Gmail's web interface will continue collecting outside mail in the same way. Google says POP and Gmailify support for third-party accounts is being removed, with existing users supported until January 2027. The third-party “Send as” feature also ends in January 2027. These changes do not close Gmail, but they matter if you used it to collect or send from an Outlook or Yahoo address. Read the <a href="https://support.google.com/mail/answer/16604719?hl=en">POP/Gmailify notice</a> and <a href="https://support.google.com/mail/answer/22370?hl=en">Send as notice</a>, checked November 1, 2026.</p>
+ <p>For a personal Gmail migration, Proton's <a href="https://proton.me/support/switch-from-gmail-to-proton">Easy Switch guide</a> is one example of a destination-specific process that can import messages, contacts and calendars for supported accounts. The same principle applies to Outlook: use Microsoft's current supported import steps and test the result before making the new address your only contact point.</p>
+ <h2 id="choose">Choose Gmail if...</h2>
+ <ul>
+ <li>You already use Google Calendar, Drive, Photos and Android.</li>
+ <li>You prefer labels and search operators to a folder-first system.</li>
+ <li>Your shared storage stays within the free limit, or a Google One plan fits your needs.</li>
+ <li>You want a personal address and do not need a company domain or central user administration.</li>
+ </ul>
+ <h2 id="choose-outlook">Choose Outlook if...</h2>
+ <ul>
+ <li>You work mainly in Microsoft's email, calendar and file ecosystem.</li>
+ <li>You want the free Outlook.com mailbox allowance separate from Microsoft cloud storage.</li>
+ <li>You prefer folders and rules for filing mail.</li>
+ <li>You already pay for Microsoft 365 and the included Outlook features fit your account.</li>
+ </ul>
+ <h2 id="ease">Ease of use and support</h2>
+ <p>Gmail is easy to start with if you already have a Google Account. The main learning curve appears when you create filters, manage several labels or use multiple inboxes. Outlook's folder-first approach can feel more familiar to people who already work in Microsoft 365. If you manage mail for a team, compare the admin console and support terms for the paid business edition rather than assuming that the free consumer account has the same controls.</p>
+ <p>Support also depends on the account type and plan. Personal users should check the official <a href="https://support.google.com/mail/">Gmail Help Center</a> or <a href="https://support.microsoft.com/en-us/outlook">Outlook support</a> for the exact account issue. A business administrator may have extra options through a paid Workspace or Microsoft 365 plan. Do not assume every plan includes the same response time or support channel.</p>
+ <p>Switching effort is not limited to copying messages. Gmail labels may map to folders differently, and filters, signatures, contacts, calendar invitations and recovery addresses need separate checks. If you only want another interface, keep Gmail as the provider and connect a supported mail app. If you want to leave Google entirely, plan a full migration and keep the old account available while you test delivery and password resets. The January 2027 POP/Gmailify and third-party Send as changes matter mainly to users who rely on those features, not to every Gmail user.</p>
+ <p>For other software categories, use <a href="/browse-tools-by-niche">Browse tools by niche</a>.</p>
+<h2 id="faq">Gmail vs Outlook FAQ</h2>
+ <h3>Does Outlook have more free email storage than Gmail?</h3><p>Both list 15 GB for free personal email, but the allocation differs. Gmail shares Google Account storage with Drive and Photos, while Outlook.com has a separate 15 GB mailbox allowance and a separate 5 GB Microsoft cloud storage allowance. Details were checked November 1, 2026.</p>
+ <h3>Is Outlook better than Gmail for business?</h3><p>Neither is always better. Compare the business plan, custom domain, user management, storage, retention, collaboration tools and migration needs. Both Google Workspace and Microsoft 365 offer paid business email.</p>
+ <h3>Can I keep my Gmail address if I use Outlook?</h3><p>Yes, if you use Outlook as a mail app and add your Gmail account through a supported connection. That does not move the mailbox or remove Gmail's storage rules. If you want to replace Gmail as the provider, plan a separate migration.</p>
+ <h3>Can I transfer all Gmail messages to Outlook?</h3><p>Use the current import method supported by your destination account, then check sent messages, attachments, contacts, calendars and labels or folders. Google Takeout provides a backup, but it does not itself create a live connection to Outlook.</p>
+ HTML
+ HTML
+   ]
  ],
 
  'categories' => [],

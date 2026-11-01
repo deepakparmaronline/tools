@@ -52,6 +52,7 @@ function alternative_topic_group(array $article): array {
         'developer-creative'=>['name'=>'Developer and creative workflows','description'=>'Documentation, integrations, app delivery, design review and motion tools.','slugs'=>['hera-alternatives','mintlify-alternatives','mobiloud-alternatives','nylas-alternatives','ruttl-alternatives']],
         'documents-specialist'=>['name'=>'Documents, study and specialist software','description'=>'PDF, study, meeting, compliance and industry-specific software.','slugs'=>['notegpt-alternatives','pearl-alternatives','shadow-alternatives','updf-alternatives','vanta-alternatives']],
         'freelance-marketplaces'=>['name'=>'Freelance marketplaces','description'=>'Open freelance marketplaces, portfolio-led workspaces, vetted expert networks and design contests for buyers and independent professionals.','slugs'=>['fiverr-alternatives']],
+        'email-providers'=>['name'=>'Email providers and inbox services','description'=>'Consumer email, privacy-focused inboxes and hosted email for personal or custom-domain use.','slugs'=>['gmail-alternatives']],
     ];
     foreach ($groups as $key=>$group) if (in_array($slug,$group['slugs'],true)) return ['key'=>$key]+$group;
     return ['key'=>'other','name'=>'More software alternatives','description'=>'Additional researched alternatives for specific workflows.','slugs'=>[]];
@@ -71,6 +72,11 @@ function related_alternative_articles(array $source, int $limit=3): array {
     $sourceGroup = alternative_topic_group($source)['key'];
     $sourceTokens = array_filter(preg_split('/[^a-z0-9]+/',strtolower(($source['title'] ?? '').' '.($source['tag'] ?? ''))) ?: [],fn($token)=>strlen($token)>3);
     $candidates = array_values(array_filter(alternative_articles(),fn($item)=>$item['slug'] !== $source['slug']));
+    if ($sourceGroup !== 'other') {
+        $sameGroup = array_values(array_filter($candidates, fn($item)=>alternative_topic_group($item)['key'] === $sourceGroup));
+        if (!$sameGroup) return [];
+        $candidates = $sameGroup;
+    }
     usort($candidates,function($a,$b) use ($source,$sourceGroup,$sourceTokens) {
         $score = function($item) use ($source,$sourceGroup,$sourceTokens) {
             $value = alternative_topic_group($item)['key'] === $sourceGroup ? 20 : 0;

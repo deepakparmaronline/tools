@@ -8,7 +8,7 @@ return [
     'tag' => 'Email Management',
     'author' => 'Deepak Parmar',
     'content' => <<<'ARTICLE_HTML'
-<p>For a Leave Me Alone alternative, consider Clean Email for ongoing cleanup rules, Mailstrom for working through a large backlog, or SaneBox for daily prioritization and filtering. If you only need to stop a few newsletters, try Gmail's unsubscribe control or Outlook.com's subscription settings first. Those built-in options avoid connecting an additional cleanup service, but they do not provide a cross-provider dashboard. Choose by the result you need: fewer subscriptions, less visible clutter, a smaller mailbox, or a digest of mail you still want. These are different jobs, and one tool may not replace all of them.</p>
+<p>For a Leave Me Alone alternative, consider Clean Email for ongoing cleanup rules, Mailstrom for working through a large backlog, or SaneBox for daily prioritization and filtering. If you only need to stop a few newsletters, try Gmail's unsubscribe control or Outlook.com's subscription settings first. Those built-in options avoid connecting an additional cleanup service, but they do not provide a cross-provider dashboard. If you are comparing email providers rather than unsubscribe tools, see the <a href="/gmail/">Gmail guide</a> for account limits and the current third-party mail changes. Choose by the result you need: fewer subscriptions, less visible clutter, a smaller mailbox, or a digest of mail you still want. These are different jobs, and one tool may not replace all of them.</p>
 <h2>Compare the action you are buying</h2>
 <div class="table-wrap"><table>
 <thead>

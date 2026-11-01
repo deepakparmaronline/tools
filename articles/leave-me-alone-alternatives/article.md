@@ -1,6 +1,6 @@
 # 5 Leave Me Alone Alternatives for a Quieter Inbox
 
-For a Leave Me Alone alternative, consider Clean Email for ongoing cleanup rules, Mailstrom for working through a large backlog, or SaneBox for daily prioritization and filtering. If you only need to stop a few newsletters, try Gmail's unsubscribe control or Outlook.com's subscription settings first. Those built-in options avoid connecting an additional cleanup service, but they do not provide a cross-provider dashboard. Choose by the result you need: fewer subscriptions, less visible clutter, a smaller mailbox, or a digest of mail you still want. These are different jobs, and one tool may not replace all of them.
+For a Leave Me Alone alternative, consider Clean Email for ongoing cleanup rules, Mailstrom for working through a large backlog, or SaneBox for daily prioritization and filtering. If you only need to stop a few newsletters, try Gmail's unsubscribe control or Outlook.com's subscription settings first. Those built-in options avoid connecting an additional cleanup service, but they do not provide a cross-provider dashboard. If you are comparing email providers rather than unsubscribe tools, see the [Gmail guide](/gmail/) for account limits and the current third-party mail changes. Choose by the result you need: fewer subscriptions, less visible clutter, a smaller mailbox, or a digest of mail you still want. These are different jobs, and one tool may not replace all of them.
 
 ## Compare the action you are buying
 
