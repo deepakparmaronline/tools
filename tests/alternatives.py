@@ -137,7 +137,7 @@ def main():
         gmail_list = next(item for item in gmail_graph if item.get('@type') == 'ItemList')
         assert [item['name'] for item in gmail_list['itemListElement']] == ['Outlook.com', 'Proton Mail', 'Zoho Mail', 'Fastmail', 'Tuta Mail', 'iCloud Mail', 'Yahoo Mail']
         assert any(item.get('@type') == 'FAQPage' for item in gmail_graph)
-        assert 'https://toolboxkart.tech/gmail/alternatives/' in get('/sitemap-alternatives.xml')
+        assert 'https://toolboxkart.tech/gmail/alternatives/' in get('/sitemap-alternatives.xml')[2]
         assert 'Related alternative articles' not in gmail_alt_html
         _, _, leave_me_alone_html = get('/alternatives/leave-me-alone-alternatives/')
         assert 'href="/gmail/"' in leave_me_alone_html
