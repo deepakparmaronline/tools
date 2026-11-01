@@ -135,7 +135,7 @@ HTML
  <h3>Is Gmail free?</h3><p>Yes. A standard personal Gmail account is free and includes up to 15 GB of Google Account storage shared with Drive, Photos and other supported storage uses. The storage limit and source were checked on November 1, 2026.</p>
  <h3>Does Gmail support other email accounts?</h3><p>Gmail's web POP and Gmailify support is being phased out. Existing users can continue until January 2027, but new users lost access after the first quarter of 2026. Check Google's current notice before planning a multi-account inbox.</p>
  <h3>Should a business use free Gmail?</h3><p>A personal Gmail account can work for an individual, but a business that needs its own domain, central account management or organization controls should compare Google Workspace with other business email services.</p>
- HTML
+HTML
    ]
  ],
 
@@ -297,7 +297,7 @@ HTML
  <h3>Does free Gmail have 15 GB of email storage?</h3><p>No. The 15 GB is shared across Gmail, Drive and Photos, and Google says WhatsApp backups can also use this storage. It is not a Gmail-only mailbox allowance. The limit was checked on November 1, 2026.</p>
  <h3>Is Google Workspace billed per user?</h3><p>Yes. The listed Business editions use per-user pricing, and storage is pooled across the organization. Annual commitment and flexible billing have different rates. Check Google's current billing terms before signing up.</p>
  <h3>Can I use Gmail with my own domain for free?</h3><p>Google's personal Gmail service uses a Gmail address. A business address on your own domain is offered through a paid Google Workspace plan or another email host, with separate domain costs where applicable.</p>
- HTML
+HTML
    ]
  ],
 
@@ -508,7 +508,7 @@ HTML
  <h3>Can I use Gmail as an inbox for Outlook and Yahoo?</h3><p>Gmail's web POP and Gmailify features are being removed, and the third-party Send as feature ends in January 2027. The Gmail mobile app can still add supported account types, but check the current provider instructions before relying on a setup.</p>
  <h3>Will Google Takeout delete my Gmail messages?</h3><p>No. Google says downloading your data does not delete it from Google's servers. Keep the archive safe and verify the destination import before changing or closing the original account.</p>
  <h3>Should I switch from Gmail if I want more privacy?</h3><p>Compare the provider's encryption model, data policy, recovery process and the needs of your recipients. Proton Mail and Tuta Mail offer privacy-focused designs, but no provider can make every message end-to-end encrypted in every recipient workflow.</p>
- HTML
+HTML
    ]
  ],
 
@@ -707,7 +707,7 @@ HTML
  <h3>Is Outlook better than Gmail for business?</h3><p>Neither is always better. Compare the business plan, custom domain, user management, storage, retention, collaboration tools and migration needs. Both Google Workspace and Microsoft 365 offer paid business email.</p>
  <h3>Can I keep my Gmail address if I use Outlook?</h3><p>Yes, if you use Outlook as a mail app and add your Gmail account through a supported connection. That does not move the mailbox or remove Gmail's storage rules. If you want to replace Gmail as the provider, plan a separate migration.</p>
  <h3>Can I transfer all Gmail messages to Outlook?</h3><p>Use the current import method supported by your destination account, then check sent messages, attachments, contacts, calendars and labels or folders. Google Takeout provides a backup, but it does not itself create a live connection to Outlook.</p>
- HTML
+HTML
    ]
  ],
 
