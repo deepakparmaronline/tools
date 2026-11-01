@@ -39,7 +39,6 @@ $extraHead = '<meta property="article:published_time" content="'.e($publishedAt)
     .jsonld(['@context'=>'https://schema.org','@graph'=>$graph])
     .'<link rel="stylesheet" href="'.e(asset('css/publication.css')).'">';
 
-ob_start();
 require __DIR__.'/../../includes/header.php';
 ?>
 <div class="container publication-head">
@@ -129,4 +128,3 @@ require __DIR__.'/../../includes/header.php';
 </div>
 <?php
 require __DIR__.'/../../includes/footer.php';
-return (string)ob_get_clean();
