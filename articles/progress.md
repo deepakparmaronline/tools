@@ -303,3 +303,11 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - **Discovery and schema:** All six pages use date-free canonical URLs, visible breadcrumbs and matching BreadcrumbList JSON-LD. The hub uses SoftwareApplication schema without ratings; the alternatives page's ItemList matches seven visible alternatives and its FAQ schema matches the visible FAQs. The review uses Article, BreadcrumbList and FAQPage schema without a fabricated rating. Tool hub, pricing, how-to, comparison, review and alternatives records are present in their public indexes and child sitemaps. No email-provider pillar was added because the four-cluster threshold has not been reached.
 - **Deployment handoff:** Hostinger auto-deployment from GitHub `main` is expected. Live HTTP and browser verification were not performed; the user will verify production URLs.
 - **Exact next queue row:** Order 6, n8n, primary keyword `n8n alternative`, US volume 720, KD 20, CPC US$6.88, intent C, status `queued`. Preserve those saved metrics. No n8n content was started in this run.
+
+## n8n software cluster queue claim (2026-11-02)
+
+- **Queue item:** Order 6, n8n, primary keyword `n8n alternative`, action `new cluster`.
+- **Saved Semrush snapshot:** 2026-10-24. Preserve US volume 720, KD 20, CPC US$6.88, intent C; the full snapshot also records trend `▄▄▅▄█▃▅▄▂▄▂▂ ↓` and SERP features `SL, AIO, Rev, Vid, VC, PAA, Rel`. No exact PAA questions are committed, so none will be represented as sourced PAA wording.
+- **Official product identity:** n8n workflow automation platform, confirmed from https://n8n.io/ and https://n8n.io/pricing/.
+- **Claim status:** in_progress before content work. Next checkpoint: evidence ledger, product-specific cluster brief, six-page draft and architecture/discovery review. Do not register any page until all six pages and supporting records are complete and reviewed.
+- **Research note:** Public SERP results show intent around self-hosted workflow automation, cloud execution pricing, AI workflows and alternatives to task-metered automation. Official n8n documentation and pricing will govern product claims.
