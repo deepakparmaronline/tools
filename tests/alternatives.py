@@ -77,6 +77,7 @@ def main():
         assert 'id="productivity"' in get('/alternatives/')[2]
         assert 'id="freelance-marketplaces"' in get('/alternatives/')[2]
         assert 'id="email-providers"' in get('/alternatives/')[2]
+        assert 'id="workflow-automation"' in get('/alternatives/')[2]
         assert 'href="/review-methodology"' in get('/alternatives/')[2]
         for path, content_type in [('/assets/css/app.css', 'text/css'),
                                    ('/assets/css/article-overflow-fixes.css', 'text/css'),
@@ -139,6 +140,21 @@ def main():
         assert any(item.get('@type') == 'FAQPage' for item in gmail_graph)
         assert 'https://toolboxkart.tech/gmail/alternatives/' in get('/sitemap-alternatives.xml')[2]
         assert 'Related alternative articles' not in gmail_alt_html
+        _, _, n8n_alt_html = get('/n8n/alternatives/')
+        n8n_alt_page = Page(n8n_alt_html)
+        assert n8n_alt_page.canonical == 'https://toolboxkart.tech/n8n/alternatives/'
+        assert 140 <= len(n8n_alt_page.meta.get('description', '')) <= 160
+        assert 'Last updated' in n8n_alt_html
+        assert '<nav class="crumbs" aria-label="Breadcrumb">' in n8n_alt_html
+        n8n_graph = next(item['@graph'] for item in n8n_alt_page.schemas if '@graph' in item)
+        n8n_crumb = next(item for item in n8n_graph if item.get('@type') == 'BreadcrumbList')
+        assert [item['item'] for item in n8n_crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/n8n/', 'https://toolboxkart.tech/n8n/alternatives/']
+        n8n_list = next(item for item in n8n_graph if item.get('@type') == 'ItemList')
+        assert [item['name'] for item in n8n_list['itemListElement']] == ['Zapier', 'Make', 'Activepieces', 'Microsoft Power Automate', 'Node-RED', 'Windmill', 'Kestra']
+        assert 'Pipedream' not in [item['name'] for item in n8n_list['itemListElement']]
+        assert any(item.get('@type') == 'FAQPage' for item in n8n_graph)
+        assert 'Workflows and String products will shut down on March 31, 2027' in n8n_alt_html
+        assert 'https://toolboxkart.tech/n8n/alternatives/' in get('/sitemap-alternatives.xml')[2]
         _, _, leave_me_alone_html = get('/alternatives/leave-me-alone-alternatives/')
         assert 'href="/gmail/"' in leave_me_alone_html
         for slug, status, date in [('qa-alternative-one', 'published', '2026-01-01'),

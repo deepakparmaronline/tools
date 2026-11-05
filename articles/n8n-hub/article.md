@@ -1,57 +1,74 @@
-# n8n Guide: Workflows, Pricing and Alternatives
+> **Short answer:** n8n connects apps, APIs and data through visual workflows, triggers, actions and code. You can use n8n Cloud or self-host its Community Edition, but check the Sustainable Use License before using it in a customer-facing product.
 
-n8n is a workflow automation platform for connecting apps, APIs, databases and code in one visual workflow. It fits teams that need branching, custom logic, data mapping or self-hosting. Choose n8n Cloud if you want the vendor to run the service; choose self-hosting only if your team can manage updates, backups, security and uptime. Official product and pricing pages checked November 2, 2026: [n8n](https://n8n.io/) and [pricing](https://n8n.io/pricing/).
+## What is n8n?
 
-## What n8n is built to do
+n8n is a workflow automation platform for linking services and handling repeat work. A workflow starts with a trigger, then passes data through nodes that read, change or send information. Conditions, loops, sub-workflows and code cover cases that a simple trigger-and-action tool cannot handle well. See the [official n8n product site](https://n8n.io/).
 
-n8n lets you arrange trigger and action nodes into a workflow. A trigger starts the run, later nodes pass data between steps, and branches or code nodes handle cases that do not fit a simple straight line. The official [built-in nodes guide](https://docs.n8n.io/integrations/builtin.md), checked November 2, 2026, lists core nodes, app nodes, trigger nodes, cluster nodes and credentials. Exact node options depend on the service you connect.
-
-This model suits teams that want more control than a simple trigger-and-action recipe. A workflow might receive a form submission, validate fields, look up a customer, call an API, route a result and notify a team. The design is flexible, but someone still needs to decide what happens when an API times out, a field is missing or a token expires.
+The product is aimed at technical users and teams that want more control over workflow logic. Built-in nodes cover common services, while HTTP requests and JavaScript or Python code can connect to custom APIs and handle data that needs extra work.
 
 ## Quick facts
 
 | Question | Current answer |
 | --- | --- |
-| Product category | Workflow automation and integration orchestration |
-| Cloud entry price | Starter is listed at €20 per month when billed annually, with 2,500 workflow executions per month. [Official pricing](https://n8n.io/pricing/), checked November 2, 2026. |
-| Free option | A free Community Edition is available for self-hosting. Server, storage, maintenance and security still cost time or money. [Pricing](https://n8n.io/pricing/) and [license](https://github.com/n8n-io/n8n/blob/master/LICENSE.md), checked November 2, 2026. |
-| Usage meter | Cloud plans count a workflow run as one execution, regardless of how many steps it contains. [Official pricing](https://n8n.io/pricing/), checked November 2, 2026. |
-| Best for | Teams that need visual workflows, API access, branching, code steps or control over where automation runs. |
+| Product type | Visual workflow automation and integration platform |
+| Cloud Starter | €20/month billed annually; 2,500 executions |
+| Cloud Pro | €50/month billed annually; 10,000 executions |
+| Business | €667/month billed annually; 40,000 executions; self-hosted only |
+| Self-hosted option | Community Edition under the Sustainable Use License |
+| Billing unit | One full workflow run counts as one execution, regardless of its steps |
+| Current upgrade note | n8n 3.0 is early access; review the migration guide before upgrading |
+
+Plan prices and limits were checked on the [official pricing page](https://n8n.io/pricing/) on November 5, 2026. Prices are shown in euros with annual billing. Check the live page for monthly billing, regional terms and taxes.
+
+## How workflows work
+
+A workflow usually starts with a schedule, webhook, app event or manual test. Nodes then read a record, update a service, send a message or call an API. You can inspect data at each step and use conditions to send records down different paths.
+
+n8n also supports reusable sub-workflows, custom API requests, code steps and error workflows. This helps when a process needs data cleanup, branching or retries. It also means the team should document inputs, credentials and failure paths instead of building one large canvas that only its creator understands.
+
+AI nodes can connect a model to business data or tools. They still need limits, structured outputs and human approval where an action can affect customers, money or important records.
 
 ## Cloud or self-hosted?
 
-Cloud reduces infrastructure work. n8n handles hosting and platform operations, and the plan table lists execution allowances, concurrency and collaboration features. Self-hosting gives your team more control over infrastructure and deployment, but your team must plan for patching, backups, encryption keys, access control, monitoring and recovery. n8n's [Docker installation guide](https://docs.n8n.io/deploy/host-n8n/install-with-docker.md), checked November 2, 2026, says self-hosting requires server, container, security and scaling knowledge and recommends Cloud when that experience is missing.
+n8n Cloud is managed by n8n, so the vendor handles the instance and its updates. Starter and Pro are hosted by n8n. Business is listed as self-hosted only, while Enterprise can be hosted by n8n or self-hosted. Check the [current plan table](https://n8n.io/pricing/) before choosing.
 
-Do not treat the Community Edition as permission to resell a hosted n8n service. The [Sustainable Use License](https://github.com/n8n-io/n8n/blob/master/LICENSE.md), checked November 2, 2026, limits how the software may be used and distributed. Review the current terms before embedding n8n in a customer-facing product or running automations with third-party credentials for customers.
+Self-hosting gives you more control over infrastructure and where workflow data is stored. You also own updates, SSL, access control, database backups, monitoring and capacity. The Community Edition is not a blanket licence to resell n8n or offer a hosted automation service to customers. Read the [Sustainable Use License](https://github.com/n8n-io/n8n/blob/master/LICENSE.md) and [official licensing guide](https://docs.n8n.io/sustainable-use-license/) before building a commercial product around it.
 
-## Explore the n8n decision guide
+There is a current upgrade point to check. The n8n documentation lists version 3.0 as early access and says its self-hosted deployment path is Docker-based. Teams using npm or npx should read the [3.0 breaking-changes guide](https://docs.n8n.io/changelog/v30-breaking-changes/) and [migration tool guide](https://docs.n8n.io/changelog/v30-migration-tool/) before planning an upgrade.
 
-- [n8n alternatives](/n8n/alternatives/) compares no-code, developer and orchestration tools.
-- [n8n review](/n8n/review/) explains strengths, trade-offs and who should skip it.
-- [n8n pricing](/n8n/pricing/) separates Cloud fees from self-hosting costs.
-- [How to use n8n](/n8n/how-to-use/) walks through a safe first workflow.
-- [n8n vs Zapier](/compare/n8n-vs-zapier/) compares execution and task-based billing.
+## Who should consider n8n?
 
-## Questions to answer before choosing
+n8n is worth shortlisting if your team needs multi-step workflows, custom API calls, data transformation or control over where automation runs. It can suit developers and technical operations teams that can own credentials, errors and maintenance.
 
-Write down the systems you need to connect, how often each workflow will run, how much data passes between steps and who will own failures. Estimate Cloud executions from complete workflow runs, not the number of nodes. For self-hosting, add the server, backups, monitoring and staff time to the software cost. Check the license if your use case involves customer-facing services.
+It may be a poor fit if you want the simplest no-code setup, have no one to maintain a server, need a permissive licence for a customer-facing product or prefer a per-user price. Compare [Zapier](https://zapier.com/), [Make](https://www.make.com/), [Activepieces](https://www.activepieces.com/) and Microsoft Power Automate before committing.
 
-If you only need a small set of standard app connections and want a nontechnical owner to maintain them, compare [Zapier](https://zapier.com/pricing) or [Make](https://www.make.com/en/pricing), both checked November 2, 2026. For wider software discovery, use [Browse tools by niche](/browse-tools-by-niche). The best choice is the one that fits your workflow and operating capacity, not the one with the longest feature list.
+## Explore the n8n guide
 
-## Common questions
+- [n8n review](/n8n/review/)
+- [n8n pricing](/n8n/pricing/)
+- [How to use n8n](/n8n/how-to-use/)
+- [n8n alternatives](/n8n/alternatives/)
+- [n8n vs Zapier](/compare/n8n-vs-zapier/)
+- [Browse tools by niche](/browse-tools-by-niche)
+
+## n8n FAQ
 
 ### Is n8n free?
 
-The Community Edition is available for self-hosting at no software subscription fee. You still pay for infrastructure and the work needed to operate it. n8n Cloud is a paid service with a trial shown on the official pricing page, checked November 2, 2026.
+The Community Edition is available for self-hosting, but the licence applies and infrastructure still costs money. n8n Cloud offers a trial, not a permanent free Cloud plan.
 
-### Does n8n charge per workflow step?
+### Is n8n open source?
 
-No. n8n Cloud pricing is based on full workflow executions, regardless of the number of nodes.
+n8n publishes source under the Sustainable Use License. It is not an OSI-approved open-source licence, so review the exact terms for your use.
 
-### Do I need to know how to code?
+### Does n8n charge for every workflow step?
 
-You can build many workflows with visual nodes, but API setup, data mapping and error handling still need careful thought. Code nodes are available when the workflow needs custom logic.
+No. n8n Cloud counts a full workflow run as one execution, regardless of the number of steps.
 
-## Sources and method
+### Is n8n 3.0 ready for production?
 
-Product, pricing, documentation, integration and licensing details were checked November 2, 2026. This guide uses official vendor pages and does not claim hands-on testing. Prices and included limits can change, so confirm them on the linked official pages before buying or deploying.
+The documentation lists n8n 3.0 as an early-access release. Review the breaking changes and migration report before upgrading production.
+
+## Sources and update method
+
+Product, pricing, licensing, deployment and release details were checked against n8n's official website, pricing page, documentation and source licence on November 5, 2026. This page is based on desk research and does not claim hands-on testing.

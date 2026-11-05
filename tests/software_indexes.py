@@ -167,7 +167,7 @@ def main():
         assert '/versus/freedom-vs-cold-turkey/' in compare
 
         # Both published customer-support software clusters must render with canonical URLs and schema.
-        unknown_detail_routes = ['/best/customer-service-help-desk-software/', '/best/freelance-marketplace-software/']
+        unknown_detail_routes = ['/best/customer-service-help-desk-software/', '/best/freelance-marketplace-software/', '/best/workflow-automation-software/']
         for path in unknown_detail_routes:
             status, _, _ = get_response(path)
             assert status == 404, f'{path}: expected 404, got {status}'
@@ -193,6 +193,10 @@ def main():
             '/gmail/pricing/': ('https://toolboxkart.tech/gmail/pricing/', 'gmail'),
             '/gmail/how-to-use/': ('https://toolboxkart.tech/gmail/how-to-use/', 'gmail'),
             '/compare/gmail-vs-outlook/': ('https://toolboxkart.tech/compare/gmail-vs-outlook/', 'gmail'),
+            '/n8n/': ('https://toolboxkart.tech/n8n/', 'n8n'),
+            '/n8n/pricing/': ('https://toolboxkart.tech/n8n/pricing/', 'n8n'),
+            '/n8n/how-to-use/': ('https://toolboxkart.tech/n8n/how-to-use/', 'n8n'),
+            '/compare/n8n-vs-zapier/': ('https://toolboxkart.tech/compare/n8n-vs-zapier/', 'n8n'),
         }
         for path, (canonical, term) in published_details.items():
             html = get(path)
@@ -200,39 +204,40 @@ def main():
             assert page.h1 == 1, path
             assert page.canonical == canonical, path
             assert term in ' '.join(page.text).lower(), path
-            if path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/' or path.startswith('/gmail/') or path == '/compare/gmail-vs-outlook/':
+            if path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/' or path.startswith('/gmail/') or path == '/compare/gmail-vs-outlook/' or path.startswith('/n8n/') or path == '/compare/n8n-vs-zapier/':
                 assert 140 <= len(page.description) <= 160, path
             assert '<nav class="crumbs" aria-label="Breadcrumb">' in html, path
             graph = next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
             crumb = next(item for item in graph if item.get('@type') == 'BreadcrumbList')
             assert crumb['itemListElement'][-1]['item'] == canonical, path
-            if path in ['/drift/pricing/', '/drift/how-to-use/', '/fiverr/pricing/', '/fiverr/how-to-use/', '/compare/fiverr-vs-upwork/', '/gmail/pricing/', '/gmail/how-to-use/', '/compare/gmail-vs-outlook/']:
-                parent = 'fiverr' if path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/' else 'gmail' if path.startswith('/gmail/') or path == '/compare/gmail-vs-outlook/' else 'drift'
+            if path in ['/drift/pricing/', '/drift/how-to-use/', '/fiverr/pricing/', '/fiverr/how-to-use/', '/compare/fiverr-vs-upwork/', '/gmail/pricing/', '/gmail/how-to-use/', '/compare/gmail-vs-outlook/', '/n8n/pricing/', '/n8n/how-to-use/', '/compare/n8n-vs-zapier/']:
+                parent = 'fiverr' if path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/' else 'gmail' if path.startswith('/gmail/') or path == '/compare/gmail-vs-outlook/' else 'n8n' if path.startswith('/n8n/') or path == '/compare/n8n-vs-zapier/' else 'drift'
                 assert [item['item'] for item in crumb['itemListElement']] == ['https://toolboxkart.tech/', f'https://toolboxkart.tech/{parent}/', canonical], path
-            if path in ['/fiverr/', '/gmail/']:
+            if path in ['/fiverr/', '/gmail/', '/n8n/']:
                 assert [item['item'] for item in crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/tools/', canonical], path
-            if path in ['/zendesk/', '/freshdesk/', '/drift/', '/fiverr/', '/gmail/']:
+            if path in ['/zendesk/', '/freshdesk/', '/drift/', '/fiverr/', '/gmail/', '/n8n/']:
                 assert any(item.get('@type') == 'SoftwareApplication' for item in graph), path
-            if path.startswith('/freshdesk/') or path == '/compare/freshdesk-vs-help-scout/' or path.startswith('/drift/') or path == '/compare/drift-vs-1mind/' or path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/' or path.startswith('/gmail/') or path == '/compare/gmail-vs-outlook/':
+            if path.startswith('/freshdesk/') or path == '/compare/freshdesk-vs-help-scout/' or path.startswith('/drift/') or path == '/compare/drift-vs-1mind/' or path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/' or path.startswith('/gmail/') or path == '/compare/gmail-vs-outlook/' or path.startswith('/n8n/') or path == '/compare/n8n-vs-zapier/':
                 assert any(item.get('@type') == 'FAQPage' for item in graph), path
 
         for path in ['/tools/', '/pricing/', '/how-to-use/', '/compare/']:
             index_html = get(path).lower()
-            assert 'zendesk' in index_html and 'freshdesk' in index_html and 'drift' in index_html and 'fiverr' in index_html and 'gmail' in index_html, path
+            assert 'zendesk' in index_html and 'freshdesk' in index_html and 'drift' in index_html and 'fiverr' in index_html and 'gmail' in index_html and 'n8n' in index_html, path
         assert 'zendesk' not in get('/best/').lower()
         assert 'freshdesk' not in get('/best/').lower()
         assert 'drift' not in get('/best/').lower()
         assert 'fiverr' not in get('/best/').lower()
+        assert 'n8n' not in get('/best/').lower()
         reviews_index = get('/reviews/')
-        assert 'Freshdesk Review' in reviews_index and 'Drift Review' in reviews_index and 'Fiverr Review' in reviews_index and 'Gmail Review' in reviews_index
+        assert 'Freshdesk Review' in reviews_index and 'Drift Review' in reviews_index and 'Fiverr Review' in reviews_index and 'Gmail Review' in reviews_index and 'n8n Review' in reviews_index
 
         expected_sitemap_urls = {
-            '/sitemap-tools.xml': ['https://toolboxkart.tech/zendesk/', 'https://toolboxkart.tech/freshdesk/', 'https://toolboxkart.tech/drift/', 'https://toolboxkart.tech/fiverr/', 'https://toolboxkart.tech/gmail/'],
-            '/sitemap-pricing.xml': ['https://toolboxkart.tech/zendesk/pricing/', 'https://toolboxkart.tech/freshdesk/pricing/', 'https://toolboxkart.tech/drift/pricing/', 'https://toolboxkart.tech/fiverr/pricing/', 'https://toolboxkart.tech/gmail/pricing/'],
-            '/sitemap-how-to-use.xml': ['https://toolboxkart.tech/zendesk/how-to-use/', 'https://toolboxkart.tech/freshdesk/how-to-use/', 'https://toolboxkart.tech/drift/how-to-use/', 'https://toolboxkart.tech/fiverr/how-to-use/', 'https://toolboxkart.tech/gmail/how-to-use/'],
-            '/sitemap-compare.xml': ['https://toolboxkart.tech/compare/zendesk-vs-freshdesk/', 'https://toolboxkart.tech/compare/freshdesk-vs-help-scout/', 'https://toolboxkart.tech/compare/drift-vs-1mind/', 'https://toolboxkart.tech/compare/fiverr-vs-upwork/', 'https://toolboxkart.tech/compare/gmail-vs-outlook/'],
-            '/sitemap-alternatives.xml': ['https://toolboxkart.tech/zendesk/alternatives/', 'https://toolboxkart.tech/freshdesk/alternatives/', 'https://toolboxkart.tech/drift/alternatives/', 'https://toolboxkart.tech/fiverr/alternatives/', 'https://toolboxkart.tech/gmail/alternatives/'],
-            '/sitemap-reviews.xml': ['https://toolboxkart.tech/zendesk/review/', 'https://toolboxkart.tech/freshdesk/review/', 'https://toolboxkart.tech/drift/review/', 'https://toolboxkart.tech/fiverr/review/', 'https://toolboxkart.tech/gmail/review/'],
+            '/sitemap-tools.xml': ['https://toolboxkart.tech/zendesk/', 'https://toolboxkart.tech/freshdesk/', 'https://toolboxkart.tech/drift/', 'https://toolboxkart.tech/fiverr/', 'https://toolboxkart.tech/gmail/', 'https://toolboxkart.tech/n8n/'],
+            '/sitemap-pricing.xml': ['https://toolboxkart.tech/zendesk/pricing/', 'https://toolboxkart.tech/freshdesk/pricing/', 'https://toolboxkart.tech/drift/pricing/', 'https://toolboxkart.tech/fiverr/pricing/', 'https://toolboxkart.tech/gmail/pricing/', 'https://toolboxkart.tech/n8n/pricing/'],
+            '/sitemap-how-to-use.xml': ['https://toolboxkart.tech/zendesk/how-to-use/', 'https://toolboxkart.tech/freshdesk/how-to-use/', 'https://toolboxkart.tech/drift/how-to-use/', 'https://toolboxkart.tech/fiverr/how-to-use/', 'https://toolboxkart.tech/gmail/how-to-use/', 'https://toolboxkart.tech/n8n/how-to-use/'],
+            '/sitemap-compare.xml': ['https://toolboxkart.tech/compare/zendesk-vs-freshdesk/', 'https://toolboxkart.tech/compare/freshdesk-vs-help-scout/', 'https://toolboxkart.tech/compare/drift-vs-1mind/', 'https://toolboxkart.tech/compare/fiverr-vs-upwork/', 'https://toolboxkart.tech/compare/gmail-vs-outlook/', 'https://toolboxkart.tech/compare/n8n-vs-zapier/'],
+            '/sitemap-alternatives.xml': ['https://toolboxkart.tech/zendesk/alternatives/', 'https://toolboxkart.tech/freshdesk/alternatives/', 'https://toolboxkart.tech/drift/alternatives/', 'https://toolboxkart.tech/fiverr/alternatives/', 'https://toolboxkart.tech/gmail/alternatives/', 'https://toolboxkart.tech/n8n/alternatives/'],
+            '/sitemap-reviews.xml': ['https://toolboxkart.tech/zendesk/review/', 'https://toolboxkart.tech/freshdesk/review/', 'https://toolboxkart.tech/drift/review/', 'https://toolboxkart.tech/fiverr/review/', 'https://toolboxkart.tech/gmail/review/', 'https://toolboxkart.tech/n8n/review/'],
         }
         for path, urls in expected_sitemap_urls.items():
             for url in urls:
@@ -266,6 +271,15 @@ def main():
         gmail_review_graph = next(schema['@graph'] for schema in gmail_review_page.schemas if '@graph' in schema)
         gmail_review_crumb = next(item for item in gmail_review_graph if item.get('@type') == 'BreadcrumbList')
         assert [item['item'] for item in gmail_review_crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/gmail/', 'https://toolboxkart.tech/gmail/review/']
+
+        n8n_review_html = get('/n8n/review/')
+        n8n_review_page = Page(n8n_review_html)
+        assert n8n_review_page.canonical == 'https://toolboxkart.tech/n8n/review/'
+        assert '<nav class="crumbs" aria-label="Breadcrumb">' in n8n_review_html
+        n8n_review_graph = next(schema['@graph'] for schema in n8n_review_page.schemas if '@graph' in schema)
+        n8n_review_crumb = next(item for item in n8n_review_graph if item.get('@type') == 'BreadcrumbList')
+        assert [item['item'] for item in n8n_review_crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/n8n/', 'https://toolboxkart.tech/n8n/review/']
+
 
         rewrite_rules = (ROOT / '.htaccess').read_text()
         assert 'RewriteRule ^(tools|pricing|how-to-use|compare|best)/([a-z0-9-]+)/?$ router.php [L,QSA]' in rewrite_rules

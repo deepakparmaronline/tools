@@ -1,75 +1,87 @@
-# n8n Pricing: Cloud Plans and Self-Hosting
+> **Short answer:** n8n Cloud starts at €20 per month for Starter with annual billing and 2,500 workflow executions. Pro is €50 per month for 10,000 executions. Business is €667 per month for 40,000 executions and is self-hosted only. The Community Edition is available to self-host, but its licence and infrastructure costs still matter.
 
-n8n Cloud pricing is based on monthly workflow executions, while the self-hosted Community Edition has no software subscription fee. The current pricing page lists Starter at €20 per month billed annually, Pro at €50, and Business at €667. Business is self-hosted only; Enterprise pricing is custom. These prices and limits were checked November 2, 2026 on the [official n8n pricing page](https://n8n.io/pricing/).
+## n8n pricing at a glance
 
-## n8n plans at a glance
-
-| Plan | Price shown | Execution allowance | Hosting and main fit |
+| Plan | Public price shown | Execution allowance | Hosting |
 | --- | --- | --- | --- |
-| Community Edition | Free software | No Cloud execution quota; your infrastructure sets capacity | Self-hosted. Best for technical users who can operate the service. |
-| Starter | €20 per month, billed annually | 2,500 executions per month | Hosted by n8n. One shared project and five concurrent executions. |
-| Pro | €50 per month, billed annually | 10,000 executions per month | Hosted by n8n. Three shared projects, up to 50 concurrent executions, admin roles and workflow history. |
-| Business | €667 per month, billed annually | 40,000 executions per month | Self-hosted only. Six shared projects, SSO and LDAP, environments and Git version control. |
-| Enterprise | Contact sales | Custom | Cloud or self-hosted, with enterprise governance and dedicated support options. |
+| Starter | €20/month, billed annually | 2,500 workflow executions | Hosted by n8n |
+| Pro | €50/month, billed annually | 10,000 workflow executions | Hosted by n8n |
+| Business | €667/month, billed annually | 40,000 workflow executions | Self-hosted only |
+| Enterprise | Contact sales | Custom workflow executions | Hosted by n8n or self-hosted |
+| Community Edition | No software subscription price listed | No n8n Cloud allowance; instance capacity applies | Self-hosted |
 
-All plan prices and execution allowances in this table were checked November 2, 2026. The displayed prices are monthly equivalents for annual billing. n8n's pricing page has a monthly billing option and says annual billing saves 17 percent; check the live toggle for the exact month-to-month rate before comparing offers. Taxes, currency conversion, infrastructure and third-party service charges may change your final bill.
+The public [n8n pricing page](https://n8n.io/pricing/) lists the prices above in euros with annual billing. It also says all plans include unlimited users, workflows and integrations. The Business plan is marked self-hosted only. Enterprise uses custom pricing. Prices and plan features were checked on November 5, 2026; taxes, regional terms and billing options can change the final amount.
 
-## Understand what an execution means
+## How n8n counts executions
 
-One execution is a full workflow run, not one node or action. A workflow with a trigger, six transformations and three API actions still counts as one execution when it runs once. This can make complex flows easier to estimate than tools that count each successful action as a task. The trade-off is that the entire workflow still consumes an execution even when the run stops early or fails after it has started. Read the current plan terms before building a budget around retries or frequent schedules.
+n8n Cloud counts a full workflow run as one execution. The number of nodes or steps inside that run does not change the count. This is different from platforms that bill each action, module or task.
 
-Estimate volume from the number of full runs. For example, a workflow that runs 40 times per day for 30 days creates about 1,200 monthly executions if each schedule produces one run. If it runs for each incoming record, count records rather than calendar triggers. Add allowance for retries, testing and workflows that call other workflows, then compare the estimate with the plan quota.
+For example, a workflow that runs once every day uses about 30 or 31 executions in a month. A workflow that runs every five minutes can use roughly 8,600 to 8,900 executions per month. Webhook workflows depend on how many events reach the trigger. These are planning examples, not a promise about your own workload.
 
-## What changes between Cloud plans?
+Before selecting a plan, list every production workflow and estimate how often it starts. Include scheduled runs, webhook events, manual production runs and expected growth. Do not estimate by counting nodes: a 20-node workflow that runs 100 times still uses 100 executions, not 2,000.
 
-Starter is a starting point for a small production workflow. It includes one shared project and five concurrent executions. Pro increases the execution allowance, includes three shared projects and up to 50 concurrent executions, and adds admin roles, global variables, workflow history and execution search. The current page lists up to 9,600 Assistant credits per month on Pro. These details were checked November 2, 2026 on the [official plan table](https://n8n.io/pricing/).
+## What the Cloud trial includes
 
-Business is a different decision because it is self-hosted only. The plan lists 40,000 executions, six shared projects, SSO and LDAP, multiple environments, queue mode and Git version control. You need a server and someone to run it, so the license fee is not the full cost. Enterprise is quoted and may be hosted by n8n or self-hosted, with more concurrency, extended insight retention, external secret stores, log streaming and a dedicated support SLA. Ask sales for written terms when those controls are required.
+The pricing page lists a Cloud trial with 1,000 executions, five concurrent executions, a 180-second execution timeout and one team project. The trial is a way to assess the product, not a permanent free Cloud tier. Trial availability and requirements can vary by plan and region, so check the [live trial details](https://n8n.io/pricing/) before you start.
 
-## What is free, and what costs extra?
+## Community Edition and self-hosting costs
 
-The Community Edition can be self-hosted without a software subscription, but it is not a no-cost operation. Include compute, database storage where used, backups, monitoring, network access, TLS, upgrades, incident response and the time needed to debug failed workflows. A low-cost server may be enough for a small internal workflow, but capacity and reliability depend on how much work it runs and how you configure it.
+The Community Edition is available as a standard self-hosted version. That can reduce subscription cost for an internal team, but it does not remove the cost of running the service. You need compute, storage, database backups, SSL, monitoring, access control and time for upgrades. A small test instance and a production instance with high concurrency have different infrastructure needs.
 
-Cloud plans include a monthly execution allowance and some AI Assistant credits. AI credits are not the same as workflow executions. The pricing page also describes features that differ by plan, so check whether a specific feature, environment, access control or support option is included before you rely on it. External API providers can charge separately for their own usage, such as model tokens, SMS, email or a paid source application.
+The licence also matters. n8n's source is published under the Sustainable Use License, not an OSI-approved open-source licence. It permits certain personal and internal business uses, but it is not a general permission to resell n8n or offer a competing hosted automation service. Read the [official licence](https://github.com/n8n-io/n8n/blob/master/LICENSE.md) and [licensing guide](https://docs.n8n.io/sustainable-use-license/) before using it in a customer-facing product.
 
-License terms also matter. The Community Edition is governed by n8n's Sustainable Use License, not a blanket permission to resell a hosted service. The [official license](https://github.com/n8n-io/n8n/blob/master/LICENSE.md), checked November 2, 2026, describes use limits. If your business will offer hosted automations to customers, embed the editor in a commercial product or operate workflows with customer credentials, ask n8n for the license that fits the plan.
+The Business plan is a paid self-hosted option for companies that need more collaboration and governance features. The current pricing page lists shared projects, SSO and LDAP, multiple environments, queue mode and Git-based version control. Enterprise adds custom execution pricing and more governance and support options. Compare the exact feature table instead of assuming every Cloud feature is available in Community Edition.
 
-## Which plan should you choose?
+## Costs beyond the plan
 
-- **Choose Community Edition** if the workflow is internal, your team can run servers securely and you accept responsibility for upgrades and recovery.
-- **Choose Starter** if you want n8n Cloud and your forecast fits the 2,500 execution allowance with one shared project.
-- **Choose Pro** if a larger execution allowance, more shared projects, history and admin controls matter.
-- **Consider Business** if you need self-hosted deployment with SSO, environments and Git version control, and the listed fee fits your operating budget.
-- **Talk to Enterprise sales** if your governance, support, concurrency or data retention needs require a custom agreement.
+- **Infrastructure:** server, database, storage, backups and bandwidth for self-hosted deployments.
+- **Operations:** updates, monitoring, incident response, SSL renewal and capacity planning.
+- **AI providers:** model API charges may sit outside the n8n subscription when you bring your own key.
+- **Commercial licensing:** customer-facing or embedded use may need a separate licence review.
+- **Migration:** rebuilding credentials, webhooks and workflow logic can take time even when JSON exports are available.
 
-## How to avoid a poor estimate
+These costs are why a free self-hosted installation is not automatically cheaper than Cloud. Compare the total cost of ownership for the people and systems you need to support.
 
-Use a representative week of real workload rather than guessing from the number of connected apps. Include normal runs, retries, backfills and manual runs. Separate execution count from API usage because a provider may meter each API request or AI call independently. If the automation must run at a fixed time, also budget for monitoring and alerting so a missed run is noticed.
+## Which n8n plan should you choose?
 
-Compare total cost over the same period. An annual n8n price should not be compared directly with a competitor's monthly price without noting the commitment. A self-hosted plan should include server and maintenance costs. A plan with more included executions is not automatically cheaper if most of the quota stays unused, and a lower license price is not useful if your team cannot maintain the workflow.
+Choose Starter if a small team needs a managed instance and its estimated production runs fit within 2,500 executions a month. Choose Pro if you need a larger allowance, more shared projects or additional workflow history. Consider Business if your company needs the listed collaboration and governance features and is prepared to host the instance itself. Contact n8n for Enterprise if you need custom execution volume, extended retention, secret-store integration or dedicated support.
 
-## Related n8n guides
+If you are still learning, use the trial to build a representative workflow and review the execution count. Do not test only a two-node demo if your production process will run every few minutes or process many webhook events.
 
-- [n8n guide](/n8n/) explains the product and deployment choices.
-- [n8n review](/n8n/review/) evaluates the fit and trade-offs.
-- [n8n alternatives](/n8n/alternatives/) compares other automation models.
-- [How to use n8n](/n8n/how-to-use/) covers setup and troubleshooting.
-- [n8n vs Zapier](/compare/n8n-vs-zapier/) compares usage billing.
+## Current n8n 3.0 deployment note
 
-## Common questions
+The documentation lists n8n 3.0 as an early-access release. Its breaking-changes guide says self-hosted deployments need a Docker-based installation. If your current instance uses npm or npx, read the [3.0 breaking-changes guide](https://docs.n8n.io/changelog/v30-breaking-changes/) and [migration tool documentation](https://docs.n8n.io/changelog/v30-migration-tool/) before planning an upgrade. Do not add the cost of a rushed migration to a plan comparison without first checking the required deployment changes.
 
-### Is n8n Cloud free forever?
+## Which n8n pages should you read next?
 
-The official pricing page shows a free trial, not a permanent free Cloud tier. The Community Edition is a separate self-hosted option. Checked November 2, 2026.
+- [n8n hub](/n8n/) for product basics and deployment choices.
+- [n8n review](/n8n/review/) for strengths, limits and licence trade-offs.
+- [How to use n8n](/n8n/how-to-use/) for workflow setup and export guidance.
+- [n8n alternatives](/n8n/alternatives/) for other automation platforms.
+- [n8n vs Zapier](/compare/n8n-vs-zapier/) for a direct cost-meter comparison.
 
-### Does n8n charge per node?
+## n8n pricing FAQ
 
-No. Cloud billing is based on workflow executions, regardless of workflow complexity. Other connected services may have their own usage fees.
+### How much does n8n cost per month?
 
-### Is self-hosted n8n really free?
+The public annual-billing prices checked on November 5, 2026 are €20/month for Starter, €50/month for Pro and €667/month for Business. Business is self-hosted only. Enterprise pricing is custom.
 
-The Community Edition has no software subscription fee, but the server, backups, maintenance and security work are not free. Review the license for your intended use.
+### Does n8n have a free plan?
 
-## Sources and pricing method
+n8n offers a self-hosted Community Edition under its Sustainable Use License and a Cloud trial. The trial is not a permanent free Cloud plan.
 
-Plan prices, billing basis and feature details were checked November 2, 2026 on the [official pricing page](https://n8n.io/pricing/). Hosting and licensing notes were checked in the [official Docker guide](https://docs.n8n.io/deploy/host-n8n/install-with-docker.md) and [Sustainable Use License](https://github.com/n8n-io/n8n/blob/master/LICENSE.md). Verify the current plan selector and written terms before purchase.
+### Does n8n charge per node or workflow?
+
+n8n Cloud counts a full workflow run as one execution. A workflow with many nodes still counts as one execution each time it runs.
+
+### Is n8n Business a Cloud plan?
+
+No. The current pricing page marks Business as self-hosted only. Enterprise can be hosted by n8n or self-hosted.
+
+### Is self-hosting n8n free?
+
+The Community Edition has no listed software subscription price, but server, database, backups, security and maintenance still cost money. The Sustainable Use License also limits some commercial uses.
+
+## Sources and update method
+
+Prices, execution rules, trial limits, deployment options and licensing were checked against the official n8n pricing page, documentation and source licence on November 5, 2026. This guide does not assume a monthly price where the page displays annual billing.

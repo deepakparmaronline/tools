@@ -1,0 +1,93 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/n8n/review/#article",
+      "headline": "n8n Review: Features, Pricing and Limits",
+      "description": "A research-based n8n review covering workflow features, AI nodes, pricing, licensing, self-hosting, limits and the teams most likely to benefit.",
+      "datePublished": "2026-11-05T00:00:00+05:30",
+      "dateModified": "2026-11-05T00:00:00+05:30",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech/"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/n8n/review/",
+      "url": "https://toolboxkart.tech/n8n/review/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "n8n",
+          "item": "https://toolboxkart.tech/n8n/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "n8n Review: Features, Pricing and Limits",
+          "item": "https://toolboxkart.tech/n8n/review/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is n8n worth using?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can be worth using for technical teams that need visual workflows, APIs, code and deployment choice. It is less attractive if nobody owns maintenance or if the licence does not fit the product you want to build."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is n8n free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The self-hosted Community Edition is available without a software subscription for uses allowed by its licence. You still need infrastructure and maintenance. n8n Cloud offers a trial, not a permanent free Cloud plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is n8n open source?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "n8n source is published under the Sustainable Use License. That licence is not OSI-approved open source, so check the exact terms for internal, commercial and customer-facing use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can n8n run without Docker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The current documentation lists n8n 3.0 as early access and says self-hosted deployments need Docker-based installation for that version. Review the migration guide before upgrading."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does n8n charge for every node?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. n8n Cloud counts a full workflow run as one execution, regardless of how many steps it contains."
+          }
+        }
+      ]
+    }
+  ]
+}

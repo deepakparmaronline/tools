@@ -1,0 +1,93 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/n8n/how-to-use/#article",
+      "headline": "How to Use n8n: Build and Publish a Workflow",
+      "description": "Learn how to create, test and publish an n8n workflow, connect credentials, review executions, export JSON and plan a secure self-hosted setup.",
+      "datePublished": "2026-11-05T00:00:00+05:30",
+      "dateModified": "2026-11-05T00:00:00+05:30",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech/"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/n8n/how-to-use/",
+      "url": "https://toolboxkart.tech/n8n/how-to-use/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "n8n",
+          "item": "https://toolboxkart.tech/n8n/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Use n8n: Build and Publish a Workflow",
+          "item": "https://toolboxkart.tech/n8n/how-to-use/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I create my first n8n workflow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Create a workflow, add a trigger, connect an action node, test with sample data and publish it. Start with a low-risk process and check each node's output before connecting real accounts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I activate an n8n workflow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The current quickstart uses the Publish action to make a workflow live. Check the trigger and credentials before publishing, then use the production trigger URL or schedule."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export n8n workflows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. n8n can export workflows as JSON and import JSON into another instance. The export can include credential names and IDs, and cURL imports can contain authentication headers, so remove sensitive details before sharing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I back up a self-hosted n8n instance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Back up the database, encryption key, binary data and deployment configuration. A workflow JSON export is useful, but it is not a full instance backup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use n8n without coding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Many workflows can be built with the visual editor and app nodes. Code and HTTP requests are optional for workflows that need custom logic or unsupported API actions."
+          }
+        }
+      ]
+    }
+  ]
+}

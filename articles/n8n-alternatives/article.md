@@ -1,185 +1,135 @@
-# 7 n8n Alternatives for 2026
+> **Short answer:** The strongest n8n alternatives depend on why you want to switch. Zapier is the easiest place to start for mainstream cloud apps, Make gives visual control over complex scenarios, and Activepieces is a useful option when you want a visual builder with an on-prem hosting path. Node-RED, Windmill and Kestra suit more technical teams; Power Automate fits Microsoft-heavy workplaces.
 
-Choose Zapier if you want a broad managed app automation service, Make if you prefer a visual scenario builder, and Activepieces if you want a free entry tier with self-hosting choices. n8n remains a strong fit for technical teams that need custom logic, API requests and control over deployment. The best alternative depends on whether you value a large app catalog, a code-first workflow, local control or data-pipeline orchestration more than n8n's execution model.
+## Best n8n alternatives at a glance
 
-This guide compares seven alternatives using official product, pricing and documentation pages checked November 2, 2026. It does not claim hands-on testing or a measured performance ranking.
+| Tool | Best for | Starting price checked Nov 5, 2026 | Hosting |
+| --- | --- | --- | --- |
+| Zapier | Fast no-code connections across common apps | Free 100 tasks/month; Professional from US$19.99/month | Cloud |
+| Make | Visual scenarios with routers, filters and data mapping | Free 1,000 credits/month; Core US$12/month for 10,000 credits | Cloud |
+| Activepieces | Visual flows with a self-hosting option | Free 1,000 credits/month; Plus US$20/month | Cloud or on-prem options |
+| Microsoft Power Automate | Microsoft 365, Dynamics and Windows automation | Premium from US$15/user/month, billed yearly | Microsoft cloud; desktop flows run on Windows |
+| Node-RED | Lightweight event-driven and IoT flows | Free software; hosting costs vary | Self-hosted |
+| Windmill | Developer-built scripts, jobs and internal tools | Free self-hosted Community Edition; Enterprise from US$120/month plus seats and compute | Cloud or self-hosted |
+| Kestra | Data, infrastructure and code-first orchestration | Open-source core; managed and enterprise pricing is not publicly listed | Cloud, self-hosted or air-gapped |
 
-## Quick comparison of n8n alternatives
+Prices are not directly comparable. n8n bills Cloud by full workflow executions, Make and Activepieces use credits, Zapier uses tasks, Power Automate is per user, and developer platforms add infrastructure or worker costs. Check the linked pricing page for the exact region, billing period and usage allowance before you buy.
 
-| Tool | Best for | Entry cost checked Nov 2, 2026 | Hosting | Main difference |
-| --- | --- | --- | --- | --- |
-| [Zapier](https://zapier.com/) | Standard app automations for nontechnical teams | Free plan; Professional from US$19.99/month | Managed | Task-based usage and broad app catalog |
-| [Make](https://www.make.com/) | Visual scenarios with branching and data mapping | Free plan with 1,000 credits/month; paid price depends on allowance | Managed | Each module action counts as a credit |
-| [Activepieces](https://www.activepieces.com/) | Teams exploring visual and AI-assisted flows | Free; Plus US$20/month; Team US$200/month | Cloud or on-prem options shown | Credit-based plans and self-hosting options |
-| [Pipedream](https://pipedream.com/) | Developers building API integrations | Free development; Startup from US$99/month billed annually | Managed | Code-first integrations and production usage credits |
-| [Node-RED](https://nodered.org/) | Event-driven flows, devices and IoT | Free software; hosting varies | Self-managed | Lightweight flow-based programming |
-| [Windmill](https://www.windmill.dev/) | Scripts, jobs and internal apps | Free self-hosted tier; Enterprise from US$120/month plus usage and seats | Cloud or self-hosted | Developer-oriented scripts and flows |
-| [Kestra](https://kestra.io/) | Scheduled data pipelines and orchestration | Open-source edition; cloud and enterprise terms by request | Self-hosted or managed | Declarative workflows and data-job orchestration |
+## The three easiest starting points
 
-Prices and plan details in the table were checked on the official pages linked in each product name and in Sources. Paid pricing can change by region, billing term, usage tier and plan. Make's pricing page uses a credit selector, so the table avoids claiming one universal paid starting price.
+- **Best for mainstream app automation: [Zapier](https://zapier.com/).** Choose it when the main goal is to connect popular SaaS apps quickly and let a non-developer own the workflow.
+- **Best for visual branching: [Make](https://www.make.com/).** Choose it when a process needs routers, filters, data mapping and a clear view of each module action.
+- **Best visual option with an on-prem path: [Activepieces](https://www.activepieces.com/).** Choose it when you want a modern visual flow builder and need to evaluate a self-hosting route, while checking which enterprise controls are included.
 
-## Why look for an n8n alternative?
+## 1. Zapier: easiest for common cloud apps
 
-n8n combines visual workflows with custom logic, but the model is not right for every team. A business user may want an automation that takes minutes to set up and does not need someone to maintain server infrastructure. A developer may prefer an SDK and code-first tools rather than a visual canvas. A data engineering team may need backfills, long-running jobs, dependency management and declarative workflows instead of app-to-app connectors.
+Zapier is a cloud automation platform built around Zaps, triggers and actions. It is a good fit for teams that want to connect familiar business apps without maintaining a server or writing much code. Zapier advertises a catalogue of more than 9,000 app connections on its product and pricing pages.
 
-Cost is another reason to compare. n8n Cloud counts full workflow executions, while Make counts module actions as credits and Zapier counts successful tasks. Those meters reward different workflow shapes. A flow with many steps may consume one n8n execution but multiple actions on another platform. On the other hand, self-hosting n8n can shift costs from a subscription to infrastructure and staff time. Compare a real workflow and the same billing period before deciding.
+The main difference is the task meter. A trigger that checks for an event does not normally count as a task, while each successful action in a Zap can use a task. Multi-step workflows can therefore consume several tasks for one business event. Some advanced actions and AI features may use different task rules, so check the current [Zapier task guide](https://help.zapier.com/hc/en-us/articles/8496181445389-How-is-task-usage-measured-in-Zapier) when estimating cost.
 
-Licensing also matters. The free Community Edition is not a blanket permission to resell hosted n8n or offer any customer-facing automation service. Read the [Sustainable Use License](https://github.com/n8n-io/n8n/blob/master/LICENSE.md), checked November 2, 2026, if you plan to embed automation in a product or run workflows for customers.
+The public US pricing page lists a Free plan with 100 tasks per month and a Professional plan from US$19.99 per month. Team pricing is also listed, with the exact amount depending on the plan and billing selection. See [Zapier pricing](https://zapier.com/pricing/).
 
-## 1. Zapier: best for standard app automation
+**Choose Zapier over n8n** when ease of setup, managed hosting and a large app catalogue matter more than self-hosting or custom code. **Stay with n8n** when a workflow uses many steps per run, custom APIs or infrastructure you need to control. Do not compare the two only by the entry price: model the number of Zapier actions and n8n full executions for the same workload.
 
-Zapier is the first alternative to consider when the job is a common trigger followed by actions in familiar business apps. Its managed setup can be easier for sales, marketing or operations staff who do not want to manage a server. The official [pricing page](https://zapier.com/pricing), checked November 2, 2026, lists a free plan with 100 tasks per month, Professional starting at US$19.99 per month and Team starting at US$69 per month. Task tiers and billing options affect the final price.
+## 2. Make: visual control for multi-step scenarios
 
-### What it replaces
+Make uses a visual scenario builder with modules, routers, filters and data mapping. It suits teams that want to see how information moves through a complex process without writing every step as code. Its pricing page lists more than 3,500 apps and a free tier with 1,000 credits per month.
 
-Zapier can replace many app-to-app n8n flows that use a supported trigger and a small set of actions. Its pricing page positions Zapier as a wider automation and AI orchestration platform with Zaps, Tables, Forms and MCP. Check the exact app and event before assuming the catalog covers your process.
+Make now uses credits as its billing unit. Most module actions consume one credit, but some AI features can use more. A scenario can use several credits in a single run, so one trigger event does not always equal one credit. The current 10,000-credit selector lists Core at US$12/month, Pro at US$21/month and Teams at US$38/month; the page has monthly and annual billing options. Check the [Make pricing page](https://www.make.com/en/pricing) and [credits guide](https://help.make.com/credits) before estimating usage.
 
-### Advantages and trade-offs
+**Choose Make over n8n** if the visual builder is the main reason you are looking for a replacement and a managed cloud service is acceptable. **Choose n8n** if you need a self-hosted instance, custom code or direct control over the runtime. Make is not a one-credit-per-workflow alternative: count each module action and any AI usage.
 
-- **Pros:** managed hosting, familiar setup, broad integrations and a short path for standard workflows.
-- **Cons:** successful actions use tasks, so multi-action workflows need quota planning. Self-hosting is not offered as the normal product model.
-- **Skip it if:** you require direct infrastructure control or a workflow with custom server-side behavior that the available actions cannot express.
+## 3. Activepieces: visual automation with on-prem options
 
-Choose Zapier when the team values ease of ownership more than a node canvas or self-hosted control. Read the [official task usage rates](https://zapier.com/pricing/rates), checked November 2, 2026, because AI steps and tool calls can use different task amounts.
+Activepieces offers flows, agents, tables and a visual builder. Its public pricing page lists a Free plan with 1,000 credits per month, unlimited flows and up to five users. Plus is listed at US$20/month with 10,000 credits, while Team is US$200/month with 50,000 credits and 25 users. The same page lists Cloud or on-prem hosting for the self-serve tiers, with custom enterprise controls for dedicated or air-gapped deployments.
 
-## 2. Make: best for visual scenarios and branching
+Activepieces has an open-source core, but its repository says the enterprise directories use a separate licence. Do not assume every feature in the hosted or packaged product is covered by the same MIT terms. Review the [official repository licence](https://github.com/activepieces/activepieces/blob/main/LICENSE) and [pricing page](https://www.activepieces.com/pricing/) before using it in a product.
 
-Make is worth comparing when you want a visual scenario builder and clear control over data moving between modules. The official [pricing page](https://www.make.com/en/pricing), checked November 2, 2026, describes a free plan with 1,000 credits per month and says each module action, such as adding a spreadsheet row or fetching data, counts as one credit. Paid cost depends on the credit allowance and billing choice selected on the page.
+**Choose Activepieces over n8n** if you prefer its flow builder, want to compare its credit model, or need to evaluate on-prem deployment. **Choose n8n** if its node catalogue, existing workflows or technical ecosystem better match your team. Check which deployment, SSO, audit and secret-management features are available in the plan you select.
 
-### What it replaces
+## 4. Microsoft Power Automate: best for Microsoft-heavy teams
 
-Make can replace visual n8n flows that transform data between SaaS applications, use filters and branches, and do not need self-hosted execution. Its module-by-module view makes each operation visible, which can help when reviewing a scenario with several routes.
+Power Automate connects Microsoft 365, Dynamics, Dataverse and other services through cloud flows. It also supports desktop flows for Windows task automation. That makes it a strong choice when the business already works in Microsoft tools and needs approvals, file routing, notifications or desktop automation.
 
-### Advantages and trade-offs
+The US pricing page lists Premium from US$15 per user/month with annual billing. Process and Hosted Process licences are separate options for workloads that need a process or hosted bot model. The India page can show a different local price and taxes. Check the [official Power Automate pricing page](https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing) for your region. Microsoft's documentation also explains [flow limits](https://learn.microsoft.com/en-us/power-automate/limits-and-config) and [solution export](https://learn.microsoft.com/en-us/power-automate/export-flow-solution).
 
-- **Pros:** visual scenario design, operation-level visibility and a free entry plan.
-- **Cons:** module actions consume credits, so a flow with many actions can use more allowance than expected. The service is managed rather than a self-hosted n8n instance.
-- **Skip it if:** you need direct control of the runtime or want to keep the workflow on your own infrastructure.
+**Choose Power Automate over n8n** if Microsoft identity, approvals, Office files and Windows desktop tasks are central to the process. **Choose n8n** if you need a more flexible cross-platform workflow builder or want to run the automation stack on infrastructure you manage. Power Automate is not a drop-in self-hosted replacement.
 
-Model one real scenario before buying. Count how many module actions run on a typical record and how often it runs. Make is not automatically cheaper because its entry plan is free.
+## 5. Node-RED: lightweight event-driven flows
 
-## 3. Activepieces: best for a free entry tier and self-hosting options
+Node-RED is a flow-based programming tool built on Node.js. Its browser editor lets you wire inputs, processing nodes and outputs together. It is often a better fit for IoT, devices, local networks and event-driven systems than for a business team that wants a ready-made SaaS connector for every app.
 
-Activepieces offers a visual automation builder with flows, agents and tables. Its official [pricing page](https://www.activepieces.com/pricing), checked November 2, 2026, lists Free at US$0 with 1,000 credits a month and up to five users, Plus at US$20 per month with 10,000 credits, and Team at US$200 per month with 50,000 credits and 25 users included. The page also shows cloud or on-prem hosting options across plans.
+Node-RED is open source under the Apache 2.0 licence. The software itself is free, but you still need a machine or server, updates, backups and someone who can maintain the flows. Its [official about page](https://nodered.org/about/) and [user guide](https://nodered.org/docs/user-guide/) explain the runtime and editor.
 
-### What it replaces
+**Choose Node-RED over n8n** for lightweight device and event flows, especially when Node.js is already part of the environment. **Choose n8n** for a broader business-automation workflow with more ready-made app integrations and a managed Cloud option.
 
-Activepieces is worth a pilot when a team wants visual flows and AI-related building blocks but needs a different balance of price, credit allowance and deployment options. The free tier can help validate a small workflow before moving to a paid plan.
+## 6. Windmill: code-first jobs and internal tools
 
-### Advantages and trade-offs
+Windmill is designed for developers who want to turn scripts into workflows, scheduled jobs, APIs and internal tools. Its documentation covers scripts and flows across languages such as Python, TypeScript and SQL. It can be self-hosted with Docker or Kubernetes, and the pricing page lists a free and open-source tier with unlimited executions.
 
-- **Pros:** free entry, a clear credit model, visual flows and on-prem options listed by the vendor.
-- **Cons:** credits, users and governance features differ by plan. A free tier does not remove the work of hosting and securing an instance.
-- **Skip it if:** you need a specific n8n node or advanced API behavior that you have not confirmed exists in Activepieces.
+Windmill's pricing page lists Enterprise from US$120/month, but the actual total can also include builder seats, non-builder users and compute. Its licence is more nuanced than a simple open-source label: the source repository describes AGPLv3 and Apache-licensed components, while the packaged Community Edition includes separately licensed features and restrictions on resale or managed-service use. Review the [pricing page](https://www.windmill.dev/pricing/) and [licence](https://github.com/windmill-labs/windmill/blob/main/LICENSE) before embedding it in a commercial product.
 
-Compare the exact flow, the credit model and the current license terms before moving. Test credentials and failure handling, not only the happy path.
+**Choose Windmill over n8n** when your team is comfortable writing and reviewing code and wants scripts to become reusable jobs or internal apps. **Choose n8n** when a visual integration editor and app-specific nodes are more important than a code-first workflow environment.
 
-## 4. Pipedream: best for developers and API integrations
+## 7. Kestra: orchestration for data and infrastructure
 
-Pipedream is a better fit when the workflow is primarily about APIs, code and product integrations. Its official [pricing page](https://pipedream.com/pricing), checked November 2, 2026, lists free development access and a Startup plan from US$99 per month billed annually or US$150 per month billed monthly. Startup includes production execution, 10,000 usage credits and 100 users, with further user and credit charges described by the vendor.
+Kestra is a declarative, event-driven orchestration platform. Its workflows can combine SQL, Python, shell commands, APIs and infrastructure tasks. The official site lists more than 2,600 plugins and describes support for retries, backfills, schedules, webhooks and production workflow execution.
 
-### What it replaces
+Kestra's open-source edition can be deployed on your own infrastructure. The managed Cloud edition is available through a request-access process, while enterprise pricing is not shown as a public numeric rate card on the page checked. See the [Kestra pricing page](https://kestra.io/pricing.html) and [quickstart documentation](https://kestra.io/docs/quickstart).
 
-Use Pipedream when a developer wants to connect APIs and ship an integration inside an application, or when code is the clearest way to transform data. It is not a one-for-one replacement for every visual n8n workflow. Its development and production terms should be read separately.
+**Choose Kestra over n8n** for data pipelines, infrastructure orchestration and workflows that need a declarative, code-friendly model. **Choose n8n** for app-to-app automation where the visual editor and business application nodes are the main value.
 
-### Advantages and trade-offs
+## A note about Pipedream
 
-- **Pros:** developer-oriented integration building, free development tier, and usage credits for production.
-- **Cons:** production access is paid, credit use depends on compute and integration behavior, and it may require more coding than a business team expects.
-- **Skip it if:** your workflow owner is nontechnical and needs a visual no-code interface first.
+Pipedream appears in older n8n alternative lists, but its product status has changed. Pipedream says its Workflows and String products will shut down on March 31, 2027; Pipedream Connect is not affected. That means Pipedream Workflows should not be treated as a safe new destination for an n8n migration. If you already use Pipedream Connect for app or agent integrations, assess that product separately. Read the [official shutdown notice](https://pipedream.com/docs/workflows) before making a decision.
 
-Before migrating, identify which part of the workflow runs in development and which serves real users. The official pricing page explains the difference and the current credit meter.
+## How to choose an n8n replacement
 
-## 5. Node-RED: best for event-driven and IoT flows
+Start with the reason you want to leave. If the problem is licensing, review each alternative's exact licence and commercial-use terms. If the problem is hosting, separate fully managed services from tools you can run on your own infrastructure. If the problem is price, count the correct unit: full workflow executions, tasks, credits, users, workers or compute.
 
-Node-RED is a flow-based programming tool often used for event-driven integrations, devices and local systems. The [official website](https://nodered.org/) and [license](https://github.com/node-red/node-red/blob/master/LICENSE), checked November 2, 2026, are the starting points for project and licensing details. Software is available without a subscription, but hosting, hardware and support depend on deployment.
-
-### What it replaces
-
-Node-RED can replace n8n when the core need is wiring events and data between devices, services or custom components, especially where local execution matters. It is not the closest fit for a marketing team that wants a managed business app catalog and a vendor support plan.
-
-### Advantages and trade-offs
-
-- **Pros:** flow-based design, flexible local deployment and a strong fit for device or event-driven projects.
-- **Cons:** the operator must choose and maintain the runtime, and some workflows require technical knowledge of nodes and deployment.
-- **Skip it if:** you need a managed no-code service with business support and a simple billing dashboard.
-
-Node-RED is most useful when your team can own the environment and wants automation close to a device or service. Check each community node's maintenance and security before adding it.
-
-## 6. Windmill: best for scripts, jobs and internal apps
-
-Windmill focuses on running scripts, flows and internal apps. The official [pricing page](https://www.windmill.dev/pricing), checked November 2, 2026, lists a free self-hosted tier and Enterprise from US$120 per month, with developer seats, operator seats and compute resources affecting the total. The page also describes self-hosted deployment options.
-
-### What it replaces
-
-Windmill can suit an engineering or data team that is more comfortable writing scripts and wants them scheduled, connected and exposed through internal apps. It is a different shape from a broad no-code connector tool, so decide whether scripts or visual app nodes are the better fit.
-
-### Advantages and trade-offs
-
-- **Pros:** developer-focused scripts and flows, internal app building, and a free self-hosted entry point.
-- **Cons:** the total cost can include seats and compute. A script-based workflow may be harder for nontechnical colleagues to maintain.
-- **Skip it if:** the process needs a simple visual automation builder that business staff can edit without code.
-
-Windmill is worth a pilot when scripts are already the source of truth and you want scheduling and operational controls around them.
-
-## 7. Kestra: best for data pipelines and orchestration
-
-Kestra is built around declarative, event-driven workflow orchestration for data and operational jobs. Its official [pricing page](https://kestra.io/pricing.html), checked November 2, 2026, describes an open-source edition and managed Cloud or enterprise options that require contacting the vendor for access or a quote. The page highlights scheduling, plugins, retries, backfills and workflows that combine SQL, Python, shell and APIs.
-
-### What it replaces
-
-Kestra is a better candidate when the automation is a data pipeline or scheduled job with dependencies, retries and backfills rather than a small app-to-app action. It can run on infrastructure your team controls or through a managed offering, depending on the edition.
-
-### Advantages and trade-offs
-
-- **Pros:** declarative workflows, data-job orchestration, multiple language options and support for production pipeline patterns.
-- **Cons:** it may be more operational structure than a small marketing automation needs. Cloud access and enterprise terms require a vendor conversation.
-- **Skip it if:** your main need is a quick connection between two everyday SaaS apps.
-
-Choose Kestra when the job has dependencies and operational lifecycle needs. For standard app connections, start with Zapier or Make instead.
-
-## How to choose the right replacement
-
-Start with the workflow, not the brand. List every trigger, action, branch, API call, data transformation and failure path. Mark which steps need custom code and which need a standard app integration. Then compare only tools that can support those steps.
-
-- **Count the work:** estimate full runs for n8n, successful action tasks for Zapier and module credits for Make.
-- **Choose an owner:** a business user may prefer a managed builder; a developer may prefer API and script controls.
-- **Set hosting needs:** confirm whether the data must stay on your infrastructure and who will manage updates and recovery.
-- **Check the license:** confirm whether the intended use is internal, embedded in a product or provided to customers.
-- **Test migration:** rebuild one low-risk workflow and compare output, duplicate handling and error alerts.
+Then test one representative workflow on paper before moving production data. Pick a flow with a real trigger, at least one transformation, an external API, a failure path and a credential. Compare how each platform handles those parts. A product that looks simpler in a demo may need custom code or paid connectors once the real workflow is included.
 
 ## Migration checklist
 
-Export or document the workflow, then record its trigger, credentials, environment variables, schedules, webhooks, API limits and downstream dependencies. Do not assume a workflow JSON file from n8n can be imported directly into a different platform. Recreate the logic and test with sample data. Keep the original running until the new workflow has completed a normal cycle and known failure cases.
+1. Export your n8n workflows as JSON and keep a separate backup of the instance database and configuration.
+2. List every node, credential, webhook URL, schedule, sub-workflow and external dependency.
+3. Map each n8n trigger and action to the destination platform. Do not assume node names or data formats match.
+4. Recreate credentials in the destination and rotate any secrets that were exposed in old exports or logs.
+5. Test with sample data, including duplicate events, empty fields, rate limits and failed API calls.
+6. Run the old and new workflows in parallel where safe, compare outputs, then switch webhooks and schedules.
+7. Keep the original instance and export until the new process has passed an agreed rollback period.
 
-Review credentials and exported files carefully. n8n's [official export/import guide](https://docs.n8n.io/build/manage-workflows/export-and-import.md), checked November 2, 2026, warns that workflow JSON can include credential names and IDs and that cURL imports can include authentication headers. Remove secrets and sensitive names before sharing a file with a vendor or colleague.
+## n8n alternatives FAQ
 
-## Related n8n guides
+### What is the closest open-source alternative to n8n?
 
-- [n8n guide](/n8n/) explains its workflow and hosting model.
-- [n8n review](/n8n/review/) helps decide whether the platform fits.
-- [n8n pricing](/n8n/pricing/) explains executions and total costs.
-- [How to use n8n](/n8n/how-to-use/) covers setup, testing and recovery.
-- [n8n vs Zapier](/compare/n8n-vs-zapier/) compares the closest mainstream no-code alternative.
+Activepieces is a close visual option with an open-source core and an on-prem hosting path. Node-RED is a lightweight open-source flow tool, while Windmill and Kestra suit more technical teams. Check each project's licence and hosted-product terms before building a commercial service.
 
-## Common questions
+### Which n8n alternative is easiest for beginners?
 
-### What is the easiest n8n alternative?
+Zapier is usually the simplest starting point for common SaaS connections. Make is also visual, but its scenarios and credit model can take more time to understand. The best choice depends on the apps and workflow you need.
 
-Zapier is often the easiest starting point for standard app-to-app automation. Make is another visual option when branching and data mapping are important. Test the exact trigger and action before committing.
+### Which n8n alternatives can be self-hosted?
 
-### Which n8n alternative supports self-hosting?
+Activepieces lists on-prem hosting, Node-RED is self-hosted, Windmill supports self-hosting, and Kestra can run on your infrastructure. Zapier, Make and Power Automate are managed cloud products; Power Automate also runs desktop flows on Windows machines.
 
-Activepieces, Node-RED, Windmill and Kestra offer self-hosted routes according to their official pages. Check the edition, license and support terms for your use case.
+### Is n8n open source?
 
-### Can I move workflows without rebuilding them?
+n8n publishes source under the Sustainable Use License, which permits certain personal and internal business uses but is not an OSI-approved open-source licence. Read the licence itself before using n8n in a customer-facing service.
 
-Do not assume direct import between different platforms. Recreate the logic, map credentials and fields, and test normal and failure cases before turning off the original.
+### Is Pipedream still a good n8n alternative?
 
-### Is n8n better than Zapier?
+Do not choose Pipedream Workflows for a new migration without a transition plan. Pipedream has announced that Workflows and String will shut down on March 31, 2027. Its Connect product is not affected, but it serves a different integration use case.
 
-n8n is better for some teams that need custom logic or self-hosting; Zapier is better for teams that value managed setup and broad standard app connections. The workload and owner decide the fit.
 
-## Sources and selection method
+## More n8n guides
 
-Official product, pricing, documentation and license pages for n8n and the seven alternatives were checked November 2, 2026. Public search results for n8n alternatives were reviewed for intent around no-code automation, developer integrations, self-hosting, AI workflows and data orchestration. The saved Semrush row remains unchanged: US volume 720, KD 20, CPC US$6.88, intent C. The exact PAA questions were not present in the committed snapshot, so the FAQ above is editorial guidance and is not labeled as verbatim PAA data.
+- [n8n hub](/n8n/)
+- [n8n review](/n8n/review/)
+- [n8n pricing](/n8n/pricing/)
+- [How to use n8n](/n8n/how-to-use/)
+- [n8n alternatives](/n8n/alternatives/)
+- [n8n vs Zapier](/compare/n8n-vs-zapier/)
+
+## Sources and update method
+
+Alternative product features, pricing and licence notes were checked against the official product sites, pricing pages, documentation and repositories listed in the sources ledger on November 5, 2026. Search-result research showed a mixed commercial and technical intent: listicles, direct comparisons, app-integration claims, self-hosting and licence questions. The FAQs above are editorial questions based on that intent; they are not presented as verbatim People Also Ask questions. This page does not claim hands-on testing.

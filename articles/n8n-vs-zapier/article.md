@@ -1,102 +1,119 @@
-# n8n vs Zapier: Pricing and Workflow Fit
+> **Short answer:** n8n is usually the better fit when a technical team needs custom APIs, code steps or self-hosting. Zapier is usually easier for non-developers who want managed connections across common SaaS apps. Compare the cost of one complete n8n execution with the number of Zapier tasks used by the same workflow before deciding.
 
-Choose n8n if you want visual workflows with branching, code steps and a self-hosting option. Choose Zapier if a nontechnical team needs a large app catalog and a managed setup. The cost difference depends on how much work each automation performs: n8n Cloud counts complete workflow executions, while Zapier counts successful tasks. Official pricing pages checked November 2, 2026: [n8n](https://n8n.io/pricing/) and [Zapier](https://zapier.com/pricing).
+## n8n vs Zapier: quick comparison
 
-## n8n vs Zapier at a glance
-
-| Decision | n8n | Zapier |
+| Area | n8n | Zapier |
 | --- | --- | --- |
-| Usage meter | One execution per full workflow run, regardless of node count. [Official pricing](https://n8n.io/pricing/), checked November 2, 2026. | Successful actions use tasks; some AI steps and tool calls use different task rates. [Official rates](https://zapier.com/pricing/rates), checked November 2, 2026. |
-| Free entry | Free self-hosted Community Edition; Cloud offers a trial. | Free plan with 100 tasks per month and two-step Zaps. |
-| Paid entry shown | Starter €20 per month billed annually, 2,500 executions. | Professional starts at US$19.99 per month; plan cost depends on task tier and billing. |
-| Hosting | Managed Cloud or self-hosted options, depending on plan. | Managed platform. |
-| Workflow style | Visual node graph, branches, code steps and API requests. | Zap-based trigger and action recipes with a large app catalog. |
-| Best fit | Technical teams that need control, custom logic or self-hosting. | Teams that value quick setup and broad standard app connections. |
+| Best for | Technical workflows, APIs and self-hosting | Fast no-code app connections |
+| Main builder | Visual node editor with code and HTTP options | Trigger-and-action Zaps with multi-step logic |
+| Billing unit | Full workflow execution | Tasks for successful actions |
+| Free access | Self-hosted Community Edition under SUL; Cloud trial | Free plan with 100 tasks/month |
+| Entry paid plan | Starter €20/month billed annually for 2,500 executions | Professional from US$19.99/month |
+| Hosting | Cloud or self-hosted, depending on plan | Managed cloud |
+| Integration model | Built-in nodes plus custom HTTP/API requests | Large app catalogue with prebuilt triggers and actions |
+| Technical ownership | Higher for self-hosted or custom workflows | Lower for standard app-to-app automation |
+| Licence | Sustainable Use License, not OSI-approved open source | Proprietary SaaS terms |
 
-All plan details above were checked November 2, 2026. n8n's price is displayed in euros and reflects annual billing. Zapier's displayed starting price is in US dollars and depends on its task tier. These figures are not a like-for-like quote: compare the same billing period, usage, user count and required features.
+Prices were checked on November 5, 2026. n8n prices are shown in euros with annual billing; Zapier pricing is shown in US dollars on its US page. They use different billing units, so the table is a starting point rather than a direct cost ranking.
 
-## How pricing changes as workflows grow
+## How pricing works
 
-n8n Cloud bills by full executions. A workflow with one trigger and twelve nodes still uses one execution for one run. This model can suit workflows that perform many transformations or API actions after a single trigger. Starter lists 2,500 monthly executions at €20 per month billed annually; Pro lists 10,000 at €50. Business is €667 per month billed annually and self-hosted only. Details were checked on the [official n8n pricing page](https://n8n.io/pricing/) on November 2, 2026.
+### n8n counts the full workflow run
 
-Zapier uses task-based pricing. Each successful action step normally uses a task, and the official rate page lists different task use for AI steps and tool calls. A workflow with many action steps can consume several tasks per trigger. Zapier's pricing page checked November 2, 2026 lists Free with 100 tasks per month, Professional from US$19.99 per month and Team from US$69 per month, with task tier and billing options affecting the final amount.
+n8n Cloud counts one execution each time a workflow runs from start to finish. The number of steps or amount of data inside the run does not change the count. Starter is listed at €20/month billed annually for 2,500 executions, Pro at €50/month for 10,000, and Business at €667/month for 40,000 executions. Business is self-hosted only. The [official n8n pricing page](https://n8n.io/pricing/) also lists a trial with 1,000 executions and five concurrent executions.
 
-Model your own workflow before choosing. If a single event runs ten action steps, estimate one n8n execution and roughly ten Zapier tasks for those successful action steps, then verify exceptions and included features. Do not assume the ratio is always ten to one: retries, filters, paths, AI actions and app-specific steps can change consumption. Include the cost of connected services and AI model API usage.
+This model can work well when one trigger event starts a workflow with many actions. It can still become expensive if a webhook fires thousands of times or a schedule runs every few minutes. Estimate how often each production workflow starts rather than counting nodes.
 
-## Workflow design and control
+### Zapier counts tasks for successful actions
 
-n8n uses a node canvas for triggers, actions, data transformations and branching. The official [built-in nodes reference](https://docs.n8n.io/integrations/builtin.md), checked November 2, 2026, documents core nodes, app nodes and trigger nodes. It also supports code steps and custom API requests on the current pricing table. That gives a technical owner room to shape data and handle cases not covered by a standard integration.
+Zapier uses tasks as its main usage measure. Its help documentation explains that a task is generally counted when a Zap successfully completes an action; triggers do not count as tasks. Multi-step Zaps can therefore use several tasks for one business event. Some advanced products, AI steps and code features have their own task rules, so check the [official task usage guide](https://help.zapier.com/hc/en-us/articles/8496181445389-How-is-task-usage-measured-in-Zapier).
 
-Zapier focuses on connecting an event to a sequence of actions through Zaps. It is easier to hand to a colleague when the process fits the available trigger and action fields. Its pricing page also describes Tables, Forms and AI orchestration features, so it is broader than a simple connector list. The trade-off is that usage is measured in tasks, and complex flows need careful quota planning.
+The US pricing page lists a Free plan with 100 tasks per month and Professional from US$19.99/month. Team pricing is also available. Check the [current pricing page](https://zapier.com/pricing/) for billing period, task allowance and user limits before buying.
 
-## Integrations and API work
+### A simple cost example
 
-Both products connect many applications, but availability should be checked for the exact app and operation you need. n8n's official plan page says all integrations are included across plans, while the built-in nodes reference describes available node families. If a built-in node lacks an operation, n8n's HTTP Request node can work with an API, provided you understand authentication, pagination, response formats and rate limits.
+Imagine a workflow that runs 1,000 times a month and has eight actions after the trigger. In n8n Cloud, that workload is about 1,000 full executions if each trigger starts one run. In Zapier, the same process may use about 8,000 tasks if all eight actions count as successful tasks. The exact task total depends on the Zap design and product-specific rules.
 
-Zapier's strength is its broad catalog and familiar app-to-app setup. Before selecting it, confirm that the trigger fires for the event you need and that the action exposes the fields your destination requires. An app being listed does not mean every endpoint or advanced operation is available. For either product, test the exact path using sample data before making it part of a critical process.
+This example does not prove n8n is cheaper. A Zapier plan may include a task allowance that fits the process, while n8n self-hosting adds server and maintenance costs. The correct comparison uses your real event volume, action count, plan, billing period and operating costs.
 
-## Self-hosting, privacy and operations
+## Workflow building and integrations
 
-n8n can be self-hosted, which gives an organization control over infrastructure and data placement. It also makes that organization responsible for upgrades, access control, encryption keys, backups, logs, network exposure and incident recovery. n8n's [Docker guide](https://docs.n8n.io/deploy/host-n8n/install-with-docker.md), checked November 2, 2026, says self-hosting requires technical knowledge and recommends Cloud when that knowledge is missing.
+n8n gives the builder a canvas of nodes. A trigger starts the workflow, then nodes pass data through actions, conditions and transformations. You can use code or HTTP requests when a prebuilt node does not cover the exact API operation. This is useful when a workflow has unusual data rules or needs a custom service.
 
-Zapier is managed, so users do not operate the underlying server. That reduces infrastructure work but offers less direct control over deployment. For both products, review current security and data processing terms against your actual requirements. Do not infer a compliance result from a feature list alone.
+Zapier is built for fast connections between apps. Its trigger-and-action model makes common processes easier to set up and share with non-developers. Zapier advertises a large app directory, but you should still check whether the exact trigger and action are available for the app plan you use.
 
-n8n's Community Edition uses the Sustainable Use License. The license restricts some use and distribution, so free self-hosting is not a blanket right to resell hosted n8n or operate any customer-facing automation service. Read the [official license](https://github.com/n8n-io/n8n/blob/master/LICENSE.md), checked November 2, 2026, before building a commercial service around it.
+The choice is not simply “code versus no code”. n8n can be used without writing code, and Zapier has advanced tools for complex workflows. The practical difference is how much control you need over the runtime, data handling and custom API calls.
 
-## Learning curve and maintenance
+## Hosting, licence and security
 
-Zapier usually has the shorter path for a standard trigger-and-action task. A business user can often select an app, choose an event, map fields and test the Zap without thinking about hosting. More advanced paths still need clear naming, testing and error handling.
+n8n offers Cloud and self-hosted deployment options. The Starter and Pro Cloud plans are hosted by n8n; Business is self-hosted only; Enterprise can be hosted by n8n or self-hosted. A self-hosted instance gives you control over infrastructure and data location, but you own SSL, backups, updates, access control and monitoring.
 
-n8n takes more planning when workflows use APIs, code or branches. That effort can pay off when a workflow has complicated data mapping or many actions per event. A self-hosted instance adds operational work outside the editor. Consider who will own a failed run, rotate credentials and update the server after the person who built it leaves.
+n8n source is published under the Sustainable Use License. It permits certain internal business and personal uses, but it is not an OSI-approved open-source licence and it is not a general right to resell n8n as a hosted service. Read the [licence](https://github.com/n8n-io/n8n/blob/master/LICENSE.md) before building a customer-facing product.
 
-## Support and ownership
+Zapier is a managed cloud service. You do not run its workflow engine on your own server. This can reduce maintenance work, but it also means you rely on the vendor's hosting, account and data-handling terms. Compare the security controls, retention, SSO and support terms on the plan you intend to buy.
 
-Support needs should be decided before migration. The n8n plan table lists forum support on Starter and Pro and a dedicated support SLA on Enterprise. Zapier's pricing page lists email and live chat support on Professional and priority support at higher tiers. These details were checked November 2, 2026 on the [n8n pricing page](https://n8n.io/pricing/) and [Zapier pricing page](https://zapier.com/pricing). Verify current support terms for the exact plan you would buy.
+## Which is easier to use?
 
-Also decide how changes will be reviewed. A technical team may want version control and separate environments. A business team may prefer a managed interface with fewer infrastructure decisions. The best tool is the one your team can monitor, recover and hand over safely.
+Zapier is usually easier for a non-technical person who wants to connect two familiar apps and move on. Its templates and trigger/action structure reduce the number of choices a new builder needs to make.
 
-## Migration and portability
+n8n has a steeper learning curve when a workflow uses APIs, code, complex branches or self-hosted deployment. A technical user may find that extra control useful, but a small team should account for the time needed to build, document and maintain workflows.
 
-n8n documents JSON export and import for workflows and also describes CLI and API options for moving workflows. Exported JSON can include credential names and IDs, and cURL imports may carry authentication headers, so review the file before sharing it. See the [official guide](https://docs.n8n.io/build/manage-workflows/export-and-import.md), checked November 2, 2026.
+## Current n8n 3.0 upgrade note
 
-Do not expect a Zapier workflow to import directly as an equivalent n8n graph or vice versa. Triggers, action names, data fields, filters and task semantics differ. Rebuild one low-risk workflow first, compare its outputs and error paths, then move more workflows after the pilot succeeds. Keep a rollback plan for any process that changes customer or financial records.
+The n8n documentation lists version 3.0 as an early-access release. Its breaking-changes guide says self-hosted deployments need Docker-based installation. Teams using npm or npx should review the [3.0 breaking changes](https://docs.n8n.io/changelog/v30-breaking-changes/) and [migration tool guide](https://docs.n8n.io/changelog/v30-migration-tool/) before planning an upgrade. This is an n8n deployment issue, not a Zapier feature comparison, but it can affect the cost of choosing or keeping n8n.
 
-## Choose n8n if
+## Can you migrate from one to the other?
 
-- You need branching, data transformation, custom code or API calls in one workflow.
-- Your workflows have many actions after each trigger and execution-based billing fits your volume.
-- You have staff to run a self-hosted instance or prefer n8n Cloud.
-- You need to review and export workflow JSON as part of a controlled change process.
+There is no universal one-click conversion that moves every n8n node, Zapier action, credential, filter and schedule into the other product. Treat migration as a rebuild and validation project.
 
-## Choose Zapier if
+1. Export n8n workflows as JSON and keep a separate database and configuration backup if you are self-hosted.
+2. List each trigger, action, condition, data field, credential, webhook URL and schedule.
+3. Map every step to the destination's trigger or action. Confirm that the destination supports the exact operation, not just the app name.
+4. Recreate credentials in the new platform and check scopes and permissions.
+5. Test normal records, missing fields, duplicate events, API errors and rate limits.
+6. Run both workflows in parallel where safe, compare results and then switch the live trigger.
+7. Keep the original workflow and export until the new process has passed your rollback period.
 
-- Your process matches standard app triggers and actions.
-- Nontechnical colleagues need to build and maintain automations.
-- You prefer managed hosting and a quick start over server ownership.
-- Your task forecast fits the plan and you have verified the premium app access you need.
+The n8n [export and import guide](https://docs.n8n.io/build/manage-workflows/export-and-import/) warns that workflow JSON includes credential names and IDs. HTTP Request nodes imported from cURL may also contain authentication headers. Remove sensitive details before sharing files.
 
-## Related n8n guides
+## Which should you choose?
 
-- [n8n guide](/n8n/) covers the full product and hosting choices.
-- [n8n review](/n8n/review/) evaluates fit and trade-offs.
-- [n8n pricing](/n8n/pricing/) explains execution costs.
-- [How to use n8n](/n8n/how-to-use/) walks through setup and testing.
-- [n8n alternatives](/n8n/alternatives/) compares more workflow models.
+Choose n8n if your workflow needs custom APIs, code steps, self-hosting or more control over data and execution. It is a stronger fit when a technical owner can maintain the process and the licence fits the use.
 
-## Common questions
+Choose Zapier if the workflow uses common SaaS apps, the team wants a managed service and non-developers need to own changes. It can be a better business choice even when its task meter looks more expensive, because it reduces maintenance and setup time.
+
+If neither fits, compare [Make](https://www.make.com/) for visual scenarios, [Activepieces](https://www.activepieces.com/) for a visual builder with an on-prem path, and [Microsoft Power Automate](https://www.microsoft.com/en-us/power-platform/products/power-automate) for Microsoft-centric workflows. The [n8n alternatives guide](/n8n/alternatives/) covers more options.
+
+## More n8n guides
+
+- [n8n hub](/n8n/)
+- [n8n review](/n8n/review/)
+- [n8n pricing](/n8n/pricing/)
+- [How to use n8n](/n8n/how-to-use/)
+- [n8n alternatives](/n8n/alternatives/)
+
+## n8n vs Zapier FAQ
+
+### Is n8n better than Zapier?
+
+Neither is better for every team. n8n offers more control over APIs, code and hosting. Zapier is usually easier for standard cloud-app workflows and non-developers.
 
 ### Is n8n cheaper than Zapier?
 
-It can be for workflows with many steps per run, but the answer depends on execution volume, task count, hosting and maintenance. Compare the same workload using current plan terms.
+It depends on the workflow. n8n counts a full run as one execution, while Zapier counts successful actions as tasks. Compare your event volume, action count, plan allowance and any self-hosting costs.
 
-### Can Zapier replace n8n?
+### Can Zapier be self-hosted?
 
-Zapier can replace many standard app automations. Workflows that depend on custom code, self-hosting or advanced API logic may need redesign.
+Zapier is offered as a managed cloud service. It is not a self-hosted workflow engine like n8n Community Edition.
 
-### Can I self-host Zapier?
+### Can I move Zapier Zaps to n8n automatically?
 
-Zapier is offered as a managed platform. n8n provides self-hosted options, subject to plan and license terms.
+Do not assume a universal one-click migration. Map triggers, actions, filters, data fields and credentials, then rebuild and test the workflow in n8n.
+
+### Which tool is easier for a beginner?
+
+Zapier is usually easier for common app connections. n8n can be approachable for simple workflows, but APIs, code and self-hosting add a learning curve.
 
 ## Sources and comparison method
 
-Official n8n and Zapier pricing, workflow, integration and license pages were checked November 2, 2026. This is a documentation-based comparison, not a hands-on benchmark. The usage example is an illustration of each vendor's billing model, not a measured cost estimate for your account.
+Product, pricing, task, execution, licence and migration details were checked against official n8n and Zapier websites, pricing pages, help centres and documentation on November 5, 2026. The comparison is based on published terms and product descriptions, not hands-on testing or a user rating.

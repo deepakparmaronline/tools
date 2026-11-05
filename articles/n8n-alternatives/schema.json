@@ -1,0 +1,142 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/n8n/alternatives/#article",
+      "headline": "7 n8n Alternatives for 2026",
+      "description": "Compare seven n8n alternatives for visual automation, self-hosting, code-first workflows and Microsoft teams, with current pricing and migration notes.",
+      "datePublished": "2026-11-05T00:00:00+05:30",
+      "dateModified": "2026-11-05T00:00:00+05:30",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech/"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/n8n/alternatives/",
+      "url": "https://toolboxkart.tech/n8n/alternatives/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "n8n",
+          "item": "https://toolboxkart.tech/n8n/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "7 n8n Alternatives for 2026",
+          "item": "https://toolboxkart.tech/n8n/alternatives/"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "n8n alternatives",
+      "numberOfItems": 7,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Zapier",
+          "url": "https://zapier.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Make",
+          "url": "https://www.make.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Activepieces",
+          "url": "https://www.activepieces.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Microsoft Power Automate",
+          "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Node-RED",
+          "url": "https://nodered.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Windmill",
+          "url": "https://www.windmill.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Kestra",
+          "url": "https://kestra.io/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the closest open-source alternative to n8n?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Activepieces is a close visual option with an open-source core and an on-prem hosting path. Node-RED is a lightweight open-source flow tool, while Windmill and Kestra suit more technical teams. Check each project's licence and hosted-product terms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which n8n alternative is easiest for beginners?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zapier is usually the simplest starting point for common SaaS connections. Make is also visual, but its scenarios and credit model can take more time to understand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which n8n alternatives can be self-hosted?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Activepieces lists on-prem hosting, Node-RED is self-hosted, Windmill supports self-hosting, and Kestra can run on your infrastructure. Zapier, Make and Power Automate are managed cloud products."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is n8n open source?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "n8n publishes source under the Sustainable Use License, which permits certain personal and internal business uses but is not an OSI-approved open-source licence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Pipedream still a good n8n alternative?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Do not choose Pipedream Workflows for a new migration without a transition plan. Pipedream has announced that Workflows and String will shut down on March 31, 2027. Its Connect product is not affected."
+          }
+        }
+      ]
+    }
+  ]
+}

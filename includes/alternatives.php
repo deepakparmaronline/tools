@@ -53,6 +53,7 @@ function alternative_topic_group(array $article): array {
         'documents-specialist'=>['name'=>'Documents, study and specialist software','description'=>'PDF, study, meeting, compliance and industry-specific software.','slugs'=>['notegpt-alternatives','pearl-alternatives','shadow-alternatives','updf-alternatives','vanta-alternatives']],
         'freelance-marketplaces'=>['name'=>'Freelance marketplaces','description'=>'Open freelance marketplaces, portfolio-led workspaces, vetted expert networks and design contests for buyers and independent professionals.','slugs'=>['fiverr-alternatives']],
         'email-providers'=>['name'=>'Email providers and inbox services','description'=>'Consumer email, privacy-focused inboxes and hosted email for personal or custom-domain use.','slugs'=>['gmail-alternatives']],
+        'workflow-automation'=>['name'=>'Workflow automation and orchestration','description'=>'Visual app automation, developer-built workflows, event-driven flows and data orchestration.','slugs'=>['n8n-alternatives']],
     ];
     foreach ($groups as $key=>$group) if (in_array($slug,$group['slugs'],true)) return ['key'=>$key]+$group;
     return ['key'=>'other','name'=>'More software alternatives','description'=>'Additional researched alternatives for specific workflows.','slugs'=>[]];

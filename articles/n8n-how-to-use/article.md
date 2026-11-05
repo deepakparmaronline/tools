@@ -1,121 +1,106 @@
-# How to Use n8n: Setup and Workflow Guide
-
-To use n8n, create a Cloud workspace or prepare a server for self-hosting, add a trigger, connect the first app, test with sample data and activate the workflow only after checking its outputs and failure path. This guide follows n8n's official [documentation](https://docs.n8n.io/) and [Docker guide](https://docs.n8n.io/deploy/host-n8n/install-with-docker.md), checked November 2, 2026. Menu labels can change, so use the linked docs if your screen differs.
+> **Short answer:** To use n8n, create a workflow, add a trigger, connect one or more action nodes, test with sample data, then publish it. Before a workflow handles real customer data, check its credentials, error path, execution limits and backup plan.
 
 ## Before you start
 
-Choose a small task with a clear result, such as sending a notification when a form arrives or copying a row into another system. List the trigger, source data, destination, expected volume and who should receive an error alert. Use test data that does not expose customer details. If you plan to self-host, confirm that someone on your team can manage server security, upgrades, backups and monitoring. n8n's official Docker guide says self-hosting requires technical knowledge and recommends Cloud for people without that experience.
+You need an n8n Cloud account or a working self-hosted instance, access to the apps you want to connect and permission to create the required credentials. For a first workflow, choose a low-risk process such as copying a form response to a test spreadsheet. Avoid starting with payments, account deletion or messages to a large customer list.
 
-For each connected service, prepare an account with only the permissions the workflow needs. Avoid pasting long-lived secrets into a code node or a public example. Use n8n's credential features and review who can access the project. Keep test credentials separate from production credentials where possible.
+If you are new to n8n, use the [official quickstart](https://docs.n8n.io/try-it-out/quickstart/) alongside this guide. The steps below explain the workflow pattern; the exact node labels can change as n8n updates the editor.
 
-## Step 1: Create your n8n workspace
+## 1. Create a workflow
 
-For the hosted route, start from [n8n's official site](https://n8n.io/) and choose the Cloud trial or plan that matches your expected executions. For self-hosting, follow the current installation documentation. The Docker guide describes a persistent volume for the n8n data directory and timezone settings for scheduled nodes. Keep persistent data and encryption keys safe when you restart or move the container.
+Open the n8n workspace and create a new workflow. Give it a name that describes the business task, not just the app names. For example, “Send a review request after an order is delivered” is easier to understand later than “Shopify to Gmail”.
 
-Do not expose an instance to the public internet without authentication, TLS and a plan for updates. Use a controlled network path for the editor and webhook endpoints. A successful first launch is not the same as a production-ready deployment.
+Write down the trigger, the expected input fields, the action and the result you want. This small plan helps you spot missing data before you add nodes. If the workflow needs a schedule, decide which timezone it should use. If it needs a webhook, confirm which system will send the event and what payload it will deliver.
 
-## Step 2: Start with a trigger
+## 2. Add a trigger
 
-Create a workflow and add a trigger node that matches how the process should begin. A manual trigger is useful for a first test. A schedule trigger is appropriate for recurring work, while a webhook trigger waits for another system to send an event. App-specific triggers depend on the node and provider permissions. Review the node's official documentation before assuming it can detect every event type.
+Choose the event that should start the workflow. Common trigger patterns include:
 
-Give the workflow a name that states the business action, such as “Notify sales when a qualified form arrives.” This helps someone understand the purpose when they return months later. Keep one workflow focused on one outcome unless the branches are genuinely part of the same process.
+- **Schedule:** run at a set interval or time.
+- **Webhook:** start when another system sends an HTTP request.
+- **App trigger:** listen for an event from a supported service.
+- **Manual trigger:** run the workflow while building or testing it.
 
-## Step 3: Add the first action node
+For a schedule, check the timezone and interval before publishing. For a webhook, use the test URL while you build and the production URL after the workflow is published. Do not send live customer events to a test workflow unless you understand where that data will go.
 
-Add the application or core node that performs the next step. For example, a form trigger could be followed by a CRM lookup or a message to a team channel. Use the built-in node catalog to check which operations are supported. If a service has no suitable node, an HTTP Request node can call an API, but you must follow the service's authentication, pagination and rate-limit rules.
+## 3. Add action nodes
 
-Connect the nodes in the order data should move. Check that each connection goes to the intended input and that branches handle every possible result. A missing field can break a workflow even when the node itself is configured correctly.
+Add the action that should happen after the trigger. It could create a CRM record, add a row to a spreadsheet, send a notification or call an API. Select the correct account credential and map the fields from the trigger output.
 
-## Step 4: Add credentials safely
+Use the output panel to check field names and data types. A timestamp may arrive as text, a phone number may contain a country code, and an optional field may be empty. If the next node expects a different format, add a transformation or Edit Fields node before the action.
 
-Open the node's credential selector and create or choose the credential type supported by that integration. Follow the provider's OAuth or API-key steps. Use a dedicated automation account when the provider supports it, and grant only the scopes required for the task. Confirm the connection with a low-risk test before using real customer data.
+## 4. Add conditions and data checks
 
-Do not share exported workflow files without reviewing them. n8n's [export and import guide](https://docs.n8n.io/build/manage-workflows/export-and-import.md), checked November 2, 2026, warns that workflow JSON can include credential names and IDs, and HTTP Request nodes imported from cURL may contain authentication headers. Remove or anonymize sensitive values before sharing a file or attaching it to an issue.
+Use an If or Switch node when different records need different actions. For example, route a lead to sales only when the email address is valid and the consent field is present. Put checks before an action that sends a message, changes a record or starts a payment.
 
-## Step 5: Map and inspect data
+Keep the workflow readable. Use clear node names, group related steps and split a large process into sub-workflows when it becomes difficult to follow. Add a short description to explain why a condition exists. A workflow should be understandable by someone other than the person who built it.
 
-Run the workflow manually with a representative sample. Inspect the output of each node before adding more steps. Identify the exact field name and type that the next node expects. Dates, arrays, empty values and nested objects often need more care than a simple text field. Use a Set or code node only when the transformation is clearer than a direct mapping.
+## 5. Test with sample data
 
-Test at least one normal record and one incomplete record. If the source can send duplicate events, decide whether the workflow should skip duplicates or update an existing record. If the destination API returns an identifier, save it only when a later step needs it. Avoid sending entire payloads to logs when they contain personal or confidential data.
+Run the workflow manually with safe sample data. Check the output from the trigger, every transformation and the final action. Test at least one normal record, one missing optional field and one record that should follow a different branch.
 
-## Step 6: Add conditions and error handling
+A green test run does not prove the production workflow is safe. Also check duplicate events, API rate limits, expired credentials, unexpected payloads and a failed destination service. Make sure a retry will not create duplicate payments, tickets or messages. If the action cannot safely be repeated, add an idempotency key or a check before it runs again.
 
-Use an IF or Switch node when the next action depends on a value. Add a clear path for records that do not match expected conditions. For API calls, decide what should happen after a timeout, rate limit or server error. A retry can help with a temporary failure, but retrying a payment or create operation without checking for duplicates can cause damage.
+## 6. Publish the workflow
 
-Keep error notifications useful. Include the workflow name, execution link or ID, failed step and a safe summary of the problem. Do not include passwords, access tokens or full customer records in the notification. If a failure needs a human decision, route it to a monitored queue rather than silently ending the run.
+The current n8n quickstart uses the Publish action to make a workflow live. Review the trigger, credentials, data mapping, error handling and timezone first. Then publish the workflow and use its production trigger URL or schedule.
 
-## Step 7: Test the complete path
+Keep a record of what was published and who owns it. If the workflow affects customers or business records, define a rollback step and a person who can pause it. Do not treat a saved draft or a successful manual test as proof that the production workflow is active.
 
-Run the workflow from its trigger through the final action. Confirm the expected record changed in the destination and that no unintended record was changed. Check the execution history and open the output of any step that did not behave as expected. Test an error path before activation so you know whether a failure is visible.
+## 7. Monitor executions and errors
 
-Use the same test for a second run to check whether duplicate events create duplicate records. If a workflow depends on timing, use a test schedule and verify the timezone. n8n's Docker documentation distinguishes the container timezone from the timezone used by schedule-oriented nodes, so set the intended timezone explicitly.
+After publishing, review the execution list and inspect failed runs. Look for repeated errors, slow API calls, unexpected payloads and credentials that need renewal. If a workflow sends alerts, make sure the alert reaches someone who can act on it.
 
-## Step 8: Activate and monitor
+For important processes, create an error workflow or use the built-in error handling pattern. Decide whether the process should retry, stop, notify a person or move the failed item to a review queue. A retry should be safe for the destination system; otherwise it can repeat an action that already succeeded.
 
-When tests pass, save and activate the workflow using the current editor controls. For a webhook workflow, verify that the production webhook URL is configured in the source application, not only the temporary test URL. For a scheduled workflow, check the next run and confirm the owner knows how to pause it.
+## 8. Protect credentials and workflow data
 
-After activation, review executions during the first normal cycle. Confirm the number of runs matches expectations and inspect failures. Set a recurring review for workflows that touch billing, customer access, inventory or other important records. A workflow can keep running while producing the wrong result, so monitor output quality as well as whether the run succeeded.
+Use the credential store instead of pasting API keys into ordinary text fields. Limit who can edit workflows and who can use shared credentials. Review execution data because it can contain personal information, tokens or customer records.
 
-## Common tasks and safe patterns
+For self-hosted n8n, the official docs explain that n8n creates an encryption key and uses it to encrypt credentials before they are saved to the database. If you set a custom key, keep it safe and use the same key across all workers in queue mode. Back up the key with the database; losing it can make stored credentials unusable. Read the [custom encryption key guide](https://docs.n8n.io/hosting/configuration/configuration-examples/encryption-key/) and [security overview](https://docs.n8n.io/hosting/securing/overview/).
 
-### Move a row from a form to a CRM
+## 9. Export or move a workflow
 
-Trigger on the form event, validate required fields, search the CRM for an existing contact, and create or update the record according to a defined rule. Route incomplete submissions to a review queue. Test duplicates before using the workflow on live leads.
+n8n stores workflows as JSON. You can download a workflow from the editor or import a JSON file into another instance. The official [export and import guide](https://docs.n8n.io/build/manage-workflows/export-and-import/) warns that exported JSON includes credential names and IDs. HTTP Request nodes imported from cURL may contain authentication headers. Remove or anonymize sensitive information before sharing an export.
 
-### Call an API and notify a team
+For moving workflows between instances from the command line, n8n recommends the n8n CLI. Packages can carry workflows with their folders, projects and references, but the package feature is in preview and may change. A workflow JSON file is not a complete backup of your instance. Keep a separate backup of the database, encryption key, binary data and deployment configuration.
 
-Store credentials in the supported credential manager, make the request, check the response code and required fields, then send a concise message. Include a failure branch for non-success responses. Do not treat an HTTP 200 response as proof that the returned business data is correct.
+## 10. Plan self-hosted upgrades carefully
 
-### Run a scheduled report
+Self-hosting gives you control, but you own the maintenance. Use HTTPS, restrict access, review community nodes, monitor resource use, back up the database and test updates before applying them to production.
 
-Use a schedule trigger with the correct timezone, retrieve only the records needed for the report, transform the result, and send it to the destination. Decide what to do when no records match. Use a bounded time window so a retry does not resend the entire history.
+The documentation lists n8n 3.0 as early access. Its breaking-changes guide says self-hosted deployments need a Docker-based installation. If your current instance uses npm or npx, read the [3.0 breaking changes](https://docs.n8n.io/changelog/v30-breaking-changes/) and [migration tool guide](https://docs.n8n.io/changelog/v30-migration-tool/) before upgrading. Do not assume an early-access version is ready for a production migration.
 
-## Troubleshooting
+## More n8n guides
 
-### The trigger does not start
+- [n8n hub](/n8n/)
+- [n8n review](/n8n/review/)
+- [n8n pricing](/n8n/pricing/)
+- [n8n alternatives](/n8n/alternatives/)
+- [n8n vs Zapier](/compare/n8n-vs-zapier/)
 
-Check that the workflow is active, the provider event subscription is valid and the production endpoint is reachable. For webhooks, confirm the source uses the production URL. For schedules, check the configured timezone and next run time.
+## How to use n8n FAQ
 
-### A credential works in the editor but fails later
+### How do I create my first n8n workflow?
 
-Check whether the token expired, a required scope is missing or the automation account lost access. Reconnect the credential through the supported flow. Avoid pasting secrets into workflow JSON to work around a credential error.
+Create a workflow, add a trigger, connect an action node, test with sample data and publish it. Start with a low-risk process and check each node's output before connecting real accounts.
 
-### A node receives empty data
+### How do I activate an n8n workflow?
 
-Inspect the previous node output and verify the mapped field path. Test with a record that includes the expected values. Use an explicit default or branch for missing fields instead of assuming every event has the same shape.
+The current quickstart uses the Publish action to make a workflow live. Check the trigger and credentials before publishing, then use the production trigger URL or schedule.
 
-### The workflow runs twice
+### Can I export n8n workflows?
 
-Check whether the source sends retries or duplicate events and whether the workflow has more than one trigger path. Add an idempotency key or lookup when the destination supports it. Do not simply retry every failed action if it may have succeeded remotely before the timeout.
+Yes. n8n can export workflows as JSON and import JSON into another instance. The export can include credential names and IDs, and cURL imports can contain authentication headers, so remove sensitive details before sharing.
 
-## Back up and move workflows
+### How do I back up a self-hosted n8n instance?
 
-n8n supports workflow export and import. The official guide describes JSON export from the editor and import from a file or URL, along with CLI and API options. Before a migration, export the workflows you need, review sensitive credential references, document required environment variables and test the import in a separate instance. Exported workflow JSON is not a full backup of the entire server or every credential secret.
+Back up the database, encryption key, binary data and deployment configuration. A workflow JSON export is useful, but it is not a full instance backup.
 
-For command-line migration, n8n recommends its CLI package flow for moving workflows between instances. It can carry folders, projects and workflow references, and checks an import before writing. Read the [official export and import guide](https://docs.n8n.io/build/manage-workflows/export-and-import.md), checked November 2, 2026, because the CLI and package workflow may change.
+### Can I use n8n without coding?
 
-## Related n8n guides
+Yes. Many workflows can be built with the visual editor and app nodes. Code and HTTP requests are optional for workflows that need custom logic or unsupported API actions.
 
-- [n8n guide](/n8n/) explains the product and hosting choices.
-- [n8n review](/n8n/review/) covers strengths and limits.
-- [n8n pricing](/n8n/pricing/) helps estimate execution and hosting costs.
-- [n8n alternatives](/n8n/alternatives/) compares other automation models.
-- [n8n vs Zapier](/compare/n8n-vs-zapier/) compares setup and billing.
+## Sources and update method
 
-## Common questions
-
-### Can beginners use n8n?
-
-Yes, for simple workflows, but API credentials, data mapping and error handling still need care. Start with a low-risk task and test it before activation.
-
-### Can I import a workflow from another n8n instance?
-
-Yes. n8n supports JSON import and export and documents CLI and API options. Check credential references and sensitive headers before sharing files.
-
-### Is self-hosting required?
-
-No. n8n Cloud is available for users who prefer managed hosting. Self-hosting is an option for teams able to manage the infrastructure.
-
-## Sources and method
-
-Setup and safety steps were checked November 2, 2026 against the [official docs](https://docs.n8n.io/), [Docker guide](https://docs.n8n.io/deploy/host-n8n/install-with-docker.md), [export/import guide](https://docs.n8n.io/build/manage-workflows/export-and-import.md) and [built-in nodes reference](https://docs.n8n.io/integrations/builtin.md). This is a documentation-based guide, not a hands-on test.
+The workflow steps, publish terminology, export/import warnings, encryption-key guidance and 3.0 deployment note were checked against n8n's official documentation on November 5, 2026. This is a documentation-based guide and does not claim hands-on testing.

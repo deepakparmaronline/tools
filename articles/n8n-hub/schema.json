@@ -1,0 +1,99 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/n8n/#article",
+      "headline": "n8n: Workflow Automation Guide",
+      "description": "Learn what n8n does, how its workflows and AI nodes work, what Cloud plans cost, and when self-hosting or another automation tool makes sense.",
+      "datePublished": "2026-11-05T00:00:00+05:30",
+      "dateModified": "2026-11-05T00:00:00+05:30",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech/"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/n8n/",
+      "url": "https://toolboxkart.tech/n8n/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Software Tool Hubs",
+          "item": "https://toolboxkart.tech/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "n8n: Workflow Automation Guide",
+          "item": "https://toolboxkart.tech/n8n/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://toolboxkart.tech/n8n/#software",
+      "name": "n8n",
+      "url": "https://n8n.io/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web browser, Linux, Windows, macOS",
+      "description": "Workflow automation platform for connecting apps, APIs and data with visual nodes and code.",
+      "provider": {
+        "@type": "Organization",
+        "name": "n8n GmbH",
+        "url": "https://n8n.io/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is n8n free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Community Edition is available for self-hosting, but the licence applies and infrastructure still costs money. n8n Cloud offers a trial, not a permanent free Cloud plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is n8n open source?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "n8n publishes source under the Sustainable Use License. It is not an OSI-approved open-source licence, so review the exact terms for your use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does n8n charge for every workflow step?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. n8n Cloud counts a full workflow run as one execution, regardless of the number of steps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is n8n 3.0 ready for production?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The documentation lists n8n 3.0 as an early-access release. Review the breaking changes and migration report before upgrading production."
+          }
+        }
+      ]
+    }
+  ]
+}
