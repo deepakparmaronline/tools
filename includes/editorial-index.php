@@ -16,6 +16,6 @@ require __DIR__.'/header.php';
 ?>
 <section class="page-hero"><div class="container"><span class="eyebrow"><?=e($isAll ? 'Published articles' : $meta['eyebrow'])?></span><h1><?=e($isAll ? 'All ToolboxKart articles' : $meta['heading'])?></h1><p><?=e($pageDescription)?></p></div></section>
 <section class="section"><div class="container"><div class="blog-grid">
-<?php foreach($items as $item): ?><article class="post-card"><span class="tag"><?=e(post_category_label($item))?></span><h2><a href="<?=e(parse_url(post_url($item), PHP_URL_PATH))?>"><?=e($item['title'])?></a></h2><p><?=e($item['description'])?></p><time datetime="<?=e($item['date'])?>"><?=e(fmt_date($item['date']))?></time></article><?php endforeach; ?>
+<?php foreach($items as $item): ?><article class="post-card" data-slug="<?=e($item['slug'])?>"><span class="tag"><?=e(post_category_label($item))?></span><h2><a href="<?=e(parse_url(post_url($item), PHP_URL_PATH))?>"><?=e($item['title'])?></a></h2><p><?=e($item['description'])?></p><time datetime="<?=e($item['date'])?>"><?=e(fmt_date($item['date']))?></time></article><?php endforeach; ?>
 </div><?php if($isAll): ?><h2>Software alternatives</h2><div class="blog-grid"><?php render_alternative_cards(alternative_articles()); ?></div><?php endif; ?></div></section>
 <?php unset($post); require __DIR__.'/footer.php'; ?>
