@@ -6,6 +6,7 @@ Checked November 5, 2026. Product and pricing facts use official sources; SERP p
 - [n8n product site](https://n8n.io/) — product scope.
 - [n8n pricing](https://n8n.io/pricing/) — Cloud execution billing, plan allowances and self-hosted Business.
 - [n8n Sustainable Use License](https://github.com/n8n-io/n8n/blob/master/LICENSE.md) — licensing context.
+- [n8n 3.0 breaking changes](https://docs.n8n.io/changelog/v30-breaking-changes/) and [3.0 migration tool](https://docs.n8n.io/changelog/v30-migration-tool/) — early-access deployment and migration details.
 
 ## Alternatives
 - [Zapier product](https://zapier.com/) and [pricing](https://zapier.com/pricing/) — app connections, tasks and public plans.

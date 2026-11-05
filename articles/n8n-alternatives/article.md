@@ -2,23 +2,25 @@
 
 ## Best n8n alternatives at a glance
 
-| Tool | Best for | Starting price checked Nov 5, 2026 | Hosting |
-| --- | --- | --- | --- |
-| Zapier | Fast no-code connections across common apps | Free 100 tasks/month; Professional from US$19.99/month | Cloud |
-| Make | Visual scenarios with routers, filters and data mapping | Free 1,000 credits/month; Core US$12/month for 10,000 credits | Cloud |
-| Activepieces | Visual flows with a self-hosting option | Free 1,000 credits/month; Plus US$20/month | Cloud or on-prem options |
-| Microsoft Power Automate | Microsoft 365, Dynamics and Windows automation | Premium from US$15/user/month, billed yearly | Microsoft cloud; desktop flows run on Windows |
-| Node-RED | Lightweight event-driven and IoT flows | Free software; hosting costs vary | Self-hosted |
-| Windmill | Developer-built scripts, jobs and internal tools | Free self-hosted Community Edition; Enterprise from US$120/month plus seats and compute | Cloud or self-hosted |
-| Kestra | Data, infrastructure and code-first orchestration | Open-source core; managed and enterprise pricing is not publicly listed | Cloud, self-hosted or air-gapped |
+| Tool | Best for | Starting price | Free plan | Standout feature | Hosting |
+| --- | --- | --- | --- | --- | --- |
+| Zapier | Nontechnical teams connecting common SaaS apps | Professional from [US$19.99/month](https://zapier.com/pricing/) (checked Nov 5, 2026) | 100 tasks/month (checked Nov 5, 2026; [pricing](https://zapier.com/pricing/)) | Large app catalogue and multi-step Zaps | Cloud |
+| Make | Visual branching and data mapping | Core [US$12/month](https://www.make.com/en/pricing) for 10,000 credits (checked Nov 5, 2026) | 1,000 credits/month (checked Nov 5, 2026; [pricing](https://www.make.com/en/pricing)) | Routers, filters and scenario mapping | Cloud |
+| Activepieces | Visual flows with an on-prem route | Plus [US$20/month](https://www.activepieces.com/pricing/) (checked Nov 5, 2026) | 1,000 credits/month (checked Nov 5, 2026; [pricing](https://www.activepieces.com/pricing/)) | Unlimited flows and cloud or on-prem options | Cloud or on-prem |
+| Microsoft Power Automate | Microsoft 365 and Windows automation | Premium [US$15/user/month](https://www.microsoft.com/licensing/guidance/Power-Platform) (US list price, annual; checked Nov 5, 2026) | Basic use rights with select Microsoft 365 plans (checked Nov 5, 2026; [licensing guide](https://www.microsoft.com/licensing/guidance/Power-Platform)) | Cloud flows plus attended desktop flows | Microsoft cloud and Windows desktop |
+| Node-RED | IoT, devices and event-driven flows | Free software; hosting costs vary (checked Nov 5, 2026; [licence](https://github.com/node-red/node-red/blob/main/LICENSE)) | Open-source software (checked Nov 5, 2026; [licence](https://github.com/node-red/node-red/blob/main/LICENSE)) | Lightweight flow editor and Node.js runtime | Self-hosted |
+| Windmill | Developer-built scripts, jobs and internal tools | Enterprise from [US$120/month](https://www.windmill.dev/pricing/) plus seats and compute (checked Nov 5, 2026) | Free self-hosted Community Edition (checked Nov 5, 2026; [licence](https://github.com/windmill-labs/windmill/blob/main/LICENSE)) | Turn scripts into flows, APIs and internal apps | Cloud or self-hosted |
+| Kestra | Data, infrastructure and code-first orchestration | Enterprise: contact sales; Cloud: request access (checked Nov 5, 2026; [pricing](https://kestra.io/pricing.html)) | Open-source core; hosting costs apply (checked Nov 5, 2026; [FAQ](https://kestra.io/faq)) | Declarative YAML workflows and orchestration | Cloud, self-hosted or air-gapped |
 
 Prices are not directly comparable. n8n bills Cloud by full workflow executions, Make and Activepieces use credits, Zapier uses tasks, Power Automate is per user, and developer platforms add infrastructure or worker costs. Check the linked pricing page for the exact region, billing period and usage allowance before you buy.
 
-## The three easiest starting points
+## Why people look for an n8n alternative
 
-- **Best for mainstream app automation: [Zapier](https://zapier.com/).** Choose it when the main goal is to connect popular SaaS apps quickly and let a non-developer own the workflow.
-- **Best for visual branching: [Make](https://www.make.com/).** Choose it when a process needs routers, filters, data mapping and a clear view of each module action.
-- **Best visual option with an on-prem path: [Activepieces](https://www.activepieces.com/).** Choose it when you want a modern visual flow builder and need to evaluate a self-hosting route, while checking which enterprise controls are included.
+The main reasons are licensing, hosting, price and ease of use. n8n's Sustainable Use License allows certain internal business and personal uses, but it is not OSI-approved open source and does not grant unrestricted resale or hosted-service rights. Read the licence before using it in a customer-facing product.
+
+Self-hosting means owning updates, backups, encryption keys, access and monitoring. n8n 3.0 is listed as early access and uses Docker for self-hosted deployment. Teams using npm or npx should review the [breaking-changes guide](https://docs.n8n.io/changelog/v30-breaking-changes/) and [migration tool](https://docs.n8n.io/changelog/v30-migration-tool/) before upgrading (checked Nov 5, 2026).
+
+Cloud pricing counts full workflow executions, while alternatives may count tasks, credits, users or workers. A managed builder can reduce maintenance, while a code-first tool can suit teams that have outgrown visual nodes.
 
 ## 1. Zapier: easiest for common cloud apps
 
@@ -26,23 +28,27 @@ Zapier is a cloud automation platform built around Zaps, triggers and actions. I
 
 The main difference is the task meter. A trigger that checks for an event does not normally count as a task, while each successful action in a Zap can use a task. Multi-step workflows can therefore consume several tasks for one business event. Some advanced actions and AI features may use different task rules, so check the current [Zapier task guide](https://help.zapier.com/hc/en-us/articles/8496181445389-How-is-task-usage-measured-in-Zapier) when estimating cost.
 
-The public US pricing page lists a Free plan with 100 tasks per month and a Professional plan from US$19.99 per month. Team pricing is also listed, with the exact amount depending on the plan and billing selection. See [Zapier pricing](https://zapier.com/pricing/).
+The public US pricing page lists a Free plan with 100 tasks per month and a Professional plan from US$19.99 per month. Team pricing is also listed, with the exact amount depending on the plan and billing selection (checked Nov 5, 2026; [pricing](https://zapier.com/pricing/)). **Best for:** nontechnical teams. **Pros:** large app catalogue, multi-step Zaps and managed hosting. **Cons:** task billing and cloud-only hosting. **Skip it if:** you need self-hosting.
 
 **Choose Zapier over n8n** when ease of setup, managed hosting and a large app catalogue matter more than self-hosting or custom code. **Stay with n8n** when a workflow uses many steps per run, custom APIs or infrastructure you need to control. Do not compare the two only by the entry price: model the number of Zapier actions and n8n full executions for the same workload.
 
 ## 2. Make: visual control for multi-step scenarios
 
-Make uses a visual scenario builder with modules, routers, filters and data mapping. It suits teams that want to see how information moves through a complex process without writing every step as code. Its pricing page lists more than 3,500 apps and a free tier with 1,000 credits per month.
+Make uses a visual scenario builder with modules, routers, filters and data mapping. It suits teams that want to see how information moves through a complex process without writing every step as code. Its pricing page lists more than 3,500 apps and a free tier with 1,000 credits per month (checked Nov 5, 2026; [pricing](https://www.make.com/en/pricing)).
 
-Make now uses credits as its billing unit. Most module actions consume one credit, but some AI features can use more. A scenario can use several credits in a single run, so one trigger event does not always equal one credit. The current 10,000-credit selector lists Core at US$12/month, Pro at US$21/month and Teams at US$38/month; the page has monthly and annual billing options. Check the [Make pricing page](https://www.make.com/en/pricing) and [credits guide](https://help.make.com/credits) before estimating usage.
+Make uses credits for module actions. Some AI features can use more, so one trigger event does not always equal one credit. The 10,000-credit selector lists Core at US$12/month, Pro at US$21/month and Teams at US$38/month (checked Nov 5, 2026; [pricing](https://www.make.com/en/pricing) and [credits guide](https://help.make.com/credits)).
+
+**Best for:** visual scenario builders. **Pros:** routers, filters and data mapping. **Cons:** credit-based usage and cloud-only hosting. **Skip it if:** you need self-hosting or one execution per run.
 
 **Choose Make over n8n** if the visual builder is the main reason you are looking for a replacement and a managed cloud service is acceptable. **Choose n8n** if you need a self-hosted instance, custom code or direct control over the runtime. Make is not a one-credit-per-workflow alternative: count each module action and any AI usage.
 
 ## 3. Activepieces: visual automation with on-prem options
 
-Activepieces offers flows, agents, tables and a visual builder. Its public pricing page lists a Free plan with 1,000 credits per month, unlimited flows and up to five users. Plus is listed at US$20/month with 10,000 credits, while Team is US$200/month with 50,000 credits and 25 users. The same page lists Cloud or on-prem hosting for the self-serve tiers, with custom enterprise controls for dedicated or air-gapped deployments.
+Activepieces offers flows, agents, tables and a visual builder. Its pricing page lists a Free plan with 1,000 credits/month, unlimited flows and up to five users. Plus is US$20/month with 10,000 credits; Team is US$200/month with 50,000 credits and 25 users. Cloud or on-prem hosting is listed for self-serve tiers (checked Nov 5, 2026; [pricing](https://www.activepieces.com/pricing/)).
 
-Activepieces has an open-source core, but its repository says the enterprise directories use a separate licence. Do not assume every feature in the hosted or packaged product is covered by the same MIT terms. Review the [official repository licence](https://github.com/activepieces/activepieces/blob/main/LICENSE) and [pricing page](https://www.activepieces.com/pricing/) before using it in a product.
+Activepieces has an open-source core, but its enterprise directories use a separate licence. Review the [official repository licence](https://github.com/activepieces/activepieces/blob/main/LICENSE) before using it in a product.
+
+**Best for:** teams wanting visual flows with an on-prem route. **Pros:** free tier, unlimited flows and cloud or on-prem hosting. **Cons:** credit meter and tier-specific governance. **Skip it if:** your required SSO or audit feature is not included.
 
 **Choose Activepieces over n8n** if you prefer its flow builder, want to compare its credit model, or need to evaluate on-prem deployment. **Choose n8n** if its node catalogue, existing workflows or technical ecosystem better match your team. Check which deployment, SSO, audit and secret-management features are available in the plan you select.
 
@@ -50,7 +56,9 @@ Activepieces has an open-source core, but its repository says the enterprise dir
 
 Power Automate connects Microsoft 365, Dynamics, Dataverse and other services through cloud flows. It also supports desktop flows for Windows task automation. That makes it a strong choice when the business already works in Microsoft tools and needs approvals, file routing, notifications or desktop automation.
 
-The US pricing page lists Premium from US$15 per user/month with annual billing. Process and Hosted Process licences are separate options for workloads that need a process or hosted bot model. The India page can show a different local price and taxes. Check the [official Power Automate pricing page](https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing) for your region. Microsoft's documentation also explains [flow limits](https://learn.microsoft.com/en-us/power-automate/limits-and-config) and [solution export](https://learn.microsoft.com/en-us/power-automate/export-flow-solution).
+The US pricing page lists Premium from US$15 per user/month with annual billing. Process and Hosted Process licences are separate options. Regional prices and taxes differ (checked Nov 5, 2026; [Microsoft licensing guide](https://www.microsoft.com/licensing/guidance/Power-Platform), [flow limits](https://learn.microsoft.com/en-us/power-automate/limits-and-config) and [solution export](https://learn.microsoft.com/en-us/power-automate/export-flow-solution)).
+
+**Best for:** Microsoft-first teams. **Pros:** cloud and desktop flows in the Microsoft ecosystem. **Cons:** licensing varies by user or process; desktop flows require Windows. **Skip it if:** you need cross-platform self-hosting.
 
 **Choose Power Automate over n8n** if Microsoft identity, approvals, Office files and Windows desktop tasks are central to the process. **Choose n8n** if you need a more flexible cross-platform workflow builder or want to run the automation stack on infrastructure you manage. Power Automate is not a drop-in self-hosted replacement.
 
@@ -58,7 +66,9 @@ The US pricing page lists Premium from US$15 per user/month with annual billing.
 
 Node-RED is a flow-based programming tool built on Node.js. Its browser editor lets you wire inputs, processing nodes and outputs together. It is often a better fit for IoT, devices, local networks and event-driven systems than for a business team that wants a ready-made SaaS connector for every app.
 
-Node-RED is open source under the Apache 2.0 licence. The software itself is free, but you still need a machine or server, updates, backups and someone who can maintain the flows. Its [official about page](https://nodered.org/about/) and [user guide](https://nodered.org/docs/user-guide/) explain the runtime and editor.
+Node-RED is open source under Apache 2.0. The software is free, but a server, updates, backups and maintenance still cost time. See the [official about page](https://nodered.org/about/) and [user guide](https://nodered.org/docs/user-guide/).
+
+**Best for:** IoT, devices and event-driven flows. **Pros:** open-source licence, browser editor and self-hosted runtime. **Cons:** technical setup and maintenance. **Skip it if:** you need turnkey no-code business automation.
 
 **Choose Node-RED over n8n** for lightweight device and event flows, especially when Node.js is already part of the environment. **Choose n8n** for a broader business-automation workflow with more ready-made app integrations and a managed Cloud option.
 
@@ -66,15 +76,19 @@ Node-RED is open source under the Apache 2.0 licence. The software itself is fre
 
 Windmill is designed for developers who want to turn scripts into workflows, scheduled jobs, APIs and internal tools. Its documentation covers scripts and flows across languages such as Python, TypeScript and SQL. It can be self-hosted with Docker or Kubernetes, and the pricing page lists a free and open-source tier with unlimited executions.
 
-Windmill's pricing page lists Enterprise from US$120/month, but the actual total can also include builder seats, non-builder users and compute. Its licence is more nuanced than a simple open-source label: the source repository describes AGPLv3 and Apache-licensed components, while the packaged Community Edition includes separately licensed features and restrictions on resale or managed-service use. Review the [pricing page](https://www.windmill.dev/pricing/) and [licence](https://github.com/windmill-labs/windmill/blob/main/LICENSE) before embedding it in a commercial product.
+Windmill Enterprise starts at US$120/month, with seats and compute extra. The source uses AGPLv3 and Apache-licensed components, while the packaged Community Edition includes separately licensed features and restrictions on resale or managed-service use (checked Nov 5, 2026; [pricing](https://www.windmill.dev/pricing/) and [licence](https://github.com/windmill-labs/windmill/blob/main/LICENSE)).
+
+**Best for:** developers building scripts, jobs and internal apps. **Pros:** multi-language workflows and self-hosting. **Cons:** technical ownership and commercial-use limits in the packaged Community Edition. **Skip it if:** you need no-code or unrestricted resale.
 
 **Choose Windmill over n8n** when your team is comfortable writing and reviewing code and wants scripts to become reusable jobs or internal apps. **Choose n8n** when a visual integration editor and app-specific nodes are more important than a code-first workflow environment.
 
 ## 7. Kestra: orchestration for data and infrastructure
 
-Kestra is a declarative, event-driven orchestration platform. Its workflows can combine SQL, Python, shell commands, APIs and infrastructure tasks. The official site lists more than 2,600 plugins and describes support for retries, backfills, schedules, webhooks and production workflow execution.
+Kestra is a declarative, event-driven orchestration platform. Its workflows combine SQL, Python, shell commands, APIs and infrastructure tasks. The official site describes a broad plugin ecosystem with retries, backfills, schedules and webhooks.
 
-Kestra's open-source edition can be deployed on your own infrastructure. The managed Cloud edition is available through a request-access process, while enterprise pricing is not shown as a public numeric rate card on the page checked. See the [Kestra pricing page](https://kestra.io/pricing.html) and [quickstart documentation](https://kestra.io/docs/quickstart).
+Kestra's open-source edition can run on your infrastructure. Cloud access uses a request process, and enterprise pricing has no public numeric rate card (checked Nov 5, 2026; [pricing](https://kestra.io/pricing.html) and [quickstart](https://kestra.io/docs/quickstart)).
+
+**Best for:** data and infrastructure orchestration. **Pros:** YAML workflows, retries, backfills and deployment choice. **Cons:** technical model and no public Cloud price. **Skip it if:** you need a beginner no-code app connector.
 
 **Choose Kestra over n8n** for data pipelines, infrastructure orchestration and workflows that need a declarative, code-friendly model. **Choose n8n** for app-to-app automation where the visual editor and business application nodes are the main value.
 
@@ -84,9 +98,15 @@ Pipedream appears in older n8n alternative lists, but its product status has cha
 
 ## How to choose an n8n replacement
 
-Start with the reason you want to leave. If the problem is licensing, review each alternative's exact licence and commercial-use terms. If the problem is hosting, separate fully managed services from tools you can run on your own infrastructure. If the problem is price, count the correct unit: full workflow executions, tasks, credits, users, workers or compute.
+Use five checks to shortlist a replacement:
 
-Then test one representative workflow on paper before moving production data. Pick a flow with a real trigger, at least one transformation, an external API, a failure path and a credential. Compare how each platform handles those parts. A product that looks simpler in a demo may need custom code or paid connectors once the real workflow is included.
+1. Match the reason for switching: licence, hosting, price or ease of use.
+2. Compare the correct meter: executions, tasks, credits, users or compute.
+3. Confirm deployment options and read the licence for your intended use.
+4. Verify the exact trigger and action you need.
+5. Map credentials, schedules, data fields, retries and rollback before migration.
+
+Compare one real workflow with a trigger, transformation, API, credential and failure path.
 
 ## Migration checklist
 
@@ -129,7 +149,8 @@ Do not choose Pipedream Workflows for a new migration without a transition plan.
 - [How to use n8n](/n8n/how-to-use/)
 - [n8n alternatives](/n8n/alternatives/)
 - [n8n vs Zapier](/compare/n8n-vs-zapier/)
+- [Browse tools by niche](/browse-tools-by-niche)
 
 ## Sources and update method
 
-Alternative product features, pricing and licence notes were checked against the official product sites, pricing pages, documentation and repositories listed in the sources ledger on November 5, 2026. Search-result research showed a mixed commercial and technical intent: listicles, direct comparisons, app-integration claims, self-hosting and licence questions. The FAQs above are editorial questions based on that intent; they are not presented as verbatim People Also Ask questions. This page does not claim hands-on testing.
+Alternative product features, pricing and licence notes were checked against the official product sites, pricing pages, documentation and repositories listed in the sources ledger on November 5, 2026. Search-result research showed a mixed commercial and technical intent: listicles, direct comparisons, app-integration claims, self-hosting and licence questions. The FAQs above are editorial questions based on that intent; they are not presented as verbatim People Also Ask questions. This page does not claim hands-on testing. No paid placement or affiliate link is used in this article.

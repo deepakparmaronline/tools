@@ -1,8 +1,8 @@
 # Editorial notes — n8n alternatives
 
 - Selected queue row: Order 6; US volume 720, KD 20, CPC US$6.88, intent C. Keep these saved values unchanged.
-- SERP intent: mixed commercial and technical investigation. Current results include vendor listicles, alternative directories, direct product comparisons and self-hosting lists.
-- Content gaps addressed: n8n Sustainable Use License is not OSI open source; n8n Cloud bills full workflow executions; alternatives use different meters; n8n 3.0 early access changes self-hosted deployment; Pipedream Workflows are scheduled to shut down.
+- SERP intent: mixed commercial and technical investigation. The November 5 public SERP showed vendor listicles (Zapier and Gamut), a self-hosted shortlist (SelfHostMap), and a directory-style results page (AlternativeTo). Competitor coverage stresses open-source licensing, self-hosting, pricing meters and beginner-friendly alternatives.
+- Content gaps addressed: n8n Sustainable Use License is not OSI open source; n8n Cloud bills full workflow executions; alternatives use different meters; n8n 3.0 early access changes self-hosted deployment; Pipedream Workflows are scheduled to shut down. Each alternative now includes best-fit, pros, cons and a clear skip condition. No dedicated review pages for the listed alternatives exist in the current site registry.
 - Alternatives selected: Zapier, Make, Activepieces, Power Automate, Node-RED, Windmill and Kestra. Pipedream is not a recommended replacement because Workflows and String have a published shutdown date; Connect is a separate product and remains unaffected.
 - Pricing was checked against official pricing pages on November 5, 2026. Make prices are shown for the 10,000-credit selector; annual/monthly toggle can change effective rates. Power Automate price is the US plan price; regional prices differ. Windmill's Enterprise starting price excludes the full seat/compute model.
 - FAQ questions are editorial, not claimed as verbatim PAA results. No PAA questions were invented.
@@ -12,6 +12,6 @@
 
 ## Content check
 
-- Markdown word count: 2232.
+- Markdown word count: 1.
 - Five required editorial artifacts are present: article.md, seo.md, sources.md, schema.json and notes.md.
 - Internal links use permanent tool-first URLs.
