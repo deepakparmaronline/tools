@@ -309,5 +309,71 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - **Queue item:** Order 6, n8n, primary keyword `n8n alternative`, action `new cluster`.
 - **Saved Semrush snapshot:** 2026-10-24. Preserve US volume 720, KD 20, CPC US$6.88, intent C; the full snapshot also records trend `▄▄▅▄█▃▅▄▂▄▂▂ ↓` and SERP features `SL, AIO, Rev, Vid, VC, PAA, Rel`. No exact PAA questions are committed, so none will be represented as sourced PAA wording.
 - **Official product identity:** n8n workflow automation platform, confirmed from https://n8n.io/ and https://n8n.io/pricing/.
-- **Claim status:** in_progress before content work. Next checkpoint: evidence ledger, product-specific cluster brief, six-page draft and architecture/discovery review. Do not register any page until all six pages and supporting records are complete and reviewed.
+- **Claim status:** completed and published on 2026-11-05. The six-page cluster is registered in the software, review and alternatives indexes and is discoverable through the relevant child sitemaps and root sitemap.
 - **Research note:** Public SERP results show intent around self-hosted workflow automation, cloud execution pricing, AI workflows and alternatives to task-metered automation. Official n8n documentation and pricing will govern product claims.
+
+
+## n8n software cluster published (2026-11-05)
+
+- **Queue item:** Order 6, n8n, primary keyword `n8n alternative`; saved US volume 720, KD 20, CPC US$6.88, intent C. Saved trend and SERP-feature fields remain unchanged.
+- **Publication state:** complete and committed to GitHub `main`; all six pages are registered and appear in their relevant indexes and sitemap discovery paths.
+- **Canonical URLs:**
+  - Hub: https://toolboxkart.tech/n8n/
+  - Alternatives: https://toolboxkart.tech/n8n/alternatives/
+  - Review: https://toolboxkart.tech/n8n/review/
+  - Pricing: https://toolboxkart.tech/n8n/pricing/
+  - How-to: https://toolboxkart.tech/n8n/how-to-use/
+  - Comparison: https://toolboxkart.tech/compare/n8n-vs-zapier/
+- **Final validated content commit:** [b74b929370a3c3054a11306df8e3366b32fd29b4](https://github.com/deepakparmaronline/tools/commit/b74b929370a3c3054a11306df8e3366b32fd29b4).
+- **Content quality status:** `passed` for the exact content commit `b74b929370a3c3054a11306df8e3366b32fd29b4`. The latest `seo/quality-status.json` recorded this exact SHA at 2026-11-05T05:17:46Z. [ToolboxKart quality checks, run 41973073375](https://github.com/deepakparmaronline/tools/actions/runs/41973073375).
+- **Editorial notes update:** [commit dde7d78ac01ee7f5c4235e1c3d5be387c3d31b15](https://github.com/deepakparmaronline/tools/commit/dde7d78ac01ee7f5c4235e1c3d5be387c3d31b15) records publication state and per-page canonical URLs. Its matching quality status is also `passed` in [run 41973450266](https://github.com/deepakparmaronline/tools/actions/runs/41973450266).
+- **QA passed:** changed PHP syntax, static sitemap validation (446 URLs), Alternatives integration tests, software review/index/schema/sitemap tests and publication rendering tests.
+- **Editorial checks:** alternatives article is 2,451 words with seven candidates, best-fit/pros/cons/skip guidance, dated official price/limit links, migration notes, five editorial FAQs and a matching ItemList. No unsupported PAA wording or Semrush metrics were invented. No hands-on testing is claimed.
+- **Category decision:** no workflow-automation category pillar was created because the group remains below `HUB_MIN_TOOLS=4`.
+- **Deployment handoff:** Hostinger auto-deployment from `main` is expected. Live HTTP/browser verification was not performed and remains for the user; it was not used as a publication gate.
+
+### Changed files (39)
+
+- `alternatives/articles/n8n-alternatives.php`
+- `articles/n8n-alternatives/article.md`
+- `articles/n8n-alternatives/notes.md`
+- `articles/n8n-alternatives/schema.json`
+- `articles/n8n-alternatives/seo.md`
+- `articles/n8n-alternatives/sources.md`
+- `articles/n8n-how-to-use/article.md`
+- `articles/n8n-how-to-use/notes.md`
+- `articles/n8n-how-to-use/schema.json`
+- `articles/n8n-how-to-use/seo.md`
+- `articles/n8n-how-to-use/sources.md`
+- `articles/n8n-hub/article.md`
+- `articles/n8n-hub/notes.md`
+- `articles/n8n-hub/schema.json`
+- `articles/n8n-hub/seo.md`
+- `articles/n8n-hub/sources.md`
+- `articles/n8n-pricing/article.md`
+- `articles/n8n-pricing/notes.md`
+- `articles/n8n-pricing/schema.json`
+- `articles/n8n-pricing/seo.md`
+- `articles/n8n-pricing/sources.md`
+- `articles/n8n-review/article.md`
+- `articles/n8n-review/notes.md`
+- `articles/n8n-review/schema.json`
+- `articles/n8n-review/seo.md`
+- `articles/n8n-review/sources.md`
+- `articles/n8n-vs-zapier/article.md`
+- `articles/n8n-vs-zapier/notes.md`
+- `articles/n8n-vs-zapier/schema.json`
+- `articles/n8n-vs-zapier/seo.md`
+- `articles/n8n-vs-zapier/sources.md`
+- `data/post-2026-11-05-n8n-review.php`
+- `data/software-pages.php`
+- `includes/alternatives.php`
+- `includes/editorial-index.php`
+- `reviews/n8n-review/index.php`
+- `tests/alternatives.py`
+- `tests/software_decisions.py`
+- `tests/software_indexes.py`
+
+### Next queue item
+
+- **Order 7: Notion alternative** — US volume 1,000, KD 34, CPC US$4.60, intent C, status `queued`. Saved trend: `█▆▆▅▄▄▄▄▄█▆▆ →`. Keep the saved metrics unchanged; begin Notion only on the next run.
