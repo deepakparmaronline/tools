@@ -377,3 +377,11 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 ### Next queue item
 
 - **Order 7: Notion alternative** — US volume 1,000, KD 34, CPC US$4.60, intent C, status `queued`. Saved trend: `█▆▆▅▄▄▄▄▄█▆▆ →`. Keep the saved metrics unchanged; begin Notion only on the next run.
+
+## Notion software cluster queue claim (2026-11-06)
+
+- **Queue item:** Order 7, Notion; primary keyword `Notion alternative`; action `new cluster`; status changed to `in_progress` before content work.
+- **Saved 2026-10-24 US snapshot:** volume 1,000; KD 34; CPC US$4.60; intent C; trend `█▆▆▅▄▄▄▄▄█▆▆ →`; recorded SERP features: high volume, buyer intent and PAA. These fields are copied unchanged from the queue and matching snapshot row. No Semrush session was opened. The snapshot does not contain exact PAA question wording, so none will be invented.
+- **Duplicate check:** the current main tree contains no Notion-specific hub, alternatives record, review, pricing, how-to or comparison files. Existing Taskade editorial notes mention Notion as a competitor context, not a Notion-targeted page.
+- **Product scope:** Notion is the all-in-one connected workspace for docs, wikis, projects, databases and AI features. The cluster will distinguish the core workspace from Notion AI and custom agents, and will explain team collaboration, export/import, offline use and plan limits.
+- **Exact next action:** verify current official Notion product, pricing, help, developer and release sources; review current public SERPs and competitor coverage; then complete the six-page cluster and all required editorial records in one reviewed content commit.
