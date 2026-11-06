@@ -5,3 +5,11 @@ Disallow: /data/
 Disallow: /docs/
 
 Sitemap: https://toolboxkart.tech/sitemap.xml
+Sitemap: https://toolboxkart.tech/sitemap-tools.xml
+Sitemap: https://toolboxkart.tech/sitemap-alternatives.xml
+Sitemap: https://toolboxkart.tech/sitemap-reviews.xml
+Sitemap: https://toolboxkart.tech/sitemap-pricing.xml
+Sitemap: https://toolboxkart.tech/sitemap-how-to-use.xml
+Sitemap: https://toolboxkart.tech/sitemap-compare.xml
+Sitemap: https://toolboxkart.tech/sitemap-categories.xml
+Sitemap: https://toolboxkart.tech/sitemap-pages.xml

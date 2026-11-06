@@ -299,8 +299,29 @@ def main():
         for child in required_maps:
             assert f'https://toolboxkart.tech{child}' in sitemap, child
             ET.fromstring(get(child))
+        robots = (ROOT / 'robots.txt').read_text()
+        assert 'Sitemap: https://toolboxkart.tech/sitemap.xml' in robots
+        for child in required_maps:
+            assert f'Sitemap: https://toolboxkart.tech{child}' in robots, child
         for path, child in child_maps.items():
             assert f'https://toolboxkart.tech{path}' in get(child), path
+        class NoRedirect(urllib.request.HTTPRedirectHandler):
+            def redirect_request(self, request, file_pointer, code, message, headers, new_url):
+                return None
+
+        no_redirect = urllib.request.build_opener(NoRedirect)
+        for legacy, destination in {
+            '/privacy-policy/': '/privacy',
+            '/hr/': '/hr-payroll/',
+            '/seo/gsc-regex-builder/': '/seo/search-console-regex-generator',
+            '/seo/seo-tag-extractor/': '/seo/meta-extractor',
+        }.items():
+            try:
+                no_redirect.open(f'http://127.0.0.1:{port}{legacy}', timeout=5)
+                raise AssertionError(f'{legacy}: expected a redirect')
+            except urllib.error.HTTPError as error:
+                assert error.code == 301, legacy
+                assert error.headers['Location'] == destination, legacy
         assert '/versus/freedom-vs-cold-turkey/' in get('/sitemap-compare.xml')
         navigation = (ROOT / 'assets/site.js').read_text()
         fallback = (ROOT / 'includes/header.php').read_text()

@@ -16,7 +16,7 @@ Only published, complete records with valid publication dates no later than toda
 
 `includes/alternatives.php` discovers records automatically. It also assigns practical topic groups for the Alternatives hub and chooses topical related cards through `related_alternative_articles()`. Do not hardcode a flat replacement listing or restore date-only related recommendations. No edits to `data/posts.php` are required for Alternatives records. The existing blog registry and article URLs remain separate.
 
-The main `/sitemap.xml` continues to include published Alternatives URLs. `/sitemap-alternatives.xml` is a dedicated child sitemap for the Alternatives hub and published Alternatives records; keep both sitemap declarations in `robots.txt`. A focused two-product comparison belongs under `/versus/`, while a single-product research review belongs under `/reviews/`. Those pages use the standalone editorial registry rather than the Alternatives record directory.
+The main `/sitemap.xml` is the sitemap index. `/sitemap-alternatives.xml` is a dedicated child sitemap for the Alternatives hub and published Alternatives records. Keep the index and every current child sitemap declared in `robots.txt` so crawlers can discover changed child maps directly. A focused two-product comparison belongs under `/versus/`, while a single-product research review belongs under `/reviews/`. Those pages use the standalone editorial registry rather than the Alternatives record directory.
 
 Article content is trusted editorial HTML, like existing blog content. These PHP records must only be authored by trusted site editors; they are not a public upload interface. Apache blocks direct access to the record directory.
 

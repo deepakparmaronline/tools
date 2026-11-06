@@ -154,6 +154,10 @@ $softwareLegacyRedirects = [
     '/how-to-use/zendesk/' => '/zendesk/how-to-use/',
     '/alternatives/zendesk-alternatives/' => '/zendesk/alternatives/',
     '/reviews/zendesk-review/' => '/zendesk/review/',
+    '/privacy-policy/' => '/privacy',
+    '/hr/' => '/hr-payroll/',
+    '/seo/gsc-regex-builder/' => '/seo/search-console-regex-generator',
+    '/seo/seo-tag-extractor/' => '/seo/meta-extractor',
 ];
 if (isset($softwareLegacyRedirects[$path])) {
     header('Location: '.$softwareLegacyRedirects[$path], true, 301);
