@@ -74,4 +74,12 @@ for path in [PATH.rstrip('/'),PATH+'index.html']:
     try:urllib.request.build_opener(NoRedirect).open(BASE+path)
     except urllib.error.HTTPError as error:assert error.code==301 and error.headers['Location']==PATH
     else:raise AssertionError('Expected canonical redirect: '+path)
-print('PASS: complete static HTML, author/date, image and social metadata, Article/Person/FAQ schema, TOCs, five recent links, internal destinations, category/central/home discovery, sitemap, assets, canonical redirects')
+legacy_slug='codex-vs-github-copilot-vs-claude-code'
+legacy_target=f'/ai-news/{legacy_slug}'
+for path in [f'/blog/{legacy_slug}',f'/blog/{legacy_slug}/']:
+    try:urllib.request.build_opener(NoRedirect).open(BASE+path)
+    except urllib.error.HTTPError as error:assert error.code==301 and error.headers['Location']==legacy_target,path
+    else:raise AssertionError('Expected legacy redirect: '+path)
+r,data=get(legacy_target)
+assert r.status==200 and b'<h1>Codex vs GitHub Copilot vs Claude Code: Which Coding Agent Fits?</h1>' in data
+print('PASS: complete static HTML, author/date, image and social metadata, Article/Person/FAQ schema, TOCs, five recent links, internal destinations, category/central/home discovery, sitemap, assets, canonical and legacy redirects')

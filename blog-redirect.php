@@ -1,6 +1,6 @@
 <?php
 require __DIR__.'/includes/bootstrap.php';
-$slug = $_GET['slug'] ?? '';
+$slug = trim((string) ($_GET['slug'] ?? ''), '/');
 $post = post_by_slug($slug);
 if (!$post) {
     header('Location: /chatgpt/', true, 301);
