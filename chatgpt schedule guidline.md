@@ -10,7 +10,8 @@
 - Preserve existing non-software pages. Software-cluster URLs use the permanent tool-first structure: `/{tool}/`, `/{tool}/alternatives/`, `/{tool}/review/`, `/{tool}/pricing/`, and `/{tool}/how-to-use/`. Comparisons remain `/compare/{tool}-vs-{other}/` unless explicitly migrated.
 - Do not add a navigation link to a route that is not live.
 - Commit and push only reviewed changes needed for the current run.
-- Hostinger deploys automatically from GitHub `main`. Verify the live result after pushing.
+- This is a zero-manual publishing workflow. The user will not edit XML, commit, push, publish, deploy, or perform a required verification step.
+- Hostinger deploys automatically from GitHub `main`. A successful scheduled run must complete the repository-to-GitHub handoff itself; it must never stop with local-only changes or an unpushed content commit.
 
 ## 2. Required files to read at the start of every run
 
@@ -50,7 +51,7 @@ If a required file is missing or unreadable, stop before publishing and report t
 
 ## 5. Build the complete cluster
 
-The complete cluster may span several scheduled runs. Scheduled runs are bounded, so each run must finish one safe checkpoint instead of repeatedly attempting the whole cluster and saving nothing.
+Finish the complete cluster in one scheduled run whenever the available run can safely do so. If a bounded run cannot finish the cluster, it must still complete and push a substantive safe checkpoint. Never spend or end a run with only a queue claim, progress note, empty scaffold, or other status-only content commit.
 
 Use these checkpoints in order:
 
@@ -92,6 +93,8 @@ Every page and its discovery records must be committed together. Add each publis
 
 Tool hubs, pricing guides, how-to guides, comparisons, and category pillars are registered in `data/software-pages.php`. Alternatives use their published article records. Reviews use the published Reviews post registry. Never publish an article file without its registration entry.
 
+For the final publication commit, update the pages, public registries, internal links, affected XML child sitemaps or the source records that generate their dynamic XML, and queue/progress state together. Confirm each new canonical appears exactly once in the correct child sitemap, the root sitemap index exposes every current child sitemap, and `robots.txt` declares every current child sitemap. Do not ask the user to edit or submit repository XML manually.
+
 ## 6. Research and honesty
 
 - Open every product's official website, pricing page, documentation, help center, and changelog needed for the claims.
@@ -131,14 +134,14 @@ If a check fails, fix it before publishing. If the facts cannot be verified, mar
 - Read `seo/quality-status.json` from the latest `main`. The workflow is confirmed only when its `status` is `passed` and its `commit` exactly matches the content commit being checked. The file also records the workflow run link and check time.
 - The workflow creates a separate status-only commit after a pass. Do not mistake that status commit for the content commit and do not treat it as a new publishing checkpoint.
 - If the workflow fails, read the failing step, fix the content or code and run it again. Do not mark the tool published and do not claim live success until the workflow passes.
-- A passing workflow does not prove live HTTP status. The user has explicitly taken responsibility for live verification. Do not make live HTTP/browser access a publication gate.
+- A passing workflow does not prove live HTTP status. Live HTTP/browser access is an optional automated follow-up, not a publication gate and not a manual responsibility to hand back to the user.
 
 ## 8. Publish and verify
 
 - Commit and push the reviewed cluster to GitHub `main`.
 - Wait for the `ToolboxKart quality checks` workflow on that commit and confirm it passes.
 - Verify repository-rendered indexes, registration, canonicals, internal links, child sitemaps and sitemap-index entries through the quality workflow.
-- The user will verify live HTTP responses after Hostinger auto-deploys from GitHub main. Do not claim live verification unless it was actually performed, but do not block a complete commit because live access is unavailable.
+- Hostinger auto-deploys after the GitHub `main` push. Do not request any manual publication or deployment action from the user. Check live HTTP automatically when access is available; otherwise report that live verification was not performed without blocking the completed GitHub-to-Hostinger handoff.
 - Missing registry, index or child-sitemap records are repository quality failures and must be fixed before publication.
 
 ## 9. Progress and final report
@@ -153,7 +156,7 @@ Update the queue or progress record with:
 - Test, build, sitemap, and live verification status.
 - The exact next `queued` row for the following run.
 
-Mark the queue row `published` after the complete reviewed cluster and its registry, public index and child-sitemap entries are committed to main and the matching quality workflow passes. Hostinger auto-deploys from main; the user performs live verification. Do not hold publication for unavailable live HTTP checks.
+Mark the queue row `published` after the complete reviewed cluster and its registry, public index and child-sitemap entries are committed to main and the matching quality workflow passes. Hostinger auto-deploys from main. Do not hold publication for unavailable live HTTP checks and do not hand a required manual step to the user.
 
 Keep the final report concise. Report blockers honestly and do not fall back to news publishing.
 
@@ -162,4 +165,4 @@ Keep the final report concise. Report blockers honestly and do not fall back to 
 - Every applicable indexable page must include visible breadcrumbs and matching BreadcrumbList JSON-LD. Names, positions and canonical URLs in the schema must match the visible trail.
 - The tool hub must use SoftwareApplication schema without invented ratings. Alternatives pages must use ItemList only when the list is visible and the schema matches its order.
 - Page outlines are guardrails, not reusable copy templates. Headings, examples, analysis, recommendations and wording must be specific to the product and search intent.
-- Hostinger auto-deploys from main. Live HTTP/browser verification is the user's responsibility and is not a publication gate. Never claim live verification unless performed.
+- Hostinger auto-deploys from main. Live HTTP/browser verification is an optional automated follow-up and is not a publication gate. Never claim live verification unless performed, and never assign it to the user as a required manual step.
