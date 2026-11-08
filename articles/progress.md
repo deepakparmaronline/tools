@@ -385,3 +385,25 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - **Duplicate check:** the current main tree contains no Notion-specific hub, alternatives record, review, pricing, how-to or comparison files. Existing Taskade editorial notes mention Notion as a competitor context, not a Notion-targeted page.
 - **Product scope:** Notion is the all-in-one connected workspace for docs, wikis, projects, databases and AI features. The cluster will distinguish the core workspace from Notion AI and custom agents, and will explain team collaboration, export/import, offline use and plan limits.
 - **Exact next action:** verify current official Notion product, pricing, help, developer and release sources; review current public SERPs and competitor coverage; then complete the six-page cluster and all required editorial records in one reviewed content commit.
+
+
+## Notion software cluster publication checkpoint (2026-11-08)
+
+- **Queue item:** Order 7, Notion, primary keyword `Notion alternative`, action `new cluster`. Status remains `in_progress` until GitHub Actions reports `status=passed` for the exact content commit.
+- **Saved metrics preserved:** US volume 1,000; KD 34; CPC US$4.60; intent C; saved trend `█▆▆▅▄▄▄▄▄█▆▆ →`. No Semrush refresh was run and no metrics were changed.
+- **SERP research:** reviewed current commercial listicle and comparison result formats, including Zapier, Plane, Airtable and The Remote Stack. Coverage themes included free-plan limits, team wiki versus project management, local-first/offline notes, pricing and migration. No exact PAA questions were saved or invented.
+- **Official research:** Notion product, pricing, AI, projects, wikis, database, automation, sharing, offline, import/export, credits and release pages; ClickUp, Confluence, Slab, Nuclino, Obsidian, Anytype and Taskade official product/pricing/help pages.
+- **Canonical URLs:**
+  - Hub: https://toolboxkart.tech/notion/
+  - Alternatives: https://toolboxkart.tech/notion/alternatives/
+  - Review: https://toolboxkart.tech/notion/review/
+  - Pricing: https://toolboxkart.tech/notion/pricing/
+  - How-to: https://toolboxkart.tech/notion/how-to-use/
+  - Comparison: https://toolboxkart.tech/compare/notion-vs-clickup/
+- **Registry and discovery:** `data/software-pages.php` registers hub, pricing, how-to and comparison pages; `alternatives/articles/notion-alternatives.php` registers the alternatives page; `data/post-2026-11-08-notion-review.php` and `reviews/notion-review/index.php` register and render the review. `includes/alternatives.php` adds the article to the documents-specialist group.
+- **Dynamic sitemap sources:** `data/software-pages.php` feeds `sitemap-tools.php`, `sitemap-pricing.php`, `sitemap-how-to-use.php` and `sitemap-compare.php`; the alternatives record feeds `sitemap-alternatives.php`; the review post record feeds `sitemap-reviews.php`. Static XML files are not required because these generators discover the new records dynamically. Root `sitemap.xml` and `robots.txt` child-sitemap declarations are retained and covered by tests.
+- **Redirects:** none added; no verified prior Notion URL was found.
+- **Editorial safeguards:** no hands-on testing, rating, fabricated PAA wording or new Semrush metrics. No category pillar was created because the group remains below `HUB_MIN_TOOLS=4`.
+- **Tests added:** canonical/indexability/schema and exactly-once child-sitemap checks for all six routes; root sitemap and robots declarations; review listing, author/date and schema checks; alternatives ItemList, FAQ and listing checks.
+- **Changed files in this cluster:** `data/software-pages.php`; `alternatives/articles/notion-alternatives.php`; `reviews/notion-review/index.php`; `data/post-2026-11-08-notion-review.php`; `includes/alternatives.php`; `tests/software_indexes.py`; `tests/software_decisions.py`; `tests/alternatives.py`; six folders under `articles/notion-*`; `seo/tool_publishing_queue.md`; and `articles/progress.md`.
+- **Next queue item:** Order 8, Help Scout alternative; saved US volume 260, KD 16, CPC US$46.62, intent I/C. Do not start it before Order 7 is closed.

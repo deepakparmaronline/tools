@@ -1,0 +1,93 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/notion/review/#article",
+      "headline": "Notion Review: Features, Limits and Fit",
+      "description": "A research-based Notion review covering docs, databases, AI, pricing, offline access, export limits and the teams most likely to benefit in 2026.",
+      "datePublished": "2026-11-08T00:00:00+05:30",
+      "dateModified": "2026-11-08T00:00:00+05:30",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/notion/review/",
+      "url": "https://toolboxkart.tech/notion/review/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Notion",
+          "item": "https://toolboxkart.tech/notion/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Notion Review: Features, Limits and Fit",
+          "item": "https://toolboxkart.tech/notion/review/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Notion worth using?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notion is worth considering when a team wants docs, wikis, databases and project context in one place. It is less suitable when the main need is advanced project controls, full offline browser use or a low-maintenance structure that needs little setup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Notion free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Free plan costs $0 per member per month. It is generous for an individual, but collaborative blocks are limited for workspaces with two or more members."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Notion work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notion supports downloaded pages in its desktop and mobile apps. Paid plans also auto-download recently visited and favorited pages. The web browser does not support the offline feature."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Notion include AI in every plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Free and Plus include a limited trial. Business and Enterprise include Notion AI features. Custom Agents use a separate Notion credit system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you export a Notion workspace?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can export workspace pages as HTML or Markdown and databases as CSV, with uploaded files. Pages you cannot access and content excluded by teamspace settings may be left out, and an export cannot instantly recreate the workspace."
+          }
+        }
+      ]
+    }
+  ]
+}

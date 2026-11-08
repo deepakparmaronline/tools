@@ -161,3 +161,6 @@ These rows are not part of the runnable queue. A daily run must not select them.
 
 ## Queue publication gate
 A queue row may be marked published only after the complete cluster and all registry, public index and child sitemap entries are committed to main, and the ToolboxKart quality checks status is passed for the exact content commit. Hostinger auto-deploys from main. Live HTTP/browser verification is the user's responsibility and is not a publication gate.
+
+
+<!-- 2026-11-08 run: Order 7 Notion cluster pages, registry entries and dynamic sitemap discovery are included in the content commit. Keep status in_progress until the exact content commit has a matching passed quality-status record. -->

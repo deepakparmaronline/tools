@@ -328,6 +328,32 @@ def main():
         for path in indexes + ['/alternatives/', '/reviews/', '/browse-tools-by-niche']:
             assert path in navigation, path
             assert path in fallback, path
+
+        # Notion cluster: canonical, indexability, schema and child-sitemap discovery.
+        notion_routes = [
+            ('/notion/', 'https://toolboxkart.tech/notion/', '/sitemap-tools.xml', True),
+            ('/notion/pricing/', 'https://toolboxkart.tech/notion/pricing/', '/sitemap-pricing.xml', False),
+            ('/notion/how-to-use/', 'https://toolboxkart.tech/notion/how-to-use/', '/sitemap-how-to-use.xml', False),
+            ('/compare/notion-vs-clickup/', 'https://toolboxkart.tech/compare/notion-vs-clickup/', '/sitemap-compare.xml', False),
+        ]
+        for route, canonical, sitemap_path, has_software_schema in notion_routes:
+            html = get(route)
+            assert html.count('<h1') == 1, route
+            assert canonical in html and 'rel="canonical"' in html, route
+            assert 'noindex' not in html.lower(), route
+            assert 'BreadcrumbList' in html and 'FAQPage' in html, route
+            if has_software_schema:
+                assert 'SoftwareApplication' in html, route
+            child_map = get(sitemap_path)
+            assert child_map.count(canonical) == 1, (sitemap_path, canonical, child_map.count(canonical))
+        for index_path in ['/tools/', '/pricing/', '/how-to-use/', '/compare/']:
+            assert 'Notion' in get(index_path), index_path
+        root_map = get('/sitemap.xml')
+        robots_body = get('/robots.txt')
+        for child_path in ['/sitemap-tools.xml', '/sitemap-pricing.xml', '/sitemap-how-to-use.xml', '/sitemap-compare.xml', '/sitemap-alternatives.xml', '/sitemap-reviews.xml']:
+            assert child_path in root_map, child_path
+            assert child_path in robots_body, child_path
+
         print('PASS: software indexes, registry, navigation, metadata, schemas and type-specific sitemap discovery')
     finally:
         server.terminate()

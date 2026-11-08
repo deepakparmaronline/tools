@@ -1,0 +1,99 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/notion/#article",
+      "headline": "Notion: Workspace Guide",
+      "description": "Learn what Notion does, compare its plans and AI limits, and see how its docs, wikis, databases and projects fit a small team before you choose a workspace.",
+      "datePublished": "2026-11-08T00:00:00+05:30",
+      "dateModified": "2026-11-08T00:00:00+05:30",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/notion/",
+      "url": "https://toolboxkart.tech/notion/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Software Tool Hubs",
+          "item": "https://toolboxkart.tech/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Notion: Workspace Guide",
+          "item": "https://toolboxkart.tech/notion/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://toolboxkart.tech/notion/#software",
+      "name": "Notion",
+      "url": "https://www.notion.com/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "A connected workspace for documents, wikis, databases and project work.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Notion free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Notion has a Free plan at $0 per member per month. It works well for an individual, but collaborative blocks are limited for workspaces with two or more members and each Free-plan file upload is limited to 5 MB."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Notion work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but only in the desktop and mobile apps. Pages must be downloaded for offline use. Paid plans also auto-download recently visited and favorited pages. The offline feature is not available in a web browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Notion include AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Free and Plus include a limited AI trial. Business and Enterprise include Notion AI features such as Notion Agent and AI Meeting Notes. Custom Agents use Notion credits after the free trial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Notion replace project management software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notion can handle project databases, tasks, subtasks, dependencies and several views. Teams that need deeper task controls, time tracking, sprint planning or workload reporting may prefer a dedicated project tool such as ClickUp."
+          }
+        }
+      ]
+    }
+  ]
+}

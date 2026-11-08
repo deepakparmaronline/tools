@@ -94,6 +94,22 @@ def main():
         }
         for source,target in redirects.items():
             code,headers,_=get(source);assert code==301 and headers['Location']==target,source
+
+        notion_review_code, _, notion_review_html = get('/notion/review/')
+        assert notion_review_code == 200
+        assert 'https://toolboxkart.tech/notion/review/' in notion_review_html and 'rel="canonical"' in notion_review_html
+        assert notion_review_html.count('<h1') == 1
+        assert notion_review_html.count('<strong>Written by <a href="/about-deepak-parmar/">Deepak Parmar</a></strong>') == 2
+        assert 'AggregateRating' not in notion_review_html
+        assert 'hands-on testing' in notion_review_html.lower()
+        assert all(token in notion_review_html for token in ['Article','BreadcrumbList','FAQPage'])
+        notion_reviews_index = get('/reviews/')[2]
+        notion_content_index = get('/content/')[2]
+        assert 'Notion Review' in notion_reviews_index
+        assert 'Notion Review' in notion_content_index
+        notion_review_map = get('/sitemap-reviews.xml')[2]
+        assert notion_review_map.count('https://toolboxkart.tech/notion/review/') == 1
+
         print('PASS: Versus/Reviews pages, trust pages, schema, author/date counts, discovery, sitemaps and legacy redirects')
     finally:
         server.terminate();server.wait(timeout=5)

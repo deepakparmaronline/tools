@@ -210,6 +210,19 @@ def main():
             assert '/assets/site.js?v=' in html, path
             assert '<a href="/alternatives/">Alternatives</a>' in html, path
             assert '<a href="https://toolboxkart.tech/' not in html, path
+
+        notion_alt_code, _, notion_alt_html = get('/notion/alternatives/')
+        assert notion_alt_code == 200
+        assert 'https://toolboxkart.tech/notion/alternatives/' in notion_alt_html and 'rel="canonical"' in notion_alt_html
+        assert notion_alt_html.count('<h1') == 1
+        assert all(token in notion_alt_html for token in ['BreadcrumbList','ItemList','FAQPage'])
+        for alternative_name in ['ClickUp','Confluence','Slab','Nuclino','Obsidian','Anytype','Taskade']:
+            assert alternative_name in notion_alt_html, alternative_name
+        assert '/reviews/taskade-review/' in notion_alt_html
+        notion_alt_map = get('/sitemap-alternatives.xml')[2]
+        assert notion_alt_map.count('https://toolboxkart.tech/notion/alternatives/') == 1
+        assert 'Notion' in get('/alternatives/')[2]
+
         print('PASS: CSS/JS content and MIME types, topic groups, published article links, site-wide navigation, draft/future exclusion, related cards, SEO/schema, redirects, main and Alternatives sitemaps, existing routes')
     finally:
         for path in paths:
