@@ -1,6 +1,6 @@
 <?php
 return [
- 'tool_hubs' => [[
+ 'tool_hubs' => [
  [
   'title'=>'Notion: Workspace Guide',
   'seo_title'=>'Notion Guide: Features and Pricing',
@@ -24,7 +24,7 @@ return [
 <p>Free and Plus include a limited AI trial. Business and Enterprise include Notion AI features. Custom Agents use Notion credits after the free trial. Notion announced the new credit system for new Business and Enterprise workspaces on October 19, 2026, and for existing workspaces on November 2. Owners can review usage in the <a href="https://www.notion.com/help/track-notion-credits-usage">credits dashboard</a>.</p>
 <h2 id="who-should-use-notion">Who should use Notion?</h2><p>Notion suits teams that write, collect knowledge and connect project records. It also suits solo writers and researchers who want linked notes. It is less suitable when the main need is advanced task management, a full local-file workflow or a ready-made system that needs little setup.</p>
 <p>Compare the <a href="/compare/notion-vs-clickup/">Notion vs ClickUp guide</a> if task execution is the main job. If you need a focused wiki, local notes or stronger offline ownership, read the <a href="/notion/alternatives/">Notion alternatives guide</a>.</p>
-<h2 id="notion-guides">Notion guides</h2><ul><li><a href="/notion/review/">Notion review</a></li><li><a href="/notion/pricing/">Notion pricing and AI credits</a></li><li><a href="/notion/how-to-use/">How to use Notion</a></li><li><a href="/notion/alternatives/">Notion alternatives</a></li><li><a href="/compare/notion-vs-clickup/">Notion vs ClickUp</a></li></ul>
+<h2 id="notion-guides">Notion guides</h2><ul><li><a href="/notion/review/">Notion review</a></li><li><a href="/notion/pricing/">Notion pricing and AI credits</a></li><li><a href="/notion/how-to-use/">How to use Notion</a></li><li><a href="/notion/alternatives/">Notion alternatives</a></li><li><a href="/compare/notion-vs-clickup/">Notion vs ClickUp</a></li><li><a href="/reviews/taskade-review/">Taskade review for AI agent workflows</a></li></ul>
 <h2 id="faq">Common questions</h2><h3>Is Notion free to use?</h3><p>Yes. The Free plan is $0 per member per month. It is generous for one person, but collaborative blocks are limited for workspaces with two or more members and file uploads are limited to 5 MB each.</p>
 <h3>Can Notion work offline?</h3><p>Yes, in desktop and mobile apps. Pages must be downloaded. Paid plans also auto-download recently visited and favorited pages. The feature is not available in a web browser.</p>
 <h3>Does Notion include AI?</h3><p>Free and Plus include a limited AI trial. Business and Enterprise include Notion AI features. Custom Agents use Notion credits after the free trial.</p>
@@ -215,7 +215,7 @@ HTML
   ]
  ],
 
-  'pricing' => [[
+  'pricing' => [
  [
   'title'=>'Notion Pricing: Plans and AI Credits',
   'seo_title'=>'Notion Pricing: Plans and AI Credits',
@@ -476,7 +476,7 @@ HTML
   ]
  ],
 
-  'how_to_use' => [[
+  'how_to_use' => [
  [
   'title'=>'How to Use Notion: Setup Guide',
   'seo_title'=>'How to Use Notion: Setup Guide',

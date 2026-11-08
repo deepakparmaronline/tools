@@ -407,3 +407,12 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - **Tests added:** canonical/indexability/schema and exactly-once child-sitemap checks for all six routes; root sitemap and robots declarations; review listing, author/date and schema checks; alternatives ItemList, FAQ and listing checks.
 - **Changed files in this cluster:** `data/software-pages.php`; `alternatives/articles/notion-alternatives.php`; `reviews/notion-review/index.php`; `data/post-2026-11-08-notion-review.php`; `includes/alternatives.php`; `tests/software_indexes.py`; `tests/software_decisions.py`; `tests/alternatives.py`; six folders under `articles/notion-*`; `seo/tool_publishing_queue.md`; and `articles/progress.md`.
 - **Next queue item:** Order 8, Help Scout alternative; saved US volume 260, KD 16, CPC US$46.62, intent I/C. Do not start it before Order 7 is closed.
+
+
+## Notion quality-check correction (2026-11-08)
+
+- First content workflow: run 42448372173, conclusion `failure`.
+- Failure: PHP syntax check reported `data/software-pages.php:1140`, an unmatched array opener caused by an extra nested `[` before the new `tool_hubs`, `pricing` and `how_to_use` records.
+- Correction: removed the three extra array openers, preserving one collection array and one record array for each entry.
+- Content improvement in the same fix commit: added a relevant link from the Notion hub to the existing Taskade review for readers comparing AI agent workflows.
+- Queue remains `in_progress` until a workflow passes for the exact complete content commit.

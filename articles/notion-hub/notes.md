@@ -9,3 +9,5 @@
 - No category pillar was created because the category has not reached HUB_MIN_TOOLS=4.
 - No redirect was added because no verified old Notion URL exists.
 - Sitemap discovery uses existing dynamic generators fed by data/software-pages.php.
+
+- Added a relevant cross-link to the existing Taskade review for readers comparing AI agent workflows.

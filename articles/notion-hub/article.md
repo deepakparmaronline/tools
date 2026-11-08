@@ -57,6 +57,7 @@ Compare the [Notion vs ClickUp guide](/compare/notion-vs-clickup/) if task execu
 - [How to use Notion](/notion/how-to-use/)
 - [Notion alternatives](/notion/alternatives/)
 - [Notion vs ClickUp](/compare/notion-vs-clickup/)
+- [Taskade review for AI agent workflows](/reviews/taskade-review/)
 
 ## Common questions
 
