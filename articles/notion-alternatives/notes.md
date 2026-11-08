@@ -12,3 +12,5 @@
 - No category pillar was created because the category has not reached HUB_MIN_TOOLS=4.
 - No redirect was added because no verified old Notion alternatives URL exists.
 - Dynamic sitemap source: this published record is discovered by sitemap-alternatives.php. Canonical uniqueness is checked by tests/software_indexes.py and tests/alternatives.py.
+
+- Added a decision section to help readers decide whether to improve their existing Notion workspace, add a specialist tool or migrate fully.

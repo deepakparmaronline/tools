@@ -416,3 +416,16 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - Correction: removed the three extra array openers, preserving one collection array and one record array for each entry.
 - Content improvement in the same fix commit: added a relevant link from the Notion hub to the existing Taskade review for readers comparing AI agent workflows.
 - Queue remains `in_progress` until a workflow passes for the exact complete content commit.
+
+
+## Notion cluster published (2026-11-08)
+
+- **Status:** published after the complete cluster and registry fix commit `911cad726fbea5e5a3dc74bff05aacf8f7da6893` passed the exact-commit quality check. The earlier content commit `cd937535db6695529a5762888f7cadbb99a35370` failed PHP syntax; the fix commit removed the extra array openers and included the final hub cross-link. The later status-only commit was not treated as the content commit.
+- **Quality workflow:** ToolboxKart quality checks, run [42448484779](https://github.com/deepakparmaronline/tools/actions/runs/42448484779), conclusion `success`. `seo/quality-status.json` reports `status=passed` and exact commit `911cad726fbea5e5a3dc74bff05aacf8f7da6893`.
+- **Published URLs:** https://toolboxkart.tech/notion/ ; https://toolboxkart.tech/notion/alternatives/ ; https://toolboxkart.tech/notion/review/ ; https://toolboxkart.tech/notion/pricing/ ; https://toolboxkart.tech/notion/how-to-use/ ; https://toolboxkart.tech/compare/notion-vs-clickup/ .
+- **Changed content and registry files:** `data/software-pages.php`; `alternatives/articles/notion-alternatives.php`; `reviews/notion-review/index.php`; `data/post-2026-11-08-notion-review.php`; `includes/alternatives.php`; `articles/notion-hub/{article.md,seo.md,sources.md,notes.md,schema.json}`; `articles/notion-alternatives/{article.md,seo.md,sources.md,notes.md,schema.json}`; `articles/notion-review/{article.md,seo.md,sources.md,notes.md,schema.json}`; `articles/notion-pricing/*`; `articles/notion-how-to-use/*`; `articles/notion-vs-clickup/*`.
+- **Tests:** changed PHP syntax; static sitemap validation; software content tests (including canonical/indexability, schema, public listing and exactly-once child sitemap checks); publication rendering. All steps passed in run 42448484779.
+- **Sitemap discovery:** dynamic sources are `data/software-pages.php` for tool hubs, pricing, how-to and comparison; `alternatives/articles/notion-alternatives.php` for alternatives; and `data/post-2026-11-08-notion-review.php` for reviews. No static XML child file needed a manual edit. Tests confirmed each canonical appears exactly once in its correct child sitemap and the root sitemap index plus `robots.txt` declare the child sitemaps.
+- **Redirects:** none added; no verified one-to-one legacy Notion route was found.
+- **Saved metrics:** US volume 1,000; KD 34; CPC US$4.60; commercial intent. No Semrush refresh or metric changes.
+- **Next queue row:** Order 8, Help Scout alternative; US volume 260, KD 16, CPC US$46.62, intent I/C. Do not start until this Notion closeout is complete.

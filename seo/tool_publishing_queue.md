@@ -29,7 +29,7 @@ Full-queue metrics may be reviewed only in a separate owner-authorized research 
 | 4 | Fiverr | Fiverr alternative | new cluster | 1900 | 29 | $4.30 | n/a | published |
 | 5 | Gmail | Gmail alternative | new cluster | 1300 | 38 | $2.10 | I/C | published |
 | 6 | n8n | n8n alternative | new cluster | 720 | 20 | $6.88 | C | published |
-| 7 | Notion | Notion alternative | new cluster | 1000 | 34 | $4.60 | C | in_progress |
+| 7 | Notion | Notion alternative | new cluster | 1000 | 34 | $4.60 | C | published |
 | 8 | Help Scout | HelpScout alternative | new cluster | 260 | 16 | $46.62 | I/C | queued |
 | 9 | ManyChat | ManyChat alternative | new cluster | 260 | 13 | $8.57 | I/C | queued |
 | 10 | Mailgun | Mailgun alternative | new cluster | 210 | 11 | $11.86 | I/C | queued |
@@ -163,4 +163,4 @@ These rows are not part of the runnable queue. A daily run must not select them.
 A queue row may be marked published only after the complete cluster and all registry, public index and child sitemap entries are committed to main, and the ToolboxKart quality checks status is passed for the exact content commit. Hostinger auto-deploys from main. Live HTTP/browser verification is the user's responsibility and is not a publication gate.
 
 
-<!-- 2026-11-08 run: Order 7 Notion cluster pages, registry entries and dynamic sitemap discovery are included in the content commit. Keep status in_progress until the exact content commit has a matching passed quality-status record. -->
+<!-- 2026-11-08 closeout: Order 7 Notion cluster passed ToolboxKart quality checks for content commit 911cad726fbea5e5a3dc74bff05aacf8f7da6893 (run 42448484779). Next: Order 8 Help Scout. -->

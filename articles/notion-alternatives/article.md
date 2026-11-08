@@ -108,6 +108,16 @@ Then compare the real cost. Count billable seats, guests, storage, AI credits, c
 
 Notion's export guide says workspace exports can include HTML, Markdown and CSV plus uploaded files, but private pages that the exporter cannot access and content excluded by teamspace settings may be missing. It also says an export cannot instantly recreate the original workspace. Treat migration as a controlled project, not a file upload.
 
+## When to stay with Notion
+
+Do not switch only because another tool has a lower starting price or a longer feature list. If your team already finds its docs, policies and project records in Notion, first clean up the workspace. Assign owners to key pages, remove duplicate databases, agree on status names and review sharing. That work may solve the real problem without moving every record.
+
+- **Stay with Notion** when linked docs, wikis and databases are used every week and the team can maintain them.
+- **Add a specialist tool** when one workflow needs deeper task tracking, local notes or a dedicated knowledge base, but the rest of the workspace still works.
+- **Plan a full move** when the same limits affect several teams, access rules are difficult to manage or the cost of keeping Notion plus extra tools is higher than a supported replacement.
+
+Before making the decision, run one real project in the alternative. Test search, permissions, export, task ownership and reporting with the people who will use it. Keep the original Notion workspace available until the new system passes that check.
+
 ## More Notion guides
 
 - [Notion workspace guide](/notion/)
