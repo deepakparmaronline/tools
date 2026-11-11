@@ -97,3 +97,6 @@ This guide uses public product, pricing and help documentation checked October 2
 - [Freshdesk review](https://toolboxkart.tech/freshdesk/review/)
 - [Freshdesk pricing](https://toolboxkart.tech/freshdesk/pricing/)
 - [Freshdesk alternatives](https://toolboxkart.tech/freshdesk/alternatives/)
+
+
+For a closer look at the shared-inbox option, read the [Help Scout guide](/helpscout/), [review](/helpscout/review/) and [alternatives guide](/helpscout/alternatives/).

@@ -4,7 +4,7 @@ return [
  'title'=>'8 Zendesk Alternatives for Support Teams in 2026',
  'seo_title'=>'8 Zendesk Alternatives for Support Teams (2026)',
  'description'=>'Compare Zendesk alternatives by support workflow, published pricing, team size, channel needs and migration effort before switching help desks.',
- 'date'=>'2026-10-27','updated'=>'2026-10-29','url_path'=>'/zendesk/alternatives/','breadcrumb_parent_name'=>'Zendesk','breadcrumb_parent_url'=>'/zendesk/','tag'=>'Customer support','author'=>'Deepak Parmar',
+ 'date'=>'2026-10-27','updated'=>'2026-11-11','url_path'=>'/zendesk/alternatives/','breadcrumb_parent_name'=>'Zendesk','breadcrumb_parent_url'=>'/zendesk/','tag'=>'Customer support','author'=>'Deepak Parmar',
  'item_list'=>[
   ['name'=>'Freshdesk','url'=>'https://www.freshworks.com/freshdesk/'],
   ['name'=>'Help Scout','url'=>'https://www.helpscout.com/'],
@@ -26,7 +26,7 @@ return [
 <p><strong>Short answer:</strong> Freshdesk is the closest like-for-like alternative to compare first. Help Scout suits teams that prefer a shared inbox, Zoho Desk is worth checking for small teams, and Intercom fits businesses that prioritize customer messaging and outcome-priced AI. Front, HubSpot Service Hub, Gorgias and Salesforce Service Cloud fit more specific collaboration, CRM or ecommerce workflows. The best choice depends on your channels, agent count, automation needs and historical data.</p>
 <h2>Compare Zendesk alternatives</h2><table><thead><tr><th>Tool</th><th>Best for</th><th>Published starting point</th></tr></thead><tbody>
 <tr><th><a href="https://www.freshworks.com/freshdesk/">Freshdesk</a></th><td>Conventional help desk</td><td>Growth US$19/agent/month billed annually. Checked October 29, 2026. <a href="https://www.freshworks.com/freshdesk/pricing/">Official pricing</a>.</td></tr>
-<tr><th><a href="https://www.helpscout.com/">Help Scout</a></th><td>Shared inbox and knowledge base</td><td>Free for up to 5 users; Standard displayed at US$25/user/month. Checked October 29, 2026. <a href="https://www.helpscout.com/pricing/">Official pricing</a>.</td></tr>
+<tr><th><a href="/helpscout/">Help Scout guide</a> (<a href="https://www.helpscout.com/">official site</a>)</th><td>Shared inbox and knowledge base</td><td>Free for up to 5 users; Standard displayed at US$25/user/month. Checked October 29, 2026. <a href="https://www.helpscout.com/pricing/">Official pricing</a>.</td></tr>
 <tr><th><a href="https://www.zoho.com/desk/">Zoho Desk</a></th><td>Small teams and Zoho users</td><td>Free edition for 3 users; paid prices vary by region. Checked October 29, 2026. <a href="https://www.zoho.com/desk/pricing.html">Official pricing</a>.</td></tr>
 <tr><th><a href="https://www.intercom.com/">Intercom</a></th><td>Messaging and AI-assisted service</td><td>Seat pricing plus Fin from US$0.99 per outcome. Checked October 29, 2026. <a href="https://www.intercom.com/pricing">Official pricing</a>.</td></tr>
 <tr><th><a href="https://front.com/">Front</a></th><td>Collaborative shared inboxes</td><td>Starter US$25/seat/month billed annually. Checked October 29, 2026. <a href="https://front.com/pricing">Official pricing</a>.</td></tr>

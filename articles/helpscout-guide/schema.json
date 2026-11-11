@@ -1,0 +1,91 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/helpscout/#article",
+      "headline": "Help Scout: Customer Support Software Guide",
+      "description": "See how Help Scout combines a shared inbox, Docs, Beacon, workflows and AI. Compare current plan limits, data portability and team fit before you choose.",
+      "datePublished": "2026-11-11T00:00:00+05:30",
+      "dateModified": "2026-11-11T00:00:00+05:30",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech/"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/helpscout/",
+      "url": "https://toolboxkart.tech/helpscout/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Software guides",
+          "item": "https://toolboxkart.tech/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Help Scout: Customer Support Software Guide",
+          "item": "https://toolboxkart.tech/helpscout/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://toolboxkart.tech/helpscout/#software",
+      "name": "Help Scout",
+      "url": "https://www.helpscout.com/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Customer support software for shared inbox conversations, a hosted knowledge base and website messaging.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Help Scout",
+        "url": "https://www.helpscout.com/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Help Scout free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Free plan lists up to five users, one inbox, one Docs site and 100 contacts per month. Check the article, tag and saved-reply allowances before using it for a busy support address."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Help Scout best for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Help Scout suits teams that want a shared inbox, Docs and customer context in one support workspace. It is less suitable when the main need is a large ticket taxonomy or a self-hosted knowledge base."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Help Scout include an AI agent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The pricing page lists Envoy at US$0.75 per resolution. AI Inbox assistance and drafting features vary by plan. Confirm the current product label and resolution definition before estimating usage."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/compare/freshdesk-vs-help-scout/#article",
+      "headline": "Freshdesk vs Help Scout: Pricing, AI and Fit",
+      "description": "Compare Freshdesk and Help Scout by price, free limits, AI billing, inbox workflows, channel needs and migration steps before choosing a support platform.",
+      "datePublished": "2026-11-11T00:00:00+05:30",
+      "dateModified": "2026-11-11T00:00:00+05:30",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech/"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/compare/freshdesk-vs-help-scout/",
+      "url": "https://toolboxkart.tech/compare/freshdesk-vs-help-scout/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Freshdesk",
+          "item": "https://toolboxkart.tech/freshdesk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Freshdesk vs Help Scout: Pricing, AI and Fit",
+          "item": "https://toolboxkart.tech/compare/freshdesk-vs-help-scout/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Freshdesk cheaper than Help Scout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Freshdesk Growth is listed at US$19 per agent/month billed annually. Help Scout pricing displayed Standard at US$25 per user/month on November 11, 2026, with a monthly and annual selector. Confirm billing mode, seats and usage before comparing total cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Help Scout have a free plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Help Scout lists a free plan for up to five users, one inbox, one Docs site and 100 contacts per month. Freshdesk public pricing lists a 14-day trial and does not show a permanent Free plan; some support docs still reference a Free program, so confirm new-account eligibility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which tool is better for AI support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Freshworks lists a one-time complimentary 500-session Freddy AI Agent allowance for eligible new customers, with extra packs at US$49 per 100 for the current billing cycle. Help Scout lists Envoy at US$0.75 per resolution. These meters are different and need a volume estimate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I import Freshdesk tickets into Help Scout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Help Scout lists Freshdesk as a supported source on Standard, Plus and Pro. The import can bring selected email or ticket history, customer profiles and tags, but does not recreate every user setting, inbox, knowledge article, saved reply, automation or custom field."
+          }
+        }
+      ]
+    }
+  ]
+}
