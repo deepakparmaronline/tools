@@ -35,7 +35,7 @@ HTML
  [
   'title'=>'Zendesk: Support Software Hub','seo_title'=>'Zendesk Guide: Features, Pricing and Alternatives',
   'description'=>'Research Zendesk support software, compare current plans, review strengths and limits, and find alternatives for different support workflows.',
-  'url'=>'/zendesk/','date'=>'2026-10-27','updated'=>'2026-10-29','status'=>'published','software_application'=>['name'=>'Zendesk','url'=>'https://www.zendesk.com/','applicationCategory'=>'BusinessApplication','operatingSystem'=>'Web','provider'=>'Zendesk','provider_url'=>'https://www.zendesk.com/','description'=>'Customer service software for ticketing, routing, customer context and support workflows.'],
+  'url'=>'/zendesk/','date'=>'2026-10-27','updated' => '2026-11-14','status'=>'published','software_application'=>['name'=>'Zendesk','url'=>'https://www.zendesk.com/','applicationCategory'=>'BusinessApplication','operatingSystem'=>'Web','provider'=>'Zendesk','provider_url'=>'https://www.zendesk.com/','description'=>'Customer service software for ticketing, routing, customer context and support workflows.'],
   'content'=><<<'HTML'
 <h2>What is Zendesk?</h2><p>Zendesk is customer service software built around ticketing, customer context, support workflows and reporting. Its Suite plans add broader channels and knowledge features. See the <a href="https://www.zendesk.com/">official product overview</a>, checked October 27, 2026.</p>
 <h2>Quick facts</h2><table><thead><tr><th>Question</th><th>Answer</th></tr></thead><tbody><tr><th>Category</th><td>Customer support and help desk software</td></tr><tr><th>Starting paid plan</th><td>Support Team at US$19 per agent/month billed yearly. <a href="https://www.zendesk.com/pricing/">Official pricing, checked October 27, 2026.</a></td></tr><tr><th>Free plan</th><td>A trial is advertised; a permanent free support plan was not listed on the page checked.</td></tr><tr><th>Best fit</th><td>Teams needing ticket routing, customer history, automation and structured support processes.</td></tr></tbody></table>
@@ -69,7 +69,7 @@ HTML
    'title'=>'Drift Software Guide: Sunset, Features and Alternatives',
    'seo_title'=>'Drift Guide: Sunset, Features and Alternatives',
    'description'=>'Research Drift chat features, retirement date, pricing status, alternatives and migration steps from current official Salesloft sources for existing users.',
-   'url'=>'/drift/','date'=>'2026-10-30','updated'=>'2026-10-30','status'=>'published','author'=>'Deepak Parmar',
+   'url'=>'/drift/','date'=>'2026-10-30','updated' => '2026-11-14','status'=>'published','author'=>'Deepak Parmar',
    'software_application'=>['name'=>'Drift','url'=>'https://www.salesloft.com/platform/chat-agents','applicationCategory'=>'BusinessApplication','operatingSystem'=>'Web','provider'=>'Salesloft','provider_url'=>'https://www.salesloft.com/','description'=>'Legacy conversational marketing and website chat software scheduled for retirement on January 31, 2027.'],
    'faqs'=>[
     ['question'=>'When will Drift be retired?','answer'=>'The official Drift Sunset FAQ checked October 30, 2026 says Drift will be retired on January 31, 2027. Access may end sooner if the current contract ends first.'],
@@ -213,7 +213,68 @@ HTML
 <p>Product, pricing, licensing, deployment and release details were checked against n8n&#39;s official website, pricing page, documentation and source licence on November 5, 2026. This page is based on desk research and does not claim hands-on testing.</p>
 HTML
   ]
- ],
+         [
+            'title' => 'Help Scout: Shared Inbox and Support Guide',
+            'seo_title' => 'Help Scout Guide: Features, Pricing and Setup',
+            'description' => 'Learn how Help Scout\'s shared inbox, Docs, Beacon and workflows fit together. Check free-plan limits, paid pricing, AI costs and setup before you choose.',
+            'url' => '/helpscout/',
+            'date' => '2026-11-14',
+            'updated' => '2026-11-14',
+            'status' => 'published',
+            'author' => 'Deepak Parmar',
+            'content' => <<<'HTML'
+<h2 id="quick-answer">Quick answer</h2>
+<p>Help Scout is a customer support platform built around a shared inbox, a knowledge base called Docs, and the Beacon help widget. It suits small and midsize teams that want customer conversations to feel like email while giving agents shared ownership, saved replies, workflows, customer context, and self-service content.</p>
+<p>It is less suitable when a support operation depends on deep ticket customization, several brands, complex routing, or a large set of imported macros and rules. Help Scout's built-in migration tool can bring conversations, customer profiles, and tags from supported systems, but it does not move every part of an old help desk.</p>
+<h2 id="help-scout-at-a-glance">Help Scout at a glance</h2>
+<div class="table-scroll"><table class="data-table"><thead><tr><th scope="col">Detail</th><th scope="col">What to know</th></tr></thead><tbody><tr><th scope="row">Product type</th><td>Shared inbox and customer support platform</td></tr><tr><th scope="row">Main products</th><td>Inbox, Docs, Beacon, Workflows, and Envoy</td></tr><tr><th scope="row">Free plan</th><td>Up to 5 users, 1 inbox, 1 Docs site, and 100 contacts per month</td></tr><tr><th scope="row">Paid pricing shown</th><td>Standard $25, Plus $45, and Pro $75 per user/month</td></tr><tr><th scope="row">Best fit</th><td>Email-first support teams that value a simple agent experience</td></tr><tr><th scope="row">Important cost check</th><td>Envoy AI agent is priced at $0.75 per resolution after its free trial</td></tr><tr><th scope="row">Important migration check</th><td>Users, inbox settings, help center articles, macros, rules, custom fields, ticket types, and custom statuses do not transfer through the standard import</td></tr></tbody></table></div>
+<p>The pricing page has a Monthly/Annual selector and advertises a 16% saving on annual billing. Confirm the selected billing term, taxes, add-ons, and seat count before approving a budget.</p>
+<h2 id="what-help-scout-does">What Help Scout does</h2>
+<p><strong>Inbox</strong> brings email, live chat, text, social conversations, and customer context into a shared workspace. Teammates can assign a conversation, add an internal note, use a saved reply, apply a tag, or create a workflow that handles a repeatable task. Views help agents focus on waiting, assigned, overdue, or tagged conversations.</p>
+<p><strong>Docs</strong> is the knowledge base. Teams can publish help articles in collections and categories, then use those articles to answer common questions before a customer contacts support. A Docs site is included in every plan, but the number of sites and articles depends on the plan.</p>
+<p><strong>Beacon</strong> adds a support entry point to a website or product. Depending on the configuration, it can surface Docs content, offer live chat, and collect a message. It is useful when a customer should be able to search for an answer without leaving the page.</p>
+<p><strong>Workflows and SLAs</strong> help teams manage repeatable work. Workflows can tag, assign, change status, or notify teammates when conditions are met. The number and type of workflows and SLA policies increase with the paid plan.</p>
+<p><strong>AI tools</strong> need to be separated by product. The pricing table lists AI Assist on paid plans and AI Drafts and AI Summarize on Plus and Pro. Envoy is the separate AI-agent suite, with Scout as its built-in agent. Envoy is listed at $0.75 per resolution and includes three months of free resolutions for a new account. Some capabilities on the Envoy page, including email handling and learning from past conversations, are still labelled as coming soon, so do not budget for them as live features.</p>
+<h2 id="who-should-consider-it">Who should consider it?</h2>
+<p>Help Scout is a sensible shortlist option for a SaaS company, professional service firm, education team, or small support department that mainly handles email and needs a shared record of customer conversations. It can also suit a team that wants a knowledge base and an on-site support widget without buying a separate product for each job.</p>
+<p>It is a weaker fit for a large operation that needs detailed ticket types, many custom statuses, strict skill-based routing, multiple brands, or extensive automation imported from another platform. Those teams should compare Zendesk, Freshdesk, and other full help desk products before moving.</p>
+<h2 id="start-with-the-right-guide">Start with the right guide</h2>
+<ul><li>Read the <a href="/helpscout/review/">Help Scout review</a> for strengths, limits, and fit.</li><li>Compare every plan in the <a href="/helpscout/pricing/">Help Scout pricing guide</a>.</li><li>Follow the <a href="/helpscout/how-to-use/">Help Scout setup guide</a> before connecting a live support address.</li><li>Compare <a href="/helpscout/alternatives/">Help Scout alternatives</a> if the workflow or migration limits are a concern.</li><li>Read <a href="/compare/helpscout-vs-zendesk/">Help Scout vs Zendesk</a> if your team needs more advanced ticket routing.</li><li>Browse other tools in <a href="/browse-tools-by-niche/">software by niche</a>.</li></ul>
+<h2 id="common-questions">Common questions</h2>
+<h3 id="is-help-scout-a-help-desk-or-a-shared-inbox">Is Help Scout a help desk or a shared inbox?</h3>
+<p>It is both a shared inbox and a customer support platform. The Inbox is designed around conversations, while workflows, SLAs, Docs, Beacon, and customer profiles add help desk and self-service features.</p>
+<h3 id="does-help-scout-have-a-free-plan">Does Help Scout have a free plan?</h3>
+<p>Yes. The current pricing page lists a free plan for up to five users, one inbox, one Docs site, and 100 contacts per month. Check the plan table for the limits on saved replies, tags, articles, and reporting history.</p>
+<h3 id="can-help-scout-import-tickets-from-another-help-desk">Can Help Scout import tickets from another help desk?</h3>
+<p>The standard import tool supports several providers, including Freshdesk, Zendesk, Intercom, Gorgias, HubSpot Service Hub, and Zoho Desk. It imports conversations or tickets with customer profiles and tags, but not every setting or content type.</p>
+<h3 id="is-envoy-included-in-the-help-scout-seat-price">Is Envoy included in the Help Scout seat price?</h3>
+<p>No. Envoy is a separate AI-agent product priced at $0.75 per resolution. Help Scout lists three months of free resolutions for a new account; confirm the current offer and usage rules before rollout.</p>
+<p>Comparing a simpler shared inbox? Read our <a href="/helpscout/">Help Scout guide</a>, <a href="/helpscout/review/">review</a>, and <a href="/helpscout/pricing/">pricing breakdown</a>.</p>
+
+<p>If your team is weighing a full ticketing suite against a simpler shared inbox, read our <a href="/helpscout/">Help Scout guide</a> and <a href="/compare/helpscout-vs-zendesk/">Help Scout vs Zendesk comparison</a>.</p>
+
+HTML,
+            'software_application' => [
+                'name' => 'Help Scout',
+                'applicationCategory' => 'BusinessApplication',
+                'operatingSystem' => 'Web',
+                'url' => 'https://www.helpscout.com/',
+                'description' => 'Customer support platform with shared inbox, Docs, Beacon, workflows, and AI tools.',
+                'offers' => [
+                    '@type' => 'Offer',
+                    'price' => '0',
+                    'priceCurrency' => 'USD',
+                    'description' => 'Free plan for up to five users, one inbox, one Docs site, and 100 contacts per month.',
+                ],
+            ],
+            'faqs' => [
+            ['q' => 'Is Help Scout a help desk or a shared inbox?', 'a' => 'It is both. Inbox is built around shared conversations, while Workflows, SLAs, Docs, Beacon, and customer profiles add help desk and self-service features.'],
+            ['q' => 'Does Help Scout have a free plan?', 'a' => 'Yes. The current pricing page lists up to five users, one inbox, one Docs site, and 100 contacts per month on Free.'],
+            ['q' => 'Can Help Scout import tickets from another help desk?', 'a' => 'The standard import tool supports several providers and can bring in conversations or tickets with customer profiles and tags. It does not import every setting or content type.'],
+            ['q' => 'Is Envoy included in the Help Scout seat price?', 'a' => 'No. Envoy is a separate AI-agent product listed at $0.75 per resolution, with three months of free resolutions for a new account.'],
+        ]
+        ],
+],
 
   'pricing' => [
  [
@@ -474,7 +535,63 @@ HTML
 <p>Prices, execution rules, trial limits, deployment options and licensing were checked against the official n8n pricing page, documentation and source licence on November 5, 2026. This guide does not assume a monthly price where the page displays annual billing.</p>
 HTML
   ]
- ],
+         [
+            'title' => 'Help Scout Pricing: Plans, Limits and Costs',
+            'seo_title' => 'Help Scout Pricing: Plans, Limits and Costs',
+            'description' => 'Compare Help Scout Free, Standard, Plus and Pro plans, seat limits, inboxes, Docs sites, workflow caps and AI costs before you plan your support budget.',
+            'url' => '/helpscout/pricing/',
+            'date' => '2026-11-14',
+            'updated' => '2026-11-14',
+            'status' => 'published',
+            'author' => 'Deepak Parmar',
+            'content' => <<<'HTML'
+<h2 id="quick-price-summary">Quick price summary</h2>
+<p>Help Scout has a Free plan and three paid plans. The current pricing page displays Standard at $25, Plus at $45, and Pro at $75 per user/month. It also has a Monthly/Annual selector and advertises a 16% saving on annual billing. Treat those figures as the displayed monthly equivalent, then confirm the selected billing term, tax, seat count, and add-ons at checkout.</p>
+<div class="table-scroll"><table class="data-table"><thead><tr><th scope="col">Plan</th><th scope="col">Price shown</th><th scope="col">Team and inbox limits</th><th scope="col">Main limits to check</th></tr></thead><tbody><tr><th scope="row">Free</th><td>$0</td><td>Up to 5 users, 1 inbox, 1 Docs site</td><td>100 contacts/month, 10 saved replies, 10 tags, 10 Docs articles, 30-day report history</td></tr><tr><th scope="row">Standard</th><td>$25/user/month</td><td>Up to 25 users, 2 inboxes, 2 Docs sites</td><td>150 basic workflows and 1 basic SLA</td></tr><tr><th scope="row">Plus</th><td>$45/user/month</td><td>Up to 50 users, 5 inboxes, 3 Docs sites</td><td>500 advanced workflows, 2 advanced SLAs, round-robin routing, 25 light users</td></tr><tr><th scope="row">Pro</th><td>$75/user/month</td><td>10-seat minimum, 10 inboxes, 5 Docs sites</td><td>Unlimited advanced workflows and SLAs, balanced routing, 50 light users</td></tr></tbody></table></div>
+<p>Paid plans list unlimited contacts. The number of Docs sites, inboxes, workflows, SLAs, light users, and routing features changes by tier. The plan table should be checked before purchase because a feature that looks like a core product capability may be limited to a higher plan.</p>
+<h2 id="what-the-free-plan-includes">What the Free plan includes</h2>
+<p>Free is useful for a very small team that needs one shared support inbox and a basic help center. It supports up to five users, one inbox, one Docs site, and 100 contacts per month. The detailed pricing table also lists ten saved replies, ten tags, ten Docs articles, one Beacon, and 30 days of report history.</p>
+<p>The contact allowance is the key limit. A team that receives more than 100 new contacts in a month should not assume it can keep using the Free plan without a change. It also has fewer reporting and automation options than the paid plans. Use it to evaluate the workflow or run a small support operation, not as a promise of unlimited free support.</p>
+<h2 id="standard-for-a-small-paid-team">Standard: for a small paid team</h2>
+<p>Standard is the first paid tier. The current pricing page lists $25 per user/month. It supports up to 25 users, two inboxes, two Docs sites, 150 basic workflows, and one basic SLA. It is the sensible starting point when the team has outgrown the Free contact allowance or needs more than one inbox.</p>
+<p>Standard can suit a support team with straightforward assignment and tagging rules. Before choosing it, check whether your workflows need advanced conditions or whether you need round-robin assignment. Those needs may push the team to Plus.</p>
+<h2 id="plus-for-more-routing-and-ai-assistance">Plus: for more routing and AI assistance</h2>
+<p>Plus is listed at $45 per user/month. The plan supports up to 50 users, five inboxes, three Docs sites, 500 advanced workflows, two advanced SLAs, round-robin routing, and 25 light users. The pricing table lists AI Assist, AI Drafts, and AI Summarize for Plus.</p>
+<p>Choose Plus when a team needs more structured routing, additional inboxes, and more workflow capacity. It is also the first tier to consider if AI drafting and conversation summaries are important to agent productivity. Do not confuse those agent-assist features with Envoy, which is a separate AI-agent product with usage-based pricing.</p>
+<h2 id="pro-for-larger-teams">Pro: for larger teams</h2>
+<p>Pro is listed at $75 per user/month and has a ten-seat minimum. It includes ten inboxes, five Docs sites, unlimited advanced workflows and SLAs, balanced routing, and 50 light users. It is aimed at teams that need more administration and workflow capacity than a small support desk.</p>
+<p>Pro may be unnecessary if the team has one or two inboxes and simple assignment rules. Compare the additional cost with the actual use of routing, SLA, security, and administration features rather than upgrading because the plan sounds more complete.</p>
+<h2 id="add-ons-and-extra-costs">Add-ons and extra costs</h2>
+<div class="table-scroll"><table class="data-table"><thead><tr><th scope="col">Item</th><th scope="col">Public price or rule</th></tr></thead><tbody><tr><th scope="row">Extra inbox</th><td>$10/month on annual billing or $12/month on monthly billing</td></tr><tr><th scope="row">Extra Docs site</th><td>$20/month</td></tr><tr><th scope="row">Envoy AI agent</th><td>$0.75 per resolution</td></tr><tr><th scope="row">Envoy trial</th><td>Three months of free resolutions for a new account</td></tr><tr><th scope="row">Additional migration volume</th><td>Imports over 500,000 records are $500 per 500,000 records, including the first 500,000</td></tr></tbody></table></div>
+<p>The Envoy price is usage-based. Estimate the number of conversations the agent may resolve, then set a monthly cap and monitor the actual resolution count. The product page also says teams can set spending caps and receive a discount when they prepay for resolutions. Confirm the current offer and billing rules before adding Envoy.</p>
+<h2 id="simple-cost-examples">Simple cost examples</h2>
+<p>A five-person team on Standard has a displayed seat cost of 5 × $25, or $125 per month before tax and add-ons, when using the annual price view. A ten-person team on Plus has a displayed seat cost of 10 × $45, or $450 per month before tax and add-ons. These examples do not include extra inboxes, extra Docs sites, Envoy resolutions, or any negotiated terms.</p>
+<p>The cheapest plan is not always the lowest-cost plan for the workflow. If a team needs more than two inboxes or advanced routing, compare the full Plus price with the cost of a different help desk. If the team needs to export a large history, include migration work in the budget as well.</p>
+<h2 id="which-plan-should-you-choose">Which plan should you choose?</h2>
+<ul><li>Choose <strong>Free</strong> if you have five or fewer users, one inbox, and fewer than 100 contacts per month.</li><li>Choose <strong>Standard</strong> if you need a paid support workspace with two inboxes and basic workflows.</li><li>Choose <strong>Plus</strong> if you need round-robin routing, more advanced workflows, more SLAs, or AI Drafts and Summarize.</li><li>Choose <strong>Pro</strong> if you need the ten-seat plan, more inboxes, unlimited advanced workflows and SLAs, and the higher administration limits.</li></ul>
+<p>If the team needs deeper ticket lifecycle controls or more complex channel routing, compare <a href="/helpscout/alternatives/">Help Scout alternatives</a> before upgrading. The <a href="/helpscout/review/">Help Scout review</a> explains the product fit, while <a href="/compare/helpscout-vs-zendesk/">Help Scout vs Zendesk</a> compares a more advanced ticketing platform.</p>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="does-help-scout-have-a-free-plan">Does Help Scout have a free plan?</h3>
+<p>Yes. Free supports up to five users, one inbox, one Docs site, and 100 contacts per month. It also has limits on saved replies, tags, Docs articles, Beacon, and report history.</p>
+<h3 id="are-help-scout-prices-per-user-or-per-inbox">Are Help Scout prices per user or per inbox?</h3>
+<p>The main plans are priced per user per month. The pricing page also lists extra inboxes as an add-on, so include both seats and inbox count in your budget.</p>
+<h3 id="is-envoy-included-in-standard-plus-or-pro">Is Envoy included in Standard, Plus, or Pro?</h3>
+<p>Envoy is a separate AI-agent product priced at $0.75 per resolution. The product page lists three months of free resolutions for a new account. AI Assist, AI Drafts, and AI Summarize are separate plan features.</p>
+<h3 id="what-costs-extra-in-help-scout">What costs extra in Help Scout?</h3>
+<p>Extra inboxes, extra Docs sites, and Envoy resolutions can add to the plan price. Large imports over 500,000 records also have a published fee. Check the current pricing and import pages before approving a migration.</p>
+<h2 id="sources-and-update-note">Sources and update note</h2>
+<p>Pricing and plan limits were checked on November 14, 2026 against Help Scout's official pricing page, Envoy page, and import guide. Prices can change and the billing selector affects the displayed rate.</p>
+HTML,
+            'breadcrumb_parent_name' => 'Help Scout',
+            'breadcrumb_parent_url' => '/helpscout/',
+            'faqs' => [
+            ['q' => 'Does Help Scout have a free plan?', 'a' => 'Free supports up to five users, one inbox, one Docs site, and 100 contacts per month, with additional limits on saved replies, tags, articles, Beacon, and reporting.'],
+            ['q' => 'Are Help Scout prices per user or per inbox?', 'a' => 'The main plans are priced per user per month. The pricing page also lists extra inboxes as an add-on, so budget for seats and inbox count.'],
+            ['q' => 'Is Envoy included in the Help Scout seat price?', 'a' => 'No. Envoy is a separate AI-agent product listed at $0.75 per resolution, with three months of free resolutions for a new account.'],
+            ['q' => 'What costs extra in Help Scout?', 'a' => 'Extra inboxes, extra Docs sites, Envoy resolutions, and large imports can add to the plan price. Check current terms before purchase.'],
+        ]
+        ],
+],
 
   'how_to_use' => [
  [
@@ -816,7 +933,85 @@ HTML
 <p>The workflow steps, publish terminology, export/import warnings, encryption-key guidance and 3.0 deployment note were checked against n8n&#39;s official documentation on November 5, 2026. This is a documentation-based guide and does not claim hands-on testing.</p>
 HTML
   ]
- ],
+         [
+            'title' => 'How to Use Help Scout: Setup and Workflows',
+            'seo_title' => 'How to Use Help Scout: Setup and Workflows',
+            'description' => 'Set up Help Scout email, inboxes, teams, tags, workflows, Docs and Beacon. Follow these steps, avoid common setup errors and plan a safe ticket import.',
+            'url' => '/helpscout/how-to-use/',
+            'date' => '2026-11-14',
+            'updated' => '2026-11-14',
+            'status' => 'published',
+            'author' => 'Deepak Parmar',
+            'content' => <<<'HTML'
+<h2 id="before-you-start">Before you start</h2>
+<p>Help Scout works best when the team agrees on how a conversation should move from arrival to resolution. Before connecting a live address, decide which inboxes you need, who owns each queue, what counts as urgent, which questions deserve a saved reply, and which topics should become Docs articles.</p>
+<p>A small team can start with the Free plan, which supports up to five users, one inbox, one Docs site, and 100 contacts per month. Paid plans add more inboxes, Docs sites, workflows, SLAs, and channel options. If you are moving from another help desk, read the <a href="/helpscout/alternatives/">migration limits</a> before you import anything.</p>
+<h2 id="step-1-create-the-account-and-choose-an-inbox-structure">Step 1: Create the account and choose an inbox structure</h2>
+<p>Create the Help Scout account, then set up the inboxes that match the way the support team works. One inbox is enough for a small team that handles one product and one support address. Separate inboxes can make sense for different brands, products, or departments, but do not create a new inbox for every topic. Too many queues make ownership harder to see.</p>
+<p>The Help Scout support guide explains how to create and manage mailboxes. Decide the name, default assignment, who can access it, and the customer address before connecting email. If you need more inboxes than your plan includes, check the extra-inbox price before building the structure.</p>
+<h2 id="step-2-connect-the-support-email">Step 2: Connect the support email</h2>
+<p>Use the email connection flow for the address customers already know. Help Scout provides a forwarding address and setup instructions. Add the forwarding rule at the email provider, complete any verification steps, and send a test message from an outside account.</p>
+<p>Check both directions. A message should arrive in the correct Help Scout inbox, and the reply should reach the original sender with the expected From address. Test a reply, a customer follow-up, a CC, and an attachment before announcing the change. If the old system still receives messages, plan the forwarding cutover so two systems do not both reply to the same customer.</p>
+<p>For custom domains, follow the current email setup instructions in the Help Scout help center. Menu names can change, so use the account's current Settings or Manage area rather than relying on an old screenshot.</p>
+<h2 id="step-3-add-teammates-and-set-permissions">Step 3: Add teammates and set permissions</h2>
+<p>Invite the agents and team leads who will use the inbox. Give each person the access they need, not the broadest role by default. Confirm who can manage account settings, billing, inbox configuration, workflows, and Docs content.</p>
+<p>Set a clear ownership rule. For example, new billing questions may go to the billing team, product issues to product support, and account questions to customer success. A conversation should have one clear owner even when several teammates add internal notes. This reduces duplicate replies and makes reporting easier.</p>
+<h2 id="step-4-create-tags-views-and-saved-replies">Step 4: Create tags, views, and saved replies</h2>
+<p>Start with a small tag list. Tags should describe a useful category such as billing, login, bug report, refund, or feature request. Avoid creating a tag for every product version or customer name; those details belong in a customer profile or conversation field if your plan and workflow support them.</p>
+<p>Create views around the work agents need to see: unassigned conversations, waiting for a customer, urgent requests, or items tagged for a specialist. Views should reduce the number of clicks needed to find work. If a view is never used, remove it.</p>
+<p>Saved replies are useful for repeated questions, but they should not sound robotic. Write a short base response, then leave room for the agent to add the customer's context. Review saved replies after policy or product changes so old links and instructions do not stay in circulation.</p>
+<h2 id="step-5-connect-the-channels-you-actually-use">Step 5: Connect the channels you actually use</h2>
+<p>Help Scout's product pages list email, live chat, text, social, and phone as ways to manage customer conversations. The exact setup depends on the channel and plan. The product update dated August 4, 2026 describes connecting a Twilio number for two-way SMS. Help Scout also lists Instagram, Messenger, and WhatsApp connections.</p>
+<p>Do not turn on every channel because it is available. Start with the channels where customers already ask for help. Check whether a channel requires an integration, a paid plan, or a separate provider. Test inbound messages, replies, attachments, customer identity, and assignment before making the channel public.</p>
+<h2 id="step-6-build-a-small-workflow-before-adding-many-rules">Step 6: Build a small workflow before adding many rules</h2>
+<p>A workflow automates actions when conditions match. Start with one simple case, such as adding a tag when a conversation arrives at a billing inbox or notifying a team lead when an SLA is close to a deadline. Test the workflow with a sample conversation and check the result before adding more conditions.</p>
+<p>Use manual workflows for repeatable actions that an agent should choose. Use automatic workflows for actions that should happen without a person remembering them. The pricing page separates basic and advanced workflow allowances, so check the plan limit before building a large automation set.</p>
+<p>Routing features also differ by plan. Plus lists round-robin routing, while Pro lists balanced routing. If you need skill-based assignment, multiple queues, or complex escalations, compare the routing model with the process you use today.</p>
+<h2 id="step-7-create-the-docs-site">Step 7: Create the Docs site</h2>
+<p>Open Docs and create a site for the help content customers should be able to find. Start with a small set of collections and categories that match the way customers ask questions. A good first group might include getting started, account and billing, troubleshooting, and product guides.</p>
+<p>Write articles around one clear task or question. Use a descriptive title, short steps, screenshots only when they add value, and links to related articles. Add a last-reviewed date to your editorial process, even if the public page does not show it. Assign an owner for each article so the knowledge base does not become stale.</p>
+<p>If you are migrating from another knowledge base, do not assume the standard import tool will move it. Help Scout says its standard ticket import does not import knowledge base or help center articles. The Docs API can be used for a custom transfer, but that requires API work.</p>
+<h2 id="step-8-add-beacon-to-your-site-or-app">Step 8: Add Beacon to your site or app</h2>
+<p>Beacon is the support widget that connects customers to self-service content and contact options. Create the Beacon, choose which support options should appear, and follow the official install instructions for your website builder or application.</p>
+<p>Test Beacon on a staging page first. Check that Docs search returns the right articles, that the contact path reaches the correct inbox, and that chat availability matches the team's working hours. If the widget is not visible, check the installation snippet and whether the page loads the script. Avoid launching a widget that promises live chat when no agent is available.</p>
+<h2 id="step-9-set-slas-and-working-hours">Step 9: Set SLAs and working hours</h2>
+<p>Use SLAs only when the team can meet the promise. Define first response and resolution goals for the types of conversations that matter. Set office hours for each inbox if departments work different schedules. Help Scout's product updates describe per-inbox office hours and workflows that can trigger around SLA deadlines.</p>
+<p>Tell agents what happens when a conversation is close to a deadline. A workflow might notify a lead, add an internal note, or route a conversation to another team. Review the SLA report regularly and adjust the target if it creates alerts that nobody can act on.</p>
+<h2 id="step-10-review-reports-and-plan-exports">Step 10: Review reports and plan exports</h2>
+<p>Use the reports that match your support goals: volume, response time, channel mix, company trends, and customer happiness. Selected reporting data can be exported as CSV or XLSX. Help Scout's data export guide says those report exports exclude conversation thread contents. Customer, user, and conversation data are available through the Inbox API, while Docs articles are available through the Docs API.</p>
+<p>If you plan to leave Help Scout later, document the export process now. Do not assume a report download is a complete conversation archive.</p>
+<h2 id="migration-checklist">Migration checklist</h2>
+<p>The standard Help Scout import tool is available to Account Owners and Administrators on Standard, Plus, and Pro. It supports providers including Freshdesk, Gmail, Gorgias, HubSpot Service Hub, Intercom, Zendesk, and Zoho Desk. It can import conversations or tickets with customer profiles and tags.</p>
+<p>The import guide says users and inbox settings must be recreated. Knowledge base articles, saved replies, macros, ticket rules, automations, custom fields, ticket types, and custom statuses are not imported through the standard process. Run a sample import, inspect field mappings, and export the unsupported objects from the old system before you switch the live email forwarding. Imports of 500,000 records or fewer are free; larger imports are charged at $500 per 500,000 records, including the first 500,000.</p>
+<h2 id="common-setup-problems">Common setup problems</h2>
+<ul><li><strong>Email does not arrive:</strong> check forwarding, verification, and the source mailbox rule. Send a test from an external address.</li><li><strong>Replies come from the wrong address:</strong> review the connected email address and sending settings before going live.</li><li><strong>A workflow does not fire:</strong> check the trigger, conditions, inbox scope, and whether the workflow is automatic or manual.</li><li><strong>Agents cannot see the right conversations:</strong> review inbox access, assignment, views, and tags.</li><li><strong>Beacon does not appear:</strong> confirm the installation code is on the page and the widget is configured for that site.</li><li><strong>Imported history is incomplete:</strong> check the import mapping and remember that macros, automations, users, inbox settings, and help articles are not part of the standard import.</li></ul>
+<h2 id="related-guides">Related guides</h2>
+<ul><li>Start with the <a href="/helpscout/">Help Scout hub</a>.</li><li>Check the <a href="/helpscout/pricing/">Help Scout pricing guide</a> before adding inboxes or workflows.</li><li>Read the <a href="/helpscout/review/">Help Scout review</a> for product fit and limits.</li><li>Compare <a href="/helpscout/alternatives/">Help Scout alternatives</a> if the migration or routing limits are a problem.</li><li>Read <a href="/compare/helpscout-vs-zendesk/">Help Scout vs Zendesk</a> for a larger ticketing workflow.</li></ul>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="can-i-use-help-scout-with-gmail">Can I use Help Scout with Gmail?</h3>
+<p>Help Scout can connect a support email address through its email setup and forwarding process. The team should test inbound and outbound messages before switching the public support address.</p>
+<h3 id="can-i-create-more-than-one-inbox">Can I create more than one inbox?</h3>
+<p>Yes, but the number included depends on the plan. The current pricing page lists one inbox on Free, two on Standard, five on Plus, and ten on Pro, with extra inboxes available at an additional cost.</p>
+<h3 id="does-help-scout-import-knowledge-base-articles">Does Help Scout import knowledge base articles?</h3>
+<p>The standard import tool does not import help center articles. Help Scout points to the Docs API for a custom knowledge-base transfer, which requires API work.</p>
+<h3 id="can-i-automate-ticket-assignment">Can I automate ticket assignment?</h3>
+<p>Help Scout Workflows can automate actions, and the pricing page lists round-robin routing on Plus and balanced routing on Pro. Check the current plan matrix for the routing method your team needs.</p>
+<h3 id="can-i-export-conversation-threads-to-csv">Can I export conversation threads to CSV?</h3>
+<p>Selected reports can be exported as CSV or XLSX, but the export guide says conversation thread contents are excluded. Other conversation data is obtained through the Inbox API.</p>
+<h2 id="sources-and-update-note">Sources and update note</h2>
+<p>Steps and limits were checked against Help Scout's official help center, pricing page, import/export documentation, and product updates on November 14, 2026. This is a documentation-based setup guide, not a record of a live account configuration.</p>
+HTML,
+            'breadcrumb_parent_name' => 'Help Scout',
+            'breadcrumb_parent_url' => '/helpscout/',
+            'faqs' => [
+            ['q' => 'Can I use Help Scout with Gmail?', 'a' => 'Help Scout can connect a support email address through its email setup and forwarding process. Test inbound and outbound messages before switching the public support address.'],
+            ['q' => 'Can I create more than one inbox?', 'a' => 'Yes, but the number included depends on the plan. The current pricing page lists one on Free, two on Standard, five on Plus, and ten on Pro.'],
+            ['q' => 'Does Help Scout import knowledge base articles?', 'a' => 'The standard import tool does not import help center articles. Help Scout points to the Docs API for a custom knowledge-base transfer.'],
+            ['q' => 'Can I automate ticket assignment?', 'a' => 'Workflows can automate actions, and the pricing page lists round-robin routing on Plus and balanced routing on Pro.'],
+            ['q' => 'Can I export conversation threads to CSV?', 'a' => 'Selected reports can be exported as CSV or XLSX, but conversation thread contents are excluded. Other conversation data is obtained through the Inbox API.'],
+        ]
+        ],
+],
 
   'comparisons' => [
  [
@@ -895,7 +1090,7 @@ HTML
   [
    'title'=>'Freshdesk vs Help Scout: Pricing, AI and Fit','seo_title'=>'Freshdesk vs Help Scout: Pricing, AI and Fit (2026)',
    'description'=>'Compare Freshdesk and Help Scout by price, free limits, AI billing, inbox workflows and migration steps before moving your support operation to a new platform.',
-   'url'=>'/compare/freshdesk-vs-help-scout/','date'=>'2026-10-29','status'=>'published','updated'=>'2026-10-29',
+   'url'=>'/compare/freshdesk-vs-help-scout/','date'=>'2026-10-29','status'=>'published','updated' => '2026-11-14',
    'faqs'=>[
     ['question'=>'Is Freshdesk cheaper than Help Scout?','answer'=>'Freshdesk Growth is listed at US$19 per agent/month billed annually, while Help Scout pricing displayed Standard at US$25 per user/month on October 29, 2026. Confirm billing selection, seats and usage before comparing total cost.'],
     ['question'=>'Does Help Scout have a free plan?','answer'=>'Help Scout lists a free plan for up to five users, one inbox, one Docs site and 100 contacts per month. Freshdesk public pricing lists a 14-day Enterprise trial but does not show a Free plan; some support docs still reference a Free program, so confirm new-account eligibility.'],
@@ -921,7 +1116,7 @@ HTML
    'title'=>'Drift vs 1mind: Legacy Chat or AI Sales Agent?',
    'seo_title'=>'Drift vs 1mind: Features, Fit and Sunset Guide',
    'description'=>'Compare Drift alternatives after its January 2027 retirement by workflow, prices, free-plan limits, AI usage and migration steps for sales teams today.',
-   'url'=>'/compare/drift-vs-1mind/','date'=>'2026-10-30','updated'=>'2026-10-30','status'=>'published','author'=>'Deepak Parmar',
+   'url'=>'/compare/drift-vs-1mind/','date'=>'2026-10-30','updated'=>'2026-11-14','status'=>'published','author'=>'Deepak Parmar',
    'faqs'=>[
     ['question'=>'Is 1mind the official Drift replacement?','answer'=>'Clari + Salesloft named 1mind as its exclusive AI successor for Drift conversational marketing in the official partnership announcement checked October 30, 2026.'],
     ['question'=>'Can I still buy Drift instead of 1mind?','answer'=>'The current Salesloft Chat Agents page says it has transitioned from Drift to 1mind and does not show a public Drift purchase or pricing path. Drift is scheduled for retirement on January 31, 2027.'],
@@ -1134,7 +1329,79 @@ HTML
 <p>Product, pricing, task, execution, licence and migration details were checked against official n8n and Zapier websites, pricing pages, help centres and documentation on November 5, 2026. The comparison is based on published terms and product descriptions, not hands-on testing or a user rating.</p>
 HTML
   ]
- ],
+         [
+            'title' => 'Help Scout vs Zendesk: Pricing and Features',
+            'seo_title' => 'Help Scout vs Zendesk: Pricing and Features',
+            'description' => 'Compare Help Scout vs Zendesk on pricing, ticketing, channels, routing, AI, reporting and migration to choose the right support platform for your team.',
+            'url' => '/compare/helpscout-vs-zendesk/',
+            'date' => '2026-11-14',
+            'updated' => '2026-11-14',
+            'status' => 'published',
+            'author' => 'Deepak Parmar',
+            'content' => <<<'HTML'
+<h2 id="quick-verdict">Quick verdict</h2>
+<p>Choose Help Scout if your support team is small or midsize, most work starts in email, and you want a shared inbox, Docs knowledge base, and Beacon without managing a large ticketing system. Choose Zendesk if you need a more structured service operation with deeper routing, more channels, advanced ticket workflows, and room for complex support teams.</p>
+<p>Zendesk's Support Team plan starts below Help Scout Standard, but it is not the same feature bundle as Zendesk Suite Team. Support Team is focused on email ticketing and core support essentials. Suite Team adds AI agents, a knowledge base, omnichannel routing, messaging, live chat, and telephony. Compare the Suite price with Help Scout if those channels matter.</p>
+<h2 id="side-by-side-comparison">Side-by-side comparison</h2>
+<div class="table-scroll"><table class="data-table"><thead><tr><th scope="col">Area</th><th scope="col">Help Scout</th><th scope="col">Zendesk</th></tr></thead><tbody><tr><th scope="row">Core model</th><td>Conversation-first shared inbox</td><td>Ticket-centric customer service platform</td></tr><tr><th scope="row">Entry option</th><td>Free for up to 5 users, 1 inbox, 1 Docs site, 100 contacts/month</td><td>Free trial shown; no permanent free plan listed</td></tr><tr><th scope="row">Paid entry shown</th><td>Standard $25/user/month</td><td>Support Team $19/agent/month paid yearly</td></tr><tr><th scope="row">Multichannel plan</th><td>Paid Help Scout plans support more channels and integrations</td><td>Suite Team $55/agent/month paid yearly</td></tr><tr><th scope="row">Knowledge base</th><td>Docs site included; site allowance varies by plan</td><td>Knowledge Base included with Suite Team</td></tr><tr><th scope="row">Collaboration</th><td>Shared conversations, internal notes, customer and company context</td><td>Ticket ownership, customer context, internal collaboration and routing</td></tr><tr><th scope="row">Automation</th><td>Workflows with plan-based basic/advanced limits</td><td>Automations, triggers, ticket routing, and more advanced workflow tools</td></tr><tr><th scope="row">Routing</th><td>Round-robin on Plus; balanced routing on Pro</td><td>Omnichannel routing on Suite Team; skills-based routing on Suite Professional</td></tr><tr><th scope="row">AI</th><td>AI Assist on paid plans; AI Drafts and Summarize on Plus/Pro; Envoy at $0.75 per resolution</td><td>AI agents and resolution allowances vary by plan and usage</td></tr><tr><th scope="row">Reporting</th><td>Support reports and views; export limits apply</td><td>Prebuilt analytics dashboards; advanced reporting features on higher tiers</td></tr><tr><th scope="row">Migration</th><td>Standard import supports Zendesk conversations/tickets, profiles, and tags, but not all objects</td><td>Plan an API and field-mapping process for full data migration</td></tr></tbody></table></div>
+<p>Prices are US-dollar figures from the vendors' public pages checked November 14, 2026. Help Scout's pricing page has a Monthly/Annual selector and advertises 16% annual savings. Zendesk lists annual prices of $19, $55, and $115 for Support Team, Suite Team, and Suite Professional, and monthly prices of $25, $69, and $149. Confirm the billing selector, taxes, and add-ons before comparing quotes.</p>
+<h2 id="pricing-compare-the-right-plans">Pricing: compare the right plans</h2>
+<p>Help Scout lists Free, Standard at $25, Plus at $45, and Pro at $75 per user/month. Free supports five users, one inbox, one Docs site, and 100 contacts per month. Standard supports up to 25 users, two inboxes, two Docs sites, 150 basic workflows, and one basic SLA. Plus supports up to 50 users, five inboxes, three Docs sites, 500 advanced workflows, two advanced SLAs, and round-robin routing. Pro has a ten-seat minimum, ten inboxes, five Docs sites, unlimited advanced workflows and SLAs, and balanced routing.</p>
+<p>Zendesk lists Support Team at $19 per agent/month paid yearly, Suite Team at $55, and Suite Professional at $115. The Support Team plan includes email and ticketing, ticket routing, prebuilt analytics, pre-written responses, customer context, and automations. Suite Team adds AI agents, a knowledge base, omnichannel routing, messaging, live chat, and telephony. Suite Professional adds skills-based routing and an IVR phone tree.</p>
+<p>The practical comparison depends on your channel needs. If email and a knowledge base are enough, Help Scout's Standard plan is a simple starting point. If you need messaging, live chat, telephony, and more formal ticket routing, compare it with Zendesk Suite Team rather than the lower Support Team price. If you need advanced routing and operations controls, Suite Professional is the more relevant Zendesk tier.</p>
+<h2 id="inbox-and-ticket-workflow">Inbox and ticket workflow</h2>
+<p>Help Scout keeps the customer conversation at the centre of the screen. Agents can add an internal note, assign the conversation, apply a tag, use a saved reply, or create a workflow that handles a repeated task. Customer profiles and company information help an agent see earlier interactions without switching between several records.</p>
+<p>Zendesk is designed for a more formal ticket operation. The pricing page describes ticket routing, prebuilt analytics, automations, triggers, and customer context on the entry Support Team plan. Suite Team adds omnichannel routing, messaging, live chat, and telephony. This is a stronger structure for teams that need to route different types of work across channels and departments.</p>
+<p>The choice is not that one product has automation and the other does not. Both support automation. The difference is how much structure the team needs and which features are included at the plan level. A team that only needs a shared inbox may find Zendesk too much to configure. A team with several queues, formal escalation paths, and a large agent group may find Help Scout too limited.</p>
+<h2 id="knowledge-base-and-self-service">Knowledge base and self-service</h2>
+<p>Help Scout includes Docs, its knowledge base product, and Beacon, which can bring support content and contact options into a website or app. Every plan includes a Docs site, although the number of sites and article limits vary by tier. Beacon can make it easier for a customer to find an answer before opening a conversation.</p>
+<p>Zendesk Suite Team includes a knowledge base. Its service platform also supports messaging, live chat, and telephony. The current pricing page positions Suite Team as the plan for teams that want to unify support channels and automate resolutions with AI agents.</p>
+<p>If your help center is already well organised, compare how each product handles article structure, search, custom domains, permissions, and content migration. Do not assume that moving tickets automatically moves the knowledge base. Help Scout's standard import guide specifically says that knowledge base and help center articles are not part of the standard ticket import.</p>
+<h2 id="ai-and-usage-costs">AI and usage costs</h2>
+<p>Help Scout's pricing table lists AI Assist on paid plans. AI Drafts and AI Summarize are listed for Plus and Pro. Envoy is a separate AI-agent suite, with Scout as the built-in agent, and the public product page lists $0.75 per resolution. Help Scout also lists three months of free resolutions for a new account. The Envoy page marks some capabilities, including email handling and learning from past conversations, as coming soon.</p>
+<p>Zendesk includes AI agents in its Suite plans and lists a set of automated resolutions that varies by plan and agent count. The public pricing page shows five automated resolutions per agent/month for Support Team and Suite Team, and ten for Suite Professional, within its listed allowance. Additional AI capabilities and add-ons may affect the total.</p>
+<p>For either product, estimate actual volume before buying. A per-seat price does not include every AI or channel cost. Track the number of agent seats, AI resolutions, messages, and channels you expect to use.</p>
+<h2 id="migration-and-data-portability">Migration and data portability</h2>
+<p>Help Scout's import guide lists Zendesk as a supported source. It can import emails or tickets with attached customer profiles and tags. The standard import does not bring over users, inbox settings, knowledge base articles, saved replies, macros, ticket rules, automations, custom fields, ticket types, or custom statuses. Help Scout says the Docs API can support a custom knowledge-base transfer and the Inbox API can support other custom imports.</p>
+<p>Help Scout's export guide says selected reports can be exported as CSV or XLSX, but those report exports exclude conversation thread contents. Other customer, user, and conversation data is available through the Inbox API, while Docs articles are available through the Docs API. A customer-list CSV can be requested, but it contains names and email addresses rather than conversation history.</p>
+<p>Before switching either direction, map the records and fields that matter. Run a sample import, check attachments and customer identity, recreate unsupported workflows, and decide when email forwarding will move. Keep the old account available until the new team has checked a sample of migrated conversations.</p>
+<h2 id="which-platform-should-you-choose">Which platform should you choose?</h2>
+<p>Choose <strong>Help Scout</strong> when:</p>
+<ul><li>Email is the main support channel.</li><li>Agents need a shared view of conversations and company context.</li><li>You want Docs and Beacon in the same product family.</li><li>Your team can work with plan-based workflow and routing limits.</li><li>You value a free entry plan for a small team.</li></ul>
+<p>Choose <strong>Zendesk</strong> when:</p>
+<ul><li>You need a more formal ticket queue across several channels.</li><li>You need deeper routing, skills, or IVR features.</li><li>You have a larger support team with complex reporting and administration needs.</li><li>You are prepared to configure a more structured service operation.</li></ul>
+<p>If you need a traditional ticketing tool but Zendesk Suite feels too large, compare <a href="/compare/freshdesk-vs-help-scout/">Freshdesk vs Help Scout</a>. If the main issue is collaboration around shared email, also review <a href="https://front.com/pricing">Front's pricing</a> before moving to a full ticketing suite.</p>
+<h2 id="community-perspective">Community perspective</h2>
+<p>Community discussions are consistent with this use-case split, but they are anecdotal. A 2026 r/B2BSaaS thread recommends looking at Help Scout or Front when the main need is email-first support, and Freshdesk when the team needs more traditional ticket rules and SLAs. A 2026 r/SaaS discussion describes Zendesk as potentially more process-heavy than a small team needs. These comments do not prove product performance, but they reinforce the value of testing the agent workflow before choosing a platform.</p>
+<h2 id="related-guides">Related guides</h2>
+<ul><li><a href="/helpscout/">Help Scout hub</a></li><li><a href="/helpscout/review/">Help Scout review</a></li><li><a href="/helpscout/pricing/">Help Scout pricing</a></li><li><a href="/helpscout/how-to-use/">How to use Help Scout</a></li><li><a href="/helpscout/alternatives/">Help Scout alternatives</a></li><li><a href="/zendesk/review/">Zendesk review</a></li><li><a href="/zendesk/pricing/">Zendesk pricing</a></li><li><a href="/zendesk/alternatives/">Zendesk alternatives</a></li></ul>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="is-help-scout-cheaper-than-zendesk">Is Help Scout cheaper than Zendesk?</h3>
+<p>Help Scout has a free plan and Standard is listed at $25 per user/month. Zendesk Support Team is listed at $19 per agent/month paid yearly, while Suite Team is $55. The lower Zendesk price is for a more limited plan, so compare the features you need rather than only the starting price.</p>
+<h3 id="is-zendesk-better-for-large-support-teams">Is Zendesk better for large support teams?</h3>
+<p>Zendesk is the stronger shortlist option when a team needs advanced routing, multiple channels, formal ticket workflows, and more detailed service operations. The right plan depends on the channels and routing features required.</p>
+<h3 id="does-help-scout-include-a-knowledge-base">Does Help Scout include a knowledge base?</h3>
+<p>Yes. Help Scout Docs is included in every plan, with site and article limits that vary by tier. Zendesk includes a knowledge base in Suite Team and higher plans.</p>
+<h3 id="can-i-migrate-zendesk-tickets-to-help-scout">Can I migrate Zendesk tickets to Help Scout?</h3>
+<p>Help Scout lists Zendesk as a supported import source. The standard import can move tickets or conversations with customer profiles and tags, but not users, inbox settings, help articles, macros, automations, custom fields, ticket types, or custom statuses.</p>
+<h3 id="which-is-better-for-a-small-email-support-team">Which is better for a small email support team?</h3>
+<p>Help Scout is often the simpler fit when email and self-service content are the main needs. Zendesk may be the better choice when the team already needs formal ticket routing or expects to add more channels soon.</p>
+<h2 id="sources-and-update-note">Sources and update note</h2>
+<p>Vendor pricing, product features, and migration documentation were checked on November 14, 2026. Community links are used only for qualitative context. This comparison is desk research and does not claim hands-on testing.</p>
+<p>For the Help Scout side, see our <a href="/helpscout/">Help Scout guide</a>, <a href="/helpscout/review/">review</a>, <a href="/helpscout/pricing/">pricing guide</a>, and <a href="/helpscout/alternatives/">alternatives list</a>.</p>
+
+HTML,
+            'breadcrumb_parent_name' => 'Help Scout',
+            'breadcrumb_parent_url' => '/helpscout/',
+            'faqs' => [
+            ['q' => 'Is Help Scout cheaper than Zendesk?', 'a' => 'Help Scout has a free plan and Standard is listed at $25 per user/month. Zendesk Support Team is $19 per agent/month paid yearly, while Suite Team is $55. Compare the features you need, not only the starting price.'],
+            ['q' => 'Is Zendesk better for large support teams?', 'a' => 'Zendesk is the stronger shortlist option when a team needs advanced routing, multiple channels, formal ticket workflows, and detailed service operations.'],
+            ['q' => 'Does Help Scout include a knowledge base?', 'a' => 'Yes. Help Scout Docs is included in every plan, with site and article limits that vary by tier. Zendesk includes a knowledge base in Suite Team and higher plans.'],
+            ['q' => 'Can I migrate Zendesk tickets to Help Scout?', 'a' => 'Help Scout lists Zendesk as a supported import source. The standard import can move tickets or conversations with customer profiles and tags, but not users, inbox settings, help articles, macros, automations, custom fields, ticket types, or custom statuses.'],
+            ['q' => 'Which is better for a small email support team?', 'a' => 'Help Scout is often the simpler fit when email and self-service content are the main needs. Zendesk may be better when the team already needs formal ticket routing or more channels.'],
+        ]
+        ],
+],
 
  'categories' => [],
 ];
