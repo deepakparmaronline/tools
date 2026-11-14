@@ -1,0 +1,92 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/helpscout/#article",
+      "headline": "Help Scout: Shared Inbox and Support Guide",
+      "mainEntityOfPage": "https://toolboxkart.tech/helpscout/",
+      "datePublished": "2026-11-14",
+      "dateModified": "2026-11-14",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Software Tool Hubs",
+          "item": "https://toolboxkart.tech/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Help Scout",
+          "item": "https://toolboxkart.tech/helpscout/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Help Scout",
+      "applicationCategory": "Customer Service Software",
+      "operatingSystem": "Web",
+      "url": "https://www.helpscout.com/",
+      "description": "Customer support platform with shared inbox, Docs, Beacon, workflows, and AI tools.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free plan for up to five users, one inbox, one Docs site, and 100 contacts per month."
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Help Scout a help desk or a shared inbox?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is both. Inbox is built around shared conversations, while Workflows, SLAs, Docs, Beacon, and customer profiles add help desk and self-service features."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Help Scout have a free plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The current pricing page lists up to five users, one inbox, one Docs site, and 100 contacts per month on Free."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Help Scout import tickets from another help desk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The standard import tool supports several providers and can bring in conversations or tickets with customer profiles and tags. It does not import every setting or content type."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Envoy included in the Help Scout seat price?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Envoy is a separate AI-agent product listed at $0.75 per resolution, with three months of free resolutions for a new account."
+          }
+        }
+      ]
+    }
+  ]
+}
