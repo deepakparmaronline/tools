@@ -429,3 +429,17 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - **Redirects:** none added; no verified one-to-one legacy Notion route was found.
 - **Saved metrics:** US volume 1,000; KD 34; CPC US$4.60; commercial intent. No Semrush refresh or metric changes.
 - **Next queue row:** Order 8, Help Scout alternative; US volume 260, KD 16, CPC US$46.62, intent I/C. Do not start until this Notion closeout is complete.
+
+## Help Scout cluster in progress (2026-11-14)
+
+- **Status:** in_progress. Order 8 was selected because no lower-order row was already in_progress; Order 7 Notion is recorded as published.
+- **Saved metrics:** US volume 260; KD 16; CPC US$46.62; intent I/C. Values were copied from the committed queue and were not refreshed.
+- **Research:** Help Scout product, pricing, import/export help articles, and product updates checked on November 14, 2026. Competitor facts and prices use current official Zendesk, Freshdesk, Front, Intercom, Zoho Desk, Gorgias, and HubSpot pages. Reddit discussions are used only for qualitative buyer context.
+- **Pages prepared:** Help Scout hub, alternatives, review, pricing, how-to-use, and Help Scout vs Zendesk. Each page has article, SEO, sources, notes, and schema artifacts. The review has a standalone PHP page and review registry record; the alternatives page has a published alternatives registry record.
+- **Internal links:** Help Scout pages cross-link to each other. Freshdesk and Zendesk hubs and alternatives pages link to the new Help Scout resources; the existing Freshdesk vs Help Scout comparison also links to the new Help Scout guides.
+- **Discovery and sitemap source:** data/software-pages.php registers the hub, pricing, how-to-use, and comparison pages; alternatives/articles/helpscout-alternatives.php registers the alternatives page; data/post-2026-11-14-helpscout-review.php registers the review. These are read by the existing dynamic sitemap generator. No static XML child sitemap file was required. Tests are being updated to check each canonical exactly once in the correct child sitemap and to keep the root index and robots.txt declarations complete.
+- **Redirects:** none added; no verified one-to-one legacy Help Scout URL was identified.
+- **Category hub:** no customer-support category pillar was created. The customer-growth group has three support-related published clusters after this work, still below HUB_MIN_TOOLS=4.
+- **Semrush and testing:** no Semrush refresh, no invented metrics, and no hands-on product test claims.
+- **Content branch:** publisher/helpscout-2026-11-14-run10. Main content commit and matching quality check are pending.
+- **Next queue row after Help Scout:** Order 9, ManyChat alternative; US volume 260, KD 13, CPC US$8.57, intent I/C.
