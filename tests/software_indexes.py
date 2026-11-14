@@ -197,6 +197,10 @@ def main():
             '/n8n/pricing/': ('https://toolboxkart.tech/n8n/pricing/', 'n8n'),
             '/n8n/how-to-use/': ('https://toolboxkart.tech/n8n/how-to-use/', 'n8n'),
             '/compare/n8n-vs-zapier/': ('https://toolboxkart.tech/compare/n8n-vs-zapier/', 'n8n'),
+            '/helpscout/': ('https://toolboxkart.tech/helpscout/', 'help scout'),
+            '/helpscout/pricing/': ('https://toolboxkart.tech/helpscout/pricing/', 'help scout'),
+            '/helpscout/how-to-use/': ('https://toolboxkart.tech/helpscout/how-to-use/', 'help scout'),
+            '/compare/helpscout-vs-zendesk/': ('https://toolboxkart.tech/compare/helpscout-vs-zendesk/', 'help scout'),
         }
         for path, (canonical, term) in published_details.items():
             html = get(path)
@@ -204,44 +208,55 @@ def main():
             assert page.h1 == 1, path
             assert page.canonical == canonical, path
             assert term in ' '.join(page.text).lower(), path
-            if path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/' or path.startswith('/gmail/') or path == '/compare/gmail-vs-outlook/' or path.startswith('/n8n/') or path == '/compare/n8n-vs-zapier/':
+            if path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/' or path.startswith('/gmail/') or path == '/compare/gmail-vs-outlook/' or path.startswith('/n8n/') or path == '/compare/n8n-vs-zapier/' or path.startswith('/helpscout/') or path == '/compare/helpscout-vs-zendesk/':
                 assert 140 <= len(page.description) <= 160, path
             assert '<nav class="crumbs" aria-label="Breadcrumb">' in html, path
             graph = next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
             crumb = next(item for item in graph if item.get('@type') == 'BreadcrumbList')
             assert crumb['itemListElement'][-1]['item'] == canonical, path
-            if path in ['/drift/pricing/', '/drift/how-to-use/', '/fiverr/pricing/', '/fiverr/how-to-use/', '/compare/fiverr-vs-upwork/', '/gmail/pricing/', '/gmail/how-to-use/', '/compare/gmail-vs-outlook/', '/n8n/pricing/', '/n8n/how-to-use/', '/compare/n8n-vs-zapier/']:
-                parent = 'fiverr' if path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/' else 'gmail' if path.startswith('/gmail/') or path == '/compare/gmail-vs-outlook/' else 'n8n' if path.startswith('/n8n/') or path == '/compare/n8n-vs-zapier/' else 'drift'
+            if path in ['/drift/pricing/', '/drift/how-to-use/', '/fiverr/pricing/', '/fiverr/how-to-use/', '/compare/fiverr-vs-upwork/', '/gmail/pricing/', '/gmail/how-to-use/', '/compare/gmail-vs-outlook/', '/n8n/pricing/', '/n8n/how-to-use/', '/compare/n8n-vs-zapier/', '/helpscout/pricing/', '/helpscout/how-to-use/', '/compare/helpscout-vs-zendesk/']:
+                parent = 'helpscout' if path.startswith('/helpscout/') or path == '/compare/helpscout-vs-zendesk/' else 'fiverr' if path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/' else 'gmail' if path.startswith('/gmail/') or path == '/compare/gmail-vs-outlook/' else 'n8n' if path.startswith('/n8n/') or path == '/compare/n8n-vs-zapier/' else 'drift'
                 assert [item['item'] for item in crumb['itemListElement']] == ['https://toolboxkart.tech/', f'https://toolboxkart.tech/{parent}/', canonical], path
-            if path in ['/fiverr/', '/gmail/', '/n8n/']:
+            if path in ['/fiverr/', '/gmail/', '/n8n/', '/helpscout/']:
                 assert [item['item'] for item in crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/tools/', canonical], path
-            if path in ['/zendesk/', '/freshdesk/', '/drift/', '/fiverr/', '/gmail/', '/n8n/']:
+            if path in ['/zendesk/', '/freshdesk/', '/drift/', '/fiverr/', '/gmail/', '/n8n/', '/helpscout/']:
                 assert any(item.get('@type') == 'SoftwareApplication' for item in graph), path
-            if path.startswith('/freshdesk/') or path == '/compare/freshdesk-vs-help-scout/' or path.startswith('/drift/') or path == '/compare/drift-vs-1mind/' or path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/' or path.startswith('/gmail/') or path == '/compare/gmail-vs-outlook/' or path.startswith('/n8n/') or path == '/compare/n8n-vs-zapier/':
+            if path.startswith('/freshdesk/') or path == '/compare/freshdesk-vs-help-scout/' or path.startswith('/drift/') or path == '/compare/drift-vs-1mind/' or path.startswith('/fiverr/') or path == '/compare/fiverr-vs-upwork/' or path.startswith('/gmail/') or path == '/compare/gmail-vs-outlook/' or path.startswith('/n8n/') or path == '/compare/n8n-vs-zapier/' or path.startswith('/helpscout/') or path == '/compare/helpscout-vs-zendesk/':
                 assert any(item.get('@type') == 'FAQPage' for item in graph), path
 
         for path in ['/tools/', '/pricing/', '/how-to-use/', '/compare/']:
             index_html = get(path).lower()
-            assert 'zendesk' in index_html and 'freshdesk' in index_html and 'drift' in index_html and 'fiverr' in index_html and 'gmail' in index_html and 'n8n' in index_html, path
+            assert 'zendesk' in index_html and 'freshdesk' in index_html and 'drift' in index_html and 'fiverr' in index_html and 'gmail' in index_html and 'n8n' in index_html and 'help scout' in index_html, path
         assert 'zendesk' not in get('/best/').lower()
         assert 'freshdesk' not in get('/best/').lower()
         assert 'drift' not in get('/best/').lower()
         assert 'fiverr' not in get('/best/').lower()
         assert 'n8n' not in get('/best/').lower()
+        assert 'help scout' not in get('/best/').lower()
         reviews_index = get('/reviews/')
-        assert 'Freshdesk Review' in reviews_index and 'Drift Review' in reviews_index and 'Fiverr Review' in reviews_index and 'Gmail Review' in reviews_index and 'n8n Review' in reviews_index
+        assert 'Freshdesk Review' in reviews_index and 'Drift Review' in reviews_index and 'Fiverr Review' in reviews_index and 'Gmail Review' in reviews_index and 'n8n Review' in reviews_index and 'Help Scout Review' in reviews_index
 
         expected_sitemap_urls = {
-            '/sitemap-tools.xml': ['https://toolboxkart.tech/zendesk/', 'https://toolboxkart.tech/freshdesk/', 'https://toolboxkart.tech/drift/', 'https://toolboxkart.tech/fiverr/', 'https://toolboxkart.tech/gmail/', 'https://toolboxkart.tech/n8n/'],
-            '/sitemap-pricing.xml': ['https://toolboxkart.tech/zendesk/pricing/', 'https://toolboxkart.tech/freshdesk/pricing/', 'https://toolboxkart.tech/drift/pricing/', 'https://toolboxkart.tech/fiverr/pricing/', 'https://toolboxkart.tech/gmail/pricing/', 'https://toolboxkart.tech/n8n/pricing/'],
-            '/sitemap-how-to-use.xml': ['https://toolboxkart.tech/zendesk/how-to-use/', 'https://toolboxkart.tech/freshdesk/how-to-use/', 'https://toolboxkart.tech/drift/how-to-use/', 'https://toolboxkart.tech/fiverr/how-to-use/', 'https://toolboxkart.tech/gmail/how-to-use/', 'https://toolboxkart.tech/n8n/how-to-use/'],
-            '/sitemap-compare.xml': ['https://toolboxkart.tech/compare/zendesk-vs-freshdesk/', 'https://toolboxkart.tech/compare/freshdesk-vs-help-scout/', 'https://toolboxkart.tech/compare/drift-vs-1mind/', 'https://toolboxkart.tech/compare/fiverr-vs-upwork/', 'https://toolboxkart.tech/compare/gmail-vs-outlook/', 'https://toolboxkart.tech/compare/n8n-vs-zapier/'],
-            '/sitemap-alternatives.xml': ['https://toolboxkart.tech/zendesk/alternatives/', 'https://toolboxkart.tech/freshdesk/alternatives/', 'https://toolboxkart.tech/drift/alternatives/', 'https://toolboxkart.tech/fiverr/alternatives/', 'https://toolboxkart.tech/gmail/alternatives/', 'https://toolboxkart.tech/n8n/alternatives/'],
-            '/sitemap-reviews.xml': ['https://toolboxkart.tech/zendesk/review/', 'https://toolboxkart.tech/freshdesk/review/', 'https://toolboxkart.tech/drift/review/', 'https://toolboxkart.tech/fiverr/review/', 'https://toolboxkart.tech/gmail/review/', 'https://toolboxkart.tech/n8n/review/'],
+            '/sitemap-tools.xml': ['https://toolboxkart.tech/zendesk/', 'https://toolboxkart.tech/freshdesk/', 'https://toolboxkart.tech/drift/', 'https://toolboxkart.tech/fiverr/', 'https://toolboxkart.tech/gmail/', 'https://toolboxkart.tech/n8n/', 'https://toolboxkart.tech/helpscout/'],
+            '/sitemap-pricing.xml': ['https://toolboxkart.tech/zendesk/pricing/', 'https://toolboxkart.tech/freshdesk/pricing/', 'https://toolboxkart.tech/drift/pricing/', 'https://toolboxkart.tech/fiverr/pricing/', 'https://toolboxkart.tech/gmail/pricing/', 'https://toolboxkart.tech/n8n/pricing/', 'https://toolboxkart.tech/helpscout/pricing/'],
+            '/sitemap-how-to-use.xml': ['https://toolboxkart.tech/zendesk/how-to-use/', 'https://toolboxkart.tech/freshdesk/how-to-use/', 'https://toolboxkart.tech/drift/how-to-use/', 'https://toolboxkart.tech/fiverr/how-to-use/', 'https://toolboxkart.tech/gmail/how-to-use/', 'https://toolboxkart.tech/n8n/how-to-use/', 'https://toolboxkart.tech/helpscout/how-to-use/'],
+            '/sitemap-compare.xml': ['https://toolboxkart.tech/compare/zendesk-vs-freshdesk/', 'https://toolboxkart.tech/compare/freshdesk-vs-help-scout/', 'https://toolboxkart.tech/compare/drift-vs-1mind/', 'https://toolboxkart.tech/compare/fiverr-vs-upwork/', 'https://toolboxkart.tech/compare/gmail-vs-outlook/', 'https://toolboxkart.tech/compare/n8n-vs-zapier/', 'https://toolboxkart.tech/compare/helpscout-vs-zendesk/'],
+            '/sitemap-alternatives.xml': ['https://toolboxkart.tech/zendesk/alternatives/', 'https://toolboxkart.tech/freshdesk/alternatives/', 'https://toolboxkart.tech/drift/alternatives/', 'https://toolboxkart.tech/fiverr/alternatives/', 'https://toolboxkart.tech/gmail/alternatives/', 'https://toolboxkart.tech/n8n/alternatives/', 'https://toolboxkart.tech/helpscout/alternatives/'],
+            '/sitemap-reviews.xml': ['https://toolboxkart.tech/zendesk/review/', 'https://toolboxkart.tech/freshdesk/review/', 'https://toolboxkart.tech/drift/review/', 'https://toolboxkart.tech/fiverr/review/', 'https://toolboxkart.tech/gmail/review/', 'https://toolboxkart.tech/n8n/review/', 'https://toolboxkart.tech/helpscout/review/'],
         }
         for path, urls in expected_sitemap_urls.items():
             for url in urls:
                 assert url in get(path), f'{url} missing from {path}'
+        helpscout_sitemap_urls = {
+            '/sitemap-tools.xml': 'https://toolboxkart.tech/helpscout/',
+            '/sitemap-pricing.xml': 'https://toolboxkart.tech/helpscout/pricing/',
+            '/sitemap-how-to-use.xml': 'https://toolboxkart.tech/helpscout/how-to-use/',
+            '/sitemap-compare.xml': 'https://toolboxkart.tech/compare/helpscout-vs-zendesk/',
+            '/sitemap-alternatives.xml': 'https://toolboxkart.tech/helpscout/alternatives/',
+            '/sitemap-reviews.xml': 'https://toolboxkart.tech/helpscout/review/',
+        }
+        for sitemap_path, canonical_url in helpscout_sitemap_urls.items():
+            assert get(sitemap_path).count(canonical_url) == 1, f'{canonical_url} must appear exactly once in {sitemap_path}'
         zendesk_review_html = get('/zendesk/review/')
         zendesk_review_page = Page(zendesk_review_html)
         assert zendesk_review_page.canonical == 'https://toolboxkart.tech/zendesk/review/'
