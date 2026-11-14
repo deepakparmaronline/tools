@@ -97,3 +97,7 @@ This guide uses public product, pricing and help documentation checked October 2
 - [Freshdesk review](https://toolboxkart.tech/freshdesk/review/)
 - [Freshdesk pricing](https://toolboxkart.tech/freshdesk/pricing/)
 - [Freshdesk alternatives](https://toolboxkart.tech/freshdesk/alternatives/)
+
+## Related Help Scout guides
+
+If you are comparing Help Scout as an email-first support option, read our [Help Scout guide](/helpscout/), [review](/helpscout/review/), and [pricing guide](/helpscout/pricing/). The [Help Scout alternatives page](/helpscout/alternatives/) compares Zendesk, Freshdesk, Front, Intercom, Zoho Desk, Gorgias, and HubSpot Service Hub.
