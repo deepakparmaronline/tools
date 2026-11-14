@@ -78,6 +78,7 @@ def main():
         assert 'id="freelance-marketplaces"' in get('/alternatives/')[2]
         assert 'id="email-providers"' in get('/alternatives/')[2]
         assert 'id="workflow-automation"' in get('/alternatives/')[2]
+        assert 'id="customer-growth"' in get('/alternatives/')[2]
         assert 'href="/review-methodology"' in get('/alternatives/')[2]
         for path, content_type in [('/assets/css/app.css', 'text/css'),
                                    ('/assets/css/article-overflow-fixes.css', 'text/css'),
@@ -222,6 +223,20 @@ def main():
         notion_alt_map = get('/sitemap-alternatives.xml')[2]
         assert notion_alt_map.count('https://toolboxkart.tech/notion/alternatives/') == 1
         assert 'Notion' in get('/alternatives/')[2]
+
+        helpscout_alt_code, _, helpscout_alt_html = get('/helpscout/alternatives/')
+        assert helpscout_alt_code == 200
+        helpscout_alt_page = Page(helpscout_alt_html)
+        assert helpscout_alt_page.canonical == 'https://toolboxkart.tech/helpscout/alternatives/'
+        assert 150 <= len(helpscout_alt_page.meta.get('description', '')) <= 155
+        assert '<nav class="crumbs" aria-label="Breadcrumb">' in helpscout_alt_html
+        helpscout_graph = next(item['@graph'] for item in helpscout_alt_page.schemas if '@graph' in item)
+        helpscout_crumb = next(item for item in helpscout_graph if item.get('@type') == 'BreadcrumbList')
+        assert [item['item'] for item in helpscout_crumb['itemListElement']] == ['https://toolboxkart.tech/', 'https://toolboxkart.tech/helpscout/', 'https://toolboxkart.tech/helpscout/alternatives/']
+        helpscout_items = next(item for item in helpscout_graph if item.get('@type') == 'ItemList')
+        assert [item['name'] for item in helpscout_items['itemListElement']] == ['Zendesk', 'Freshdesk', 'Front', 'Intercom', 'Zoho Desk', 'Gorgias', 'HubSpot Service Hub']
+        assert any(item.get('@type') == 'FAQPage' for item in helpscout_graph)
+        assert get('/sitemap-alternatives.xml')[2].count('https://toolboxkart.tech/helpscout/alternatives/') == 1
 
         print('PASS: CSS/JS content and MIME types, topic groups, published article links, site-wide navigation, draft/future exclusion, related cards, SEO/schema, redirects, main and Alternatives sitemaps, existing routes')
     finally:
