@@ -1,0 +1,86 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/helpscout/review/#article",
+      "headline": "Help Scout Review: Features, Pricing and Fit",
+      "mainEntityOfPage": "https://toolboxkart.tech/helpscout/review/",
+      "datePublished": "2026-11-14",
+      "dateModified": "2026-11-14",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Help Scout",
+          "item": "https://toolboxkart.tech/helpscout/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Help Scout Review",
+          "item": "https://toolboxkart.tech/helpscout/review/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Help Scout worth it for a small team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can be. Free supports up to five users and one inbox, while paid plans add more contacts, inboxes, workflows, and other features. Check the 100-contact monthly limit on Free."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Help Scout include a knowledge base?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Docs is Help Scout's knowledge base product, and every plan includes at least one Docs site. Site and article limits vary by plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Help Scout charge for AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI Assist is listed on paid plans, while AI Drafts and AI Summarize are listed for Plus and Pro. Envoy is separate at $0.75 per resolution after the free-resolution period."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Help Scout import Zendesk tickets and macros?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The import tool lists Zendesk as supported and can import tickets or conversations with customer profiles and tags. It does not import macros, automations, users, inbox settings, help center articles, custom fields, ticket types, or custom statuses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export Help Scout conversation history?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Selected CSV and XLSX reports exclude conversation thread contents. Customer, user, and conversation data can be obtained through the Inbox API, and Docs articles through the Docs API."
+          }
+        }
+      ]
+    }
+  ]
+}
