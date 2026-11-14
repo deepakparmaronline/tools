@@ -5,6 +5,8 @@ return [
     'seo_title' => 'Help Scout Alternatives: 7 Support Tools Guide',
     'description' => 'Compare seven Help Scout alternatives by price, free plans, ticketing, AI fees and migration. See which support platform fits your team in 2026 today.',
     'url_path' => '/helpscout/alternatives/',
+    'breadcrumb_parent_name' => 'Help Scout',
+    'breadcrumb_parent_url' => '/helpscout/',
     'category' => 'customer-growth',
     'tag' => 'Customer support software',
     'date' => '2026-11-14',
