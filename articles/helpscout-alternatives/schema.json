@@ -1,0 +1,134 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/helpscout/alternatives/#article",
+      "headline": "7 Help Scout Alternatives for Support Teams in 2026",
+      "mainEntityOfPage": "https://toolboxkart.tech/helpscout/alternatives/",
+      "datePublished": "2026-11-14",
+      "dateModified": "2026-11-14",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Help Scout",
+          "item": "https://toolboxkart.tech/helpscout/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Help Scout Alternatives",
+          "item": "https://toolboxkart.tech/helpscout/alternatives/"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Help Scout alternatives",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Zendesk",
+          "url": "https://www.zendesk.com/service/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Freshdesk",
+          "url": "https://www.freshworks.com/freshdesk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Front",
+          "url": "https://front.com/customer-service/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Intercom",
+          "url": "https://www.intercom.com/customer-service"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Zoho Desk",
+          "url": "https://www.zoho.com/desk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Gorgias",
+          "url": "https://www.gorgias.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "HubSpot Service Hub",
+          "url": "https://www.hubspot.com/products/service"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best Help Scout alternative?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zendesk is the strongest choice for teams that need deeper ticket routing, more channels, and a larger support operation. Freshdesk is a closer traditional help desk replacement, while Front suits collaborative email."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free Help Scout alternative?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zoho Desk has a permanent free edition for up to three users. HubSpot Service Hub has a free plan for up to two users. Check feature limits before moving."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I move Freshdesk or Zendesk tickets into Help Scout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Help Scout lists both providers in its import tool. It imports conversations or tickets with customer profiles and tags, but not users, inbox settings, help center articles, macros, rules, custom fields, ticket types, or custom statuses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export all Help Scout conversations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Selected reports can be exported as CSV or XLSX, but conversation thread contents are excluded. Customer, user, and conversation data are available through the Inbox API, while Docs articles use the Docs API."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Help Scout good for ecommerce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can work for an ecommerce team that wants a shared inbox and customer context. Gorgias is more specialised when store integrations and order-linked support are central."
+          }
+        }
+      ]
+    }
+  ]
+}
