@@ -43,11 +43,14 @@ HTML
 <h2>Explore the Zendesk guide</h2><ul><li><a href="/zendesk/alternatives/">Zendesk alternatives</a></li><li><a href="/zendesk/review/">Zendesk review</a></li><li><a href="/zendesk/pricing/">Zendesk pricing</a></li><li><a href="/zendesk/how-to-use/">How to use Zendesk</a></li><li><a href="/compare/zendesk-vs-freshdesk/">Zendesk vs Freshdesk</a></li></ul>
 <h2>Before choosing</h2><p>List required channels, agent count, routing rules, reporting needs and the records you must preserve. Price the exact plan and any AI or channel add-ons. A lower seat price does not guarantee a lower total cost if you need more products or implementation work.</p>
 <h2>Plan migration carefully</h2><p>Zendesk documents API-based import paths for tickets, users, organizations and help center articles. It notes that some ticket metrics are not imported through the documented ticket import process. Read the <a href="https://support.zendesk.com/hc/en-us/articles/6696005837082-How-can-I-migrate-information-from-another-platform-into-Zendesk">official migration guidance</a> before moving systems.</p>
+<p>If your team is weighing a full ticketing suite against a simpler shared inbox, read our <a href="/helpscout/">Help Scout guide</a> and <a href="/compare/helpscout-vs-zendesk/">Help Scout vs Zendesk comparison</a>.</p>
+
 HTML
  ], [
   'title'=>'Freshdesk: Customer Support Software Hub','seo_title'=>'Freshdesk Guide: Features, Pricing and Alternatives (2026)',
   'description'=>'Review Freshdesk features, annual pricing, AI costs and export limits, then compare alternatives before moving your support workflow to a help desk.',
-  'url'=>'/freshdesk/','date'=>'2026-10-29','status'=>'published',
+  'url'=>'/freshdesk/','date'=>'2026-10-29',
+  'updated' => '2026-11-14','status'=>'published',
   'software_application'=>['name'=>'Freshdesk','url'=>'https://www.freshworks.com/freshdesk/','applicationCategory'=>'BusinessApplication','operatingSystem'=>'Web','provider'=>'Freshworks','provider_url'=>'https://www.freshworks.com/','description'=>'Email-first customer support software with ticketing, shared inbox, customer portal, knowledge base and reporting.'],
   'faqs'=>[
    ['question'=>'What is Freshdesk best for?','answer'=>'Freshdesk suits teams that need email-first ticketing, a shared inbox, a customer portal, a knowledge base and reporting in one help desk.'],
@@ -64,6 +67,8 @@ HTML
 <h2>Check data portability before migration</h2><p>Freshdesk's ticket-list export is useful for filtered ticket data, but it should not be treated as proof that every conversation, attachment, archived ticket or workflow setting will move. Read the <a href="https://support.freshdesk.com/support/solutions/articles/225158">official ticket export guide</a>, checked October 29, 2026, and test the separate account-level export path if you need a full history. For setup, start with the <a href="/freshdesk/how-to-use/">Freshdesk how-to guide</a>.</p>
 <h2>Explore this Freshdesk guide</h2><ul><li><a href="/freshdesk/review/">Freshdesk review: pricing, strengths and limits</a></li><li><a href="/freshdesk/pricing/">Freshdesk pricing and AI fees</a></li><li><a href="/freshdesk/how-to-use/">How to set up Freshdesk</a></li><li><a href="/freshdesk/alternatives/">Freshdesk alternatives</a></li><li><a href="/compare/freshdesk-vs-help-scout/">Freshdesk vs Help Scout</a></li><li><a href="/browse-tools-by-niche">Browse tools by niche</a></li></ul>
 <h2>Freshdesk FAQ</h2><h3>What is Freshdesk best for?</h3><p>Freshdesk suits teams that need email-first ticketing, a shared inbox, a customer portal, a knowledge base and reporting in one help desk.</p><h3>How much does Freshdesk cost?</h3><p>The official pricing page checked October 29, 2026 lists Growth at US$19, Pro at US$55 and Enterprise at US$89 per agent/month billed annually.</p><h3>Does Freshdesk have a free plan?</h3><p>The public pricing page lists a 14-day Enterprise trial and does not show a Free plan. Some Freshdesk support docs still reference a Free program, so confirm new-account eligibility with Freshworks.</p>
+<p>Comparing an email-first support platform? Read our <a href="/helpscout/">Help Scout guide</a>, <a href="/helpscout/review/">review</a>, and <a href="/helpscout/pricing/">pricing guide</a> before choosing between the two workflows.</p>
+
 HTML
   ], [
    'title'=>'Drift Software Guide: Sunset, Features and Alternatives',
@@ -249,9 +254,9 @@ HTML
 <p>The standard import tool supports several providers, including Freshdesk, Zendesk, Intercom, Gorgias, HubSpot Service Hub, and Zoho Desk. It imports conversations or tickets with customer profiles and tags, but not every setting or content type.</p>
 <h3 id="is-envoy-included-in-the-help-scout-seat-price">Is Envoy included in the Help Scout seat price?</h3>
 <p>No. Envoy is a separate AI-agent product priced at $0.75 per resolution. Help Scout lists three months of free resolutions for a new account; confirm the current offer and usage rules before rollout.</p>
-<p>Comparing a simpler shared inbox? Read our <a href="/helpscout/">Help Scout guide</a>, <a href="/helpscout/review/">review</a>, and <a href="/helpscout/pricing/">pricing breakdown</a>.</p>
 
-<p>If your team is weighing a full ticketing suite against a simpler shared inbox, read our <a href="/helpscout/">Help Scout guide</a> and <a href="/compare/helpscout-vs-zendesk/">Help Scout vs Zendesk comparison</a>.</p>
+
+
 
 HTML,
             'software_application' => [
@@ -1111,6 +1116,8 @@ HTML
 <h2>Decision guide</h2><h3>Choose Freshdesk when</h3><ul><li>You need ticket categories, groups, priorities and SLA controls.</li><li>A customer portal and knowledge base should sit beside the ticket workflow.</li><li>Custom dashboards or intelligent routing justify Pro, or Enterprise controls justify its higher price.</li><li>You will monitor AI and integration usage as part of the total cost.</li></ul><h3>Choose Help Scout when</h3><ul><li>You want a shared inbox and Docs-first workflow.</li><li>The Free plan's five-user and 100-contact limits fit your actual volume.</li><li>You prefer a direct Freshdesk import path and can validate the fields that transfer.</li><li>Ticket-routing complexity is modest compared with the value of simple shared conversations.</li></ul>
 <h2>Freshdesk vs Help Scout FAQ</h2><h3>Is Freshdesk cheaper than Help Scout?</h3><p>Freshdesk Growth is listed at US$19 per agent/month billed annually, while Help Scout pricing displayed Standard at US$25 per user/month on October 29, 2026. Confirm billing selection, seats and usage before comparing total cost.</p><h3>Does Help Scout have a free plan?</h3><p>Help Scout lists a free plan for up to five users, one inbox, one Docs site and 100 contacts per month. Freshdesk public pricing lists a 14-day Enterprise trial but does not show a Free plan; some support docs still reference a Free program, so confirm new-account eligibility.</p><h3>Which tool is better for AI support?</h3><p>Freshworks says new customers on Growth, Pro or Enterprise receive a one-time complimentary 500-session allowance, with extra packs at US$49 per 100 for the current billing cycle. Help Scout lists Envoy at US$0.75 per resolution. These meters are not directly comparable without expected volume.</p><h3>Can I import Freshdesk tickets into Help Scout?</h3><p>Help Scout official import tool lists Freshdesk as a supported source on Standard, Plus and Pro. Test a sample and map fields before changing email forwarding.</p>
 <h2>Related pages and sources</h2><p>Read the <a href="/freshdesk/">Freshdesk hub</a>, <a href="/freshdesk/review/">Freshdesk review</a>, <a href="/freshdesk/pricing/">Freshdesk pricing guide</a>, <a href="/freshdesk/how-to-use/">Freshdesk setup guide</a> and <a href="/freshdesk/alternatives/">Freshdesk alternatives</a>. For other software discovery, visit <a href="/browse-tools-by-niche">Browse Tools by Niche</a>.</p><p>Official sources checked October 29, 2026: <a href="https://www.freshworks.com/freshdesk/">Freshdesk product</a>, <a href="https://www.freshworks.com/freshdesk/pricing/">Freshdesk pricing</a>, <a href="https://www.helpscout.com/">Help Scout product</a>, <a href="https://www.helpscout.com/pricing/">Help Scout pricing</a>, <a href="https://docs.helpscout.com/article/1495-import-emails-or-tickets-into-help-scout">Help Scout import guide</a> and <a href="https://support.freshdesk.com/support/solutions/articles/225158">Freshdesk ticket export guide</a>. No hands-on test or vendor ranking was claimed.</p>
+<p>For the Help Scout side, see our <a href="/helpscout/">Help Scout guide</a>, <a href="/helpscout/review/">review</a>, <a href="/helpscout/pricing/">pricing guide</a>, and <a href="/helpscout/alternatives/">alternatives list</a>.</p>
+
 HTML
   ], [
    'title'=>'Drift vs 1mind: Legacy Chat or AI Sales Agent?',
@@ -1388,7 +1395,7 @@ HTML
 <p>Help Scout is often the simpler fit when email and self-service content are the main needs. Zendesk may be the better choice when the team already needs formal ticket routing or expects to add more channels soon.</p>
 <h2 id="sources-and-update-note">Sources and update note</h2>
 <p>Vendor pricing, product features, and migration documentation were checked on November 14, 2026. Community links are used only for qualitative context. This comparison is desk research and does not claim hands-on testing.</p>
-<p>For the Help Scout side, see our <a href="/helpscout/">Help Scout guide</a>, <a href="/helpscout/review/">review</a>, <a href="/helpscout/pricing/">pricing guide</a>, and <a href="/helpscout/alternatives/">alternatives list</a>.</p>
+
 
 HTML,
             'breadcrumb_parent_name' => 'Help Scout',
