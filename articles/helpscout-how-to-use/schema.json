@@ -1,0 +1,86 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/helpscout/how-to-use/#article",
+      "headline": "How to Use Help Scout: Setup and Workflows",
+      "mainEntityOfPage": "https://toolboxkart.tech/helpscout/how-to-use/",
+      "datePublished": "2026-11-14",
+      "dateModified": "2026-11-14",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Help Scout",
+          "item": "https://toolboxkart.tech/helpscout/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Use Help Scout",
+          "item": "https://toolboxkart.tech/helpscout/how-to-use/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I use Help Scout with Gmail?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Help Scout can connect a support email address through its email setup and forwarding process. Test inbound and outbound messages before switching the public support address."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I create more than one inbox?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but the number included depends on the plan. The current pricing page lists one on Free, two on Standard, five on Plus, and ten on Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Help Scout import knowledge base articles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The standard import tool does not import help center articles. Help Scout points to the Docs API for a custom knowledge-base transfer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I automate ticket assignment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Workflows can automate actions, and the pricing page lists round-robin routing on Plus and balanced routing on Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export conversation threads to CSV?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Selected reports can be exported as CSV or XLSX, but conversation thread contents are excluded. Other conversation data is obtained through the Inbox API."
+          }
+        }
+      ]
+    }
+  ]
+}
