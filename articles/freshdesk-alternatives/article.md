@@ -147,3 +147,7 @@ The official Freshdesk Product Announcements index was checked October 29, 2026.
 Official sources also include the [Freshdesk product overview](https://www.freshworks.com/freshdesk/), [Freshdesk pricing](https://www.freshworks.com/freshdesk/pricing/), [Freshdesk email setup guide](https://support.freshdesk.com/support/solutions/articles/37541-set-up-your-support-email), [Freshdesk ticket export guide](https://support.freshdesk.com/support/solutions/articles/225158), [Help Scout import guide](https://docs.helpscout.com/article/1495-import-emails-or-tickets-into-help-scout) and the linked official pricing pages for each alternative.
 
 Related: [Freshdesk hub](/freshdesk/), [review](/freshdesk/review/), [pricing](/freshdesk/pricing/), [how-to](/freshdesk/how-to-use/), [Freshdesk vs Help Scout](/compare/freshdesk-vs-help-scout/), and [Browse Tools by Niche](/browse-tools-by-niche).
+
+## Related Help Scout guides
+
+If you are comparing Help Scout as an email-first support option, read our [Help Scout guide](/helpscout/), [review](/helpscout/review/), and [pricing guide](/helpscout/pricing/). The [Help Scout alternatives page](/helpscout/alternatives/) compares Zendesk, Freshdesk, Front, Intercom, Zoho Desk, Gorgias, and HubSpot Service Hub.
