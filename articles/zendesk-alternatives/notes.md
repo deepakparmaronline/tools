@@ -8,3 +8,8 @@
 - No category pillar created because the category has fewer than four published tool clusters.
 - BreadcrumbList, ItemList and visible FAQs are generated from the published article record. Quality workflow validates syntax, registry, page rendering, links, indexes and sitemap discovery.
 - The user performs live HTTP verification after Hostinger auto-deploys from main. This commit is the deployment handoff, not proof of live status.
+
+
+## Cross-link update — November 14, 2026
+
+Added contextual internal links to the new Help Scout hub, review, pricing guide, and alternatives page. Existing product facts and saved keyword metrics were not changed.
