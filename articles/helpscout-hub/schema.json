@@ -40,7 +40,7 @@
     {
       "@type": "SoftwareApplication",
       "name": "Help Scout",
-      "applicationCategory": "Customer Service Software",
+      "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
       "url": "https://www.helpscout.com/",
       "description": "Customer support platform with shared inbox, Docs, Beacon, workflows, and AI tools.",
