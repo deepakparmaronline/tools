@@ -51,6 +51,7 @@ def main():
             '/fiverr/review/':('https://toolboxkart.tech/fiverr/review/','October 31, 2026'),
             '/gmail/review/':('https://toolboxkart.tech/gmail/review/','November 1, 2026'),
             '/n8n/review/':('https://toolboxkart.tech/n8n/review/','November 5, 2026'),
+            '/helpscout/review/':('https://toolboxkart.tech/helpscout/review/','November 14, 2026'),
         }
         for path,(canonical,published_date) in pages.items():
             code,_,html=get(path);assert code==200,path
@@ -63,12 +64,12 @@ def main():
             graph=next(schema['@graph'] for schema in page.schemas if '@graph' in schema)
             crumb=next(item for item in graph if item.get('@type')=='BreadcrumbList')
             assert crumb['itemListElement'][-1]['item']==canonical,path
-            if path in ['/drift/review/', '/fiverr/review/', '/gmail/review/', '/n8n/review/']:
-                parent = 'fiverr' if path == '/fiverr/review/' else 'gmail' if path == '/gmail/review/' else 'n8n' if path == '/n8n/review/' else 'drift'
+            if path in ['/drift/review/', '/fiverr/review/', '/gmail/review/', '/n8n/review/', '/helpscout/review/']:
+                parent = 'helpscout' if path == '/helpscout/review/' else 'fiverr' if path == '/fiverr/review/' else 'gmail' if path == '/gmail/review/' else 'n8n' if path == '/n8n/review/' else 'drift'
                 assert [item['item'] for item in crumb['itemListElement']] == ['https://toolboxkart.tech/', f'https://toolboxkart.tech/{parent}/', canonical], path
             assert any('@graph' in schema for schema in page.schemas),path
             assert 'Review methodology' in visible and 'Sources' in visible,path
-        for index,slug in [('/versus/','freedom-vs-cold-turkey'),('/reviews/','taskade-review'),('/reviews/','Drift Review'),('/reviews/','Fiverr Review'),('/reviews/','Gmail Review'),('/reviews/','n8n Review'),('/content/','taskade-review'),('/content/','n8n-review')]:
+        for index,slug in [('/versus/','freedom-vs-cold-turkey'),('/reviews/','taskade-review'),('/reviews/','Drift Review'),('/reviews/','Fiverr Review'),('/reviews/','Gmail Review'),('/reviews/','n8n Review'),('/reviews/','Help Scout Review'),('/content/','taskade-review'),('/content/','n8n-review'),('/content/','helpscout-review')]:
             code,_,html=get(index);assert code==200 and slug in html,index
         for path in ['/about-deepak-parmar/','/editorial-policy','/review-methodology','/advertising-disclosure','/corrections-policy']:
             code,_,html=get(path);assert code==200 and Page(html).h1==1,path
@@ -82,6 +83,8 @@ def main():
         assert pages['/fiverr/review/'][0] in review_sitemap
         assert pages['/gmail/review/'][0] in review_sitemap
         assert pages['/n8n/review/'][0] in review_sitemap
+        assert pages['/helpscout/review/'][0] in review_sitemap
+        assert review_sitemap.count(pages['/helpscout/review/'][0]) == 1
         assert pages['/versus/freedom-vs-cold-turkey/'][0] in compare_sitemap
         assert 'https://toolboxkart.tech/compare/gmail-vs-outlook/' in compare_sitemap
         _,_,alt_sitemap=get('/sitemap-alternatives.xml')
@@ -109,6 +112,16 @@ def main():
         assert 'Notion Review' in notion_content_index
         notion_review_map = get('/sitemap-reviews.xml')[2]
         assert notion_review_map.count('https://toolboxkart.tech/notion/review/') == 1
+
+        helpscout_review_code, _, helpscout_review_html = get('/helpscout/review/')
+        assert helpscout_review_code == 200
+        assert 'https://toolboxkart.tech/helpscout/review/' in helpscout_review_html and 'rel="canonical"' in helpscout_review_html
+        assert helpscout_review_html.count('<h1') == 1
+        assert helpscout_review_html.count('<strong>Written by <a href="/about-deepak-parmar/">Deepak Parmar</a></strong>') == 2
+        assert 'AggregateRating' not in helpscout_review_html
+        assert 'hands-on testing' in helpscout_review_html.lower()
+        assert all(token in helpscout_review_html for token in ['Article','BreadcrumbList','FAQPage'])
+        assert 'Help Scout Review' in get('/reviews/')[2] and 'Help Scout Review' in get('/content/')[2]
 
         print('PASS: Versus/Reviews pages, trust pages, schema, author/date counts, discovery, sitemaps and legacy redirects')
     finally:
