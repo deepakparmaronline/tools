@@ -38,8 +38,6 @@ Help Scout is a sensible shortlist option for a SaaS company, professional servi
 
 It is a weaker fit for a large operation that needs detailed ticket types, many custom statuses, strict skill-based routing, multiple brands, or extensive automation imported from another platform. Those teams should compare Zendesk, Freshdesk, and other full help desk products before moving.
 
-A product update dated October 1, 2026, describes a redesigned conversation sidebar that brings status, assignee, SLA, topics, sentiment, company information, history, custom fields, and apps into one place. This is useful context when evaluating the current interface, but it does not remove the migration limits listed in Help Scout's import guide.
-
 ## Start with the right guide
 
 - Read the [Help Scout review](/helpscout/review/) for strengths, limits, and fit.
@@ -66,7 +64,3 @@ The standard import tool supports several providers, including Freshdesk, Zendes
 ### Is Envoy included in the Help Scout seat price?
 
 No. Envoy is a separate AI-agent product priced at $0.75 per resolution. Help Scout lists three months of free resolutions for a new account; confirm the current offer and usage rules before rollout.
-
-## Research note
-
-This guide is based on Help Scout's public product pages, current pricing, support documentation, import/export guidance, and product updates checked on November 14, 2026. It is desk research, not a hands-on test.
