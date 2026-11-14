@@ -11,3 +11,8 @@
 - Sitemaps and indexes are generated from the existing software page, alternative article and review registries. Do not edit generated sitemap output.
 - The previous matching quality run failed because router.php only routed /zendesk/review/ to the standalone review file. This commit adds generic tool-first review routing, updates Freshdesk pricing and migration facts, expands the comparison and troubleshooting content, and improves the alternatives table and editorial artifacts. The matching quality workflow passed for content commit 0895f043cd2f5edd54435e772e528d3157a2f16b at 2026-10-29 05:09:32 UTC (run https://github.com/deepakparmaronline/tools/actions/runs/40821723994). Queue Order 2 is now marked published after that exact pass.
 - Hostinger auto-deploys from main. The user will perform live verification; this commit is a deployment handoff, not proof of live HTTP status.
+
+
+## Cross-link update — November 14, 2026
+
+Added contextual internal links to the new Help Scout hub, review, pricing guide, and alternatives page. Existing product facts and saved keyword metrics were not changed.
