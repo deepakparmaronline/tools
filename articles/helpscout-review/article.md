@@ -130,4 +130,11 @@ This is a research-based review, not a hands-on product test. We checked Help Sc
 
 ## Sources
 
-The sources list below links to Help Scout's official product, pricing, help center, import/export, and product-update pages. Pricing and feature availability can change, so verify the live plan before purchase.
+- [Help Scout product overview](https://www.helpscout.com/)
+- [Help Scout pricing](https://www.helpscout.com/pricing/)
+- [Help Scout Envoy](https://www.helpscout.com/agent/)
+- [Help Scout import guide](https://docs.helpscout.com/article/1495-import-emails-or-tickets-into-help-scout)
+- [Help Scout data export options](https://docs.helpscout.com/article/466-data-export-options)
+- [Help Scout product updates](https://updates.helpscout.com/)
+
+Pricing and feature availability can change, so verify the live plan before purchase.
