@@ -429,3 +429,14 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - **Redirects:** none added; no verified one-to-one legacy Notion route was found.
 - **Saved metrics:** US volume 1,000; KD 34; CPC US$4.60; commercial intent. No Semrush refresh or metric changes.
 - **Next queue row:** Order 8, Help Scout alternative; US volume 260, KD 16, CPC US$46.62, intent I/C. Do not start until this Notion closeout is complete.
+
+
+## Help Scout cluster checkpoint (2026-11-17)
+
+- Selected Order 8 because no lower row was in_progress and Help Scout was the lowest queued row.
+- Saved US metrics preserved: volume 260, KD 16, CPC US$46.62, intent I/C. Semrush was not refreshed.
+- Read the schedule guideline, content guide, publishing queue, progress log, plan, search snapshot, alternatives list and repository agent instructions.
+- Completed official-source research for Help Scout pricing, Inbox, Docs, Beacon, Scout/Envoy, migration, export and MCP access. Also checked official pricing for Zendesk, Freshdesk, Front, Intercom, Zoho Desk, LiveAgent and Gorgias.
+- Added the source ledger at articles/help-scout-cluster-research.md. It records verified facts, the missing saved PAA wording, competitor evidence, page plan and sitemap requirements.
+- Queue status is in_progress. No page is marked published. No canonical or sitemap entry has been added yet.
+- Remaining work: write and render all six pages, update the public registries and existing Freshdesk/Zendesk alternative cross-links, align the static root sitemap index, extend sitemap validation, run tests, push the content commit and verify the exact commit in seo/quality-status.json.

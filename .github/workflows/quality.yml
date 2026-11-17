@@ -59,6 +59,7 @@ jobs:
 
       - name: Run software content tests
         run: |
+          python3 tests/help_scout_research.py
           python3 tests/alternatives.py
           python3 tests/software_decisions.py
           python3 tests/software_indexes.py
