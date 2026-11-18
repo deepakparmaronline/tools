@@ -1,0 +1,85 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/help-scout/pricing/#article",
+      "headline": "Help Scout Pricing: Plans, Free Limits and AI Costs",
+      "description": "Compare Help Scout Free, Standard, Plus and Pro prices, included limits, extra inbox and Docs fees, Envoy costs, and annual billing before buying.",
+      "datePublished": "2026-11-18T00:00:00+05:30",
+      "dateModified": "2026-11-18T00:00:00+05:30",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/help-scout/pricing/",
+      "url": "https://toolboxkart.tech/help-scout/pricing/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Help Scout",
+          "item": "https://toolboxkart.tech/help-scout/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Help Scout Pricing: Plans and AI Costs",
+          "item": "https://toolboxkart.tech/help-scout/pricing/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Help Scout billed per agent or per ticket?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The paid plans are priced per user. Envoy is billed separately by AI resolution."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I add more Inboxes or Docs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Additional Inboxes and Docs sites are available as paid add-ons; check the current annual or monthly price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the annual plan cost less?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The pricing page shows a 16% annual discount. Confirm the total and commitment before buying."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I control Envoy costs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Help Scout says you can set a monthly resolution spending cap, and the agent turns off when the cap is reached for that cycle."
+          }
+        }
+      ]
+    }
+  ]
+}

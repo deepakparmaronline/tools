@@ -18,7 +18,10 @@ def main():
     for phrase in required:
         assert phrase in text, f"Missing research evidence: {phrase}"
     queue = QUEUE.read_text()
-    rows = [line for line in queue.splitlines() if line.startswith("|") and "Help Scout" in line]
+    rows = [
+        line for line in queue.splitlines()
+        if line.startswith("| 8 | Help Scout | HelpScout alternative |")
+    ]
     assert len(rows) == 1 and rows[0].rstrip().endswith("| in_progress |"), rows
     print("Help Scout research checkpoint valid.")
 

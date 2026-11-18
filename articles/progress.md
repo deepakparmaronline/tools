@@ -440,3 +440,15 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - Added the source ledger at articles/help-scout-cluster-research.md. It records verified facts, the missing saved PAA wording, competitor evidence, page plan and sitemap requirements.
 - Queue status is in_progress. No page is marked published. No canonical or sitemap entry has been added yet.
 - Remaining work: write and render all six pages, update the public registries and existing Freshdesk/Zendesk alternative cross-links, align the static root sitemap index, extend sitemap validation, run tests, push the content commit and verify the exact commit in seo/quality-status.json.
+
+## Help Scout checkpoint 3: hub and pricing drafts (2026-11-18)
+
+- Re-synced main and resumed the lowest in_progress row, Order 8 Help Scout. Saved metrics remain volume 260, KD 16, CPC US$46.62, I/C. Semrush was not opened or refreshed.
+- Re-opened Help Scout official pricing, Inbox, shared Inbox, Docs, Beacon, Import2, export and MCP sources. Updated the research ledger with fresh official competitor pricing sources. Corrected the Gorgias price entry: its current accessible official pricing page shows ticket-volume tiers but not numeric tier/AI prices, so do not quote a starting amount until verified.
+- Wrote the Help Scout hub and pricing drafts with their article, SEO, source ledger, notes and schema files. The hub is 809 words; pricing is 1,028 words. Both are within their required ranges. Meta descriptions are 153 and 146 characters; SEO titles stay under 60 characters with the site name appended.
+- Added a draft-content test to validate word counts, metadata, visible FAQs, schema types, source links, internal links and the no-public-registry state. Added it to the quality workflow.
+- Fixed the prior research-test failure from run 44019185918. It was matching a duplicate-note row as well as the numeric queue row; the test now selects the actual Order 8 table row.
+- Aligned the static root sitemap.xml to the eight-child sitemap index already served by the dynamic root and rewrote the PHP validator to check the exact child list, child generator files and robots.txt declarations. robots.txt itself is unchanged and already declares all eight child maps plus the root.
+- **Public status:** no Help Scout public registry, article route, navigation/pillar link, child-sitemap canonical or redirect was added. Both drafts remain unregistered and unlinked from public pages. No deployment URLs are claimed.
+- **Quality:** the previous research checkpoint commit 4993fdf failed because of the test row selector. The fixed test and draft checks will run on this checkpoint's content commit; status remains unverified until the workflow reports the exact SHA.
+- **Next checkpoint:** review and how-to drafts. Then alternatives and comparison, final internal-link/registry integration, exact-once sitemap verification, tests and publication.

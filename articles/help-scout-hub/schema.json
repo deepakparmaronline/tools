@@ -1,0 +1,91 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/help-scout/#article",
+      "headline": "Help Scout: Customer Support Platform Guide",
+      "description": "Explore Help Scout’s shared inbox, Docs, Beacon, AI tools, plan limits, pricing, and migration gaps before choosing support software for your team today.",
+      "datePublished": "2026-11-18T00:00:00+05:30",
+      "dateModified": "2026-11-18T00:00:00+05:30",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/help-scout/",
+      "url": "https://toolboxkart.tech/help-scout/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Software Tool Hubs",
+          "item": "https://toolboxkart.tech/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Help Scout: Customer Support Platform Guide",
+          "item": "https://toolboxkart.tech/help-scout/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://toolboxkart.tech/help-scout/#software",
+      "name": "Help Scout",
+      "url": "https://www.helpscout.com/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web browser",
+      "description": "Customer support software with a shared Inbox, knowledge base, website support widget, workflows and AI assistance.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Help Scout",
+        "url": "https://www.helpscout.com/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Help Scout free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Free plan has five users, one Inbox, one Docs site and a 100-contact monthly cap. Check the official pricing page for the current details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Help Scout replace a ticketing system?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can manage conversations, assignments, tags, workflows and reporting. Teams that depend on advanced ticket fields or tightly linked incident types should compare their requirements before switching."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I connect an AI agent to Help Scout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The official MCP connection is read-only for new connections. Standard, Plus and Pro include API access; reporting tools require Plus or Pro."
+          }
+        }
+      ]
+    }
+  ]
+}
