@@ -3,8 +3,8 @@
 **Queue item:** Order 8, Help Scout
 **Primary keyword:** HelpScout alternative
 **Saved US metrics:** volume 260; KD 16; CPC US$46.62; intent informational/commercial
-**Research checked:** November 18, 2026
-**Research status:** official-source research refreshed; hub and pricing drafts are complete, while the remaining four pages still need to be written, rendered, tested and published
+**Research checked:** November 19, 2026
+**Research status:** official-source research refreshed; hub, pricing, review and how-to drafts are complete; alternatives and comparison remain
 **Semrush:** not refreshed. The saved snapshot remains the source of truth.
 
 ## Search intent and page plan
@@ -96,3 +96,13 @@ The root sitemap index and robots.txt already declare all eight child maps. The 
 ## Current queue state
 
 Order 8 is in_progress. The hub and pricing drafts are complete, but the review, how-to, alternatives and comparison pages, final cross-links, public registries and sitemap records remain. Do not mark it published until all six pages, registries, internal links and sitemap discovery are in one content commit, relevant tests pass, and seo/quality-status.json reports status=passed with the exact content commit SHA.
+
+
+## Fresh official verification (November 19, 2026)
+
+- Reopened Help Scout pricing. Monthly prices remain Standard US$25, Plus US$45 and Pro US$75 per user. The page shows a 16% annual discount. Envoy is US$0.75 per resolution. Extra Inboxes cost US$10/month with annual billing or US$12/month monthly. Extra Docs sites cost US$20/month with annual billing or US$24/month monthly.
+- Clarified Inbox quantities. The pricing table shows included counts of 1 Free, 2 Standard, 5 Plus and 10 Pro. A separate line describes maximum permitted counts of 1, 20, 50 and unlimited. Treat included counts and maximums as separate measures.
+- Rechecked the Free plan: up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle. Reaching the contact limit prevents further replies until the next cycle or an upgrade.
+- Rechecked current docs for shared Inbox collaboration, assignment, roles, saved replies, Docs sites/articles, Beacon, workflows, custom fields, MCP, Import2 and data exports. New MCP connections are read-only. Standard import exclusions remain users, Inbox settings, knowledge base articles, saved replies/macros, workflow rules and some custom fields/statuses. Report exports still omit conversation thread contents.
+- Verified Zendesk's official pricing page for the planned comparison: Support Team US$19/agent/month billed yearly, Suite Team US$55 and Suite Professional US$115. Monthly prices shown are US$25, US$69 and US$149 respectively. Recheck the regional selector and billing term before writing the comparison.
+- New drafts: review 2016 words; how-to 1839 words. Both are desk research, not hands-on testing. FAQ questions are documentation-led; no exact Semrush PAA wording was invented.

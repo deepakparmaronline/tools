@@ -452,3 +452,14 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - **Public status:** no Help Scout public registry, article route, navigation/pillar link, child-sitemap canonical or redirect was added. Both drafts remain unregistered and unlinked from public pages. No deployment URLs are claimed.
 - **Quality:** the previous research checkpoint commit 4993fdf failed because of the test row selector. The fixed test and draft checks will run on this checkpoint's content commit; status remains unverified until the workflow reports the exact SHA.
 - **Next checkpoint:** review and how-to drafts. Then alternatives and comparison, final internal-link/registry integration, exact-once sitemap verification, tests and publication.
+
+
+## Help Scout checkpoint 4: review and how-to drafts (2026-11-19)
+
+- Re-synced GitHub main at 9ebb482780ceeef38616c468b505118579fdce64 and resumed Order 8 Help Scout, the lowest in_progress row. Saved metrics remain US volume 260, KD 16, CPC US$46.62 and intent I/C. No Semrush session was opened and no metrics were changed.
+- Re-opened official Help Scout pricing, Free plan, shared Inbox, assignment, user roles, Docs, Beacon, workflows, saved replies, custom fields, MCP, Import2 and export documentation. Verified Zendesk's official pricing page for the planned comparison. New facts are dated November 19, 2026.
+- Completed the review draft (2016 words) and how-to setup draft (1839 words), each with unique SEO metadata, Article/BreadcrumbList/FAQPage schema, visible FAQs, source ledger and editorial notes.
+- Corrected the pricing draft's Docs add-on billing to US$20/month with annual billing or US$24/month monthly. Clarified that the pricing page's Inbox maximums are separate from the included Inbox quantities. The included paid-plan counts remain 2, 5 and 10; the maximums are 20, 50 and unlimited.
+- Extended the draft validation test to cover review and how-to word ranges, metadata, visible FAQ schema, source links, internal links and the no-public-registry state.
+- Public state remains draft-only. No Help Scout page was registered, linked from a public page, added to a child sitemap or redirected.
+- **Exact next checkpoint:** Write the 1,800–2,800-word Help Scout alternatives page and the 1,500–2,200-word Help Scout vs Zendesk comparison, then complete cross-links, public registries, child sitemap discovery, root index checks and final publication QA.

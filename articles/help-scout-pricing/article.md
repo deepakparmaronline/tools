@@ -33,7 +33,7 @@ The pricing page contains a separate Inbox maximums sentence that does not match
 
 ## Extra Inboxes, Docs sites and Envoy
 
-An extra Inbox costs $10 per month when paid annually, or $12 on monthly billing. Additional Docs sites are listed at $20 per site per month. These add-ons can change the total, so include them when your team splits support by brand, department or product.
+An extra Inbox costs $10 per month when paid annually, or $12 on monthly billing. Additional Docs sites cost $20 per month with annual billing or $24 per month with monthly billing. Extra Inboxes cost $10 per month with annual billing or $12 per month monthly. These add-ons can change the total, so include them when your team splits support by brand, department or product.
 
 Envoy is listed at $0.75 per resolution. Help Scout advertises a three-month trial with unlimited Envoy resolutions, and lets you set a monthly spending cap. A resolution is counted when Scout solves a conversation without human assistance. It is not charged if the customer escalates, searches the knowledge base, asks more questions or indicates that more help is needed. Only one resolution can be counted per conversation. Read the [Envoy pricing FAQ](https://www.helpscout.com/pricing/) before estimating usage.
 
@@ -61,4 +61,4 @@ If you are moving from another help desk, review the [Help Scout guide](/help-sc
 
 ## Sources and update method
 
-Plan prices, included limits and add-on charges were checked November 18, 2026 against Help Scout's [official pricing page](https://www.helpscout.com/pricing/) and [billing guide](https://docs.helpscout.com/article/596-billing-and-plans-guide). This is desk research; it does not use a customer account or a billing quote.
+Plan prices, included limits and add-on charges were checked November 19, 2026 against Help Scout's [official pricing page](https://www.helpscout.com/pricing/) and [billing guide](https://docs.helpscout.com/article/596-billing-and-plans-guide). This is desk research; it does not use a customer account or a billing quote.

@@ -1,0 +1,93 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/help-scout/how-to-use/#article",
+      "headline": "How to Use Help Scout: Setup Guide",
+      "description": "Set up Help Scout step by step: connect email, add teammates, organize conversations, publish Docs, configure Beacon and test workflows.",
+      "datePublished": "2026-11-19T00:00:00+05:30",
+      "dateModified": "2026-11-19T00:00:00+05:30",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/help-scout/how-to-use/",
+      "url": "https://toolboxkart.tech/help-scout/how-to-use/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Help Scout",
+          "item": "https://toolboxkart.tech/help-scout/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Use Help Scout",
+          "item": "https://toolboxkart.tech/help-scout/how-to-use/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I connect my support email to Help Scout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open the Inbox settings, connect your domain address, copy the Help Scout Inbox address and configure forwarding with your email provider. Send a test message before switching the team."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I create a Help Scout knowledge base?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open Settings, choose Docs Sites and create a site. Add a collection, then create, preview and publish articles from Tools > Docs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Help Scout workflows on the Free plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Help Scout lists workflows on Standard, Plus and Pro. The Free plan has an Inbox auto-reply feature, but not the paid workflow system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Help Scout import from another help desk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The standard Import2 tool can bring conversations or tickets, customer profiles and tags from supported providers. Users, Inbox settings, knowledge base articles, saved replies and automation rules are not included."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export Help Scout conversation threads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The in-app report export excludes conversation thread contents. Help Scout says other customer, user and conversation data can be obtained through the Inbox API, and Docs articles through the Docs API."
+          }
+        }
+      ]
+    }
+  ]
+}
