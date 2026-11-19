@@ -78,7 +78,7 @@ Do not treat a report export as a full backup. CSV and XLSX report exports exclu
 
 ## Tips for a reliable setup
 
-Keep the first Inbox simple. Use tags only when they help someone find or report on a type of request. Make assignment ownership clear. Review the Unassigned folder at set times. Give Docs articles an owner and a review date. Check reports after the first few weeks so you can see whether the team is keeping up with new conversations.
+Start with one Inbox, clear ownership and a small tag set. Assign an owner and review date to each Docs article. Check the Unassigned folder daily and review reports after launch.
 
 If you use custom fields, remember that they belong to an Inbox. Help Scout says field values do not carry over when a conversation moves to a different Inbox. This matters when designing a multi-Inbox setup. The [custom fields guide](https://docs.helpscout.com/article/593-custom-fields) explains the limits and behavior.
 
@@ -102,6 +102,28 @@ If you use custom fields, remember that they belong to an Inbox. Help Scout says
 **A workflow is marked incomplete.** Review its conditions and actions for deleted users, teams, Inboxes or custom fields, or a feature your plan does not support.
 
 **MCP report tools return no data.** Help Scout says reporting tools require Plus or Pro. The connection is read-only for new setups, and Docs search also needs a Docs API key.
+
+## Help Scout setup questions
+
+**How do I connect my support email to Help Scout?**
+
+Open the Inbox settings, connect your domain address, copy the Help Scout Inbox address and configure forwarding with your email provider. Send a test message before switching the team.
+
+**How do I create a Help Scout knowledge base?**
+
+Open Settings, choose Docs Sites and create a site. Add a collection, then create, preview and publish articles from Tools > Docs.
+
+**Can I use Help Scout workflows on the Free plan?**
+
+No. Help Scout lists workflows on Standard, Plus and Pro. The Free plan has an Inbox auto-reply feature, but not the paid workflow system.
+
+**What does Help Scout import from another help desk?**
+
+The standard Import2 tool can bring conversations or tickets, customer profiles and tags from supported providers. Users, Inbox settings, knowledge base articles, saved replies and automation rules are not included.
+
+**Can I export Help Scout conversation threads?**
+
+The in-app report export excludes conversation thread contents. Help Scout says other customer, user and conversation data can be obtained through the Inbox API, and Docs articles through the Docs API.
 
 ## More Help Scout guidance
 

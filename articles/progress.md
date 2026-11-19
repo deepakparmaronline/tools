@@ -463,3 +463,10 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - Extended the draft validation test to cover review and how-to word ranges, metadata, visible FAQ schema, source links, internal links and the no-public-registry state.
 - Public state remains draft-only. No Help Scout page was registered, linked from a public page, added to a child sitemap or redirected.
 - **Exact next checkpoint:** Write the 1,800–2,800-word Help Scout alternatives page and the 1,500–2,200-word Help Scout vs Zendesk comparison, then complete cross-links, public registries, child sitemap discovery, root index checks and final publication QA.
+
+
+### Help Scout checkpoint 4 QA correction (2026-11-19)
+
+- The first quality run for content commit ef6114bf788996bc7b0a3617f3884e6164527a79 failed in tests/help_scout_draft.py because the how-to page had FAQ schema but did not display the matching questions in the article body.
+- Added all five FAQ questions and their answers to the how-to draft, updated the editorial word count to 1994, and kept the page draft-only. No registry or sitemap changes were made.
+- Re-pushed the correction as a substantive article change. The original content commit is not considered quality-passed. Verify the next workflow against the new exact content SHA.

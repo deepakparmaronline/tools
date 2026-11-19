@@ -2,7 +2,7 @@
 
 - **Status:** Draft only; not published.
 - **Source date:** November 19, 2026.
-- **Length:** 1839 words, within the 1,200–2,000-word range.
+- **Length:** 1994 words, within the 1,200–2,000-word range.
 - **Primary intent:** Informational setup and task completion.
 - **Angle:** A source-led sequence from first Inbox to email forwarding, team roles, Docs, Beacon, workflows and migration checks.
 - **Internal links:** /help-scout/ (draft hub), /help-scout/review/ (draft), /help-scout/pricing/ (draft), /help-scout/alternatives/ (planned), /compare/help-scout-vs-zendesk/ (planned).
