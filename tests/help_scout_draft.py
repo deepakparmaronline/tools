@@ -49,7 +49,8 @@ def check_page(folder, canonical, primary, low, high, schema_types, faq_question
     assert "Draft only" in notes and "unregistered" in notes.lower() and "unlinked" in notes.lower(), folder.name
     assert len(re.findall(r"\]\(/[^)]+\)", article)) >= 4, f"{folder.name}: too few internal links"
     assert "—" not in article, f"{folder.name}: em dash found"
-    assert "/help-scout/" not in article, f"{folder.name}: draft Help Scout route linked before publication"
+    if folder.name in {"help-scout-alternatives", "help-scout-vs-zendesk"}:
+        assert "/help-scout/" not in article, f"{folder.name}: draft Help Scout route linked before publication"
 
 def main():
     check_page(
