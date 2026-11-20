@@ -1,12 +1,10 @@
-"""Validates the non-public Help Scout hub and pricing checkpoint drafts."""
+"""Validates all six non-public Help Scout cluster drafts."""
 import json
 import re
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-HUB = ROOT / "articles/help-scout-hub"
-PRICING = ROOT / "articles/help-scout-pricing"
 SITE = "https://toolboxkart.tech"
 CHILD_MAPS = [
     "/sitemap-tools.xml", "/sitemap-alternatives.xml", "/sitemap-reviews.xml",
@@ -50,15 +48,17 @@ def check_page(folder, canonical, primary, low, high, schema_types, faq_question
         assert url in sources, f"{folder.name}: source link missing from ledger: {url}"
     assert "Draft only" in notes and "unregistered" in notes.lower() and "unlinked" in notes.lower(), folder.name
     assert len(re.findall(r"\]\(/[^)]+\)", article)) >= 4, f"{folder.name}: too few internal links"
+    assert "—" not in article, f"{folder.name}: em dash found"
+    assert "/help-scout/" not in article, f"{folder.name}: draft Help Scout route linked before publication"
 
 def main():
     check_page(
-        HUB, SITE + "/help-scout/", "Help Scout", 500, 900,
+        ROOT / "articles/help-scout-hub", SITE + "/help-scout/", "Help Scout", 500, 900,
         {"Article", "BreadcrumbList", "SoftwareApplication", "FAQPage"},
         {"Is Help Scout free?", "Can Help Scout replace a ticketing system?", "Can I connect an AI agent to Help Scout?"},
     )
     check_page(
-        PRICING, SITE + "/help-scout/pricing/", "Help Scout pricing", 800, 1400,
+        ROOT / "articles/help-scout-pricing", SITE + "/help-scout/pricing/", "Help Scout pricing", 800, 1400,
         {"Article", "BreadcrumbList", "FAQPage"},
         {"Is Help Scout billed per agent or per ticket?", "Can I add more Inboxes or Docs?", "Does the annual plan cost less?", "Can I control Envoy costs?"},
     )
@@ -74,6 +74,27 @@ def main():
         {"How do I connect my support email to Help Scout?", "How do I create a Help Scout knowledge base?", "Can I use Help Scout workflows on the Free plan?", "What does Help Scout import from another help desk?", "Can I export Help Scout conversation threads?"},
         "2026-11-19T00:00:00+05:30",
     )
+    alt = check_page(
+        ROOT / "articles/help-scout-alternatives", SITE + "/help-scout/alternatives/", "Help Scout alternatives", 1800, 2800,
+        {"Article", "BreadcrumbList", "ItemList", "FAQPage"},
+        {"Does Help Scout have a free plan?", "Which Help Scout alternative has a free plan?", "Is Zendesk or Freshdesk a better replacement?", "Does Intercom charge for each AI resolution?", "Can I move Help Scout conversations to another help desk?", "Is a flat workspace price always cheaper?"},
+        "2026-11-20T00:00:00+05:30",
+    )
+    comp = check_page(
+        ROOT / "articles/help-scout-vs-zendesk", SITE + "/compare/help-scout-vs-zendesk/", "Help Scout vs Zendesk", 1500, 2200,
+        {"Article", "BreadcrumbList", "FAQPage"},
+        {"Is Help Scout cheaper than Zendesk?", "Does Zendesk have a free plan?", "Does Help Scout include a knowledge base?", "Can I move Zendesk tickets into Help Scout?", "Does Zendesk include AI?", "Which tool is better for a small support team?"},
+        "2026-11-20T00:00:00+05:30",
+    )
+    alt_schema = json.loads((ROOT / "articles/help-scout-alternatives/schema.json").read_text())
+    item_list = next(item for item in alt_schema["@graph"] if item.get("@type") == "ItemList")
+    assert [entry["item"]["name"] for entry in item_list["itemListElement"]] == [
+        "Zendesk", "Freshdesk", "Front", "Intercom", "Zoho Desk", "LiveAgent", "Crisp"
+    ]
+    review_schema = json.loads((ROOT / "articles/help-scout-review/schema.json").read_text())
+    review_types = {item.get("@type") for item in review_schema.get("@graph", [])}
+    assert "Review" not in review_types and "AggregateRating" not in review_types
+
     static_index = ET.fromstring((ROOT / "sitemap.xml").read_text())
     assert static_index.tag.endswith("sitemapindex")
     locations = [node.text.strip() for node in static_index.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
@@ -82,19 +103,34 @@ def main():
     assert f"Sitemap: {SITE}/sitemap.xml" in robots
     for child in CHILD_MAPS:
         assert f"Sitemap: {SITE + child}" in robots, child
+
     public_files = [
-        ROOT / "data/software-pages.php", ROOT / "sitemap-tools.php",
-        ROOT / "sitemap-pricing.php", ROOT / "sitemap-how-to-use.php",
-        ROOT / "sitemap-compare.php", ROOT / "sitemap-alternatives.php",
-        ROOT / "sitemap-reviews.php",
+        ROOT / "data/software-pages.php", ROOT / "includes/alternatives.php",
+        ROOT / "sitemap-tools.php", ROOT / "sitemap-pricing.php",
+        ROOT / "sitemap-how-to-use.php", ROOT / "sitemap-compare.php",
+        ROOT / "sitemap-alternatives.php", ROOT / "sitemap-reviews.php",
         ROOT / "alternatives/articles/freshdesk-alternatives.php",
         ROOT / "alternatives/articles/zendesk-alternatives.php",
+        ROOT / "reviews/notion-review/index.php",
+        ROOT / "data/post-2026-11-08-notion-review.php",
     ]
     for path in public_files:
         assert "/help-scout/" not in path.read_text(), path
     assert not (ROOT / "alternatives/articles/help-scout-alternatives.php").exists()
     assert not (ROOT / "reviews/help-scout-review/index.php").exists()
-    print(f"Help Scout draft checkpoint valid: hub {word_count((HUB / 'article.md').read_text())} words, pricing {word_count((PRICING / 'article.md').read_text())} words.")
+    assert not (ROOT / "data/post-2026-11-20-help-scout-review.php").exists()
+    counts = {
+        name: word_count((ROOT / folder / "article.md").read_text())
+        for name, folder in [
+            ("hub", "articles/help-scout-hub"),
+            ("pricing", "articles/help-scout-pricing"),
+            ("review", "articles/help-scout-review"),
+            ("how_to_use", "articles/help-scout-how-to-use"),
+            ("alternatives", "articles/help-scout-alternatives"),
+            ("comparison", "articles/help-scout-vs-zendesk"),
+        ]
+    }
+    print("Help Scout draft checkpoint valid: " + ", ".join(f"{name} {count} words" for name, count in counts.items()))
 
 if __name__ == "__main__":
     main()

@@ -3,8 +3,8 @@
 **Queue item:** Order 8, Help Scout
 **Primary keyword:** HelpScout alternative
 **Saved US metrics:** volume 260; KD 16; CPC US$46.62; intent informational/commercial
-**Research checked:** November 19, 2026
-**Research status:** official-source research refreshed; hub, pricing, review and how-to drafts are complete; alternatives and comparison remain
+**Research checked:** November 20, 2026
+**Research status:** official-source research refreshed; all six page drafts are complete; final cross-page integration, public registration and publication remain
 **Semrush:** not refreshed. The saved snapshot remains the source of truth.
 
 ## Search intent and page plan
@@ -106,3 +106,31 @@ Order 8 is in_progress. The hub and pricing drafts are complete, but the review,
 - Rechecked current docs for shared Inbox collaboration, assignment, roles, saved replies, Docs sites/articles, Beacon, workflows, custom fields, MCP, Import2 and data exports. New MCP connections are read-only. Standard import exclusions remain users, Inbox settings, knowledge base articles, saved replies/macros, workflow rules and some custom fields/statuses. Report exports still omit conversation thread contents.
 - Verified Zendesk's official pricing page for the planned comparison: Support Team US$19/agent/month billed yearly, Suite Team US$55 and Suite Professional US$115. Monthly prices shown are US$25, US$69 and US$149 respectively. Recheck the regional selector and billing term before writing the comparison.
 - New drafts: review 2016 words; how-to 1839 words. Both are desk research, not hands-on testing. FAQ questions are documentation-led; no exact Semrush PAA wording was invented.
+
+
+## Competitor and comparison source verification (November 20, 2026)
+
+The following official pages were opened and checked for the alternatives and Help Scout vs Zendesk drafts. No Semrush session was opened and no saved keyword metric was changed.
+
+- **Zendesk:** [pricing](https://www.zendesk.com/pricing/) shows Support Team at US$19 per agent/month billed yearly or US$25 monthly, Suite Team at US$55 yearly or US$69 monthly, and Suite Professional at US$115 yearly or US$149 monthly. The page lists ticket routing, analytics, automations, Suite AI Agents, knowledge base, omnichannel routing and telephony. The [migration guide](https://support.zendesk.com/hc/en-us/articles/6696005837082-How-can-I-migrate-information-from-another-platform-into-Zendesk) describes API imports for tickets, users, organizations and articles, and says ticket metrics are not imported through the ticket import process and triggers do not run on imported tickets.
+- **Freshdesk:** [pricing](https://www.freshworks.com/freshdesk/pricing/) shows Growth US$19, Pro US$55 and Enterprise US$89 per agent/month billed annually, plus a 14-day Enterprise trial and separate AI/integration add-ons. The [product overview](https://www.freshworks.com/freshdesk/) describes its current AI and support workflow scope.
+- **Front:** [pricing](https://front.com/pricing) shows Starter US$25/seat/month up to 10 seats, Professional US$65 up to 50 and Enterprise US$105 with annual billing selected. The [customer service overview](https://front.com/customer-service) describes shared inbox, ticketing, omnichannel, knowledge base and AI capabilities.
+- **Intercom:** [pricing](https://www.intercom.com/pricing) shows an Essential new-customer annual offer at US$19/seat/month, Advanced at US$85, Expert at US$132 and Fin at US$0.99 per outcome. The [helpdesk overview](https://www.intercom.com/helpdesk) describes its shared Inbox, tickets, channels, Help Center and Fin.
+- **Zoho Desk:** the [pricing page](https://www.zoho.com/desk/pricing.html) has a currency selector. The USD view lists Express US$7, Standard US$14, Professional US$23 and Enterprise US$40 per user/month billed annually, plus a Free edition for three users. The [product overview](https://www.zoho.com/desk/) describes the unified inbox, help center, reporting and Zia.
+- **LiveAgent:** [pricing](https://www.liveagent.com/pricing/) shows regular annual list rates of US$15, US$29 and US$49 per agent/month for Starter, Team and Business, plus a short promotion through November 22, 2026. The [help desk overview](https://www.liveagent.com/help-desk-software/) lists ticketing, live chat, call center, social channels, knowledge base and AI using the customer's own provider.
+- **Crisp:** [pricing](https://crisp.chat/en/pricing/) shows Free with two seats, Mini US$45, Essentials US$95 and Plus US$295 per workspace/month in the displayed monthly view. The [product overview](https://crisp.chat/en/) describes the chat widget, shared inbox, knowledge base, support CRM and AI agents.
+
+### Current Help Scout facts rechecked
+
+- [Pricing](https://www.helpscout.com/pricing/) checked November 20, 2026: monthly view shows Standard US$25, Plus US$45 and Pro US$75 per user/month; annual selector shows a 16% saving. Envoy is US$0.75 per resolution.
+- [Free plan guide](https://docs.helpscout.com/article/1597-free-plan) checked November 20, 2026: five users, one Inbox, one Docs site and 100 contacts per month.
+- [Import guide](https://docs.helpscout.com/article/1495-import-emails-or-tickets-into-help-scout) checked November 20, 2026: Import2 supports listed providers including Freshdesk, Intercom, LiveAgent, Zendesk and Zoho Desk, with the documented exclusions retained in the drafts.
+- [Data export guide](https://docs.helpscout.com/article/466-data-export-options) checked November 20, 2026: report exports exclude conversation thread contents; other account data uses Inbox and Docs APIs.
+
+### Draft completion and boundaries
+
+- Alternatives draft: 2556 words, seven alternatives, visible comparison table, migration guidance and six documentation-led FAQs.
+- Comparison draft: 2051 words, Help Scout vs Zendesk, monthly/annual pricing separated and six documentation-led FAQs.
+- Exact saved PAA question wording is not present in the snapshot. The FAQs are not presented as Google PAA.
+- Zendesk is the comparison fallback because it is the top pick from the alternatives brief; no comparison volume was invented.
+- All six Help Scout pages remain drafts. No public registry, category group, public index, route, canonical HTML, child sitemap or redirect has been added.

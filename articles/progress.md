@@ -445,7 +445,7 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 
 - Re-synced main and resumed the lowest in_progress row, Order 8 Help Scout. Saved metrics remain volume 260, KD 16, CPC US$46.62, I/C. Semrush was not opened or refreshed.
 - Re-opened Help Scout official pricing, Inbox, shared Inbox, Docs, Beacon, Import2, export and MCP sources. Updated the research ledger with fresh official competitor pricing sources. Corrected the Gorgias price entry: its current accessible official pricing page shows ticket-volume tiers but not numeric tier/AI prices, so do not quote a starting amount until verified.
-- Wrote the Help Scout hub and pricing drafts with their article, SEO, source ledger, notes and schema files. The hub is 809 words; pricing is 1,028 words. Both are within their required ranges. Meta descriptions are 153 and 146 characters; SEO titles stay under 60 characters with the site name appended.
+- Wrote the Help Scout hub and pricing drafts with their article, SEO, source ledger, notes and schema files. The hub is 813 words; pricing is 1,050 words. Both are within their required ranges. Meta descriptions are 153 and 146 characters; SEO titles stay under 60 characters with the site name appended.
 - Added a draft-content test to validate word counts, metadata, visible FAQs, schema types, source links, internal links and the no-public-registry state. Added it to the quality workflow.
 - Fixed the prior research-test failure from run 44019185918. It was matching a duplicate-note row as well as the numeric queue row; the test now selects the actual Order 8 table row.
 - Aligned the static root sitemap.xml to the eight-child sitemap index already served by the dynamic root and rewrote the PHP validator to check the exact child list, child generator files and robots.txt declarations. robots.txt itself is unchanged and already declares all eight child maps plus the root.
@@ -458,7 +458,7 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 
 - Re-synced GitHub main at 9ebb482780ceeef38616c468b505118579fdce64 and resumed Order 8 Help Scout, the lowest in_progress row. Saved metrics remain US volume 260, KD 16, CPC US$46.62 and intent I/C. No Semrush session was opened and no metrics were changed.
 - Re-opened official Help Scout pricing, Free plan, shared Inbox, assignment, user roles, Docs, Beacon, workflows, saved replies, custom fields, MCP, Import2 and export documentation. Verified Zendesk's official pricing page for the planned comparison. New facts are dated November 19, 2026.
-- Completed the review draft (2016 words) and how-to setup draft (1839 words), each with unique SEO metadata, Article/BreadcrumbList/FAQPage schema, visible FAQs, source ledger and editorial notes.
+- Completed the review draft (2016 words) and how-to setup draft (1994 words), each with unique SEO metadata, Article/BreadcrumbList/FAQPage schema, visible FAQs, source ledger and editorial notes.
 - Corrected the pricing draft's Docs add-on billing to US$20/month with annual billing or US$24/month monthly. Clarified that the pricing page's Inbox maximums are separate from the included Inbox quantities. The included paid-plan counts remain 2, 5 and 10; the maximums are 20, 50 and unlimited.
 - Extended the draft validation test to cover review and how-to word ranges, metadata, visible FAQ schema, source links, internal links and the no-public-registry state.
 - Public state remains draft-only. No Help Scout page was registered, linked from a public page, added to a child sitemap or redirected.
@@ -470,3 +470,18 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - The first quality run for content commit ef6114bf788996bc7b0a3617f3884e6164527a79 failed in tests/help_scout_draft.py because the how-to page had FAQ schema but did not display the matching questions in the article body.
 - Added all five FAQ questions and their answers to the how-to draft, updated the editorial word count to 1994, and kept the page draft-only. No registry or sitemap changes were made.
 - Re-pushed the correction as a substantive article change. The original content commit is not considered quality-passed. Verify the next workflow against the new exact content SHA.
+
+
+## Help Scout checkpoint 5: alternatives and comparison drafts (2026-11-20)
+
+- Re-synced GitHub main at f1278a25228edf21b478b0d3d5c02f47bd85c285 and resumed the lowest in_progress row, Order 8 Help Scout. The saved 2026-10-24 US metrics remain volume 260, KD 16, CPC US$46.62 and intent I/C. No Semrush session was opened and no metrics were changed.
+- Read the full schedule guideline, content guide, queue, progress log, publishing plan, saved research snapshot, alternatives list, agent instructions and alternatives implementation guide before drafting.
+- Opened the official Help Scout, Zendesk, Freshdesk, Front, Intercom, Zoho Desk, LiveAgent and Crisp product/pricing/documentation sources used in the new drafts. Source checks are dated November 20, 2026.
+- Completed the Help Scout alternatives draft at 2556 words. It covers seven tools, has a five-column comparison table, top three picks, best-for/what-it-does/price/pros/cons/skip guidance for each alternative, migration limits, six FAQs and a source/method note.
+- Completed the Help Scout vs Zendesk comparison at 2051 words. It separates monthly and annual prices, includes a five-seat arithmetic example, compares features, routing, knowledge base, AI, integrations and migration, and includes six visible FAQs.
+- The saved snapshot has no exact PAA wording and no comparison query volume. FAQs are documentation-led, not presented as exact Google PAA. Zendesk is used as the comparison fallback because it is the top pick from the alternatives brief.
+- Updated the research ledger with current official source URLs, checked dates, pricing context and migration limits. Corrected earlier progress counts to the actual hub (813), pricing (1,050) and how-to (1,994) word counts.
+- Extended tests/help_scout_draft.py to validate all six draft word ranges, unique metadata, canonical/schema fields, visible FAQs, source links, internal links, no em dashes, no premature Help Scout draft links, ItemList order, review schema safeguards, and the unchanged sitemap index/robots declarations.
+- **Public state:** all six pages remain drafts. No PHP registry, category group, public index, route, canonical HTML, child sitemap URL, redirect or navigation link was added. No public Help Scout URL is claimed.
+- **Queue state:** Order 8 remains in_progress until the final cluster integration, publication and exact-commit quality gate succeed.
+- **Exact next checkpoint:** cross-page consistency and internal links; add the hub, pricing, review, how-to, alternatives and comparison to their shared registries; update the customer-growth alternatives group and existing Freshdesk/Zendesk cross-links; verify each canonical exactly once in its correct dynamic child sitemap; keep the root sitemap index and robots declarations complete; add no redirects unless an exact old route is found; run all tests and publish only after the exact content commit passes.
