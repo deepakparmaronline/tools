@@ -526,3 +526,10 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 ### 2026-11-22 - Comparison length correction
 
 - Removed a repeated annual-discount sentence from the Help Scout vs Zendesk page and its public registry copy. The page is now below the 2,200-word ceiling used by CI.
+
+
+### Help Scout publication closeout - 2026-11-22
+
+- Quality status passed for exact content commit `89de4cbf68d6be6d93e0f38ccf92a79dca8fbba9`; workflow: https://github.com/deepakparmaronline/tools/actions/runs/44991130098.
+- All six public routes are registered, internally linked and discoverable through their dynamic child sitemap sources.
+- Help Scout is published. Next queued item: Order 9, ManyChat.

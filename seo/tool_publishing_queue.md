@@ -30,7 +30,7 @@ Full-queue metrics may be reviewed only in a separate owner-authorized research 
 | 5 | Gmail | Gmail alternative | new cluster | 1300 | 38 | $2.10 | I/C | published |
 | 6 | n8n | n8n alternative | new cluster | 720 | 20 | $6.88 | C | published |
 | 7 | Notion | Notion alternative | new cluster | 1000 | 34 | $4.60 | C | published |
-| 8 | Help Scout | HelpScout alternative | new cluster | 260 | 16 | $46.62 | I/C | in_progress |
+| 8 | Help Scout | HelpScout alternative | new cluster | 260 | 16 | $46.62 | I/C | published |
 | 9 | ManyChat | ManyChat alternative | new cluster | 260 | 13 | $8.57 | I/C | queued |
 | 10 | Mailgun | Mailgun alternative | new cluster | 210 | 11 | $11.86 | I/C | queued |
 | 11 | Plex | Plex alternative | new cluster | 1600 | 29 | $0.00 | I | queued |
@@ -164,5 +164,3 @@ A queue row may be marked published only after the complete cluster and all regi
 
 
 <!-- 2026-11-08 closeout: Order 7 Notion cluster passed ToolboxKart quality checks for content commit 911cad726fbea5e5a3dc74bff05aacf8f7da6893 (run 42448484779). Next: Order 8 Help Scout. -->
-
-<!-- Order 8 remains in_progress until the exact content-commit quality gate passes. -->
