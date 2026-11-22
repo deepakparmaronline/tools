@@ -52,7 +52,7 @@ def main():
    for q in fq["mainEntity"]:assert q["name"] in visible,(p,q["name"])
    if n=="help-scout-hub":
     app=next(x for x in g if x.get("@type")=="SoftwareApplication");assert "aggregateRating" not in app
-   if n=="help-scout-alternatives":assert next(x for x in g if x.get("@type")=="ItemList")["numberOfItems"]==7
+   if n=="help-scout-alternatives":assert len(next(x for x in g if x.get("@type")=="ItemList")["itemListElement"])==7
    if n=="help-scout-review":assert "Review" not in types and h.count("Written by")==2 and "review methodology" in h.lower() and "Sources" in h
    routes[n]=(p,child)
    md=(R/"articles"/n/"article.md").read_text(encoding="utf-8")
