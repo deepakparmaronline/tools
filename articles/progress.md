@@ -509,3 +509,9 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 
 - Added a body link from the Help Scout review to the Help Scout vs Zendesk comparison so the review meets the required internal-link count.
 - Corrected the rendered-page test to compare the review-methodology link without case sensitivity. Help Scout remains in_progress until the exact content commit passes the complete workflow.
+
+
+### 2026-11-22 - Review body navigation completed
+
+- Added six useful in-body links to the hub, pricing, how-to, alternatives, software directory and review directory. The existing comparison link remains, bringing the review to seven internal links.
+- The review remains desk research with no unsupported testing or rating claims.

@@ -127,6 +127,8 @@ It can replace some email-first support workflows, but the two products have dif
 
 Not through one report export. Reports can be exported to CSV or XLSX, but conversation thread contents are excluded. The Inbox API and Docs API provide other data export paths. See the [official export options](https://docs.helpscout.com/article/466-data-export-options).
 
+Start with the [Help Scout guide](/help-scout/), review the [pricing guide](/help-scout/pricing/), follow the [setup guide](/help-scout/how-to-use/), compare [Help Scout alternatives](/help-scout/alternatives/), browse the [software tools directory](/tools/) or read more [software reviews](/reviews/).
+
 ## Review methodology
 
 Last updated: November 22, 2026. This review is based on Help Scout's official product, pricing and support documentation checked on that date. It is desk research, not a hands-on test. No customer account, performance benchmark, rating or vendor quote was used. See the site review methodology for how research-based product pages are prepared.
