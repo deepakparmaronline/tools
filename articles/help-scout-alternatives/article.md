@@ -14,13 +14,13 @@ These recommendations use official product and pricing information checked Novem
 
 | Tool | Best for | Starting price | Free plan or trial | Standout feature |
 | --- | --- | --- | --- | --- |
-| [Zendesk](https://www.zendesk.com/) | Ticketing and service operations | [US$19/agent/month, yearly](https://www.zendesk.com/pricing/?so=1), checked Nov 20, 2026 | Trial; no permanent free plan shown, checked Nov 20, 2026 | Routing, analytics and Suite channels |
-| [Freshdesk](https://www.freshworks.com/freshdesk/) | Conventional help desk | [US$19/agent/month, annual](https://www.freshworks.com/freshdesk/pricing/), checked Nov 20, 2026 | 14-day Enterprise trial, checked Nov 20, 2026 | Portal, knowledge base and ticketing |
-| [Front](https://front.com/) | Shared customer work across teams | [US$25/seat/month, annual](https://front.com/pricing), checked Nov 20, 2026 | Free trial, checked Nov 20, 2026 | Shared inbox with workspaces and automation |
-| [Intercom](https://www.intercom.com/) | Messaging-led support and AI | [US$19/seat/month, annual offer](https://www.intercom.com/pricing), checked Nov 20, 2026 | Free trial, checked Nov 20, 2026 | Fin AI Agent and customer messaging |
-| [Zoho Desk](https://www.zoho.com/desk/) | Small teams and Zoho users | [Free for up to 3 users; paid rates vary by region| Free edition for 3 users, checked Nov 20, 2026 | Help desk connected to Zoho apps |
-| [LiveAgent](https://www.liveagent.com/) | Email, chat, calls and social | [US$15/agent/month, annual list price](https://www.liveagent.com/pricing/), checked Nov 20, 2026 | 30-day trial, checked Nov 20, 2026 | Ticketing, live chat and call center |
-| [Crisp](https://crisp.chat/en/) | Website chat and a compact inbox | [US$45/workspace/month, monthly view](https://crisp.chat/en/pricing/), checked Nov 20, 2026 | Free forever for 2 seats, checked Nov 20, 2026 | Shared inbox, chat widget and knowledge base |
+| [Zendesk](https://www.zendesk.com/) | Ticketing and service operations | [US$19/agent/month, yearly](https://www.zendesk.com/pricing/?so=1), checked Nov 22, 2026 | Trial; no permanent free plan shown, checked Nov 22, 2026 | Routing, analytics and Suite channels |
+| [Freshdesk](https://www.freshworks.com/freshdesk/) | Conventional help desk | [US$19/agent/month, annual](https://www.freshworks.com/freshdesk/pricing/), checked Nov 22, 2026 | 14-day Enterprise trial, checked Nov 22, 2026 | Portal, knowledge base and ticketing |
+| [Front](https://front.com/) | Shared customer work across teams | [US$25/seat/month, annual](https://front.com/pricing), checked Nov 22, 2026 | Free trial, checked Nov 22, 2026 | Shared inbox with workspaces and automation |
+| [Intercom](https://www.intercom.com/) | Messaging-led support and AI | [US$19/seat/month, annual offer](https://www.intercom.com/pricing), checked Nov 22, 2026 | Free trial, checked Nov 22, 2026 | Fin AI Agent and customer messaging |
+| [Zoho Desk](https://www.zoho.com/desk/) | Small teams and Zoho users | [Free for up to 3 users; paid rates vary by region| Free edition for 3 users, checked Nov 22, 2026 | Help desk connected to Zoho apps |
+| [LiveAgent](https://www.liveagent.com/) | Email, chat, calls and social | [US$15/agent/month, annual list price](https://www.liveagent.com/pricing/), checked Nov 22, 2026 | 30-day trial, checked Nov 22, 2026 | Ticketing, live chat and call center |
+| [Crisp](https://crisp.chat/en/) | Website chat and a compact inbox | [US$45/workspace/month, monthly view](https://crisp.chat/en/pricing/), checked Nov 22, 2026 | Free forever for 2 seats, checked Nov 22, 2026 | Shared inbox, chat widget and knowledge base |
 
 Follow each linked vendor pricing page before buying. Intercom's Essential rate is a displayed new-customer offer. LiveAgent also shows a short promotion, but the table uses regular list prices. Zoho Desk has a currency selector, so the dollar amounts apply only when USD is selected.
 
