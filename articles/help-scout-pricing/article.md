@@ -6,14 +6,12 @@ Help Scout uses a per-user subscription for its paid customer-support plans and 
 
 The official pricing page currently displays the following monthly prices and included limits. The annual option shows a 16% discount, but confirm the actual billing total in the account before purchase.
 
-| Plan | Monthly price per user | Users | Included Inboxes | Docs sites | Best fit |
-|---|---:|---:|---:|---|
-| Free | $0 | Up to 5 | 1 | A very small team testing shared support |
-| Standard | $25 | Up to 25 | 2 | Growing teams using email, chat and basic workflows |
-| Plus | $45 | Up to 50 | 3 | Teams needing advanced workflows, routing and a customer portal |
-| Pro | $75 | Unlimited, minimum 10 | 5 | Larger teams needing unlimited workflows, SLAs and higher-level controls |
-
-The Free plan also has a limit of 100 contacts per month, ten saved replies, ten tags, ten Docs articles and 30 days of report history. Paid plans include unlimited contacts and saved replies, according to the plan table. Standard, Plus and Pro include different workflow, routing, channel, reporting and security features. Read the [official plan comparison](https://www.helpscout.com/pricing/) instead of assuming every feature is included at the same level.
+| Plan | Annual-billed monthly rate per user | Month-to-month rate per user | Users | Included Inboxes | Docs sites | Best fit |
+|---|---:|---:|---:|---:|---:|---|
+| Free | US$0 | US$0 | Up to 5 | 1 | 1 | A very small team testing shared support |
+| Standard | US$25 | US$30 | Up to 25 | 2 | 2 | Growing teams using email, chat and basic workflows |
+| Plus | US$45 | US$54 | Up to 50 | 5 | 3 | Teams needing advanced workflows, routing and a customer portal |
+| Pro | US$75 | US$90 | Unlimited, minimum 10 | 10 | 5 | Larger teams needing unlimited workflows, SLAs and higher-level controls |
 
 ## What the Free plan includes
 
@@ -33,13 +31,13 @@ The pricing page contains a separate Inbox maximums sentence that does not match
 
 ## Extra Inboxes, Docs sites and Envoy
 
-An extra Inbox costs $10 per month when paid annually, or $12 on monthly billing. Additional Docs sites cost $20 per month with annual billing or $24 per month with monthly billing. Extra Inboxes cost $10 per month with annual billing or $12 per month monthly. These add-ons can change the total, so include them when your team splits support by brand, department or product.
+An additional Inbox costs US$10 per month with annual billing or US$12 month-to-month. An additional Docs site costs US$20 per month with annual billing or US$24 month-to-month. Include these add-ons when you split support by brand, department or product. These add-ons can change the total, so include them when your team splits support by brand, department or product.
 
 Envoy is listed at $0.75 per resolution. Help Scout advertises a three-month trial with unlimited Envoy resolutions, and lets you set a monthly spending cap. A resolution is counted when Scout solves a conversation without human assistance. It is not charged if the customer escalates, searches the knowledge base, asks more questions or indicates that more help is needed. Only one resolution can be counted per conversation. Read the [Envoy pricing FAQ](https://www.helpscout.com/pricing/) before estimating usage.
 
 ## Estimate your monthly cost
 
-For a basic seat-based estimate, multiply your full users by the plan's monthly price. Add the cost of extra Inboxes and Docs sites, then add Envoy resolutions at $0.75 each after any trial. For example, five Standard users cost $125 per month before add-ons. One hundred billable Envoy resolutions would add $75, for a combined $200 before taxes or other integration costs.
+For a basic seat-based estimate, multiply your full users by the plan's monthly rate. Add extra Inboxes and Docs sites, then add Envoy resolutions at US$0.75 each after any trial. Five Standard users cost US$125 per month as an annual-billed monthly equivalent or US$150 month-to-month. One hundred billable Envoy resolutions add US$75, for totals of US$200 or US$225 before taxes and other integration costs.
 
 The annual discount lowers the monthly equivalent but requires an annual commitment. Do not compare a discounted annual price with another vendor's monthly price without checking the billing term.
 

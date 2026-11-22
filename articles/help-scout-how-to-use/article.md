@@ -6,7 +6,7 @@ This guide follows Help Scout's official setup flow: connect an Inbox, invite te
 
 Prepare the email address customers already use, the people who will answer messages and a simple list of the requests your team receives most often. Decide who owns new conversations, who handles billing or technical questions and who can change account settings.
 
-Check the plan before inviting the full team. The Free plan includes up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle. Workflows are listed on Standard, Plus and Pro. Custom fields are available on Plus and Pro. See the Help Scout pricing guide before you build a process around a feature that may not be on your plan. These details were checked November 22, 2026 on the [official pricing page](https://www.helpscout.com/pricing/) and [Free plan guide](https://docs.helpscout.com/article/1597-free-plan).
+Check the plan before inviting the full team. Free includes up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle; Standard includes two Inboxes, Plus five and Pro ten. Workflows are on Standard, Plus and Pro, while custom fields are on Plus and Pro. See the Help Scout pricing guide before you build a process around a feature that may not be on your plan. These details were checked November 22, 2026 on the [official pricing page](https://www.helpscout.com/pricing/) and [Free plan guide](https://docs.helpscout.com/article/1597-free-plan).
 
 ## Quick setup: create your support workspace
 

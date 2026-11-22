@@ -7,13 +7,13 @@ Help Scout is a better fit when a team wants a shared inbox, a connected knowled
 | Area | Help Scout | Zendesk |
 | --- | --- | --- |
 | Core model | Shared Inbox, Docs and Beacon | Ticketing, routing and service suite |
-| Entry paid plan | [Standard: US$25/user/month monthly](https://www.helpscout.com/pricing/), checked Nov 20, 2026 | [Support Team: US$25/agent/month monthly](https://www.zendesk.com/pricing/?so=1), checked Nov 20, 2026 |
-| Broader suite | [Plus US$45; Pro US$75 monthly](https://www.helpscout.com/pricing/), checked Nov 20, 2026 | [Suite Team US$69; Suite Professional US$149 monthly](https://www.zendesk.com/pricing/?so=1), checked Nov 20, 2026 |
-| Free access | [5 users, 1 Inbox, 1 Docs site, 100 contacts/month](https://www.helpscout.com/pricing/), checked Nov 20, 2026 | Trial; no permanent free support plan shown, checked Nov 20, 2026 |
+| Entry paid plan | [Standard: US$25/user/month billed annually or US$30 monthly](https://www.helpscout.com/pricing/), checked Nov 22, 2026 | [Support Team: US$19/agent/month billed annually or US$25 monthly](https://www.zendesk.com/pricing/?so=1), checked Nov 22, 2026 |
+| Broader suite | [Plus US$45; Pro US$75 monthly](https://www.helpscout.com/pricing/), checked Nov 22, 2026 | [Suite Team US$69; Suite Professional US$149 monthly](https://www.zendesk.com/pricing/?so=1), checked Nov 22, 2026 |
+| Free access | [5 users, 1 Inbox, 1 Docs site, 100 contacts/month](https://www.helpscout.com/pricing/), checked Nov 22, 2026 | Trial; no permanent free support plan shown, checked Nov 22, 2026 |
 | Knowledge base | Docs sites by plan | Knowledge Base on Suite plans |
-| AI price shown | [Envoy: US$0.75 per resolution](https://www.helpscout.com/pricing/), checked Nov 20, 2026 | AI Agents listed in Suite plans; check quote for usage terms |
+| AI price shown | [Envoy: US$0.75 per resolution](https://www.helpscout.com/pricing/), checked Nov 22, 2026 | AI Agents listed in Suite plans; check quote for usage terms |
 
-Help Scout uses its monthly view; Zendesk shows monthly and annual rates. The two entry plans have the same displayed monthly seat price but different feature sets. Check the linked vendor pages before buying.
+The entry prices differ by billing period. Help Scout Standard is US$30 per user/month month-to-month or US$25 with annual billing; Zendesk Support Team is US$25 per agent/month month-to-month or US$19 with annual billing. The plans include different features, so compare the full workflow as well as the seat rate.
 
 ## The main difference is the support model
 
@@ -25,7 +25,7 @@ Neither model is automatically better. A team that wants a shared workspace may 
 
 ## Pricing: compare the same billing period
 
-Help Scout's [official pricing page](https://www.helpscout.com/pricing/), checked November 22, 2026, lists Standard at US$25 per user/month, Plus at US$45 and Pro at US$75 in the monthly view. The page shows a 16% annual discount. Free includes up to five users, one Inbox, one Docs site and 100 contacts per month. Envoy is a separate AI add-on at US$0.75 per resolution. Extra Inboxes and Docs sites can also add cost.
+Help Scout's [official pricing page](https://www.helpscout.com/pricing/), checked November 22, 2026, lists Standard at US$25 per user/month with annual billing or US$30 month-to-month, Plus at US$45 annual-billed or US$54 monthly, and Pro at US$75 annual-billed or US$90 monthly. The page shows a 16% annual discount. Free includes up to five users, one Inbox, one Docs site and 100 contacts per month. Envoy is a separate AI add-on at US$0.75 per resolution. Extra Inboxes and Docs sites can also add cost.
 
 Zendesk's [official pricing page](https://www.zendesk.com/pricing/?so=1), checked November 22, 2026, lists Support Team at US$19 per agent/month billed yearly or US$25 monthly. Suite Team is US$55 yearly or US$69 monthly. Suite Professional is US$115 yearly or US$149 monthly. The page does not list a permanent free support plan. Suite Team adds AI Agents, a knowledge base, action builder, omnichannel routing, messaging, live chat and telephony.
 
@@ -41,7 +41,7 @@ A five-seat example makes the base subscription easier to compare:
 
 These examples use monthly prices checked November 22, 2026. They are simple seat calculations, not quotes. Taxes, extra Inboxes, Docs sites, AI usage, channel charges, onboarding and contract terms can change the final bill. Help Scout Pro has a ten-user minimum, so its five-seat figure is only a rate comparison, not an eligible five-user order.
 
-The entry price alone does not settle the decision. Help Scout Standard and Zendesk Support Team both show US$25 monthly per seat, but their feature lists differ. If you need Zendesk's knowledge base, messaging and telephony, price Suite Team. If you need Help Scout's advanced workflows, secure portal and round-robin routing, compare Plus.
+The entry price alone does not settle the decision. With annual billing, Help Scout Standard is US$25 per user/month and Zendesk Support Team is US$19 per agent/month. Month-to-month rates are US$30 and US$25 respectively, and the feature lists differ. If you need Zendesk's knowledge base, messaging and telephony, price Suite Team. If you need Help Scout's advanced workflows, secure portal and round-robin routing, compare Plus.
 
 ## Shared inbox and ticket handling
 
@@ -113,7 +113,7 @@ For more detail on the current Zendesk product, read the Zendesk review, Zendesk
 
 ### Is Help Scout cheaper than Zendesk?
 
-The monthly entry rates shown November 22, 2026 are Help Scout Standard is US$25 per user/month with annual billing or US$30 monthly; Zendesk Support Team is US$19 per agent/month with annual billing. The features differ. Zendesk Suite Team is US$55 per agent/month with annual billing, while Help Scout Plus is US$45 with annual billing or US$54 monthly. Compare the features and add-ons you need, not only the first price.
+On November 22, 2026, Help Scout Standard was US$25 per user/month with annual billing or US$30 month-to-month. Zendesk Support Team was US$19 per agent/month with annual billing or US$25 month-to-month. Zendesk Suite Team was US$55 annual-billed or US$69 monthly; Help Scout Plus was US$45 annual-billed or US$54 monthly. Compare features and add-ons, not only the first price.
 
 ### Does Zendesk have a free plan?
 

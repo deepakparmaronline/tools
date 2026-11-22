@@ -1,7 +1,7 @@
 # Editorial and publication notes
 
 - Canonical: https://toolboxkart.tech/help-scout/pricing/
-- Word count: 1092 (required range 800-1400).
+- Word count: 1050 (required range 800-1400).
 - Internal links: 7.
 - Sources last opened: November 22, 2026.
 - Claims use official vendor sources; no invented ratings or unsupported hands-on claims.
