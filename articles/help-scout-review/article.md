@@ -11,8 +11,8 @@ The platform is worth considering for SaaS companies, online stores, service bus
 | Review point | What the official sources show |
 |---|---|
 | Best for | Email-first support teams that need shared conversations and a help center |
-| Starting paid price | Standard is US$25 per user/month on the monthly view. Checked November 19, 2026. [Official pricing](https://www.helpscout.com/pricing/) |
-| Free plan | Up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle. Checked November 19, 2026. [Free plan details](https://docs.helpscout.com/article/1597-free-plan) |
+| Starting paid price | Standard is US$25 per user/month with annual billing or US$30 month-to-month. Checked November 22, 2026. [Official pricing](https://www.helpscout.com/pricing/) |
+| Free plan | Up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle. Checked November 22, 2026. [Free plan details](https://docs.helpscout.com/article/1597-free-plan) |
 | Main limit to plan for | The standard import does not move several important settings and content types. [Import guide](https://docs.helpscout.com/article/1495-import-emails-or-tickets-into-help-scout) |
 
 ## What Help Scout does
@@ -55,13 +55,13 @@ The pricing page lists access to more than 100 apps, but the number of integrati
 
 ### 6. AI tools and MCP access
 
-Help Scout separates AI assistance for agents from its customer-facing AI agent. Agent tools can help with drafts, summaries and editing. Envoy is charged by resolution after the trial period. The current pricing page lists US$0.75 per resolution and says a resolution is counted when Scout resolves a conversation without human help. A customer who asks for more help or escalates does not count as a billable resolution. Checked November 19, 2026. [Envoy pricing and billing rules](https://www.helpscout.com/pricing/).
+Help Scout separates AI assistance for agents from its customer-facing AI agent. Agent tools can help with drafts, summaries and editing. Envoy is charged by resolution after the trial period. The current pricing page lists US$0.75 per resolution and says a resolution is counted when Scout resolves a conversation without human help. A customer who asks for more help or escalates does not count as a billable resolution. Checked November 22, 2026. [Envoy pricing and billing rules](https://www.helpscout.com/pricing/).
 
 Help Scout also documents an MCP connection for AI assistants. New connections are read-only and follow the permissions of the Help Scout user who connects. API access is available on Standard, Plus and Pro, while reporting tools require Plus or Pro. A Docs API key is needed for knowledge base tools. Read the [official MCP setup and limits](https://docs.helpscout.com/article/1779-help-scout-mcp-server) before connecting customer data to an AI provider.
 
 ## Pricing and value
 
-Help Scout's paid plans are charged per user. The current monthly view shows Standard at US$25, Plus at US$45 and Pro at US$75 per user per month. The page shows a 16% annual discount. The Free plan supports up to five users and 100 contacts per monthly cycle. These prices and limits were checked November 19, 2026 on the [official pricing page](https://www.helpscout.com/pricing/) and [Free plan guide](https://docs.helpscout.com/article/1597-free-plan).
+Help Scout's paid plans are charged per user. The annual-billed monthly rates are US$25 for Standard, US$45 for Plus and US$75 for Pro; month-to-month rates are US$30, US$54 and US$90 respectively. The page shows a 16% annual discount. The Free plan supports up to five users and 100 contacts per monthly cycle. These prices and limits were checked November 22, 2026 on the [official pricing page](https://www.helpscout.com/pricing/) and [Free plan guide](https://docs.helpscout.com/article/1597-free-plan).
 
 Extra Inbox and Docs site charges can affect the total. Envoy adds a separate usage cost when it resolves a conversation. Pro also has a ten-user minimum. A small team should not select Pro only because it includes more controls. Compare the features you need with the actual seat count and the likely add-on use.
 
@@ -111,7 +111,7 @@ It can suit a small business that wants a shared Inbox and help center. Check th
 
 **Does Help Scout have a free plan?**
 
-Yes. The official Free plan includes up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle. Checked November 19, 2026. [Free plan details](https://docs.helpscout.com/article/1597-free-plan).
+Yes. The official Free plan includes up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle. Checked November 22, 2026. [Free plan details](https://docs.helpscout.com/article/1597-free-plan).
 
 **Does Help Scout include AI?**
 
@@ -125,6 +125,17 @@ It can replace some email-first support workflows, but the two products have dif
 
 Not through one report export. Reports can be exported to CSV or XLSX, but conversation thread contents are excluded. The Inbox API and Docs API provide other data export paths. See the [official export options](https://docs.helpscout.com/article/466-data-export-options).
 
-## Research method and sources
+## Review methodology
 
-Last updated: November 19, 2026. This review is based on Help Scout's official product, pricing and support documentation checked on that date. It is desk research, not a hands-on test. No customer account, performance benchmark, rating or vendor quote was used. See the site [review methodology](/review-methodology) for how research-based product pages are prepared.
+Last updated: November 22, 2026. This review is based on Help Scout's official product, pricing and support documentation checked on that date. It is desk research, not a hands-on test. No customer account, performance benchmark, rating or vendor quote was used. See the site [review methodology](/review-methodology) for how research-based product pages are prepared.
+
+## Sources
+
+- [Help Scout pricing](https://www.helpscout.com/pricing/)
+- [Help Scout Free plan](https://docs.helpscout.com/article/1597-free-plan)
+- [Import emails or tickets](https://docs.helpscout.com/article/1495-import-emails-or-tickets-into-help-scout)
+- [Data export options](https://docs.helpscout.com/article/466-data-export-options)
+- [MCP connector](https://docs.helpscout.com/article/1779-help-scout-mcp-server)
+- [Beacon guide](https://docs.helpscout.com/article/1250-beacon-jumpstart-guide)
+- [Workflows guide](https://docs.helpscout.com/article/22-get-started-with-workflows)
+- [Custom fields](https://docs.helpscout.com/article/593-custom-fields)
