@@ -12,7 +12,7 @@ Docs is Help Scout's knowledge base. Teams can write and organize help articles,
 
 The Free plan includes up to five users, one Inbox and one Docs site. It also limits teams to 100 contacts per month, ten saved replies, ten tags, ten Docs articles and 30 days of report history. These caps make Free better for a small team testing a shared support process than a busy support desk.
 
-Standard is US$25 per user/month with annual billing or US$30 monthly. Plus is US$45 annually or US$54 monthly, and Pro is US$75 annually or US$90 monthly. Help Scout displays a 16% annual-billing discount. The pricing page shows a 16% annual-billing discount. Standard adds more channels and basic workflows. Plus adds advanced workflows, routing, a customer portal and several integrations. Pro adds unlimited workflows and SLAs, more routing choices, SSO/SAML and higher team limits. Prices and plan limits were checked November 22, 2026 on the [official pricing page](https://www.helpscout.com/pricing/). See our Help Scout pricing guide for a fuller plan-by-plan breakdown.
+Standard is US$25 per user/month with annual billing or US$30 monthly. Plus is US$45 annually or US$54 monthly, and Pro is US$75 annually or US$90 monthly. Help Scout displays a 16% discount for annual billing. Standard adds more channels and basic workflows. Plus adds advanced workflows, routing, a customer portal and several integrations. Pro adds unlimited workflows and SLAs, more routing choices, SSO/SAML and higher team limits. Prices and plan limits were checked November 22, 2026 on the [official pricing page](https://www.helpscout.com/pricing/). See our Help Scout pricing guide for a fuller plan-by-plan breakdown.
 
 ## Where AI fits
 
