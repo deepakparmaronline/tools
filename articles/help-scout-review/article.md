@@ -127,7 +127,7 @@ Not through one report export. Reports can be exported to CSV or XLSX, but conve
 
 ## Review methodology
 
-Last updated: November 22, 2026. This review is based on Help Scout's official product, pricing and support documentation checked on that date. It is desk research, not a hands-on test. No customer account, performance benchmark, rating or vendor quote was used. See the site [review methodology](/review-methodology/) for how research-based product pages are prepared.
+Last updated: November 22, 2026. This review is based on Help Scout's official product, pricing and support documentation checked on that date. It is desk research, not a hands-on test. No customer account, performance benchmark, rating or vendor quote was used. See the site review methodology for how research-based product pages are prepared.
 
 ## Sources
 
