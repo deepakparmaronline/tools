@@ -6,7 +6,7 @@ To use Help Scout, start with one shared Inbox, connect your support email, add 
 
 Prepare the email address customers already use, the people who will answer messages and a simple list of the requests your team receives most often. Decide who owns new conversations, who handles billing or technical questions and who can change account settings.
 
-Check the plan before inviting the full team. The Free plan includes up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle. Workflows are listed on Standard, Plus and Pro. Custom fields are available on Plus and Pro. See the [Help Scout pricing guide](/help-scout/pricing/) before you build a process around a feature that may not be on your plan. These details were checked November 19, 2026 on the [official pricing page](https://www.helpscout.com/pricing/) and [Free plan guide](https://docs.helpscout.com/article/1597-free-plan).
+Check the plan before inviting the full team. Free includes up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle; Standard includes two Inboxes, Plus five and Pro ten. Workflows are on Standard, Plus and Pro, while custom fields are on Plus and Pro. See the [Help Scout pricing guide](/help-scout/pricing/) before you build a process around a feature that may not be on your plan. These details were checked November 22, 2026 on the [official pricing page](https://www.helpscout.com/pricing/) and [Free plan guide](https://docs.helpscout.com/article/1597-free-plan).
 
 ## Quick setup: create your support workspace
 
@@ -129,4 +129,4 @@ The in-app report export excludes conversation thread contents. Help Scout says 
 
 Use the [Help Scout review](/help-scout/review/) to assess whether the platform fits your team, and the [pricing guide](/help-scout/pricing/) to check plan costs. If you are still choosing a platform, compare the [Help Scout alternatives](/help-scout/alternatives/) and the [Help Scout vs Zendesk guide](/compare/help-scout-vs-zendesk/).
 
-Last updated: November 19, 2026. This setup guide follows Help Scout's official support documentation checked on that date. Menu labels and plan access can change, so confirm them in your account before a migration or major workflow change.
+Last updated: November 22, 2026. This setup guide follows Help Scout's official support documentation checked on that date. Menu labels and plan access can change, so confirm them in your account before a migration or major workflow change.
