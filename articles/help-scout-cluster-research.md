@@ -147,3 +147,16 @@ The following official pages were opened and checked for the alternatives and He
 - Front, Intercom, Zoho Desk, LiveAgent and Crisp product/pricing pages were reopened. Zoho's regional page did not expose a universal USD price, so no fixed USD starting price is used.
 - Zendesk homepage fetch returned HTTP 403; the official pricing page and migration help article were accessible and used for claims.
 - No Semrush data was refreshed. Saved metrics remain US volume 260, KD 16, CPC US$46.62 and I/C intent.
+
+
+## Final official-source recheck - November 22, 2026
+
+- [Help Scout pricing](https://www.helpscout.com/pricing/): Standard US$25 per user/month with annual billing or US$30 month-to-month; Plus US$45/US$54; Pro US$75/US$90. Annual billing is shown as 16% lower. Envoy is US$0.75 per resolution. Extra Inboxes are US$10 annual-billed or US$12 monthly; extra Docs sites are US$20 or US$24.
+- [Free plan guide](https://docs.helpscout.com/article/1597-free-plan): five users, one Inbox, one Docs site and 100 contacts per monthly cycle. The plan also includes ten tags, ten saved replies and ten Docs articles.
+- [Import2 guide](https://docs.helpscout.com/article/1495-import-emails-or-tickets-into-help-scout): Account Owners and Administrators on Standard, Plus and Pro can import emails or tickets with customer profiles and tags from supported providers. Users, Inbox settings, knowledge-base articles, saved replies, automations, custom fields, ticket types and statuses are not part of the standard import.
+- [Data export guide](https://docs.helpscout.com/article/466-data-export-options): CSV/XLSX report exports exclude conversation thread contents. Other customer, user and conversation data uses the Inbox API; Docs articles use the Docs API.
+- [MCP guide](https://docs.helpscout.com/article/1779-help-scout-mcp-server): Standard, Plus and Pro include API access; new MCP connections are read-only; report tools require Plus or Pro.
+- [Beacon guide](https://docs.helpscout.com/article/1250-beacon-jumpstart-guide): Beacon is available on all plans and can expose contact forms, live chat, Docs content and AI options.
+- Competitor pricing rechecked from official pages: Zendesk Support Team US$19 annual-billed/US$25 monthly; Freshdesk Growth US$19 annual-billed; Front Starter US$25 annual-billed; Intercom Essential US$19 per seat/month in the displayed annual new-customer offer plus US$0.99 per Fin outcome; Zoho Desk Express US$7 annual-billed; LiveAgent Starter regular US$15 annual-billed; Crisp Mini US$45 per workspace/month. The alternatives page labels billing periods and dates.
+
+No Semrush metrics were refreshed. The saved row remains volume 260, KD 16, CPC US$46.62 and I/C.
