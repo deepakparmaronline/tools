@@ -12,10 +12,15 @@ class H(HTMLParser):
   if t=="h1":self.h1+=1
 def get(p):
  with urllib.request.urlopen(B+p,timeout=20) as x:return x.status,x.read().decode("utf-8","replace")
-def graph(h):
+def graph(h,path):
  out=[]
- for x in re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',h,re.I|re.S):
-  v=json.loads(unescape(x.strip()));out.extend(v.get("@graph",[v]) if isinstance(v,dict) else v)
+ for x in re.findall(r'<script[^>]+type=["\\']application/ld\\+json["\\'][^>]*>(.*?)</script>',h,re.I|re.S):
+  raw=unescape(x.strip())
+  if not raw: continue
+  try: v=json.loads(raw)
+  except json.JSONDecodeError as exc: raise AssertionError(f"Invalid JSON-LD on {path}: {raw[:240]!r}") from exc
+  if v is None: continue
+  out.extend(v.get("@graph",[v]) if isinstance(v,dict) else v)
  return out
 def locs(x):return [n.text.strip() for n in ET.fromstring(x).findall(".//{*}loc") if n.text]
 def words(s):return len(re.findall(r"\b[\w’'-]+\b",re.sub(r"[#*|]"," ",re.sub(r"\[([^\]]+)\]\([^)]+\)",r"\1",s))))
@@ -35,7 +40,7 @@ def main():
    assert rb and "index" in rb.group(1).lower() and "follow" in rb.group(1).lower(),p
    assert t and len(re.sub(r"<[^>]+>","",unescape(t.group(1))))<=60,p
    hp=H();hp.feed(h);assert hp.h1==1,(p,hp.h1)
-   g=graph(h);types=[x.get("@type") for x in g];assert all(x in types for x in ["Article","BreadcrumbList","FAQPage"]),(p,types)
+   g=graph(h,p);types=[x.get("@type") for x in g];assert all(x in types for x in ["Article","BreadcrumbList","FAQPage"]),(p,types)
    bc=next(x for x in g if x.get("@type")=="BreadcrumbList");assert bc["itemListElement"][-1]["item"]==u
    fq=next(x for x in g if x.get("@type")=="FAQPage");visible=unescape(re.sub(r"<[^>]+>"," ",h))
    for q in fq["mainEntity"]:assert q["name"] in visible,(p,q["name"])
