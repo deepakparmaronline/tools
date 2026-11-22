@@ -8,19 +8,19 @@ Help Scout suits teams that want a shared inbox, a help center and a simple way 
 - **Freshdesk. Best for:** a conventional help desk with a customer portal.
 - **Crisp. Best for:** a small team that wants website chat and a shared inbox.
 
-These recommendations use official product and pricing information checked November 20, 2026. They are not hands-on test results.
+These recommendations use official product and pricing information checked November 22, 2026. They are not hands-on test results.
 
 ## Help Scout alternatives at a glance
 
 | Tool | Best for | Starting price | Free plan or trial | Standout feature |
 | --- | --- | --- | --- | --- |
-| [Zendesk](https://www.zendesk.com/) | Ticketing and service operations | [US$19/agent/month, yearly](https://www.zendesk.com/pricing/), checked Nov 20, 2026 | Trial; no permanent free plan shown, checked Nov 20, 2026 | Routing, analytics and Suite channels |
-| [Freshdesk](https://www.freshworks.com/freshdesk/) | Conventional help desk | [US$19/agent/month, annual](https://www.freshworks.com/freshdesk/pricing/), checked Nov 20, 2026 | 14-day Enterprise trial, checked Nov 20, 2026 | Portal, knowledge base and ticketing |
-| [Front](https://front.com/) | Shared customer work across teams | [US$25/seat/month, annual](https://front.com/pricing), checked Nov 20, 2026 | Free trial, checked Nov 20, 2026 | Shared inbox with workspaces and automation |
-| [Intercom](https://www.intercom.com/) | Messaging-led support and AI | [US$19/seat/month, annual offer](https://www.intercom.com/pricing), checked Nov 20, 2026 | Free trial, checked Nov 20, 2026 | Fin AI Agent and customer messaging |
-| [Zoho Desk](https://www.zoho.com/desk/) | Small teams and Zoho users | [US$7/user/month, annual USD view](https://www.zoho.com/desk/pricing.html), checked Nov 20, 2026 | Free edition for 3 users, checked Nov 20, 2026 | Help desk connected to Zoho apps |
-| [LiveAgent](https://www.liveagent.com/) | Email, chat, calls and social | [US$15/agent/month, annual list price](https://www.liveagent.com/pricing/), checked Nov 20, 2026 | 30-day trial, checked Nov 20, 2026 | Ticketing, live chat and call center |
-| [Crisp](https://crisp.chat/en/) | Website chat and a compact inbox | [US$45/workspace/month, monthly view](https://crisp.chat/en/pricing/), checked Nov 20, 2026 | Free forever for 2 seats, checked Nov 20, 2026 | Shared inbox, chat widget and knowledge base |
+| [Zendesk](https://www.zendesk.com/) | Ticketing and service operations | [US$19/agent/month, yearly](https://www.zendesk.com/pricing/), checked Nov 22, 2026 | Trial; no permanent free plan shown, checked Nov 22, 2026 | Routing, analytics and Suite channels |
+| [Freshdesk](https://www.freshworks.com/freshdesk/) | Conventional help desk | [US$19/agent/month, annual](https://www.freshworks.com/freshdesk/pricing/), checked Nov 22, 2026 | 14-day Enterprise trial, checked Nov 22, 2026 | Portal, knowledge base and ticketing |
+| [Front](https://front.com/) | Shared customer work across teams | [US$25/seat/month, annual](https://front.com/pricing), checked Nov 22, 2026 | Free trial, checked Nov 22, 2026 | Shared inbox with workspaces and automation |
+| [Intercom](https://www.intercom.com/) | Messaging-led support and AI | [US$19/seat/month, annual offer](https://www.intercom.com/pricing), checked Nov 22, 2026 | Free trial, checked Nov 22, 2026 | Fin AI Agent and customer messaging |
+| [Zoho Desk](https://www.zoho.com/desk/) | Small teams and Zoho users | [US$7/user/month, annual USD view](https://www.zoho.com/desk/pricing.html), checked Nov 22, 2026 | Free edition for 3 users, checked Nov 22, 2026 | Help desk connected to Zoho apps |
+| [LiveAgent](https://www.liveagent.com/) | Email, chat, calls and social | [US$15/agent/month, annual list price](https://www.liveagent.com/pricing/), checked Nov 22, 2026 | 30-day trial, checked Nov 22, 2026 | Ticketing, live chat and call center |
+| [Crisp](https://crisp.chat/en/) | Website chat and a compact inbox | [US$45/workspace/month, monthly view](https://crisp.chat/en/pricing/), checked Nov 22, 2026 | Free forever for 2 seats, checked Nov 22, 2026 | Shared inbox, chat widget and knowledge base |
 
 Follow each linked vendor pricing page before buying. Intercom's Essential rate is a displayed new-customer offer. LiveAgent also shows a short promotion, but the table uses regular list prices. Zoho Desk has a currency selector, so the dollar amounts apply only when USD is selected.
 
@@ -28,9 +28,9 @@ Follow each linked vendor pricing page before buying. Intercom's Essential rate 
 
 A shared inbox can be enough while a team handles a manageable volume of email. A different platform becomes worth comparing when the operation needs more queues, phone support, stricter assignment rules, deeper reporting or more self-service options.
 
-A free plan can also matter. Help Scout's [Free plan](https://docs.helpscout.com/article/1597-free-plan), checked November 20, 2026, includes up to five users, one Inbox, one Docs site and 100 contacts per month. Zoho Desk lists a free edition for three users, and Crisp lists a free plan for two seats. Freshdesk, Front, Intercom and LiveAgent show trials rather than an ongoing free tier on the pricing pages checked November 20, 2026.
+A free plan can also matter. Help Scout's [Free plan](https://docs.helpscout.com/article/1597-free-plan), checked November 22, 2026, includes up to five users, one Inbox, one Docs site and 100 contacts per month. Zoho Desk lists a free edition for three users, and Crisp lists a free plan for two seats. Freshdesk, Front, Intercom and LiveAgent show trials rather than an ongoing free tier on the pricing pages checked November 22, 2026.
 
-AI billing is another reason to review the shortlist. Help Scout lists Envoy at US$0.75 per resolution on its [pricing page](https://www.helpscout.com/pricing/), checked November 20, 2026. Intercom lists Fin at US$0.99 per outcome on its [pricing page](https://www.intercom.com/pricing/), checked November 20, 2026. Freshdesk lists extra AI Agent sessions and other add-ons on its [pricing page](https://www.freshworks.com/freshdesk/pricing/), checked November 20, 2026. LiveAgent says its AI features use the customer's own provider account and that LiveAgent does not add an AI fee on its [pricing page](https://www.liveagent.com/pricing/), checked November 20, 2026. Compare how each vendor counts usage.
+AI billing is another reason to review the shortlist. Help Scout lists Envoy at US$0.75 per resolution on its [pricing page](https://www.helpscout.com/pricing/), checked November 22, 2026. Intercom lists Fin at US$0.99 per outcome on its [pricing page](https://www.intercom.com/pricing/), checked November 22, 2026. Freshdesk lists extra AI Agent sessions and other add-ons on its [pricing page](https://www.freshworks.com/freshdesk/pricing/), checked November 22, 2026. LiveAgent says its AI features use the customer's own provider account and that LiveAgent does not add an AI fee on its [pricing page](https://www.liveagent.com/pricing/), checked November 22, 2026. Compare how each vendor counts usage.
 
 ## 1. Zendesk: best for structured ticketing
 
@@ -38,7 +38,7 @@ AI billing is another reason to review the shortlist. Help Scout lists Envoy at 
 
 **What it does:** Zendesk starts with ticketing and customer context. Support Team includes email ticketing, ticket routing, analytics dashboards, prewritten responses, automations and triggers. Suite plans add a knowledge base, AI Agents, action building, omnichannel routing, messaging, live chat and telephony.
 
-**Price from:** the [Zendesk pricing page](https://www.zendesk.com/pricing/), checked November 20, 2026, lists Support Team at US$19 per agent/month billed yearly or US$25 monthly. Suite Team is US$55 yearly or US$69 monthly. Suite Professional is US$115 yearly or US$149 monthly.
+**Price from:** the [Zendesk pricing page](https://www.zendesk.com/pricing/), checked November 22, 2026, lists Support Team at US$19 per agent/month billed yearly or US$25 monthly. Suite Team is US$55 yearly or US$69 monthly. Suite Professional is US$115 yearly or US$149 monthly.
 
 **Pros**
 - A defined ticket model with routing and reporting.
@@ -56,7 +56,7 @@ AI billing is another reason to review the shortlist. Help Scout lists Envoy at 
 
 **What it does:** Freshdesk brings ticketing, a shared inbox, customer portal, knowledge base and reporting into one help desk. Growth lists these core features with threads, tasks, roles and permissions. Pro adds multilingual support, custom dashboards, intelligent routing, multiple SLA policies and external collaborators. Enterprise adds skill-based routing, sandbox and audit logs.
 
-**Price from:** the [Freshdesk pricing page](https://www.freshworks.com/freshdesk/pricing/), checked November 20, 2026, lists Growth at US$19 per agent/month billed annually, Pro at US$55 and Enterprise at US$89. It also lists a 14-day Enterprise trial. The page says the account is suspended after the trial if a paid plan is not selected. Extra AI sessions, connector tasks and MCP actions have separate charges.
+**Price from:** the [Freshdesk pricing page](https://www.freshworks.com/freshdesk/pricing/), checked November 22, 2026, lists Growth at US$19 per agent/month billed annually, Pro at US$55 and Enterprise at US$89. It also lists a 14-day Enterprise trial. The page says the account is suspended after the trial if a paid plan is not selected. Extra AI sessions, connector tasks and MCP actions have separate charges.
 
 **Pros**
 - A familiar ticketing workflow with self-service content and reporting.
@@ -74,7 +74,7 @@ AI billing is another reason to review the shortlist. Help Scout lists Envoy at 
 
 **What it does:** Front combines a shared inbox with ticketing, workspaces, assignments, views and automation. Workspaces separate inboxes, workflows and resources. Starter is single-channel and includes shared inbox, ticketing, basic analytics, a no-code public knowledge base and up to 10 automation rules. Professional adds omnichannel support, macros, advanced analytics, multiple workspaces, SSO and SCIM.
 
-**Price from:** the [Front pricing page](https://front.com/pricing), checked November 20, 2026, lists Starter at US$25 per seat/month for up to 10 seats, Professional at US$65 for up to 50 seats and Enterprise at US$105, with annual billing selected.
+**Price from:** the [Front pricing page](https://front.com/pricing), checked November 22, 2026, lists Starter at US$25 per seat/month for up to 10 seats, Professional at US$65 for up to 50 seats and Enterprise at US$105, with annual billing selected.
 
 **Pros**
 - Shared customer work across several departments.
@@ -92,7 +92,7 @@ AI billing is another reason to review the shortlist. Help Scout lists Envoy at 
 
 **What it does:** Intercom brings a shared Inbox, tickets, Messenger, a help center and Fin AI Agent into one product. Fin can also connect to an existing help desk, so a company can evaluate the agent without replacing every support tool at once. Advanced adds multiple team Inboxes, a workflow builder, round-robin assignment and a multilingual help center.
 
-**Price from:** the [Intercom pricing page](https://www.intercom.com/pricing), checked November 20, 2026, shows Essential at US$19 per seat/month on the displayed annual new-customer offer, Advanced at US$85 and Expert at US$132. Fin is US$0.99 per outcome. The page explains that seat and usage charges are separate. An outcome can be counted when a customer confirms resolution, does not ask for more help after Fin responds, or Fin completes a workflow.
+**Price from:** the [Intercom pricing page](https://www.intercom.com/pricing), checked November 22, 2026, shows Essential at US$19 per seat/month on the displayed annual new-customer offer, Advanced at US$85 and Expert at US$132. Fin is US$0.99 per outcome. The page explains that seat and usage charges are separate. An outcome can be counted when a customer confirms resolution, does not ask for more help after Fin responds, or Fin completes a workflow.
 
 **Pros**
 - Customer messaging, the shared inbox and AI are connected in one support product.
@@ -110,7 +110,7 @@ AI billing is another reason to review the shortlist. Help Scout lists Envoy at 
 
 **What it does:** Zoho Desk combines email, social support, web forms, customer records, workflows, reports and a help center. Higher editions add messaging, telephony, Zia AI, multi-department controls and a multi-brand help center.
 
-**Price from:** the [Zoho Desk pricing page](https://www.zoho.com/desk/pricing.html), checked November 20, 2026, lists a Free edition for up to three users. In the USD view, Express is US$7, Standard US$14, Professional US$23 and Enterprise US$40 per user/month billed annually. The page has a currency selector and local taxes apply.
+**Price from:** the [Zoho Desk pricing page](https://www.zoho.com/desk/pricing.html), checked November 22, 2026, lists a Free edition for up to three users. In the USD view, Express is US$7, Standard US$14, Professional US$23 and Enterprise US$40 per user/month billed annually. The page has a currency selector and local taxes apply.
 
 **Pros**
 - A free entry plan for a small team.
@@ -128,7 +128,7 @@ AI billing is another reason to review the shortlist. Help Scout lists Envoy at 
 
 **What it does:** LiveAgent combines ticketing, live chat, a knowledge base, contact forms, call center tools and social channels. Starter includes email, live chat, contact forms and a knowledge base. Team adds phone, social channels, reporting, CSAT, SLA rules and custom roles. Business adds more AI agents, MCP access, branding removal and audit controls.
 
-**Price from:** the [LiveAgent pricing page](https://www.liveagent.com/pricing/), checked November 20, 2026, lists regular annual prices of US$15 per agent/month for Starter, US$29 for Team and US$49 for Business. Monthly list prices are US$19, US$35 and US$59. Starter supports up to five agents, Team up to 15, and Business has no stated agent cap. The page also shows a temporary promotion through November 22, 2026; the prices above are regular list prices.
+**Price from:** the [LiveAgent pricing page](https://www.liveagent.com/pricing/), checked November 22, 2026, lists regular annual prices of US$15 per agent/month for Starter, US$29 for Team and US$49 for Business. Monthly list prices are US$19, US$35 and US$59. Starter supports up to five agents, Team up to 15, and Business has no stated agent cap. The page also shows a temporary promotion through November 22, 2026; the prices above are regular list prices.
 
 **Pros**
 - Multiple channels are available across the plan range.
@@ -146,7 +146,7 @@ AI billing is another reason to review the shortlist. Help Scout lists Envoy at 
 
 **What it does:** Crisp combines a website chat widget, shared inbox, contact forms, mobile apps, knowledge base, customer data and AI agents. Its flat workspace pricing differs from the per-seat model used by many help desks.
 
-**Price from:** the [Crisp pricing page](https://crisp.chat/en/pricing/), checked November 20, 2026, lists Free forever with two seats, Mini at US$45 per workspace/month with four seats, Essentials at US$95 with ten seats and Plus at US$295 with 20 or more seats in the displayed monthly view. The Free plan has no AI credits. New accounts can try all features for 14 days.
+**Price from:** the [Crisp pricing page](https://crisp.chat/en/pricing/), checked November 22, 2026, lists Free forever with two seats, Mini at US$45 per workspace/month with four seats, Essentials at US$95 with ten seats and Plus at US$295 with 20 or more seats in the displayed monthly view. The Free plan has no AI credits. New accounts can try all features for 14 days.
 
 **Pros**
 - A small team can start with two free seats, a website widget and shared inbox.
@@ -162,11 +162,11 @@ AI billing is another reason to review the shortlist. Help Scout lists Envoy at 
 
 Do not assume that a new help desk will copy the full Help Scout workspace. The destination's importer, source format and API access determine what moves.
 
-Help Scout's [Import2 guide](https://docs.helpscout.com/article/1495-import-emails-or-tickets-into-help-scout), checked November 20, 2026, says it can bring in emails or tickets with customer profiles and tags from listed providers including Freshdesk, Gorgias, Intercom, LiveAgent, Zendesk and Zoho Desk. It is available to Account Owners and Administrators on Standard, Plus and Pro. The standard import does not include users, Inbox settings, knowledge base articles, saved replies, macros, workflow rules or some custom fields and statuses.
+Help Scout's [Import2 guide](https://docs.helpscout.com/article/1495-import-emails-or-tickets-into-help-scout), checked November 22, 2026, says it can bring in emails or tickets with customer profiles and tags from listed providers including Freshdesk, Gorgias, Intercom, LiveAgent, Zendesk and Zoho Desk. It is available to Account Owners and Administrators on Standard, Plus and Pro. The standard import does not include users, Inbox settings, knowledge base articles, saved replies, macros, workflow rules or some custom fields and statuses.
 
-If you are moving from Help Scout to Zendesk, the [Zendesk migration guide](https://support.zendesk.com/hc/en-us/articles/6696005837082-How-can-I-migrate-information-from-another-platform-into-Zendesk), checked November 20, 2026, documents API import for tickets, users, organizations and Help Center articles. It says first reply and first resolution metrics are not imported through the ticket import process, and triggers do not run on imported tickets.
+If you are moving from Help Scout to Zendesk, the [Zendesk migration guide](https://support.zendesk.com/hc/en-us/articles/6696005837082-How-can-I-migrate-information-from-another-platform-into-Zendesk), checked November 22, 2026, documents API import for tickets, users, organizations and Help Center articles. It says first reply and first resolution metrics are not imported through the ticket import process, and triggers do not run on imported tickets.
 
-Help Scout's [data export guide](https://docs.helpscout.com/article/466-data-export-options), checked November 20, 2026, says report exports exclude conversation thread contents. The Inbox API and Docs API provide other data routes, so a report CSV is not a complete workspace backup. Export a sample, inspect attachments and history, map fields, and rebuild rules that do not transfer before setting a cutover date.
+Help Scout's [data export guide](https://docs.helpscout.com/article/466-data-export-options), checked November 22, 2026, says report exports exclude conversation thread contents. The Inbox API and Docs API provide other data routes, so a report CSV is not a complete workspace backup. Export a sample, inspect attachments and history, map fields, and rebuild rules that do not transfer before setting a cutover date.
 
 ## How to choose
 
@@ -181,11 +181,11 @@ Help Scout's [data export guide](https://docs.helpscout.com/article/466-data-exp
 
 ### Does Help Scout have a free plan?
 
-Yes. Help Scout's [Free plan guide](https://docs.helpscout.com/article/1597-free-plan), checked November 20, 2026, lists up to five users, one Inbox, one Docs site and 100 contacts per month.
+Yes. Help Scout's [Free plan guide](https://docs.helpscout.com/article/1597-free-plan), checked November 22, 2026, lists up to five users, one Inbox, one Docs site and 100 contacts per month.
 
 ### Which Help Scout alternative has a free plan?
 
-Zoho Desk lists a Free edition for up to three users, and Crisp lists a Free plan for two seats. Help Scout also has a Free plan. Freshdesk, Front, Intercom and LiveAgent show trials on the pricing pages checked November 20, 2026.
+Zoho Desk lists a Free edition for up to three users, and Crisp lists a Free plan for two seats. Help Scout also has a Free plan. Freshdesk, Front, Intercom and LiveAgent show trials on the pricing pages checked November 22, 2026.
 
 ### Is Zendesk or Freshdesk a better replacement?
 
@@ -193,7 +193,7 @@ Zendesk is worth comparing when you need structured routing, analytics and a wid
 
 ### Does Intercom charge for each AI resolution?
 
-Intercom lists Fin at US$0.99 per outcome on its [pricing page](https://www.intercom.com/pricing/), checked November 20, 2026. Seat charges are separate. Review the current usage terms before estimating the bill.
+Intercom lists Fin at US$0.99 per outcome on its [pricing page](https://www.intercom.com/pricing/), checked November 22, 2026. Seat charges are separate. Review the current usage terms before estimating the bill.
 
 ### Can I move Help Scout conversations to another help desk?
 
@@ -205,4 +205,4 @@ No. Compare included seats, workspace count, extra agent charges, usage fees and
 
 ## Research method
 
-This guide uses official product, pricing and support documentation checked November 20, 2026. Prices are in US dollars, with billing periods stated where shown. Taxes, promotions, regional eligibility and usage can change the final quote. This is documentation-based research, not hands-on testing, customer interviews or a product rating.
+This guide uses official product, pricing and support documentation checked November 22, 2026. Prices are in US dollars, with billing periods stated where shown. Taxes, promotions, regional eligibility and usage can change the final quote. This is documentation-based research, not hands-on testing, customer interviews or a product rating.
