@@ -102,8 +102,11 @@ jobs:
           changed=set(subprocess.check_output(["git","diff-tree","--no-commit-id","--name-only","-r",checked],text=True).splitlines())
           status={"workflow":"ToolboxKart quality checks","status":"passed","commit":checked,"checked_at":datetime.now(timezone.utc).replace(microsecond=0).isoformat(),"run_url":f"https://github.com/{repo}/actions/runs/{run_id}"}
           Path("seo/quality-status.json").write_text(json.dumps(status,indent=2)+"\n",encoding="utf-8")
-          required={"articles/help-scout-hub/article.md","articles/help-scout-pricing/article.md","articles/help-scout-review/article.md","articles/help-scout-how-to-use/article.md","articles/help-scout-alternatives/article.md","articles/help-scout-vs-zendesk/article.md","data/software-pages.php","alternatives/articles/help-scout-alternatives.php","data/post-2026-11-22-help-scout-review.php","reviews/help-scout-review/index.php","includes/alternatives.php","tests/help_scout_draft.py"}
-          if required.issubset(changed):
+          required={"articles/help-scout-hub/article.md","articles/help-scout-pricing/article.md","articles/help-scout-review/article.md","articles/help-scout-how-to-use/article.md","articles/help-scout-alternatives/article.md","articles/help-scout-vs-zendesk/article.md","data/software-pages.php","alternatives/articles/help-scout-alternatives.php","data/post-2026-11-22-help-scout-review.php","reviews/help-scout-review/index.php","includes/alternatives.php","tests/help_scout_draft.py","tests/help_scout_research.py"}
+          missing = [path for path in required if not Path(path).is_file()]
+          if missing:
+              raise SystemExit('Required Help Scout publication files missing: ' + ', '.join(missing))
+          if not missing:
               qp=Path("seo/tool_publishing_queue.md")
               q=qp.read_text(encoding="utf-8")
               q,n=re.subn(r"(?m)^(\|\s*8\s*\|\s*Help Scout\s*\|.*\|\s*)in_progress(\s*\|\s*)$",r"\1published\2",q,count=1)

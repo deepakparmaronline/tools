@@ -515,3 +515,9 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 
 - Added six useful in-body links to the hub, pricing, how-to, alternatives, software directory and review directory. The existing comparison link remains, bringing the review to seven internal links.
 - The review remains desk research with no unsupported testing or rating claims.
+
+
+### 2026-11-22 - Source ledger and release-gate fix
+
+- Matched every external source linked from the six Help Scout articles to its page source ledger.
+- Updated the release workflow to verify the complete publication tree exists, rather than requiring every file to be modified in the final quality-fix commit. The queue remains in_progress until the exact content commit passes.
