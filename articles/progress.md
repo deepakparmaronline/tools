@@ -492,3 +492,14 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - Resumed Order 8, Help Scout. Saved metrics remain US volume 260, KD 16, CPC US$46.62 and I/C intent; no Semrush refresh was performed.
 - Updated all six substantive article files, SEO records, schema, official source ledgers and editorial notes.
 - Public registry, reciprocal links and sitemap discovery are staged for the same final content commit. Order 8 remains `in_progress` until the exact content commit passes the quality workflow.
+
+
+## Help Scout final integration candidate (2026-11-22)
+
+- Resumed Order 8 from the latest `main` state. Saved metrics remain US volume 260, KD 16, CPC US$46.62 and I/C intent. No Semrush refresh was performed.
+- Rechecked official Help Scout pricing, Free plan, Import2, export, MCP, Beacon, workflows, custom-field and Inbox documentation, plus official pricing pages for Zendesk, Freshdesk, Front, Intercom, Zoho Desk, LiveAgent and Crisp.
+- Corrected annual-billed monthly equivalents versus month-to-month rates: Standard US$25/US$30, Plus US$45/US$54 and Pro US$75/US$90 per user/month. Additional Inboxes are US$10 annual-billed or US$12 monthly; extra Docs sites are US$20 or US$24. Envoy is US$0.75 per resolution. The Free plan has five users, one Inbox, one Docs site and 100 contacts per month.
+- The hub, pricing, how-to and Help Scout vs Zendesk routes are registered in `data/software-pages.php`. The alternatives route is registered in `alternatives/articles/help-scout-alternatives.php` and the customer-growth group; the review route is registered in `data/post-2026-11-22-help-scout-review.php` and `reviews/help-scout-review/index.php`. Existing Freshdesk and Zendesk alternatives pages link to the Help Scout review and alternatives guides.
+- Dynamic sitemap discovery uses `data/software-pages.php` for tools, pricing, how-to and compare; `alternatives/articles/help-scout-alternatives.php` for alternatives; and `data/post-2026-11-22-help-scout-review.php` for reviews. Static XML child sitemaps, the root sitemap index and `robots.txt` are not edited because the dynamic sources already cover the routes; the quality test checks each canonical exactly once, all eight child maps in the root index and every child declaration in `robots.txt`.
+- No legacy Help Scout URL was verified, so no redirect was added. No category pillar was added because customer-growth remains below `HUB_MIN_TOOLS = 4`.
+- **Quality gate:** pending. Order 8 remains `in_progress` until the exact content commit passes the complete ToolboxKart workflow and `seo/quality-status.json` matches that commit.
