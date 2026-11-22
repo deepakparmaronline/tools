@@ -5,9 +5,9 @@
       "@type": "Article",
       "@id": "https://toolboxkart.tech/help-scout/pricing/#article",
       "headline": "Help Scout Pricing: Plans, Free Limits and AI Costs",
-      "description": "Compare Help Scout Free, Standard, Plus and Pro prices, included limits, extra inbox and Docs fees, Envoy costs, and annual billing before buying.",
-      "datePublished": "2026-11-18T00:00:00+05:30",
-      "dateModified": "2026-11-18T00:00:00+05:30",
+      "description": "Compare Help Scout Free, Standard, Plus and Pro prices, included limits, extra Inbox and Docs fees, Envoy costs, and annual billing before buying.",
+      "datePublished": "2026-11-22T00:00:00+05:30",
+      "dateModified": "2026-11-22T00:00:00+05:30",
       "author": {
         "@type": "Person",
         "name": "Deepak Parmar",
@@ -16,9 +16,12 @@
       "publisher": {
         "@type": "Organization",
         "name": "ToolboxKart",
-        "url": "https://toolboxkart.tech"
+        "url": "https://toolboxkart.tech/"
       },
-      "mainEntityOfPage": "https://toolboxkart.tech/help-scout/pricing/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://toolboxkart.tech/help-scout/pricing/"
+      },
       "url": "https://toolboxkart.tech/help-scout/pricing/"
     },
     {
@@ -39,7 +42,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Help Scout Pricing: Plans and AI Costs",
+          "name": "Help Scout Pricing: Plans, Free Limits and AI Costs",
           "item": "https://toolboxkart.tech/help-scout/pricing/"
         }
       ]
@@ -60,7 +63,7 @@
           "name": "Can I add more Inboxes or Docs?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Additional Inboxes and Docs sites are available as paid add-ons; check the current annual or monthly price."
+            "text": "Yes. Additional Inboxes cost US$10 per Inbox per month with annual billing or US$12 monthly. Additional Docs sites cost US$20 per site per month with annual billing or US$24 monthly."
           }
         },
         {

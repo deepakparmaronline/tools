@@ -4,10 +4,10 @@
     {
       "@type": "Article",
       "@id": "https://toolboxkart.tech/help-scout/#article",
-      "headline": "Help Scout: Customer Support Platform Guide",
+      "headline": "Help Scout: Shared Inbox, Docs, Beacon and AI Guide",
       "description": "Explore Help Scout’s shared inbox, Docs, Beacon, AI tools, plan limits, pricing, and migration gaps before choosing support software for your team today.",
-      "datePublished": "2026-11-18T00:00:00+05:30",
-      "dateModified": "2026-11-18T00:00:00+05:30",
+      "datePublished": "2026-11-22T00:00:00+05:30",
+      "dateModified": "2026-11-22T00:00:00+05:30",
       "author": {
         "@type": "Person",
         "name": "Deepak Parmar",
@@ -16,9 +16,12 @@
       "publisher": {
         "@type": "Organization",
         "name": "ToolboxKart",
-        "url": "https://toolboxkart.tech"
+        "url": "https://toolboxkart.tech/"
       },
-      "mainEntityOfPage": "https://toolboxkart.tech/help-scout/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://toolboxkart.tech/help-scout/"
+      },
       "url": "https://toolboxkart.tech/help-scout/"
     },
     {
@@ -39,24 +42,18 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Help Scout: Customer Support Platform Guide",
+          "name": "Help Scout",
           "item": "https://toolboxkart.tech/help-scout/"
         }
       ]
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://toolboxkart.tech/help-scout/#software",
       "name": "Help Scout",
       "url": "https://www.helpscout.com/",
       "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web browser",
-      "description": "Customer support software with a shared Inbox, knowledge base, website support widget, workflows and AI assistance.",
-      "provider": {
-        "@type": "Organization",
-        "name": "Help Scout",
-        "url": "https://www.helpscout.com/"
-      }
+      "operatingSystem": "Web",
+      "description": "Customer support software with a shared Inbox, Docs knowledge base, Beacon, workflows and AI assistance."
     },
     {
       "@type": "FAQPage",

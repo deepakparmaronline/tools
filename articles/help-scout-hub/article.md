@@ -12,7 +12,7 @@ Docs is Help Scout's knowledge base. Teams can write and organize help articles,
 
 The Free plan includes up to five users, one Inbox and one Docs site. It also limits teams to 100 contacts per month, ten saved replies, ten tags, ten Docs articles and 30 days of report history. These caps make Free better for a small team testing a shared support process than a busy support desk.
 
-The paid plans are Standard at US$25 per user per month, Plus at US$45, and Pro at US$75 on the monthly pricing view. The pricing page shows a 16% annual-billing discount. Standard adds more channels and basic workflows. Plus adds advanced workflows, routing, a customer portal and several integrations. Pro adds unlimited workflows and SLAs, more routing choices, SSO/SAML and higher team limits. Prices and plan limits were checked November 18, 2026 on the [official pricing page](https://www.helpscout.com/pricing/). See our [Help Scout pricing guide](/help-scout/pricing/) for a fuller plan-by-plan breakdown.
+Standard is US$25 per user/month with annual billing or US$30 monthly. Plus is US$45 annually or US$54 monthly, and Pro is US$75 annually or US$90 monthly. Help Scout displays a 16% annual-billing discount. The pricing page shows a 16% annual-billing discount. Standard adds more channels and basic workflows. Plus adds advanced workflows, routing, a customer portal and several integrations. Pro adds unlimited workflows and SLAs, more routing choices, SSO/SAML and higher team limits. Prices and plan limits were checked November 22, 2026 on the [official pricing page](https://www.helpscout.com/pricing/). See our Help Scout pricing guide for a fuller plan-by-plan breakdown.
 
 ## Where AI fits
 
@@ -28,7 +28,7 @@ Reports can be exported to CSV or XLSX, but report exports do not include conver
 
 Choose it if your team handles a steady stream of customer email, wants a shared inbox and help center, and values a simple way to collaborate on replies. It is also worth comparing if you are moving from a personal or shared mailbox to a dedicated support tool.
 
-Look elsewhere if you need highly complex ticket routing, many custom fields, deep IT service management, a large multibrand operation, or predictable costs based on ticket volume rather than agent seats. Start with the current [software tools directory](/tools/) and browse the [alternatives section](/alternatives/). The live [Freshdesk hub](/freshdesk/) and [Zendesk hub](/zendesk/) help compare more structured help-desk workflows.
+Look elsewhere if you need highly complex ticket routing, many custom fields, deep IT service management, a large multibrand operation, or predictable costs based on ticket volume rather than agent seats. Start with the current software tools directory and browse the alternatives section. The live Freshdesk hub and Zendesk hub help compare more structured help-desk workflows.
 
 ## Research-led questions
 
@@ -40,4 +40,13 @@ Look elsewhere if you need highly complex ticket routing, many custom fields, de
 
 ## Sources and update method
 
-This guide uses Help Scout's official product, pricing and support documentation checked November 18, 2026. It is desk research, not a hands-on test. Review the site-wide [review methodology](/review-methodology) before treating the page as a product evaluation.
+This guide uses Help Scout's official product, pricing and support documentation checked November 22, 2026. It is desk research, not a hands-on test. Review the site-wide review methodology before treating the page as a product evaluation.
+
+## Related guides
+
+- [Help Scout pricing guide](/help-scout/pricing/)
+- [Help Scout review](/help-scout/review/)
+- [How to use Help Scout](/help-scout/how-to-use/)
+- [Help Scout alternatives](/help-scout/alternatives/)
+- [Help Scout vs Zendesk](/compare/help-scout-vs-zendesk/)
+- [Browse software tool hubs](/tools/)

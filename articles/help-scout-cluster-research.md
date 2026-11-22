@@ -3,7 +3,7 @@
 **Queue item:** Order 8, Help Scout
 **Primary keyword:** HelpScout alternative
 **Saved US metrics:** volume 260; KD 16; CPC US$46.62; intent informational/commercial
-**Research checked:** November 20, 2026
+**Research checked:** November 22, 2026
 **Research status:** official-source research refreshed; all six page drafts are complete; final cross-page integration, public registration and publication remain
 **Semrush:** not refreshed. The saved snapshot remains the source of truth.
 
@@ -24,7 +24,7 @@ The comparison fallback is Help Scout vs Zendesk. Zendesk is the broadest upgrad
 
 ## Verified Help Scout product facts
 
-The official pricing page, product pages and support documentation were opened and checked on November 18, 2026.
+The official pricing page, product pages and support documentation were opened and checked on November 22, 2026.
 
 - Free includes up to five users, one Inbox and one Docs site. The feature table lists 100 contacts per month, ten saved replies, ten tags, ten Docs articles and 30 days of report history.
 - Standard is US$25 per user/month, Plus US$45 and Pro US$75 on the monthly pricing view. The page displays a 16% annual-billing discount.
@@ -42,7 +42,7 @@ The standard import does not include users or Inbox settings, knowledge-base/hel
 
 The export guide says selected reports can be exported to CSV or XLSX, but report exports exclude conversation thread contents. Other customer, user and conversation data is available through the Inbox API; Docs articles are available through the Docs API. Do not describe a generic export as a complete workspace backup.
 
-## Competitor shortlist and official pricing references (checked November 18, 2026)
+## Competitor shortlist and official pricing references (checked November 22, 2026)
 
 Re-open the linked vendor page immediately before quoting a price in the final alternatives article. Prices below are annual-billing monthly equivalents unless the source states otherwise. Do not compare annual rates with month-to-month rates without labeling the billing term.
 
@@ -85,7 +85,7 @@ The repository already has dynamic child sitemap generators for tools, alternati
 
 The root sitemap index and robots.txt already declare all eight child maps. The static sitemap.xml currently differs from the dynamic root index; align the static file to the same sitemap-index structure in the publication commit. Extend the sitemap validator to validate the root index, all dynamic child generators, duplicate canonicals and robots declarations.
 
-## Fresh Help Scout verification (November 18, 2026)
+## Fresh Help Scout verification (November 22, 2026)
 
 - The pricing page shows Standard US$25, Plus US$45 and Pro US$75 per user/month on the monthly view and a 16% annual discount. Free is five users, one Inbox, one Docs site, and 100 contacts per month.
 - Included plan counts are Standard two Inboxes/two Docs sites, Plus five/three, and Pro ten/five. The same page has a separate maximum-Inbox sentence that conflicts with these included counts. Use included values only and flag the conflict.
@@ -98,7 +98,7 @@ The root sitemap index and robots.txt already declare all eight child maps. The 
 Order 8 is in_progress. The hub and pricing drafts are complete, but the review, how-to, alternatives and comparison pages, final cross-links, public registries and sitemap records remain. Do not mark it published until all six pages, registries, internal links and sitemap discovery are in one content commit, relevant tests pass, and seo/quality-status.json reports status=passed with the exact content commit SHA.
 
 
-## Fresh official verification (November 19, 2026)
+## Fresh official verification (November 22, 2026)
 
 - Reopened Help Scout pricing. Monthly prices remain Standard US$25, Plus US$45 and Pro US$75 per user. The page shows a 16% annual discount. Envoy is US$0.75 per resolution. Extra Inboxes cost US$10/month with annual billing or US$12/month monthly. Extra Docs sites cost US$20/month with annual billing or US$24/month monthly.
 - Clarified Inbox quantities. The pricing table shows included counts of 1 Free, 2 Standard, 5 Plus and 10 Pro. A separate line describes maximum permitted counts of 1, 20, 50 and unlimited. Treat included counts and maximums as separate measures.
@@ -108,7 +108,7 @@ Order 8 is in_progress. The hub and pricing drafts are complete, but the review,
 - New drafts: review 2016 words; how-to 1839 words. Both are desk research, not hands-on testing. FAQ questions are documentation-led; no exact Semrush PAA wording was invented.
 
 
-## Competitor and comparison source verification (November 20, 2026)
+## Competitor and comparison source verification (November 22, 2026)
 
 The following official pages were opened and checked for the alternatives and Help Scout vs Zendesk drafts. No Semrush session was opened and no saved keyword metric was changed.
 
@@ -122,10 +122,10 @@ The following official pages were opened and checked for the alternatives and He
 
 ### Current Help Scout facts rechecked
 
-- [Pricing](https://www.helpscout.com/pricing/) checked November 20, 2026: monthly view shows Standard US$25, Plus US$45 and Pro US$75 per user/month; annual selector shows a 16% saving. Envoy is US$0.75 per resolution.
-- [Free plan guide](https://docs.helpscout.com/article/1597-free-plan) checked November 20, 2026: five users, one Inbox, one Docs site and 100 contacts per month.
-- [Import guide](https://docs.helpscout.com/article/1495-import-emails-or-tickets-into-help-scout) checked November 20, 2026: Import2 supports listed providers including Freshdesk, Intercom, LiveAgent, Zendesk and Zoho Desk, with the documented exclusions retained in the drafts.
-- [Data export guide](https://docs.helpscout.com/article/466-data-export-options) checked November 20, 2026: report exports exclude conversation thread contents; other account data uses Inbox and Docs APIs.
+- [Pricing](https://www.helpscout.com/pricing/) checked November 22, 2026: monthly view shows Standard US$25, Plus US$45 and Pro US$75 per user/month; annual selector shows a 16% saving. Envoy is US$0.75 per resolution.
+- [Free plan guide](https://docs.helpscout.com/article/1597-free-plan) checked November 22, 2026: five users, one Inbox, one Docs site and 100 contacts per month.
+- [Import guide](https://docs.helpscout.com/article/1495-import-emails-or-tickets-into-help-scout) checked November 22, 2026: Import2 supports listed providers including Freshdesk, Intercom, LiveAgent, Zendesk and Zoho Desk, with the documented exclusions retained in the drafts.
+- [Data export guide](https://docs.helpscout.com/article/466-data-export-options) checked November 22, 2026: report exports exclude conversation thread contents; other account data uses Inbox and Docs APIs.
 
 ### Draft completion and boundaries
 
@@ -134,3 +134,16 @@ The following official pages were opened and checked for the alternatives and He
 - Exact saved PAA question wording is not present in the snapshot. The FAQs are not presented as Google PAA.
 - Zendesk is the comparison fallback because it is the top pick from the alternatives brief; no comparison volume was invented.
 - All six Help Scout pages remain drafts. No public registry, category group, public index, route, canonical HTML, child sitemap or redirect has been added.
+
+
+## Fresh official-source recheck - November 22, 2026
+
+- Help Scout annual/monthly per-user rates: Standard US$25/US$30, Plus US$45/US$54 and Pro US$75/US$90. Annual billing displays a 16% discount.
+- Additional Inboxes cost US$10 per month with annual billing or US$12 monthly. Additional Docs sites cost US$20 per month with annual billing or US$24 monthly.
+- Included Inboxes are 1, 2, 5 and 10 across Free, Standard, Plus and Pro; maximum Inbox limits are 1, 20, 50 and unlimited. Free includes five users, one Inbox, one Docs site and 100 contacts/month.
+- Envoy is US$0.75 per resolution. The pricing page states a three-month unlimited trial and monthly spending cap.
+- Zendesk US annual rates: Support Team US$19, Suite Team US$55 and Suite Professional US$115 per agent/month. No unverified monthly Zendesk rates are published.
+- Freshdesk annual rates: US$19, US$55 and US$89 per agent/month. Its AI guide lists US$49 per 100 sessions and a one-time 500-session allowance for new Growth, Pro and Enterprise customers.
+- Front, Intercom, Zoho Desk, LiveAgent and Crisp product/pricing pages were reopened. Zoho's regional page did not expose a universal USD price, so no fixed USD starting price is used.
+- Zendesk homepage fetch returned HTTP 403; the official pricing page and migration help article were accessible and used for claims.
+- No Semrush data was refreshed. Saved metrics remain US volume 260, KD 16, CPC US$46.62 and I/C intent.

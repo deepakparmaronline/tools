@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths-ignore:
       - seo/quality-status.json
+      - seo/tool_publishing_queue.md
+      - articles/progress.md
+      - 'articles/help-scout-*/notes.md'
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -81,31 +84,48 @@ jobs:
           curl --fail --silent http://127.0.0.1:8765/ > /dev/null
           python3 tests/publication.py
 
-      - name: Record the passing commit
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      - name: Record exact passing commit and release Help Scout
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         env:
           CHECKED_COMMIT: ${{ github.sha }}
-          QUALITY_RUN_ID: ${{ github.run_id }}
+          RUN_ID: ${{ github.run_id }}
           REPOSITORY: ${{ github.repository }}
         run: |
           python3 - <<'PY'
-          import datetime
-          import json
-          import os
+          import json, os, re, subprocess
           from pathlib import Path
-
-          status = {
-              'workflow': 'ToolboxKart quality checks',
-              'status': 'passed',
-              'commit': os.environ['CHECKED_COMMIT'],
-              'checked_at': datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat(),
-              'run_url': f"https://github.com/{os.environ['REPOSITORY']}/actions/runs/{os.environ['QUALITY_RUN_ID']}",
-          }
-          Path('seo/quality-status.json').write_text(json.dumps(status, indent=2) + '\n')
+          from datetime import datetime, timezone
+          from zoneinfo import ZoneInfo
+          checked=os.environ["CHECKED_COMMIT"]
+          run_id=os.environ["RUN_ID"]
+          repo=os.environ["REPOSITORY"]
+          changed=set(subprocess.check_output(["git","diff-tree","--no-commit-id","--name-only","-r",checked],text=True).splitlines())
+          status={"workflow":"ToolboxKart quality checks","status":"passed","commit":checked,"checked_at":datetime.now(timezone.utc).replace(microsecond=0).isoformat(),"run_url":f"https://github.com/{repo}/actions/runs/{run_id}"}
+          Path("seo/quality-status.json").write_text(json.dumps(status,indent=2)+"\n",encoding="utf-8")
+          required={"articles/help-scout-hub/article.md","articles/help-scout-pricing/article.md","articles/help-scout-review/article.md","articles/help-scout-how-to-use/article.md","articles/help-scout-alternatives/article.md","articles/help-scout-vs-zendesk/article.md","data/software-pages.php","alternatives/articles/help-scout-alternatives.php","data/post-2026-11-22-help-scout-review.php","reviews/help-scout-review/index.php","includes/alternatives.php","tests/help_scout_draft.py"}
+          if required.issubset(changed):
+              qp=Path("seo/tool_publishing_queue.md")
+              q=qp.read_text(encoding="utf-8")
+              q,n=re.subn(r"(?m)^(\|\s*8\s*\|\s*Help Scout\s*\|.*\|\s*)in_progress(\s*\|\s*)$",r"\1published\2",q,count=1)
+              if n!=1: raise SystemExit("Could not mark the exact Help Scout queue row published.")
+              q=q.replace("<!-- Order 8 remains in_progress until the exact content-commit quality gate passes. -->","").rstrip()+"\n"
+              qp.write_text(q,encoding="utf-8")
+              day=datetime.now(ZoneInfo("Asia/Kolkata")).date().isoformat()
+              pp=Path("articles/progress.md")
+              p=pp.read_text(encoding="utf-8")
+              p+=(f"\n\n### Help Scout publication closeout - {day}\n\n"
+                  f"- Quality status passed for exact content commit `{checked}`; workflow: https://github.com/{repo}/actions/runs/{run_id}.\n"
+                  "- All six public routes are registered, internally linked and discoverable through their dynamic child sitemap sources.\n"
+                  "- Help Scout is published. Next queued item: Order 9, ManyChat.\n")
+              pp.write_text(p,encoding="utf-8")
+              for name in ["help-scout-hub","help-scout-pricing","help-scout-review","help-scout-how-to-use","help-scout-alternatives","help-scout-vs-zendesk"]:
+                  np=Path(f"articles/{name}/notes.md")
+                  note=np.read_text(encoding="utf-8")
+                  note=note.replace("Quality gate: pending until seo/quality-status.json reports status=passed for the exact content commit.",f"Quality gate: passed for exact content commit {checked}.")
+                  np.write_text(note,encoding="utf-8")
           PY
-
+          git add seo/quality-status.json seo/tool_publishing_queue.md articles/progress.md articles/help-scout-*/notes.md
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add seo/quality-status.json
-          git commit -m "Record passing quality check [skip ci]"
+          git commit -m "Record passing quality check and release Help Scout [skip ci]"
           git push origin HEAD:main

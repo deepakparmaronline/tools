@@ -1,137 +1,74 @@
-"""Validates all six non-public Help Scout cluster drafts."""
-import json
-import re
+"""Help Scout cluster rendering, registry and sitemap checks."""
+import json,re,subprocess,time,urllib.request,xml.etree.ElementTree as ET
+from html import unescape
+from html.parser import HTMLParser
 from pathlib import Path
-import xml.etree.ElementTree as ET
-
-ROOT = Path(__file__).resolve().parents[1]
-SITE = "https://toolboxkart.tech"
-CHILD_MAPS = [
-    "/sitemap-tools.xml", "/sitemap-alternatives.xml", "/sitemap-reviews.xml",
-    "/sitemap-pricing.xml", "/sitemap-how-to-use.xml", "/sitemap-compare.xml",
-    "/sitemap-categories.xml", "/sitemap-pages.xml",
-]
-
-def word_count(markdown):
-    text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", markdown)
-    text = re.sub(r"[#*|]", " ", text)
-    return len(re.findall(r"\b[\w’'-]+\b", text))
-
-def check_page(folder, canonical, primary, low, high, schema_types, faq_questions, date_published="2026-11-18T00:00:00+05:30"):
-    article = (folder / "article.md").read_text()
-    seo = (folder / "seo.md").read_text()
-    sources = (folder / "sources.md").read_text()
-    notes = (folder / "notes.md").read_text()
-    schema = json.loads((folder / "schema.json").read_text())
-    count = word_count(article)
-    assert low <= count <= high, f"{folder.name}: {count} words outside {low}-{high}"
-    assert article.startswith("# ") and article.count("\n# ") == 0, f"{folder.name}: expected one H1"
-    assert primary in seo and canonical in seo, folder.name
-    seo_title = re.search(r"\*\*SEO title:\*\* (.+)", seo).group(1)
-    assert len(seo_title + " | ToolboxKart") <= 60, f"{folder.name}: title too long"
-    meta = re.search(r"\*\*Meta description:\*\* (.+)", seo).group(1)
-    assert 140 <= len(meta) <= 160, f"{folder.name}: description {len(meta)} chars"
-    graph = schema.get("@graph", [])
-    types = {item.get("@type") for item in graph}
-    assert schema.get("@context") == "https://schema.org", folder.name
-    assert schema_types <= types, (folder.name, schema_types, types)
-    article_schema = next(item for item in graph if item.get("@type") == "Article")
-    assert article_schema.get("mainEntityOfPage") == canonical, folder.name
-    assert article_schema.get("datePublished") == date_published, folder.name
-    faq = next((item for item in graph if item.get("@type") == "FAQPage"), None)
-    assert faq is not None, folder.name
-    questions = {item["name"] for item in faq.get("mainEntity", [])}
-    assert questions == faq_questions, folder.name
-    for question in faq_questions:
-        assert question in article, f"{folder.name}: FAQ not visible: {question}"
-    for url in re.findall(r"https://[^\s)]+", article):
-        assert url in sources, f"{folder.name}: source link missing from ledger: {url}"
-    assert "Draft only" in notes and "unregistered" in notes.lower() and "unlinked" in notes.lower(), folder.name
-    assert len(re.findall(r"\]\(/[^)]+\)", article)) >= 4, f"{folder.name}: too few internal links"
-    assert "—" not in article, f"{folder.name}: em dash found"
-    if folder.name in {"help-scout-alternatives", "help-scout-vs-zendesk"}:
-        assert "/help-scout/" not in article, f"{folder.name}: draft Help Scout route linked before publication"
-
+R=Path(__file__).resolve().parents[1];B="http://127.0.0.1:8876";S="https://toolboxkart.tech"
+P={"help-scout-hub":("/help-scout/","tools",(500,900),6),"help-scout-pricing":("/help-scout/pricing/","pricing",(800,1400),7),"help-scout-review":("/help-scout/review/","reviews",(1500,2200),7),"help-scout-how-to-use":("/help-scout/how-to-use/","how-to-use",(1200,2000),7),"help-scout-alternatives":("/help-scout/alternatives/","alternatives",(1800,2800),8),"help-scout-vs-zendesk":("/compare/help-scout-vs-zendesk/","compare",(1500,2200),8)}
+M={"tools":"sitemap-tools.xml","pricing":"sitemap-pricing.xml","reviews":"sitemap-reviews.xml","how-to-use":"sitemap-how-to-use.xml","alternatives":"sitemap-alternatives.xml","compare":"sitemap-compare.xml","pages":"sitemap-pages.xml","categories":"sitemap-categories.xml"}
+class H(HTMLParser):
+ def __init__(self):super().__init__();self.h1=0
+ def handle_starttag(self,t,a):
+  if t=="h1":self.h1+=1
+def get(p):
+ with urllib.request.urlopen(B+p,timeout=20) as x:return x.status,x.read().decode("utf-8","replace")
+def graph(h):
+ out=[]
+ for x in re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',h,re.I|re.S):
+  v=json.loads(unescape(x.strip()));out.extend(v.get("@graph",[v]) if isinstance(v,dict) else v)
+ return out
+def locs(x):return [n.text.strip() for n in ET.fromstring(x).findall(".//{*}loc") if n.text]
+def words(s):return len(re.findall(r"\b[\w’'-]+\b",re.sub(r"[#*|]"," ",re.sub(r"\[([^\]]+)\]\([^)]+\)",r"\1",s))))
 def main():
-    check_page(
-        ROOT / "articles/help-scout-hub", SITE + "/help-scout/", "Help Scout", 500, 900,
-        {"Article", "BreadcrumbList", "SoftwareApplication", "FAQPage"},
-        {"Is Help Scout free?", "Can Help Scout replace a ticketing system?", "Can I connect an AI agent to Help Scout?"},
-    )
-    check_page(
-        ROOT / "articles/help-scout-pricing", SITE + "/help-scout/pricing/", "Help Scout pricing", 800, 1400,
-        {"Article", "BreadcrumbList", "FAQPage"},
-        {"Is Help Scout billed per agent or per ticket?", "Can I add more Inboxes or Docs?", "Does the annual plan cost less?", "Can I control Envoy costs?"},
-    )
-    check_page(
-        ROOT / "articles/help-scout-review", SITE + "/help-scout/review/", "Help Scout review", 1500, 2200,
-        {"Article", "BreadcrumbList", "FAQPage"},
-        {"Is Help Scout good for a small business?", "Does Help Scout have a free plan?", "Does Help Scout include AI?", "Can Help Scout replace Zendesk?", "Can I export all Help Scout data?"},
-        "2026-11-19T00:00:00+05:30",
-    )
-    check_page(
-        ROOT / "articles/help-scout-how-to-use", SITE + "/help-scout/how-to-use/", "how to use Help Scout", 1200, 2000,
-        {"Article", "BreadcrumbList", "FAQPage"},
-        {"How do I connect my support email to Help Scout?", "How do I create a Help Scout knowledge base?", "Can I use Help Scout workflows on the Free plan?", "What does Help Scout import from another help desk?", "Can I export Help Scout conversation threads?"},
-        "2026-11-19T00:00:00+05:30",
-    )
-    alt = check_page(
-        ROOT / "articles/help-scout-alternatives", SITE + "/help-scout/alternatives/", "Help Scout alternatives", 1800, 2800,
-        {"Article", "BreadcrumbList", "ItemList", "FAQPage"},
-        {"Does Help Scout have a free plan?", "Which Help Scout alternative has a free plan?", "Is Zendesk or Freshdesk a better replacement?", "Does Intercom charge for each AI resolution?", "Can I move Help Scout conversations to another help desk?", "Is a flat workspace price always cheaper?"},
-        "2026-11-20T00:00:00+05:30",
-    )
-    comp = check_page(
-        ROOT / "articles/help-scout-vs-zendesk", SITE + "/compare/help-scout-vs-zendesk/", "Help Scout vs Zendesk", 1500, 2200,
-        {"Article", "BreadcrumbList", "FAQPage"},
-        {"Is Help Scout cheaper than Zendesk?", "Does Zendesk have a free plan?", "Does Help Scout include a knowledge base?", "Can I move Zendesk tickets into Help Scout?", "Does Zendesk include AI?", "Which tool is better for a small support team?"},
-        "2026-11-20T00:00:00+05:30",
-    )
-    alt_schema = json.loads((ROOT / "articles/help-scout-alternatives/schema.json").read_text())
-    item_list = next(item for item in alt_schema["@graph"] if item.get("@type") == "ItemList")
-    assert [entry["item"]["name"] for entry in item_list["itemListElement"]] == [
-        "Zendesk", "Freshdesk", "Front", "Intercom", "Zoho Desk", "LiveAgent", "Crisp"
-    ]
-    review_schema = json.loads((ROOT / "articles/help-scout-review/schema.json").read_text())
-    review_types = {item.get("@type") for item in review_schema.get("@graph", [])}
-    assert "Review" not in review_types and "AggregateRating" not in review_types
-
-    static_index = ET.fromstring((ROOT / "sitemap.xml").read_text())
-    assert static_index.tag.endswith("sitemapindex")
-    locations = [node.text.strip() for node in static_index.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
-    assert locations == [SITE + child for child in CHILD_MAPS], locations
-    robots = (ROOT / "robots.txt").read_text()
-    assert f"Sitemap: {SITE}/sitemap.xml" in robots
-    for child in CHILD_MAPS:
-        assert f"Sitemap: {SITE + child}" in robots, child
-
-    public_files = [
-        ROOT / "data/software-pages.php", ROOT / "includes/alternatives.php",
-        ROOT / "sitemap-tools.php", ROOT / "sitemap-pricing.php",
-        ROOT / "sitemap-how-to-use.php", ROOT / "sitemap-compare.php",
-        ROOT / "sitemap-alternatives.php", ROOT / "sitemap-reviews.php",
-        ROOT / "alternatives/articles/freshdesk-alternatives.php",
-        ROOT / "alternatives/articles/zendesk-alternatives.php",
-        ROOT / "reviews/notion-review/index.php",
-        ROOT / "data/post-2026-11-08-notion-review.php",
-    ]
-    for path in public_files:
-        assert "/help-scout/" not in path.read_text(), path
-    assert not (ROOT / "alternatives/articles/help-scout-alternatives.php").exists()
-    assert not (ROOT / "reviews/help-scout-review/index.php").exists()
-    assert not (ROOT / "data/post-2026-11-20-help-scout-review.php").exists()
-    counts = {
-        name: word_count((ROOT / folder / "article.md").read_text())
-        for name, folder in [
-            ("hub", "articles/help-scout-hub"),
-            ("pricing", "articles/help-scout-pricing"),
-            ("review", "articles/help-scout-review"),
-            ("how_to_use", "articles/help-scout-how-to-use"),
-            ("alternatives", "articles/help-scout-alternatives"),
-            ("comparison", "articles/help-scout-vs-zendesk"),
-        ]
-    }
-    print("Help Scout draft checkpoint valid: " + ", ".join(f"{name} {count} words" for name, count in counts.items()))
-
-if __name__ == "__main__":
-    main()
+ srv=subprocess.Popen(["php","-S","127.0.0.1:8876","preview-router.php"],cwd=R,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+ try:
+  for _ in range(40):
+   try:get("/help-scout/");break
+   except Exception:time.sleep(.25)
+  else:raise AssertionError("PHP preview did not start")
+  routes={}
+  for n,(p,child,limits,links) in P.items():
+   st,h=get(p);assert st==200,(p,st);u=S+p
+   can=re.findall(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)',h,re.I);assert can==[u],(p,can)
+   d=re.search(r'<meta[^>]+name=["\']description["\'][^>]+content=["\']([^"\']+)',h,re.I);rb=re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\']([^"\']+)',h,re.I);t=re.search(r'<title>(.*?)</title>',h,re.I|re.S)
+   assert d and 140<=len(unescape(d.group(1)))<=160,(p,d.group(1) if d else None)
+   assert rb and "index" in rb.group(1).lower() and "follow" in rb.group(1).lower(),p
+   assert t and len(re.sub(r"<[^>]+>","",unescape(t.group(1))))<=60,p
+   hp=H();hp.feed(h);assert hp.h1==1,(p,hp.h1)
+   g=graph(h);types=[x.get("@type") for x in g];assert all(x in types for x in ["Article","BreadcrumbList","FAQPage"]),(p,types)
+   bc=next(x for x in g if x.get("@type")=="BreadcrumbList");assert bc["itemListElement"][-1]["item"]==u
+   fq=next(x for x in g if x.get("@type")=="FAQPage");visible=unescape(re.sub(r"<[^>]+>"," ",h))
+   for q in fq["mainEntity"]:assert q["name"] in visible,(p,q["name"])
+   if n=="help-scout-hub":
+    app=next(x for x in g if x.get("@type")=="SoftwareApplication");assert "aggregateRating" not in app
+   if n=="help-scout-alternatives":assert next(x for x in g if x.get("@type")=="ItemList")["numberOfItems"]==7
+   if n=="help-scout-review":assert "Review" not in types and h.count("Written by")==2 and "Review methodology" in h and "Sources" in h
+   routes[n]=(p,child)
+   md=(R/"articles"/n/"article.md").read_text(encoding="utf-8");seo=(R/"articles"/n/"seo.md").read_text(encoding="utf-8");src=(R/"articles"/n/"sources.md").read_text(encoding="utf-8");note=(R/"articles"/n/"notes.md").read_text(encoding="utf-8")
+   assert limits[0]<=words(md)<=limits[1],(n,words(md));assert len(re.findall(r"\]\((/[^)]+)\)",md))==links,(n,links)
+   assert "index,follow" in seo and u in seo and "November 22, 2026" in src
+   for url in re.findall(r"\]\((https?://[^)]+)\)",md):assert url in src,(n,url)
+   assert "Quality gate: pending" in note
+  sw=(R/"data/software-pages.php").read_text(encoding="utf-8")
+  for p in ["/help-scout/","/help-scout/pricing/","/help-scout/how-to-use/","/compare/help-scout-vs-zendesk/"]:assert len(re.findall(r"'url'\s*=>\s*'"+re.escape(p)+r"'",sw))==1,p
+  assert (R/"alternatives/articles/help-scout-alternatives.php").is_file() and "'help-scout-alternatives'" in (R/"includes/alternatives.php").read_text(encoding="utf-8")
+  assert (R/"data/post-2026-11-22-help-scout-review.php").is_file() and (R/"reviews/help-scout-review/index.php").is_file()
+  for p,needle in [("/tools/","Help Scout"),("/pricing/","Help Scout"),("/how-to-use/","Help Scout"),("/compare/","Help Scout vs Zendesk"),("/alternatives/","Help Scout"),("/reviews/","Help Scout Review"),("/content/","Help Scout Review")]:
+   _,h=get(p);assert needle.lower() in h.lower(),(p,needle)
+  for p in ["/freshdesk/alternatives/","/zendesk/alternatives/"]:
+   _,h=get(p);assert 'href="/help-scout/review/"' in h and 'href="/help-scout/alternatives/"' in h,p
+  _,fc=get("/compare/freshdesk-vs-help-scout/");assert 'href="/help-scout/pricing/"' in fc and 'href="/help-scout/review/"' in fc and "US$30 monthly" in fc
+  maps={k:locs(get("/"+v)[1]) for k,v in M.items()}
+  for n,(p,c) in routes.items():
+   u=S+p;assert sum(x.count(u) for x in maps.values())==1,(u,maps);assert maps[c].count(u)==1,(u,c)
+  assert S+"/help-scout/review/" not in maps["pages"]
+  root=locs(get("/sitemap.xml")[1]);expected={S+"/"+v for v in M.values()};assert set(root)==expected and len(root)==len(expected)
+  robots=(R/"robots.txt").read_text(encoding="utf-8");assert robots.count("Sitemap: "+S+"/sitemap.xml")==1
+  for u in expected:assert robots.count("Sitemap: "+u)==1,u
+  assert not any("customer-service-help-desk-software" in x for x in maps["categories"])
+  print("Help Scout: six canonical routes, schema, registry, internal links and sitemap discovery passed.")
+ finally:
+  srv.terminate()
+  try:srv.wait(timeout=5)
+  except subprocess.TimeoutExpired:srv.kill()
+if __name__=="__main__":main()

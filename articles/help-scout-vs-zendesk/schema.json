@@ -3,10 +3,11 @@
   "@graph": [
     {
       "@type": "Article",
-      "headline": "Help Scout vs Zendesk: Features and Pricing",
-      "description": "Compare Help Scout vs Zendesk on monthly cost, ticketing, shared inbox, AI, knowledge base, automation and migration to choose the right support platform.",
-      "datePublished": "2026-11-20T00:00:00+05:30",
-      "dateModified": "2026-11-20T00:00:00+05:30",
+      "@id": "https://toolboxkart.tech/compare/help-scout-vs-zendesk/#article",
+      "headline": "Help Scout vs Zendesk: Features, Pricing and Migration",
+      "description": "Compare Help Scout vs Zendesk on annual price, ticketing, shared inbox, AI, knowledge base, automation and migration to choose the right support platform.",
+      "datePublished": "2026-11-22T00:00:00+05:30",
+      "dateModified": "2026-11-22T00:00:00+05:30",
       "author": {
         "@type": "Person",
         "name": "Deepak Parmar",
@@ -17,7 +18,10 @@
         "name": "ToolboxKart",
         "url": "https://toolboxkart.tech/"
       },
-      "mainEntityOfPage": "https://toolboxkart.tech/compare/help-scout-vs-zendesk/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://toolboxkart.tech/compare/help-scout-vs-zendesk/"
+      },
       "url": "https://toolboxkart.tech/compare/help-scout-vs-zendesk/"
     },
     {
@@ -51,7 +55,7 @@
           "name": "Is Help Scout cheaper than Zendesk?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The monthly entry rates shown November 20, 2026 are both US$25 per seat for Help Scout Standard and Zendesk Support Team. Zendesk Suite Team is US$69 monthly, while Help Scout Plus is US$45 monthly."
+            "text": "The monthly entry rates shown November 22, 2026 are Help Scout Standard is US$25 per user/month with annual billing or US$30 monthly; Zendesk Support Team is US$19 per agent/month with annual billing. The features differ. Zendesk Suite Team is US$55 per agent/month with annual billing, while Help Scout Plus is US$45 with annual billing or US$54 monthly. Compare the features and add-ons you need, not only the first price."
           }
         },
         {
@@ -59,7 +63,7 @@
           "name": "Does Zendesk have a free plan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Zendesk's public pricing page checked November 20, 2026 advertises a free trial and lists paid Support and Suite plans. It does not show a permanent free support plan."
+            "text": "Zendesk's public pricing page, checked November 22, 2026, advertises a free trial and lists paid Support and Suite plans. It does not show a permanent free support plan."
           }
         },
         {
@@ -67,7 +71,7 @@
           "name": "Does Help Scout include a knowledge base?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Help Scout calls its knowledge base Docs. The plan page lists one site on Free, two on Standard, three on Plus and five on Pro. Free also lists ten articles."
+            "text": "Yes. Help Scout calls its knowledge base Docs. The plan page, checked November 22, 2026, lists one site on Free, two on Standard, three on Plus and five on Pro. Free also lists ten articles."
           }
         },
         {
@@ -75,7 +79,7 @@
           "name": "Can I move Zendesk tickets into Help Scout?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Help Scout's Import2 guide lists Zendesk as a supported source. The standard import does not include every user, Inbox setting, article or automation, so test a sample."
+            "text": "Help Scout's Import2 guide, checked November 22, 2026, lists Zendesk as a supported source. It can import emails or tickets with customer profiles and tags, but the standard import does not include every user, Inbox setting, article or automation. Test a sample and confirm what needs to be rebuilt."
           }
         },
         {
@@ -83,7 +87,7 @@
           "name": "Does Zendesk include AI?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Zendesk's current pricing page lists AI Agents on Suite Team and higher Suite plans. Check the plan comparison and quote for exact features and usage charges."
+            "text": "Zendesk's current pricing page, checked November 22, 2026, lists AI Agents on Suite Team and higher Suite plans. Check the plan comparison and your quote for exact features and any usage charges."
           }
         },
         {
@@ -91,7 +95,7 @@
           "name": "Which tool is better for a small support team?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Help Scout is a sensible starting point for a shared Inbox and Docs. Zendesk Support Team is worth comparing when the team needs ticket routing and reporting."
+            "text": "Help Scout is a sensible starting point when a small team wants a shared Inbox and Docs. Zendesk Support Team is worth comparing when the team needs ticket routing and reporting. If you need omnichannel support or a knowledge base in Zendesk, compare Suite Team."
           }
         }
       ]

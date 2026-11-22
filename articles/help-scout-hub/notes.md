@@ -1,10 +1,9 @@
-# Help Scout hub editorial notes
+# Editorial and publication notes
 
-- **Status:** Draft only; not published.
-- **Source date:** November 19, 2026.
-- **Length:** 813 words, within the 500–900-word range.
-- **Search intent:** Informational/product evaluation. The exact saved PAA wording is not available, so FAQs are source-led, not presented as Google PAA.
-- **Internal links:** /tools/, /alternatives/, /freshdesk/, /zendesk/, /review-methodology/ are live. /help-scout/pricing/ is a draft cluster link only. Add the remaining sibling links during the final cluster integration pass.
-- **Fact limits:** No user ratings, hands-on claims, or unsupported performance promises. Pricing is checked on the vendor page. The pricing table lists included Inbox counts separately from maximum permitted counts; the pricing article explains both measures.
-- **Public state:** No PHP registry entry, public index link, navigation entry, review record, alternatives record, comparison record, or sitemap URL was added. The draft remains unregistered and unlinked from public pages.
-- **Next:** Pricing draft is complete. Proceed to review/how-to checkpoint.
+- Canonical: https://toolboxkart.tech/help-scout/
+- Word count: 852 (required range 500-900).
+- Internal links: 6.
+- Sources last opened: November 22, 2026.
+- Claims use official vendor sources; no invented ratings or unsupported hands-on claims.
+- Public registry and dynamic sitemap source will be included in the same publication commit.
+- Quality gate: pending until seo/quality-status.json reports status=passed for the exact content commit.

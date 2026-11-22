@@ -164,3 +164,5 @@ A queue row may be marked published only after the complete cluster and all regi
 
 
 <!-- 2026-11-08 closeout: Order 7 Notion cluster passed ToolboxKart quality checks for content commit 911cad726fbea5e5a3dc74bff05aacf8f7da6893 (run 42448484779). Next: Order 8 Help Scout. -->
+
+<!-- Order 8 remains in_progress until the exact content-commit quality gate passes. -->

@@ -47,13 +47,13 @@ The annual discount lowers the monthly equivalent but requires an annual commitm
 
 Start with Free if your support volume is small and you are testing the workflow. Standard suits teams that need a paid shared Inbox with core channels and basic automation. Plus is worth comparing when you need more routing, a customer portal or deeper collaboration. Pro makes sense only when the security, routing, workflow or scale features justify its minimum user requirement.
 
-If you are moving from another help desk, review the [Help Scout guide](/help-scout/) and [alternatives](/alternatives/) before selecting a plan. The live [Freshdesk](/freshdesk/) and [Zendesk](/zendesk/) guides can help compare seat pricing and ticket workflow depth.
+If you are moving from another help desk, review the Help Scout guide and alternatives before selecting a plan. The live Freshdesk and Zendesk guides can help compare seat pricing and ticket workflow depth.
 
 ## Pricing questions
 
 **Is Help Scout billed per agent or per ticket?** The paid plans are priced per user. Envoy is billed separately by AI resolution.
 
-**Can I add more Inboxes or Docs?** Yes. Additional Inboxes and Docs sites are available as paid add-ons; check the current annual or monthly price.
+**Can I add more Inboxes or Docs?** Yes. Additional Inboxes cost US$10 per Inbox per month with annual billing or US$12 monthly. Additional Docs sites cost US$20 per site per month with annual billing or US$24 monthly.
 
 **Does the annual plan cost less?** The pricing page shows a 16% annual discount. Confirm the total and commitment before buying.
 
@@ -61,4 +61,14 @@ If you are moving from another help desk, review the [Help Scout guide](/help-sc
 
 ## Sources and update method
 
-Plan prices, included limits and add-on charges were checked November 19, 2026 against Help Scout's [official pricing page](https://www.helpscout.com/pricing/) and [billing guide](https://docs.helpscout.com/article/596-billing-and-plans-guide). This is desk research; it does not use a customer account or a billing quote.
+Plan prices, included limits and add-on charges were checked November 22, 2026 against Help Scout's [official pricing page](https://www.helpscout.com/pricing/) and [billing guide](https://docs.helpscout.com/article/596-billing-and-plans-guide). This is desk research; it does not use a customer account or a billing quote.
+
+## Related guides
+
+- [Help Scout product guide](/help-scout/)
+- [Help Scout review](/help-scout/review/)
+- [Help Scout setup guide](/help-scout/how-to-use/)
+- [Help Scout alternatives](/help-scout/alternatives/)
+- [Help Scout vs Zendesk](/compare/help-scout-vs-zendesk/)
+- [Browse software tool hubs](/tools/)
+- [Review methodology](/review-methodology/)

@@ -5,9 +5,9 @@
       "@type": "Article",
       "@id": "https://toolboxkart.tech/help-scout/review/#article",
       "headline": "Help Scout Review: Features, Limits and Fit",
-      "description": "An evidence-based Help Scout review covering its shared Inbox, Docs, Beacon, workflows, AI, pricing, migration limits and team fit.",
-      "datePublished": "2026-11-19T00:00:00+05:30",
-      "dateModified": "2026-11-19T00:00:00+05:30",
+      "description": "Read this Help Scout review of shared Inbox, Docs, Beacon, AI, pricing, migration limits, strengths and trade-offs before choosing a support platform.",
+      "datePublished": "2026-11-22T00:00:00+05:30",
+      "dateModified": "2026-11-22T00:00:00+05:30",
       "author": {
         "@type": "Person",
         "name": "Deepak Parmar",
@@ -16,9 +16,12 @@
       "publisher": {
         "@type": "Organization",
         "name": "ToolboxKart",
-        "url": "https://toolboxkart.tech"
+        "url": "https://toolboxkart.tech/"
       },
-      "mainEntityOfPage": "https://toolboxkart.tech/help-scout/review/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://toolboxkart.tech/help-scout/review/"
+      },
       "url": "https://toolboxkart.tech/help-scout/review/"
     },
     {
@@ -39,7 +42,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Help Scout Review",
+          "name": "Review",
           "item": "https://toolboxkart.tech/help-scout/review/"
         }
       ]
@@ -60,7 +63,7 @@
           "name": "Does Help Scout have a free plan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. The official Free plan includes up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle. Checked November 19, 2026."
+            "text": "Yes. The official Free plan includes up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle. Checked November 22, 2026. Free plan details."
           }
         },
         {
@@ -84,7 +87,7 @@
           "name": "Can I export all Help Scout data?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Not through one report export. Reports can be exported to CSV or XLSX, but conversation thread contents are excluded. The Inbox API and Docs API provide other data export paths."
+            "text": "Not through one report export. Reports can be exported to CSV or XLSX, but conversation thread contents are excluded. The Inbox API and Docs API provide other data export paths. See the official export options."
           }
         }
       ]

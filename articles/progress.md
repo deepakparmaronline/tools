@@ -485,3 +485,10 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - **Public state:** all six pages remain drafts. No PHP registry, category group, public index, route, canonical HTML, child sitemap URL, redirect or navigation link was added. No public Help Scout URL is claimed.
 - **Queue state:** Order 8 remains in_progress until the final cluster integration, publication and exact-commit quality gate succeed.
 - **Exact next checkpoint:** cross-page consistency and internal links; add the hub, pricing, review, how-to, alternatives and comparison to their shared registries; update the customer-growth alternatives group and existing Freshdesk/Zendesk cross-links; verify each canonical exactly once in its correct dynamic child sitemap; keep the root sitemap index and robots declarations complete; add no redirects unless an exact old route is found; run all tests and publish only after the exact content commit passes.
+
+
+### 2026-11-22 - Help Scout cluster content checkpoint
+
+- Resumed Order 8, Help Scout. Saved metrics remain US volume 260, KD 16, CPC US$46.62 and I/C intent; no Semrush refresh was performed.
+- Updated all six substantive article files, SEO records, schema, official source ledgers and editorial notes.
+- Public registry, reciprocal links and sitemap discovery are staged for the same final content commit. Order 8 remains `in_progress` until the exact content commit passes the quality workflow.

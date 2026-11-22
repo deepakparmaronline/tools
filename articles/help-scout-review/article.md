@@ -11,8 +11,8 @@ The platform is worth considering for SaaS companies, online stores, service bus
 | Review point | What the official sources show |
 |---|---|
 | Best for | Email-first support teams that need shared conversations and a help center |
-| Starting paid price | Standard is US$25 per user/month on the monthly view. Checked November 19, 2026. [Official pricing](https://www.helpscout.com/pricing/) |
-| Free plan | Up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle. Checked November 19, 2026. [Free plan details](https://docs.helpscout.com/article/1597-free-plan) |
+| Starting paid price | Standard is US$25 per user/month with annual billing or US$30 monthly. Plus is US$45 annually or US$54 monthly, and Pro is US$75 annually or US$90 monthly. Checked November 22, 2026. [Official pricing](https://www.helpscout.com/pricing/) |
+| Free plan | Up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle. Checked November 22, 2026. [Free plan details](https://docs.helpscout.com/article/1597-free-plan) |
 | Main limit to plan for | The standard import does not move several important settings and content types. [Import guide](https://docs.helpscout.com/article/1495-import-emails-or-tickets-into-help-scout) |
 
 ## What Help Scout does
@@ -55,17 +55,17 @@ The pricing page lists access to more than 100 apps, but the number of integrati
 
 ### 6. AI tools and MCP access
 
-Help Scout separates AI assistance for agents from its customer-facing AI agent. Agent tools can help with drafts, summaries and editing. Envoy is charged by resolution after the trial period. The current pricing page lists US$0.75 per resolution and says a resolution is counted when Scout resolves a conversation without human help. A customer who asks for more help or escalates does not count as a billable resolution. Checked November 19, 2026. [Envoy pricing and billing rules](https://www.helpscout.com/pricing/).
+Help Scout separates AI assistance for agents from its customer-facing AI agent. Agent tools can help with drafts, summaries and editing. Envoy is charged by resolution after the trial period. The current pricing page lists US$0.75 per resolution and says a resolution is counted when Scout resolves a conversation without human help. A customer who asks for more help or escalates does not count as a billable resolution. Checked November 22, 2026. [Envoy pricing and billing rules](https://www.helpscout.com/pricing/).
 
 Help Scout also documents an MCP connection for AI assistants. New connections are read-only and follow the permissions of the Help Scout user who connects. API access is available on Standard, Plus and Pro, while reporting tools require Plus or Pro. A Docs API key is needed for knowledge base tools. Read the [official MCP setup and limits](https://docs.helpscout.com/article/1779-help-scout-mcp-server) before connecting customer data to an AI provider.
 
 ## Pricing and value
 
-Help Scout's paid plans are charged per user. The current monthly view shows Standard at US$25, Plus at US$45 and Pro at US$75 per user per month. The page shows a 16% annual discount. The Free plan supports up to five users and 100 contacts per monthly cycle. These prices and limits were checked November 19, 2026 on the [official pricing page](https://www.helpscout.com/pricing/) and [Free plan guide](https://docs.helpscout.com/article/1597-free-plan).
+Help Scout's paid plans are charged per user. The current monthly view shows Standard at US$25, Plus at US$45 and Pro at US$75 per user per month. The page shows a 16% annual discount. The Free plan supports up to five users and 100 contacts per monthly cycle. These prices and limits were checked November 22, 2026 on the [official pricing page](https://www.helpscout.com/pricing/) and [Free plan guide](https://docs.helpscout.com/article/1597-free-plan).
 
 Extra Inbox and Docs site charges can affect the total. Envoy adds a separate usage cost when it resolves a conversation. Pro also has a ten-user minimum. A small team should not select Pro only because it includes more controls. Compare the features you need with the actual seat count and the likely add-on use.
 
-Use the full [Help Scout pricing guide](/help-scout/pricing/) for the plan table, included counts and cost examples. It explains the difference between included Inbox quantities and the maximum number of Inboxes a plan permits.
+Use the full Help Scout pricing guide for the plan table, included counts and cost examples. It explains the difference between included Inbox quantities and the maximum number of Inboxes a plan permits.
 
 ## Pros and trade-offs
 
@@ -101,7 +101,7 @@ Choose Help Scout when the team needs a shared Inbox, customer history, Docs and
 
 Keep your current platform or compare a broader help desk if your team relies on complex ticket types, many custom statuses, detailed routing rules, large knowledge base migrations or full conversation-thread exports. Do not judge the fit by the number of features alone. Map a normal customer request from first message to resolution and check whether every step is supported on the plan you would buy.
 
-For a wider shortlist, see the [Help Scout alternatives guide](/help-scout/alternatives/). If you are comparing a more structured ticketing system, the [Help Scout vs Zendesk comparison](/compare/help-scout-vs-zendesk/) explains the difference in approach. The [Help Scout setup guide](/help-scout/how-to-use/) covers the first configuration steps.
+For a wider shortlist, see the Help Scout alternatives guide. If you are comparing a more structured ticketing system, the Help Scout vs Zendesk comparison explains the difference in approach. The Help Scout setup guide covers the first configuration steps.
 
 ## Help Scout review questions
 
@@ -111,7 +111,7 @@ It can suit a small business that wants a shared Inbox and help center. Check th
 
 **Does Help Scout have a free plan?**
 
-Yes. The official Free plan includes up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle. Checked November 19, 2026. [Free plan details](https://docs.helpscout.com/article/1597-free-plan).
+Yes. The official Free plan includes up to five users, one Inbox, one Docs site and 100 contacts per monthly cycle. Checked November 22, 2026. [Free plan details](https://docs.helpscout.com/article/1597-free-plan).
 
 **Does Help Scout include AI?**
 
@@ -127,4 +127,14 @@ Not through one report export. Reports can be exported to CSV or XLSX, but conve
 
 ## Research method and sources
 
-Last updated: November 19, 2026. This review is based on Help Scout's official product, pricing and support documentation checked on that date. It is desk research, not a hands-on test. No customer account, performance benchmark, rating or vendor quote was used. See the site [review methodology](/review-methodology) for how research-based product pages are prepared.
+Last updated: November 22, 2026. This review is based on Help Scout's official product, pricing and support documentation checked on that date. It is desk research, not a hands-on test. No customer account, performance benchmark, rating or vendor quote was used. See the site review methodology for how research-based product pages are prepared.
+
+## Related guides
+
+- [Help Scout product guide](/help-scout/)
+- [Help Scout pricing](/help-scout/pricing/)
+- [Help Scout setup guide](/help-scout/how-to-use/)
+- [Help Scout alternatives](/help-scout/alternatives/)
+- [Help Scout vs Zendesk](/compare/help-scout-vs-zendesk/)
+- [Browse software tool hubs](/tools/)
+- [Review methodology](/review-methodology/)
