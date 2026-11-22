@@ -521,3 +521,8 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 
 - Matched every external source linked from the six Help Scout articles to its page source ledger.
 - Updated the release workflow to verify the complete publication tree exists, rather than requiring every file to be modified in the final quality-fix commit. The queue remains in_progress until the exact content commit passes.
+
+
+### 2026-11-22 - Comparison length correction
+
+- Removed a repeated annual-discount sentence from the Help Scout vs Zendesk page and its public registry copy. The page is now below the 2,200-word ceiling used by CI.

@@ -25,7 +25,7 @@ Neither model is automatically better. A team that wants a shared workspace may 
 
 ## Pricing: compare the same billing period
 
-Help Scout's [official pricing page](https://www.helpscout.com/pricing/), checked November 22, 2026, lists Standard at US$25 per user/month with annual billing or US$30 month-to-month, Plus at US$45 annual-billed or US$54 monthly, and Pro at US$75 annual-billed or US$90 monthly. The page shows a 16% annual discount. Free includes up to five users, one Inbox, one Docs site and 100 contacts per month. Envoy is a separate AI add-on at US$0.75 per resolution. Extra Inboxes and Docs sites can also add cost.
+Help Scout's [official pricing page](https://www.helpscout.com/pricing/), checked November 22, 2026, lists Standard at US$25 per user/month with annual billing or US$30 month-to-month, Plus at US$45 annual-billed or US$54 monthly, and Pro at US$75 annual-billed or US$90 monthly. Free includes up to five users, one Inbox, one Docs site and 100 contacts per month. Envoy is a separate AI add-on at US$0.75 per resolution. Extra Inboxes and Docs sites can also add cost.
 
 Zendesk's [official pricing page](https://www.zendesk.com/pricing/?so=1), checked November 22, 2026, lists Support Team at US$19 per agent/month billed yearly or US$25 monthly. Suite Team is US$55 yearly or US$69 monthly. Suite Professional is US$115 yearly or US$149 monthly. The page does not list a permanent free support plan. Suite Team adds AI Agents, a knowledge base, action builder, omnichannel routing, messaging, live chat and telephony.
 

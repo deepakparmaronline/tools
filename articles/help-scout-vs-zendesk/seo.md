@@ -8,5 +8,5 @@
 - Primary keyword: Help Scout vs Zendesk
 - Indexing: index,follow
 - Content checked: November 22, 2026
-- Word count: 2156
+- Word count: 2199
 - Schema: Article, BreadcrumbList, FAQPage
