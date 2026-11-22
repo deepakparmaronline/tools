@@ -103,6 +103,8 @@ Keep your current platform or compare a broader help desk if your team relies on
 
 For a wider shortlist, see the Help Scout alternatives guide. If you are comparing a more structured ticketing system, the Help Scout vs Zendesk comparison explains the difference in approach. The Help Scout setup guide covers the first configuration steps.
 
+For a side-by-side feature and price view, read the [Help Scout vs Zendesk comparison](/compare/help-scout-vs-zendesk/).
+
 ## Help Scout review questions
 
 **Is Help Scout good for a small business?**

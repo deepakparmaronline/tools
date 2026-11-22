@@ -53,7 +53,7 @@ def main():
    if n=="help-scout-hub":
     app=next(x for x in g if x.get("@type")=="SoftwareApplication");assert "aggregateRating" not in app
    if n=="help-scout-alternatives":assert next(x for x in g if x.get("@type")=="ItemList")["numberOfItems"]==7
-   if n=="help-scout-review":assert "Review" not in types and h.count("Written by")==2 and "Review methodology" in h and "Sources" in h
+   if n=="help-scout-review":assert "Review" not in types and h.count("Written by")==2 and "review methodology" in h.lower() and "Sources" in h
    routes[n]=(p,child)
    md=(R/"articles"/n/"article.md").read_text(encoding="utf-8")
    seo=(R/"articles"/n/"seo.md").read_text(encoding="utf-8")

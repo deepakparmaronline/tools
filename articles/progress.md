@@ -503,3 +503,9 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - Dynamic sitemap discovery uses `data/software-pages.php` for tools, pricing, how-to and compare; `alternatives/articles/help-scout-alternatives.php` for alternatives; and `data/post-2026-11-22-help-scout-review.php` for reviews. Static XML child sitemaps, the root sitemap index and `robots.txt` are not edited because the dynamic sources already cover the routes; the quality test checks each canonical exactly once, all eight child maps in the root index and every child declaration in `robots.txt`.
 - No legacy Help Scout URL was verified, so no redirect was added. No category pillar was added because customer-growth remains below `HUB_MIN_TOOLS = 4`.
 - **Quality gate:** pending. Order 8 remains `in_progress` until the exact content commit passes the complete ToolboxKart workflow and `seo/quality-status.json` matches that commit.
+
+
+### 2026-11-22 - Review cross-link and quality fix
+
+- Added a body link from the Help Scout review to the Help Scout vs Zendesk comparison so the review meets the required internal-link count.
+- Corrected the rendered-page test to compare the review-methodology link without case sensitivity. Help Scout remains in_progress until the exact content commit passes the complete workflow.
