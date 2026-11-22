@@ -64,6 +64,13 @@ def main():
    assert "index,follow" in seo and u in seo and "November 22, 2026" in sources
    for url in re.findall(r"\]\((https?://[^)]+)\)",md):assert url in sources,(n,url)
    assert "Quality gate: pending" in note
+  _,pricing_html=get("/help-scout/pricing/")
+  for price in ["US$25","US$30","US$45","US$54","US$75","US$90"]:assert price in pricing_html,price
+  assert "Annual-billed monthly rate" in pricing_html and "Month-to-month rate" in pricing_html
+  assert "Monthly price per user" not in pricing_html
+  _,comparison_html=get("/compare/help-scout-vs-zendesk/")
+  assert "US$30 month-to-month" in comparison_html and "US$19" in comparison_html
+  assert "same displayed monthly seat price" not in comparison_html
   sw=(R/"data/software-pages.php").read_text(encoding="utf-8")
   for p in ["/help-scout/","/help-scout/pricing/","/help-scout/how-to-use/","/compare/help-scout-vs-zendesk/"]:
    assert len(re.findall(r"'url'\s*=>\s*'"+re.escape(p)+r"'",sw))==1,p
