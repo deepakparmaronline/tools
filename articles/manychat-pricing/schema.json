@@ -1,0 +1,77 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/manychat/pricing/#article",
+      "headline": "Manychat Pricing: Plans, Limits and Fees",
+      "description": "Compare Manychat Free, Essential, Pro, Business and Advanced plans, active-contact limits, annual billing, overages and WhatsApp message fees.",
+      "datePublished": "2026-11-23",
+      "dateModified": "2026-11-23",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech/"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/manychat/pricing/",
+      "url": "https://toolboxkart.tech/manychat/pricing/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Manychat",
+          "item": "https://toolboxkart.tech/manychat/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pricing",
+          "item": "https://toolboxkart.tech/manychat/pricing/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Manychat free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Free costs US$0 and includes 25 Active Contacts per month, two eligible channels, one user and up to four live automations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Manychat charge for WhatsApp messages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Template messages are charged by category and destination market. Since October 1, 2026, service messages are also charged after the first 1,000 free service messages per WhatsApp Business phone number each month."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does an annual plan include a yearly Active Contact allowance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Active Contacts are counted each billing month. The allowance resets monthly even when the subscription is billed annually."
+          }
+        }
+      ]
+    }
+  ]
+}

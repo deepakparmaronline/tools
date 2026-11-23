@@ -1,0 +1,86 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toolboxkart.tech/manychat/#article",
+      "headline": "Manychat Guide: Features, Channels and Fit",
+      "description": "Learn what Manychat does, compare its plans and active-contact limits, and see how Instagram, WhatsApp and TikTok automations fit your business.",
+      "datePublished": "2026-11-23",
+      "dateModified": "2026-11-23",
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Parmar",
+        "url": "https://toolboxkart.tech/about-deepak-parmar/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ToolboxKart",
+        "url": "https://toolboxkart.tech/"
+      },
+      "mainEntityOfPage": "https://toolboxkart.tech/manychat/",
+      "url": "https://toolboxkart.tech/manychat/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolboxkart.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Software Tool Hubs",
+          "item": "https://toolboxkart.tech/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Manychat",
+          "item": "https://toolboxkart.tech/manychat/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://toolboxkart.tech/manychat/#software",
+      "name": "Manychat",
+      "url": "https://manychat.com/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Social media and messaging automation software for creating automated conversations across supported channels."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Manychat have a free plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Free includes 25 Active Contacts per month, one user, one Inbox seat and up to four live automations. It does not include WhatsApp, SMS or Email."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Manychat send an automatic Instagram DM after a comment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Instagram Comments Reply trigger can watch a selected post or Reel, match keywords or any comment, and start a private reply flow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Manychat a customer support ticketing system?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is mainly a chat marketing and messaging automation platform. Teams that need complex ticket queues should compare dedicated support software."
+          }
+        }
+      ]
+    }
+  ]
+}

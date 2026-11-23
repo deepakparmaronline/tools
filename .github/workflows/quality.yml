@@ -7,7 +7,7 @@ on:
       - seo/quality-status.json
       - seo/tool_publishing_queue.md
       - articles/progress.md
-      - 'articles/help-scout-*/notes.md'
+      - 'articles/*/notes.md'
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -64,6 +64,7 @@ jobs:
         run: |
           python3 tests/help_scout_research.py
           python3 tests/help_scout_draft.py
+          python3 tests/manychat_draft.py
           python3 tests/alternatives.py
           python3 tests/software_decisions.py
           python3 tests/software_indexes.py
@@ -84,7 +85,7 @@ jobs:
           curl --fail --silent http://127.0.0.1:8765/ > /dev/null
           python3 tests/publication.py
 
-      - name: Record exact passing commit and release Help Scout
+      - name: Record exact passing commit and release an eligible cluster
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         env:
           CHECKED_COMMIT: ${{ github.sha }}
@@ -96,39 +97,78 @@ jobs:
           from pathlib import Path
           from datetime import datetime, timezone
           from zoneinfo import ZoneInfo
-          checked=os.environ["CHECKED_COMMIT"]
-          run_id=os.environ["RUN_ID"]
-          repo=os.environ["REPOSITORY"]
-          changed=set(subprocess.check_output(["git","diff-tree","--no-commit-id","--name-only","-r",checked],text=True).splitlines())
-          status={"workflow":"ToolboxKart quality checks","status":"passed","commit":checked,"checked_at":datetime.now(timezone.utc).replace(microsecond=0).isoformat(),"run_url":f"https://github.com/{repo}/actions/runs/{run_id}"}
-          Path("seo/quality-status.json").write_text(json.dumps(status,indent=2)+"\n",encoding="utf-8")
-          required={"articles/help-scout-hub/article.md","articles/help-scout-pricing/article.md","articles/help-scout-review/article.md","articles/help-scout-how-to-use/article.md","articles/help-scout-alternatives/article.md","articles/help-scout-vs-zendesk/article.md","data/software-pages.php","alternatives/articles/help-scout-alternatives.php","data/post-2026-11-22-help-scout-review.php","reviews/help-scout-review/index.php","includes/alternatives.php","tests/help_scout_draft.py","tests/help_scout_research.py"}
-          missing = [path for path in required if not Path(path).is_file()]
-          if missing:
-              raise SystemExit('Required Help Scout publication files missing: ' + ', '.join(missing))
-          if not missing:
-              qp=Path("seo/tool_publishing_queue.md")
-              q=qp.read_text(encoding="utf-8")
-              q,n=re.subn(r"(?m)^(\|\s*8\s*\|\s*Help Scout\s*\|.*\|\s*)in_progress(\s*\|\s*)$",r"\1published\2",q,count=1)
-              if n!=1: raise SystemExit("Could not mark the exact Help Scout queue row published.")
-              q=q.replace("<!-- Order 8 remains in_progress until the exact content-commit quality gate passes. -->","").rstrip()+"\n"
-              qp.write_text(q,encoding="utf-8")
-              day=datetime.now(ZoneInfo("Asia/Kolkata")).date().isoformat()
-              pp=Path("articles/progress.md")
-              p=pp.read_text(encoding="utf-8")
-              p+=(f"\n\n### Help Scout publication closeout - {day}\n\n"
-                  f"- Quality status passed for exact content commit `{checked}`; workflow: https://github.com/{repo}/actions/runs/{run_id}.\n"
-                  "- All six public routes are registered, internally linked and discoverable through their dynamic child sitemap sources.\n"
-                  "- Help Scout is published. Next queued item: Order 9, ManyChat.\n")
-              pp.write_text(p,encoding="utf-8")
-              for name in ["help-scout-hub","help-scout-pricing","help-scout-review","help-scout-how-to-use","help-scout-alternatives","help-scout-vs-zendesk"]:
-                  np=Path(f"articles/{name}/notes.md")
-                  note=np.read_text(encoding="utf-8")
-                  note=note.replace("Quality gate: pending until seo/quality-status.json reports status=passed for the exact content commit.",f"Quality gate: passed for exact content commit {checked}.")
-                  np.write_text(note,encoding="utf-8")
+
+          checked = os.environ["CHECKED_COMMIT"]
+          run_id = os.environ["RUN_ID"]
+          repo = os.environ["REPOSITORY"]
+          manifest_path = Path("seo/publication-manifest.json")
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.is_file() else {}
+          publication = None
+
+          if manifest.get("publish_ready") is True:
+              required = manifest.get("required_files", [])
+              missing = [path for path in required if not Path(path).is_file()]
+              if missing:
+                  raise SystemExit("Publication manifest is ready but required files are missing: " + ", ".join(missing))
+
+              order = int(manifest["order"])
+              tool = str(manifest["tool"])
+              queue_path = Path("seo/tool_publishing_queue.md")
+              queue = queue_path.read_text(encoding="utf-8")
+              published_pattern = rf"(?m)^\|\s*{order}\s*\|\s*{re.escape(tool)}\s*\|[^\n]*\|\s*published\s*\|$"
+              in_progress_pattern = rf"(?m)^(\|\s*{order}\s*\|\s*{re.escape(tool)}\s*\|[^\n]*\|\s*)in_progress(\s*\|\s*)$"
+              if not re.search(published_pattern, queue):
+                  queue, count = re.subn(in_progress_pattern, r"\1published\2", queue, count=1)
+                  if count != 1:
+                      raise SystemExit(f"Could not mark Order {order} {tool} published from its in_progress state.")
+                  queue_path.write_text(queue, encoding="utf-8")
+
+              day = datetime.now(ZoneInfo("Asia/Kolkata")).date().isoformat()
+              progress_path = Path("articles/progress.md")
+              progress = progress_path.read_text(encoding="utf-8")
+              marker = f"### {tool} publication closeout - {day}"
+              if marker not in progress:
+                  urls = "\n".join(f"- {url}" for url in manifest.get("canonical_urls", []))
+                  maps = "\n".join(f"- {url}: {sitemap}" for url, sitemap in manifest.get("child_sitemaps", {}).items())
+                  progress += (
+                      f"\n\n{marker}\n\n"
+                      f"- Quality status passed for exact content commit {checked}; workflow: https://github.com/{repo}/actions/runs/{run_id}.\n"
+                      "- All six public routes, registries, internal links and dynamic child sitemap entries passed the repository tests.\n"
+                      f"- Public URLs:\n{urls}\n"
+                      f"- Child sitemap discovery:\n{maps}\n"
+                  )
+                  progress_path.write_text(progress, encoding="utf-8")
+
+              for name in manifest.get("notes_files", []):
+                  note_path = Path(name)
+                  if not note_path.is_file():
+                      raise SystemExit(f"Publication notes file missing: {name}")
+                  note = note_path.read_text(encoding="utf-8")
+                  note = re.sub(r"(?m)^- Quality gate: pending.*$", f"- Quality gate: passed for exact content commit {checked}.", note)
+                  note_path.write_text(note, encoding="utf-8")
+
+              publication = {
+                  "order": order,
+                  "tool": tool,
+                  "status": "published",
+                  "canonical_urls": manifest.get("canonical_urls", []),
+                  "child_sitemaps": manifest.get("child_sitemaps", {})
+              }
+
+          status = {
+              "workflow": "ToolboxKart quality checks",
+              "status": "passed",
+              "commit": checked,
+              "checked_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+              "run_url": f"https://github.com/{repo}/actions/runs/{run_id}",
+              "publication": publication
+          }
+          Path("seo/quality-status.json").write_text(json.dumps(status, indent=2) + "\n", encoding="utf-8")
+          subprocess.run(["git", "add", "seo/quality-status.json"], check=True)
+          if publication:
+              subprocess.run(["git", "add", "seo/tool_publishing_queue.md", "articles/progress.md", *manifest.get("notes_files", [])], check=True)
+          subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
+          subprocess.run(["git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"], check=True)
+          subprocess.run(["git", "commit", "-m", "Record passing quality check [skip ci]"], check=True)
+          subprocess.run(["git", "push", "origin", "HEAD:main"], check=True)
           PY
-          git add seo/quality-status.json seo/tool_publishing_queue.md articles/progress.md articles/help-scout-*/notes.md
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Record passing quality check and release Help Scout [skip ci]"
-          git push origin HEAD:main

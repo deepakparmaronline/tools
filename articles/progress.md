@@ -533,3 +533,16 @@ Batch summary: 15 received; 9 new articles completed; 1 already completed; 9 liv
 - Quality status passed for exact content commit `89de4cbf68d6be6d93e0f38ccf92a79dca8fbba9`; workflow: https://github.com/deepakparmaronline/tools/actions/runs/44991130098.
 - All six public routes are registered, internally linked and discoverable through their dynamic child sitemap sources.
 - Help Scout is published. Next queued item: Order 9, ManyChat.
+
+
+### Manychat research and first two draft pages - 2026-11-23
+
+- Selected the lowest queued row: Order 9, ManyChat. The exact row is now in_progress. Saved US metrics remain volume 260, KD 13, CPC US$8.57, intent I/C, rising trend, SERP features SL, AIO, Rev, Vid, VC, PAA and Rel. The 2026-10-24 snapshot remains unchanged; no Semrush session or refresh was used.
+- Confirmed the product identity from Manychat's official website and help center. Opened official pricing, Free, Essential, Pro, Business, Advanced, Active Contacts, Instagram comment trigger, Instagram connection, automation builder, Zapier, export/import and WhatsApp pricing sources on November 23, 2026.
+- Created articles/manychat-cluster-research.md with the evidence ledger, pricing and plan facts, export/import boundaries, alternative shortlist, comparison decision, category decision and exact next steps.
+- Completed the first two editorial drafts: articles/manychat-hub/ and articles/manychat-pricing/. Their word counts are 810 and 1321, within the guide ranges. Both have unique metadata, canonical targets, Article and BreadcrumbList schema, visible FAQ questions, source ledgers and draft notes. They are not registered or public.
+- Selected Chatfuel as the comparison opponent because no comparison keyword volume is saved and Chatfuel is the closest documented direct alternative for social comment replies, Reels and WhatsApp campaigns. This is a product-fit decision, not a volume claim.
+- Alternative shortlist for the next checkpoint: Chatfuel, WATI, Interakt, respond.io, SleekFlow and Tidio. Tidio is a partial substitute for website support and social channels, not a like-for-like comment-to-DM tool.
+- Important fact boundary: Manychat's pricing page and Active Contacts help article differ on Advanced overage wording. The draft flags the conflict and does not publish an Advanced overage amount. USD prices are reference values before tax and may vary by billing country.
+- No Manychat public registry entry, public route, alternatives record, review post, sitemap URL or redirect has been added. The final publication manifest remains publish_ready false.
+- Exact next checkpoint: complete the Manychat review and how-to drafts using official feature and connection documentation, then write the alternatives and Manychat vs Chatfuel comparison. Keep the row in_progress until all six pages, cross-links, registries, dynamic sitemap discovery and the exact-commit quality gate pass.
