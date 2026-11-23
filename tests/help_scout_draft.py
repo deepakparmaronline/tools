@@ -63,7 +63,7 @@ def main():
    assert len(re.findall(r"\]\((/[^)]+)\)",md))==links,(n,links)
    assert "index,follow" in seo and u in seo and "November 22, 2026" in sources
    for url in re.findall(r"\]\((https?://[^)]+)\)",md):assert url in sources,(n,url)
-   assert "Quality gate: pending" in note
+   assert "Quality gate:" in note and ("pending" in note or re.search(r"Quality gate: passed for exact content commit [0-9a-f]{40}", note))
   _,pricing_html=get("/help-scout/pricing/")
   for price in ["US$25","US$30","US$45","US$54","US$75","US$90"]:assert price in pricing_html,price
   assert "Annual-billed monthly rate" in pricing_html and "Month-to-month rate" in pricing_html
